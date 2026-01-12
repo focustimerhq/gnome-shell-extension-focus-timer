@@ -1,0 +1,1015 @@
+# Russian translation for gnome-pomodoro
+# Copyright (c) 2012 gnome-pomodoro contributors
+# This file is distributed under the same license as the gnome-pomodoro package.
+# liberumed <liberumed@gmail.com>, 2013
+# Max Vetrov 'tigertv' <maxvetrov555@yandex.ru>, 2018
+# Roman Kaverin <roman.kaverin@gmail.com>, 2020
+# ViktorOn <https://github.com/viktoron>, 2022
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-pomodoro\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-03-24 15:30+0100\n"
+"PO-Revision-Date: 2023-03-26 11:41+0200\n"
+"Last-Translator: ViktorOn <https://github.com/viktoron>\n"
+"Language-Team: ru <>\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Poedit 3.1.1\n"
+
+#: data/org.gnome.Pomodoro.appdata.xml:8 data/org.gnome.Pomodoro.desktop.in:3
+#: data/resources/menus.ui:28 data/resources/window.ui:382
+#: plugins/actions/enums.vala:92 plugins/gnome/extension/indicator.js:77
+#: plugins/gnome/extension/indicator.js:729
+#: plugins/gnome/extension/notifications.js:281
+#: plugins/gnome/extension/timer.js:41 src/about-dialog.vala:31
+#: src/main.vala:50 src/notifications-capability.vala:129
+#: src/stats-page.vala:527 src/window.vala:44
+msgid "Pomodoro"
+msgstr "Помодоро"
+
+#: data/org.gnome.Pomodoro.appdata.xml:9
+msgid "A time management utility for GNOME"
+msgstr "Инструмент тайм-менеджмента для GNOME"
+
+#: data/org.gnome.Pomodoro.appdata.xml:11
+msgid ""
+"A GNOME utility that helps managing time according to Pomodoro Technique. It "
+"intends to improve productivity and focus by taking short breaks after every "
+"25 minutes of work."
+msgstr ""
+"Утилита GNOME для управления временем в соответствии с техникой Pomodoro. "
+"Она помогает повысить производительность и сосредоточенность с помощью "
+"коротких перерывов после каждых 25 минут работы."
+
+#: data/org.gnome.Pomodoro.appdata.xml:23
+msgid "Timer window"
+msgstr "Окно таймера"
+
+#: data/org.gnome.Pomodoro.appdata.xml:27
+#: plugins/gnome/extension/indicator.js:83 src/preferences-dialog.vala:800
+msgid "Preferences"
+msgstr "Настройки"
+
+#: data/org.gnome.Pomodoro.appdata.xml:31
+msgid "Indicator for GNOME Shell"
+msgstr "Индикатор"
+
+#: data/org.gnome.Pomodoro.desktop.in:4 src/about-dialog.vala:32
+msgid "A simple time management utility"
+msgstr "Простой инструмент для тайм-менеджмента"
+
+#: data/org.gnome.Pomodoro.desktop.in:5
+msgid "timer;"
+msgstr "таймер;"
+
+#: data/resources/menus.ui:6 plugins/actions/enums.vala:188
+#: plugins/actions/resources/action-page.ui:155 src/application.vala:90
+msgid "Start"
+msgstr "Старт"
+
+#: data/resources/menus.ui:11 data/resources/window.ui:180
+#: plugins/actions/enums.vala:197 plugins/actions/resources/action-page.ui:200
+#: src/application.vala:99
+msgid "Pause"
+msgstr "Пауза"
+
+#: data/resources/menus.ui:16 plugins/actions/enums.vala:200
+#: plugins/actions/resources/action-page.ui:215 src/application.vala:102
+msgid "Resume"
+msgstr "Возобновить"
+
+#: data/resources/menus.ui:21 data/resources/window.ui:207
+#: plugins/gnome/extension/indicator.js:221 src/application.vala:93
+#: src/window.vala:163 src/window.vala:176
+msgid "Stop"
+msgstr "Стоп"
+
+#: data/resources/menus.ui:33 data/resources/window.ui:398
+#: plugins/actions/enums.vala:95 plugins/gnome/extension/indicator.js:78
+#: plugins/gnome/extension/timer.js:44 src/window.vala:45
+msgid "Short Break"
+msgstr "Короткий перерыв"
+
+#: data/resources/menus.ui:38 data/resources/window.ui:414
+#: plugins/actions/enums.vala:98 plugins/gnome/extension/indicator.js:79
+#: plugins/gnome/extension/timer.js:47 src/window.vala:46
+msgid "Long Break"
+msgstr "Длинный перерыв"
+
+#: data/resources/menus.ui:45
+msgid "_Timer"
+msgstr "_Таймер"
+
+#: data/resources/menus.ui:49 data/resources/window.ui:309
+msgid "_Preferences"
+msgstr "_Настройки"
+
+#: data/resources/menus.ui:53 data/resources/window.ui:348
+msgid "_Quit"
+msgstr "_Выход"
+
+#: data/resources/preferences-keyboard-shortcut-page.ui:29
+msgid "Keyboard shortcut to toggle the timer. Enter new shortcut to change."
+msgstr "Комбинации клавиш для переключения таймера. Укажите новую комбинацию."
+
+#: data/resources/preferences-keyboard-shortcut-page.ui:83
+#: plugins/actions/enums.vala:206 plugins/actions/resources/action-page.ui:245
+msgid "Disable"
+msgstr "Отключить"
+
+#: data/resources/preferences-main-page.ui:45 data/resources/window.ui:247
+msgid "Timer"
+msgstr "Таймер"
+
+#: data/resources/preferences-main-page.ui:108
+msgid "Pomodoro duration"
+msgstr "Продолжительность помодоро"
+
+#: data/resources/preferences-main-page.ui:160
+msgid "Break duration"
+msgstr "Продолжительность короткого перерыва"
+
+#: data/resources/preferences-main-page.ui:213
+msgid "Long break duration"
+msgstr "Продолжительность длинного перерыва"
+
+#: data/resources/preferences-main-page.ui:245
+msgid "Pomodoros before a long break"
+msgstr "Количество помодоро до длинного перерыва"
+
+#: data/resources/preferences-main-page.ui:294
+msgid "Keyboard shortcut"
+msgstr "Комбинация клавиш"
+
+#: data/resources/preferences-main-page.ui:357
+msgid "Notifications"
+msgstr "Уведомления"
+
+#: data/resources/preferences-main-page.ui:400
+msgid "Screen notifications"
+msgstr "Экранные уведомления"
+
+#: data/resources/preferences-main-page.ui:460
+msgid "Desktop"
+msgstr "Рабочий стол"
+
+#: data/resources/preferences-main-page.ui:509
+msgid "Wait for activity after a break"
+msgstr "Дождаться активности пользователя после перерыва"
+
+#: data/resources/preferences-main-page.ui:573
+msgid "Plugins…"
+msgstr "Плагины..."
+
+#: data/resources/preferences.ui:8 src/preferences-dialog.vala:804
+msgid "Plugins"
+msgstr "Плагины"
+
+#: data/resources/preferences.ui:47
+msgid "Back"
+msgstr "Назад"
+
+#: data/resources/screen-notification.ui:89
+#: plugins/gnome/extension/dialogs.js:1002
+msgid "It's time to take a break"
+msgstr "Пора сделать перерыв"
+
+#: data/resources/stats-view.ui:28
+msgid "Nothing to see yet"
+msgstr "Здесь пока ничего нет"
+
+#: data/resources/stats-view.ui:45
+msgid "Complete a few sessions"
+msgstr "Нет завершенных сессий"
+
+#: data/resources/stats-view.ui:86 data/resources/stats-view.ui:343
+msgid "Day"
+msgstr "День"
+
+#: data/resources/stats-view.ui:109 data/resources/stats-view.ui:356
+msgid "Week"
+msgstr "Неделя"
+
+#: data/resources/stats-view.ui:133 data/resources/stats-view.ui:369
+msgid "Month"
+msgstr "Месяц"
+
+#: data/resources/stats-view.ui:161
+msgid "Previous (Alt+Left)"
+msgstr "Предыдущий (Alt+Left)"
+
+#: data/resources/stats-view.ui:188
+msgid "Next (Alt+Right)"
+msgstr "Следующий (Alt+Right)"
+
+#: data/resources/stats-view.ui:216 data/resources/stats-view.ui:319
+#: src/stats-day-page.vala:62
+msgid "Today"
+msgstr "Сегодня"
+
+#: data/resources/window.ui:36 plugins/gnome/extension/indicator.js:214
+#: src/window.vala:180
+msgid "Start Pomodoro"
+msgstr "Запустить Помодоро"
+
+#: data/resources/window.ui:323
+msgid "_About"
+msgstr "_О Помодоро"
+
+#: plugins/actions/actions.vala:423
+msgid "Actions"
+msgstr "Действия"
+
+#: plugins/actions/actions.vala:427
+msgid "Action"
+msgstr "Действие"
+
+#: plugins/actions/actions.vala:452
+msgid "Custom actions…"
+msgstr "Пользовательские действия…"
+
+#: plugins/actions/enums.vala:191 plugins/actions/resources/action-page.ui:170
+msgid "Complete"
+msgstr "Завершить"
+
+#: plugins/actions/enums.vala:194 plugins/actions/resources/action-page.ui:185
+msgid "Skip"
+msgstr "Пропустить"
+
+#: plugins/actions/enums.vala:203 plugins/actions/resources/action-page.ui:230
+msgid "Enable"
+msgstr "Включить"
+
+#: plugins/actions/resources/action-page.ui:28
+msgid "Command"
+msgstr "Команда"
+
+#: plugins/actions/resources/action-page.ui:41
+#: plugins/actions/resources/menus.ui:29
+msgid "Triggers"
+msgstr "Триггер"
+
+#: plugins/actions/resources/action-page.ui:54
+msgid "Name"
+msgstr "Название"
+
+#: plugins/actions/resources/action-page.ui:88
+msgid "_Pomodoro"
+msgstr "Помодоро"
+
+#: plugins/actions/resources/action-page.ui:102
+msgid "_Short Break"
+msgstr "Короткий перерыв"
+
+#: plugins/actions/resources/action-page.ui:116
+msgid "_Long Break"
+msgstr "Длинный перерыв"
+
+#: plugins/actions/resources/action-page.ui:299
+msgid "Add"
+msgstr "Добавить"
+
+#: plugins/actions/resources/menus.ui:6
+msgid "Remove"
+msgstr "Удалить"
+
+#: plugins/actions/resources/menus.ui:14
+msgid "State"
+msgstr "Состояние"
+
+#: plugins/actions/resources/menus.ui:19
+msgid "State Duration"
+msgstr "Продолжительность"
+
+#: plugins/actions/resources/menus.ui:24
+msgid "Elapsed Time"
+msgstr "Прошло"
+
+#. this.stack.add_titled (this.timer_stack, "timer", _("Timer"));
+#: plugins/gnome/extension/indicator.js:84 src/window.vala:101
+msgid "Stats"
+msgstr "Статистика"
+
+#: plugins/gnome/extension/indicator.js:85
+msgid "Quit"
+msgstr "Выход"
+
+#: plugins/gnome/extension/indicator.js:123
+#: plugins/gnome/extension/notifications.js:128
+#: plugins/gnome/extension/notifications.js:549
+msgid "Pomodoro Timer"
+msgstr "Таймер Помодоро"
+
+#: plugins/gnome/extension/indicator.js:129
+msgid "Start Timer"
+msgstr "Запустить таймер"
+
+#: plugins/gnome/extension/indicator.js:162
+msgid "Pause Timer"
+msgstr "Таймер на паузу"
+
+#: plugins/gnome/extension/indicator.js:174
+msgid "Stop Timer"
+msgstr "Остановить таймер"
+
+#: plugins/gnome/extension/indicator.js:211 src/window.vala:179
+msgid "Pause break"
+msgstr "Пауза"
+
+#: plugins/gnome/extension/indicator.js:211 src/window.vala:166
+msgid "Pause Pomodoro"
+msgstr "Пауза"
+
+#: plugins/gnome/extension/indicator.js:214
+#: src/notifications-capability.vala:141 src/notifications-capability.vala:162
+#: src/window.vala:167
+msgid "Take a break"
+msgstr "Перерыв"
+
+#: plugins/gnome/extension/indicator.js:218 src/window.vala:175
+msgid "Resume break"
+msgstr "Возобновить"
+
+#: plugins/gnome/extension/indicator.js:218 src/window.vala:162
+msgid "Resume Pomodoro"
+msgstr "Возобновить"
+
+#: plugins/gnome/extension/notifications.js:89
+#, javascript-format
+msgid "%d minute remaining"
+msgid_plural "%d minutes remaining"
+msgstr[0] "Осталась %d минута"
+msgstr[1] "Осталось %d минуты"
+msgstr[2] "Осталось %d минут"
+
+#: plugins/gnome/extension/notifications.js:97
+#, javascript-format
+msgid "%d second remaining"
+msgid_plural "%d seconds remaining"
+msgstr[0] "Осталась %d секунда"
+msgstr[1] "Осталось %d секунды"
+msgstr[2] "Осталось %d секунд"
+
+#: plugins/gnome/extension/notifications.js:289
+msgid "Pomodoro is about to end"
+msgstr "Помодоро завершается"
+
+#: plugins/gnome/extension/notifications.js:295
+msgid "Take a long break"
+msgstr "Сделайте длительный перерыв"
+
+#: plugins/gnome/extension/notifications.js:296
+msgid "Take a short break"
+msgstr "Сделайте небольшой перерыв"
+
+#: plugins/gnome/extension/notifications.js:304
+msgid "Break is about to end"
+msgstr "Перерыв заканчивается"
+
+#: plugins/gnome/extension/notifications.js:308
+msgid "Break is over"
+msgstr "Перерыв окончен"
+
+#. body = _("Get ready for Pomodoro");
+#: plugins/gnome/extension/notifications.js:336
+msgid "Get ready…"
+msgstr "Приготовься…"
+
+#: plugins/gnome/extension/notifications.js:362
+msgid "Skip Break"
+msgstr "Пропустить перерыв"
+
+#: plugins/gnome/extension/notifications.js:365
+msgid "+1 Minute"
+msgstr "+1 минута"
+
+#: plugins/gnome/extension/notifications.js:557
+msgid "Report issue"
+msgstr "Сообщить о проблеме"
+
+#: plugins/gnome/extension/timer.js:248
+#, javascript-format
+msgid "Failed to run <i>%s</i> service"
+msgstr "Невозможно запустить сервис <i>%s</i>"
+
+#: plugins/gnome/gnome-plugin.vala:290
+msgid "Hide other notifications"
+msgstr "Скрыть другие уведомления"
+
+#: plugins/sounds/resources/preferences-sound-page.ui:33
+msgid "Volume:"
+msgstr "Громкость:"
+
+#: plugins/sounds/sounds-plugin.vala:35 plugins/sounds/sounds-plugin.vala:410
+msgid "Clock Ticking"
+msgstr "Тиканье часов"
+
+#: plugins/sounds/sounds-plugin.vala:36 plugins/sounds/sounds-plugin.vala:411
+msgid "Timer Ticking"
+msgstr "Тиканье таймера"
+
+#: plugins/sounds/sounds-plugin.vala:37 plugins/sounds/sounds-plugin.vala:412
+msgid "Woodland Birds"
+msgstr "Лесные птицы"
+
+#: plugins/sounds/sounds-plugin.vala:38 plugins/sounds/sounds-plugin.vala:472
+#: plugins/sounds/sounds-plugin.vala:511
+msgid "Bell"
+msgstr "Колокольчик"
+
+#: plugins/sounds/sounds-plugin.vala:39 plugins/sounds/sounds-plugin.vala:473
+#: plugins/sounds/sounds-plugin.vala:512
+msgid "Loud Bell"
+msgstr "Громкий колокольчик"
+
+#: plugins/sounds/sounds-plugin.vala:334
+msgid "Select Custom Sound"
+msgstr "Выберите звуковой файл"
+
+#: plugins/sounds/sounds-plugin.vala:337
+msgid "_Cancel"
+msgstr "_Отменить"
+
+#: plugins/sounds/sounds-plugin.vala:339
+msgid "_Select"
+msgstr "_Выбрать"
+
+#: plugins/sounds/sounds-plugin.vala:568
+msgid "Ticking Sound"
+msgstr "Звук тиканья"
+
+#: plugins/sounds/sounds-plugin.vala:572
+msgid "End of Break Sound"
+msgstr "Звук окончания перерыва"
+
+#: plugins/sounds/sounds-plugin.vala:576
+msgid "Start of Break Sound"
+msgstr "Звук начала перерыва"
+
+#: plugins/sounds/sounds-plugin.vala:604 src/preferences-dialog.vala:590
+msgid "Off"
+msgstr "Выключить"
+
+#: plugins/sounds/sounds-plugin.vala:744
+msgid "Ticking sound"
+msgstr "Звук тиканья"
+
+#: plugins/sounds/sounds-plugin.vala:749
+msgid "Start of break sound"
+msgstr "Звук начала перерыва"
+
+#: plugins/sounds/sounds-plugin.vala:754
+msgid "End of break sound"
+msgstr "Звук окончания перерыва"
+
+#: src/about-dialog.vala:30
+msgid "About Pomodoro"
+msgstr "О Помодоро"
+
+#: src/about-dialog.vala:41
+msgid "translator-credits"
+msgstr ""
+"liberumed <liberumed@gmail.com>, 2013\n"
+"Max 'tigertv' Vetrov <maxvetrov555@yandex.ru>, 2018\n"
+"Roman Kaverin <roman.kaverin@gmail.com>, 2020\n"
+"Alexandre Prokoudine <alexandre.prokoudine@gmail.com>, 2021ViktorOn <https://"
+"github.com/ViktorOn>, 2022"
+
+#: src/application.vala:87
+msgid "Start/Stop"
+msgstr "Старт/стоп"
+
+#: src/application.vala:96
+msgid "Pause/Resume"
+msgstr "Пауза/возобновить"
+
+#: src/application.vala:105
+msgid "Skip to a pomodoro or to a break"
+msgstr "Перейти к помидору или к перерыву"
+
+#: src/application.vala:108
+msgid "Extend current pomodoro or break"
+msgstr "Продлите текущий помидор или прервите его"
+
+#: src/application.vala:111
+msgid "Reset current session"
+msgstr "Сбросить текущий сеанс"
+
+#: src/application.vala:114
+msgid "Run as background service"
+msgstr "Запускать как фоновый процесс"
+
+#: src/application.vala:117
+msgid "Show preferences"
+msgstr "Показать настройки"
+
+#: src/application.vala:120
+msgid "Quit application"
+msgstr "Выйти из приложения"
+
+#: src/application.vala:123
+msgid "Print version information and exit"
+msgstr "Вывести информацию о версии и выйти"
+
+#: src/notifications-capability.vala:130
+msgid "Focus on your task."
+msgstr "Сосредоточьтесь на Вашей задаче."
+
+#: src/notifications-capability.vala:156
+#, c-format
+msgid "You have %d minute"
+msgid_plural "You have %d minutes"
+msgstr[0] "У вас осталась %d минута"
+msgstr[1] "У вас осталось %d минуты"
+msgstr[2] "У вас осталось %d минут"
+
+#: src/notifications-capability.vala:158
+#, c-format
+msgid "You have %d second"
+msgid_plural "You have %d seconds"
+msgstr[0] "У вас осталась %d секунда"
+msgstr[1] "У вас осталось %d секунды"
+msgstr[2] "У вас осталось %d секунд"
+
+#: src/notifications-capability.vala:163
+msgid "Take a longer break"
+msgstr "Длинный перерыв"
+
+#: src/notifications-capability.vala:179
+msgid "Lengthen it"
+msgstr "Удлинить перерыв"
+
+#: src/notifications-capability.vala:184
+msgid "Shorten it"
+msgstr "Укоротить перерыв"
+
+#: src/notifications-capability.vala:189
+msgid "Start pomodoro"
+msgstr "Начать новый помодоро"
+
+#: src/preferences-dialog.vala:158
+#, c-format
+msgid ""
+"Using \"%s\" as shortcut will interfere with typing. Try adding another key, "
+"such as Control, Alt or Shift."
+msgstr ""
+"Использование \"%s\" не подходит в качестве комбинации клавиш. Попробуйте "
+"добавить в комбинацию другие клавиши - Ctrl, Alt или Shift."
+
+#: src/preferences-dialog.vala:808
+msgid "Keyboard Shortcut"
+msgstr "Комбинация клавиш"
+
+#: src/presence.vala:80
+msgid "Available"
+msgstr "Доступен"
+
+#: src/presence.vala:83
+msgid "Busy"
+msgstr "Занят"
+
+#: src/presence.vala:86
+msgid "Idle"
+msgstr "Отсутствует"
+
+#: src/presence.vala:89
+msgid "Invisible"
+msgstr "Невидимый"
+
+#: src/stats-day-page.vala:66
+msgid "Yesterday"
+msgstr "Вчера"
+
+#: src/stats-page.vala:87
+#, c-format
+msgid "%d m"
+msgstr "%d м"
+
+#: src/stats-page.vala:93
+#, c-format
+msgid "%.0f h"
+msgstr "%.0f ч"
+
+#: src/stats-page.vala:96
+#, c-format
+msgid "%.1f h"
+msgstr "%.1f ч"
+
+#: src/stats-page.vala:573
+msgid "Break"
+msgstr "Перерывы"
+
+#: src/stats-week-page.vala:58
+msgid "This week"
+msgstr "На этой неделе"
+
+#: src/utils.vala:32
+#, c-format
+msgid "%d hour"
+msgid_plural "%d hours"
+msgstr[0] "%d час"
+msgstr[1] "%d часа"
+msgstr[2] "%d часов"
+
+#: src/utils.vala:41
+#, c-format
+msgid "%d minute"
+msgid_plural "%d minutes"
+msgstr[0] "%d минута"
+msgstr[1] "%d минуты"
+msgstr[2] "%d минут"
+
+#~ msgid "Kamil Prusko"
+#~ msgstr "Kamil Prusko"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.22.1"
+#~ msgstr "Изменения в gnome-pomodoro 0.15.1"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.22.0"
+#~ msgstr "Изменения в gnome-pomodoro 0.17.0"
+
+#, fuzzy
+#~ msgid "Updated Brazilian translation (thanks @costaronaldo)"
+#~ msgstr "Обновлен перевод на каталанский (@antoniofsm)"
+
+#, fuzzy
+#~ msgid "Updated Russian translation (thanks @ViktorOn)"
+#~ msgstr "Обновлен русский перевод (@tigertv)"
+
+#, fuzzy
+#~ msgid "Updated Chinese translation (thanks @HaorongX)"
+#~ msgstr "Обновлен перевод на каталанский (@antoniofsm)"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.21.1"
+#~ msgstr "Изменения в gnome-pomodoro 0.15.1"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.21.0"
+#~ msgstr "Изменения в gnome-pomodoro 0.17.0"
+
+#, fuzzy
+#~ msgid "Support for GNOME Shell 42 (@milotype and @kappa)"
+#~ msgstr "Поддержка GNOME Shell 3.32 (@demokritos)"
+
+#, fuzzy
+#~ msgid "Added Croatian translation (thanks @dayeondev)"
+#~ msgstr "Добавлен перевод на эсперанто (@SeZuo)"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.20.0"
+#~ msgstr "Изменения в gnome-pomodoro 0.17.0"
+
+#, fuzzy
+#~ msgid "Support for GNOME Shell 41 (@mbooth101)"
+#~ msgstr "Поддержка GNOME Shell 3.32 (@demokritos)"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.19.2"
+#~ msgstr "Изменения в gnome-pomodoro 0.17.0"
+
+#, fuzzy
+#~ msgid "Updated Russian translation (@prokoudine)"
+#~ msgstr "Обновлен русский перевод (@tigertv)"
+
+#, fuzzy
+#~ msgid "Updated Dutch translation (@Vistaus)"
+#~ msgstr "Обновлен перевод на немецкий (@tsabsch)"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.19.1"
+#~ msgstr "Изменения в gnome-pomodoro 0.15.1"
+
+#, fuzzy
+#~ msgid "Support GNOME Shell 40.0, not 4.0"
+#~ msgstr "Поддержка GNOME Shell 3.34"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.19.0"
+#~ msgstr "Изменения в gnome-pomodoro 0.17.0"
+
+#, fuzzy
+#~ msgid "Support for GNOME Shell 4.0"
+#~ msgstr "Поддержка GNOME Shell 3.36"
+
+#, fuzzy
+#~ msgid "Changed blur effect during break"
+#~ msgstr "Фоновое размытие экрана во время перерыва"
+
+#, fuzzy
+#~ msgid "Added Korean translation (@dayeondev)"
+#~ msgstr "Добавлен перевод на эсперанто (@SeZuo)"
+
+#, fuzzy
+#~ msgid "Updated Brazilian translation (@alexandreafa)"
+#~ msgstr "Обновлен перевод на каталанский (@antoniofsm)"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.18.0"
+#~ msgstr "Изменения в gnome-pomodoro 0.17.0"
+
+#, fuzzy
+#~ msgid "Support for GNOME Shell 3.38 (@ignapk and @szpak)"
+#~ msgstr "Поддержка GNOME Shell 3.32 (@demokritos)"
+
+#, fuzzy
+#~ msgid "Added Norwegian translation (@arnotixe)"
+#~ msgstr "Добавлен перевод на эсперанто (@SeZuo)"
+
+#, fuzzy
+#~ msgid "Added Finnish translation (@iqqmuT)"
+#~ msgstr "Добавлен перевод на эсперанто (@SeZuo)"
+
+#, fuzzy
+#~ msgid "Updated Indonesian translation (@atriwidada)"
+#~ msgstr "Обновлен русский перевод (@tigertv)"
+
+#, fuzzy
+#~ msgid "Updated Chinese translation (@wffger)"
+#~ msgstr "Обновлен русский перевод (@tigertv)"
+
+#, fuzzy
+#~ msgid "Updated Russian translation (@rkaverin)"
+#~ msgstr "Обновлен русский перевод (@tigertv)"
+
+#, fuzzy
+#~ msgid "Updated French translation (@precondition)"
+#~ msgstr "Обновлен перевод на каталанский (@antoniofsm)"
+
+#~ msgid "Overview of changes in gnome-pomodoro 0.17.0"
+#~ msgstr "Изменения в gnome-pomodoro 0.17.0"
+
+#~ msgid "Support for GNOME Shell 3.36"
+#~ msgstr "Поддержка GNOME Shell 3.36"
+
+#~ msgid "Updated Catalan translation (@antoniofsm)"
+#~ msgstr "Обновлен перевод на каталанский (@antoniofsm)"
+
+#~ msgid "Overview of changes in gnome-pomodoro 0.16.0"
+#~ msgstr "Изменения в gnome-pomodoro 0.16.0"
+
+#~ msgid "Support for GNOME Shell 3.34 only"
+#~ msgstr "Поддержка GNOME Shell 3.34"
+
+#~ msgid "Added esperanto translation (@SeZuo)"
+#~ msgstr "Добавлен перевод на эсперанто (@SeZuo)"
+
+#~ msgid "Moved app-menu to main window"
+#~ msgstr "Меню приложения перенесено в главное окно"
+
+#~ msgid "Overview of changes in gnome-pomodoro 0.15.1"
+#~ msgstr "Изменения в gnome-pomodoro 0.15.1"
+
+#~ msgid "Minor code cleanups"
+#~ msgstr "Минорные правки кода"
+
+#~ msgid "Overview of changes in gnome-pomodoro 0.15.0"
+#~ msgstr "Изменения в gnome-pomodoro 0.15.0"
+
+#~ msgid "Minor code cleanups to support ES6 syntax"
+#~ msgstr "Минорные правки кода для поддержки синтаксиса ES6"
+
+#~ msgid "Support for GNOME Shell 3.32 (@demokritos)"
+#~ msgstr "Поддержка GNOME Shell 3.32 (@demokritos)"
+
+#~ msgid "Fix for build with vala 0.44.1 (@snizovtsev)"
+#~ msgstr "Фикс для компиляции на vala 0.44.1 (@snizovtsev)"
+
+#~ msgid "Updated German translation (@c7hm4r)"
+#~ msgstr "Обновлен перевод на немецкий (@c7hm4r)"
+
+#~ msgid "Fix for handle error recreating existing folder (@Rj7)"
+#~ msgstr ""
+#~ "Исправлена обработка ошибки при пересоздании существующей папки (@Rj7)"
+
+#~ msgid "Overview of changes in gnome-pomodoro 0.14.0"
+#~ msgstr "Изменения в gnome-pomodoro 0.14.0"
+
+#~ msgid "Support for GNOME Shell 3.28 and 3.30 (@aerostitch)"
+#~ msgstr "Поддержка GNOME Shell 3.28 и 3.30 (@aerostitch)"
+
+#~ msgid "Background blur under the dialog during breaks"
+#~ msgstr "Фоновое размытие экрана во время перерыва"
+
+#~ msgid "Updated German translation (@tsabsch)"
+#~ msgstr "Обновлен перевод на немецкий (@tsabsch)"
+
+#~ msgid "Updated Russian translation (@tigertv)"
+#~ msgstr "Обновлен русский перевод (@tigertv)"
+
+#~ msgid "Paused"
+#~ msgstr "На паузе"
+
+#~ msgid "Failed to enable extension"
+#~ msgstr "Ошибка при включении расширения"
+
+#~ msgid "Extension is out of date"
+#~ msgstr "Расширение устарело"
+
+#~ msgid "Upgrade"
+#~ msgstr "Обновить"
+
+#~ msgid "gnome-pomodoro"
+#~ msgstr "gnome-pomodoro"
+
+#~ msgid "_Stats"
+#~ msgstr "_Статистика"
+
+#~ msgid "It seems to be uninstalled"
+#~ msgstr "Расширение удалено"
+
+#, fuzzy
+#~ msgid "A new pomodoro is starting"
+#~ msgstr "Пауза завершена, начало нового помодоро!"
+
+#~ msgid "Hey, you're missing out on a break"
+#~ msgstr "Эй, вы пропускаете перерыв"
+
+#~ msgid "Could not run pomodoro"
+#~ msgstr "Не удалось запустить Помодоро"
+
+#~ msgid "Something went badly wrong..."
+#~ msgstr "Что-то пошло не так..."
+
+#~ msgid "Looks like gnome-pomodoro is not installed"
+#~ msgstr "Похоже, gnome-pomodoro не установлен"
+
+#~ msgid "Install"
+#~ msgstr "Установить"
+
+#~ msgid "Short break duration"
+#~ msgstr "Продолжительность короткого перерыва"
+
+#~ msgid "Shortcut to toggle the timer"
+#~ msgstr "Комбинации клавиш для переключения таймера"
+
+#~ msgid "Remind to take a break"
+#~ msgstr "Напоминания для перерывов"
+
+#~ msgid "Sounds"
+#~ msgstr "Звуки"
+
+#~ msgid "Select sound for start of break"
+#~ msgstr "Выберите звук для начала перерыва"
+
+#, fuzzy
+#~ msgid "Select sound for pomodoro start"
+#~ msgstr "Звуковой файл для проигрывания при старте или завершении помодоро"
+
+#~ msgid "Presence"
+#~ msgstr "Наличие"
+
+#~ msgid "Status during pomodoro"
+#~ msgstr "Статус во время помодоро"
+
+#~ msgid "Status during break"
+#~ msgstr "Статус во время перерыва"
+
+#, fuzzy
+#~ msgid ""
+#~ "System notifications including chat messages won't show up during "
+#~ "pomodoro."
+#~ msgstr ""
+#~ "Изменить онлайн статус и отключить уведомления, включая сообщения чата"
+
+#, fuzzy
+#~ msgid ""
+#~ "System notifications including chat messages won't show up during break."
+#~ msgstr ""
+#~ "Системные уведомления, включая сообщения чата не будут показываться "
+#~ "втечении перерыва"
+
+#, fuzzy
+#~ msgid "System notifications including chat messages won't show up."
+#~ msgstr "Системные уведомления, включая сообщения чата не будут показываться"
+
+#~ msgid ""
+#~ "The shortcut \"%s\" cannot be used because it will become impossible to "
+#~ "type using this key.\n"
+#~ "Please try with a key such as Control, Alt or Shift at the same time."
+#~ msgstr ""
+#~ "Сочетание клавиш \"%s\" не может быть использовано потому что невозможно "
+#~ "напечатать используя эту клавишу.\n"
+#~ "Пожалуйста попробуйте клавиши такие как CTRL, ALT или SHIFT при нажатии."
+
+#~ msgid "_No sound"
+#~ msgstr "_Без звука"
+
+#~ msgid "_Open"
+#~ msgstr "_Открыть"
+
+#~ msgid "All files"
+#~ msgstr "Все файлы"
+
+#~ msgid "Other…"
+#~ msgstr "Другая…"
+
+#~ msgid "None"
+#~ msgstr "нет"
+
+#~ msgid "Supported audio files"
+#~ msgstr "Поддерживаются аудио файлы"
+
+#~ msgid "Manage your time and tasks"
+#~ msgstr "Управление временем и задачами"
+
+#~ msgid "Reset Counts and Timer"
+#~ msgstr "Сбросить Счётчик и Таймер"
+
+#~ msgid "Click to reset session counts to zero"
+#~ msgstr "Нажмите, чтобы сбросить счётчик на ноль"
+
+#~ msgid "Away From Desk"
+#~ msgstr "Удаленный Режим"
+
+#~ msgid "Set optimal settings for doing paperwork"
+#~ msgstr "Настройки для работы с бумагами"
+
+#~ msgid "Control Presence Status"
+#~ msgstr "Управление Статусом Присутствия"
+
+#~ msgid "Show Dialog Messages"
+#~ msgstr "Показывать Уведомления"
+
+#~ msgid "Show a dialog message at the end of pomodoro session"
+#~ msgstr "Показывать уведомления в конце помодоро сессии"
+
+#~ msgid "Play a sound at start of pomodoro session"
+#~ msgstr "Проигрывать звук в начале помодоро сессии"
+
+#~ msgid "%d Completed Session"
+#~ msgid_plural "%d Completed Sessions"
+#~ msgstr[0] "%d Завершенная Сессия"
+#~ msgstr[1] "%d Завершенные Сессии"
+#~ msgstr[2] "%d Завершенных Сессий"
+
+#~ msgid "Pomodoro Finished!"
+#~ msgstr "Помодоро Завершен!"
+
+#~ msgid "Hide"
+#~ msgstr "Спрятать"
+
+#~ msgid "Show dialog"
+#~ msgstr "Показать сообщение"
+
+#~ msgid "Timer toggle key"
+#~ msgstr "Кнопка запуска таймера"
+
+#~ msgid "Time in seconds you are supposed to be working."
+#~ msgstr "Время в секундах отведенное для работы"
+
+#~ msgid "Time in seconds you are supposed to have a short break."
+#~ msgstr "Время в секундах отведенное для короткого перерыва"
+
+#~ msgid "Long pause duration"
+#~ msgstr "Длительонсть длинной паузы"
+
+#~ msgid "Time in seconds you are supposed to have a longer break."
+#~ msgstr "Время в секундах отведенное для большого перерыва"
+
+#~ msgid "Whether to show a notification dialog when pause starts."
+#~ msgstr "Следует ли показывать диалоговые сообщения во время паузы"
+
+#~ msgid "Disable flexible breaks"
+#~ msgstr "Отключить гибкие перерывы"
+
+#~ msgid "Whether you are not using a computer to work."
+#~ msgstr "Если компьютер не используется во время работы."
+
+#~ msgid "Change user presence status to busy"
+#~ msgstr "Изменить статус присутствия на занят"
+
+#~ msgid "Whether to change user and IM presence to busy."
+#~ msgstr "Следует ли изменять статус присутствия пользователя и IM на занят."
+
+#~ msgid "Whether to play a sound to notify of events."
+#~ msgstr "Следует ли проигрывать звук для уведомлений и событий."
+
+#~ msgid "Notification sound file"
+#~ msgstr "Файл звукового уведоления"
+
+#~ msgid "Restore timer state"
+#~ msgstr "Востанавливать состояние таймера"
+
+#~ msgid "Whether to restore state on startup."
+#~ msgstr "Следует ли востанавливать состояние при загрузке."
+
+#~ msgid "Number of completed sessions"
+#~ msgstr "Количество завершенных сессий"
+
+#~ msgid "Number of completed sessions since long break"
+#~ msgstr "Количество завершенных сессий после длительного перерыва"
+
+#~ msgid "Saved timer state"
+#~ msgstr "Сохраненное состояние таймера"
+
+#~ msgid "Time of saved state"
+#~ msgstr "Время сохраненного состояния"

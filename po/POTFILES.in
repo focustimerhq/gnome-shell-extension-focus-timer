@@ -1,0 +1,11 @@
+src/capabilities.js
+src/dbus.js
+src/extension.js
+src/indicator.js
+src/notifications.js
+src/presence.js
+src/screenOverlay.js
+src/screenShield.js
+src/timer.js
+src/utils.js
+

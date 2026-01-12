@@ -1,0 +1,842 @@
+# Catalan translation for gnome-pomodoro
+# Copyright (c) 2012 gnome-pomodoro contributors
+# This file is distributed under the same license as the gnome-pomodoro package.
+# Ecron <ecron_89@hotmail.com>, 2014.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-pomodoro\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-03-24 15:30+0100\n"
+"PO-Revision-Date: 2023-03-24 15:33+0100\n"
+"Last-Translator: Antonio Vicién Faure <antonio@antonio.cat>\n"
+"Language-Team: <>\n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"X-Generator: Poedit 3.1.1\n"
+
+#: data/org.gnome.Pomodoro.appdata.xml:8 data/org.gnome.Pomodoro.desktop.in:3
+#: data/resources/menus.ui:28 data/resources/window.ui:382
+#: plugins/actions/enums.vala:92 plugins/gnome/extension/indicator.js:77
+#: plugins/gnome/extension/indicator.js:729
+#: plugins/gnome/extension/notifications.js:281
+#: plugins/gnome/extension/timer.js:41 src/about-dialog.vala:31
+#: src/main.vala:50 src/notifications-capability.vala:129
+#: src/stats-page.vala:527 src/window.vala:44
+msgid "Pomodoro"
+msgstr "Pomodoro"
+
+#: data/org.gnome.Pomodoro.appdata.xml:9
+msgid "A time management utility for GNOME"
+msgstr "Una utilitat de gestió del temps per al GNOME"
+
+#: data/org.gnome.Pomodoro.appdata.xml:11
+msgid ""
+"A GNOME utility that helps managing time according to Pomodoro Technique. It "
+"intends to improve productivity and focus by taking short breaks after every "
+"25 minutes of work."
+msgstr ""
+"Una utilitat del GNOME que ajuda a gestionar el temps seguint la Tècnica "
+"Pomodoro. Pretén millorar la productivitat i la concentració fent petits "
+"descansos cada 25 minuts de treball."
+
+#: data/org.gnome.Pomodoro.appdata.xml:23
+msgid "Timer window"
+msgstr "Finestra del temporitzador"
+
+#: data/org.gnome.Pomodoro.appdata.xml:27
+#: plugins/gnome/extension/indicator.js:83 src/preferences-dialog.vala:800
+msgid "Preferences"
+msgstr "Preferències"
+
+#: data/org.gnome.Pomodoro.appdata.xml:31
+msgid "Indicator for GNOME Shell"
+msgstr "Indicador del GNOME Shell"
+
+#: data/org.gnome.Pomodoro.desktop.in:4 src/about-dialog.vala:32
+msgid "A simple time management utility"
+msgstr "Una senzilla utilitat de gestió del temps"
+
+#: data/org.gnome.Pomodoro.desktop.in:5
+msgid "timer;"
+msgstr "temporitzador;"
+
+#: data/resources/menus.ui:6 plugins/actions/enums.vala:188
+#: plugins/actions/resources/action-page.ui:155 src/application.vala:90
+msgid "Start"
+msgstr "Inicia"
+
+#: data/resources/menus.ui:11 data/resources/window.ui:180
+#: plugins/actions/enums.vala:197 plugins/actions/resources/action-page.ui:200
+#: src/application.vala:99
+msgid "Pause"
+msgstr "Pausa"
+
+#: data/resources/menus.ui:16 plugins/actions/enums.vala:200
+#: plugins/actions/resources/action-page.ui:215 src/application.vala:102
+msgid "Resume"
+msgstr "Continua"
+
+#: data/resources/menus.ui:21 data/resources/window.ui:207
+#: plugins/gnome/extension/indicator.js:221 src/application.vala:93
+#: src/window.vala:163 src/window.vala:176
+msgid "Stop"
+msgstr "Atura"
+
+#: data/resources/menus.ui:33 data/resources/window.ui:398
+#: plugins/actions/enums.vala:95 plugins/gnome/extension/indicator.js:78
+#: plugins/gnome/extension/timer.js:44 src/window.vala:45
+msgid "Short Break"
+msgstr "Descans curt"
+
+#: data/resources/menus.ui:38 data/resources/window.ui:414
+#: plugins/actions/enums.vala:98 plugins/gnome/extension/indicator.js:79
+#: plugins/gnome/extension/timer.js:47 src/window.vala:46
+msgid "Long Break"
+msgstr "Descans llarg"
+
+#: data/resources/menus.ui:45
+msgid "_Timer"
+msgstr "_Temporitzador"
+
+#: data/resources/menus.ui:49 data/resources/window.ui:309
+msgid "_Preferences"
+msgstr "_Preferències"
+
+#: data/resources/menus.ui:53 data/resources/window.ui:348
+msgid "_Quit"
+msgstr "_Surt"
+
+#: data/resources/preferences-keyboard-shortcut-page.ui:29
+msgid "Keyboard shortcut to toggle the timer. Enter new shortcut to change."
+msgstr ""
+"Drecera de teclat per a commutar el temporitzador. Teclegeu una nova drecera "
+"per canviar-la."
+
+#: data/resources/preferences-keyboard-shortcut-page.ui:83
+#: plugins/actions/enums.vala:206 plugins/actions/resources/action-page.ui:245
+msgid "Disable"
+msgstr "Deshabilita"
+
+#: data/resources/preferences-main-page.ui:45 data/resources/window.ui:247
+msgid "Timer"
+msgstr "Temporitzador"
+
+#: data/resources/preferences-main-page.ui:108
+msgid "Pomodoro duration"
+msgstr "Durada del pomodoro"
+
+#: data/resources/preferences-main-page.ui:160
+msgid "Break duration"
+msgstr "Durada del descans"
+
+#: data/resources/preferences-main-page.ui:213
+msgid "Long break duration"
+msgstr "Durada del descans llarg"
+
+#: data/resources/preferences-main-page.ui:245
+msgid "Pomodoros before a long break"
+msgstr "Pomodoros fins a un descans llarg"
+
+#: data/resources/preferences-main-page.ui:294
+msgid "Keyboard shortcut"
+msgstr "Drecera de teclat"
+
+#: data/resources/preferences-main-page.ui:357
+msgid "Notifications"
+msgstr "Notificacions"
+
+#: data/resources/preferences-main-page.ui:400
+msgid "Screen notifications"
+msgstr "Notificacions en pantalla"
+
+#: data/resources/preferences-main-page.ui:460
+msgid "Desktop"
+msgstr "Escriptori"
+
+#: data/resources/preferences-main-page.ui:509
+msgid "Wait for activity after a break"
+msgstr "Espera que hi hagi activitat després d'un descans"
+
+#: data/resources/preferences-main-page.ui:573
+msgid "Plugins…"
+msgstr "Connectors…"
+
+#: data/resources/preferences.ui:8 src/preferences-dialog.vala:804
+msgid "Plugins"
+msgstr "Connectors"
+
+#: data/resources/preferences.ui:47
+msgid "Back"
+msgstr "Enrere"
+
+#: data/resources/screen-notification.ui:89
+#: plugins/gnome/extension/dialogs.js:1002
+msgid "It's time to take a break"
+msgstr "És hora de fer un descans"
+
+#: data/resources/stats-view.ui:28
+msgid "Nothing to see yet"
+msgstr "Encara no hi res per mostrar"
+
+#: data/resources/stats-view.ui:45
+msgid "Complete a few sessions"
+msgstr "Completeu algunes sessions"
+
+#: data/resources/stats-view.ui:86 data/resources/stats-view.ui:343
+msgid "Day"
+msgstr "Dia"
+
+#: data/resources/stats-view.ui:109 data/resources/stats-view.ui:356
+msgid "Week"
+msgstr "Setmana"
+
+#: data/resources/stats-view.ui:133 data/resources/stats-view.ui:369
+msgid "Month"
+msgstr "Mes"
+
+#: data/resources/stats-view.ui:161
+msgid "Previous (Alt+Left)"
+msgstr "Anterior (Alt+Esquerra)"
+
+#: data/resources/stats-view.ui:188
+msgid "Next (Alt+Right)"
+msgstr "Següent (Alt+Dreta)"
+
+#: data/resources/stats-view.ui:216 data/resources/stats-view.ui:319
+#: src/stats-day-page.vala:62
+msgid "Today"
+msgstr "Avui"
+
+#: data/resources/window.ui:36 plugins/gnome/extension/indicator.js:214
+#: src/window.vala:180
+msgid "Start Pomodoro"
+msgstr "Inicia el Pomodoro"
+
+#: data/resources/window.ui:323
+msgid "_About"
+msgstr "_Quant a"
+
+#: plugins/actions/actions.vala:423
+msgid "Actions"
+msgstr "Accions"
+
+#: plugins/actions/actions.vala:427
+msgid "Action"
+msgstr "Acció"
+
+#: plugins/actions/actions.vala:452
+msgid "Custom actions…"
+msgstr "Accions personalitzades…"
+
+#: plugins/actions/enums.vala:191 plugins/actions/resources/action-page.ui:170
+msgid "Complete"
+msgstr "Completa"
+
+#: plugins/actions/enums.vala:194 plugins/actions/resources/action-page.ui:185
+msgid "Skip"
+msgstr "Omet"
+
+#: plugins/actions/enums.vala:203 plugins/actions/resources/action-page.ui:230
+msgid "Enable"
+msgstr "Habilita"
+
+#: plugins/actions/resources/action-page.ui:28
+msgid "Command"
+msgstr "Ordre"
+
+#: plugins/actions/resources/action-page.ui:41
+#: plugins/actions/resources/menus.ui:29
+msgid "Triggers"
+msgstr "Disparadors"
+
+#: plugins/actions/resources/action-page.ui:54
+msgid "Name"
+msgstr "Nom"
+
+#: plugins/actions/resources/action-page.ui:88
+msgid "_Pomodoro"
+msgstr "_Pomodoro"
+
+#: plugins/actions/resources/action-page.ui:102
+msgid "_Short Break"
+msgstr "Descans _curt"
+
+#: plugins/actions/resources/action-page.ui:116
+msgid "_Long Break"
+msgstr "Descans _llarg"
+
+#: plugins/actions/resources/action-page.ui:299
+msgid "Add"
+msgstr "Afegeix"
+
+#: plugins/actions/resources/menus.ui:6
+msgid "Remove"
+msgstr "Elimina"
+
+#: plugins/actions/resources/menus.ui:14
+msgid "State"
+msgstr "Estat"
+
+#: plugins/actions/resources/menus.ui:19
+msgid "State Duration"
+msgstr "Durada de l'estat"
+
+#: plugins/actions/resources/menus.ui:24
+msgid "Elapsed Time"
+msgstr "Temps transcorregut"
+
+#. this.stack.add_titled (this.timer_stack, "timer", _("Timer"));
+#: plugins/gnome/extension/indicator.js:84 src/window.vala:101
+msgid "Stats"
+msgstr "Estadístiques"
+
+#: plugins/gnome/extension/indicator.js:85
+msgid "Quit"
+msgstr "Surt"
+
+#: plugins/gnome/extension/indicator.js:123
+#: plugins/gnome/extension/notifications.js:128
+#: plugins/gnome/extension/notifications.js:549
+msgid "Pomodoro Timer"
+msgstr "Temporitzador del Pomodoro"
+
+#: plugins/gnome/extension/indicator.js:129
+msgid "Start Timer"
+msgstr "Inicia el temporitzador"
+
+#: plugins/gnome/extension/indicator.js:162
+msgid "Pause Timer"
+msgstr "Pausa el temporitzador"
+
+#: plugins/gnome/extension/indicator.js:174
+msgid "Stop Timer"
+msgstr "Atura el temporitzador"
+
+#: plugins/gnome/extension/indicator.js:211 src/window.vala:179
+msgid "Pause break"
+msgstr "Pausa el descans"
+
+#: plugins/gnome/extension/indicator.js:211 src/window.vala:166
+msgid "Pause Pomodoro"
+msgstr "Pausa el Pomodoro"
+
+#: plugins/gnome/extension/indicator.js:214
+#: src/notifications-capability.vala:141 src/notifications-capability.vala:162
+#: src/window.vala:167
+msgid "Take a break"
+msgstr "Feu un descans"
+
+#: plugins/gnome/extension/indicator.js:218 src/window.vala:175
+msgid "Resume break"
+msgstr "Reprendre"
+
+#: plugins/gnome/extension/indicator.js:218 src/window.vala:162
+msgid "Resume Pomodoro"
+msgstr "Reprendre"
+
+#: plugins/gnome/extension/notifications.js:89
+#, javascript-format
+msgid "%d minute remaining"
+msgid_plural "%d minutes remaining"
+msgstr[0] "Falta %d minut"
+msgstr[1] "Falten %d minuts"
+
+#: plugins/gnome/extension/notifications.js:97
+#, javascript-format
+msgid "%d second remaining"
+msgid_plural "%d seconds remaining"
+msgstr[0] "Queda %d segon"
+msgstr[1] "Queden %d segons"
+
+#: plugins/gnome/extension/notifications.js:289
+msgid "Pomodoro is about to end"
+msgstr "El Pomodoro està a punt de finalitzar"
+
+#: plugins/gnome/extension/notifications.js:295
+msgid "Take a long break"
+msgstr "Feu un llarg descans"
+
+#: plugins/gnome/extension/notifications.js:296
+msgid "Take a short break"
+msgstr "Feu un petit descans"
+
+#: plugins/gnome/extension/notifications.js:304
+msgid "Break is about to end"
+msgstr "La pausa és a punt de finalitzar"
+
+#: plugins/gnome/extension/notifications.js:308
+msgid "Break is over"
+msgstr "La pausa s'ha acabat"
+
+#. body = _("Get ready for Pomodoro");
+#: plugins/gnome/extension/notifications.js:336
+msgid "Get ready…"
+msgstr "Prepara't…"
+
+#: plugins/gnome/extension/notifications.js:362
+msgid "Skip Break"
+msgstr "Omet el descans"
+
+#: plugins/gnome/extension/notifications.js:365
+msgid "+1 Minute"
+msgstr "+1 minut"
+
+#: plugins/gnome/extension/notifications.js:557
+msgid "Report issue"
+msgstr "Notifica un problema"
+
+#: plugins/gnome/extension/timer.js:248
+#, javascript-format
+msgid "Failed to run <i>%s</i> service"
+msgstr "El servei <i>%s</i> ha fallat"
+
+#: plugins/gnome/gnome-plugin.vala:290
+msgid "Hide other notifications"
+msgstr "Amaga altres notificacions"
+
+#: plugins/sounds/resources/preferences-sound-page.ui:33
+msgid "Volume:"
+msgstr "Volum:"
+
+#: plugins/sounds/sounds-plugin.vala:35 plugins/sounds/sounds-plugin.vala:410
+msgid "Clock Ticking"
+msgstr "Tic-tac del rellotge"
+
+#: plugins/sounds/sounds-plugin.vala:36 plugins/sounds/sounds-plugin.vala:411
+msgid "Timer Ticking"
+msgstr "Tic-tac del temporitzador"
+
+#: plugins/sounds/sounds-plugin.vala:37 plugins/sounds/sounds-plugin.vala:412
+msgid "Woodland Birds"
+msgstr "Ocells de bosc"
+
+#: plugins/sounds/sounds-plugin.vala:38 plugins/sounds/sounds-plugin.vala:472
+#: plugins/sounds/sounds-plugin.vala:511
+msgid "Bell"
+msgstr "Campana"
+
+#: plugins/sounds/sounds-plugin.vala:39 plugins/sounds/sounds-plugin.vala:473
+#: plugins/sounds/sounds-plugin.vala:512
+msgid "Loud Bell"
+msgstr "Campana potent"
+
+#: plugins/sounds/sounds-plugin.vala:334
+msgid "Select Custom Sound"
+msgstr "Trieu un so personalitzat"
+
+#: plugins/sounds/sounds-plugin.vala:337
+msgid "_Cancel"
+msgstr "_Canceŀla"
+
+#: plugins/sounds/sounds-plugin.vala:339
+msgid "_Select"
+msgstr "_Seleccioneu un fitxer"
+
+#: plugins/sounds/sounds-plugin.vala:568
+msgid "Ticking Sound"
+msgstr "So de tic-tac"
+
+#: plugins/sounds/sounds-plugin.vala:572
+msgid "End of Break Sound"
+msgstr "So del final del descans"
+
+#: plugins/sounds/sounds-plugin.vala:576
+msgid "Start of Break Sound"
+msgstr "So de l'inici del descans"
+
+#: plugins/sounds/sounds-plugin.vala:604 src/preferences-dialog.vala:590
+msgid "Off"
+msgstr "Desactivat"
+
+#: plugins/sounds/sounds-plugin.vala:744
+msgid "Ticking sound"
+msgstr "So de tic-tac"
+
+#: plugins/sounds/sounds-plugin.vala:749
+msgid "Start of break sound"
+msgstr "So de l'inici del descans"
+
+#: plugins/sounds/sounds-plugin.vala:754
+msgid "End of break sound"
+msgstr "So del final del descans"
+
+#: src/about-dialog.vala:30
+msgid "About Pomodoro"
+msgstr "Quant a Pomodoro"
+
+#: src/about-dialog.vala:41
+msgid "translator-credits"
+msgstr "translator-credits"
+
+#: src/application.vala:87
+msgid "Start/Stop"
+msgstr "Inicia/Atura"
+
+#: src/application.vala:96
+msgid "Pause/Resume"
+msgstr "Pausa/Reprèn"
+
+#: src/application.vala:105
+msgid "Skip to a pomodoro or to a break"
+msgstr "Salta a un pomodoro o a un descans"
+
+#: src/application.vala:108
+msgid "Extend current pomodoro or break"
+msgstr "Ampliar el pomodoro actual o trencar"
+
+#: src/application.vala:111
+msgid "Reset current session"
+msgstr "Restableix la sessió actual"
+
+#: src/application.vala:114
+msgid "Run as background service"
+msgstr "Executa com a servei en segon terme"
+
+#: src/application.vala:117
+msgid "Show preferences"
+msgstr "Mostra les preferències"
+
+#: src/application.vala:120
+msgid "Quit application"
+msgstr "Surt de l'aplicació"
+
+#: src/application.vala:123
+msgid "Print version information and exit"
+msgstr "Imprimeix la informació de la versió i surt"
+
+#: src/notifications-capability.vala:130
+msgid "Focus on your task."
+msgstr "Centreu-vos en la feina."
+
+#: src/notifications-capability.vala:156
+#, c-format
+msgid "You have %d minute"
+msgid_plural "You have %d minutes"
+msgstr[0] "Teniu %d minut"
+msgstr[1] "Teniu %d minuts"
+
+#: src/notifications-capability.vala:158
+#, c-format
+msgid "You have %d second"
+msgid_plural "You have %d seconds"
+msgstr[0] "Teniu %d segon"
+msgstr[1] "Teniu %d segons"
+
+#: src/notifications-capability.vala:163
+msgid "Take a longer break"
+msgstr "Feu un descans llarg"
+
+#: src/notifications-capability.vala:179
+msgid "Lengthen it"
+msgstr "Allarga'l"
+
+#: src/notifications-capability.vala:184
+msgid "Shorten it"
+msgstr "Escurça'l"
+
+#: src/notifications-capability.vala:189
+msgid "Start pomodoro"
+msgstr "Inicia el Pomodoro"
+
+#: src/preferences-dialog.vala:158
+#, c-format
+msgid ""
+"Using \"%s\" as shortcut will interfere with typing. Try adding another key, "
+"such as Control, Alt or Shift."
+msgstr ""
+"Utilitzar \"%s\" com a drecera interferirà l'escriptura. Proveu d'afegir una "
+"altra tecla com Control, Alt o Majúscules."
+
+#: src/preferences-dialog.vala:808
+msgid "Keyboard Shortcut"
+msgstr "Drecera de teclat"
+
+#: src/presence.vala:80
+msgid "Available"
+msgstr "Disponible"
+
+#: src/presence.vala:83
+msgid "Busy"
+msgstr "Ocupat"
+
+#: src/presence.vala:86
+msgid "Idle"
+msgstr "Absent"
+
+#: src/presence.vala:89
+msgid "Invisible"
+msgstr "Invisible"
+
+#: src/stats-day-page.vala:66
+msgid "Yesterday"
+msgstr "Ahir"
+
+#: src/stats-page.vala:87
+#, c-format
+msgid "%d m"
+msgstr "%d m"
+
+#: src/stats-page.vala:93
+#, c-format
+msgid "%.0f h"
+msgstr "%.0f h"
+
+#: src/stats-page.vala:96
+#, c-format
+msgid "%.1f h"
+msgstr "%.1f h"
+
+#: src/stats-page.vala:573
+msgid "Break"
+msgstr "Descans"
+
+#: src/stats-week-page.vala:58
+msgid "This week"
+msgstr "Aquesta setmana"
+
+#: src/utils.vala:32
+#, c-format
+msgid "%d hour"
+msgid_plural "%d hours"
+msgstr[0] "%d hora"
+msgstr[1] "%d hores"
+
+#: src/utils.vala:41
+#, c-format
+msgid "%d minute"
+msgid_plural "%d minutes"
+msgstr[0] "%d minut"
+msgstr[1] "%d minuts"
+
+#~ msgid "Kamil Prusko"
+#~ msgstr "Kamil Prusko"
+
+#~ msgid "gnome-pomodoro"
+#~ msgstr "gnome-pomodoro"
+
+#~ msgid "_Stats"
+#~ msgstr "_Estadístiques"
+
+#~ msgid "Paused"
+#~ msgstr "En pausa"
+
+#~ msgid "Failed to enable extension"
+#~ msgstr "No s'ha pogut habilitar l'extensió"
+
+#~ msgid "It seems to be uninstalled"
+#~ msgstr "Sembla que ha estat desinstal·lada"
+
+#~ msgid "Extension is out of date"
+#~ msgstr "L'extensió està desactualitzada"
+
+#~ msgid "Upgrade"
+#~ msgstr "Actualitza"
+
+#~ msgid "A new pomodoro is starting"
+#~ msgstr "La pausa ha finalitzat, comença un nou pomodoro"
+
+#~ msgid "Hey, you're missing out on a break"
+#~ msgstr "No esteu aprofitant el descans"
+
+#~ msgid "Could not run pomodoro"
+#~ msgstr "Pomodoro no s'ha pogut executar"
+
+#~ msgid "Something went badly wrong..."
+#~ msgstr "Alguna cosa ha anat malament..."
+
+#~ msgid "Looks like gnome-pomodoro is not installed"
+#~ msgstr "Sembla que gnome-pomodoro no està instal·lat"
+
+#~ msgid "Install"
+#~ msgstr "Instaŀla"
+
+#~ msgid ""
+#~ "This program is free software: you can  redistribute it and/or modify it "
+#~ "under the terms of the GNU General Public License as published by the "
+#~ "Free Software Foundation; either version 3 of the License, or (at your "
+#~ "option) any later version."
+#~ msgstr ""
+#~ "Aquest programa és programari lliure: podeu modificar-lo o redistribuir-"
+#~ "lo atenent als termes de la GNU General Public License tal com va ser "
+#~ "publicada per la Free Software Foundation; sigui tant la versió 3 de la "
+#~ "Llicència com (a la vostra elecció) qualsevol versió posterior."
+
+#~ msgid "Short break duration"
+#~ msgstr "Durada de la pausa curta"
+
+#~ msgid "Shortcut to toggle the timer"
+#~ msgstr "Drecera per commutar el temporitzador"
+
+#~ msgid "Remind to take a break"
+#~ msgstr "Recorda'm fer una pausa"
+
+#~ msgid "Sounds"
+#~ msgstr "Sons"
+
+#~ msgid "Select sound for start of break"
+#~ msgstr "Trieu un so per iniciar un descans"
+
+#~ msgid "Select sound for pomodoro start"
+#~ msgstr "Trieu un so per iniciar un pomodoro"
+
+#~ msgid "Presence"
+#~ msgstr "Presència"
+
+#~ msgid "Postpone pomodoro when idle"
+#~ msgstr "Posposa el pomodoro en estar inactiu"
+
+#~ msgid "Status during pomodoro"
+#~ msgstr "Estat durant el pomodoro"
+
+#~ msgid "Status during break"
+#~ msgstr "Estat durant el descans"
+
+#~ msgid ""
+#~ "System notifications including chat messages won't show up during "
+#~ "pomodoro."
+#~ msgstr ""
+#~ "Durant el pomodoro no es mostraran les notificacions del sistema, "
+#~ "inclosos els missatges de xat."
+
+#~ msgid ""
+#~ "System notifications including chat messages won't show up during break."
+#~ msgstr ""
+#~ "Durant el descans no es mostraran les notificacions del sistema, inclosos "
+#~ "els missatges de xat."
+
+#~ msgid "System notifications including chat messages won't show up."
+#~ msgstr ""
+#~ "No es mostraran les notificacions del sistema, inclosos els missatges de "
+#~ "xat."
+
+#~ msgid "OK"
+#~ msgstr "D'acord"
+
+#~ msgid ""
+#~ "The shortcut \"%s\" cannot be used because it will become impossible to "
+#~ "type using this key.\n"
+#~ "Please try with a key such as Control, Alt or Shift at the same time."
+#~ msgstr ""
+#~ "No es pot usar la drecera \"%s\" perquè seria impossible escriure al fer "
+#~ "servir aquesta tecla.\n"
+#~ "Utilitzeu a més una tecla com Control, Alt o Majús."
+
+#~ msgid "_No sound"
+#~ msgstr "_Sense so"
+
+#~ msgid "_Open"
+#~ msgstr "_Obre"
+
+#~ msgid "All files"
+#~ msgstr "Tots els fitxers"
+
+#~ msgid "Other…"
+#~ msgstr "Altres…"
+
+#~ msgid "None"
+#~ msgstr "Cap"
+
+#~ msgid "Supported audio files"
+#~ msgstr "Fitxers d'àudio compatibles"
+
+#~ msgid "Manage your time and tasks"
+#~ msgstr "Gestioneu el vostre temps i tasques"
+
+#~ msgid "time;timer;tasks;manage;organize;"
+#~ msgstr "time;timer;tasks;manage;organize;"
+
+#~ msgid "Reset Counts and Timer"
+#~ msgstr "Reinicia el comptador i el temporitzador"
+
+#~ msgid "Click to reset session counts to zero"
+#~ msgstr "Premeu per reiniciar el comptador de la sessió a zero"
+
+#~ msgid "Away From Desk"
+#~ msgstr "Absent a l'escriptori"
+
+#~ msgid "Set optimal settings for doing paperwork"
+#~ msgstr "Paràmetres òptims per fer paperassa"
+
+#~ msgid "Control Presence Status"
+#~ msgstr "Control de l'estat de presència"
+
+#~ msgid "Show Dialog Messages"
+#~ msgstr "Mostra missatges de diàleg"
+
+#~ msgid "Show a dialog message at the end of pomodoro session"
+#~ msgstr "Mostra un missatge de diàleg al final de la sessió de pomodoro"
+
+#~ msgid "Play a sound at start of pomodoro session"
+#~ msgstr "Reprodueix un so al començar la sessió de pomodoro"
+
+#~ msgid "%d Completed Session"
+#~ msgid_plural "%d Completed Sessions"
+#~ msgstr[0] "%d sessió completada"
+#~ msgstr[1] "%d sessions completades"
+
+#~ msgid "Pomodoro Finished!"
+#~ msgstr "El pomodoro ha finalitzat!"
+
+#~ msgid "Hide"
+#~ msgstr "Oculta"
+
+#~ msgid "Show dialog"
+#~ msgstr "Mostra diàleg"
+
+#~ msgid "Timer toggle key"
+#~ msgstr "Tecla de commutació del temporitzador"
+
+#~ msgid "Time in seconds you are supposed to be working."
+#~ msgstr "Temps en segons que se suposa que són de treball."
+
+#~ msgid "Time in seconds you are supposed to have a short break."
+#~ msgstr "Temps en segons que se suposa que són de pausa curta."
+
+#~ msgid "Long pause duration"
+#~ msgstr "Durada de la pausa llarga"
+
+#~ msgid "Time in seconds you are supposed to have a longer break."
+#~ msgstr "Temps en segons que se suposa que són de pausa llarga."
+
+#~ msgid "Whether to show a notification dialog when pause starts."
+#~ msgstr "Si es mostra un diàleg de notificació quan s'inicia una pausa."
+
+#~ msgid "Disable flexible breaks"
+#~ msgstr "Inhabilita les pauses flexibles"
+
+#~ msgid "Whether you are not using a computer to work."
+#~ msgstr "Si no s'està fent servir un ordinador per treballar."
+
+#~ msgid "Change user presence status to busy"
+#~ msgstr "Canvia l'estat de presència de l'usuari a ocupat"
+
+#~ msgid "Whether to change user and IM presence to busy."
+#~ msgstr "Si es canvia l'usuari i la presència de MI a ocupat."
+
+#~ msgid "Whether to play a sound to notify of events."
+#~ msgstr "Si es reprodueix un so per notificar els esdeveniments."
+
+#~ msgid "Notification sound file"
+#~ msgstr "Fitxer de so de la notificació"
+
+#~ msgid "Restore timer state"
+#~ msgstr "Restaura l'estat del temporitzador"
+
+#~ msgid "Whether to restore state on startup."
+#~ msgstr "Si es restaura l'estat a l'inici."
+
+#~ msgid "Number of completed sessions"
+#~ msgstr "Nombre de sessions completades"
+
+#~ msgid "Number of completed sessions since long break"
+#~ msgstr "Nombre de sessions completades després d'una pausa llarga"
+
+#~ msgid "Saved timer state"
+#~ msgstr "Estat del temporitzador desat"
+
+#~ msgid "Time of saved state"
+#~ msgstr "Hora de l'estat desat"

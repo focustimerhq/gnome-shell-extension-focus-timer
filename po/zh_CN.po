@@ -1,0 +1,642 @@
+# Chinese (simplified) translation for gnome-pomodoro
+# Copyright (c) 2020 gnome-pomodoro contributors
+# This file is distributed under the same license as the gnome-pomodoro package.
+# Meng Zhuo <mengzhuo1203@gmail.com>, 2012.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-pomodoro 0.14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-03-24 15:30+0100\n"
+"PO-Revision-Date: 2023-03-26 11:47+0200\n"
+"Last-Translator: wffger <wffger@163.com>\n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.1.1\n"
+
+#: data/org.gnome.Pomodoro.appdata.xml:8 data/org.gnome.Pomodoro.desktop.in:3
+#: data/resources/menus.ui:28 data/resources/window.ui:382
+#: plugins/actions/enums.vala:92 plugins/gnome/extension/indicator.js:77
+#: plugins/gnome/extension/indicator.js:729
+#: plugins/gnome/extension/notifications.js:281
+#: plugins/gnome/extension/timer.js:41 src/about-dialog.vala:31
+#: src/main.vala:50 src/notifications-capability.vala:129
+#: src/stats-page.vala:527 src/window.vala:44
+msgid "Pomodoro"
+msgstr "番茄计时器"
+
+#: data/org.gnome.Pomodoro.appdata.xml:9
+msgid "A time management utility for GNOME"
+msgstr "一个GNOME下的时间管理工具"
+
+#: data/org.gnome.Pomodoro.appdata.xml:11
+msgid ""
+"A GNOME utility that helps managing time according to Pomodoro Technique. It "
+"intends to improve productivity and focus by taking short breaks after every "
+"25 minutes of work."
+msgstr ""
+"一个基于番茄时间管理法的GNOME应用，利用每工作25分钟后一个短暂停的方法，提高工"
+"作效率以及专注度。"
+
+#: data/org.gnome.Pomodoro.appdata.xml:23
+msgid "Timer window"
+msgstr "计时器窗口"
+
+#: data/org.gnome.Pomodoro.appdata.xml:27
+#: plugins/gnome/extension/indicator.js:83 src/preferences-dialog.vala:800
+msgid "Preferences"
+msgstr "首选项"
+
+#: data/org.gnome.Pomodoro.appdata.xml:31
+msgid "Indicator for GNOME Shell"
+msgstr "GNOME Shell下的程序指示器"
+
+#: data/org.gnome.Pomodoro.desktop.in:4 src/about-dialog.vala:32
+msgid "A simple time management utility"
+msgstr "一个简易的时间管理工具"
+
+#: data/org.gnome.Pomodoro.desktop.in:5
+msgid "timer;"
+msgstr "计时器;"
+
+#: data/resources/menus.ui:6 plugins/actions/enums.vala:188
+#: plugins/actions/resources/action-page.ui:155 src/application.vala:90
+msgid "Start"
+msgstr "开始"
+
+#: data/resources/menus.ui:11 data/resources/window.ui:180
+#: plugins/actions/enums.vala:197 plugins/actions/resources/action-page.ui:200
+#: src/application.vala:99
+msgid "Pause"
+msgstr "暂停"
+
+#: data/resources/menus.ui:16 plugins/actions/enums.vala:200
+#: plugins/actions/resources/action-page.ui:215 src/application.vala:102
+msgid "Resume"
+msgstr "继续"
+
+#: data/resources/menus.ui:21 data/resources/window.ui:207
+#: plugins/gnome/extension/indicator.js:221 src/application.vala:93
+#: src/window.vala:163 src/window.vala:176
+msgid "Stop"
+msgstr "停止"
+
+#: data/resources/menus.ui:33 data/resources/window.ui:398
+#: plugins/actions/enums.vala:95 plugins/gnome/extension/indicator.js:78
+#: plugins/gnome/extension/timer.js:44 src/window.vala:45
+msgid "Short Break"
+msgstr "短休息"
+
+#: data/resources/menus.ui:38 data/resources/window.ui:414
+#: plugins/actions/enums.vala:98 plugins/gnome/extension/indicator.js:79
+#: plugins/gnome/extension/timer.js:47 src/window.vala:46
+msgid "Long Break"
+msgstr "长休息"
+
+#: data/resources/menus.ui:45
+msgid "_Timer"
+msgstr "计时器(_T)"
+
+#: data/resources/menus.ui:49 data/resources/window.ui:309
+msgid "_Preferences"
+msgstr "首选项(_P)"
+
+#: data/resources/menus.ui:53 data/resources/window.ui:348
+msgid "_Quit"
+msgstr "退出(_Q)"
+
+#: data/resources/preferences-keyboard-shortcut-page.ui:29
+msgid "Keyboard shortcut to toggle the timer. Enter new shortcut to change."
+msgstr "用于计时器开关的键盘快捷键。输入新的快捷键进行改变。"
+
+#: data/resources/preferences-keyboard-shortcut-page.ui:83
+#: plugins/actions/enums.vala:206 plugins/actions/resources/action-page.ui:245
+msgid "Disable"
+msgstr "禁用"
+
+#: data/resources/preferences-main-page.ui:45 data/resources/window.ui:247
+msgid "Timer"
+msgstr "计时器"
+
+#: data/resources/preferences-main-page.ui:108
+msgid "Pomodoro duration"
+msgstr "番茄钟时长"
+
+#: data/resources/preferences-main-page.ui:160
+msgid "Break duration"
+msgstr "短休息时长"
+
+#: data/resources/preferences-main-page.ui:213
+msgid "Long break duration"
+msgstr "长休息时长"
+
+#: data/resources/preferences-main-page.ui:245
+msgid "Pomodoros before a long break"
+msgstr "进入长休息前的番茄钟数目"
+
+#: data/resources/preferences-main-page.ui:294
+msgid "Keyboard shortcut"
+msgstr "键盘快捷键"
+
+#: data/resources/preferences-main-page.ui:357
+msgid "Notifications"
+msgstr "通知"
+
+#: data/resources/preferences-main-page.ui:400
+msgid "Screen notifications"
+msgstr "全屏通知"
+
+#: data/resources/preferences-main-page.ui:460
+msgid "Desktop"
+msgstr "桌面"
+
+#: data/resources/preferences-main-page.ui:509
+msgid "Wait for activity after a break"
+msgstr "休息后等待"
+
+#: data/resources/preferences-main-page.ui:573
+msgid "Plugins…"
+msgstr "插件……"
+
+#: data/resources/preferences.ui:8 src/preferences-dialog.vala:804
+msgid "Plugins"
+msgstr "插件"
+
+#: data/resources/preferences.ui:47
+msgid "Back"
+msgstr "返回"
+
+#: data/resources/screen-notification.ui:89
+#: plugins/gnome/extension/dialogs.js:1002
+msgid "It's time to take a break"
+msgstr "是时候休息一下了"
+
+#: data/resources/stats-view.ui:28
+msgid "Nothing to see yet"
+msgstr "还没有统计信息"
+
+#: data/resources/stats-view.ui:45
+msgid "Complete a few sessions"
+msgstr "请先完成一些番茄钟"
+
+#: data/resources/stats-view.ui:86 data/resources/stats-view.ui:343
+msgid "Day"
+msgstr "天"
+
+#: data/resources/stats-view.ui:109 data/resources/stats-view.ui:356
+msgid "Week"
+msgstr "周"
+
+#: data/resources/stats-view.ui:133 data/resources/stats-view.ui:369
+msgid "Month"
+msgstr "月"
+
+#: data/resources/stats-view.ui:161
+msgid "Previous (Alt+Left)"
+msgstr "前一个（Alt+Left）"
+
+#: data/resources/stats-view.ui:188
+msgid "Next (Alt+Right)"
+msgstr "后一个（Alt+Right）"
+
+#: data/resources/stats-view.ui:216 data/resources/stats-view.ui:319
+#: src/stats-day-page.vala:62
+msgid "Today"
+msgstr "今天"
+
+#: data/resources/window.ui:36 plugins/gnome/extension/indicator.js:214
+#: src/window.vala:180
+msgid "Start Pomodoro"
+msgstr "启动番茄计时器"
+
+#: data/resources/window.ui:323
+msgid "_About"
+msgstr "关于(_A)"
+
+#: plugins/actions/actions.vala:423
+msgid "Actions"
+msgstr "动作集"
+
+#: plugins/actions/actions.vala:427
+msgid "Action"
+msgstr "动作"
+
+#: plugins/actions/actions.vala:452
+msgid "Custom actions…"
+msgstr "自定义动作……"
+
+#: plugins/actions/enums.vala:191 plugins/actions/resources/action-page.ui:170
+msgid "Complete"
+msgstr "完成"
+
+#: plugins/actions/enums.vala:194 plugins/actions/resources/action-page.ui:185
+msgid "Skip"
+msgstr "跳过"
+
+#: plugins/actions/enums.vala:203 plugins/actions/resources/action-page.ui:230
+msgid "Enable"
+msgstr "启用"
+
+#: plugins/actions/resources/action-page.ui:28
+msgid "Command"
+msgstr "命令"
+
+#: plugins/actions/resources/action-page.ui:41
+#: plugins/actions/resources/menus.ui:29
+msgid "Triggers"
+msgstr "触发"
+
+#: plugins/actions/resources/action-page.ui:54
+msgid "Name"
+msgstr "名称"
+
+#: plugins/actions/resources/action-page.ui:88
+msgid "_Pomodoro"
+msgstr "番茄计时器"
+
+#: plugins/actions/resources/action-page.ui:102
+msgid "_Short Break"
+msgstr "短休息"
+
+#: plugins/actions/resources/action-page.ui:116
+msgid "_Long Break"
+msgstr "长休息"
+
+#: plugins/actions/resources/action-page.ui:299
+msgid "Add"
+msgstr "添加"
+
+#: plugins/actions/resources/menus.ui:6
+msgid "Remove"
+msgstr "移除"
+
+#: plugins/actions/resources/menus.ui:14
+msgid "State"
+msgstr "状态"
+
+#: plugins/actions/resources/menus.ui:19
+msgid "State Duration"
+msgstr "状态时长"
+
+#: plugins/actions/resources/menus.ui:24
+msgid "Elapsed Time"
+msgstr "流逝时间"
+
+#. this.stack.add_titled (this.timer_stack, "timer", _("Timer"));
+#: plugins/gnome/extension/indicator.js:84 src/window.vala:101
+msgid "Stats"
+msgstr "统计"
+
+#: plugins/gnome/extension/indicator.js:85
+msgid "Quit"
+msgstr "退出"
+
+#: plugins/gnome/extension/indicator.js:123
+#: plugins/gnome/extension/notifications.js:128
+#: plugins/gnome/extension/notifications.js:549
+msgid "Pomodoro Timer"
+msgstr "番茄计时器"
+
+#: plugins/gnome/extension/indicator.js:129
+msgid "Start Timer"
+msgstr "开始计时"
+
+#: plugins/gnome/extension/indicator.js:162
+msgid "Pause Timer"
+msgstr "暂停计时"
+
+#: plugins/gnome/extension/indicator.js:174
+msgid "Stop Timer"
+msgstr "停止计时"
+
+#: plugins/gnome/extension/indicator.js:211 src/window.vala:179
+msgid "Pause break"
+msgstr "暂停"
+
+#: plugins/gnome/extension/indicator.js:211 src/window.vala:166
+msgid "Pause Pomodoro"
+msgstr "暂停"
+
+#: plugins/gnome/extension/indicator.js:214
+#: src/notifications-capability.vala:141 src/notifications-capability.vala:162
+#: src/window.vala:167
+msgid "Take a break"
+msgstr "休息一下吧"
+
+#: plugins/gnome/extension/indicator.js:218 src/window.vala:175
+msgid "Resume break"
+msgstr "继续"
+
+#: plugins/gnome/extension/indicator.js:218 src/window.vala:162
+msgid "Resume Pomodoro"
+msgstr "继续"
+
+#: plugins/gnome/extension/notifications.js:89
+#, javascript-format
+msgid "%d minute remaining"
+msgid_plural "%d minutes remaining"
+msgstr[0] "剩余 %d 分钟"
+
+#: plugins/gnome/extension/notifications.js:97
+#, javascript-format
+msgid "%d second remaining"
+msgid_plural "%d seconds remaining"
+msgstr[0] "剩余 %d 秒"
+
+#: plugins/gnome/extension/notifications.js:289
+msgid "Pomodoro is about to end"
+msgstr "番茄钟即将结束"
+
+#: plugins/gnome/extension/notifications.js:295
+msgid "Take a long break"
+msgstr "休息很久"
+
+#: plugins/gnome/extension/notifications.js:296
+msgid "Take a short break"
+msgstr "休息一下"
+
+#: plugins/gnome/extension/notifications.js:304
+msgid "Break is about to end"
+msgstr "休息即将结束"
+
+#: plugins/gnome/extension/notifications.js:308
+msgid "Break is over"
+msgstr "休息结束"
+
+#. body = _("Get ready for Pomodoro");
+#: plugins/gnome/extension/notifications.js:336
+msgid "Get ready…"
+msgstr "做好准备…"
+
+#: plugins/gnome/extension/notifications.js:362
+msgid "Skip Break"
+msgstr "跳过休息"
+
+#: plugins/gnome/extension/notifications.js:365
+msgid "+1 Minute"
+msgstr "+1 分钟"
+
+#: plugins/gnome/extension/notifications.js:557
+msgid "Report issue"
+msgstr "报告问题"
+
+#: plugins/gnome/extension/timer.js:248
+#, javascript-format
+msgid "Failed to run <i>%s</i> service"
+msgstr "未能运行 <i>%s</i> 服务"
+
+#: plugins/gnome/gnome-plugin.vala:290
+msgid "Hide other notifications"
+msgstr "隐藏其他通知"
+
+#: plugins/sounds/resources/preferences-sound-page.ui:33
+msgid "Volume:"
+msgstr "音量："
+
+#: plugins/sounds/sounds-plugin.vala:35 plugins/sounds/sounds-plugin.vala:410
+msgid "Clock Ticking"
+msgstr "时钟滴答"
+
+#: plugins/sounds/sounds-plugin.vala:36 plugins/sounds/sounds-plugin.vala:411
+msgid "Timer Ticking"
+msgstr "秒表滴答"
+
+#: plugins/sounds/sounds-plugin.vala:37 plugins/sounds/sounds-plugin.vala:412
+msgid "Woodland Birds"
+msgstr "林地鸟语"
+
+#: plugins/sounds/sounds-plugin.vala:38 plugins/sounds/sounds-plugin.vala:472
+#: plugins/sounds/sounds-plugin.vala:511
+msgid "Bell"
+msgstr "铃声"
+
+#: plugins/sounds/sounds-plugin.vala:39 plugins/sounds/sounds-plugin.vala:473
+#: plugins/sounds/sounds-plugin.vala:512
+msgid "Loud Bell"
+msgstr "响亮铃声"
+
+#: plugins/sounds/sounds-plugin.vala:334
+msgid "Select Custom Sound"
+msgstr "选择自定义声音"
+
+#: plugins/sounds/sounds-plugin.vala:337
+msgid "_Cancel"
+msgstr "取消(_C)"
+
+#: plugins/sounds/sounds-plugin.vala:339
+msgid "_Select"
+msgstr "选择(_S)"
+
+#: plugins/sounds/sounds-plugin.vala:568
+msgid "Ticking Sound"
+msgstr "滴答声"
+
+#: plugins/sounds/sounds-plugin.vala:572
+msgid "End of Break Sound"
+msgstr "结束休息的声音"
+
+#: plugins/sounds/sounds-plugin.vala:576
+msgid "Start of Break Sound"
+msgstr "开始休息的声音"
+
+#: plugins/sounds/sounds-plugin.vala:604 src/preferences-dialog.vala:590
+msgid "Off"
+msgstr "关闭"
+
+#: plugins/sounds/sounds-plugin.vala:744
+msgid "Ticking sound"
+msgstr "滴答声"
+
+#: plugins/sounds/sounds-plugin.vala:749
+msgid "Start of break sound"
+msgstr "开始休息的声音"
+
+#: plugins/sounds/sounds-plugin.vala:754
+msgid "End of break sound"
+msgstr "结束休息的声音"
+
+#: src/about-dialog.vala:30
+msgid "About Pomodoro"
+msgstr "关于番茄计时器"
+
+#: src/about-dialog.vala:41
+msgid "translator-credits"
+msgstr ""
+"Meng Zhuo <mengzhuo1203@gmail.com>, 2012\n"
+"soiamsoNG <83182235@qq.com>, 2017\n"
+"wffger <wffger@163.com>, 2020"
+
+#: src/application.vala:87
+msgid "Start/Stop"
+msgstr "开始/停止"
+
+#: src/application.vala:96
+msgid "Pause/Resume"
+msgstr "暂停/继续"
+
+#: src/application.vala:105
+msgid "Skip to a pomodoro or to a break"
+msgstr "跳到一个番茄钟或休息一下"
+
+#: src/application.vala:108
+msgid "Extend current pomodoro or break"
+msgstr "延长当前番茄钟或休息"
+
+#: src/application.vala:111
+msgid "Reset current session"
+msgstr "重置当前会话"
+
+#: src/application.vala:114
+msgid "Run as background service"
+msgstr "作为后台服务运行"
+
+#: src/application.vala:117
+msgid "Show preferences"
+msgstr "显示首选项"
+
+#: src/application.vala:120
+msgid "Quit application"
+msgstr "退出应用"
+
+#: src/application.vala:123
+msgid "Print version information and exit"
+msgstr "打印版本信息并退出"
+
+#: src/notifications-capability.vala:130
+msgid "Focus on your task."
+msgstr "请专注于您的任务。"
+
+#: src/notifications-capability.vala:156
+#, c-format
+msgid "You have %d minute"
+msgid_plural "You have %d minutes"
+msgstr[0] "您有%d分钟"
+
+#: src/notifications-capability.vala:158
+#, c-format
+msgid "You have %d second"
+msgid_plural "You have %d seconds"
+msgstr[0] "您有%d秒"
+
+#: src/notifications-capability.vala:163
+msgid "Take a longer break"
+msgstr "休息久一点吧"
+
+#: src/notifications-capability.vala:179
+msgid "Lengthen it"
+msgstr "延长"
+
+#: src/notifications-capability.vala:184
+msgid "Shorten it"
+msgstr "缩短"
+
+#: src/notifications-capability.vala:189
+msgid "Start pomodoro"
+msgstr "开始新番茄钟"
+
+#: src/preferences-dialog.vala:158
+#, c-format
+msgid ""
+"Using \"%s\" as shortcut will interfere with typing. Try adding another key, "
+"such as Control, Alt or Shift."
+msgstr ""
+"使用 %s 作为快捷键会影响正常键盘输入。请尝试添加修饰键，如Ctrl，Alt或Shift 。"
+
+#: src/preferences-dialog.vala:808
+msgid "Keyboard Shortcut"
+msgstr "键盘快捷键"
+
+#: src/presence.vala:80
+msgid "Available"
+msgstr "空闲"
+
+#: src/presence.vala:83
+msgid "Busy"
+msgstr "忙碌"
+
+#: src/presence.vala:86
+msgid "Idle"
+msgstr "发呆"
+
+#: src/presence.vala:89
+msgid "Invisible"
+msgstr "不可见"
+
+#: src/stats-day-page.vala:66
+msgid "Yesterday"
+msgstr "昨天"
+
+#: src/stats-page.vala:87
+#, c-format
+msgid "%d m"
+msgstr "%d 分钟"
+
+#: src/stats-page.vala:93
+#, c-format
+msgid "%.0f h"
+msgstr "%.0f 小时"
+
+#: src/stats-page.vala:96
+#, c-format
+msgid "%.1f h"
+msgstr "%.1f 小时"
+
+#: src/stats-page.vala:573
+msgid "Break"
+msgstr "休息"
+
+#: src/stats-week-page.vala:58
+msgid "This week"
+msgstr "今周"
+
+#: src/utils.vala:32
+#, c-format
+msgid "%d hour"
+msgid_plural "%d hours"
+msgstr[0] "%d 小时"
+
+#: src/utils.vala:41
+#, c-format
+msgid "%d minute"
+msgid_plural "%d minutes"
+msgstr[0] "%d 分钟"
+
+#~ msgid "Kamil Prusko"
+#~ msgstr "Kamil Prusko"
+
+#, fuzzy
+#~ msgid "Support for GNOME Shell 4.0"
+#~ msgstr "GNOME Shell下的程序指示器"
+
+#, fuzzy
+#~ msgid "Support for GNOME Shell 3.36"
+#~ msgstr "GNOME Shell下的程序指示器"
+
+#, fuzzy
+#~ msgid "Support for GNOME Shell 3.34 only"
+#~ msgstr "GNOME Shell下的程序指示器"
+
+#~ msgid "gnome-pomodoro"
+#~ msgstr "gnome-pomodoro"
+
+#~ msgid "_Stats"
+#~ msgstr "统计(_S)"
+
+#~ msgid "Paused"
+#~ msgstr "已暂停"
+
+#~ msgid "Failed to enable extension"
+#~ msgstr "未能开启扩展"
+
+#~ msgid "It seems to be uninstalled"
+#~ msgstr "似乎已卸载"
+
+#~ msgid "Extension is out of date"
+#~ msgstr "扩展已过期"
+
+#~ msgid "Upgrade"
+#~ msgstr "升级"

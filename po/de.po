@@ -1,0 +1,661 @@
+# German translation for gnome-pomodoro
+# Copyright (c) 2012 gnome-pomodoro contributors
+# This file is distributed under the same license as the gnome-pomodoro package.
+# Johannes Hermann <linuxrider@web.de>, 2013.
+# Tim Sabsch <tim@sabsch.com>, 2018.
+# Philipp Kiemle <l10n@prly.mozmail.com>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-pomodoro\n"
+"Report-Msgid-Bugs-To: https://github.com/gnome-pomodoro/gnome-pomodoro/issues\n"
+"POT-Creation-Date: 2023-03-24 15:30+0100\n"
+"PO-Revision-Date: 2025-04-16 13:24+0200\n"
+"Last-Translator: Philipp Kiemle <l10n@prly.mozmail.com>\n"
+"Language-Team: de_DE\n"
+"Language: de_DE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"X-Generator: Poedit 3.4.2\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+#: data/org.gnome.Pomodoro.appdata.xml:8 data/org.gnome.Pomodoro.desktop.in:3 data/resources/menus.ui:28
+#: data/resources/window.ui:382 plugins/actions/enums.vala:92 plugins/gnome/extension/indicator.js:77
+#: plugins/gnome/extension/indicator.js:729 plugins/gnome/extension/notifications.js:281 plugins/gnome/extension/timer.js:41
+#: src/about-dialog.vala:31 src/main.vala:50 src/notifications-capability.vala:129 src/stats-page.vala:527 src/window.vala:44
+msgid "Pomodoro"
+msgstr "Pomodoro"
+
+#: data/org.gnome.Pomodoro.appdata.xml:9
+msgid "A time management utility for GNOME"
+msgstr "Ein einfaches Werkzeug für Zeitmanagement unter GNOME"
+
+#: data/org.gnome.Pomodoro.appdata.xml:11
+msgid ""
+"A GNOME utility that helps managing time according to Pomodoro Technique. It intends to improve productivity and focus by "
+"taking short breaks after every 25 minutes of work."
+msgstr ""
+"Eine GNOME-Erweiterung, die Zeitmanagement nach der Pomodoro-Technik unterstützt. Mit fokussierten Arbeitseinheiten und "
+"kleinen Pausen nach 25 Minuten soll die Produktivität erhöht werden."
+
+#: data/org.gnome.Pomodoro.appdata.xml:23
+msgid "Timer window"
+msgstr "Timer-Fenster"
+
+#: data/org.gnome.Pomodoro.appdata.xml:27 plugins/gnome/extension/indicator.js:83 src/preferences-dialog.vala:800
+msgid "Preferences"
+msgstr "Einstellungen"
+
+#: data/org.gnome.Pomodoro.appdata.xml:31
+msgid "Indicator for GNOME Shell"
+msgstr "Indikator in der GNOME-Shell"
+
+#: data/org.gnome.Pomodoro.desktop.in:4 src/about-dialog.vala:32
+msgid "A simple time management utility"
+msgstr "Ein einfaches Werkzeug für Zeitmanagement"
+
+#: data/org.gnome.Pomodoro.desktop.in:5
+msgid "timer;"
+msgstr "Timer;"
+
+#: data/resources/menus.ui:6 plugins/actions/enums.vala:188 plugins/actions/resources/action-page.ui:155 src/application.vala:90
+msgid "Start"
+msgstr "Start"
+
+#: data/resources/menus.ui:11 data/resources/window.ui:180 plugins/actions/enums.vala:197
+#: plugins/actions/resources/action-page.ui:200 src/application.vala:99
+msgid "Pause"
+msgstr "Pause"
+
+#: data/resources/menus.ui:16 plugins/actions/enums.vala:200 plugins/actions/resources/action-page.ui:215
+#: src/application.vala:102
+msgid "Resume"
+msgstr "Fortfahren"
+
+#: data/resources/menus.ui:21 data/resources/window.ui:207 plugins/gnome/extension/indicator.js:221 src/application.vala:93
+#: src/window.vala:163 src/window.vala:176
+msgid "Stop"
+msgstr "Stop"
+
+#: data/resources/menus.ui:33 data/resources/window.ui:398 plugins/actions/enums.vala:95 plugins/gnome/extension/indicator.js:78
+#: plugins/gnome/extension/timer.js:44 src/window.vala:45
+msgid "Short Break"
+msgstr "Kurze Pause"
+
+#: data/resources/menus.ui:38 data/resources/window.ui:414 plugins/actions/enums.vala:98 plugins/gnome/extension/indicator.js:79
+#: plugins/gnome/extension/timer.js:47 src/window.vala:46
+msgid "Long Break"
+msgstr "Lange Pause"
+
+#: data/resources/menus.ui:45
+msgid "_Timer"
+msgstr "_Timer"
+
+#: data/resources/menus.ui:49 data/resources/window.ui:309
+msgid "_Preferences"
+msgstr "_Einstellungen"
+
+#: data/resources/menus.ui:53 data/resources/window.ui:348
+msgid "_Quit"
+msgstr "_Beenden"
+
+#: data/resources/preferences-keyboard-shortcut-page.ui:29
+msgid "Keyboard shortcut to toggle the timer. Enter new shortcut to change."
+msgstr "Tastenkombination, um den Timer ein-/auszuschalten. Zum Ändern neu eingeben."
+
+#: data/resources/preferences-keyboard-shortcut-page.ui:83 plugins/actions/enums.vala:206
+#: plugins/actions/resources/action-page.ui:245
+msgid "Disable"
+msgstr "Deaktivieren"
+
+#: data/resources/preferences-main-page.ui:45 data/resources/window.ui:247
+msgid "Timer"
+msgstr "Timer"
+
+#: data/resources/preferences-main-page.ui:108
+msgid "Pomodoro duration"
+msgstr "Dauer einer Pomodoro"
+
+#: data/resources/preferences-main-page.ui:160
+msgid "Break duration"
+msgstr "Dauer einer Pause"
+
+#: data/resources/preferences-main-page.ui:213
+msgid "Long break duration"
+msgstr "Dauer einer langen Pause"
+
+#: data/resources/preferences-main-page.ui:245
+msgid "Pomodoros before a long break"
+msgstr "Pomodoros bis zu einer langen Pause"
+
+#: data/resources/preferences-main-page.ui:294
+msgid "Keyboard shortcut"
+msgstr "Tastenkürzel"
+
+#: data/resources/preferences-main-page.ui:357
+msgid "Notifications"
+msgstr "Benachrichtigungen"
+
+#: data/resources/preferences-main-page.ui:400
+msgid "Screen notifications"
+msgstr "Bildschirmbenachrichtigungen"
+
+#: data/resources/preferences-main-page.ui:460
+msgid "Desktop"
+msgstr "Arbeitsumgebung"
+
+#: data/resources/preferences-main-page.ui:509
+msgid "Wait for activity after a break"
+msgstr "Nach einer Pause auf Aktivität warten"
+
+#: data/resources/preferences-main-page.ui:573
+msgid "Plugins…"
+msgstr "Erweiterungen …"
+
+#: data/resources/preferences.ui:8 src/preferences-dialog.vala:804
+msgid "Plugins"
+msgstr "Erweiterungen"
+
+#: data/resources/preferences.ui:47
+msgid "Back"
+msgstr "Zurück"
+
+#: data/resources/screen-notification.ui:89 plugins/gnome/extension/dialogs.js:1002
+msgid "It's time to take a break"
+msgstr "Es ist Zeit, eine Pause einzulegen"
+
+#: data/resources/stats-view.ui:28
+msgid "Nothing to see yet"
+msgstr "Es gibt noch nichts zu sehen"
+
+#: data/resources/stats-view.ui:45
+msgid "Complete a few sessions"
+msgstr "Absolvieren Sie ein paar Sitzungen"
+
+#: data/resources/stats-view.ui:86 data/resources/stats-view.ui:343
+msgid "Day"
+msgstr "Tag"
+
+#: data/resources/stats-view.ui:109 data/resources/stats-view.ui:356
+msgid "Week"
+msgstr "Woche"
+
+#: data/resources/stats-view.ui:133 data/resources/stats-view.ui:369
+msgid "Month"
+msgstr "Monat"
+
+#: data/resources/stats-view.ui:161
+msgid "Previous (Alt+Left)"
+msgstr "Zurück (Alt+Links)"
+
+#: data/resources/stats-view.ui:188
+msgid "Next (Alt+Right)"
+msgstr "Vor (Alt+Rechts)"
+
+#: data/resources/stats-view.ui:216 data/resources/stats-view.ui:319 src/stats-day-page.vala:62
+msgid "Today"
+msgstr "Heute"
+
+#: data/resources/window.ui:36 plugins/gnome/extension/indicator.js:214 src/window.vala:180
+msgid "Start Pomodoro"
+msgstr "Pomodoro starten"
+
+#: data/resources/window.ui:323
+msgid "_About"
+msgstr "_Info"
+
+#: plugins/actions/actions.vala:423
+msgid "Actions"
+msgstr "Aktionen"
+
+#: plugins/actions/actions.vala:427
+msgid "Action"
+msgstr "Aktion"
+
+#: plugins/actions/actions.vala:452
+msgid "Custom actions…"
+msgstr "Benutzerdefinierte Aktionen …"
+
+#: plugins/actions/enums.vala:191 plugins/actions/resources/action-page.ui:170
+msgid "Complete"
+msgstr "Vollständig"
+
+#: plugins/actions/enums.vala:194 plugins/actions/resources/action-page.ui:185
+msgid "Skip"
+msgstr "Überspringen"
+
+#: plugins/actions/enums.vala:203 plugins/actions/resources/action-page.ui:230
+msgid "Enable"
+msgstr "Aktivieren"
+
+#: plugins/actions/resources/action-page.ui:28
+msgid "Command"
+msgstr "Befehl"
+
+#: plugins/actions/resources/action-page.ui:41 plugins/actions/resources/menus.ui:29
+msgid "Triggers"
+msgstr "Auslöser"
+
+#: plugins/actions/resources/action-page.ui:54
+msgid "Name"
+msgstr "Name"
+
+#: plugins/actions/resources/action-page.ui:88
+msgid "_Pomodoro"
+msgstr "_Pomodoro"
+
+#: plugins/actions/resources/action-page.ui:102
+msgid "_Short Break"
+msgstr "_Kurze Pause"
+
+#: plugins/actions/resources/action-page.ui:116
+msgid "_Long Break"
+msgstr "_Lange Pause"
+
+#: plugins/actions/resources/action-page.ui:299
+msgid "Add"
+msgstr "Hinzufügen"
+
+#: plugins/actions/resources/menus.ui:6
+msgid "Remove"
+msgstr "Entfernen"
+
+#: plugins/actions/resources/menus.ui:14
+msgid "State"
+msgstr "Status"
+
+#: plugins/actions/resources/menus.ui:19
+msgid "State Duration"
+msgstr "Statuslänge"
+
+#: plugins/actions/resources/menus.ui:24
+msgid "Elapsed Time"
+msgstr "Vergangene Zeit"
+
+#. this.stack.add_titled (this.timer_stack, "timer", _("Timer"));
+#: plugins/gnome/extension/indicator.js:84 src/window.vala:101
+msgid "Stats"
+msgstr "Statistiken"
+
+#: plugins/gnome/extension/indicator.js:85
+msgid "Quit"
+msgstr "Beenden"
+
+#: plugins/gnome/extension/indicator.js:123 plugins/gnome/extension/notifications.js:128
+#: plugins/gnome/extension/notifications.js:549
+msgid "Pomodoro Timer"
+msgstr "Pomodoro-Timer"
+
+#: plugins/gnome/extension/indicator.js:129
+msgid "Start Timer"
+msgstr "Pomodoro starten"
+
+#: plugins/gnome/extension/indicator.js:162
+msgid "Pause Timer"
+msgstr "Timer unterbrechen"
+
+#: plugins/gnome/extension/indicator.js:174
+msgid "Stop Timer"
+msgstr "Timer anhalten"
+
+#: plugins/gnome/extension/indicator.js:211 src/window.vala:179
+msgid "Pause break"
+msgstr "Pause unterbrechen"
+
+#: plugins/gnome/extension/indicator.js:211 src/window.vala:166
+msgid "Pause Pomodoro"
+msgstr "Pomodoro  unterbrechen"
+
+#: plugins/gnome/extension/indicator.js:214 src/notifications-capability.vala:141 src/notifications-capability.vala:162
+#: src/window.vala:167
+msgid "Take a break"
+msgstr "Machen Sie eine Pause"
+
+#: plugins/gnome/extension/indicator.js:218 src/window.vala:175
+msgid "Resume break"
+msgstr "Pause fortsetzen"
+
+#: plugins/gnome/extension/indicator.js:218 src/window.vala:162
+msgid "Resume Pomodoro"
+msgstr "Pomodoro fortsetzen"
+
+#: plugins/gnome/extension/notifications.js:89
+#, javascript-format
+msgid "%d minute remaining"
+msgid_plural "%d minutes remaining"
+msgstr[0] "%d Minute verbleibend"
+msgstr[1] "%d Minuten verbleibend"
+
+#: plugins/gnome/extension/notifications.js:97
+#, javascript-format
+msgid "%d second remaining"
+msgid_plural "%d seconds remaining"
+msgstr[0] "%d Sekunde verbleibend"
+msgstr[1] "%d Sekunden verbleibend"
+
+#: plugins/gnome/extension/notifications.js:289
+msgid "Pomodoro is about to end"
+msgstr "Pomodoro endet bald"
+
+#: plugins/gnome/extension/notifications.js:295
+msgid "Take a long break"
+msgstr "Machen Sie eine lange Pause"
+
+#: plugins/gnome/extension/notifications.js:296
+msgid "Take a short break"
+msgstr "Machen Sie eine kurze Pause"
+
+#: plugins/gnome/extension/notifications.js:304
+msgid "Break is about to end"
+msgstr "Die Pause endet bald"
+
+#: plugins/gnome/extension/notifications.js:308
+msgid "Break is over"
+msgstr "Die Pause ist vorüber"
+
+#. body = _("Get ready for Pomodoro");
+#: plugins/gnome/extension/notifications.js:336
+msgid "Get ready…"
+msgstr "Machen Sie sich bereit …"
+
+#: plugins/gnome/extension/notifications.js:362
+msgid "Skip Break"
+msgstr "Pause überspringen"
+
+#: plugins/gnome/extension/notifications.js:365
+msgid "+1 Minute"
+msgstr "+1 Minute"
+
+#: plugins/gnome/extension/notifications.js:557
+msgid "Report issue"
+msgstr "Problem melden"
+
+#: plugins/gnome/extension/timer.js:248
+#, javascript-format
+msgid "Failed to run <i>%s</i> service"
+msgstr "Service <i>%s</i> konnte nicht ausgeführt werden"
+
+#: plugins/gnome/gnome-plugin.vala:290
+msgid "Hide other notifications"
+msgstr "Andere Benachrichtigungen verbergen"
+
+#: plugins/sounds/resources/preferences-sound-page.ui:33
+msgid "Volume:"
+msgstr "Lautstärke:"
+
+#: plugins/sounds/sounds-plugin.vala:35 plugins/sounds/sounds-plugin.vala:410
+msgid "Clock Ticking"
+msgstr "Uhrticken"
+
+#: plugins/sounds/sounds-plugin.vala:36 plugins/sounds/sounds-plugin.vala:411
+msgid "Timer Ticking"
+msgstr "Stoppuhrticken"
+
+#: plugins/sounds/sounds-plugin.vala:37 plugins/sounds/sounds-plugin.vala:412
+msgid "Woodland Birds"
+msgstr "Vögel"
+
+#: plugins/sounds/sounds-plugin.vala:38 plugins/sounds/sounds-plugin.vala:472 plugins/sounds/sounds-plugin.vala:511
+msgid "Bell"
+msgstr "Glocke"
+
+#: plugins/sounds/sounds-plugin.vala:39 plugins/sounds/sounds-plugin.vala:473 plugins/sounds/sounds-plugin.vala:512
+msgid "Loud Bell"
+msgstr "Laute Glocke"
+
+#: plugins/sounds/sounds-plugin.vala:334
+msgid "Select Custom Sound"
+msgstr "Benutzerdefinierten Klang wählen"
+
+#: plugins/sounds/sounds-plugin.vala:337
+msgid "_Cancel"
+msgstr "_Abbrechen"
+
+#: plugins/sounds/sounds-plugin.vala:339
+msgid "_Select"
+msgstr "Au_swählen"
+
+#: plugins/sounds/sounds-plugin.vala:568
+msgid "Ticking Sound"
+msgstr "Ticken"
+
+#: plugins/sounds/sounds-plugin.vala:572
+msgid "End of Break Sound"
+msgstr "Klang für Pausenende"
+
+#: plugins/sounds/sounds-plugin.vala:576
+msgid "Start of Break Sound"
+msgstr "Klang für Pausenanfang"
+
+#: plugins/sounds/sounds-plugin.vala:604 src/preferences-dialog.vala:590
+msgid "Off"
+msgstr "Aus"
+
+#: plugins/sounds/sounds-plugin.vala:744
+msgid "Ticking sound"
+msgstr "Ticken"
+
+#: plugins/sounds/sounds-plugin.vala:749
+msgid "Start of break sound"
+msgstr "Klang für Pausenanfang"
+
+#: plugins/sounds/sounds-plugin.vala:754
+msgid "End of break sound"
+msgstr "Klang für Pausenende"
+
+#: src/about-dialog.vala:30
+msgid "About Pomodoro"
+msgstr "Info zu Pomodoro"
+
+#: src/about-dialog.vala:41
+msgid "translator-credits"
+msgstr ""
+"Jonatan Zeidler <jonatan_zeidler@gmx.de>\n"
+"Johannes Hermann <linuxrider@web.de>\n"
+"Tim Sabsch <tim@sabsch.com>\n"
+"Philipp Kiemle <l10n@prly.mozmail.com>"
+
+#: src/application.vala:87
+msgid "Start/Stop"
+msgstr "Start/Stopp"
+
+#: src/application.vala:96
+msgid "Pause/Resume"
+msgstr "Pause/Weiter"
+
+#: src/application.vala:105
+msgid "Skip to a pomodoro or to a break"
+msgstr "Springen Sie zu einem Pomodoro oder zu einer Pause"
+
+#: src/application.vala:108
+msgid "Extend current pomodoro or break"
+msgstr "Aktuelle(s) Pomodoro oder Pause verlängern"
+
+#: src/application.vala:111
+msgid "Reset current session"
+msgstr "Aktuelle Sitzung zurücksetzen"
+
+#: src/application.vala:114
+msgid "Run as background service"
+msgstr "Als Hintergrunddienst ausführen"
+
+#: src/application.vala:117
+msgid "Show preferences"
+msgstr "Einstellungen anzeigen"
+
+#: src/application.vala:120
+msgid "Quit application"
+msgstr "Anwendung beenden"
+
+#: src/application.vala:123
+msgid "Print version information and exit"
+msgstr "Versionsinformationen anzeigen und beenden"
+
+#: src/notifications-capability.vala:130
+msgid "Focus on your task."
+msgstr "Konzentrieren Sie sich auf Ihre Arbeit."
+
+#: src/notifications-capability.vala:156
+#, c-format
+msgid "You have %d minute"
+msgid_plural "You have %d minutes"
+msgstr[0] "Sie haben %d Minute"
+msgstr[1] "Sie haben %d Minuten"
+
+#: src/notifications-capability.vala:158
+#, c-format
+msgid "You have %d second"
+msgid_plural "You have %d seconds"
+msgstr[0] "Sie haben %d Sekunde"
+msgstr[1] "Sie haben %d Sekunden"
+
+#: src/notifications-capability.vala:163
+msgid "Take a longer break"
+msgstr "Machen Sie eine längere Pause"
+
+#: src/notifications-capability.vala:179
+msgid "Lengthen it"
+msgstr "Verlängern"
+
+#: src/notifications-capability.vala:184
+msgid "Shorten it"
+msgstr "Verkürzen"
+
+#: src/notifications-capability.vala:189
+msgid "Start pomodoro"
+msgstr "Pomodoro beginnen"
+
+#: src/preferences-dialog.vala:158
+#, c-format
+msgid "Using \"%s\" as shortcut will interfere with typing. Try adding another key, such as Control, Alt or Shift."
+msgstr ""
+"Das Tastenkürzel \"%s\" wird beim Tippen stören. Versuchen Sie, eine andere Taste hinzuzufügen, z. B. Strg, Alt oder Umschalt."
+
+#: src/preferences-dialog.vala:808
+msgid "Keyboard Shortcut"
+msgstr "Tastenkürzel"
+
+#: src/presence.vala:80
+msgid "Available"
+msgstr "Verfügbar"
+
+#: src/presence.vala:83
+msgid "Busy"
+msgstr "Beschäftigt"
+
+#: src/presence.vala:86
+msgid "Idle"
+msgstr "Inaktiv"
+
+#: src/presence.vala:89
+msgid "Invisible"
+msgstr "Unsichtbar"
+
+#: src/stats-day-page.vala:66
+msgid "Yesterday"
+msgstr "Gestern"
+
+#: src/stats-page.vala:87
+#, c-format
+msgid "%d m"
+msgstr "%d m"
+
+#: src/stats-page.vala:93
+#, c-format
+msgid "%.0f h"
+msgstr "%.0f h"
+
+#: src/stats-page.vala:96
+#, c-format
+msgid "%.1f h"
+msgstr "%.1f h"
+
+#: src/stats-page.vala:573
+msgid "Break"
+msgstr "Pause"
+
+#: src/stats-week-page.vala:58
+msgid "This week"
+msgstr "Diese Woche"
+
+#: src/utils.vala:32
+#, c-format
+msgid "%d hour"
+msgid_plural "%d hours"
+msgstr[0] "%d Stunde"
+msgstr[1] "%d Stunden"
+
+#: src/utils.vala:41
+#, c-format
+msgid "%d minute"
+msgid_plural "%d minutes"
+msgstr[0] "%d Minute"
+msgstr[1] "%d Minuten"
+
+#~ msgid "Kamil Prusko"
+#~ msgstr "Kamil Prusko"
+
+#~ msgid "gnome-pomodoro"
+#~ msgstr "gnome-pomodoro"
+
+#~ msgid "_Stats"
+#~ msgstr "_Statistiken"
+
+#~ msgid "Paused"
+#~ msgstr "Angehalten"
+
+#~ msgid "Failed to enable extension"
+#~ msgstr "Konnte die Erweiterung nicht aktivieren"
+
+#~ msgid "It seems to be uninstalled"
+#~ msgstr "Die Erweiterung scheint deinstalliert zu sein"
+
+#~ msgid "Extension is out of date"
+#~ msgstr "Erweiterung ist nicht aktuell"
+
+#~ msgid "Upgrade"
+#~ msgstr "Aktualisierung"
+
+#~ msgid "Remind to take a break"
+#~ msgstr "An Pausen erinnern"
+
+#~ msgid "Extras"
+#~ msgstr "Extras"
+
+#~ msgid "Add Sound"
+#~ msgstr "Klänge hinzufügen"
+
+#~ msgid "Remove Sound"
+#~ msgstr "Keine Klänge"
+
+#~ msgid "00"
+#~ msgstr "00"
+
+#~ msgid ":"
+#~ msgstr ":"
+
+#~ msgid "%d new message"
+#~ msgid_plural "%d new messages"
+#~ msgstr[0] "%d neue Nachricht"
+#~ msgstr[1] "%d neue Nachrichten"
+
+#~ msgid "Take a break!"
+#~ msgstr "Mache eine Pause!"
+
+#~ msgid "You have %d minute until next pomodoro."
+#~ msgid_plural "You have %d minutes until next pomodoro."
+#~ msgstr[0] "Du hast noch %d Minute bis zur nächsten Pomodoro"
+#~ msgstr[1] "Du hast noch %d Minuten bis zur nächsten Pomodoro"
+
+#~ msgid "You have %d second until next pomodoro."
+#~ msgid_plural "You have %d seconds until next pomodoro."
+#~ msgstr[0] "Du hast noch %d Sekunde bis zur nächsten Pomodoro"
+#~ msgstr[1] "Du hast noch %d Sekunden bis zur nächsten Pomodoro"
+
+#~ msgid "Hey!"
+#~ msgstr "Hallo!"
+
+#~ msgid "You're missing out on a break"
+#~ msgstr "Du hast die Pause verpasst"
