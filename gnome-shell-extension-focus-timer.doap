@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Project xmlns:rdf="https://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="https://www.w3.org/2000/01/rdf-schema#"
+         xmlns:foaf="https://xmlns.com/foaf/0.1/"
+         xmlns:gnome="https://api.gnome.org/doap-extensions#"
+         xmlns="http://usefulinc.com/ns/doap#">
+
+  <name xml:lang="en">Focus Timer GNOME Shell Extension</name>
+  <shortdesc xml:lang="en">GNOME Shell extension for Focus Timer</shortdesc>
+  <homepage rdf:resource="https://github.com/focustimerhq/gnome-shell-extension-focus-timer" />
+  <license rdf:resource="https://www.gnu.org/licenses/gpl-3.0.html" />
+  <category rdf:resource="https://api.gnome.org/doap-extensions#desktop" />
+
+  <programming-language>JavaScript</programming-language>
+
+  <repository>
+    <GitRepository>
+      <browse rdf:resource="https://github.com/focustimerhq/gnome-shell-extension-focus-timer" />
+      <location rdf:resource="git@github.com:focustimerhq/gnome-shell-extension-focus-timer.git" />
+    </GitRepository>
+  </repository>
+
+  <maintainer>
+    <foaf:Person>
+      <foaf:name>Kamil Prusko</foaf:name>
+      <foaf:mbox rdf:resource="mailto:kamilprusko@gmail.com" />
+    </foaf:Person>
+  </maintainer>
+
+</Project>
