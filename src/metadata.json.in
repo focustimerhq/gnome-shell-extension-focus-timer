@@ -1,10 +1,21 @@
 {
   "uuid": "@EXTENSION_UUID@",
-  "name": "Pomodoro",
-  "description": "Desktop integration for Pomodoro application.",
-  "shell-version": ["46", "47", "48", "49"],
-  "session-modes": ["user", "unlock-dialog"],
+  "name": "Focus Timer",
+  "description": "Desktop integration for the Focus Timer app.",
+  "shell-version": [
+    "48",
+    "49",
+    "50"
+  ],
+  "session-modes": [
+    "user",
+    "unlock-dialog"
+  ],
+  "settings-schema": "org.gnome.shell.extensions.focus-timer",
   "gettext-domain": "@GETTEXT_PACKAGE@",
   "url": "@PACKAGE_URL@",
-  "version": "@PACKAGE_VERSION@"
+  "donations": {
+    "liberapay": "https://liberapay.com/kamilprusko",
+    "paypal": "https://www.paypal.me/kamilprusko"
+  }
 }

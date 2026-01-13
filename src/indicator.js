@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2011-2014 gnome-pomodoro contributors
+ * Copyright (c) 2011-2026 focus-timer contributors
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -13,6 +13,8 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * SPDX-License-Identifier: GPL-3.0-or-later
  *
  * Authors: Arun Mahapatra <pratikarun@gmail.com>
  *          Kamil Prusko <kamilprusko@gmail.com>
@@ -34,871 +36,1144 @@ import * as PanelMenu from 'resource:///org/gnome/shell/ui/panelMenu.js';
 import * as PopupMenu from 'resource:///org/gnome/shell/ui/popupMenu.js';
 
 import {extension} from './extension.js';
-import {State, TimerLabel} from './timer.js';
+import {State, MINUTE, SECOND, MILLISECOND} from './timer.js';
+import {TimeBlockStatus} from './session.js';
+import {TimerControlButtons} from './timerControlButtons.js';
+import {TimerLabel} from './timerLabel.js';
+import {TimerProgressBar} from './timerProgressBar.js';
 import * as Utils from './utils.js';
 
 
-const FADE_IN_TIME = 1250;
-const FADE_IN_OPACITY = 1.0;
-
-const FADE_OUT_TIME = 1250;
-const FADE_OUT_OPACITY = 0.38;
-
-const STEPS = 120;
-const X_ALIGNMENT = 0.5;
+const MENU_ALIGNMENT = 0.5;
+const BLINKING_DURATION = 1500;
+const TRANSITION_DURATION = 100;
+const STOPPED_OPACITY = 89;  // 0.349 * 255
+const DIM_BRIGHTNESS = -0.4;
+const POPUP_ANIMATION_TIME = 200;
 
 
-const IndicatorType = {
-    TEXT: 'text',
-    SHORT_TEXT: 'short-text',
-    ICON: 'icon',
+export const IndicatorType = {
+    ICON: 0,
+    TEXT: 1,
 };
+
+
+// Based on QuickToggleMenu from quickSettings.js in gnome-shell
+class OverlayMenuBase extends PopupMenu.PopupMenuBase {
+    constructor(sourceActor) {
+        super(sourceActor, 'quick-toggle-menu');
+
+        const constraints = new Clutter.BindConstraint({
+            coordinate: Clutter.BindCoordinate.Y,
+            source: sourceActor,
+        });
+        sourceActor.bind_property('height',
+            constraints, 'offset',
+            GObject.BindingFlags.DEFAULT);
+
+        this.actor = new St.Widget({
+            layout_manager: new Clutter.BinLayout(),
+            style_class: 'quick-toggle-menu-container',
+            reactive: true,
+            x_expand: true,
+            y_expand: false,
+            opacity: 0,
+            constraints,
+        });
+        this.actor._delegate = this;
+        this.actor.add_child(this.box);
+        this.actor.hide();
+
+        global.focus_manager.add_group(this.actor);
+    }
+
+    open(animate) {
+        if (this.isOpen)
+            return;
+
+        this.isOpen = true;
+
+        this.actor.show();
+        this.actor.ease_property('opacity', 255, {
+            duration: Math.trunc(POPUP_ANIMATION_TIME * 0.75),
+        });
+
+        this.emit('open-state-changed', true);
+    }
+
+    close(animate) {
+        if (!this.isOpen)
+            return;
+
+        const {opacity} = this.actor;
+        const duration = animate !== PopupAnimation.NONE
+            ? POPUP_ANIMATION_TIME / 2
+            : 0;
+
+        this.actor.ease_property('opacity', 0, {
+            duration: duration * (opacity / 255),
+            onStopped: () => {
+                this.actor.hide();
+                this.actor.opacity = 0;
+                this.emit('menu-closed');
+            },
+        });
+
+        this.isOpen = false;
+        this.emit('open-state-changed', false);
+    }
+}
+
+
+class StateMenu extends OverlayMenuBase {
+    constructor(sourceActor) {
+        super(sourceActor);
+
+        this._addStateItem(State.POMODORO);
+        const shortBreakItem = this._addStateItem(State.SHORT_BREAK);
+        const longBreakItem = this._addStateItem(State.LONG_BREAK);
+        const breakItem = this._addStateItem(State.BREAK);
+
+        this.addMenuItem(new PopupMenu.PopupSeparatorMenuItem());
+        const stoppedItem = this._addStateItem(State.STOPPED);
+
+        breakItem.bind_property('visible',
+            shortBreakItem, 'visible',
+            GObject.BindingFlags.INVERT_BOOLEAN |
+            GObject.BindingFlags.SYNC_CREATE);
+        breakItem.bind_property('visible',
+            longBreakItem, 'visible',
+            GObject.BindingFlags.INVERT_BOOLEAN |
+            GObject.BindingFlags.SYNC_CREATE);
+
+        this._breakItem = breakItem;
+        this._stoppedItem = stoppedItem;
+
+        this._session = extension.session;
+        this._session.connectObject('changed', this._onSessionChanged.bind(this), this);
+
+        this._update();
+    }
+
+    _addStateItem(state) {
+        const item = this.addAction(State.label(state), () => {
+            extension.indicator.menu.close(false);
+            this._session.advanceToState(state);
+
+            if (State.isBreak(state))
+                extension.openScreenOverlay();
+        });
+
+        return item;
+    }
+
+    _update() {
+        this._breakItem.visible = this._session.hasUniformBreaks;
+        this._stoppedItem.sensitive = this._session.currentState !== State.STOPPED;
+    }
+
+    _onSessionChanged(_session) {
+        this._update();
+    }
+
+    destroy() {
+        if (this._session) {
+            this._session.disconnectObject(this);
+            this._session = null;
+        }
+
+        super.destroy();
+    }
+}
+
+
+const TimerMenuItem = GObject.registerClass({
+    Signals: {
+        'state-button-clicked': {},
+    },
+},
+class FocusTimerMenuItem extends PopupMenu.PopupBaseMenuItem {
+    _init() {
+        super._init({
+            style_class: 'extension-focus-timer-menu-item',
+            reactive: false,
+            activate: false,
+            hover: false,
+        });
+
+        this._timer = extension.timer;
+        this._timer.connectObject('changed', this._onTimerChanged.bind(this), this);
+
+        this._session = extension.session;
+        this._session.connectObject('changed', this._onSessionChanged.bind(this), this);
+
+        this._updatePromise = null;
+        this._destroying = false;
+
+        const box = new St.BoxLayout({
+            orientation: Clutter.Orientation.VERTICAL,
+            x_expand: true,
+        });
+        this.add_child(box);
+
+        this._stateButton = new St.Button({
+            style_class: 'button flat extension-focus-timer-state-button',
+            button_mask: St.ButtonMask.ONE | St.ButtonMask.THREE,
+            reactive: true,
+            can_focus: true,
+            track_hover: true,
+            x_expand: true,
+            x_align: Clutter.ActorAlign.START,
+            y_align: Clutter.ActorAlign.CENTER,
+        });
+        this._stateButton.connect('clicked', this._onStateButtonClicked.bind(this));
+
+        this._cycleLabel = new St.Label({
+            style_class: 'extension-focus-timer-cycle-label',
+            x_align: Clutter.ActorAlign.END,
+            y_align: Clutter.ActorAlign.CENTER,
+        });
+
+        const headerBox = new St.BoxLayout({
+            orientation: Clutter.Orientation.HORIZONTAL,
+            x_expand: true,
+        });
+        headerBox.add_child(this._stateButton);
+        headerBox.add_child(this._cycleLabel);
+        box.add_child(headerBox);
+
+        this._timerLabel = new TimerLabel(this._timer, {
+            x_align: Clutter.ActorAlign.CENTER,
+            y_align: Clutter.ActorAlign.CENTER,
+            x_expand: true,
+        });
+
+        this._shortenButton = this._createInlineButton('timer-shorten-symbolic');
+        this._shortenButton.connect('clicked', this._onShortenButtonClicked.bind(this));
+
+        this._extendButton = this._createInlineButton('timer-extend-symbolic');
+        this._extendButton.connect('clicked', this._onExtendButtonClicked.bind(this));
+
+        const timerBox = new St.BoxLayout({
+            style_class: 'extension-focus-timer-box',
+            orientation: Clutter.Orientation.HORIZONTAL,
+        });
+        timerBox.add_child(this._shortenButton);
+        timerBox.add_child(this._timerLabel);
+        timerBox.add_child(this._extendButton);
+        box.add_child(timerBox);
+
+        const progressBar = new TimerProgressBar(this._timer, {});
+        box.add_child(progressBar);
+
+        const controlButtons = new TimerControlButtons(this._timer, this._session, {
+            x_align: Clutter.ActorAlign.CENTER,
+            x_expand: false,
+        });
+        box.add_child(controlButtons);
+
+        this._update();
+
+        this.connect('destroy', this._onDestroy.bind(this));
+    }
+
+    get stateButton() {
+        return this._stateButton;
+    }
+
+    get timerLabel() {
+        return this._timerLabel;
+    }
+
+    _createIconButton(iconName) {
+        const icon = new St.Icon({
+            gicon: Utils.loadIcon(iconName),
+            x_align: Clutter.ActorAlign.CENTER,
+            y_align: Clutter.ActorAlign.CENTER,
+        });
+
+        return new St.Button({
+            style_class: 'icon-button flat',
+            reactive: true,
+            can_focus: true,
+            track_hover: true,
+            y_align: Clutter.ActorAlign.CENTER,
+            child: icon,
+        });
+    }
+
+    _createInlineButton(iconName) {
+        const button = this._createIconButton(iconName);
+        button.add_style_class_name('extension-focus-timer-inline-button');
+        button.bind_property_full(
+            'hover',
+            button, 'opacity',
+            GObject.BindingFlags.SYNC_CREATE,
+            (binding, source) => [true, source ? 255 : 26],
+            null
+        );
+
+        return button;
+    }
+
+    _update() {
+        if (this._updatePromise || this._destroying)
+            return;
+
+        this._updatePromise = this._session.getCycleNumberCount().then(
+            ([cycleNumber, cycleCount]) => {
+                if (this._destroying)
+                    return;
+
+                this._stateButton.label = this._timer.isFinished()
+                    ? _("Finished!")
+                    : State.label(this._timer.state);
+                this._cycleLabel.text = _('%d of %d').format(cycleNumber, cycleCount);
+                this._cycleLabel.visible =  cycleNumber > 0 && cycleCount > 1 && (
+                    this._timer.state === State.POMODORO ||
+                    this._timer.state === State.SHORT_BREAK);
+                this._shortenButton.visible = this._timer.state !== State.STOPPED;
+                this._extendButton.visible = this._timer.state !== State.STOPPED;
+            }
+        ).catch(
+            logError
+        ).finally(
+            () => {
+                this._updatePromise = null;
+            }
+        );
+    }
+
+    _onTimerChanged(timer) {
+        this._update();
+    }
+
+    _onSessionChanged(session) {
+        this._update();
+    }
+
+    _onStateButtonClicked() {
+        this.emit('state-button-clicked');
+    }
+
+    _onShortenButtonClicked() {
+        this._timer.extend(-MINUTE, this._timer.lastTickTime);
+    }
+
+    _onExtendButtonClicked() {
+        this._timer.extend(MINUTE, this._timer.lastTickTime);
+    }
+
+    _onDestroy() {
+        if (this._timer) {
+            this._timer.disconnectObject(this);
+            this._timer = null;
+        }
+
+        if (this._session) {
+            this._session.disconnectObject(this);
+            this._session = null;
+        }
+
+        this._destroying = true;
+        this._stateButton = null;
+        this._timerLabel = null;
+        this._shortenButton = null;
+        this._extendButton = null;
+        this._updatePromise = null;
+    }
+});
 
 
 const IndicatorMenu = class extends PopupMenu.PopupMenu {
     constructor(indicator) {
-        super(indicator, X_ALIGNMENT, St.Side.TOP);
+        super(indicator, MENU_ALIGNMENT, St.Side.TOP);
 
-        this._indicator = indicator;
-        this._timer = indicator.timer;
-        this._isPaused = null;
-        this._timerState = null;
-        this._timerStateChangedId = 0;
-        this._timerPausedId = 0;
-        this._timerResumedId = 0;
-        this._icons = {};
+        // Wrap the `BoxPointer` in an outer container so that `_overlay`
+        // can be a sibling of `_boxPointer`.
+        const actor = new St.Widget({
+            style_class: 'extension-focus-timer-indicator-menu',
+            reactive: true,
+            width: 0,
+            height: 0,
+        });
+        actor.add_child(this._boxPointer);
+        actor._delegate = this;
+        this.actor = actor;
 
-        this.actor.add_style_class_name('extension-pomodoro-indicator-menu');
+        global.focus_manager.add_group(this.actor);
 
-        this._actorMappedId = this.actor.connect('notify::mapped', this._onNotifyMapped.bind(this));
+        this._timer = extension.timer;
+        this._timer.connectObject('changed', this._onTimerChanged.bind(this), this);
 
-        this.addMenuItem(this._createToggleMenuItem());
-        this.addMenuItem(this._createTimerMenuItem());
+        this._settings = extension.settings;
+        this._settings.connectObject('changed', this._onSettingsChanged.bind(this), this);
 
-        this.addStateMenuItem('pomodoro', _('Pomodoro'));
-        this.addStateMenuItem('short-break', _('Short Break'));
-        this.addStateMenuItem('long-break', _('Long Break'));
+        const timerMenuItem = new TimerMenuItem();
+        timerMenuItem.connect('state-button-clicked', () => {
+            this._stateMenu.open(PopupAnimation.FULL);
+        });
+        indicator.blinkingGroup.addActor(timerMenuItem.timerLabel, 'opacity', STOPPED_OPACITY * 0.5, 255);
 
+        this._timerLabel = timerMenuItem.timerLabel;
+
+        this.addMenuItem(timerMenuItem);
         this.addMenuItem(new PopupMenu.PopupSeparatorMenuItem());
+
+        this._screenOverlayItem = this.addAction(_('Screen Overlay'), this._activateScreenOverlay.bind(this));
 
         this.addAction(_('Preferences'), this._activatePreferences.bind(this));
         this.addAction(_('Stats'), this._activateStats.bind(this));
+        this.addMenuItem(new PopupMenu.PopupSeparatorMenuItem());
         this.addAction(_('Quit'), this._activateQuit.bind(this));
-    }
 
-    get indicator() {
-        return this._indicator;
-    }
-
-    _createIconButton(iconName, accessibleName) {
-        const icon = new St.Icon({
-            gicon: Utils.loadIcon(iconName),
-            style_class: 'popup-menu-icon',
-        });
-        const iconButton = new St.Button({
-            reactive: true,
-            can_focus: true,
-            track_hover: true,
-            accessible_name: accessibleName,
-            style_class: 'icon-button',
-        });
-        iconButton.add_style_class_name('flat');
-        iconButton.set_child(icon);
-
-        return iconButton;
-    }
-
-    _createToggleMenuItem() {
-        const menuItem = new PopupMenu.PopupMenuItem(_('Pomodoro Timer'),
-            {
-                style_class: 'extension-pomodoro-toggle-menu-item',
-                reactive: false,
-                can_focus: false,
-            });
-        menuItem.label.y_align = Clutter.ActorAlign.CENTER;
-
-        const startButton = this._createIconButton('gnome-pomodoro-start-symbolic', _('Start Timer'));
-        startButton.connect('clicked', this._onStartClicked.bind(this));
-        menuItem.add_child(startButton);
-
-        this._toggleMenuItem = menuItem;
-
-        return menuItem;
-    }
-
-    _createTimerMenuItem() {
-        const menuItem = new PopupMenu.PopupMenuItem('',
-            {
-                style_class: 'extension-pomodoro-timer-menu-item',
-                reactive: false,
-                can_focus: false,
-            });
-        menuItem.label.visible = false;
-
-        const timerButton = new St.Button({
-            style_class: 'extension-pomodoro-timer-button',
-            reactive: true,
-            can_focus: true,
-            track_hover: true,
-        });
-        timerButton.add_style_class_name('button');
-        timerButton.add_style_class_name('flat');
-        timerButton.connect('clicked', this._onTimerButtonClicked.bind(this));
-        menuItem.add_child(timerButton);
-
-        const timerLabel = new TimerLabel(this._timer, {x_align: Clutter.ActorAlign.START});
-        timerButton.set_child(timerLabel);
-
-        const buttonsBox = new St.BoxLayout({
-            style_class: 'extension-pomodoro-timer-buttons-box',
-            x_align: Clutter.ActorAlign.END,
-            x_expand: true,
-        });
-        menuItem.add_child(buttonsBox);
-
-        const pauseResumeButton = this._createIconButton('gnome-pomodoro-pause-symbolic', _('Pause Timer'));
-        pauseResumeButton.connect('clicked',
-            () => {
-                if (!this._isPaused)
-                    this._onPauseClicked();
-
-                else
-                    this._onResumeClicked();
-            });
-        buttonsBox.add_child(pauseResumeButton);
-
-        const skipStopButton = this._createIconButton('gnome-pomodoro-stop-symbolic', _('Stop Timer'));
-        skipStopButton.connect('clicked',
-            () => {
-                if (!this._isPaused)
-                    this._onSkipClicked();
-                else
-                    this._onStopClicked();
-            });
-        buttonsBox.add_child(skipStopButton);
-
-        const blinkingGroup = this._indicator.blinkingGroup;
-        blinkingGroup.addActor(timerLabel);
-        blinkingGroup.addActor(pauseResumeButton);
-
-        this._timerMenuItem = menuItem;
-        this._timerButton = timerButton;
-        this._pauseResumeButton = pauseResumeButton;
-        this._skipStopButton = skipStopButton;
-
-        return menuItem;
-    }
-
-    _updateTimerButtons() {
-        const visible = this._timerState !== State.NULL;
-        const isBreak = this._timerState === State.SHORT_BREAK ||
-                        this._timerState === State.LONG_BREAK;
-
-        this._toggleMenuItem.visible = !visible;
-        this._timerMenuItem.visible = visible;
-
-        this._timerButton.reactive = isBreak && !this._isPaused;
-        this._timerButton.can_focus = this._timerButton.reactive;
-
-        if (!this._isPaused) {
-            this._pauseResumeButton.child.gicon = Utils.loadIcon('gnome-pomodoro-pause-symbolic');
-            this._pauseResumeButton.accessible_name = isBreak ? _('Pause break') : _('Pause Pomodoro');
-
-            this._skipStopButton.child.gicon = Utils.loadIcon('gnome-pomodoro-skip-symbolic');
-            this._skipStopButton.accessible_name = isBreak ? _('Start Pomodoro') : _('Take a break');
-        } else {
-            this._pauseResumeButton.child.gicon = Utils.loadIcon('gnome-pomodoro-start-symbolic');
-            this._pauseResumeButton.accessible_name = isBreak ? _('Resume break') : _('Resume Pomodoro');
-
-            this._skipStopButton.child.gicon = Utils.loadIcon('gnome-pomodoro-stop-symbolic');
-            this._skipStopButton.accessible_name = _('Stop');
-        }
-    }
-
-    _updateStateItems() {
-        const visible = this._timerState !== State.NULL;
-
-        for (const [stateName, menuItem] of Object.entries(this._stateItems)) {
-            menuItem.visible = visible;
-
-            if (stateName === this._timerState) {
-                menuItem.setOrnament(PopupMenu.Ornament.DOT);
-                menuItem.add_style_class_name('active');
-            } else {
-                menuItem.setOrnament(PopupMenu.Ornament.NONE);
-                menuItem.remove_style_class_name('active');
-            }
-        }
-    }
-
-    _onNotifyMapped(actor) {
-        if (actor.mapped) {
-            this._connectTimerSignals();
-
-            this._onTimerStateChanged();
-        } else {
-            this._disconnectTimerSignals();
-        }
-    }
-
-    _onTimerStateChanged() {
-        const timerState = this._timer.getState();
-        const isPaused = this._timer.isPaused();
-
-        if (this._isPaused !== isPaused ||
-            this._timerState !== timerState) {
-            this._isPaused = isPaused;
-            this._timerState = timerState;
-
-            this._updateTimerButtons();
-            this._updateStateItems();
-        }
-    }
-
-    _onTimerPaused() {
-        this._onTimerStateChanged();
-    }
-
-    _onTimerResumed() {
-        this._onTimerStateChanged();
-    }
-
-    _onTimerButtonClicked() {
-        const notificationManager = extension.notificationManager;
-
-        this.itemActivated(PopupAnimation.NONE);
-
-        if (notificationManager)
-            notificationManager.openScreenOverlay();
-    }
-
-    _onStartClicked() {
-        this.itemActivated(PopupAnimation.NONE);
-
-        this._timer.start();
-    }
-
-    _onSkipClicked() {
-        this.itemActivated(PopupAnimation.NONE);
-
-        this._timer.skip();
-    }
-
-    _onStopClicked() {
-        const idleId = GLib.idle_add(GLib.PRIORITY_DEFAULT, () => {
-            this._timer.stop();
-
-            return GLib.SOURCE_REMOVE;
-        });
-        GLib.Source.set_name_by_id(idleId, '[gnome-pomodoro] this._timer.stop()');
-
-        // Closing menu leads to GrabHelper complaing about accessing deallocated St.Button,
-        // while doing savedFocus.grab_key_focus().
-        // As a walkaround we call timer.stop() with delay. Seems that these calls interfere
-        // with each other.
-        this.itemActivated(PopupAnimation.NONE);
-    }
-
-    _onPauseClicked() {
-        this._timer.pause();
-    }
-
-    _onResumeClicked() {
-        this.itemActivated(PopupAnimation.NONE);
-
-        this._timer.resume();
-    }
-
-    addAction(label, callback, icon) {
-        const menuItem = super.addAction(label, callback, icon);
-
-        menuItem.connect('leave-event', actor => {
-            if (actor.has_key_focus())
-                global.stage.set_key_focus(actor.get_parent());
+        this._activeMenu = null;
+        this._stateMenu = new StateMenu(timerMenuItem.stateButton);
+        this._stateMenu.connect('open-state-changed', (menu, isOpen) => {
+            this._activeMenu = isOpen ? menu : null;
+            this._setDimmed(isOpen);
         });
 
-        return menuItem;
-    }
+        this._menuManager = new PopupMenu.PopupMenuManager(this);
+        this._menuManager.addMenu(this._stateMenu);
 
-    addStateMenuItem(name, label) {
-        if (!this._stateItems)
-            this._stateItems = {};
-
-        let menuItem = this.addAction(label, (_menuItem, event) => {  // eslint-disable-line no-unused-vars
-            this._activateState(name);
+        this._overlay = new Clutter.Actor({
+            layout_manager: new Clutter.BinLayout(),
         });
+        this._overlay.add_child(this._stateMenu.actor);
+        this._overlay.add_constraint(new Clutter.BindConstraint({
+            coordinate: Clutter.BindCoordinate.X,
+            source: this._boxPointer,
+        }));
+        this._overlay.add_constraint(new Clutter.BindConstraint({
+            coordinate: Clutter.BindCoordinate.Y,
+            source: this._boxPointer,
+        }));
+        this._overlay.add_constraint(new Clutter.BindConstraint({
+            coordinate: Clutter.BindCoordinate.WIDTH,
+            source: this._boxPointer,
+        }));
+        this.actor.add_child(this._overlay);
 
-        menuItem.add_style_class_name('state-item');
+        this._dimEffect = new Clutter.BrightnessContrastEffect({
+            enabled: false,
+        });
+        this._boxPointer.add_effect_with_name('dim', this._dimEffect);
 
-        this._stateItems[name] = menuItem;
+        this._update();
 
-        return menuItem;
-    }
-
-    _activateState(stateName) {
-        this.itemActivated(PopupAnimation.NONE);
-
-        this._timer.setState(stateName);
+        this.connect('menu-closed', () => {
+            this.actor.hide();
+        });
     }
 
     _activateStats() {
-        const timestamp = global.get_current_time();
-
         this.itemActivated(PopupAnimation.NONE);
         Main.overview.hide();
 
-        this._timer.showMainWindow('stats', timestamp);
+        extension.showWindow('stats');
+    }
+
+    _activateScreenOverlay() {
+        extension.openScreenOverlay();
     }
 
     _activatePreferences() {
-        const timestamp = global.get_current_time();
-
         this.itemActivated(PopupAnimation.NONE);
         Main.overview.hide();
 
-        this._timer.showPreferences(timestamp);
+        extension.showPreferences();
     }
 
     _activateQuit() {
-        this._timer.quit();
+        extension.quit();
     }
 
-    _connectTimerSignals() {
-        if (!this._timerStateChangedId) {
-            this._timerStateChangedId = this._timer.connect('state-changed', this._onTimerStateChanged.bind(this));
-            this._onTimerStateChanged();
-        }
+    _setDimmed(dim) {
+        if (!dim && !this._dimEffect.enabled)
+            return;
 
-        if (!this._timerPausedId)
-            this._timerPausedId = this._timer.connect('paused', this._onTimerPaused.bind(this));
+        const brightnessValue = 127 * (1 + (dim ? 1 : 0) * DIM_BRIGHTNESS);
+        const brightness = new Cogl.Color({
+            red: brightnessValue,
+            green: brightnessValue,
+            blue: brightnessValue,
+            alpha: 255,
+        });
 
-
-        if (!this._timerResumedId)
-            this._timerResumedId = this._timer.connect('resumed', this._onTimerResumed.bind(this));
+        this._boxPointer.ease_property('@effects.dim.brightness', brightness, {
+            mode: Clutter.AnimationMode.EASE_OUT_QUAD,
+            duration: POPUP_ANIMATION_TIME,
+            onStopped: () => {
+                this._dimEffect.brightness = brightness;
+                this._dimEffect.enabled = dim;
+            },
+        });
+        this._dimEffect.enabled = true;
     }
 
-    _disconnectTimerSignals() {
-        if (this._timerStateChangedId) {
-            this._timer.disconnect(this._timerStateChangedId);
-            this._timerStateChangedId = 0;
-        }
+    _update() {
+        this._screenOverlayItem.visible = State.isBreak(this._timer.state) &&
+            extension.settings.get_boolean('screen-overlay');
+        this._screenOverlayItem.reactive = !this._timer.isFinished();
+    }
 
-        if (this._timerPausedId) {
-            this._timer.disconnect(this._timerPausedId);
-            this._timerPausedId = 0;
-        }
+    _onTimerChanged() {
+        this._update();
+    }
 
-        if (this._timerResumedId) {
-            this._timer.disconnect(this._timerResumedId);
-            this._timerResumedId = 0;
-        }
+    _onSettingsChanged() {
+        this._update();
+    }
+
+    open(animate) {
+        this._timerLabel?.unfreeze();
+
+        this.actor.show();
+        super.open(animate);
     }
 
     close(animate) {
-        this._disconnectTimerSignals();
+        this._timerLabel?.freeze();
+        this._activeMenu?.close(animate);
 
         super.close(animate);
     }
 
     destroy() {
-        this._disconnectTimerSignals();
-
-        if (this._actorMappedId) {
-            this.actor.disconnect(this._actorMappedId);
-            this._actorMappedId = 0;
+        if (this._settings) {
+            this._settings.disconnectObject(this);
+            this._settings = null;
         }
 
-        this._indicator = null;
-        this._timer = null;
-        this._icons = null;
+        if (this._timer) {
+            this._timer.disconnectObject(this);
+            this._timer = null;
+        }
+
+        if (this._stateMenu) {
+            this._stateMenu.destroy();
+            this._stateMenu = null;
+        }
+
+        this._timerLabel = null;
+        this._screenOverlayItem = null;
 
         super.destroy();
     }
 };
 
 
-const TextIndicator = class extends EventEmitter {
-    constructor(timer) {
-        super();
+const TextIndicator = GObject.registerClass({
+    Properties: {
+        'fade': GObject.ParamSpec.double(
+            'fade', null, null,
+            GObject.ParamFlags.READWRITE,
+            0.0, 1.0, 1.0),
+    },
+},
+class FocusTimerTextIndicator extends St.Widget {
+    _init(timer, session) {
+        this._fade = 1.0;
 
-        this._initialized     = false;
-        this._state           = State.NULL;
-        this._digitWidth      = 0;
-        this._charWidth       = 0;
-        this._onTimerUpdateId = 0;
+        super._init();
 
-        this.timer = timer;
+        this._delegate = this;
+        this._timer = timer;
+        this._session = session;
+        this._lastValue = NaN;
+        this._placeholderValue = 0;
 
-        this.actor = new St.Widget({reactive: true});
-        this.actor._delegate = this;
-
-        this.label = new St.Label({
-            style_class: 'system-status-label',
+        this._label = new St.Label({
             x_align: Clutter.ActorAlign.CENTER,
             y_align: Clutter.ActorAlign.CENTER,
         });
-        this.label.clutter_text.line_wrap = false;
-        this.label.clutter_text.ellipsize = false;
-        this.label.connect('destroy',
-            () => {
-                if (this._onTimerUpdateId) {
-                    this.timer.disconnect(this._onTimerUpdateId);
-                    this._onTimerUpdateId = 0;
-                }
-            });
-        this.actor.add_child(this.label);
+        this._label.clutter_text.single_line_mode = true;
+        this._label.clutter_text.line_wrap = false;
+        this._label.clutter_text.line_wrap_mode = Pango.WrapMode.NONE;
+        this._label.clutter_text.ellipsize = Pango.EllipsizeMode.NONE;
+        this.add_child(this._label);
 
-        this.actor.connect('style-changed', this._onStyleChanged.bind(this));
-        this.actor.connect('destroy', this._onActorDestroy.bind(this));
+        this.connect('destroy', this._onDestroy.bind(this));
+    }
 
-        this._onTimerUpdateId = this.timer.connect('update', this._onTimerUpdate.bind(this));
+    get fade() {
+        return this._fade;
+    }
 
-        this._onTimerUpdate();
+    set fade(value) {
+        if (this._fade !== value) {
+            this._fade = value;
+            this._label.opacity = Math.trunc((255 - STOPPED_OPACITY) * value) + STOPPED_OPACITY;
+        }
+    }
 
-        this._state = this.timer.getState();
-        this._initialized = true;
+    _formatRemaining(interval) {
+        interval = interval > 0
+            ? Math.trunc(interval / SECOND)
+            : 0;
 
-        if (this._state === State.POMODORO)
-            this.actor.set_opacity(FADE_IN_OPACITY * 255);
+        let minutes = Math.round(interval / 60);
+        let hours = Math.trunc(minutes / 60);
+        const parts = [];
+
+        if (hours > 0) {
+            minutes -= 60 * hours;
+            parts.push(_('%dh').format(hours));
+        }
+
+        if (interval >= 52.5)
+            parts.push(_('%dm').format(minutes).padStart(parts.length ? 3 : 2, '0'));
+        else if (interval >= 27.5)
+            parts.push(_('%ds').format(Math.round(interval / 15) * 15));
+        else if (interval >= 10)
+            parts.push(_('%ds').format(Math.round(interval / 5) * 5));
         else
-            this.actor.set_opacity(FADE_OUT_OPACITY * 255);
+            parts.push(_('%ds').format(interval));
+
+        return parts.join(' ');
     }
 
-    _onStyleChanged(actor) {
-        const themeNode    = actor.get_theme_node();
-        const font         = themeNode.get_font();
-        const context      = actor.get_pango_context();
-        const metrics      = context.get_metrics(font, context.get_language());
+    _getReferenceText(interval) {
+        interval = interval > 0
+            ? Math.trunc(interval / SECOND)
+            : 0;
 
-        this._digitWidth  = metrics.get_approximate_digit_width() / Pango.SCALE;
-        this._charWidth   = metrics.get_approximate_char_width() / Pango.SCALE;
+        const minutes = Math.round(interval / 60);
+        const hours = Math.trunc(minutes / 60);
+        const parts = ['00x'];
+
+        if (hours > 0)
+            parts.push('%dx'.format(hours));
+
+        return parts.join('_');
     }
 
-    _getWidth() {
-        return Math.ceil(4 * this._digitWidth + 0.5 * this._charWidth);
+    _updatePlaceholderValue() {
+        this._session.getNextTimeBlock().then(
+            (timeBlock) => {
+                if (timeBlock && timeBlock.state === State.POMODORO)
+                    this._placeholderValue = timeBlock.endTime - timeBlock.startTime;
+
+                this._updateLabel(this._session.currentState, NaN);
+            }).catch(logError);
     }
 
-    _getText(state, remaining) {
-        if (remaining < 0.0)
-            remaining = 0.0;
+    _updateLabel(state, timestamp) {
+        const remaining = state !== State.STOPPED
+            ? this._timer.getRemaining(timestamp)
+            : this._placeholderValue;
+        const text = this._formatRemaining(remaining);
 
-        const minutes = Math.floor(remaining / 60);
-        const seconds = Math.floor(remaining % 60);
+        if (this._label.text.length !== text.length)
+            this.queue_relayout();
 
-        return '%02d:%02d'.format(minutes, seconds);
+        this._label.text = text;
+        this._lastValue = remaining;
     }
 
-    _onTimerUpdate() {
-        const state = this.timer.getState();
-        const remaining = this.timer.getRemaining();
+    vfunc_get_preferred_width(forHeight) {
+        const layout = this._label.clutter_text?.get_layout().copy();
+        if (!layout)
+            return super.vfunc_get_preferred_width(forHeight);
 
-        if (this._state !== state && this._initialized) {
-            this._state = state;
+        const text = this._getReferenceText(this._timer.getRemaining());
+        layout.set_text(text, text.length);
 
-            if (state === State.POMODORO) {
-                this.actor.ease({
-                    opacity: FADE_IN_OPACITY * 255,
-                    duration: FADE_IN_TIME,
-                    mode: Clutter.AnimationMode.EASE_OUT_QUAD,
-                });
-            } else {
-                this.actor.ease({
-                    opacity: FADE_OUT_OPACITY * 255,
-                    duration: FADE_OUT_TIME,
-                    mode: Clutter.AnimationMode.EASE_OUT_QUAD,
-                });
-            }
+        const [layoutWidth, layoutHeight] = layout.get_pixel_size();
+
+        return this.get_theme_node().adjust_preferred_width(layoutWidth, layoutWidth);
+    }
+
+    vfunc_allocate(box, flags) {
+        this.set_allocation(box);
+
+        const [width, height] = box.get_size();
+        const [childWidth, ] = this._label.get_preferred_width(height);
+
+        const childBox = new Clutter.ActorBox();
+        childBox.set_origin(Math.floor((width - childWidth) / 2), 0);
+        childBox.set_size(childWidth, height);
+        this._label.allocate(childBox);
+    }
+
+    vfunc_map() {
+        this._timer.connectObject('tick', this._onTimerTick.bind(this), this);
+        this._timer.connectObject('changed', this._onTimerChanged.bind(this), this);
+        this._session.connectObject('changed', this._onSessionChanged.bind(this), this);
+
+        this._label.text = '';
+
+        if (this._timer.state === State.STOPPED)
+            this._updatePlaceholderValue();
+        else
+            this._updateLabel(
+                this._timer.state,
+                this._timer.lastTickTime || this._timer.lastChangedTime
+            );
+
+        super.vfunc_map();
+    }
+
+    vfunc_unmap() {
+        this._timer?.disconnectObject(this);
+        this._session?.disconnectObject(this);
+
+        super.vfunc_unmap();
+    }
+
+    _onTimerChanged(timer) {
+        if (this._timer.state !== State.STOPPED)
+            this._updateLabel(timer.state, timer.lastChangedTime);
+    }
+
+    _onTimerTick(timer, timestamp) {
+        this._updateLabel(timer.state, timestamp);
+    }
+
+    _onSessionChanged() {
+        if (this._session.currentState === State.STOPPED)
+            this._updatePlaceholderValue();
+    }
+
+    _onDestroy() {
+        if (this._timer) {
+            this._timer.disconnectObject(this);
+            this._timer = null;
         }
 
-        this.label.set_text(this._getText(state, remaining));
-    }
-
-    _onActorDestroy() {
-        if (this._onTimerUpdateId) {
-            this.timer.disconnect(this._onTimerUpdateId);
-            this._onTimerUpdateId = 0;
+        if (this._session) {
+            this._session.disconnectObject(this);
+            this._session = null;
         }
 
-        this.actor._delegate = null;
+        this.remove_child(this._label);
 
-        this.emit('destroy');
+        this._delegate = null;
+        this._label = null;
+    }
+});
+
+
+const IconIndicator = GObject.registerClass({
+    Properties: {
+        'fade': GObject.ParamSpec.double(
+            'fade', null, null,
+            GObject.ParamFlags.READWRITE,
+            0.0, 1.0, 1.0),
+    },
+},
+class FocusTimerIconIndicator extends St.Widget {
+    static RESOLUTION = 2;
+    static DEFAULT_ICON_SIZE = 16;
+    static PADDING = 1.8;
+    static LINE_WIDTH = 2.2;
+    static CAP_ANGLE = 0.25;  // radians
+    static SPACING_ANGLE = 0.5;  // radians
+
+    _init(timer) {
+        this._fade = 1.0;
+
+        super._init({
+            style_class: 'system-status-icon',
+            layout_manager: new Clutter.BinLayout(),
+        });
+
+        this._delegate = this;
+        this._timer = timer;
+        this._timeoutId = 0;
+        this._lastValue = NaN;
+        this._iconSize = IconIndicator.DEFAULT_ICON_SIZE;
+        this._throughColor = null;
+        this._highlightColor = null;
+
+        this._content = new St.Widget({
+            layout_manager: new Clutter.BinLayout(),
+            x_expand: true,
+            y_expand: true,
+        });
+        this.add_child(this._content);
+
+        this._through = new St.DrawingArea({
+            x_expand: true,
+            y_expand: true,
+        });
+        this._through.connect('repaint', this._onThroughRepaint.bind(this));
+        this._content.add_child(this._through);
+
+        this._highlight = new St.DrawingArea({
+            x_expand: true,
+            y_expand: true,
+        });
+        this._highlight.bind_property_full(
+            'opacity',
+            this._through, 'opacity',
+            GObject.BindingFlags.SYNC_CREATE,
+            (binding, source) => [true, 255 - source],
+            null
+        );
+        this._highlight.connect('repaint', this._onHighlightRepaint.bind(this));
+        this._content.add_child(this._highlight);
+
+        this._pausedIconBin = new St.Widget({
+            layout_manager: new Clutter.BinLayout(),
+            x_expand: true,
+            y_expand: true,
+            opacity: 0,
+        });
+        this._pausedIconBin.bind_property_full(
+            'opacity',
+            this._content, 'opacity',
+            GObject.BindingFlags.SYNC_CREATE,
+            (binding, source) => [true, 255 - source],
+            null
+        );
+        this.add_child(this._pausedIconBin);
+
+        this._pausedIcon = new St.Icon({
+            gicon: Utils.loadIcon('indicator-paused-symbolic'),
+            x_align: Clutter.ActorAlign.CENTER,
+            y_align: Clutter.ActorAlign.CENTER,
+        });
+        this._pausedIconBin.add_child(this._pausedIcon);
+
+        this.connect('destroy', this._onDestroy.bind(this));
     }
 
-    destroy() {
-        this.actor.destroy();
-    }
-};
-
-
-const ShortTextIndicator = class extends TextIndicator {
-    constructor(timer) {
-        super(timer);
-
-        this.label.set_x_align(Clutter.ActorAlign.END);
+    get fade() {
+        return this._fade;
     }
 
-    _getWidth() {
-        return Math.ceil(2 * this._digitWidth +
-                         Number(this._charWidth));
+    set fade(value) {
+        if (this._fade !== value) {
+            this._fade = value;
+            this._highlight.opacity = Math.trunc(255 * value);
+            this._pausedIcon.opacity = Math.trunc(
+                (255 - STOPPED_OPACITY) * value + STOPPED_OPACITY);
+        }
     }
 
-    _getText(state, remaining) {
-        if (remaining < 0.0)
-            remaining = 0.0;
-
-        let minutes = Math.round(remaining / 60);
-        let seconds = Math.round(remaining % 60);
-
-        if (remaining > 15)
-            seconds = Math.ceil(seconds / 15) * 15;
-
-        return remaining > 45
-            ? '%d′'.format(minutes)
-            : '%d″'.format(seconds);
-    }
-};
-
-
-const IconIndicator = class extends EventEmitter {
-    constructor(timer) {
-        super();
-
-        this._state           = State.NULL;
-        this._progress        = 0.0;
-        this._primaryColor    = null;
-        this._secondaryColor  = null;
-        this._timerUpdateId = 0;
-
-        this.timer = timer;
-
-        this.actor = new St.Widget({reactive: true});
-        this.actor._delegate = this;
-
-        this.icon = new St.DrawingArea({style_class: 'system-status-icon'});
-        this.icon.connect('style-changed', this._onIconStyleChanged.bind(this));
-        this.icon.connect('repaint', this._onIconRepaint.bind(this));
-        this.icon.connect('destroy', this._onIconDestroy.bind(this));
-        this.actor.add_child(this.icon);
-
-        this.actor.connect('style-changed', this._onStyleChanged.bind(this));
-        this.actor.connect('destroy', this._onActorDestroy.bind(this));
-
-        this._timerUpdateId = this.timer.connect('update', this._onTimerUpdate.bind(this));
-
-        this._onTimerUpdate();
-
-        this._state = this.timer.getState();
-    }
-
-    _onIconStyleChanged(actor) {
-        let themeNode = actor.get_theme_node();
-        let [found, size] = themeNode.lookup_length('icon-size', false);
-
-        if (!found)
+    _startTimeout() {
+        if (this._timeoutId || !this.mapped)
             return;
 
-        [actor.min_width, actor.natural_width] = themeNode.adjust_preferred_width(size, size);
-        [actor.min_height, actor.natural_height] = themeNode.adjust_preferred_height(size, size);
+        const diameter = this._iconSize ?? IconIndicator.DEFAULT_ICON_SIZE;
+        const timeout = Math.trunc(this._timer.duration / (diameter * Math.PI * IconIndicator.RESOLUTION * MILLISECOND));
 
-        this._iconSize = size;
+        if (timeout > 1000) {
+            this._timeoutId = GLib.timeout_add_seconds(GLib.PRIORITY_DEFAULT, Math.trunc(timeout / 1000), this._onTimeout.bind(this));
+            GLib.Source.set_name_by_id(this._timeoutId, '[focus-timer-extension] IconIndicator._onTimeout');
+        } else if (timeout > 0) {
+            this._timeoutId = GLib.timeout_add(GLib.PRIORITY_DEFAULT, timeout, this._onTimeout.bind(this));
+            GLib.Source.set_name_by_id(this._timeoutId, '[focus-timer-extension] IconIndicator._onTimeout');
+        }
     }
 
-    _onIconRepaint(area) {
-        const cr = area.get_context();
-        const [width, height] = area.get_surface_size();
-        const scaleFactor = St.ThemeContext.get_for_stage(global.stage).scale_factor;
+    _stopTimeout() {
+        if (this._timeoutId) {
+            GLib.source_remove(this._timeoutId);
+            this._timeoutId = 0;
+        }
+    }
 
-        const radius    = 0.5 * this._iconSize - 2.0;
-        const progress  = this._progress;
-        const isRunning = this._state !== State.NULL;
-        const isBreak   = this._state === State.SHORT_BREAK ||
-                          this._state === State.LONG_BREAK;
+    _updateTimeout() {
+        this._stopTimeout();
 
-        cr.translate(0.5 * width, 0.5 * height);
-        cr.setOperator(Cairo.Operator.SOURCE);
+        if (this._timer.isRunning())
+            this._startTimeout();
+    }
+
+    vfunc_style_changed() {
+        const themeNode = this.get_theme_node();
+        const [found, iconSize] = themeNode.lookup_length('icon-size', false);
+        const {scaleFactor} = St.ThemeContext.get_for_stage(global.stage);
+
+        this._iconSize = found
+            ? Math.round(iconSize / scaleFactor)
+            : IconIndicator.DEFAULT_ICON_SIZE;
+        this._highlightColor = themeNode.get_foreground_color();
+        this._throughColor = themeNode.get_foreground_color();
+        this._throughColor.alpha = STOPPED_OPACITY;
+
+        super.vfunc_style_changed();
+    }
+
+    vfunc_get_preferred_height(_forWidth) {
+        const {scaleFactor} = St.ThemeContext.get_for_stage(global.stage);
+        const iconSize = Math.ceil(this._iconSize * scaleFactor);
+
+        return this.get_theme_node().adjust_preferred_height(iconSize, iconSize);
+    }
+
+    vfunc_get_preferred_width(_forHeight) {
+        const {scaleFactor} = St.ThemeContext.get_for_stage(global.stage);
+        const iconSize = Math.ceil(this._iconSize * scaleFactor);
+
+        return this.get_theme_node().adjust_preferred_width(iconSize, iconSize);
+    }
+
+    vfunc_map() {
+        this._timer.connectObject('changed', this._onTimerChanged.bind(this), this);
+        this._updatePausedIcon(false);
+
+        super.vfunc_map();
+
+        this._updateTimeout();
+    }
+
+    vfunc_unmap() {
+        this._timer?.disconnectObject(this);
+        this._stopTimeout();
+
+        super.vfunc_unmap();
+    }
+
+    _onThroughRepaint(actor) {
+        const cr = actor.get_context();
+        const [width, height] = actor.get_surface_size();
+        const {scaleFactor} = St.ThemeContext.get_for_stage(global.stage);
+        const radius = (this._iconSize / 2 - IconIndicator.PADDING) * scaleFactor;
+
+        cr.translate(width / 2, height / 2);
         cr.setLineCap(Cairo.LineCap.ROUND);
+        cr.setLineWidth(IconIndicator.LINE_WIDTH * scaleFactor);
+        cr.setSourceColor(this._throughColor);
+        cr.arc(0.0, 0.0, radius, 0.0, 2.0 * Math.PI);
+        cr.stroke();
+        cr.$dispose();
+    }
 
-        const angle1 = -0.5 * Math.PI - 2.0 * Math.PI * Math.min(Math.max(progress, 0.000001), 1.0);
-        const angle2 = -0.5 * Math.PI;
+    _onHighlightRepaint(actor) {
+        const cr = actor.get_context();
+        const [width, height] = actor.get_surface_size();
+        const {scaleFactor} = St.ThemeContext.get_for_stage(global.stage);
+        const radius = (this._iconSize / 2 - IconIndicator.PADDING) * scaleFactor;
 
-        /* background pie */
-        if (isBreak || !isRunning) {
-            cr.setSourceColor(this._secondaryColor);
-            cr.arcNegative(0, 0, radius, angle1, angle2);
-            cr.setLineWidth(2.2 * scaleFactor);
+        cr.translate(width / 2, height / 2);
+        cr.setLineCap(Cairo.LineCap.ROUND);
+        cr.setLineWidth(IconIndicator.LINE_WIDTH * scaleFactor);
+
+        if (this._timer.state !== State.STOPPED) {
+            const progress = this._timer.getProgress();
+            const angle1 = -0.5 * Math.PI;
+            const angle2 = 1.5 * Math.PI - IconIndicator.CAP_ANGLE - 2.0 * Math.PI * progress;
+
+            const highlightFade = angle2 < angle1
+                ? 1.0 - (angle1 - angle2) / IconIndicator.CAP_ANGLE
+                : 1.0;
+            const highlightColor = this._highlightColor.copy();
+            highlightColor.alpha = Math.trunc(highlightColor.alpha * highlightFade);
+
+            const throughFade = Math.min(progress / 0.15, 1.0);
+            const throughColor = this._throughColor.copy();
+            throughColor.alpha = Math.trunc(throughColor.alpha * throughFade);
+
+            cr.setSourceColor(throughColor);
+            cr.arcNegative(
+                0.0, 0.0, radius,
+                angle1 - IconIndicator.SPACING_ANGLE * highlightFade,
+                Math.max(angle2, angle1 + 0.000001) + IconIndicator.SPACING_ANGLE * highlightFade
+            );
+            cr.stroke();
+
+            cr.setSourceColor(highlightColor);
+            cr.arc(0.0, 0.0, radius, angle1, Math.max(angle2, angle1));
             cr.stroke();
         } else {
-            cr.setSourceColor(this._secondaryColor);
-            cr.arc(0, 0, radius, 0.0, 2.0 * Math.PI);
-            cr.setLineWidth(2.2 * scaleFactor);
+            cr.setSourceColor(this._highlightColor);
+            cr.arc(0.0, 0.0, radius, 0.0, 2.0 * Math.PI);
             cr.stroke();
-
-            if (angle2 > angle1) {
-                cr.setSourceColor(this._primaryColor);
-                cr.arcNegative(0, 0, radius, angle1, angle2);
-                cr.setOperator(Cairo.Operator.CLEAR);
-                cr.setLineWidth(3.5 * scaleFactor);
-                cr.strokePreserve();
-
-                cr.setOperator(Cairo.Operator.SOURCE);
-                cr.setLineWidth(2.2 * scaleFactor);
-                cr.stroke();
-            }
         }
 
         cr.$dispose();
     }
 
-    _onIconDestroy() {
-        if (this._timerUpdateId) {
-            this.timer.disconnect(this._timerUpdateId);
-            this._timerUpdateId = 0;
-        }
-    }
+    _updatePausedIcon(animate = true) {
+        const transitionDuration = animate && St.Settings.get().enable_animations ? TRANSITION_DURATION : 0;
+        const opacity = this._timer.isPaused() ? 255 : 0;
 
-    _onStyleChanged(actor) {
-        const themeNode = actor.get_theme_node();
-        const color = themeNode.get_foreground_color();
-        this._primaryColor = color;
+        this._pausedIconBin.show();
+        this._content.show();
 
-        if (Utils.isVersionAtLeast('47'))
-            this._secondaryColor = new Cogl.Color({
-                red: color.red,
-                green: color.green,
-                blue: color.blue,
-                alpha: color.alpha * FADE_OUT_OPACITY,
-            });
-        else
-            this._secondaryColor = new Clutter.Color({
-                red: color.red,
-                green: color.green,
-                blue: color.blue,
-                alpha: color.alpha * FADE_OUT_OPACITY,
-            });
-    }
-
-
-    _onTimerUpdate() {
-        const state = this.timer.getState();
-        const progress = Math.floor(this.timer.getProgress() * STEPS) / STEPS;
-
-        if (this._progress !== progress || this._state !== state) {
-            this._state = state;
-            this._progress = progress;
-            this.icon.queue_repaint();
-        }
-    }
-
-
-    _onActorDestroy() {
-        if (this._timerUpdateId) {
-            this.timer.disconnect(this._timerUpdateId);
-            this._timerUpdateId = 0;
-        }
-
-        this.timer = null;
-        this.icon = null;
-
-        this.actor._delegate = null;
-
-        this.emit('destroy');
-    }
-
-    destroy() {
-        this.actor.destroy();
-    }
-};
-
-
-export const Indicator = GObject.registerClass(
-class PomodoroIndicator extends PanelMenu.Button {
-    _init(timer, type) {
-        super._init(X_ALIGNMENT, _('Pomodoro'), true);
-
-        this.timer  = timer;
-        this.widget = null;
-
-        this.add_style_class_name('extension-pomodoro-indicator');
-
-        this._iconBox = new St.Bin({
-            x_align: Clutter.ActorAlign.CENTER,
-            y_align: Clutter.ActorAlign.CENTER,
+        this._pausedIconBin.ease_property('opacity', opacity, {
+            duration: transitionDuration,
+            mode: Clutter.AnimationMode.EASE_OUT_QUAD,
+            onStopped: () => {
+                if (opacity === 0)
+                    this._pausedIconBin.hide();
+                else
+                    this._content.hide();
+            }
         });
-        this.add_child(this._iconBox);
+    }
 
-        this._blinking = false;
-        this._blinkingGroup = new Utils.TransitionGroup();
-        this._blinkingGroup.addActor(this._iconBox);
+    _onTimerChanged(timer) {
+        this._updateTimeout();
+        this._updatePausedIcon();
 
+        this._highlight.queue_repaint();
+    }
+
+    _onTimeout() {
+        this._highlight.queue_repaint();
+
+        return GLib.SOURCE_CONTINUE;
+    }
+
+    _onDestroy() {
+        this._stopTimeout();
+
+        if (this._timer) {
+            this._timer.disconnectObject(this);
+            this._timer = null;
+        }
+
+        if (this._through) {
+            this._content.remove_child(this._through);
+            this._through.destroy();
+            this._through = null;
+        }
+
+        if (this._highlight) {
+            this._content.remove_child(this._highlight);
+            this._highlight.destroy();
+            this._highlight = null;
+        }
+
+        if (this._content) {
+            this.remove_child(this._content);
+            this._content = null;
+        }
+
+        if (this._pausedIcon) {
+            this._pausedIconBin.remove_child(this._pausedIcon);
+            this._pausedIcon = null;
+        }
+
+        if (this._pausedIconBin) {
+            this.remove_child(this._pausedIconBin);
+            this._pausedIconBin = null;
+        }
+
+        this._delegate = null;
+    }
+});
+
+
+export const Indicator = GObject.registerClass({
+    Properties: {
+        'type': GObject.ParamSpec.int(
+            'type', null, null,
+            GObject.ParamFlags.READWRITE,
+            Math.min(...Object.values(IndicatorType)),
+            Math.max(...Object.values(IndicatorType)),
+            IndicatorType.ICON),
+    },
+},
+class FocusTimerIndicator extends PanelMenu.Button {
+    _init(timer, session, type) {
+        super._init(0.5, _('Focus Timer'), true);
+
+        this._type = type;
+        this._timer = timer;
+        this._session = session;
+        this._widget = null;
+        this._blinkingGroup = new Utils.BlinkingGroup(BLINKING_DURATION);
+        this._blinkingGroup.fadeOut(0);
+
+        this.add_style_class_name('extension-focus-timer-indicator');
         this.setMenu(new IndicatorMenu(this));
-        Main.panel.menuManager.addMenu(this.menu);
 
-        this.setType(type);
+        this._timer.connectObject('changed', this._onTimerChanged.bind(this), this);
 
-        this._mappedId = this.connect('notify::mapped', this._onMappedChanged.bind(this));
+        this._update();
+    }
 
-        this.connect('destroy', () => {
-            if (this._timerPausedId) {
-                this.timer.disconnect(this._timerPausedId);
-                this._timerPausedId = 0;
-            }
+    get type() {
+        return this._type;
+    }
 
-            if (this._timerResumedId) {
-                this.timer.disconnect(this._timerResumedId);
-                this._timerResumedId = 0;
-            }
+    set type(value) {
+        if (this._type === value)
+            return;
 
-            if (this._blinkingGroup) {
-                this._blinkingGroup.destroy();
-                this._blinkingGroup = null;
-            }
+        this._type = value;
 
-            if (this.icon) {
-                this.icon.destroy();
-                this.icon = null;
-            }
-
-            if (this._mappedId) {
-                this.disconnect(this._mappedId);
-                this._mappedId = 0;
-            }
-
-            this.timer = null;
-        });
+        this._updateWidget(false);
     }
 
     get blinkingGroup() {
         return this._blinkingGroup;
     }
 
-    _onMappedChanged() {
-        if (this.mapped) {
-            if (!this._timerPausedId)
-                this._timerPausedId = this.timer.connect('paused', this._onTimerPaused.bind(this));
+    _updateBlinkingGroup() {
+        const transitionDuration = St.Settings.get().enable_animations
+            ? TRANSITION_DURATION
+            : 0;
 
-
-            if (!this._timerResumedId)
-                this._timerResumedId = this.timer.connect('resumed', this._onTimerResumed.bind(this));
-        } else {
-            if (this._timerPausedId) {
-                this.timer.disconnect(this._timerPausedId);
-                this._timerPausedId = 0;
-            }
-
-            if (this._timerResumedId) {
-                this.timer.disconnect(this._timerResumedId);
-                this._timerResumedId = 0;
-            }
-        }
-
-        this._onBlinked();
+        if (this._timer.state === State.STOPPED)
+            this._blinkingGroup.fadeOut(transitionDuration);
+        else if (this._timer.isPaused() || this._timer.isFinished() || !this._timer.isStarted())
+            this._blinkingGroup.blink();
+        else
+            this._blinkingGroup.fadeIn(transitionDuration);
     }
 
-    setType(type) {
-        if (this.widget) {
-            this.widget.destroy();
-            this.widget = null;
+    _updateWidget() {
+        let widget = this._widget;
+
+        if (widget) {
+            this._blinkingGroup.removeActor(widget);
+            this.remove_child(widget);
         }
 
-        switch (type) {
+        switch (this._type) {
         case IndicatorType.TEXT:
-            this.widget = new TextIndicator(this.timer);
-            break;
-
-        case IndicatorType.SHORT_TEXT:
-            this.widget = new ShortTextIndicator(this.timer);
+            widget = new TextIndicator(this._timer, this._session);
             break;
 
         default:
-            this.widget = new IconIndicator(this.timer);
+            widget = new IconIndicator(this._timer);
             break;
         }
 
-        this._iconBox.set_child(this.widget.actor);
+        this._widget = widget;
+
+        this.add_child(widget);
+        this._blinkingGroup.addActor(widget, 'fade', 0.0, 1.0);
     }
 
-    _onBlinked() {
-        this._blinking = false;
+    _update() {
+        if (!this._widget)
+            this._updateWidget();
 
-        if (!this.mapped) {
-            this._blinkingGroup.removeAllTransitions();
-            this._blinkingGroup.setProperty('opacity', 255);
+        this._updateBlinkingGroup();
+
+        if (State.isBreak(this._timer.state))
+            this.add_style_class_name('extension-focus-timer-break');
+        else
+            this.remove_style_class_name('extension-focus-timer-break');
+    }
+
+    _onTimerChanged() {
+        this._update();
+    }
+
+    _onDestroy() {
+        if (this._blinkingGroup) {
+            this._blinkingGroup.destroy();
+            this._blinkingGroup = null;
         }
 
-        if (this.timer.isPaused())
-            this._blink();
-    }
-
-    _blink() {
-        if (!this.mapped)
-            return;
-
-        if (!this._blinking) {
-            let ignoreSignals = false;
-            let fadeIn = () => {
-                if (this._blinking) {
-                    this._blinkingGroup.easeProperty('opacity', FADE_IN_OPACITY * 255, {
-                        duration: 1750,
-                        mode: Clutter.AnimationMode.EASE_IN_OUT_CUBIC,
-                        onComplete: () => {
-                            if (!this.mapped)
-                                return;
-
-                            if (!ignoreSignals) {
-                                ignoreSignals = true;
-                                fadeOut();
-                                ignoreSignals = false;
-                            } else {
-                                // stop recursion
-                            }
-                        },
-                    });
-                } else {
-                    this._onBlinked();
-                }
-            };
-            let fadeOut = () => {
-                if (this._blinking) {
-                    this._blinkingGroup.easeProperty('opacity', FADE_OUT_OPACITY * 255, {
-                        duration: 1750,
-                        mode: Clutter.AnimationMode.EASE_IN_OUT_CUBIC,
-                        onComplete: () => {
-                            if (!ignoreSignals) {
-                                ignoreSignals = true;
-                                fadeIn();
-                                ignoreSignals = false;
-                            } else {
-                                // stop recursion
-                            }
-                        },
-                    });
-                } else {
-                    this._onBlinked();
-                }
-            };
-
-            if (St.Settings.get().enable_animations) {
-                this._blinking = true;
-                this._blinkingGroup.easeProperty('opacity', FADE_OUT_OPACITY * 255, {
-                    duration: FADE_OUT_TIME,
-                    mode: Clutter.AnimationMode.EASE_OUT_QUAD,
-                    onComplete: fadeIn,
-                });
-            }
+        if (this._timer) {
+            this._timer.disconnectObject(this);
+            this._timer = null;
         }
-    }
 
-    _onTimerPaused() {
-        this._blink();
-    }
+        this._session = null;
+        this._stack = null;
+        this._widget = null;
 
-    _onTimerResumed() {
-        if (this._blinking) {
-            this._blinkingGroup.easeProperty('opacity', FADE_IN_OPACITY * 255, {
-                duration: 200,
-                mode: Clutter.AnimationMode.EASE_OUT_QUAD,
-                onComplete: this._onBlinked.bind(this),
-            });
-        }
+        super._onDestroy();
     }
 });

@@ -1,0 +1,6 @@
+option(
+  'bundle',
+  type: 'boolean',
+  value: false,
+  description: 'Install all data into extension dir.'
+)

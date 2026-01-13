@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014-2016 gnome-pomodoro contributors
+ * Copyright (c) 2014-2026 focus-timer contributors
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -14,33 +14,42 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ *
  * Authors: Kamil Prusko <kamilprusko@gmail.com>
  */
 
-import Clutter from 'gi://Clutter';
+import GLib from 'gi://GLib';
 import Gio from 'gi://Gio';
 import GObject from 'gi://GObject';
-import Pango from 'gi://Pango';
-import St from 'gi://St';
 
 import {gettext as _} from 'resource:///org/gnome/shell/extensions/extension.js';
-import {EventEmitter} from 'resource:///org/gnome/shell/misc/signals.js';
+import * as Signals from 'resource:///org/gnome/shell/misc/signals.js';
 import * as Params from 'resource:///org/gnome/shell/misc/params.js';
 
-import {PomodoroClient} from './dbus.js';
+import {TimerProxy, BUS_NAME, OBJECT_PATH} from './dbus.js';
 import {IssueNotification, getDefaultSource} from './notifications.js';
 import * as Config from './config.js';
 import * as Utils from './utils.js';
 
 
+export const MILLISECOND = 1000;
+export const SECOND = 1000000;
+export const MINUTE = 60000000;
+
+
 export const State = {
-    NULL: 'null',
+    STOPPED: 'stopped',
     POMODORO: 'pomodoro',
+    BREAK: 'break',
     SHORT_BREAK: 'short-break',
     LONG_BREAK: 'long-break',
 
     label(state) {
         switch (state) {
+        case State.STOPPED:
+            return _('Stopped');
+
         case State.POMODORO:
             return _('Pomodoro');
 
@@ -50,432 +59,209 @@ export const State = {
         case State.LONG_BREAK:
             return _('Long Break');
 
+        case State.BREAK:
+            return _('Break');
+
         default:
-            return null;
+            return '';
         }
     },
+
+    isBreak(state) {
+        return state === State.SHORT_BREAK || state === State.LONG_BREAK || state === State.BREAK;
+    }
 };
 
 
-export class Timer extends EventEmitter {
-    constructor() {
-        super();
-
-        this._connected = false;
-        this._state = null;
-        this._isPaused = null;
-        this._stateDuration = 0;
-        this._propertiesChangedId = 0;
-        this._elapsed = 0.0;
-
-        this._proxy = PomodoroClient(this._onInit.bind(this));
-
-        this._propertiesChangedId = this._proxy.connect(
-            'g-properties-changed',
-            this._onPropertiesChanged.bind(this));
-
-        this._nameWatcherId = Gio.DBus.session.watch_name(
-            'org.gnome.Pomodoro',
-            Gio.BusNameWatcherFlags.AUTO_START,
-            this._onNameAppeared.bind(this),
-            this._onNameVanished.bind(this));
-    }
-
-    _onNameAppeared() {
-        this._connected = true;
-
-        this.emit('service-connected');
-        this.emit('update');
-    }
-
-    _onNameVanished() {
-        this._connected = false;
-
-        this.emit('update');
-        this.emit('service-disconnected');
-    }
-
-    _onPropertiesChanged(proxy, properties) {  // eslint-disable-line no-unused-vars
-        const state = proxy.State;
-        const stateDuration = proxy.StateDuration;
-        const elapsed = proxy.Elapsed;
-        const isPaused = proxy.IsPaused;
-
-        if (this._state !== state || this._stateDuration !== stateDuration || this._elapsed > elapsed) {
-            this._state = state;
-            this._stateDuration = stateDuration;
-            this._elapsed = elapsed;
-
-            this.emit('state-changed');
-        } else {
-            this._elapsed = elapsed;
-        }
-
-        if (this._isPaused !== isPaused) {
-            this._isPaused = isPaused;
-            this.emit(isPaused ? 'paused' : 'resumed');
-        }
-
-        this.emit('update');
-    }
-
-    _onInit(proxy, error) {
-        if (error) {
-            Utils.logWarning(error.message);
-            this._notifyServiceNotInstalled();
-        }
-    }
-
-    _onCallback(result, error) {
-        if (error) {
-            Utils.logWarning(error.message);
-
-            if (error.matches(Gio.DBusError, Gio.DBusError.SERVICE_UNKNOWN))
-                this._notifyServiceNotInstalled();
-        }
-    }
-
-    getState() {
-        if (!this._connected || this._proxy.State === null)
-            return State.NULL;
-
-
-        return this._proxy.State;
-    }
-
-    setState(state, timestamp) {
-        this._proxy.SetStateRemote(
-            state,
-            timestamp || 0,
-            this._onCallback.bind(this));
-    }
-
-    getStateDuration() {
-        return this._proxy.StateDuration;
-    }
-
-    setStateDuration(duration) {
-        this._proxy.SetStateDurationRemote(
-            this._proxy.State,
-            duration,
-            this._onCallback.bind(this));
-    }
-
-    get stateDuration() {
-        return this._proxy.StateDuration;
-    }
-
-    set stateDuration(value) {
-        this._proxy.SetStateDurationRemote(
-            this._proxy.State,
-            value,
-            this._onCallback.bind(this));
-    }
-
-    getElapsed() {
-        return this._proxy.Elapsed;
-    }
-
-    getRemaining() {
-        let state = this.getState();
-
-        if (state === State.NULL)
-            return 0.0;
-
-
-        return Math.ceil(this._proxy.StateDuration - this._proxy.Elapsed);
-    }
-
-    getProgress() {
-        return this._connected && this._proxy.StateDuration > 0
-            ? this._proxy.Elapsed / this._proxy.StateDuration
-            : 0.0;
-    }
-
-    isPaused() {
-        return this._connected && this._proxy.IsPaused;
-    }
-
-    start() {
-        this._proxy.StartRemote(this._onCallback.bind(this));
-    }
-
-    stop() {
-        this._proxy.StopRemote(this._onCallback.bind(this));
-    }
-
-    pause() {
-        this._proxy.PauseRemote(this._onCallback.bind(this));
-    }
-
-    resume() {
-        this._proxy.ResumeRemote(this._onCallback.bind(this));
-    }
-
-    skip() {
-        this._proxy.SkipRemote(this._onCallback.bind(this));
-    }
-
-    reset() {
-        this._proxy.ResetRemote(this._onCallback.bind(this));
-    }
-
-    toggle() {
-        if (this.getState() === State.NULL)
-            this.start();
-        else
-            this.stop();
-    }
-
-    isBreak() {
-        const state = this.getState();
-
-        return state === State.SHORT_BREAK || state === State.LONG_BREAK;
-    }
-
-    showMainWindow(mode, timestamp) {
-        this._proxy.ShowMainWindowRemote(mode, timestamp, this._onCallback.bind(this));
-    }
-
-    showPreferences(timestamp) {
-        this._proxy.ShowPreferencesRemote(timestamp, this._onCallback.bind(this));
-    }
-
-    quit() {
-        this._proxy.QuitRemote((result, error) => {  // eslint-disable-line no-unused-vars
-            Utils.disableExtension(Config.EXTENSION_UUID);
-        });
-    }
-
-    _notifyServiceNotInstalled() {
-        const source = new getDefaultSource();
-        const notification = new IssueNotification(_('Failed to run <i>%s</i> service').format(Config.PACKAGE_NAME));
-        source.addNotification(notification);
-    }
-
-    destroy() {
-        if (this._propertiesChangedId) {
-            this._proxy.disconnect(this._propertiesChangedId);
-            this._propertiesChangedId = 0;
-        }
-
-        if (this._nameWatcherId) {
-            Gio.DBus.session.unwatch_name(this._nameWatcherId);
-            this._nameWatcherId = 0;
-        }
-    }
+function normalizeTimestamp(timestamp) {
+    return timestamp >= 0 ? timestamp : NaN;
 }
 
 
-const MonospaceLabel = GObject.registerClass({
-    Properties: {
-        'text': GObject.ParamSpec.string('text', '', '',
-            GObject.ParamFlags.READWRITE,
-            ''),
-        'text-align': GObject.ParamSpec.enum('text-align', '', '',
-            GObject.ParamFlags.READWRITE,
-            Pango.Alignment, Pango.Alignment.LEFT),
-    },
-}, class PomodoroMonospaceLabel extends St.Widget {
-    _init(params) {
-        params = Params.parse(params, {
-            style_class: 'extension-pomodoro-monospace-label',
-            layout_manager: new Clutter.BinLayout(),
-        }, true);
 
-        super._init(params);
+export class Timer extends Signals.EventEmitter {
+    constructor(proxy) {
+        super();
 
-        this._digitWidth = 0.0;
-        this._styleChangedId = 0;
-        this._notifyTextAlignId = 0;
-
-        this._label = new St.Label({
-            x_expand: true,
-            y_expand: true,
-            y_align: Clutter.ActorAlign.FILL,
-        });
-        this._label.clutter_text.line_wrap = false;
-        this._label.clutter_text.ellipsize = Pango.EllipsizeMode.NONE;
-        this.add_child(this._label);
-
-        this.bind_property('text', this._label, 'text', GObject.BindingFlags.SYNC_CREATE);
-
-        this._styleChangedId = this.connect('style-changed', this._onStyleChanged.bind(this));
-        this._notifyTextAlignId = this.connect('notify::text-align', this._onNotifyTextAlign.bind(this));
-        this.connect('destroy', this._onDestroy.bind(this));
-
-        this._onStyleChanged();
-        this._onNotifyTextAlign();
+        this._proxy = proxy;
+        this._tickId = this._proxy.connectSignal('Tick', this._onTick.bind(this));
+        this._changedId = this._proxy.connectSignal('Changed', this._onChanged.bind(this));
+        this._cancellable = new Gio.Cancellable();
+        this._lastTickTime = NaN;
+        this._monotonicTimeOffset = 0;
     }
 
-    // eslint-disable-next-line no-unused-vars
-    vfunc_get_preferred_width(forHeight) {
-        const themeNode = this.get_theme_node();
+    get state() {
+        return this._proxy?.State || State.STOPPED;
+    }
 
-        if (this._digitWidth === 0.0) {
-            const font      = themeNode.get_font();
-            const context   = this.get_pango_context();
-            const metrics   = context.get_metrics(font, context.get_language());
+    set state(value) {
+        if (this._proxy)
+            this._proxy.State = value;
+    }
 
-            this._digitWidth = metrics.get_approximate_digit_width() / Pango.SCALE;
+    get duration() {
+        return this._proxy?.Duration || 0;
+    }
+
+    set duration(value) {
+        if (this._proxy)
+            this._proxy.Duration = value;
+    }
+
+    get offset() {
+        return this._proxy?.Offset || 0;
+    }
+
+    get startedTime() {
+        return normalizeTimestamp(this._proxy?.StartedTime);
+    }
+
+    get pausedTime() {
+        return normalizeTimestamp(this._proxy?.PausedTime);
+    }
+
+    get finishedTime() {
+        return normalizeTimestamp(this._proxy?.FinishedTime);
+    }
+
+    get lastChangedTime() {
+        return normalizeTimestamp(this._proxy?.LastChangedTime);
+    }
+
+    get lastTickTime() {
+        return this._lastTickTime;
+    }
+
+    getCurrentTime() {
+        if (this._monotonicTimeOffset !== 0)
+            return GLib.get_monotonic_time() + this._monotonicTimeOffset;
+
+        return GLib.get_real_time();
+    }
+
+    _synchronize() {
+        const currentTime = GLib.get_real_time();
+        const monotonicTime = GLib.get_monotonic_time();
+
+        this._monotonicTimeOffset = currentTime - monotonicTime;
+    }
+
+    _onChanged(proxy) {
+        if (this.isRunning())
+            this._synchronize();
+
+        this.emit('changed');
+    }
+
+    _onTick(proxy, sender, [timestamp]) {
+        this._lastTickTime = timestamp;
+
+        this.emit('tick', timestamp);
+    }
+
+    isStarted() {
+        if (!this._proxy)
+            return false;
+
+        return !!this.startedTime;
+    }
+
+    isPaused() {
+        if (!this._proxy)
+            return false;
+
+        return !!this.pausedTime;
+    }
+
+    isRunning() {
+        if (!this._proxy)
+            return false;
+
+        return this.startedTime && !this.pausedTime && !this.finishedTime;
+    }
+
+    isFinished() {
+        if (!this._proxy)
+            return false;
+
+        return !!this.finishedTime;
+    }
+
+    getElapsed(timestamp = NaN) {
+        if (!this.startedTime)
+            return 0;
+
+        if (this.pausedTime)
+            timestamp = this.pausedTime;
+        else if (this.finishedTime)
+            timestamp = this.finishedTime;
+        else if (!timestamp)
+            timestamp = this.getCurrentTime();
+
+        return Math.max(0, Math.min(timestamp - this.startedTime - this.offset, this.duration));
+    }
+
+    getRemaining(timestamp = NaN) {
+        return this.duration - this.getElapsed(timestamp);
+    }
+
+    getProgress(timestamp = NaN) {
+        const duration = this.duration;
+
+        return duration > 0 ? this.getElapsed(timestamp) / duration : 0.0;
+    }
+
+    start() {
+        this._proxy?.StartAsync(this._cancellable).catch(logError);
+    }
+
+    stop() {
+        this._proxy?.StopAsync(this._cancellable).catch(logError);
+    }
+
+    pause() {
+        this._proxy?.PauseAsync(this._cancellable).catch(logError);
+    }
+
+    resume() {
+        this._proxy?.ResumeAsync(this._cancellable).catch(logError);
+    }
+
+    rewind(interval) {
+        this._proxy?.RewindAsync(interval, this._cancellable).catch(logError);
+    }
+
+    extend(interval) {
+        this._proxy?.ExtendAsync(interval, this._cancellable).catch(logError);
+    }
+
+    skip() {
+        this._proxy?.SkipAsync(this._cancellable).catch(logError);
+    }
+
+    reset() {
+        this._proxy?.ResetAsync(this._cancellable).catch(logError);
+    }
+
+    destroy() {
+        if (this._changedId) {
+            this._proxy.disconnectSignal(this._changedId);
+            this._changedId = 0;
         }
 
-        const naturalWidth = Math.ceil(this.text.length * this._digitWidth);
-
-        return themeNode.adjust_preferred_width(naturalWidth, naturalWidth);
-    }
-
-    _onStyleChanged() {
-        this._digitWidth = 0.0;
-    }
-
-    _onNotifyTextAlign() {
-        // St.Label doesn't support text-align through css, so alignment is done through allocation.
-        switch (this.text_align) {
-        case Pango.Alignment.LEFT:
-            this._label.x_align = Clutter.ActorAlign.START;
-            break;
-
-        case Pango.Alignment.CENTER:
-            this._label.x_align = Clutter.ActorAlign.CENTER;
-            break;
-
-        case Pango.Alignment.RIGHT:
-            this._label.x_align = Clutter.ActorAlign.END;
-            break;
-        }
-    }
-
-    _onDestroy() {
-        if (this._styleChangedId) {
-            this.disconnect(this._styleChangedId);
-            this._styleChangedId = 0;
+        if (this._tickId) {
+            this._proxy.disconnectSignal(this._tickId);
+            this._tickId = 0;
         }
 
-        if (this._notifyTextAlignId) {
-            this.disconnect(this._notifyTextAlignId);
-            this._notifyTextAlignId = 0;
-        }
-    }
-});
-
-
-// Label widget that for longer text behaves like a normal label, but for short text
-// behaves like a monospace label.
-const SemiMonospaceLabel = GObject.registerClass(
-class PomodoroSemiMonospaceLabel extends MonospaceLabel {
-    vfunc_get_preferred_width(forHeight) {
-        const themeNode = this.get_theme_node();
-
-        if (this.text.length > 1) {
-            const [minimumWidth, naturalWidth] = this._label.get_preferred_width(-1);
-
-            return themeNode.adjust_preferred_width(minimumWidth, naturalWidth);
-        } else {
-            return super.vfunc_get_preferred_width(forHeight);
-        }
-    }
-});
-
-
-export const TimerLabel = GObject.registerClass(
-class PomodoroTimerLabel extends St.BoxLayout {
-    _init(timer, params) {
-        params = Params.parse(params, {
-            style_class: 'extension-pomodoro-timer-label',
-            x_align: Clutter.ActorAlign.CENTER,
-            y_align: Clutter.ActorAlign.CENTER,
-            x_expand: false,
-            y_expand: false,
-            reactive: false,
-            can_focus: false,
-            track_hover: false,
-        }, true);
-
-        super._init(params);
-
-        this._timer = timer;
-        this._timerState = null;
-        this._timerUpdateId = 0;
-        this._frozen = false;
-
-        this._minutesLabel = new SemiMonospaceLabel({
-            text: '0',
-            text_align: Pango.Alignment.RIGHT,
-        });
-        this.add_child(this._minutesLabel);
-
-        this._separatorLabel = new St.Label({
-            text: ':',
-        });
-        this._separatorLabel.clutter_text.ellipsize = Pango.EllipsizeMode.NONE;
-        this.add_child(this._separatorLabel);
-
-        this._secondsLabel = new MonospaceLabel({
-            text: '00',
-            text_align: Pango.Alignment.LEFT,
-        });
-        this.add_child(this._secondsLabel);
-
-        this.connect('destroy', this._onDestroy.bind(this));
-    }
-
-    freezeState() {
-        this._timerState = this._timer.getState();
-    }
-
-    unfreezeState() {
-        this._timerState = null;
-    }
-
-    freeze() {
-        this._frozen = true;
-    }
-
-    unfreeze() {
-        this._frozen = false;
-    }
-
-    vfunc_map() {
-        if (!this._timerUpdateId)
-            this._timerUpdateId = this._timer.connect('update', this._onTimerUpdate.bind(this));
-
-        this.unfreeze();
-        this._updateLabels();
-
-        super.vfunc_map();
-    }
-
-    vfunc_unmap() {
-        if (this._timerUpdateId) {
-            this._timer.disconnect(this._timerUpdateId);
-            this._timerUpdateId = 0;
+        if (this._cancellable) {
+            this._cancellable.cancel();
+            this._cancellable = null;
         }
 
-        super.vfunc_unmap();
-    }
-
-    _updateLabels() {
-        if (this._timerState && this._timerState !== this._timer.getState())
-            return;
-
-        const remaining = Math.max(Math.round(this._timer.getRemaining()), 0);
-        const minutes   = Math.floor(remaining / 60);
-        const seconds   = remaining - 60 * minutes;
-
-        this._minutesLabel.text = '%d'.format(minutes);
-        this._secondsLabel.text = '%02d'.format(seconds);
-    }
-
-    _onTimerUpdate() {
-        if (!this._frozen)
-            this._updateLabels();
-    }
-
-    _onDestroy() {
-        if (this._timerUpdateId) {
-            this._timer.disconnect(this._timerUpdateId);
-            this._timerUpdateId = 0;
+        if (this._proxy) {
+            this._proxy = null;
         }
     }
-});
+}

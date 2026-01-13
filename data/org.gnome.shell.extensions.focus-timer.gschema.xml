@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist gettext-domain="gnome-shell-extension-focus-timer">
+  <schema id="org.gnome.shell.extensions.focus-timer" path="/org/gnome/shell/extensions/focus-timer/">
+    <key name="autostart" type="b">
+      <default>false</default>
+      <summary>Start the app along with extension</summary>
+    </key>
+    <key name="indicator-type" type="s">
+      <choices>
+        <choice value="icon"/>
+        <choice value="text"/>
+      </choices>
+      <default>"icon"</default>
+      <summary>Indicator type</summary>
+    </key>
+    <key name="blur-effect" type="b">
+      <default>true</default>
+      <summary>Blur effect</summary>
+    </key>
+    <key name="dismiss-gesture" type="b">
+      <default>true</default>
+      <summary>Dismiss screen overlay by gesture</summary>
+    </key>
+    <key name="manage-notifications" type="b">
+      <default>true</default>
+      <summary>Reduce number of notifications during Pomodoro</summary>
+    </key>
+  </schema>
+</schemalist>

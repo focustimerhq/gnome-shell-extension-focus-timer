@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2011-2024 gnome-pomodoro contributors
+ * Copyright (c) 2011-2026 focus-timer contributors
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -13,6 +13,8 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * SPDX-License-Identifier: GPL-3.0-or-later
  *
  * Authors: Kamil Prusko <kamilprusko@gmail.com>
  *
@@ -35,8 +37,8 @@ import * as SystemActions from 'resource:///org/gnome/shell/misc/systemActions.j
 import * as Main from 'resource:///org/gnome/shell/ui/main.js';
 import * as Params from 'resource:///org/gnome/shell/misc/params.js';
 
-import {extension} from './extension.js';
-import {State, TimerLabel} from './timer.js';
+import {State, SECOND} from './timer.js';
+import {TimerLabel} from './timerLabel.js';
 import * as Utils from './utils.js';
 
 
@@ -47,26 +49,25 @@ import * as Utils from './utils.js';
  *   - moderate typing speed of 35 words per minute, 343 miliseconds.
  */
 const IDLE_TIME_TO_ACKNOWLEDGE = 600;
-const IDLE_TIME_TO_OPEN = 30000;
 const MOTION_VELOCITY_TO_DISMISS = 3.0;
 
-const FADE_IN_TIME = 500;
+const FADE_IN_TIME = 400;
 const FADE_OUT_TIME = 350;
-
 const BLUR_BRIGHTNESS = 0.4;
 const BLUR_RADIUS = 40.0;
-
-const OPEN_WHEN_IDLE_MIN_REMAINING_TIME = 3.0;
-
-const BACKGROUND_COLOR = Utils.isVersionAtLeast('47')
-    ? new Cogl.Color({red: 0, green: 0, blue: 0, alpha: 255})
-    : Clutter.Color.from_pixel(0x000000ff);
+const OPEN_MIN_REMAINING_SECONDS = 3;
+const BACKGROUND_COLOR = new Cogl.Color({
+    red: 0,
+    green: 0,
+    blue: 0,
+    alpha: 255,
+});
 const ICON_SIZE = 24;
 
 export const OverlayState = {
-    OPENED: 0,
-    CLOSED: 1,
-    OPENING: 2,
+    CLOSED: 0,
+    OPENING: 1,
+    OPENED: 2,
     CLOSING: 3,
 };
 
@@ -74,7 +75,7 @@ let overlayManager = null;
 
 
 const PlainLightbox = GObject.registerClass(
-class PomodoroPlainLightbox extends Lightbox {
+class FocusTimerPlainLightbox extends Lightbox {
     _init(container, params) {
         params = Params.parse(params, {
             inhibitEvents: false,
@@ -92,14 +93,14 @@ class PomodoroPlainLightbox extends Lightbox {
 
         this.set({
             opacity: 0,
-            style_class: 'extension-pomodoro-lightbox',
+            style_class: 'extension-focus-timer-lightbox',
         });
     }
 });
 
 
 const BlurredLightbox = GObject.registerClass(
-class PomodoroBlurredLightbox extends Lightbox {
+class FocusTimerBlurredLightbox extends Lightbox {
     _init(container, params) {
         params = Params.parse(params, {
             inhibitEvents: false,
@@ -117,7 +118,7 @@ class PomodoroBlurredLightbox extends Lightbox {
 
         this.set({
             opacity: 0,
-            style_class: 'extension-pomodoro-lightbox-blurred',
+            style_class: 'extension-focus-timer-lightbox-blurred',
         });
         this._background = null;
 
@@ -379,13 +380,16 @@ class OverlayManager {
 }
 
 
-
+/**
+ * `AcknowledgeGesture` detects a inactivity after opening the overlay.
+ * This inactivity we treat as acknowledging that the user has seen the overlay.
+ */
 const AcknowledgeGesture = GObject.registerClass({
     Signals: {
         'begin': {},
         'end': {},
     },
-}, class PomodoroAcknowledgeGesture extends GObject.Object {
+}, class FocusTimerAcknowledgeGesture extends GObject.Object {
     _init(actor) {
         super._init();
 
@@ -405,7 +409,7 @@ const AcknowledgeGesture = GObject.registerClass({
 
         this._intervalId = GLib.timeout_add(
             GLib.PRIORITY_DEFAULT,
-            IDLE_TIME_TO_ACKNOWLEDGE / 10,
+            50,
             () => {
                 const currentTime = GLib.get_monotonic_time() / 1000;
                 const idleTime = currentTime - this._lastActiveTime;
@@ -420,7 +424,7 @@ const AcknowledgeGesture = GObject.registerClass({
                 return GLib.SOURCE_CONTINUE;
             });
 
-        this._eventId = this._actor.connect('event', this._handleEvent.bind(this));
+        this._eventId = this._actor.connect('captured-event', this._handleEvent.bind(this));
 
         this.emit('begin');
     }
@@ -474,18 +478,35 @@ const AcknowledgeGesture = GObject.registerClass({
 
         this._lastActiveTime = event.get_time();
 
-        return Clutter.EVENT_STOP;
+        return Clutter.EVENT_PROPAGATE;
+    }
+
+    destroy() {
+        if (this._intervalId) {
+            GLib.source_remove(this._intervalId);
+            this._intervalId = 0;
+        }
+
+        if (this._eventId) {
+            this._actor.disconnect(this._eventId);
+            this._eventId = 0;
+        }
+
+        this._actor = null;
     }
 });
 
 
-
+/**
+ * User needs to make more significant mouse movement or enter a key.
+ * Media keys we pass through.
+ */
 const DismissGesture = GObject.registerClass({
     Signals: {
         'begin': {},
         'end': {},
     },
-}, class PomodoroDismissGesture extends GObject.Object {
+}, class FocusTimerDismissGesture extends GObject.Object {
     _init(actor) {
         super._init();
 
@@ -570,28 +591,49 @@ const DismissGesture = GObject.registerClass({
 
         return Clutter.EVENT_STOP;
     }
+
+    destroy() {
+        if (this._eventId) {
+            this._actor.disconnect(this._eventId);
+            this._eventId = 0;
+        }
+
+        this._actor = null;
+    }
 });
 
 
 /**
- * ScreenOverlayBase class is based on ModalDialog from GNOME Shell.
+ * `ScreenOverlayBase` class is based on `ModalDialog` from GNOME Shell.
+ *
+ * It serves as a container for:
+ *  - `lightbox` - actor obscuring the all screens
+ *  - `layout` - the actual contents, placed on the primary screen
  */
 const ScreenOverlayBase = GObject.registerClass({
     Properties: {
         'state': GObject.ParamSpec.int(
-            'state', 'state', 'state',
+            'state', null, null,
             GObject.ParamFlags.READABLE,
             Math.min(...Object.values(OverlayState)),
             Math.max(...Object.values(OverlayState)),
             OverlayState.CLOSED),
         'has-modal': GObject.ParamSpec.boolean(
-            'has-modal', 'has-modal', 'has-modal',
+            'has-modal', null, null,
             GObject.ParamFlags.READABLE,
             false),
         'acknowledged': GObject.ParamSpec.boolean(
-            'acknowledged', 'acknowledged', 'acknowledged',
+            'acknowledged',null, null,
             GObject.ParamFlags.READABLE,
             false),
+        'enable-blur-effect': GObject.ParamSpec.boolean(
+            'enable-blur-effect', null, null,
+            GObject.ParamFlags.READWRITE | GObject.ParamFlags.CONSTRUCT_ONLY,
+            true),
+        'enable-dismiss-gesture': GObject.ParamSpec.boolean(
+            'enable-dismiss-gesture', null, null,
+            GObject.ParamFlags.READWRITE | GObject.ParamFlags.CONSTRUCT_ONLY,
+            true),
     },
     Signals: {
         'opened': {},
@@ -599,25 +641,28 @@ const ScreenOverlayBase = GObject.registerClass({
         'closed': {},
         'closing': {},
     },
-}, class PomodoroScreenOverlayBase extends St.Widget {
-    _init() {
+}, class FocusTimerScreenOverlayBase extends St.Widget {
+    _init(params) {
         super._init({
-            style_class: 'extension-pomodoro-overlay',
+            style_class: 'extension-focus-timer-overlay',
             accessible_role: Atk.Role.DIALOG,
             layout_manager: new Clutter.BinLayout(),
             reactive: false,
             visible: false,
             opacity: 0,
+            ...params
         });
 
         this._state = OverlayState.CLOSED;
         this._hasModal = false;
         this._grab = null;
         this._destroyed = false;
-        this._openWhenIdleWatchId = 0;
         this._acknowledged = false;
         this._keyFocusOutId = 0;
         this._capturedEventId = 0;
+        this._idleMonitor = global.backend.get_core_idle_monitor();
+        this._acknowledgeGesture = null;
+        this._dismissGesture = null;
 
         this._monitorConstraint = new MonitorConstraint();
         this._monitorConstraint.primary = true;
@@ -627,15 +672,11 @@ const ScreenOverlayBase = GObject.registerClass({
         });
         this.add_constraint(this._stageConstraint);
 
-        this._idleMonitor = global.backend.get_core_idle_monitor();
-        this._session = new GnomeSession.SessionManager();
-
         this._layout = new St.Widget({layout_manager: new Clutter.BinLayout()});
         this._layout.add_constraint(this._monitorConstraint);
         this.add_child(this._layout);
 
-        // Lightbox will be a direct child of the overlay
-        this._lightbox = extension.pluginSettings.get_boolean('blur-effect')
+        this._lightbox = this._enableBlurEffect
             ? new BlurredLightbox(this) : new PlainLightbox(this);
         this._lightbox.highlight(this._layout);
 
@@ -643,25 +684,11 @@ const ScreenOverlayBase = GObject.registerClass({
 
         OverlayManager.getDefault().add(this);
 
-        this._acknowledgeGesture = new AcknowledgeGesture(this._lightbox);
-        this._acknowledgeGesture.connect('end', this.acknowledge.bind(this));
-
-        this._dismissGesture = new DismissGesture(this._lightbox);
-        this._dismissGesture.connect('end', this.dismiss.bind(this));
-
         this.connect('destroy', this._onDestroy.bind(this));
     }
 
     get state() {
         return this._state;
-    }
-
-    _setState(state) {
-        if (this._state === state)
-            return;
-
-        this._state = state;
-        this.notify('state');
     }
 
     get hasModal() {
@@ -672,33 +699,97 @@ const ScreenOverlayBase = GObject.registerClass({
         return this._acknowledged;
     }
 
-    _beginAcknowledgeGesture() {
-        if (this._acknowledged || this._state !== OverlayState.OPENED)
+    get enableBlurEffect() {
+        return this._enableBlurEffect;
+    }
+
+    set enableBlurEffect(value) {
+        if (this._enableBlurEffect === value)
             return;
 
-        // Skip acknowledge gesture if user has been idle for a while.
+        this._enableBlurEffect = value;
+        this.notify('enable-blur-effect');
+    }
+
+    get enableDismissGesture() {
+        return this._enableDismissGesture;
+    }
+
+    set enableDismissGesture(value) {
+        if (this._enableDismissGesture === value)
+            return;
+
+        this._enableDismissGesture = value;
+        this.notify('enable-dismiss-gesture');
+    }
+
+    _setState(value) {
+        if (this._state === value)
+            return;
+
+        this._state = value;
+        this.notify('state');
+    }
+
+    _setAcknowledged(value) {
+        if (this._acknowledged === value)
+            return;
+
+        this._acknowledged = value;
+        this.notify('acknowledged');
+    }
+
+    _beginAcknowledgeGesture() {
+        if (this._acknowledged)
+            return;
+
+        if (this._state !== OverlayState.OPENED && this._state !== OverlayState.OPENING)
+            return;
+
+        if (!this._enableDismissGesture) {
+            this.acknowledge();
+            return;
+        }
+
+        // Skip acknowledge gesture if user has been idle for a while already.
         if (this._idleMonitor.get_idletime() >= IDLE_TIME_TO_ACKNOWLEDGE * 2) {
             this.acknowledge();
             return;
         }
 
-        // Make overlay modal early in order to start acknowledge gesture. Close if unsuccessful.
-        if (this.pushModal())
+        if (!this._acknowledgeGesture) {
+            this._acknowledgeGesture = new AcknowledgeGesture(this._lightbox);
+            this._acknowledgeGesture.connect('end', () => this.acknowledge());
             this._acknowledgeGesture.begin();
-        else
-            this.close(true);
+        }
     }
 
     _beginDismissGesture() {
-        this._dismissGesture.begin();
+        if (!this._enableDismissGesture)
+            return;
+
+        if (!this._dismissGesture) {
+            this._dismissGesture = new DismissGesture(this._lightbox);
+            this._dismissGesture.connect('end', () => this.close());
+            this._dismissGesture.begin();
+        }
     }
 
     acknowledge() {
         if (this._acknowledged)
             return;
 
-        this._acknowledged = true;
-        this.notify('acknowledged');
+        if (this._acknowledgeGesture) {
+            this._acknowledgeGesture.destroy();
+            this._acknowledgeGesture = null;
+        }
+
+        this._doNotTouchIcon.ease_property('opacity', 255, {
+            duration: 100,
+            mode: Clutter.AnimationMode.EASE_OUT_QUAD,
+        });
+
+        this._setAcknowledged(true);
 
         if (this.pushModal())
             this._beginDismissGesture();
@@ -713,7 +804,7 @@ const ScreenOverlayBase = GObject.registerClass({
 
     // Drop modal status without closing the overlay; this makes the
     // overlay insensitive as well, so it needs to be followed shortly
-    // by either a close() or a pushModal()
+    // by either `close()` or `pushModal()`
     popModal(timestamp) {
         if (this._capturedEventId) {
             this._lightbox.disconnect(this._capturedEventId);
@@ -725,10 +816,24 @@ const ScreenOverlayBase = GObject.registerClass({
             this._keyFocusOutId = 0;
         }
 
+        if (this._acknowledgeGesture) {
+            this._acknowledgeGesture.destroy();
+            this._acknowledgeGesture = null;
+        }
+
+        if (this._dismissGesture) {
+            this._dismissGesture.destroy();
+            this._dismissGesture = null;
+        }
+
         if (!this._hasModal)
             return;
 
-        Main.popModal(this._grab, timestamp);
+        if (Utils.isVersionAtLeast('50'))
+            Main.popModal(this._grab);
+        else
+            Main.popModal(this._grab, timestamp);
+
         this._grab = null;
         this._hasModal = false;
         this._lightbox.reactive = false;
@@ -744,11 +849,11 @@ const ScreenOverlayBase = GObject.registerClass({
             return false;
 
         const params = {actionMode: Shell.ActionMode.SYSTEM_MODAL};
-        if (timestamp)
+        if (!Utils.isVersionAtLeast('50') && timestamp)
             params['timestamp'] = timestamp;
 
         const grab = Main.pushModal(this, params);
-        if (grab && grab.get_seat_state() !== Clutter.GrabState.ALL) {
+        if (!Utils.isVersionAtLeast('50') && grab && grab.get_seat_state() !== Clutter.GrabState.ALL) {
             Utils.logWarning('Unable become fully modal');
             Main.popModal(grab);
             return false;
@@ -788,92 +893,77 @@ const ScreenOverlayBase = GObject.registerClass({
         if (!this._canOpen())
             return false;
 
+        if (this._dismissGesture) {
+            this._dismissGesture.destroy();
+            this._dismissGesture = null;
+        }
+
         this.remove_all_transitions();
+        this._setAcknowledged(false);
         this._setState(OverlayState.OPENING);
-        this._lastEventX = -1;
-        this._lastEventY = -1;
-        this._lastMotionTime = -1;
-        this._lastActiveTime = -1;
-        this._acknowledged = false;
-        this.notify('acknowledged');
         this.emit('opening');
         this.show();
 
-        if (animate) {
-            if (this._idleMonitor.get_idletime() >= IDLE_TIME_TO_ACKNOWLEDGE * 2)
-                this.acknowledge();
+        const duration = animate
+            ? Math.trunc(this._enableBlurEffect ? FADE_IN_TIME : FADE_IN_TIME * 1.25)
+            : 0;
 
-            this._lightbox.lightOn(FADE_IN_TIME);
-            this.ease({
-                opacity: 255,
-                duration: FADE_IN_TIME,
-                mode: Clutter.AnimationMode.EASE_OUT_QUAD,
-                onComplete: this._onOpenComplete.bind(this),
-            });
-        } else {
-            this._lightbox.lightOn();
-            this.opacity = 255;
-            this._onOpenComplete();
-        }
+        this._lightbox.lightOn(0);
+        this.ease_property('opacity', 255, {
+            duration,
+            mode: Clutter.AnimationMode.EASE_OUT_QUAD,
+            animationRequired: true,
+            onComplete: this._onOpenComplete.bind(this),
+        });
 
         return true;
-    }
-
-    _onBecomeIdle(_monitor) {
-        try {
-            this.open(true);
-        } catch (error) {
-            Utils.logError(error);
-        }
-    }
-
-    // Schedule to open when user becomes idle.
-    openWhenIdle() {
-        if (this.state === OverlayState.OPENED || this.state === OverlayState.OPENING || this._destroyed)
-            return;
-
-        if (!this._openWhenIdleWatchId) {
-            this._openWhenIdleWatchId = this._idleMonitor.add_idle_watch(
-                IDLE_TIME_TO_OPEN, this._onBecomeIdle.bind(this));
-        }
     }
 
     close(animate = true) {
         if (this.state === OverlayState.CLOSED || this.state === OverlayState.CLOSING)
             return;
 
+        if (this._acknowledgeGesture) {
+            this._acknowledgeGesture.destroy();
+            this._acknowledgeGesture = null;
+        }
+
+        if (this._dismissGesture) {
+            this._dismissGesture.destroy();
+            this._dismissGesture = null;
+        }
+
+        this.remove_all_transitions();
         this.popModal();
         this._setState(OverlayState.CLOSING);
         this.emit('closing');
 
-        this.remove_all_transitions();
-
-        if (animate) {
-            this._lightbox.lightOff(FADE_OUT_TIME);
-            this.ease({
-                opacity: 0,
-                duration: FADE_OUT_TIME,
-                mode: Clutter.AnimationMode.EASE_OUT_QUAD,
-                onComplete: this._onCloseComplete.bind(this),
-            });
-        } else {
-            this._lightbox.lightOff();
-            this.opacity = 0;
-            this._onCloseComplete();
-        }
+        const duration = animate
+            ? Math.trunc(this._enableBlurEffect ? FADE_OUT_TIME : FADE_OUT_TIME * 1.25)
+            : 0;
+        this.ease_property('opacity', 0, {
+            duration,
+            mode: Clutter.AnimationMode.EASE_OUT_QUAD,
+            animationRequired: true,
+            onComplete: this._onCloseComplete.bind(this),
+        });
     }
 
     _onOpenComplete() {
+        if (!this.pushModal()) {
+            this.close(true);
+            return;
+        }
+
         this._setState(OverlayState.OPENED);
         this._beginAcknowledgeGesture();
-
         this.emit('opened');
     }
 
     _onCloseComplete() {
+        this._lightbox.lightOff(0);
         this.hide();
         this._setState(OverlayState.CLOSED);
-
         this.emit('closed');
     }
 
@@ -881,11 +971,8 @@ const ScreenOverlayBase = GObject.registerClass({
         if (event.type() !== Clutter.EventType.KEY_PRESS)
             return Clutter.EVENT_PROPAGATE;
 
-        // TODO: block printscreen
-
         if (event.get_key_symbol() === Clutter.KEY_Escape && this._state === OverlayState.OPENED)
             this.close(true);
-
 
         if (this._acknowledged)
             this.close(true);
@@ -913,26 +1000,34 @@ const ScreenOverlayBase = GObject.registerClass({
 });
 
 
-export const ScreenOverlay = GObject.registerClass({
-    Properties: {
-        'use-gestures': GObject.ParamSpec.boolean(
-            'use-gestures', 'use-gestures', 'use-gestures',
-            GObject.ParamFlags.READWRITE,
-            true),
-    },
-}, class PomodoroScreenOverlay extends ScreenOverlayBase {
-    _init(timer) {
-        super._init();
+export const ScreenOverlay = GObject.registerClass(
+class FocusTimerScreenOverlay extends ScreenOverlayBase {
+    _init(timer, params) {
+        super._init(params);
+
+        const container = new St.Widget({
+            layout_manager: new Clutter.BinLayout(),
+            x_expand: true,
+            y_expand: true,
+        });
+        const rtl = Clutter.get_default_text_direction() === Clutter.TextDirection.RTL;
 
         const buttonsBox = new St.BoxLayout({
-            style_class: 'extension-pomodoro-overlay-buttons',
+            style_class: 'extension-focus-timer-overlay-buttons',
+            orientation: Clutter.Orientation.HORIZONTAL,
             x_align: Clutter.ActorAlign.END,
             y_align: Clutter.ActorAlign.START,
         });
-        if (Utils.isVersionAtLeast('48'))
-            buttonsBox.orientation = Clutter.Orientation.HORIZONTAL;
-        else
-            buttonsBox.vertical = false;
+        buttonsBox.add_constraint(new Clutter.SnapConstraint({
+            source: container,
+            from_edge: Clutter.SnapEdge.TOP,
+            to_edge: Clutter.SnapEdge.TOP,
+        }));
+        buttonsBox.add_constraint(new Clutter.SnapConstraint({
+            source: container,
+            from_edge: rtl ? Clutter.SnapEdge.LEFT : Clutter.SnapEdge.RIGHT,
+            to_edge: rtl ? Clutter.SnapEdge.LEFT : Clutter.SnapEdge.RIGHT,
+        }));
 
         const lockScreenButton = this._createIconButton('lock-screen-symbolic');
         lockScreenButton.connect('clicked', this._onLockScreenButtonClicked.bind(this));
@@ -943,15 +1038,11 @@ export const ScreenOverlay = GObject.registerClass({
         buttonsBox.add_child(closeButton);
 
         const contentsBox = new St.BoxLayout({
-            style_class: 'extension-pomodoro-overlay-contents',
-            x_align: Clutter.ActorAlign.FILL,
+            style_class: 'extension-focus-timer-overlay-contents',
+            orientation: Clutter.Orientation.VERTICAL,
+            x_align: Clutter.ActorAlign.CENTER,
             y_align: Clutter.ActorAlign.CENTER,
-            y_expand: true,
         });
-        if (Utils.isVersionAtLeast('48'))
-            contentsBox.orientation = Clutter.Orientation.VERTICAL;
-        else
-            contentsBox.vertical = true;
 
         const timerLabel = new TimerLabel(timer, {
             x_align: Clutter.ActorAlign.CENTER,
@@ -959,7 +1050,7 @@ export const ScreenOverlay = GObject.registerClass({
         contentsBox.add_child(timerLabel);
 
         const descriptionLabel = new St.Label({
-            style_class: 'extension-pomodoro-overlay-description',
+            style_class: 'extension-focus-timer-overlay-description',
             text: _("It's time to take a break"),
             x_align: Clutter.ActorAlign.CENTER,
         });
@@ -968,22 +1059,17 @@ export const ScreenOverlay = GObject.registerClass({
         contentsBox.add_child(descriptionLabel);
 
         const doNotTouchIcon = new St.Icon({
-            style_class: 'extension-pomodoro-do-not-touch-icon',
+            style_class: 'extension-focus-timer-do-not-touch-icon',
             gicon: Utils.loadIcon('do-not-touch-symbolic'),
             icon_size: ICON_SIZE,
             x_align: Clutter.ActorAlign.CENTER,
             y_align: Clutter.ActorAlign.END,
         });
-
-        const container = new St.BoxLayout({
-            style_class: 'extension-pomodoro-overlay-container',
-            x_expand: true,
-            y_expand: true,
-        });
-        if (Utils.isVersionAtLeast('48'))
-            container.orientation = Clutter.Orientation.VERTICAL;
-        else
-            container.vertical = true;
+        doNotTouchIcon.add_constraint(new Clutter.SnapConstraint({
+            source: container,
+            from_edge: Clutter.SnapEdge.BOTTOM,
+            to_edge: Clutter.SnapEdge.BOTTOM,
+        }));
 
         container.add_child(buttonsBox);
         container.add_child(contentsBox);
@@ -992,18 +1078,18 @@ export const ScreenOverlay = GObject.registerClass({
         this._layout.add_child(container);
 
         this._timer = timer;
-        this._timerStateChangedId = this._timer.connect('state-changed', this._freezeTimerLabel.bind(this));
+        this._timer.connectObject('changed', this._onTimerChanged.bind(this), this);
         this._buttonsBox = buttonsBox;
         this._timerLabel = timerLabel;
         this._doNotTouchIcon = doNotTouchIcon;
         this._systemActions = new SystemActions.getDefault();
 
-        this.bind_property('use-gestures', buttonsBox, 'visible',
+        this.bind_property('enable-dismiss-gesture', buttonsBox, 'visible',
             GObject.BindingFlags.SYNC_CREATE | GObject.BindingFlags.INVERT_BOOLEAN);
-        this.bind_property('use-gestures', doNotTouchIcon, 'visible',
+        this.bind_property('enable-dismiss-gesture', doNotTouchIcon, 'visible',
             GObject.BindingFlags.SYNC_CREATE);
 
-        this.connect('notify::acknowledged', this._updateDoNotTouchIcon.bind(this));
+        this.connect('notify::acknowledged', () => this._updateDoNotTouchIcon());
         this.connect('opening', this._onOpening.bind(this));
         this.connect('closing', this._onClosing.bind(this));
 
@@ -1015,31 +1101,21 @@ export const ScreenOverlay = GObject.registerClass({
         return this._timer;
     }
 
-    get useGestures() {
-        return this._useGestures;
-    }
-
-    set useGestures(value) {
-        if (this._useGestures === value)
-            return;
-
-        this._useGestures = value;
-        this.notify('use-gestures');
+    lock() {
+        this._systemActions.activateLockScreen();
     }
 
     _createIconButton(iconName) {
         const icon = new St.Icon({
             gicon: Utils.loadIcon(iconName),
-            style_class: 'popup-menu-icon',
             icon_size: ICON_SIZE,
         });
         const iconButton = new St.Button({
             reactive: true,
             can_focus: false,
             track_hover: true,
-            style_class: 'icon-button',
+            style_class: 'icon-button flat',
         });
-        iconButton.add_style_class_name('flat');
         iconButton.set_child(icon);
 
         return iconButton;
@@ -1049,61 +1125,31 @@ export const ScreenOverlay = GObject.registerClass({
         if (!this._timer)
             return false;
 
-        if (!this._timer.isBreak() ||
+        if (!State.isBreak(this._timer.state) ||
             this._timer.isPaused() ||
-            this._timer.getRemaining() < OPEN_WHEN_IDLE_MIN_REMAINING_TIME)
+            this._timer.getRemaining() < OPEN_MIN_REMAINING_SECONDS * SECOND)
             return false;
 
         return super._canOpen();
     }
 
-    acknowledge() {
-        if (this._useGestures) {
-            super.acknowledge();
-            return;
-        }
-
-        if (!this.pushModal())
-            this.close(true);
-    }
-
-    _beginAcknowledgeGesture() {
-        if (this._useGestures) {
-            super._beginAcknowledgeGesture();
-            return;
-        }
-
-        this.acknowledge();
-    }
-
-    _beginDismissGesture() {
-        if (this._useGestures)
-            super._beginDismissGesture();
-    }
-
     _freezeTimerLabel() {
-        const timerState = this._timer.getState();
-
-        if (timerState === State.SHORT_BREAK || timerState === State.LONG_BREAK)
-            this._timerLabel.freezeState();
+        if (!State.isBreak(this._timer.state))
+            this._timerLabel.freeze();
     }
 
     _updateDoNotTouchIcon() {
-        this._doNotTouchIcon.remove_all_transitions();
+        const opacity = this.acknowledged ? 0 : 255;
 
-        if (this._acknowledged && this._lightbox.opacity === 0) {
-            this._doNotTouchIcon.opacity = 0;
-        } else {
-            this._doNotTouchIcon.ease({
-                opacity: this.acknowledged ? 0 : 255,
-                duration: 100,
-                mode: Clutter.AnimationMode.EASE_IN_QUAD,
-            });
-        }
+        this._doNotTouchIcon.remove_all_transitions();
+        this._doNotTouchIcon.ease_property('opacity', opacity, {
+            duration: 150,
+            mode: Clutter.AnimationMode.EASE_OUT_QUAD,
+        });
     }
 
     _onLockScreenButtonClicked() {
-        this._systemActions.activateLockScreen();
+        this.lock();
     }
 
     _onCloseButtonClicked() {
@@ -1118,10 +1164,14 @@ export const ScreenOverlay = GObject.registerClass({
         this._timerLabel.freeze();
     }
 
+    _onTimerChanged() {
+        this._freezeTimerLabel();
+    }
+
+    /* override parent method */
     _onDestroy() {
-        if (this._timerStateChangedId) {
-            this._timer.disconnect(this._timerStateChangedId);
-            this._timerStateChangedId = 0;
+        if (this._timer) {
+            this._timer.disconnectObject(this);
             this._timer = null;
         }
 

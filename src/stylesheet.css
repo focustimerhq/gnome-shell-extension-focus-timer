@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2011-2014 gnome-pomodoro contributors
+ * Copyright (c) 2011-2026 focus-timer contributors
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -15,149 +15,260 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-.extension-pomodoro-indicator .system-status-icon {
-    padding: 0;  /* default theme enlarges allocation with padding, which doesn't play nice with the DrawingArea */
+
+/*
+ * Indicator
+ */
+.extension-focus-timer-indicator {
+    font-feature-settings: "tnum";
+}
+
+.extension-focus-timer-indicator .system-status-icon {
+    padding: 0;
     margin: 0 5px;
 }
 
-.extension-pomodoro-indicator-menu {
+.extension-focus-timer-indicator.extension-focus-timer-break {
+    background-color: #3ea554;
+}
+
+
+/*
+ * IndicatorMenu
+ */
+.extension-focus-timer-indicator-menu .popup-menu-boxpointer {
+    min-width: 240px;
     max-width: 400px;
 }
 
-.extension-pomodoro-indicator-menu .state-item.active {
+.extension-focus-timer-indicator-menu .quick-toggle-menu {
+    margin-top: 20px;
+}
+
+.extension-focus-timer-indicator-menu .extension-focus-timer-menu-item {
+    color: inherit;
+    padding: 4px;
+}
+
+.extension-focus-timer-indicator-menu .popup-menu-item > StLabel:first-child {
+    margin-left: 4px;
+}
+
+
+/*
+ * TimerMenuItem
+ */
+.extension-focus-timer-menu-item {
+    padding: 0;
+}
+
+.extension-focus-timer-menu-item > StBoxLayout {
+    spacing: 6px;
+}
+
+.extension-focus-timer-menu-item .extension-focus-timer-state-button {
     font-weight: bold;
+    font-size: 110%;
+    padding: 6px 12px;
+    border-radius: 12px;
 }
 
-.extension-pomodoro-indicator-menu .button:insensitive {
-    background-color: transparent;
+.extension-focus-timer-menu-item .extension-focus-timer-cycle-label {
+    font-weight: bold;
+    margin: 2px 12px 0 12px;
 }
 
-.extension-pomodoro-indicator-menu .popup-menu-item > StLabel:first-child {
-    padding-left: 16px;
+.extension-focus-timer-menu-item .extension-focus-timer-box {
+    margin: 6px 12px 0 12px;
+    spacing: 8px;
 }
 
-.extension-pomodoro-toggle-menu-item {
+.extension-focus-timer-menu-item .extension-focus-timer-label {
+    font-weight: 600;
+    font-size: 2.25em;
+    margin-bottom: 1px;
+}
+
+.extension-focus-timer-menu-item .extension-focus-timer-has-hours .extension-focus-timer-numeric-label,
+.extension-focus-timer-menu-item .extension-focus-timer-has-hours .extension-focus-timer-label-separator {
+    font-size: 90%;
+}
+
+.extension-focus-timer-menu-item .extension-focus-timer-inline-button {
     color: inherit;
-    margin-top: 5px;
-    margin-bottom: 3px;
-    padding-top: 0;
-    padding-bottom: 0;
+    background: none;
+    padding: 0;
 }
 
-.extension-pomodoro-toggle-menu-item .icon-button {
-    margin-left: 5px;
-}
-
-.extension-pomodoro-timer-menu-item {
+.extension-focus-timer-menu-item .extension-focus-timer-inline-button:hover {
     color: inherit;
-    margin-top: 5px;
-    margin-bottom: 3px;
-    padding: 0 10px 0 16px;
-    spacing: 0;
 }
 
-.extension-pomodoro-timer-menu-item .extension-pomodoro-timer-button {
-    color: inherit !important;
-    padding: 0 5px;
-    border-radius: 15px;
+.extension-focus-timer-menu-item .extension-focus-timer-inline-button StIcon {
+    icon-size: 24px !important;
 }
 
-.extension-pomodoro-timer-menu-item .extension-pomodoro-timer-label {
-    font-size: 1.6em;
-    font-weight: 500;
-    margin: 0 5px;
+.extension-focus-timer-menu-item .extension-focus-timer-progressbar {
+    margin: 17px 13px 0 13px;
 }
 
-.extension-pomodoro-timer-menu-item .extension-pomodoro-timer-buttons-box {
-    margin-left: 10px;
-    spacing: 4px;
+.extension-focus-timer-menu-item .extension-focus-timer-control-buttons {
+    margin: 3px 0 0 0;
 }
 
-.extension-pomodoro-timer-label {
+
+/*
+ * TimerLabel
+ */
+.extension-focus-timer-label {
+    font-weight: 400;
+    font-feature-settings: "tnum";
+}
+
+.extension-focus-timer-label .extension-focus-timer-label-separator {
+    text-align: center;
+    margin: 0 2px;
+}
+
+
+/*
+ * TimerProgressBar
+ */
+.extension-focus-timer-progressbar > StDrawingArea{
     margin: 0;
     padding: 0;
 }
 
-.extension-pomodoro-lightbox {
-    background-color: rgba(0, 0, 0, 0.6);
-}
-.extension-pomodoro-lightbox-blurred {
-    background-color: transparent;
-}
 
-.extension-pomodoro-overlay {
-    color: white;
-}
-
-.extension-pomodoro-overlay .extension-pomodoro-overlay-container {
-    margin: 30px;
-}
-
-.extension-pomodoro-overlay .extension-pomodoro-overlay-buttons {
+/*
+ * TimerControlButtons
+ */
+.extension-focus-timer-control-buttons {
     spacing: 10px;
 }
 
-.extension-pomodoro-overlay .icon-button {
+.extension-focus-timer-control-buttons .icon-button {
+    border-radius: 999px;
+}
+
+.extension-focus-timer-control-buttons .icon-button:insensitive {
+    color: inherit;
+}
+
+.extension-focus-timer-control-buttons StIcon {
+    icon-size: 16px !important;
+    min-width: 16px;
+}
+
+
+/*
+ * Lightbox
+ */
+.extension-focus-timer-lightbox {
+    background-color: rgba(0, 0, 0, 1.0);
+}
+
+.extension-focus-timer-lightbox-blurred {
+    background-color: transparent;
+}
+
+
+/*
+ * ScreenOverlay
+ */
+.extension-focus-timer-overlay {
+    color: white;
+}
+
+.extension-focus-timer-overlay .extension-focus-timer-overlay-buttons {
+    margin: 30px;
+    spacing: 10px;
+}
+
+.extension-focus-timer-overlay .icon-button {
     padding: 14px;
     background-color: rgba(255, 255, 255, 0.0);
 }
 
-.extension-pomodoro-overlay .icon-button:hover {
+.extension-focus-timer-overlay .icon-button:hover {
     background-color: rgba(255, 255, 255, 0.25);
 }
 
-.extension-pomodoro-overlay .icon-button:active {
+.extension-focus-timer-overlay .icon-button:active {
     background-color: rgba(255, 255, 255, 0.3);
 }
 
-.extension-pomodoro-overlay .extension-pomodoro-overlay-contents {
-    spacing: 15px;
+.extension-focus-timer-overlay .extension-focus-timer-overlay-contents {
+    spacing: 20px;
 }
 
-.extension-pomodoro-overlay .extension-pomodoro-timer-label {
-    font-size: 70pt;
-    font-weight: 400;
+.extension-focus-timer-overlay .extension-focus-timer-label {
+    font-weight: 500;
+    font-size: 65pt;
+    margin-bottom: 10pt;
 }
 
-.extension-pomodoro-overlay .extension-pomodoro-overlay-description {
+.extension-focus-timer-overlay .extension-focus-timer-has-hours .extension-focus-timer-numeric-label,
+.extension-focus-timer-overlay .extension-focus-timer-has-hours .extension-focus-timer-label-separator {
+    font-size: 80%;
+}
+
+.extension-focus-timer-overlay .extension-focus-timer-overlay-description {
     font-size: 14pt;
     font-weight: normal;
 }
 
-.extension-pomodoro-overlay .extension-pomodoro-do-not-touch-icon {
-    margin-top: 20px;
-    margin-bottom: 50px;
+.extension-focus-timer-overlay .extension-focus-timer-do-not-touch-icon {
+    margin-bottom: 80px;
 }
 
-.extension-pomodoro-widget {
-    font-size: 12pt;
-    font-weight: normal;
-    text-align: left;
-    padding: 10px;
-    border-radius: 15px;
+
+/*
+ * ScreenShield widget
+ */
+.extension-focus-timer-widget {
     background-color: rgba(255, 255, 255, 0.06);
+    border-radius: 16px;
+    width: 25em;  /* sync it with `.unlock-dialog-notifications-container` */
+    padding: 4px;
+    margin: 12px 12px 0 12px;
 }
 
-.extension-pomodoro-widget .extension-pomodoro-widget-content {
-    spacing: 5px;
-    margin: 5px;
-    margin-left: 10px;
+.extension-focus-timer-widget .extension-focus-timer-widget-content {
+    padding: 14px 14px 6px 14px;
+    spacing: 8px;
 }
 
-.extension-pomodoro-widget .extension-pomodoro-widget-title {
-    font-size: 14pt;
-    font-weight: bold;
+.extension-focus-timer-widget .extension-focus-timer-state-label {
+    font-size: 15pt;
+    font-weight: 700;
+    margin: 0;
 }
 
-.extension-pomodoro-widget .icon-button {
-    border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.0);  /* override gradient */
+.extension-focus-timer-widget .extension-focus-timer-cycle-label {
+    font-size: 12pt;
+    font-weight: 600;
+    margin: 0 0 1px 10px;
 }
 
-.extension-pomodoro-widget .icon-button.flat:hover {
-    background-color: rgba(255, 255, 255, 0.1);  /* override gradient */
+.extension-focus-timer-widget .extension-focus-timer-label {
+    font-size: 17pt;
+    font-weight: 600;
+    margin: 4px 0 3px 0;
 }
 
-.extension-pomodoro-widget .icon-button.flat:active {
-    background-color: rgba(255, 255, 255, 0.12);  /* override gradient */
+.extension-focus-timer-widget .extension-focus-timer-progressbar {
+    margin: 8px 0 0 0;
+}
+
+.extension-focus-timer-widget .icon-button {
+    background-color: rgba(255, 255, 255, 0.0);
+}
+
+.extension-focus-timer-widget .icon-button.flat:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.extension-focus-timer-widget .icon-button.flat:active {
+    background-color: rgba(255, 255, 255, 0.12);
 }
