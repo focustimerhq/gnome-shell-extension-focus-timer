@@ -81,13 +81,24 @@ export const Patch = class extends EventEmitter {
     }
 };
 
+const Dummy = GObject.registerClass({
+    Properties: {
+        'fade': GObject.ParamSpec.double(
+            'fade', null, null,
+            GObject.ParamFlags.READWRITE,
+            0.0, 1.0, 1.0),
+    },
+},
+class FocusTimerDummy extends Clutter.Actor {
+});
+
 export const BlinkingGroup = class {
     constructor(blinkDuration) {
         this._blinkDuration = blinkDuration;
         this._active = false;
         this._baseline = 1.0;
         this._items = [];
-        this._reference = null;
+        this._dummy = null;
         this._destroying = false;
     }
 
@@ -103,161 +114,101 @@ export const BlinkingGroup = class {
         return this._items.findIndex((item) => item.actor === actor);
     }
 
-    _removeItem(index) {
-        const item = this._items.splice(index, 1);
-
-        if (item && item.actor) {
-            item.actor.disconnectObject(this);
-            item.actor.remove_transition(item.propertyName);
-            this._unbindItem(item);
-        }
-
-        if (this._reference === item) {
-            this._reference = null;
-            this._selectReference();
-        }
-    }
-
-    _bindItem(item) {
-        if (item.binding)
+    _ensureDummy() {
+        if (this._dummy)
             return;
 
-        if (!this._reference || this._reference.actor === item.actor)
-            return;
-
-        const x1 = this._reference.lowerValue;
-        const x2 = this._reference.upperValue;
-        const y1 = item.lowerValue;
-        const y2 = item.upperValue;
-
-        item.binding = this._reference.actor.bind_property_full(
-            this._reference.propertyName,
-            item.actor, item.propertyName,
-            GObject.BindingFlags.DEFAULT,
-            (binding, source) => [
-                true,
-                Math.min(Math.max((y2 - y1) * (source - x1) / (x2 - x1) + y1, y1), y2)
-            ],
-            null
-        );
-    }
-
-    _unbindItem(item) {
-        if (item.binding) {
-            item.binding.unbind ();
-            item.binding = null;
-        }
-    }
-
-    _bind() {
-        if (!this._reference)
-            return;
+        this._dummy = new Dummy();
+        this._dummy.fade = this._baseline;
+        Main.uiGroup.add_child(this._dummy);
 
         for (const item of this._items)
             this._bindItem(item);
     }
 
-    _unbind() {
+    _destroyDummy() {
+        if (!this._dummy)
+            return;
+
+        this._dummy.remove_transition('fade');
+
         for (const item of this._items)
             this._unbindItem(item);
+
+        Main.uiGroup.remove_child(this._dummy);
+        this._dummy.destroy();
+        this._dummy = null;
     }
 
-    _setReference(item) {
-        if (this._reference === item)
-            return;
+    _removeItem(index) {
+        const [item] = this._items.splice(index, 1);
 
-        if (this._reference) {
-            this._unbind();
-            this._reference.actor.remove_transition(this._reference.propertyName);
-        }
-
-        this._reference = item;
-
-        if (this._reference) {
-            this._bind();
-
-            if (this._active)
-                this._blink();
+        if (item) {
+            item.actor.disconnectObject(this);
+            this._unbindItem(item);
         }
     }
 
-    _selectReference() {
-        if (!this._items.length || this._destroying)
+    _bindItem(item) {
+        if (item.binding || !this._dummy)
             return;
 
-        if (this._reference && this._reference.actor.mapped)
-            return;
-
-        this._setReference(this._items.find(item => item.actor.mapped) || this._items[0]);
-    }
-
-    _transformReferenceValue(referenceValue) {
-        return (referenceValue - this._reference.lowerValue) /
-            (this._reference.upperValue - this._reference.lowerValue);
-    }
-
-    _transformValue(value, item) {
         const y1 = item.lowerValue;
         const y2 = item.upperValue;
 
-        return Math.min(Math.max(value * (y2 - y1) + y1, y1), y2);
+        if (y1 === 0.0 && y2 === 1.0)
+            item.binding = this._dummy.bind_property(
+                'fade',
+                item.actor, item.propertyName,
+                GObject.BindingFlags.SYNC_CREATE
+            );
+        else
+            item.binding = this._dummy.bind_property_full(
+                'fade',
+                item.actor, item.propertyName,
+                GObject.BindingFlags.SYNC_CREATE,
+                (binding, source) => [true, y1 + (y2 - y1) * source],
+                null
+            );
     }
 
-    _getValue() {
-        if (this._active && !this._reference?.actor.mapped)
-            return 0.0;
-
-        return this._reference
-            ? this._transformReferenceValue(this._reference.actor[this._reference.propertyName])
-            : this._baseline;
+    _unbindItem(item) {
+        if (item.binding) {
+            item.binding.unbind();
+            item.binding = null;
+        }
     }
 
     _transition(valueTo, duration) {
-        if (!this._reference || this._destroying)
+        if (!this._dummy || this._destroying)
             return;
 
-        const reference = this._reference;
-        const actor = reference.actor;
-        const propertyName = reference.propertyName;
-        const valueFrom = this._transformReferenceValue(actor[propertyName]);  // this._getValue();
-        const referenceValueTo = this._transformValue(valueTo, reference);
+        const valueFrom = this._dummy.fade;
 
-        if (isNaN(referenceValueTo)) {
-            logWarning(`Invalid transition from ${valueFrom} to ${valueTo}`);
-            return;
-        }
-
-        if (Math.abs(valueTo - valueFrom) > 0.01 && duration > 0 && actor.mapped) {
+        if (Math.abs(valueTo - valueFrom) > 0.01 && duration > 0) {
             let transitionStarted = false;
-            actor.ease_property(propertyName, referenceValueTo, {
-                duration: duration,
+            this._dummy.ease_property('fade', valueTo, {
+                duration,
                 mode: Clutter.AnimationMode.EASE_IN_OUT_QUAD,
-                animationRequired: true,
                 onComplete: () => {
                     if (this._active && transitionStarted)
                         this._blink();
+                    else if (this._dummy?.fade === 1.0)
+                        this._destroyDummy();
                 },
             });
             transitionStarted = true;
         } else {
-            actor.remove_transition(propertyName);
-            actor[propertyName] = referenceValueTo;
+            this._dummy.remove_transition('fade');
+            this._dummy.fade = valueTo;
+
+            if (!this._active && this._dummy.fade === 1.0)
+                this._destroyDummy();
         }
     }
 
     _blink() {
-        this._transition(this._getValue() < 0.5 ? 1.0 : 0.0, this._blinkDuration);
-    }
-
-    _onActorNotifyMapped(obj, pspec) {
-        if (this._reference?.actor === obj) {
-            if (!obj.mapped)
-                this._selectReference();
-            else if (this._active)
-                this._blink();
-        }
-        else if (!this._reference?.mapped && obj.mapped)
-            this._setReference(this._items[this._indexItem(obj)] || null);
+        this._transition(this._dummy.fade < 0.5 ? 1.0 : 0.0, this._blinkDuration);
     }
 
     _onActorDestroy(actor) {
@@ -279,14 +230,12 @@ export const BlinkingGroup = class {
         };
         this._items.push(item);
 
-        actor[propertyName] = this._transformValue(this._getValue(), item);
-        actor.connectObject('notify::mapped', this._onActorNotifyMapped.bind(this), this);
         actor.connectObject('destroy', this._onActorDestroy.bind(this), this);
 
-        if (!this._reference || (!this._reference.actor.mapped && actor.mapped))
-            this._setReference(item);
-        else
+        if (this._dummy)
             this._bindItem(item);
+        else
+            actor[propertyName] = lowerValue + (upperValue - lowerValue) * this._baseline;
     }
 
     removeActor(actor) {
@@ -300,26 +249,34 @@ export const BlinkingGroup = class {
             return;
 
         this._active = true;
+        this._ensureDummy();
         this._blink();
     }
 
     fadeIn(transitionDuration) {
         this._active = false;
         this._baseline = 1.0;
-        this._transition(1.0, transitionDuration || 0);
+
+        if (this._dummy)
+            this._transition(1.0, transitionDuration || 0);
     }
 
     fadeOut(transitionDuration) {
         this._active = false;
+
+        if (!this._dummy)
+            this._ensureDummy();
+
         this._baseline = 0.0;
         this._transition(0.0, transitionDuration || 0);
     }
 
     destroy() {
         this._active = false;
-        this._transition(this._baseline, 0);
-        this._reference = null;
         this._destroying = true;
+
+        if (this._dummy)
+            this._destroyDummy();
 
         while (this._items.length)
             this._removeItem(0);
