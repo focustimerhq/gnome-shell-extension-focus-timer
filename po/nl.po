@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-pomodoro 0.13.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-24 15:30+0100\n"
+"POT-Creation-Date: 2026-03-25 16:45+0100\n"
 "PO-Revision-Date: 2023-03-26 11:34+0200\n"
 "Last-Translator: Heimen Stoffels <vistausss@fastmail.com>\n"
 "Language-Team: Dutch\n"
@@ -18,601 +18,637 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.1.1\n"
 
-#: data/org.gnome.Pomodoro.appdata.xml:8 data/org.gnome.Pomodoro.desktop.in:3
-#: data/resources/menus.ui:28 data/resources/window.ui:382
-#: plugins/actions/enums.vala:92 plugins/gnome/extension/indicator.js:77
-#: plugins/gnome/extension/indicator.js:729
-#: plugins/gnome/extension/notifications.js:281
-#: plugins/gnome/extension/timer.js:41 src/about-dialog.vala:31
-#: src/main.vala:50 src/notifications-capability.vala:129
-#: src/stats-page.vala:527 src/window.vala:44
-msgid "Pomodoro"
-msgstr "Pomodoro"
-
-#: data/org.gnome.Pomodoro.appdata.xml:9
-msgid "A time management utility for GNOME"
-msgstr "Een tijdindelingstoepassing voor GNOME"
-
-#: data/org.gnome.Pomodoro.appdata.xml:11
-msgid ""
-"A GNOME utility that helps managing time according to Pomodoro Technique. It "
-"intends to improve productivity and focus by taking short breaks after every "
-"25 minutes of work."
+#: data/org.gnome.shell.extensions.focus-timer.gschema.xml:6
+msgid "Start the app along with extension"
 msgstr ""
-"Een GNOME-hulptoepassing die u helpt tijd in te delen volgens de Pomodoro-"
-"techniek. Deze techniek is bedoeld om uw productiviteit en focus te "
-"verbeteren door telkens na 25 minuten werken korte pauzes te nemen."
 
-#: data/org.gnome.Pomodoro.appdata.xml:23
-msgid "Timer window"
-msgstr "Tijdklokvenster"
+#: data/org.gnome.shell.extensions.focus-timer.gschema.xml:14
+msgid "Indicator type"
+msgstr ""
 
-#: data/org.gnome.Pomodoro.appdata.xml:27
-#: plugins/gnome/extension/indicator.js:83 src/preferences-dialog.vala:800
+#: data/org.gnome.shell.extensions.focus-timer.gschema.xml:18
+msgid "Blur effect"
+msgstr ""
+
+#: data/org.gnome.shell.extensions.focus-timer.gschema.xml:22
+msgid "Dismiss screen overlay by gesture"
+msgstr ""
+
+#: data/org.gnome.shell.extensions.focus-timer.gschema.xml:26
+msgid "Reduce number of notifications during Pomodoro"
+msgstr ""
+
+#: src/indicator.js:331 src/screenShield.js:173
+msgid "Finished!"
+msgstr ""
+
+#: src/indicator.js:333 src/screenShield.js:175
+#, javascript-format
+msgid "%d of %d"
+msgstr ""
+
+#: src/indicator.js:420 src/prefs.js:73
+msgid "Screen Overlay"
+msgstr ""
+
+#: src/indicator.js:423
 msgid "Preferences"
 msgstr "Voorkeuren"
 
-#: data/org.gnome.Pomodoro.appdata.xml:31
-msgid "Indicator for GNOME Shell"
-msgstr "GNOME Shell-indicator"
-
-#: data/org.gnome.Pomodoro.desktop.in:4 src/about-dialog.vala:32
-msgid "A simple time management utility"
-msgstr "Een eenvoudige tijdindelingstoepassing"
-
-#: data/org.gnome.Pomodoro.desktop.in:5
-msgid "timer;"
-msgstr "timer;tijdklok;tijdindeling;"
-
-#: data/resources/menus.ui:6 plugins/actions/enums.vala:188
-#: plugins/actions/resources/action-page.ui:155 src/application.vala:90
-msgid "Start"
-msgstr "Starten"
-
-#: data/resources/menus.ui:11 data/resources/window.ui:180
-#: plugins/actions/enums.vala:197 plugins/actions/resources/action-page.ui:200
-#: src/application.vala:99
-msgid "Pause"
-msgstr "Onderbreken"
-
-#: data/resources/menus.ui:16 plugins/actions/enums.vala:200
-#: plugins/actions/resources/action-page.ui:215 src/application.vala:102
-msgid "Resume"
-msgstr "Hervatten"
-
-#: data/resources/menus.ui:21 data/resources/window.ui:207
-#: plugins/gnome/extension/indicator.js:221 src/application.vala:93
-#: src/window.vala:163 src/window.vala:176
-msgid "Stop"
-msgstr "Stoppen"
-
-#: data/resources/menus.ui:33 data/resources/window.ui:398
-#: plugins/actions/enums.vala:95 plugins/gnome/extension/indicator.js:78
-#: plugins/gnome/extension/timer.js:44 src/window.vala:45
-msgid "Short Break"
-msgstr "Korte pauze"
-
-#: data/resources/menus.ui:38 data/resources/window.ui:414
-#: plugins/actions/enums.vala:98 plugins/gnome/extension/indicator.js:79
-#: plugins/gnome/extension/timer.js:47 src/window.vala:46
-msgid "Long Break"
-msgstr "Lange pauze"
-
-#: data/resources/menus.ui:45
-msgid "_Timer"
-msgstr "_Tijdklok"
-
-#: data/resources/menus.ui:49 data/resources/window.ui:309
-msgid "_Preferences"
-msgstr "_Voorkeuren"
-
-#: data/resources/menus.ui:53 data/resources/window.ui:348
-msgid "_Quit"
-msgstr "_Afsluiten"
-
-#: data/resources/preferences-keyboard-shortcut-page.ui:29
-msgid "Keyboard shortcut to toggle the timer. Enter new shortcut to change."
-msgstr ""
-"Sneltoets om de tijdklok aan of uit te zetten. Druk op een nieuwe "
-"toetscombinatie om te veranderen."
-
-#: data/resources/preferences-keyboard-shortcut-page.ui:83
-#: plugins/actions/enums.vala:206 plugins/actions/resources/action-page.ui:245
-msgid "Disable"
-msgstr "Uitschakelen"
-
-#: data/resources/preferences-main-page.ui:45 data/resources/window.ui:247
-msgid "Timer"
-msgstr "Tijdklok"
-
-#: data/resources/preferences-main-page.ui:108
-msgid "Pomodoro duration"
-msgstr "Pomodoro-duur"
-
-#: data/resources/preferences-main-page.ui:160
-msgid "Break duration"
-msgstr "Pauzeduur"
-
-#: data/resources/preferences-main-page.ui:213
-msgid "Long break duration"
-msgstr "Duur van lange pauze"
-
-#: data/resources/preferences-main-page.ui:245
-msgid "Pomodoros before a long break"
-msgstr "Pomodoro's voorafgaand aan een lange pauze"
-
-#: data/resources/preferences-main-page.ui:294
-msgid "Keyboard shortcut"
-msgstr "Sneltoets"
-
-#: data/resources/preferences-main-page.ui:357
-msgid "Notifications"
-msgstr "Meldingen"
-
-#: data/resources/preferences-main-page.ui:400
-msgid "Screen notifications"
-msgstr "Schermmeldingen"
-
-#: data/resources/preferences-main-page.ui:460
-msgid "Desktop"
-msgstr "Bureaublad"
-
-#: data/resources/preferences-main-page.ui:509
-msgid "Wait for activity after a break"
-msgstr "Wachten op activiteit na pauzes"
-
-#: data/resources/preferences-main-page.ui:573
-msgid "Plugins…"
-msgstr "Plug-ins…"
-
-#: data/resources/preferences.ui:8 src/preferences-dialog.vala:804
-msgid "Plugins"
-msgstr "Plug-ins"
-
-#: data/resources/preferences.ui:47
-msgid "Back"
-msgstr "Terug"
-
-#: data/resources/screen-notification.ui:89
-#: plugins/gnome/extension/dialogs.js:1002
-msgid "It's time to take a break"
-msgstr "Het is tijd voor een pauze"
-
-#: data/resources/stats-view.ui:28
-msgid "Nothing to see yet"
-msgstr "Er valt hier nog niks te zien"
-
-#: data/resources/stats-view.ui:45
-msgid "Complete a few sessions"
-msgstr "Rond een paar sessies af"
-
-#: data/resources/stats-view.ui:86 data/resources/stats-view.ui:343
-msgid "Day"
-msgstr "Dag"
-
-#: data/resources/stats-view.ui:109 data/resources/stats-view.ui:356
-msgid "Week"
-msgstr "Week"
-
-#: data/resources/stats-view.ui:133 data/resources/stats-view.ui:369
-msgid "Month"
-msgstr "Maand"
-
-#: data/resources/stats-view.ui:161
-msgid "Previous (Alt+Left)"
-msgstr "Vorige (Alt+pijltje naar links)"
-
-#: data/resources/stats-view.ui:188
-msgid "Next (Alt+Right)"
-msgstr "Vorige (Alt+pijltje naar rechts)"
-
-#: data/resources/stats-view.ui:216 data/resources/stats-view.ui:319
-#: src/stats-day-page.vala:62
-msgid "Today"
-msgstr "Vandaag"
-
-#: data/resources/window.ui:36 plugins/gnome/extension/indicator.js:214
-#: src/window.vala:180
-msgid "Start Pomodoro"
-msgstr "Pomodoro starten"
-
-#: data/resources/window.ui:323
-msgid "_About"
-msgstr "_Over"
-
-#: plugins/actions/actions.vala:423
-msgid "Actions"
-msgstr "Acties"
-
-#: plugins/actions/actions.vala:427
-msgid "Action"
-msgstr "Actie"
-
-#: plugins/actions/actions.vala:452
-msgid "Custom actions…"
-msgstr "Aangepaste acties…"
-
-#: plugins/actions/enums.vala:191 plugins/actions/resources/action-page.ui:170
-msgid "Complete"
-msgstr "Afronden"
-
-#: plugins/actions/enums.vala:194 plugins/actions/resources/action-page.ui:185
-msgid "Skip"
-msgstr "Overslaan"
-
-#: plugins/actions/enums.vala:203 plugins/actions/resources/action-page.ui:230
-msgid "Enable"
-msgstr "Inschakelen"
-
-#: plugins/actions/resources/action-page.ui:28
-msgid "Command"
-msgstr "Opdracht"
-
-#: plugins/actions/resources/action-page.ui:41
-#: plugins/actions/resources/menus.ui:29
-msgid "Triggers"
-msgstr "Roept aan:"
-
-#: plugins/actions/resources/action-page.ui:54
-msgid "Name"
-msgstr "Naam"
-
-#: plugins/actions/resources/action-page.ui:88
-msgid "_Pomodoro"
-msgstr "_Pomodoro"
-
-#: plugins/actions/resources/action-page.ui:102
-msgid "_Short Break"
-msgstr "_Korte pauze"
-
-#: plugins/actions/resources/action-page.ui:116
-msgid "_Long Break"
-msgstr "_Lange pauze"
-
-#: plugins/actions/resources/action-page.ui:299
-msgid "Add"
-msgstr "Toevoegen"
-
-#: plugins/actions/resources/menus.ui:6
-msgid "Remove"
-msgstr "Verwijderen"
-
-#: plugins/actions/resources/menus.ui:14
-msgid "State"
-msgstr "Status"
-
-#: plugins/actions/resources/menus.ui:19
-msgid "State Duration"
-msgstr "Statusduur"
-
-#: plugins/actions/resources/menus.ui:24
-msgid "Elapsed Time"
-msgstr "Verstreken tijd"
-
-#. this.stack.add_titled (this.timer_stack, "timer", _("Timer"));
-#: plugins/gnome/extension/indicator.js:84 src/window.vala:101
+#: src/indicator.js:424
 msgid "Stats"
 msgstr "Statistieken"
 
-#: plugins/gnome/extension/indicator.js:85
+#: src/indicator.js:426
 msgid "Quit"
 msgstr "Afsluiten"
 
-#: plugins/gnome/extension/indicator.js:123
-#: plugins/gnome/extension/notifications.js:128
-#: plugins/gnome/extension/notifications.js:549
-msgid "Pomodoro Timer"
-msgstr "Pomodoro-tijdklok"
-
-#: plugins/gnome/extension/indicator.js:129
-msgid "Start Timer"
-msgstr "Tijdklok starten"
-
-#: plugins/gnome/extension/indicator.js:162
-msgid "Pause Timer"
-msgstr "Tijdklok onderbreken"
-
-#: plugins/gnome/extension/indicator.js:174
-msgid "Stop Timer"
-msgstr "Tijdklok stoppen"
-
-#: plugins/gnome/extension/indicator.js:211 src/window.vala:179
-msgid "Pause break"
-msgstr "Onderbreken"
-
-#: plugins/gnome/extension/indicator.js:211 src/window.vala:166
-msgid "Pause Pomodoro"
-msgstr "Onderbreken"
-
-#: plugins/gnome/extension/indicator.js:214
-#: src/notifications-capability.vala:141 src/notifications-capability.vala:162
-#: src/window.vala:167
-msgid "Take a break"
-msgstr "Neem een pauze"
-
-#: plugins/gnome/extension/indicator.js:218 src/window.vala:175
-msgid "Resume break"
-msgstr "Hervatten"
-
-#: plugins/gnome/extension/indicator.js:218 src/window.vala:162
-msgid "Resume Pomodoro"
-msgstr "Hervatten"
-
-#: plugins/gnome/extension/notifications.js:89
+#: src/indicator.js:601
 #, javascript-format
-msgid "%d minute remaining"
-msgid_plural "%d minutes remaining"
-msgstr[0] "Nog %d minuut te gaan"
-msgstr[1] "Nog %d minuten te gaan"
-
-#: plugins/gnome/extension/notifications.js:97
-#, javascript-format
-msgid "%d second remaining"
-msgid_plural "%d seconds remaining"
-msgstr[0] "%d seconde te gaan"
-msgstr[1] "%d seconden te gaan"
-
-#: plugins/gnome/extension/notifications.js:289
-msgid "Pomodoro is about to end"
-msgstr "De Pomodoro verstrijkt bijna"
-
-#: plugins/gnome/extension/notifications.js:295
-msgid "Take a long break"
-msgstr "Neem een lange pauze"
-
-#: plugins/gnome/extension/notifications.js:296
-msgid "Take a short break"
-msgstr "Neem een korte pauze"
-
-#: plugins/gnome/extension/notifications.js:304
-msgid "Break is about to end"
-msgstr "De pauze is bijna voorbij"
-
-#: plugins/gnome/extension/notifications.js:308
-msgid "Break is over"
-msgstr "Pauze is afgelopen"
-
-#. body = _("Get ready for Pomodoro");
-#: plugins/gnome/extension/notifications.js:336
-msgid "Get ready…"
-msgstr "Maak je klaar…"
-
-#: plugins/gnome/extension/notifications.js:362
-msgid "Skip Break"
-msgstr "Pauze overslaan"
-
-#: plugins/gnome/extension/notifications.js:365
-msgid "+1 Minute"
-msgstr "+1 minuut"
-
-#: plugins/gnome/extension/notifications.js:557
-msgid "Report issue"
-msgstr "Probleem melden"
-
-#: plugins/gnome/extension/timer.js:248
-#, javascript-format
-msgid "Failed to run <i>%s</i> service"
-msgstr "<i>%s</i> kan niet worden uitgevoerd"
-
-#: plugins/gnome/gnome-plugin.vala:290
-msgid "Hide other notifications"
-msgstr "Andere meldingen verbergen"
-
-#: plugins/sounds/resources/preferences-sound-page.ui:33
-msgid "Volume:"
-msgstr "Volumeniveau:"
-
-#: plugins/sounds/sounds-plugin.vala:35 plugins/sounds/sounds-plugin.vala:410
-msgid "Clock Ticking"
-msgstr "Tikkende klok"
-
-#: plugins/sounds/sounds-plugin.vala:36 plugins/sounds/sounds-plugin.vala:411
-msgid "Timer Ticking"
-msgstr "Tikkende tijdklok"
-
-#: plugins/sounds/sounds-plugin.vala:37 plugins/sounds/sounds-plugin.vala:412
-msgid "Woodland Birds"
-msgstr "Bosvogels"
-
-#: plugins/sounds/sounds-plugin.vala:38 plugins/sounds/sounds-plugin.vala:472
-#: plugins/sounds/sounds-plugin.vala:511
-msgid "Bell"
-msgstr "Bel"
-
-#: plugins/sounds/sounds-plugin.vala:39 plugins/sounds/sounds-plugin.vala:473
-#: plugins/sounds/sounds-plugin.vala:512
-msgid "Loud Bell"
-msgstr "Luide bel"
-
-#: plugins/sounds/sounds-plugin.vala:334
-msgid "Select Custom Sound"
-msgstr "Kies een eigen geluid"
-
-#: plugins/sounds/sounds-plugin.vala:337
-msgid "_Cancel"
-msgstr "_Annuleren"
-
-#: plugins/sounds/sounds-plugin.vala:339
-msgid "_Select"
-msgstr "_Kiezen"
-
-#: plugins/sounds/sounds-plugin.vala:568
-msgid "Ticking Sound"
-msgstr "Getik"
-
-#: plugins/sounds/sounds-plugin.vala:572
-msgid "End of Break Sound"
-msgstr "Geluid aan het einde van de pauze"
-
-#: plugins/sounds/sounds-plugin.vala:576
-msgid "Start of Break Sound"
-msgstr "Geluid aan het begin van de pauze"
-
-#: plugins/sounds/sounds-plugin.vala:604 src/preferences-dialog.vala:590
-msgid "Off"
-msgstr "Uit"
-
-#: plugins/sounds/sounds-plugin.vala:744
-msgid "Ticking sound"
-msgstr "Getik"
-
-#: plugins/sounds/sounds-plugin.vala:749
-msgid "Start of break sound"
-msgstr "Geluid aan het begin van de pauze"
-
-#: plugins/sounds/sounds-plugin.vala:754
-msgid "End of break sound"
-msgstr "Geluid aan het einde de pauze"
-
-#: src/about-dialog.vala:30
-msgid "About Pomodoro"
-msgstr "Over Pomodoro"
-
-#: src/about-dialog.vala:41
-msgid "translator-credits"
+msgid "%dh"
 msgstr ""
-"Johannes Kool\n"
-"Heimen Stoffels <vistausss@fastmail.com>"
 
-#: src/application.vala:87
-msgid "Start/Stop"
-msgstr "Starten/Stoppen"
-
-#: src/application.vala:96
-msgid "Pause/Resume"
-msgstr "Onderbreken/Hervatten"
-
-#: src/application.vala:105
-msgid "Skip to a pomodoro or to a break"
-msgstr "Spring naar een pomodoro of naar een pauze"
-
-#: src/application.vala:108
-msgid "Extend current pomodoro or break"
-msgstr "Verleng huidige pomodoro of pauze"
-
-#: src/application.vala:111
-msgid "Reset current session"
-msgstr "Reset huidige sessie"
-
-#: src/application.vala:114
-msgid "Run as background service"
-msgstr "Uitvoeren als achtergronddienst"
-
-#: src/application.vala:117
-msgid "Show preferences"
-msgstr "Voorkeuren tonen"
-
-#: src/application.vala:120
-msgid "Quit application"
-msgstr "Toepassing afsluiten"
-
-#: src/application.vala:123
-msgid "Print version information and exit"
-msgstr "Versie-informatie tonen en afsluiten"
-
-#: src/notifications-capability.vala:130
-msgid "Focus on your task."
-msgstr "Focus op je taak."
-
-#: src/notifications-capability.vala:156
-#, c-format
-msgid "You have %d minute"
-msgid_plural "You have %d minutes"
-msgstr[0] "Je hebt nog %d minuut"
-msgstr[1] "Je hebt nog %d minuten"
-
-#: src/notifications-capability.vala:158
-#, c-format
-msgid "You have %d second"
-msgid_plural "You have %d seconds"
-msgstr[0] "Je hebt nog %d seconde"
-msgstr[1] "Je hebt nog %d seconden"
-
-#: src/notifications-capability.vala:163
-msgid "Take a longer break"
-msgstr "Neem een langere pauze"
-
-#: src/notifications-capability.vala:179
-msgid "Lengthen it"
-msgstr "Verlengen"
-
-#: src/notifications-capability.vala:184
-msgid "Shorten it"
-msgstr "Inkorten"
-
-#: src/notifications-capability.vala:189
-msgid "Start pomodoro"
-msgstr "Pomodoro starten"
-
-#: src/preferences-dialog.vala:158
-#, c-format
-msgid ""
-"Using \"%s\" as shortcut will interfere with typing. Try adding another key, "
-"such as Control, Alt or Shift."
+#: src/indicator.js:605
+#, javascript-format
+msgid "%dm"
 msgstr ""
-"De toets ‘%s’ wordt gebruikt om te typen. Probeer een tweede toets toe te "
-"voegen, zoals Ctrl, Alt of Shift."
 
-#: src/preferences-dialog.vala:808
-msgid "Keyboard Shortcut"
-msgstr "Sneltoets"
+#: src/indicator.js:613
+#, javascript-format
+msgid "%ds"
+msgstr ""
 
-#: src/presence.vala:80
-msgid "Available"
-msgstr "Beschikbaar"
+#: src/indicator.js:1058 src/notifications.js:59
+msgid "Focus Timer"
+msgstr ""
 
-#: src/presence.vala:83
-msgid "Busy"
-msgstr "Bezig"
+#: src/notifications.js:79
+msgid "Focus Timer Extension"
+msgstr ""
 
-#: src/presence.vala:86
-msgid "Idle"
-msgstr "Inactief"
-
-#: src/presence.vala:89
-msgid "Invisible"
-msgstr "Onzichtbaar"
-
-#: src/stats-day-page.vala:66
-msgid "Yesterday"
-msgstr "Gisteren"
-
-#: src/stats-page.vala:87
-#, c-format
-msgid "%d m"
-msgstr "%d min."
-
-#: src/stats-page.vala:93
-#, c-format
-msgid "%.0f h"
-msgstr "%.0f uur"
-
-#: src/stats-page.vala:96
-#, c-format
-msgid "%.1f h"
-msgstr "%.1f uur"
-
-#: src/stats-page.vala:573
-msgid "Break"
-msgstr "Pauze"
-
-#: src/stats-week-page.vala:58
-msgid "This week"
-msgstr "Deze week"
-
-#: src/utils.vala:32
-#, c-format
+#: src/notifications.js:115
+#, javascript-format
 msgid "%d hour"
 msgid_plural "%d hours"
 msgstr[0] "%d uur"
 msgstr[1] "%d uur"
 
-#: src/utils.vala:41
-#, c-format
+#: src/notifications.js:118
+#, javascript-format
 msgid "%d minute"
 msgid_plural "%d minutes"
 msgstr[0] "%d minuut"
 msgstr[1] "%d minuten"
+
+#: src/notifications.js:121
+#, javascript-format
+msgid "%d second"
+msgid_plural "%d seconds"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: time remaining eg. "3 minutes 50 seconds remaining"
+#: src/notifications.js:128
+#, javascript-format
+msgid "%s remaining"
+msgstr ""
+
+#: src/notifications.js:239 src/timer.js:54
+msgid "Pomodoro"
+msgstr "Pomodoro"
+
+#: src/notifications.js:241
+msgid "Take a break"
+msgstr "Neem een pauze"
+
+#: src/notifications.js:243
+msgid "Take a short break"
+msgstr "Neem een korte pauze"
+
+#: src/notifications.js:245
+msgid "Take a long break"
+msgstr "Neem een lange pauze"
+
+#: src/notifications.js:253
+msgid "Pomodoro is about to end"
+msgstr "De Pomodoro verstrijkt bijna"
+
+#: src/notifications.js:255
+msgid "Break is about to end"
+msgstr "De pauze is bijna voorbij"
+
+#: src/notifications.js:263 src/notifications.js:275
+msgid "Break is over!"
+msgstr ""
+
+#: src/notifications.js:265 src/notifications.js:273
+msgid "Pomodoro is over!"
+msgstr ""
+
+#: src/notifications.js:294
+msgid "Get ready…"
+msgstr "Maak je klaar…"
+
+#: src/notifications.js:299
+msgid "Confirm the start of a Pomodoro…"
+msgstr ""
+
+#: src/notifications.js:301
+msgid "Confirm the start of a break…"
+msgstr ""
+
+#: src/notifications.js:303
+msgid "Confirm the start of a short break…"
+msgstr ""
+
+#: src/notifications.js:305
+msgid "Confirm the start of a long break…"
+msgstr ""
+
+#: src/notifications.js:344
+msgid "+1 minute"
+msgstr ""
+
+#: src/notifications.js:345
+msgid "Start Pomodoro"
+msgstr "Pomodoro starten"
+
+#: src/notifications.js:346
+msgid "Start Break"
+msgstr ""
+
+#: src/notifications.js:403
+msgid "Something went wrong"
+msgstr ""
+
+#: src/notifications.js:409
+msgid "Report issue"
+msgstr "Probleem melden"
+
+#: src/notifications.js:429
+msgid "Focus Timer Not Found"
+msgstr ""
+
+#: src/notifications.js:430
+msgid "Install Focus Timer app to start using the extension."
+msgstr ""
+
+#: src/notifications.js:435
+msgid "Install from Flathub"
+msgstr ""
+
+#: src/prefs.js:14
+msgid "General"
+msgstr ""
+
+#: src/prefs.js:20
+msgid "Autostart The App"
+msgstr ""
+
+#: src/prefs.js:21
+msgid "Makes the indicator instantly visible and allows keyboard shortcuts"
+msgstr ""
+
+#: src/prefs.js:34
+msgid "Indicator"
+msgstr ""
+
+#: src/prefs.js:47
+msgid "Icon"
+msgstr ""
+
+#: src/prefs.js:53
+msgid "Text"
+msgstr ""
+
+#: src/prefs.js:60
+msgid "Display As"
+msgstr ""
+
+#: src/prefs.js:61
+msgid "Choose how the timer appears in the status bar"
+msgstr ""
+
+#: src/prefs.js:79
+msgid "Blur Effect"
+msgstr ""
+
+#: src/prefs.js:80
+msgid "Helps to acknowledge the break"
+msgstr ""
+
+#: src/prefs.js:88
+msgid "Dismiss Gesture"
+msgstr ""
+
+#: src/prefs.js:89
+msgid "Flick the mouse or press any key to dismiss"
+msgstr ""
+
+#: src/prefs.js:102
+msgid "Distractions"
+msgstr ""
+
+#: src/prefs.js:108
+msgid "Manage Notifications"
+msgstr ""
+
+#: src/prefs.js:109
+msgid "Toggle Do Not Disturb mode during Pomodoro"
+msgstr ""
+
+#: src/screenOverlay.js:987
+msgid "It's time to take a break"
+msgstr "Het is tijd voor een pauze"
+
+#: src/timer.js:51
+msgid "Stopped"
+msgstr ""
+
+#: src/timer.js:57
+msgid "Short Break"
+msgstr "Korte pauze"
+
+#: src/timer.js:60
+msgid "Long Break"
+msgstr "Lange pauze"
+
+#: src/timer.js:63
+msgid "Break"
+msgstr "Pauze"
+
+#~ msgid "A time management utility for GNOME"
+#~ msgstr "Een tijdindelingstoepassing voor GNOME"
+
+#~ msgid ""
+#~ "A GNOME utility that helps managing time according to Pomodoro Technique. "
+#~ "It intends to improve productivity and focus by taking short breaks after "
+#~ "every 25 minutes of work."
+#~ msgstr ""
+#~ "Een GNOME-hulptoepassing die u helpt tijd in te delen volgens de Pomodoro-"
+#~ "techniek. Deze techniek is bedoeld om uw productiviteit en focus te "
+#~ "verbeteren door telkens na 25 minuten werken korte pauzes te nemen."
+
+#~ msgid "Timer window"
+#~ msgstr "Tijdklokvenster"
+
+#~ msgid "Indicator for GNOME Shell"
+#~ msgstr "GNOME Shell-indicator"
+
+#~ msgid "A simple time management utility"
+#~ msgstr "Een eenvoudige tijdindelingstoepassing"
+
+#~ msgid "timer;"
+#~ msgstr "timer;tijdklok;tijdindeling;"
+
+#~ msgid "Start"
+#~ msgstr "Starten"
+
+#~ msgid "Pause"
+#~ msgstr "Onderbreken"
+
+#~ msgid "Resume"
+#~ msgstr "Hervatten"
+
+#~ msgid "Stop"
+#~ msgstr "Stoppen"
+
+#~ msgid "_Timer"
+#~ msgstr "_Tijdklok"
+
+#~ msgid "_Preferences"
+#~ msgstr "_Voorkeuren"
+
+#~ msgid "_Quit"
+#~ msgstr "_Afsluiten"
+
+#~ msgid "Keyboard shortcut to toggle the timer. Enter new shortcut to change."
+#~ msgstr ""
+#~ "Sneltoets om de tijdklok aan of uit te zetten. Druk op een nieuwe "
+#~ "toetscombinatie om te veranderen."
+
+#~ msgid "Disable"
+#~ msgstr "Uitschakelen"
+
+#~ msgid "Timer"
+#~ msgstr "Tijdklok"
+
+#~ msgid "Pomodoro duration"
+#~ msgstr "Pomodoro-duur"
+
+#~ msgid "Break duration"
+#~ msgstr "Pauzeduur"
+
+#~ msgid "Long break duration"
+#~ msgstr "Duur van lange pauze"
+
+#~ msgid "Pomodoros before a long break"
+#~ msgstr "Pomodoro's voorafgaand aan een lange pauze"
+
+#~ msgid "Keyboard shortcut"
+#~ msgstr "Sneltoets"
+
+#~ msgid "Notifications"
+#~ msgstr "Meldingen"
+
+#~ msgid "Screen notifications"
+#~ msgstr "Schermmeldingen"
+
+#~ msgid "Desktop"
+#~ msgstr "Bureaublad"
+
+#~ msgid "Wait for activity after a break"
+#~ msgstr "Wachten op activiteit na pauzes"
+
+#~ msgid "Plugins…"
+#~ msgstr "Plug-ins…"
+
+#~ msgid "Plugins"
+#~ msgstr "Plug-ins"
+
+#~ msgid "Back"
+#~ msgstr "Terug"
+
+#~ msgid "Nothing to see yet"
+#~ msgstr "Er valt hier nog niks te zien"
+
+#~ msgid "Complete a few sessions"
+#~ msgstr "Rond een paar sessies af"
+
+#~ msgid "Day"
+#~ msgstr "Dag"
+
+#~ msgid "Week"
+#~ msgstr "Week"
+
+#~ msgid "Month"
+#~ msgstr "Maand"
+
+#~ msgid "Previous (Alt+Left)"
+#~ msgstr "Vorige (Alt+pijltje naar links)"
+
+#~ msgid "Next (Alt+Right)"
+#~ msgstr "Vorige (Alt+pijltje naar rechts)"
+
+#~ msgid "Today"
+#~ msgstr "Vandaag"
+
+#~ msgid "_About"
+#~ msgstr "_Over"
+
+#~ msgid "Actions"
+#~ msgstr "Acties"
+
+#~ msgid "Action"
+#~ msgstr "Actie"
+
+#~ msgid "Custom actions…"
+#~ msgstr "Aangepaste acties…"
+
+#~ msgid "Complete"
+#~ msgstr "Afronden"
+
+#~ msgid "Skip"
+#~ msgstr "Overslaan"
+
+#~ msgid "Enable"
+#~ msgstr "Inschakelen"
+
+#~ msgid "Command"
+#~ msgstr "Opdracht"
+
+#~ msgid "Triggers"
+#~ msgstr "Roept aan:"
+
+#~ msgid "Name"
+#~ msgstr "Naam"
+
+#~ msgid "_Pomodoro"
+#~ msgstr "_Pomodoro"
+
+#~ msgid "_Short Break"
+#~ msgstr "_Korte pauze"
+
+#~ msgid "_Long Break"
+#~ msgstr "_Lange pauze"
+
+#~ msgid "Add"
+#~ msgstr "Toevoegen"
+
+#~ msgid "Remove"
+#~ msgstr "Verwijderen"
+
+#~ msgid "State"
+#~ msgstr "Status"
+
+#~ msgid "State Duration"
+#~ msgstr "Statusduur"
+
+#~ msgid "Elapsed Time"
+#~ msgstr "Verstreken tijd"
+
+#~ msgid "Pomodoro Timer"
+#~ msgstr "Pomodoro-tijdklok"
+
+#~ msgid "Start Timer"
+#~ msgstr "Tijdklok starten"
+
+#~ msgid "Pause Timer"
+#~ msgstr "Tijdklok onderbreken"
+
+#~ msgid "Stop Timer"
+#~ msgstr "Tijdklok stoppen"
+
+#~ msgid "Pause break"
+#~ msgstr "Onderbreken"
+
+#~ msgid "Pause Pomodoro"
+#~ msgstr "Onderbreken"
+
+#~ msgid "Resume break"
+#~ msgstr "Hervatten"
+
+#~ msgid "Resume Pomodoro"
+#~ msgstr "Hervatten"
+
+#, javascript-format
+#~ msgid "%d minute remaining"
+#~ msgid_plural "%d minutes remaining"
+#~ msgstr[0] "Nog %d minuut te gaan"
+#~ msgstr[1] "Nog %d minuten te gaan"
+
+#, javascript-format
+#~ msgid "%d second remaining"
+#~ msgid_plural "%d seconds remaining"
+#~ msgstr[0] "%d seconde te gaan"
+#~ msgstr[1] "%d seconden te gaan"
+
+#~ msgid "Break is over"
+#~ msgstr "Pauze is afgelopen"
+
+#~ msgid "Skip Break"
+#~ msgstr "Pauze overslaan"
+
+#~ msgid "+1 Minute"
+#~ msgstr "+1 minuut"
+
+#, javascript-format
+#~ msgid "Failed to run <i>%s</i> service"
+#~ msgstr "<i>%s</i> kan niet worden uitgevoerd"
+
+#~ msgid "Hide other notifications"
+#~ msgstr "Andere meldingen verbergen"
+
+#~ msgid "Volume:"
+#~ msgstr "Volumeniveau:"
+
+#~ msgid "Clock Ticking"
+#~ msgstr "Tikkende klok"
+
+#~ msgid "Timer Ticking"
+#~ msgstr "Tikkende tijdklok"
+
+#~ msgid "Woodland Birds"
+#~ msgstr "Bosvogels"
+
+#~ msgid "Bell"
+#~ msgstr "Bel"
+
+#~ msgid "Loud Bell"
+#~ msgstr "Luide bel"
+
+#~ msgid "Select Custom Sound"
+#~ msgstr "Kies een eigen geluid"
+
+#~ msgid "_Cancel"
+#~ msgstr "_Annuleren"
+
+#~ msgid "_Select"
+#~ msgstr "_Kiezen"
+
+#~ msgid "Ticking Sound"
+#~ msgstr "Getik"
+
+#~ msgid "End of Break Sound"
+#~ msgstr "Geluid aan het einde van de pauze"
+
+#~ msgid "Start of Break Sound"
+#~ msgstr "Geluid aan het begin van de pauze"
+
+#~ msgid "Off"
+#~ msgstr "Uit"
+
+#~ msgid "Ticking sound"
+#~ msgstr "Getik"
+
+#~ msgid "Start of break sound"
+#~ msgstr "Geluid aan het begin van de pauze"
+
+#~ msgid "End of break sound"
+#~ msgstr "Geluid aan het einde de pauze"
+
+#~ msgid "About Pomodoro"
+#~ msgstr "Over Pomodoro"
+
+#~ msgid "translator-credits"
+#~ msgstr ""
+#~ "Johannes Kool\n"
+#~ "Heimen Stoffels <vistausss@fastmail.com>"
+
+#~ msgid "Start/Stop"
+#~ msgstr "Starten/Stoppen"
+
+#~ msgid "Pause/Resume"
+#~ msgstr "Onderbreken/Hervatten"
+
+#~ msgid "Skip to a pomodoro or to a break"
+#~ msgstr "Spring naar een pomodoro of naar een pauze"
+
+#~ msgid "Extend current pomodoro or break"
+#~ msgstr "Verleng huidige pomodoro of pauze"
+
+#~ msgid "Reset current session"
+#~ msgstr "Reset huidige sessie"
+
+#~ msgid "Run as background service"
+#~ msgstr "Uitvoeren als achtergronddienst"
+
+#~ msgid "Show preferences"
+#~ msgstr "Voorkeuren tonen"
+
+#~ msgid "Quit application"
+#~ msgstr "Toepassing afsluiten"
+
+#~ msgid "Print version information and exit"
+#~ msgstr "Versie-informatie tonen en afsluiten"
+
+#~ msgid "Focus on your task."
+#~ msgstr "Focus op je taak."
+
+#, c-format
+#~ msgid "You have %d minute"
+#~ msgid_plural "You have %d minutes"
+#~ msgstr[0] "Je hebt nog %d minuut"
+#~ msgstr[1] "Je hebt nog %d minuten"
+
+#, c-format
+#~ msgid "You have %d second"
+#~ msgid_plural "You have %d seconds"
+#~ msgstr[0] "Je hebt nog %d seconde"
+#~ msgstr[1] "Je hebt nog %d seconden"
+
+#~ msgid "Take a longer break"
+#~ msgstr "Neem een langere pauze"
+
+#~ msgid "Lengthen it"
+#~ msgstr "Verlengen"
+
+#~ msgid "Shorten it"
+#~ msgstr "Inkorten"
+
+#~ msgid "Start pomodoro"
+#~ msgstr "Pomodoro starten"
+
+#, c-format
+#~ msgid ""
+#~ "Using \"%s\" as shortcut will interfere with typing. Try adding another "
+#~ "key, such as Control, Alt or Shift."
+#~ msgstr ""
+#~ "De toets ‘%s’ wordt gebruikt om te typen. Probeer een tweede toets toe te "
+#~ "voegen, zoals Ctrl, Alt of Shift."
+
+#~ msgid "Keyboard Shortcut"
+#~ msgstr "Sneltoets"
+
+#~ msgid "Available"
+#~ msgstr "Beschikbaar"
+
+#~ msgid "Busy"
+#~ msgstr "Bezig"
+
+#~ msgid "Idle"
+#~ msgstr "Inactief"
+
+#~ msgid "Invisible"
+#~ msgstr "Onzichtbaar"
+
+#~ msgid "Yesterday"
+#~ msgstr "Gisteren"
+
+#, c-format
+#~ msgid "%d m"
+#~ msgstr "%d min."
+
+#, c-format
+#~ msgid "%.0f h"
+#~ msgstr "%.0f uur"
+
+#, c-format
+#~ msgid "%.1f h"
+#~ msgstr "%.1f uur"
+
+#~ msgid "This week"
+#~ msgstr "Deze week"
 
 #~ msgid "Kamil Prusko"
 #~ msgstr "Kamil Prusko"

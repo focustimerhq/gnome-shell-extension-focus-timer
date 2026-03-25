@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-pomodoro 0.14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-24 15:30+0100\n"
+"POT-Creation-Date: 2026-03-25 16:45+0100\n"
 "PO-Revision-Date: 2023-03-24 16:00+0100\n"
 "Last-Translator: Tuomas Jaakola <tuomas.jaakola@iki.fi>\n"
 "Language-Team: \n"
@@ -18,597 +18,633 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.1.1\n"
 
-#: data/org.gnome.Pomodoro.appdata.xml:8 data/org.gnome.Pomodoro.desktop.in:3
-#: data/resources/menus.ui:28 data/resources/window.ui:382
-#: plugins/actions/enums.vala:92 plugins/gnome/extension/indicator.js:77
-#: plugins/gnome/extension/indicator.js:729
-#: plugins/gnome/extension/notifications.js:281
-#: plugins/gnome/extension/timer.js:41 src/about-dialog.vala:31
-#: src/main.vala:50 src/notifications-capability.vala:129
-#: src/stats-page.vala:527 src/window.vala:44
-msgid "Pomodoro"
-msgstr "Pomodoro"
-
-#: data/org.gnome.Pomodoro.appdata.xml:9
-msgid "A time management utility for GNOME"
-msgstr "Ajanhallintatyökalu GNOMElle"
-
-#: data/org.gnome.Pomodoro.appdata.xml:11
-msgid ""
-"A GNOME utility that helps managing time according to Pomodoro Technique. It "
-"intends to improve productivity and focus by taking short breaks after every "
-"25 minutes of work."
+#: data/org.gnome.shell.extensions.focus-timer.gschema.xml:6
+msgid "Start the app along with extension"
 msgstr ""
-"GNOME-työkalu, joka käyttää Pomodoro-tekniikkaa ajanhallintaan. Se tähtää "
-"tuottavuuden ja keskittymisen parantamiseen pitämällä pieniä taukoja 25 "
-"minuutin työjaksojen jälkeen."
 
-#: data/org.gnome.Pomodoro.appdata.xml:23
-msgid "Timer window"
-msgstr "Ajastimen ikkuna"
+#: data/org.gnome.shell.extensions.focus-timer.gschema.xml:14
+msgid "Indicator type"
+msgstr ""
 
-#: data/org.gnome.Pomodoro.appdata.xml:27
-#: plugins/gnome/extension/indicator.js:83 src/preferences-dialog.vala:800
+#: data/org.gnome.shell.extensions.focus-timer.gschema.xml:18
+msgid "Blur effect"
+msgstr ""
+
+#: data/org.gnome.shell.extensions.focus-timer.gschema.xml:22
+msgid "Dismiss screen overlay by gesture"
+msgstr ""
+
+#: data/org.gnome.shell.extensions.focus-timer.gschema.xml:26
+msgid "Reduce number of notifications during Pomodoro"
+msgstr ""
+
+#: src/indicator.js:331 src/screenShield.js:173
+msgid "Finished!"
+msgstr ""
+
+#: src/indicator.js:333 src/screenShield.js:175
+#, javascript-format
+msgid "%d of %d"
+msgstr ""
+
+#: src/indicator.js:420 src/prefs.js:73
+msgid "Screen Overlay"
+msgstr ""
+
+#: src/indicator.js:423
 msgid "Preferences"
 msgstr "Ominaisuudet"
 
-#: data/org.gnome.Pomodoro.appdata.xml:31
-msgid "Indicator for GNOME Shell"
-msgstr "GNOME Shellin indikaattori"
-
-#: data/org.gnome.Pomodoro.desktop.in:4 src/about-dialog.vala:32
-msgid "A simple time management utility"
-msgstr "Yksinkertainen ajanhallintatyökalu"
-
-#: data/org.gnome.Pomodoro.desktop.in:5
-msgid "timer;"
-msgstr "timer;"
-
-#: data/resources/menus.ui:6 plugins/actions/enums.vala:188
-#: plugins/actions/resources/action-page.ui:155 src/application.vala:90
-msgid "Start"
-msgstr "Käynnistä"
-
-#: data/resources/menus.ui:11 data/resources/window.ui:180
-#: plugins/actions/enums.vala:197 plugins/actions/resources/action-page.ui:200
-#: src/application.vala:99
-msgid "Pause"
-msgstr "Keskeytä"
-
-#: data/resources/menus.ui:16 plugins/actions/enums.vala:200
-#: plugins/actions/resources/action-page.ui:215 src/application.vala:102
-msgid "Resume"
-msgstr "Jatka"
-
-#: data/resources/menus.ui:21 data/resources/window.ui:207
-#: plugins/gnome/extension/indicator.js:221 src/application.vala:93
-#: src/window.vala:163 src/window.vala:176
-msgid "Stop"
-msgstr "Pysäytä"
-
-#: data/resources/menus.ui:33 data/resources/window.ui:398
-#: plugins/actions/enums.vala:95 plugins/gnome/extension/indicator.js:78
-#: plugins/gnome/extension/timer.js:44 src/window.vala:45
-msgid "Short Break"
-msgstr "Lyhyt tauko"
-
-#: data/resources/menus.ui:38 data/resources/window.ui:414
-#: plugins/actions/enums.vala:98 plugins/gnome/extension/indicator.js:79
-#: plugins/gnome/extension/timer.js:47 src/window.vala:46
-msgid "Long Break"
-msgstr "Pitkä tauko"
-
-#: data/resources/menus.ui:45
-msgid "_Timer"
-msgstr "_Ajastin"
-
-#: data/resources/menus.ui:49 data/resources/window.ui:309
-msgid "_Preferences"
-msgstr "_Ominaisuudet"
-
-#: data/resources/menus.ui:53 data/resources/window.ui:348
-msgid "_Quit"
-msgstr "_Lopeta"
-
-#: data/resources/preferences-keyboard-shortcut-page.ui:29
-msgid "Keyboard shortcut to toggle the timer. Enter new shortcut to change."
-msgstr "Pikanäppäin ajastimen käyttöön. Vaihda painamalla näppäintä."
-
-#: data/resources/preferences-keyboard-shortcut-page.ui:83
-#: plugins/actions/enums.vala:206 plugins/actions/resources/action-page.ui:245
-msgid "Disable"
-msgstr "Pois käytöstä"
-
-#: data/resources/preferences-main-page.ui:45 data/resources/window.ui:247
-msgid "Timer"
-msgstr "Ajastin"
-
-#: data/resources/preferences-main-page.ui:108
-msgid "Pomodoro duration"
-msgstr "Pomodoron kesto"
-
-#: data/resources/preferences-main-page.ui:160
-msgid "Break duration"
-msgstr "Tauon kesto"
-
-#: data/resources/preferences-main-page.ui:213
-msgid "Long break duration"
-msgstr "Pitkän tauon kesto"
-
-#: data/resources/preferences-main-page.ui:245
-msgid "Pomodoros before a long break"
-msgstr "Pomodoroja ennen pitkää taukoa"
-
-#: data/resources/preferences-main-page.ui:294
-msgid "Keyboard shortcut"
-msgstr "Pikanäppäin"
-
-#: data/resources/preferences-main-page.ui:357
-msgid "Notifications"
-msgstr "Ilmoitukset"
-
-#: data/resources/preferences-main-page.ui:400
-msgid "Screen notifications"
-msgstr "Näytön ilmoitukset"
-
-#: data/resources/preferences-main-page.ui:460
-msgid "Desktop"
-msgstr "Työpöytä"
-
-#: data/resources/preferences-main-page.ui:509
-msgid "Wait for activity after a break"
-msgstr "Odota aktiviteettia tauon jälkeen"
-
-#: data/resources/preferences-main-page.ui:573
-msgid "Plugins…"
-msgstr "Liitännäiset…"
-
-#: data/resources/preferences.ui:8 src/preferences-dialog.vala:804
-msgid "Plugins"
-msgstr "Liitännäiset"
-
-#: data/resources/preferences.ui:47
-msgid "Back"
-msgstr "Takaisin"
-
-#: data/resources/screen-notification.ui:89
-#: plugins/gnome/extension/dialogs.js:1002
-msgid "It's time to take a break"
-msgstr "On aika pitää taukoa"
-
-#: data/resources/stats-view.ui:28
-msgid "Nothing to see yet"
-msgstr "Ei vielä nähtävää"
-
-#: data/resources/stats-view.ui:45
-msgid "Complete a few sessions"
-msgstr "Vie loppuun muutama jakso"
-
-#: data/resources/stats-view.ui:86 data/resources/stats-view.ui:343
-msgid "Day"
-msgstr "Päivä"
-
-#: data/resources/stats-view.ui:109 data/resources/stats-view.ui:356
-msgid "Week"
-msgstr "Viikko"
-
-#: data/resources/stats-view.ui:133 data/resources/stats-view.ui:369
-msgid "Month"
-msgstr "Kuukausi"
-
-#: data/resources/stats-view.ui:161
-msgid "Previous (Alt+Left)"
-msgstr "Edellinen (Alt+Vasen)"
-
-#: data/resources/stats-view.ui:188
-msgid "Next (Alt+Right)"
-msgstr "Seuraava (Alt+Oikea)"
-
-#: data/resources/stats-view.ui:216 data/resources/stats-view.ui:319
-#: src/stats-day-page.vala:62
-msgid "Today"
-msgstr "Tänään"
-
-#: data/resources/window.ui:36 plugins/gnome/extension/indicator.js:214
-#: src/window.vala:180
-msgid "Start Pomodoro"
-msgstr "Käynnistä Pomodoro"
-
-#: data/resources/window.ui:323
-msgid "_About"
-msgstr "T_ietoa"
-
-#: plugins/actions/actions.vala:423
-msgid "Actions"
-msgstr "Toiminnot"
-
-#: plugins/actions/actions.vala:427
-msgid "Action"
-msgstr "Toiminto"
-
-#: plugins/actions/actions.vala:452
-msgid "Custom actions…"
-msgstr "Muokatut toiminnot…"
-
-#: plugins/actions/enums.vala:191 plugins/actions/resources/action-page.ui:170
-msgid "Complete"
-msgstr "Valmis"
-
-#: plugins/actions/enums.vala:194 plugins/actions/resources/action-page.ui:185
-msgid "Skip"
-msgstr "Ohita"
-
-#: plugins/actions/enums.vala:203 plugins/actions/resources/action-page.ui:230
-msgid "Enable"
-msgstr "Ota käyttöön"
-
-#: plugins/actions/resources/action-page.ui:28
-msgid "Command"
-msgstr "Komento"
-
-#: plugins/actions/resources/action-page.ui:41
-#: plugins/actions/resources/menus.ui:29
-msgid "Triggers"
-msgstr "Liipaisimet"
-
-#: plugins/actions/resources/action-page.ui:54
-msgid "Name"
-msgstr "Nimi"
-
-#: plugins/actions/resources/action-page.ui:88
-msgid "_Pomodoro"
-msgstr "_Pomodoro"
-
-#: plugins/actions/resources/action-page.ui:102
-msgid "_Short Break"
-msgstr "_Lyhyt tauko"
-
-#: plugins/actions/resources/action-page.ui:116
-msgid "_Long Break"
-msgstr "Pitkä _tauko"
-
-#: plugins/actions/resources/action-page.ui:299
-msgid "Add"
-msgstr "Lisää"
-
-#: plugins/actions/resources/menus.ui:6
-msgid "Remove"
-msgstr "Poista"
-
-#: plugins/actions/resources/menus.ui:14
-msgid "State"
-msgstr "Tila"
-
-#: plugins/actions/resources/menus.ui:19
-msgid "State Duration"
-msgstr "Tilan kesto"
-
-#: plugins/actions/resources/menus.ui:24
-msgid "Elapsed Time"
-msgstr "Kulunut aika"
-
-#. this.stack.add_titled (this.timer_stack, "timer", _("Timer"));
-#: plugins/gnome/extension/indicator.js:84 src/window.vala:101
+#: src/indicator.js:424
 msgid "Stats"
 msgstr "Tilastot"
 
-#: plugins/gnome/extension/indicator.js:85
+#: src/indicator.js:426
 msgid "Quit"
 msgstr "Lopeta"
 
-#: plugins/gnome/extension/indicator.js:123
-#: plugins/gnome/extension/notifications.js:128
-#: plugins/gnome/extension/notifications.js:549
-msgid "Pomodoro Timer"
-msgstr "Pomodoro-ajastin"
-
-#: plugins/gnome/extension/indicator.js:129
-msgid "Start Timer"
-msgstr "Käynnistä ajastin"
-
-#: plugins/gnome/extension/indicator.js:162
-msgid "Pause Timer"
-msgstr "Keskeytä ajastin"
-
-#: plugins/gnome/extension/indicator.js:174
-msgid "Stop Timer"
-msgstr "Lopeta ajastin"
-
-#: plugins/gnome/extension/indicator.js:211 src/window.vala:179
-msgid "Pause break"
-msgstr "Keskeytä"
-
-#: plugins/gnome/extension/indicator.js:211 src/window.vala:166
-msgid "Pause Pomodoro"
-msgstr "Keskeytä"
-
-#: plugins/gnome/extension/indicator.js:214
-#: src/notifications-capability.vala:141 src/notifications-capability.vala:162
-#: src/window.vala:167
-msgid "Take a break"
-msgstr "Pidä tauko"
-
-#: plugins/gnome/extension/indicator.js:218 src/window.vala:175
-msgid "Resume break"
-msgstr "Jatka"
-
-#: plugins/gnome/extension/indicator.js:218 src/window.vala:162
-msgid "Resume Pomodoro"
-msgstr "Jatka"
-
-#: plugins/gnome/extension/notifications.js:89
+#: src/indicator.js:601
 #, javascript-format
-msgid "%d minute remaining"
-msgid_plural "%d minutes remaining"
-msgstr[0] "%d minuutti jäljellä"
-msgstr[1] "%d minuuttia jäljellä"
-
-#: plugins/gnome/extension/notifications.js:97
-#, javascript-format
-msgid "%d second remaining"
-msgid_plural "%d seconds remaining"
-msgstr[0] "%d sekunti jäljellä"
-msgstr[1] "%d sekuntia jäljellä"
-
-#: plugins/gnome/extension/notifications.js:289
-msgid "Pomodoro is about to end"
-msgstr "Pomodoro on päättymässä"
-
-#: plugins/gnome/extension/notifications.js:295
-msgid "Take a long break"
-msgstr "Pidä pitkä tauko"
-
-#: plugins/gnome/extension/notifications.js:296
-msgid "Take a short break"
-msgstr "Pidä lyhyt tauko"
-
-#: plugins/gnome/extension/notifications.js:304
-msgid "Break is about to end"
-msgstr "Tauko on päättymässä"
-
-#: plugins/gnome/extension/notifications.js:308
-msgid "Break is over"
-msgstr "Tauko on ohi"
-
-#. body = _("Get ready for Pomodoro");
-#: plugins/gnome/extension/notifications.js:336
-msgid "Get ready…"
-msgstr "Valmistaudu…"
-
-#: plugins/gnome/extension/notifications.js:362
-msgid "Skip Break"
-msgstr "Ohita tauko"
-
-#: plugins/gnome/extension/notifications.js:365
-msgid "+1 Minute"
-msgstr "+1 minuutti"
-
-#: plugins/gnome/extension/notifications.js:557
-msgid "Report issue"
-msgstr "Ilmoita ongelmasta"
-
-#: plugins/gnome/extension/timer.js:248
-#, javascript-format
-msgid "Failed to run <i>%s</i> service"
-msgstr "Palvelua <i>%s</i> ei voitu suorittaa"
-
-#: plugins/gnome/gnome-plugin.vala:290
-msgid "Hide other notifications"
-msgstr "Piilota muut ilmoitukset"
-
-#: plugins/sounds/resources/preferences-sound-page.ui:33
-msgid "Volume:"
-msgstr "Äänenvoimakkuus:"
-
-#: plugins/sounds/sounds-plugin.vala:35 plugins/sounds/sounds-plugin.vala:410
-msgid "Clock Ticking"
-msgstr "Kellon tikitys"
-
-#: plugins/sounds/sounds-plugin.vala:36 plugins/sounds/sounds-plugin.vala:411
-msgid "Timer Ticking"
-msgstr "Ajastimen tikitys"
-
-#: plugins/sounds/sounds-plugin.vala:37 plugins/sounds/sounds-plugin.vala:412
-msgid "Woodland Birds"
-msgstr "Metsän linnut"
-
-#: plugins/sounds/sounds-plugin.vala:38 plugins/sounds/sounds-plugin.vala:472
-#: plugins/sounds/sounds-plugin.vala:511
-msgid "Bell"
-msgstr "Kello"
-
-#: plugins/sounds/sounds-plugin.vala:39 plugins/sounds/sounds-plugin.vala:473
-#: plugins/sounds/sounds-plugin.vala:512
-msgid "Loud Bell"
-msgstr "Iso kello"
-
-#: plugins/sounds/sounds-plugin.vala:334
-msgid "Select Custom Sound"
-msgstr "Valitse oma ääni"
-
-#: plugins/sounds/sounds-plugin.vala:337
-msgid "_Cancel"
-msgstr "_Peru"
-
-#: plugins/sounds/sounds-plugin.vala:339
-msgid "_Select"
-msgstr "_Valitse"
-
-#: plugins/sounds/sounds-plugin.vala:568
-msgid "Ticking Sound"
-msgstr "Tikitysääni"
-
-#: plugins/sounds/sounds-plugin.vala:572
-msgid "End of Break Sound"
-msgstr "Tauon päättymisääni"
-
-#: plugins/sounds/sounds-plugin.vala:576
-msgid "Start of Break Sound"
-msgstr "Tauon aloitusääni"
-
-#: plugins/sounds/sounds-plugin.vala:604 src/preferences-dialog.vala:590
-msgid "Off"
-msgstr "Pois"
-
-#: plugins/sounds/sounds-plugin.vala:744
-msgid "Ticking sound"
-msgstr "Tikitysääni"
-
-#: plugins/sounds/sounds-plugin.vala:749
-msgid "Start of break sound"
-msgstr "Tauon aloitusääni"
-
-#: plugins/sounds/sounds-plugin.vala:754
-msgid "End of break sound"
-msgstr "Tauon päättymisääni"
-
-#: src/about-dialog.vala:30
-msgid "About Pomodoro"
-msgstr "Tietoa Pomodorosta"
-
-#: src/about-dialog.vala:41
-msgid "translator-credits"
-msgstr "translator-credits"
-
-#: src/application.vala:87
-msgid "Start/Stop"
-msgstr "Käynnistä/Pysäytä"
-
-#: src/application.vala:96
-msgid "Pause/Resume"
-msgstr "Keskeytä/Jatka"
-
-#: src/application.vala:105
-msgid "Skip to a pomodoro or to a break"
-msgstr "Hyppää pomodorolle tai tauolle"
-
-#: src/application.vala:108
-msgid "Extend current pomodoro or break"
-msgstr "Pidennä nykyistä pomodoroa tai taukoa"
-
-#: src/application.vala:111
-msgid "Reset current session"
-msgstr "Nollaa nykyinen istunto"
-
-#: src/application.vala:114
-msgid "Run as background service"
-msgstr "Suorita taustapalveluna"
-
-#: src/application.vala:117
-msgid "Show preferences"
-msgstr "Näytä ominaisuudet"
-
-#: src/application.vala:120
-msgid "Quit application"
-msgstr "Lopeta sovellus"
-
-#: src/application.vala:123
-msgid "Print version information and exit"
-msgstr "Näytä versiotiedot ja lopeta"
-
-#: src/notifications-capability.vala:130
-msgid "Focus on your task."
-msgstr "Keskity tehtävääsi."
-
-#: src/notifications-capability.vala:156
-#, c-format
-msgid "You have %d minute"
-msgid_plural "You have %d minutes"
-msgstr[0] "Sinulla on %d minuutti"
-msgstr[1] "Sinulla on %d minuuttia"
-
-#: src/notifications-capability.vala:158
-#, c-format
-msgid "You have %d second"
-msgid_plural "You have %d seconds"
-msgstr[0] "Sinulla on %d sekunti"
-msgstr[1] "Sinulla on %d sekuntia"
-
-#: src/notifications-capability.vala:163
-msgid "Take a longer break"
-msgstr "Pidä pitkä tauko"
-
-#: src/notifications-capability.vala:179
-msgid "Lengthen it"
-msgstr "Pidennä sitä"
-
-#: src/notifications-capability.vala:184
-msgid "Shorten it"
-msgstr "Lyhennä sitä"
-
-#: src/notifications-capability.vala:189
-msgid "Start pomodoro"
-msgstr "Käynnistä pomodoro"
-
-#: src/preferences-dialog.vala:158
-#, c-format
-msgid ""
-"Using \"%s\" as shortcut will interfere with typing. Try adding another key, "
-"such as Control, Alt or Shift."
+msgid "%dh"
 msgstr ""
-"Näppäimen \"%s\" käyttö häiritsee kirjoittamista. Käytä jotain toista "
-"näppäintä, esimerkiksi Control, Alt tai Shift."
 
-#: src/preferences-dialog.vala:808
-msgid "Keyboard Shortcut"
-msgstr "Pikanäppäin"
+#: src/indicator.js:605
+#, javascript-format
+msgid "%dm"
+msgstr ""
 
-#: src/presence.vala:80
-msgid "Available"
-msgstr "Saatavilla"
+#: src/indicator.js:613
+#, javascript-format
+msgid "%ds"
+msgstr ""
 
-#: src/presence.vala:83
-msgid "Busy"
-msgstr "Varattu"
+#: src/indicator.js:1058 src/notifications.js:59
+msgid "Focus Timer"
+msgstr ""
 
-#: src/presence.vala:86
-msgid "Idle"
-msgstr "Jouten"
+#: src/notifications.js:79
+msgid "Focus Timer Extension"
+msgstr ""
 
-#: src/presence.vala:89
-msgid "Invisible"
-msgstr "Näkymätön"
-
-#: src/stats-day-page.vala:66
-msgid "Yesterday"
-msgstr "Eilen"
-
-#: src/stats-page.vala:87
-#, c-format
-msgid "%d m"
-msgstr "%d m"
-
-#: src/stats-page.vala:93
-#, c-format
-msgid "%.0f h"
-msgstr "%.0f h"
-
-#: src/stats-page.vala:96
-#, c-format
-msgid "%.1f h"
-msgstr "%.1f h"
-
-#: src/stats-page.vala:573
-msgid "Break"
-msgstr "Tauko"
-
-#: src/stats-week-page.vala:58
-msgid "This week"
-msgstr "Tällä viikolla"
-
-#: src/utils.vala:32
-#, c-format
+#: src/notifications.js:115
+#, javascript-format
 msgid "%d hour"
 msgid_plural "%d hours"
 msgstr[0] "%d tunti"
 msgstr[1] "%d tuntia"
 
-#: src/utils.vala:41
-#, c-format
+#: src/notifications.js:118
+#, javascript-format
 msgid "%d minute"
 msgid_plural "%d minutes"
 msgstr[0] "%d minuutti"
 msgstr[1] "%d minuuttia"
+
+#: src/notifications.js:121
+#, javascript-format
+msgid "%d second"
+msgid_plural "%d seconds"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: time remaining eg. "3 minutes 50 seconds remaining"
+#: src/notifications.js:128
+#, javascript-format
+msgid "%s remaining"
+msgstr ""
+
+#: src/notifications.js:239 src/timer.js:54
+msgid "Pomodoro"
+msgstr "Pomodoro"
+
+#: src/notifications.js:241
+msgid "Take a break"
+msgstr "Pidä tauko"
+
+#: src/notifications.js:243
+msgid "Take a short break"
+msgstr "Pidä lyhyt tauko"
+
+#: src/notifications.js:245
+msgid "Take a long break"
+msgstr "Pidä pitkä tauko"
+
+#: src/notifications.js:253
+msgid "Pomodoro is about to end"
+msgstr "Pomodoro on päättymässä"
+
+#: src/notifications.js:255
+msgid "Break is about to end"
+msgstr "Tauko on päättymässä"
+
+#: src/notifications.js:263 src/notifications.js:275
+msgid "Break is over!"
+msgstr ""
+
+#: src/notifications.js:265 src/notifications.js:273
+msgid "Pomodoro is over!"
+msgstr ""
+
+#: src/notifications.js:294
+msgid "Get ready…"
+msgstr "Valmistaudu…"
+
+#: src/notifications.js:299
+msgid "Confirm the start of a Pomodoro…"
+msgstr ""
+
+#: src/notifications.js:301
+msgid "Confirm the start of a break…"
+msgstr ""
+
+#: src/notifications.js:303
+msgid "Confirm the start of a short break…"
+msgstr ""
+
+#: src/notifications.js:305
+msgid "Confirm the start of a long break…"
+msgstr ""
+
+#: src/notifications.js:344
+msgid "+1 minute"
+msgstr ""
+
+#: src/notifications.js:345
+msgid "Start Pomodoro"
+msgstr "Käynnistä Pomodoro"
+
+#: src/notifications.js:346
+msgid "Start Break"
+msgstr ""
+
+#: src/notifications.js:403
+msgid "Something went wrong"
+msgstr ""
+
+#: src/notifications.js:409
+msgid "Report issue"
+msgstr "Ilmoita ongelmasta"
+
+#: src/notifications.js:429
+msgid "Focus Timer Not Found"
+msgstr ""
+
+#: src/notifications.js:430
+msgid "Install Focus Timer app to start using the extension."
+msgstr ""
+
+#: src/notifications.js:435
+msgid "Install from Flathub"
+msgstr ""
+
+#: src/prefs.js:14
+msgid "General"
+msgstr ""
+
+#: src/prefs.js:20
+msgid "Autostart The App"
+msgstr ""
+
+#: src/prefs.js:21
+msgid "Makes the indicator instantly visible and allows keyboard shortcuts"
+msgstr ""
+
+#: src/prefs.js:34
+msgid "Indicator"
+msgstr ""
+
+#: src/prefs.js:47
+msgid "Icon"
+msgstr ""
+
+#: src/prefs.js:53
+msgid "Text"
+msgstr ""
+
+#: src/prefs.js:60
+msgid "Display As"
+msgstr ""
+
+#: src/prefs.js:61
+msgid "Choose how the timer appears in the status bar"
+msgstr ""
+
+#: src/prefs.js:79
+msgid "Blur Effect"
+msgstr ""
+
+#: src/prefs.js:80
+msgid "Helps to acknowledge the break"
+msgstr ""
+
+#: src/prefs.js:88
+msgid "Dismiss Gesture"
+msgstr ""
+
+#: src/prefs.js:89
+msgid "Flick the mouse or press any key to dismiss"
+msgstr ""
+
+#: src/prefs.js:102
+msgid "Distractions"
+msgstr ""
+
+#: src/prefs.js:108
+msgid "Manage Notifications"
+msgstr ""
+
+#: src/prefs.js:109
+msgid "Toggle Do Not Disturb mode during Pomodoro"
+msgstr ""
+
+#: src/screenOverlay.js:987
+msgid "It's time to take a break"
+msgstr "On aika pitää taukoa"
+
+#: src/timer.js:51
+msgid "Stopped"
+msgstr ""
+
+#: src/timer.js:57
+msgid "Short Break"
+msgstr "Lyhyt tauko"
+
+#: src/timer.js:60
+msgid "Long Break"
+msgstr "Pitkä tauko"
+
+#: src/timer.js:63
+msgid "Break"
+msgstr "Tauko"
+
+#~ msgid "A time management utility for GNOME"
+#~ msgstr "Ajanhallintatyökalu GNOMElle"
+
+#~ msgid ""
+#~ "A GNOME utility that helps managing time according to Pomodoro Technique. "
+#~ "It intends to improve productivity and focus by taking short breaks after "
+#~ "every 25 minutes of work."
+#~ msgstr ""
+#~ "GNOME-työkalu, joka käyttää Pomodoro-tekniikkaa ajanhallintaan. Se tähtää "
+#~ "tuottavuuden ja keskittymisen parantamiseen pitämällä pieniä taukoja 25 "
+#~ "minuutin työjaksojen jälkeen."
+
+#~ msgid "Timer window"
+#~ msgstr "Ajastimen ikkuna"
+
+#~ msgid "Indicator for GNOME Shell"
+#~ msgstr "GNOME Shellin indikaattori"
+
+#~ msgid "A simple time management utility"
+#~ msgstr "Yksinkertainen ajanhallintatyökalu"
+
+#~ msgid "timer;"
+#~ msgstr "timer;"
+
+#~ msgid "Start"
+#~ msgstr "Käynnistä"
+
+#~ msgid "Pause"
+#~ msgstr "Keskeytä"
+
+#~ msgid "Resume"
+#~ msgstr "Jatka"
+
+#~ msgid "Stop"
+#~ msgstr "Pysäytä"
+
+#~ msgid "_Timer"
+#~ msgstr "_Ajastin"
+
+#~ msgid "_Preferences"
+#~ msgstr "_Ominaisuudet"
+
+#~ msgid "_Quit"
+#~ msgstr "_Lopeta"
+
+#~ msgid "Keyboard shortcut to toggle the timer. Enter new shortcut to change."
+#~ msgstr "Pikanäppäin ajastimen käyttöön. Vaihda painamalla näppäintä."
+
+#~ msgid "Disable"
+#~ msgstr "Pois käytöstä"
+
+#~ msgid "Timer"
+#~ msgstr "Ajastin"
+
+#~ msgid "Pomodoro duration"
+#~ msgstr "Pomodoron kesto"
+
+#~ msgid "Break duration"
+#~ msgstr "Tauon kesto"
+
+#~ msgid "Long break duration"
+#~ msgstr "Pitkän tauon kesto"
+
+#~ msgid "Pomodoros before a long break"
+#~ msgstr "Pomodoroja ennen pitkää taukoa"
+
+#~ msgid "Keyboard shortcut"
+#~ msgstr "Pikanäppäin"
+
+#~ msgid "Notifications"
+#~ msgstr "Ilmoitukset"
+
+#~ msgid "Screen notifications"
+#~ msgstr "Näytön ilmoitukset"
+
+#~ msgid "Desktop"
+#~ msgstr "Työpöytä"
+
+#~ msgid "Wait for activity after a break"
+#~ msgstr "Odota aktiviteettia tauon jälkeen"
+
+#~ msgid "Plugins…"
+#~ msgstr "Liitännäiset…"
+
+#~ msgid "Plugins"
+#~ msgstr "Liitännäiset"
+
+#~ msgid "Back"
+#~ msgstr "Takaisin"
+
+#~ msgid "Nothing to see yet"
+#~ msgstr "Ei vielä nähtävää"
+
+#~ msgid "Complete a few sessions"
+#~ msgstr "Vie loppuun muutama jakso"
+
+#~ msgid "Day"
+#~ msgstr "Päivä"
+
+#~ msgid "Week"
+#~ msgstr "Viikko"
+
+#~ msgid "Month"
+#~ msgstr "Kuukausi"
+
+#~ msgid "Previous (Alt+Left)"
+#~ msgstr "Edellinen (Alt+Vasen)"
+
+#~ msgid "Next (Alt+Right)"
+#~ msgstr "Seuraava (Alt+Oikea)"
+
+#~ msgid "Today"
+#~ msgstr "Tänään"
+
+#~ msgid "_About"
+#~ msgstr "T_ietoa"
+
+#~ msgid "Actions"
+#~ msgstr "Toiminnot"
+
+#~ msgid "Action"
+#~ msgstr "Toiminto"
+
+#~ msgid "Custom actions…"
+#~ msgstr "Muokatut toiminnot…"
+
+#~ msgid "Complete"
+#~ msgstr "Valmis"
+
+#~ msgid "Skip"
+#~ msgstr "Ohita"
+
+#~ msgid "Enable"
+#~ msgstr "Ota käyttöön"
+
+#~ msgid "Command"
+#~ msgstr "Komento"
+
+#~ msgid "Triggers"
+#~ msgstr "Liipaisimet"
+
+#~ msgid "Name"
+#~ msgstr "Nimi"
+
+#~ msgid "_Pomodoro"
+#~ msgstr "_Pomodoro"
+
+#~ msgid "_Short Break"
+#~ msgstr "_Lyhyt tauko"
+
+#~ msgid "_Long Break"
+#~ msgstr "Pitkä _tauko"
+
+#~ msgid "Add"
+#~ msgstr "Lisää"
+
+#~ msgid "Remove"
+#~ msgstr "Poista"
+
+#~ msgid "State"
+#~ msgstr "Tila"
+
+#~ msgid "State Duration"
+#~ msgstr "Tilan kesto"
+
+#~ msgid "Elapsed Time"
+#~ msgstr "Kulunut aika"
+
+#~ msgid "Pomodoro Timer"
+#~ msgstr "Pomodoro-ajastin"
+
+#~ msgid "Start Timer"
+#~ msgstr "Käynnistä ajastin"
+
+#~ msgid "Pause Timer"
+#~ msgstr "Keskeytä ajastin"
+
+#~ msgid "Stop Timer"
+#~ msgstr "Lopeta ajastin"
+
+#~ msgid "Pause break"
+#~ msgstr "Keskeytä"
+
+#~ msgid "Pause Pomodoro"
+#~ msgstr "Keskeytä"
+
+#~ msgid "Resume break"
+#~ msgstr "Jatka"
+
+#~ msgid "Resume Pomodoro"
+#~ msgstr "Jatka"
+
+#, javascript-format
+#~ msgid "%d minute remaining"
+#~ msgid_plural "%d minutes remaining"
+#~ msgstr[0] "%d minuutti jäljellä"
+#~ msgstr[1] "%d minuuttia jäljellä"
+
+#, javascript-format
+#~ msgid "%d second remaining"
+#~ msgid_plural "%d seconds remaining"
+#~ msgstr[0] "%d sekunti jäljellä"
+#~ msgstr[1] "%d sekuntia jäljellä"
+
+#~ msgid "Break is over"
+#~ msgstr "Tauko on ohi"
+
+#~ msgid "Skip Break"
+#~ msgstr "Ohita tauko"
+
+#~ msgid "+1 Minute"
+#~ msgstr "+1 minuutti"
+
+#, javascript-format
+#~ msgid "Failed to run <i>%s</i> service"
+#~ msgstr "Palvelua <i>%s</i> ei voitu suorittaa"
+
+#~ msgid "Hide other notifications"
+#~ msgstr "Piilota muut ilmoitukset"
+
+#~ msgid "Volume:"
+#~ msgstr "Äänenvoimakkuus:"
+
+#~ msgid "Clock Ticking"
+#~ msgstr "Kellon tikitys"
+
+#~ msgid "Timer Ticking"
+#~ msgstr "Ajastimen tikitys"
+
+#~ msgid "Woodland Birds"
+#~ msgstr "Metsän linnut"
+
+#~ msgid "Bell"
+#~ msgstr "Kello"
+
+#~ msgid "Loud Bell"
+#~ msgstr "Iso kello"
+
+#~ msgid "Select Custom Sound"
+#~ msgstr "Valitse oma ääni"
+
+#~ msgid "_Cancel"
+#~ msgstr "_Peru"
+
+#~ msgid "_Select"
+#~ msgstr "_Valitse"
+
+#~ msgid "Ticking Sound"
+#~ msgstr "Tikitysääni"
+
+#~ msgid "End of Break Sound"
+#~ msgstr "Tauon päättymisääni"
+
+#~ msgid "Start of Break Sound"
+#~ msgstr "Tauon aloitusääni"
+
+#~ msgid "Off"
+#~ msgstr "Pois"
+
+#~ msgid "Ticking sound"
+#~ msgstr "Tikitysääni"
+
+#~ msgid "Start of break sound"
+#~ msgstr "Tauon aloitusääni"
+
+#~ msgid "End of break sound"
+#~ msgstr "Tauon päättymisääni"
+
+#~ msgid "About Pomodoro"
+#~ msgstr "Tietoa Pomodorosta"
+
+#~ msgid "translator-credits"
+#~ msgstr "translator-credits"
+
+#~ msgid "Start/Stop"
+#~ msgstr "Käynnistä/Pysäytä"
+
+#~ msgid "Pause/Resume"
+#~ msgstr "Keskeytä/Jatka"
+
+#~ msgid "Skip to a pomodoro or to a break"
+#~ msgstr "Hyppää pomodorolle tai tauolle"
+
+#~ msgid "Extend current pomodoro or break"
+#~ msgstr "Pidennä nykyistä pomodoroa tai taukoa"
+
+#~ msgid "Reset current session"
+#~ msgstr "Nollaa nykyinen istunto"
+
+#~ msgid "Run as background service"
+#~ msgstr "Suorita taustapalveluna"
+
+#~ msgid "Show preferences"
+#~ msgstr "Näytä ominaisuudet"
+
+#~ msgid "Quit application"
+#~ msgstr "Lopeta sovellus"
+
+#~ msgid "Print version information and exit"
+#~ msgstr "Näytä versiotiedot ja lopeta"
+
+#~ msgid "Focus on your task."
+#~ msgstr "Keskity tehtävääsi."
+
+#, c-format
+#~ msgid "You have %d minute"
+#~ msgid_plural "You have %d minutes"
+#~ msgstr[0] "Sinulla on %d minuutti"
+#~ msgstr[1] "Sinulla on %d minuuttia"
+
+#, c-format
+#~ msgid "You have %d second"
+#~ msgid_plural "You have %d seconds"
+#~ msgstr[0] "Sinulla on %d sekunti"
+#~ msgstr[1] "Sinulla on %d sekuntia"
+
+#~ msgid "Take a longer break"
+#~ msgstr "Pidä pitkä tauko"
+
+#~ msgid "Lengthen it"
+#~ msgstr "Pidennä sitä"
+
+#~ msgid "Shorten it"
+#~ msgstr "Lyhennä sitä"
+
+#~ msgid "Start pomodoro"
+#~ msgstr "Käynnistä pomodoro"
+
+#, c-format
+#~ msgid ""
+#~ "Using \"%s\" as shortcut will interfere with typing. Try adding another "
+#~ "key, such as Control, Alt or Shift."
+#~ msgstr ""
+#~ "Näppäimen \"%s\" käyttö häiritsee kirjoittamista. Käytä jotain toista "
+#~ "näppäintä, esimerkiksi Control, Alt tai Shift."
+
+#~ msgid "Keyboard Shortcut"
+#~ msgstr "Pikanäppäin"
+
+#~ msgid "Available"
+#~ msgstr "Saatavilla"
+
+#~ msgid "Busy"
+#~ msgstr "Varattu"
+
+#~ msgid "Idle"
+#~ msgstr "Jouten"
+
+#~ msgid "Invisible"
+#~ msgstr "Näkymätön"
+
+#~ msgid "Yesterday"
+#~ msgstr "Eilen"
+
+#, c-format
+#~ msgid "%d m"
+#~ msgstr "%d m"
+
+#, c-format
+#~ msgid "%.0f h"
+#~ msgstr "%.0f h"
+
+#, c-format
+#~ msgid "%.1f h"
+#~ msgstr "%.1f h"
+
+#~ msgid "This week"
+#~ msgstr "Tällä viikolla"
 
 #~ msgid "Kamil Prusko"
 #~ msgstr "Kamil Prusko"

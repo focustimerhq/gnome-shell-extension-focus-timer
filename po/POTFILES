@@ -1,0 +1,17 @@
+data/org.gnome.shell.extensions.focus-timer.gschema.xml
+src/config.js.in
+src/dbus.js
+src/distractions.js
+src/extension.js
+src/indicator.js
+src/notifications.js
+src/prefs.js
+src/screenOverlay.js
+src/screenShield.js
+src/session.js
+src/settings.js
+src/timerControlButtons.js
+src/timer.js
+src/timerLabel.js
+src/timerProgressBar.js
+src/utils.js

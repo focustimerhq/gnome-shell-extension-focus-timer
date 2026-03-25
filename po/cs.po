@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-pomodoro\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-24 15:30+0100\n"
+"POT-Creation-Date: 2026-03-25 16:45+0100\n"
 "PO-Revision-Date: 2023-03-24 15:38+0100\n"
 "Last-Translator: Petr Hložek <petr@petrhlozek.cz>\n"
 "Language-Team: <>\n"
@@ -18,603 +18,640 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 "X-Generator: Poedit 3.1.1\n"
 
-#: data/org.gnome.Pomodoro.appdata.xml:8 data/org.gnome.Pomodoro.desktop.in:3
-#: data/resources/menus.ui:28 data/resources/window.ui:382
-#: plugins/actions/enums.vala:92 plugins/gnome/extension/indicator.js:77
-#: plugins/gnome/extension/indicator.js:729
-#: plugins/gnome/extension/notifications.js:281
-#: plugins/gnome/extension/timer.js:41 src/about-dialog.vala:31
-#: src/main.vala:50 src/notifications-capability.vala:129
-#: src/stats-page.vala:527 src/window.vala:44
-msgid "Pomodoro"
-msgstr "Pomodoro"
-
-#: data/org.gnome.Pomodoro.appdata.xml:9
-msgid "A time management utility for GNOME"
-msgstr "Jednoduchý nástroj pro time management"
-
-#: data/org.gnome.Pomodoro.appdata.xml:11
-msgid ""
-"A GNOME utility that helps managing time according to Pomodoro Technique. It "
-"intends to improve productivity and focus by taking short breaks after every "
-"25 minutes of work."
+#: data/org.gnome.shell.extensions.focus-timer.gschema.xml:6
+msgid "Start the app along with extension"
 msgstr ""
-"Nástroj pro Gnome, který vám pomůže se správou času pomocí techniky "
-"Pomodoro. Záměrem je zlepšit vaši produktivitu a koncentraci pomocí krátkých "
-"přestávek po každých 25 minutách práce."
 
-#: data/org.gnome.Pomodoro.appdata.xml:23
-msgid "Timer window"
-msgstr "Okno časovače"
+#: data/org.gnome.shell.extensions.focus-timer.gschema.xml:14
+msgid "Indicator type"
+msgstr ""
 
-#: data/org.gnome.Pomodoro.appdata.xml:27
-#: plugins/gnome/extension/indicator.js:83 src/preferences-dialog.vala:800
+#: data/org.gnome.shell.extensions.focus-timer.gschema.xml:18
+msgid "Blur effect"
+msgstr ""
+
+#: data/org.gnome.shell.extensions.focus-timer.gschema.xml:22
+msgid "Dismiss screen overlay by gesture"
+msgstr ""
+
+#: data/org.gnome.shell.extensions.focus-timer.gschema.xml:26
+msgid "Reduce number of notifications during Pomodoro"
+msgstr ""
+
+#: src/indicator.js:331 src/screenShield.js:173
+msgid "Finished!"
+msgstr ""
+
+#: src/indicator.js:333 src/screenShield.js:175
+#, javascript-format
+msgid "%d of %d"
+msgstr ""
+
+#: src/indicator.js:420 src/prefs.js:73
+msgid "Screen Overlay"
+msgstr ""
+
+#: src/indicator.js:423
 msgid "Preferences"
 msgstr "Předvolby"
 
-#: data/org.gnome.Pomodoro.appdata.xml:31
-msgid "Indicator for GNOME Shell"
-msgstr "Indikátor pro GNOME Shell"
-
-#: data/org.gnome.Pomodoro.desktop.in:4 src/about-dialog.vala:32
-msgid "A simple time management utility"
-msgstr "Jednoduchý nástroj pro time management"
-
-#: data/org.gnome.Pomodoro.desktop.in:5
-msgid "timer;"
-msgstr "Časovač;"
-
-#: data/resources/menus.ui:6 plugins/actions/enums.vala:188
-#: plugins/actions/resources/action-page.ui:155 src/application.vala:90
-msgid "Start"
-msgstr "Start"
-
-#: data/resources/menus.ui:11 data/resources/window.ui:180
-#: plugins/actions/enums.vala:197 plugins/actions/resources/action-page.ui:200
-#: src/application.vala:99
-msgid "Pause"
-msgstr "Pozastavit"
-
-#: data/resources/menus.ui:16 plugins/actions/enums.vala:200
-#: plugins/actions/resources/action-page.ui:215 src/application.vala:102
-msgid "Resume"
-msgstr "Pokračovat"
-
-#: data/resources/menus.ui:21 data/resources/window.ui:207
-#: plugins/gnome/extension/indicator.js:221 src/application.vala:93
-#: src/window.vala:163 src/window.vala:176
-msgid "Stop"
-msgstr "Stop"
-
-#: data/resources/menus.ui:33 data/resources/window.ui:398
-#: plugins/actions/enums.vala:95 plugins/gnome/extension/indicator.js:78
-#: plugins/gnome/extension/timer.js:44 src/window.vala:45
-msgid "Short Break"
-msgstr "Krátká přestávka"
-
-#: data/resources/menus.ui:38 data/resources/window.ui:414
-#: plugins/actions/enums.vala:98 plugins/gnome/extension/indicator.js:79
-#: plugins/gnome/extension/timer.js:47 src/window.vala:46
-msgid "Long Break"
-msgstr "Dlouhá přestávka"
-
-#: data/resources/menus.ui:45
-msgid "_Timer"
-msgstr "Časovač"
-
-#: data/resources/menus.ui:49 data/resources/window.ui:309
-msgid "_Preferences"
-msgstr "Předvolby"
-
-#: data/resources/menus.ui:53 data/resources/window.ui:348
-msgid "_Quit"
-msgstr "_Konec"
-
-#: data/resources/preferences-keyboard-shortcut-page.ui:29
-msgid "Keyboard shortcut to toggle the timer. Enter new shortcut to change."
-msgstr "Klávesová zkratka pro spuštění časovače. Nastavte novou."
-
-#: data/resources/preferences-keyboard-shortcut-page.ui:83
-#: plugins/actions/enums.vala:206 plugins/actions/resources/action-page.ui:245
-msgid "Disable"
-msgstr "Vypnuto"
-
-#: data/resources/preferences-main-page.ui:45 data/resources/window.ui:247
-msgid "Timer"
-msgstr "Časovač"
-
-#: data/resources/preferences-main-page.ui:108
-msgid "Pomodoro duration"
-msgstr "Délka pomodora"
-
-#: data/resources/preferences-main-page.ui:160
-msgid "Break duration"
-msgstr "Délka přestávky"
-
-#: data/resources/preferences-main-page.ui:213
-msgid "Long break duration"
-msgstr "Délka dlouhé přestávky"
-
-#: data/resources/preferences-main-page.ui:245
-msgid "Pomodoros before a long break"
-msgstr "Počet pomodor před dlouhou přestávkou"
-
-#: data/resources/preferences-main-page.ui:294
-msgid "Keyboard shortcut"
-msgstr "Klávesové zkratky"
-
-#: data/resources/preferences-main-page.ui:357
-msgid "Notifications"
-msgstr "Notifikace"
-
-#: data/resources/preferences-main-page.ui:400
-msgid "Screen notifications"
-msgstr "Oznámení na obrazovce"
-
-#: data/resources/preferences-main-page.ui:460
-msgid "Desktop"
-msgstr "Pracovní plocha"
-
-#: data/resources/preferences-main-page.ui:509
-msgid "Wait for activity after a break"
-msgstr "Po ukončení přestávky počkat na akci"
-
-#: data/resources/preferences-main-page.ui:573
-msgid "Plugins…"
-msgstr "Rozšíření…"
-
-#: data/resources/preferences.ui:8 src/preferences-dialog.vala:804
-msgid "Plugins"
-msgstr "Rošíření"
-
-#: data/resources/preferences.ui:47
-msgid "Back"
-msgstr "Zpět"
-
-#: data/resources/screen-notification.ui:89
-#: plugins/gnome/extension/dialogs.js:1002
-msgid "It's time to take a break"
-msgstr "Je čas udělat si přestávku"
-
-#: data/resources/stats-view.ui:28
-msgid "Nothing to see yet"
-msgstr "Zatím není nic vidět"
-
-#: data/resources/stats-view.ui:45
-msgid "Complete a few sessions"
-msgstr "Žádný kompletní cyklus"
-
-#: data/resources/stats-view.ui:86 data/resources/stats-view.ui:343
-msgid "Day"
-msgstr "Den"
-
-#: data/resources/stats-view.ui:109 data/resources/stats-view.ui:356
-msgid "Week"
-msgstr "Týden"
-
-#: data/resources/stats-view.ui:133 data/resources/stats-view.ui:369
-msgid "Month"
-msgstr "Měsíc"
-
-#: data/resources/stats-view.ui:161
-msgid "Previous (Alt+Left)"
-msgstr "Předchozí (Alt+Levý)"
-
-#: data/resources/stats-view.ui:188
-msgid "Next (Alt+Right)"
-msgstr "Další (Alt+Vpravo)"
-
-#: data/resources/stats-view.ui:216 data/resources/stats-view.ui:319
-#: src/stats-day-page.vala:62
-msgid "Today"
-msgstr "Dnes"
-
-#: data/resources/window.ui:36 plugins/gnome/extension/indicator.js:214
-#: src/window.vala:180
-msgid "Start Pomodoro"
-msgstr "Začni pomodoro"
-
-#: data/resources/window.ui:323
-msgid "_About"
-msgstr "_O  aplikaci"
-
-#: plugins/actions/actions.vala:423
-msgid "Actions"
-msgstr "Akce"
-
-#: plugins/actions/actions.vala:427
-msgid "Action"
-msgstr "Akce"
-
-#: plugins/actions/actions.vala:452
-msgid "Custom actions…"
-msgstr "Vlastní akce…"
-
-#: plugins/actions/enums.vala:191 plugins/actions/resources/action-page.ui:170
-msgid "Complete"
-msgstr "Kompletní"
-
-#: plugins/actions/enums.vala:194 plugins/actions/resources/action-page.ui:185
-msgid "Skip"
-msgstr "Přeskočit"
-
-#: plugins/actions/enums.vala:203 plugins/actions/resources/action-page.ui:230
-msgid "Enable"
-msgstr "Umožnit"
-
-#: plugins/actions/resources/action-page.ui:28
-msgid "Command"
-msgstr "Příkaz"
-
-#: plugins/actions/resources/action-page.ui:41
-#: plugins/actions/resources/menus.ui:29
-msgid "Triggers"
-msgstr "Spouštěče"
-
-#: plugins/actions/resources/action-page.ui:54
-msgid "Name"
-msgstr "Název"
-
-#: plugins/actions/resources/action-page.ui:88
-msgid "_Pomodoro"
-msgstr "_Pomodoro"
-
-#: plugins/actions/resources/action-page.ui:102
-msgid "_Short Break"
-msgstr "_Krátká přestávka"
-
-#: plugins/actions/resources/action-page.ui:116
-msgid "_Long Break"
-msgstr "_Dlouhá přestávka"
-
-#: plugins/actions/resources/action-page.ui:299
-msgid "Add"
-msgstr "Přidat"
-
-#: plugins/actions/resources/menus.ui:6
-msgid "Remove"
-msgstr "Odstranit zvuk"
-
-#: plugins/actions/resources/menus.ui:14
-msgid "State"
-msgstr "Stát"
-
-#: plugins/actions/resources/menus.ui:19
-msgid "State Duration"
-msgstr "Trvání stavu"
-
-#: plugins/actions/resources/menus.ui:24
-msgid "Elapsed Time"
-msgstr "Uplynulý čas"
-
-#. this.stack.add_titled (this.timer_stack, "timer", _("Timer"));
-#: plugins/gnome/extension/indicator.js:84 src/window.vala:101
+#: src/indicator.js:424
 msgid "Stats"
 msgstr "Statistiky"
 
-#: plugins/gnome/extension/indicator.js:85
+#: src/indicator.js:426
 msgid "Quit"
 msgstr "Konec"
 
-#: plugins/gnome/extension/indicator.js:123
-#: plugins/gnome/extension/notifications.js:128
-#: plugins/gnome/extension/notifications.js:549
-msgid "Pomodoro Timer"
-msgstr "Časovač Pomodoro"
-
-#: plugins/gnome/extension/indicator.js:129
-msgid "Start Timer"
-msgstr "Začni pomodoro"
-
-#: plugins/gnome/extension/indicator.js:162
-msgid "Pause Timer"
-msgstr "Pozastavit"
-
-#: plugins/gnome/extension/indicator.js:174
-msgid "Stop Timer"
-msgstr "Časovač"
-
-#: plugins/gnome/extension/indicator.js:211 src/window.vala:179
-msgid "Pause break"
-msgstr "Pozastavit"
-
-#: plugins/gnome/extension/indicator.js:211 src/window.vala:166
-msgid "Pause Pomodoro"
-msgstr "Pozastavit"
-
-#: plugins/gnome/extension/indicator.js:214
-#: src/notifications-capability.vala:141 src/notifications-capability.vala:162
-#: src/window.vala:167
-msgid "Take a break"
-msgstr "Dej si pauzu!"
-
-#: plugins/gnome/extension/indicator.js:218 src/window.vala:175
-msgid "Resume break"
-msgstr "Obnovit"
-
-#: plugins/gnome/extension/indicator.js:218 src/window.vala:162
-msgid "Resume Pomodoro"
-msgstr "Obnovit"
-
-#: plugins/gnome/extension/notifications.js:89
+#: src/indicator.js:601
 #, javascript-format
-msgid "%d minute remaining"
-msgid_plural "%d minutes remaining"
-msgstr[0] "Zbývá %d minuta"
-msgstr[1] "Zbývá %d minuty"
-msgstr[2] "Zbývá %d minut"
-
-#: plugins/gnome/extension/notifications.js:97
-#, javascript-format
-msgid "%d second remaining"
-msgid_plural "%d seconds remaining"
-msgstr[0] "Zbývá %d sekunda"
-msgstr[1] "Zbývá %d sekundy"
-msgstr[2] "Zbývá %d sekund"
-
-#: plugins/gnome/extension/notifications.js:289
-msgid "Pomodoro is about to end"
-msgstr "Pomodoro brzy skončí"
-
-#: plugins/gnome/extension/notifications.js:295
-msgid "Take a long break"
-msgstr "Dejte si dlouhou pauzu"
-
-#: plugins/gnome/extension/notifications.js:296
-msgid "Take a short break"
-msgstr "Udělejte si krátkou přestávku"
-
-#: plugins/gnome/extension/notifications.js:304
-msgid "Break is about to end"
-msgstr "Přestávka se blíží ke konci"
-
-#: plugins/gnome/extension/notifications.js:308
-msgid "Break is over"
-msgstr "Přestávka skončila"
-
-#. body = _("Get ready for Pomodoro");
-#: plugins/gnome/extension/notifications.js:336
-msgid "Get ready…"
-msgstr "Připravit se…"
-
-#: plugins/gnome/extension/notifications.js:362
-msgid "Skip Break"
-msgstr "Přeskočit přestávku"
-
-#: plugins/gnome/extension/notifications.js:365
-msgid "+1 Minute"
-msgstr "+1 minuta"
-
-#: plugins/gnome/extension/notifications.js:557
-msgid "Report issue"
-msgstr "Nahlásit problém"
-
-#: plugins/gnome/extension/timer.js:248
-#, javascript-format
-msgid "Failed to run <i>%s</i> service"
-msgstr "Spuštění služby <i>%s</i> se nezdařilo"
-
-#: plugins/gnome/gnome-plugin.vala:290
-msgid "Hide other notifications"
-msgstr "Skrýt ostatní notifikace"
-
-#: plugins/sounds/resources/preferences-sound-page.ui:33
-msgid "Volume:"
-msgstr "Hlasitost:"
-
-#: plugins/sounds/sounds-plugin.vala:35 plugins/sounds/sounds-plugin.vala:410
-msgid "Clock Ticking"
-msgstr "Tikání"
-
-#: plugins/sounds/sounds-plugin.vala:36 plugins/sounds/sounds-plugin.vala:411
-msgid "Timer Ticking"
-msgstr "Tikání časovače"
-
-#: plugins/sounds/sounds-plugin.vala:37 plugins/sounds/sounds-plugin.vala:412
-msgid "Woodland Birds"
-msgstr "Lesní ptáci"
-
-#: plugins/sounds/sounds-plugin.vala:38 plugins/sounds/sounds-plugin.vala:472
-#: plugins/sounds/sounds-plugin.vala:511
-msgid "Bell"
-msgstr "Zvonek"
-
-#: plugins/sounds/sounds-plugin.vala:39 plugins/sounds/sounds-plugin.vala:473
-#: plugins/sounds/sounds-plugin.vala:512
-msgid "Loud Bell"
-msgstr "Hlasitý zvonek"
-
-#: plugins/sounds/sounds-plugin.vala:334
-msgid "Select Custom Sound"
-msgstr "Vyberte vlastní zvuk"
-
-#: plugins/sounds/sounds-plugin.vala:337
-msgid "_Cancel"
-msgstr "_Zrušit"
-
-#: plugins/sounds/sounds-plugin.vala:339
-msgid "_Select"
-msgstr "Zvolte soubor"
-
-#: plugins/sounds/sounds-plugin.vala:568
-msgid "Ticking Sound"
-msgstr "Tikání"
-
-#: plugins/sounds/sounds-plugin.vala:572
-msgid "End of Break Sound"
-msgstr "Zvuk na konci přestávky"
-
-#: plugins/sounds/sounds-plugin.vala:576
-msgid "Start of Break Sound"
-msgstr "Zvuk na začátku přestávky"
-
-#: plugins/sounds/sounds-plugin.vala:604 src/preferences-dialog.vala:590
-msgid "Off"
-msgstr "Vypnuto"
-
-#: plugins/sounds/sounds-plugin.vala:744
-msgid "Ticking sound"
-msgstr "Tikání"
-
-#: plugins/sounds/sounds-plugin.vala:749
-msgid "Start of break sound"
-msgstr "Zvuk na začátku přestávky"
-
-#: plugins/sounds/sounds-plugin.vala:754
-msgid "End of break sound"
-msgstr "Zvuk na konci přestávky"
-
-#: src/about-dialog.vala:30
-msgid "About Pomodoro"
-msgstr "O Pomodoro"
-
-#: src/about-dialog.vala:41
-msgid "translator-credits"
-msgstr "Petr Hložek"
-
-#: src/application.vala:87
-msgid "Start/Stop"
-msgstr "Start/Stop"
-
-#: src/application.vala:96
-msgid "Pause/Resume"
-msgstr "Pozastavit/Pokračovat"
-
-#: src/application.vala:105
-msgid "Skip to a pomodoro or to a break"
-msgstr "Přeskočte na pomodoro nebo na přestávku"
-
-#: src/application.vala:108
-msgid "Extend current pomodoro or break"
-msgstr "Prodlužte aktuální pomodoro nebo přerušte"
-
-#: src/application.vala:111
-msgid "Reset current session"
-msgstr "Resetovat aktuální relaci"
-
-#: src/application.vala:114
-msgid "Run as background service"
-msgstr "Spustit na pozadí"
-
-#: src/application.vala:117
-msgid "Show preferences"
-msgstr "Předvolby"
-
-#: src/application.vala:120
-msgid "Quit application"
-msgstr "Ukončit program"
-
-#: src/application.vala:123
-msgid "Print version information and exit"
-msgstr "Zobrazí informaci o verzi a ukončí se"
-
-#: src/notifications-capability.vala:130
-msgid "Focus on your task."
-msgstr "Soustřeď se na svůj úkol."
-
-#: src/notifications-capability.vala:156
-#, c-format
-msgid "You have %d minute"
-msgid_plural "You have %d minutes"
-msgstr[0] "Zbývá %d minuta"
-msgstr[1] "Zbývá %d minuty"
-msgstr[2] "Zbývá %d minut"
-
-#: src/notifications-capability.vala:158
-#, c-format
-msgid "You have %d second"
-msgid_plural "You have %d seconds"
-msgstr[0] "Zbývá %d vteřina"
-msgstr[1] "Zbývá %d vteřiny"
-msgstr[2] "Zbývá %d vteřin"
-
-#: src/notifications-capability.vala:163
-msgid "Take a longer break"
-msgstr "Dej si delší pauzu!"
-
-#: src/notifications-capability.vala:179
-msgid "Lengthen it"
-msgstr "Prodlužte si ji"
-
-#: src/notifications-capability.vala:184
-msgid "Shorten it"
-msgstr "Zkraťte si ji"
-
-#: src/notifications-capability.vala:189
-msgid "Start pomodoro"
-msgstr "Začni pomodoro"
-
-#: src/preferences-dialog.vala:158
-#, c-format
-msgid ""
-"Using \"%s\" as shortcut will interfere with typing. Try adding another key, "
-"such as Control, Alt or Shift."
+msgid "%dh"
 msgstr ""
-"Klávesovou zkratku \"%s\" nelze použít protože by nešlo psát.\n"
-"Zkuste ji stisknout zároveň s CTRL, ALT nebo Shiftem."
 
-#: src/preferences-dialog.vala:808
-msgid "Keyboard Shortcut"
-msgstr "Klávesové zkratky"
+#: src/indicator.js:605
+#, javascript-format
+msgid "%dm"
+msgstr ""
 
-#: src/presence.vala:80
-msgid "Available"
-msgstr "Dostupný"
+#: src/indicator.js:613
+#, javascript-format
+msgid "%ds"
+msgstr ""
 
-#: src/presence.vala:83
-msgid "Busy"
-msgstr "Zaneprázdněný"
+#: src/indicator.js:1058 src/notifications.js:59
+msgid "Focus Timer"
+msgstr ""
 
-#: src/presence.vala:86
-msgid "Idle"
-msgstr "Nečinný"
+#: src/notifications.js:79
+msgid "Focus Timer Extension"
+msgstr ""
 
-#: src/presence.vala:89
-msgid "Invisible"
-msgstr "Neviditelný"
-
-#: src/stats-day-page.vala:66
-msgid "Yesterday"
-msgstr "Včera"
-
-#: src/stats-page.vala:87
-#, c-format
-msgid "%d m"
-msgstr "%d m"
-
-#: src/stats-page.vala:93
-#, c-format
-msgid "%.0f h"
-msgstr "%.0f h"
-
-#: src/stats-page.vala:96
-#, c-format
-msgid "%.1f h"
-msgstr "%.1f h"
-
-#: src/stats-page.vala:573
-msgid "Break"
-msgstr "Přestávka"
-
-#: src/stats-week-page.vala:58
-msgid "This week"
-msgstr "Tento týden"
-
-#: src/utils.vala:32
-#, c-format
+#: src/notifications.js:115
+#, javascript-format
 msgid "%d hour"
 msgid_plural "%d hours"
 msgstr[0] "%d hodina"
 msgstr[1] "%d hodiny"
 msgstr[2] "%d hodin"
 
-#: src/utils.vala:41
-#, c-format
+#: src/notifications.js:118
+#, javascript-format
 msgid "%d minute"
 msgid_plural "%d minutes"
 msgstr[0] "%d minuta"
 msgstr[1] "%d minuty"
 msgstr[2] "%d minut"
+
+#: src/notifications.js:121
+#, javascript-format
+msgid "%d second"
+msgid_plural "%d seconds"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#. translators: time remaining eg. "3 minutes 50 seconds remaining"
+#: src/notifications.js:128
+#, javascript-format
+msgid "%s remaining"
+msgstr ""
+
+#: src/notifications.js:239 src/timer.js:54
+msgid "Pomodoro"
+msgstr "Pomodoro"
+
+#: src/notifications.js:241
+msgid "Take a break"
+msgstr "Dej si pauzu!"
+
+#: src/notifications.js:243
+msgid "Take a short break"
+msgstr "Udělejte si krátkou přestávku"
+
+#: src/notifications.js:245
+msgid "Take a long break"
+msgstr "Dejte si dlouhou pauzu"
+
+#: src/notifications.js:253
+msgid "Pomodoro is about to end"
+msgstr "Pomodoro brzy skončí"
+
+#: src/notifications.js:255
+msgid "Break is about to end"
+msgstr "Přestávka se blíží ke konci"
+
+#: src/notifications.js:263 src/notifications.js:275
+msgid "Break is over!"
+msgstr ""
+
+#: src/notifications.js:265 src/notifications.js:273
+msgid "Pomodoro is over!"
+msgstr ""
+
+#: src/notifications.js:294
+msgid "Get ready…"
+msgstr "Připravit se…"
+
+#: src/notifications.js:299
+msgid "Confirm the start of a Pomodoro…"
+msgstr ""
+
+#: src/notifications.js:301
+msgid "Confirm the start of a break…"
+msgstr ""
+
+#: src/notifications.js:303
+msgid "Confirm the start of a short break…"
+msgstr ""
+
+#: src/notifications.js:305
+msgid "Confirm the start of a long break…"
+msgstr ""
+
+#: src/notifications.js:344
+msgid "+1 minute"
+msgstr ""
+
+#: src/notifications.js:345
+msgid "Start Pomodoro"
+msgstr "Začni pomodoro"
+
+#: src/notifications.js:346
+msgid "Start Break"
+msgstr ""
+
+#: src/notifications.js:403
+msgid "Something went wrong"
+msgstr ""
+
+#: src/notifications.js:409
+msgid "Report issue"
+msgstr "Nahlásit problém"
+
+#: src/notifications.js:429
+msgid "Focus Timer Not Found"
+msgstr ""
+
+#: src/notifications.js:430
+msgid "Install Focus Timer app to start using the extension."
+msgstr ""
+
+#: src/notifications.js:435
+msgid "Install from Flathub"
+msgstr ""
+
+#: src/prefs.js:14
+msgid "General"
+msgstr ""
+
+#: src/prefs.js:20
+msgid "Autostart The App"
+msgstr ""
+
+#: src/prefs.js:21
+msgid "Makes the indicator instantly visible and allows keyboard shortcuts"
+msgstr ""
+
+#: src/prefs.js:34
+msgid "Indicator"
+msgstr ""
+
+#: src/prefs.js:47
+msgid "Icon"
+msgstr ""
+
+#: src/prefs.js:53
+msgid "Text"
+msgstr ""
+
+#: src/prefs.js:60
+msgid "Display As"
+msgstr ""
+
+#: src/prefs.js:61
+msgid "Choose how the timer appears in the status bar"
+msgstr ""
+
+#: src/prefs.js:79
+msgid "Blur Effect"
+msgstr ""
+
+#: src/prefs.js:80
+msgid "Helps to acknowledge the break"
+msgstr ""
+
+#: src/prefs.js:88
+msgid "Dismiss Gesture"
+msgstr ""
+
+#: src/prefs.js:89
+msgid "Flick the mouse or press any key to dismiss"
+msgstr ""
+
+#: src/prefs.js:102
+msgid "Distractions"
+msgstr ""
+
+#: src/prefs.js:108
+msgid "Manage Notifications"
+msgstr ""
+
+#: src/prefs.js:109
+msgid "Toggle Do Not Disturb mode during Pomodoro"
+msgstr ""
+
+#: src/screenOverlay.js:987
+msgid "It's time to take a break"
+msgstr "Je čas udělat si přestávku"
+
+#: src/timer.js:51
+msgid "Stopped"
+msgstr ""
+
+#: src/timer.js:57
+msgid "Short Break"
+msgstr "Krátká přestávka"
+
+#: src/timer.js:60
+msgid "Long Break"
+msgstr "Dlouhá přestávka"
+
+#: src/timer.js:63
+msgid "Break"
+msgstr "Přestávka"
+
+#~ msgid "A time management utility for GNOME"
+#~ msgstr "Jednoduchý nástroj pro time management"
+
+#~ msgid ""
+#~ "A GNOME utility that helps managing time according to Pomodoro Technique. "
+#~ "It intends to improve productivity and focus by taking short breaks after "
+#~ "every 25 minutes of work."
+#~ msgstr ""
+#~ "Nástroj pro Gnome, který vám pomůže se správou času pomocí techniky "
+#~ "Pomodoro. Záměrem je zlepšit vaši produktivitu a koncentraci pomocí "
+#~ "krátkých přestávek po každých 25 minutách práce."
+
+#~ msgid "Timer window"
+#~ msgstr "Okno časovače"
+
+#~ msgid "Indicator for GNOME Shell"
+#~ msgstr "Indikátor pro GNOME Shell"
+
+#~ msgid "A simple time management utility"
+#~ msgstr "Jednoduchý nástroj pro time management"
+
+#~ msgid "timer;"
+#~ msgstr "Časovač;"
+
+#~ msgid "Start"
+#~ msgstr "Start"
+
+#~ msgid "Pause"
+#~ msgstr "Pozastavit"
+
+#~ msgid "Resume"
+#~ msgstr "Pokračovat"
+
+#~ msgid "Stop"
+#~ msgstr "Stop"
+
+#~ msgid "_Timer"
+#~ msgstr "Časovač"
+
+#~ msgid "_Preferences"
+#~ msgstr "Předvolby"
+
+#~ msgid "_Quit"
+#~ msgstr "_Konec"
+
+#~ msgid "Keyboard shortcut to toggle the timer. Enter new shortcut to change."
+#~ msgstr "Klávesová zkratka pro spuštění časovače. Nastavte novou."
+
+#~ msgid "Disable"
+#~ msgstr "Vypnuto"
+
+#~ msgid "Timer"
+#~ msgstr "Časovač"
+
+#~ msgid "Pomodoro duration"
+#~ msgstr "Délka pomodora"
+
+#~ msgid "Break duration"
+#~ msgstr "Délka přestávky"
+
+#~ msgid "Long break duration"
+#~ msgstr "Délka dlouhé přestávky"
+
+#~ msgid "Pomodoros before a long break"
+#~ msgstr "Počet pomodor před dlouhou přestávkou"
+
+#~ msgid "Keyboard shortcut"
+#~ msgstr "Klávesové zkratky"
+
+#~ msgid "Notifications"
+#~ msgstr "Notifikace"
+
+#~ msgid "Screen notifications"
+#~ msgstr "Oznámení na obrazovce"
+
+#~ msgid "Desktop"
+#~ msgstr "Pracovní plocha"
+
+#~ msgid "Wait for activity after a break"
+#~ msgstr "Po ukončení přestávky počkat na akci"
+
+#~ msgid "Plugins…"
+#~ msgstr "Rozšíření…"
+
+#~ msgid "Plugins"
+#~ msgstr "Rošíření"
+
+#~ msgid "Back"
+#~ msgstr "Zpět"
+
+#~ msgid "Nothing to see yet"
+#~ msgstr "Zatím není nic vidět"
+
+#~ msgid "Complete a few sessions"
+#~ msgstr "Žádný kompletní cyklus"
+
+#~ msgid "Day"
+#~ msgstr "Den"
+
+#~ msgid "Week"
+#~ msgstr "Týden"
+
+#~ msgid "Month"
+#~ msgstr "Měsíc"
+
+#~ msgid "Previous (Alt+Left)"
+#~ msgstr "Předchozí (Alt+Levý)"
+
+#~ msgid "Next (Alt+Right)"
+#~ msgstr "Další (Alt+Vpravo)"
+
+#~ msgid "Today"
+#~ msgstr "Dnes"
+
+#~ msgid "_About"
+#~ msgstr "_O  aplikaci"
+
+#~ msgid "Actions"
+#~ msgstr "Akce"
+
+#~ msgid "Action"
+#~ msgstr "Akce"
+
+#~ msgid "Custom actions…"
+#~ msgstr "Vlastní akce…"
+
+#~ msgid "Complete"
+#~ msgstr "Kompletní"
+
+#~ msgid "Skip"
+#~ msgstr "Přeskočit"
+
+#~ msgid "Enable"
+#~ msgstr "Umožnit"
+
+#~ msgid "Command"
+#~ msgstr "Příkaz"
+
+#~ msgid "Triggers"
+#~ msgstr "Spouštěče"
+
+#~ msgid "Name"
+#~ msgstr "Název"
+
+#~ msgid "_Pomodoro"
+#~ msgstr "_Pomodoro"
+
+#~ msgid "_Short Break"
+#~ msgstr "_Krátká přestávka"
+
+#~ msgid "_Long Break"
+#~ msgstr "_Dlouhá přestávka"
+
+#~ msgid "Add"
+#~ msgstr "Přidat"
+
+#~ msgid "Remove"
+#~ msgstr "Odstranit zvuk"
+
+#~ msgid "State"
+#~ msgstr "Stát"
+
+#~ msgid "State Duration"
+#~ msgstr "Trvání stavu"
+
+#~ msgid "Elapsed Time"
+#~ msgstr "Uplynulý čas"
+
+#~ msgid "Pomodoro Timer"
+#~ msgstr "Časovač Pomodoro"
+
+#~ msgid "Start Timer"
+#~ msgstr "Začni pomodoro"
+
+#~ msgid "Pause Timer"
+#~ msgstr "Pozastavit"
+
+#~ msgid "Stop Timer"
+#~ msgstr "Časovač"
+
+#~ msgid "Pause break"
+#~ msgstr "Pozastavit"
+
+#~ msgid "Pause Pomodoro"
+#~ msgstr "Pozastavit"
+
+#~ msgid "Resume break"
+#~ msgstr "Obnovit"
+
+#~ msgid "Resume Pomodoro"
+#~ msgstr "Obnovit"
+
+#, javascript-format
+#~ msgid "%d minute remaining"
+#~ msgid_plural "%d minutes remaining"
+#~ msgstr[0] "Zbývá %d minuta"
+#~ msgstr[1] "Zbývá %d minuty"
+#~ msgstr[2] "Zbývá %d minut"
+
+#, javascript-format
+#~ msgid "%d second remaining"
+#~ msgid_plural "%d seconds remaining"
+#~ msgstr[0] "Zbývá %d sekunda"
+#~ msgstr[1] "Zbývá %d sekundy"
+#~ msgstr[2] "Zbývá %d sekund"
+
+#~ msgid "Break is over"
+#~ msgstr "Přestávka skončila"
+
+#~ msgid "Skip Break"
+#~ msgstr "Přeskočit přestávku"
+
+#~ msgid "+1 Minute"
+#~ msgstr "+1 minuta"
+
+#, javascript-format
+#~ msgid "Failed to run <i>%s</i> service"
+#~ msgstr "Spuštění služby <i>%s</i> se nezdařilo"
+
+#~ msgid "Hide other notifications"
+#~ msgstr "Skrýt ostatní notifikace"
+
+#~ msgid "Volume:"
+#~ msgstr "Hlasitost:"
+
+#~ msgid "Clock Ticking"
+#~ msgstr "Tikání"
+
+#~ msgid "Timer Ticking"
+#~ msgstr "Tikání časovače"
+
+#~ msgid "Woodland Birds"
+#~ msgstr "Lesní ptáci"
+
+#~ msgid "Bell"
+#~ msgstr "Zvonek"
+
+#~ msgid "Loud Bell"
+#~ msgstr "Hlasitý zvonek"
+
+#~ msgid "Select Custom Sound"
+#~ msgstr "Vyberte vlastní zvuk"
+
+#~ msgid "_Cancel"
+#~ msgstr "_Zrušit"
+
+#~ msgid "_Select"
+#~ msgstr "Zvolte soubor"
+
+#~ msgid "Ticking Sound"
+#~ msgstr "Tikání"
+
+#~ msgid "End of Break Sound"
+#~ msgstr "Zvuk na konci přestávky"
+
+#~ msgid "Start of Break Sound"
+#~ msgstr "Zvuk na začátku přestávky"
+
+#~ msgid "Off"
+#~ msgstr "Vypnuto"
+
+#~ msgid "Ticking sound"
+#~ msgstr "Tikání"
+
+#~ msgid "Start of break sound"
+#~ msgstr "Zvuk na začátku přestávky"
+
+#~ msgid "End of break sound"
+#~ msgstr "Zvuk na konci přestávky"
+
+#~ msgid "About Pomodoro"
+#~ msgstr "O Pomodoro"
+
+#~ msgid "translator-credits"
+#~ msgstr "Petr Hložek"
+
+#~ msgid "Start/Stop"
+#~ msgstr "Start/Stop"
+
+#~ msgid "Pause/Resume"
+#~ msgstr "Pozastavit/Pokračovat"
+
+#~ msgid "Skip to a pomodoro or to a break"
+#~ msgstr "Přeskočte na pomodoro nebo na přestávku"
+
+#~ msgid "Extend current pomodoro or break"
+#~ msgstr "Prodlužte aktuální pomodoro nebo přerušte"
+
+#~ msgid "Reset current session"
+#~ msgstr "Resetovat aktuální relaci"
+
+#~ msgid "Run as background service"
+#~ msgstr "Spustit na pozadí"
+
+#~ msgid "Show preferences"
+#~ msgstr "Předvolby"
+
+#~ msgid "Quit application"
+#~ msgstr "Ukončit program"
+
+#~ msgid "Print version information and exit"
+#~ msgstr "Zobrazí informaci o verzi a ukončí se"
+
+#~ msgid "Focus on your task."
+#~ msgstr "Soustřeď se na svůj úkol."
+
+#, c-format
+#~ msgid "You have %d minute"
+#~ msgid_plural "You have %d minutes"
+#~ msgstr[0] "Zbývá %d minuta"
+#~ msgstr[1] "Zbývá %d minuty"
+#~ msgstr[2] "Zbývá %d minut"
+
+#, c-format
+#~ msgid "You have %d second"
+#~ msgid_plural "You have %d seconds"
+#~ msgstr[0] "Zbývá %d vteřina"
+#~ msgstr[1] "Zbývá %d vteřiny"
+#~ msgstr[2] "Zbývá %d vteřin"
+
+#~ msgid "Take a longer break"
+#~ msgstr "Dej si delší pauzu!"
+
+#~ msgid "Lengthen it"
+#~ msgstr "Prodlužte si ji"
+
+#~ msgid "Shorten it"
+#~ msgstr "Zkraťte si ji"
+
+#~ msgid "Start pomodoro"
+#~ msgstr "Začni pomodoro"
+
+#, c-format
+#~ msgid ""
+#~ "Using \"%s\" as shortcut will interfere with typing. Try adding another "
+#~ "key, such as Control, Alt or Shift."
+#~ msgstr ""
+#~ "Klávesovou zkratku \"%s\" nelze použít protože by nešlo psát.\n"
+#~ "Zkuste ji stisknout zároveň s CTRL, ALT nebo Shiftem."
+
+#~ msgid "Keyboard Shortcut"
+#~ msgstr "Klávesové zkratky"
+
+#~ msgid "Available"
+#~ msgstr "Dostupný"
+
+#~ msgid "Busy"
+#~ msgstr "Zaneprázdněný"
+
+#~ msgid "Idle"
+#~ msgstr "Nečinný"
+
+#~ msgid "Invisible"
+#~ msgstr "Neviditelný"
+
+#~ msgid "Yesterday"
+#~ msgstr "Včera"
+
+#, c-format
+#~ msgid "%d m"
+#~ msgstr "%d m"
+
+#, c-format
+#~ msgid "%.0f h"
+#~ msgstr "%.0f h"
+
+#, c-format
+#~ msgid "%.1f h"
+#~ msgstr "%.1f h"
+
+#~ msgid "This week"
+#~ msgstr "Tento týden"
 
 #~ msgid "Kamil Prusko"
 #~ msgstr "Kamil Prusko"
