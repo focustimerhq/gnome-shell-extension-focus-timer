@@ -24,7 +24,7 @@ import Gio from 'gi://Gio';
 import GLib from 'gi://GLib';
 import GObject from 'gi://GObject';
 
-import {gettext as _, ngettext} from 'resource:///org/gnome/shell/extensions/extension.js';
+import {gettext as _, ngettext, InjectionManager} from 'resource:///org/gnome/shell/extensions/extension.js';
 import {PopupAnimation} from 'resource:///org/gnome/shell/ui/boxpointer.js';
 import * as Main from 'resource:///org/gnome/shell/ui/main.js';
 import * as MessageTray from 'resource:///org/gnome/shell/ui/messageTray.js';
@@ -476,7 +476,8 @@ export const NotificationManager = class extends Signals.EventEmitter {
         this._idleMonitor = global.backend.get_core_idle_monitor();
         this._notification = null;
         this._screenOverlay = null;
-        this._patches = this._createPatches();
+        this._injectionManager = new InjectionManager();
+        this._overridesApplied = false;
         this._annoucementTimeoutId = 0;
         this._reopenScreenOverlayIdleId = 0;
         this._lockScreenIdleId = 0;
@@ -511,45 +512,32 @@ export const NotificationManager = class extends Signals.EventEmitter {
         return this._screenOverlay;
     }
 
-    _createPatches() {
-        // XXX: why is it needed? / add comment
-        // const messagesIndicatorPatch = new Utils.Patch(Main.panel.statusArea.dateMenu._indicator, {
-        //     _sync() {
-        //         this.icon_name = 'message-indicator-symbolic';
-        //         this.visible = this._count > 0;
-        //     },
-        // });
-        // messagesIndicatorPatch.connect('applied', () => {
-        //     Main.panel.statusArea.dateMenu._indicator._sync();
-        // });
-        // messagesIndicatorPatch.connect('reverted', () => {
-        //     Main.panel.statusArea.dateMenu._indicator._sync();
-        // });
+    _applyOverrides() {
+        if (this._overridesApplied)
+            return;
 
-        const messageTrayPatch = new Utils.Patch(Main.messageTray, {
-            _expandBanner(autoExpanding) {
-                // Don't auto expand timer notifications, despite Urgency.CRITICAL.
-                if (autoExpanding && this._notification instanceof Notification)
-                    return;
+        // Suppress auto-expanding of notification banners for timer notifications.
+        // We don't want them to auto-expand and take extra screen space,
+        // even if they are marked with Urgency.CRITICAL.
+        this._injectionManager.overrideMethod(Main.messageTray, '_expandBanner',
+            originalMethod => {
+                return function (autoExpanding) {
+                    if (autoExpanding && this._notification instanceof Notification)
+                        return;
 
-                messageTrayPatch.initial._expandBanner.bind(this)(autoExpanding);
-            },
-        });
+                    originalMethod.call(this, autoExpanding);
+                };
+            });
 
-        return [
-            // messagesIndicatorPatch,
-            messageTrayPatch,
-        ];
+        this._overridesApplied = true;
     }
 
-    _applyPatches() {
-        for (const patch of this._patches)
-            patch.apply();
-    }
+    _revertOverrides() {
+        if (!this._overridesApplied)
+            return;
 
-    _revertPatches() {
-        for (const patch of this._patches)
-            patch.revert();
+        this._injectionManager.clear();
+        this._overridesApplied = false;
     }
 
     _getBanner() {
@@ -925,7 +913,7 @@ export const NotificationManager = class extends Signals.EventEmitter {
             this._viewData = data;
             this._nextViewData = null;
 
-            this._applyPatches();
+            this._applyOverrides();
 
             if (this._isScreenOverlayOpened()) {
                 if (this._shouldCloseScreenOverlay(data, previousData))
@@ -978,7 +966,7 @@ export const NotificationManager = class extends Signals.EventEmitter {
                 });
             }
 
-            this._revertPatches();
+            this._revertOverrides();
         }
     }
 
@@ -1066,7 +1054,7 @@ export const NotificationManager = class extends Signals.EventEmitter {
             pausedTime: NaN,
         };
 
-        this._applyPatches();
+        this._applyOverrides();
         this._notify();
     }
 
@@ -1179,8 +1167,8 @@ export const NotificationManager = class extends Signals.EventEmitter {
             this._queueChangedId = 0;
         }
 
-        for (const patch of this._patches)
-            patch.destroy();
+        this._injectionManager.clear();
+        this._injectionManager = null;
 
         this._timerState = State.STOPPED;
         this._timerDuration = 0;

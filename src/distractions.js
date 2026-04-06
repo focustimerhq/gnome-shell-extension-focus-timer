@@ -21,6 +21,7 @@
 import Gio from 'gi://Gio';
 import St from 'gi://St';
 
+import {InjectionManager} from 'resource:///org/gnome/shell/extensions/extension.js';
 import {MessageTray} from 'resource:///org/gnome/shell/ui/messageTray.js';
 import * as Main from 'resource:///org/gnome/shell/ui/main.js';
 import * as Signals from 'resource:///org/gnome/shell/misc/signals.js';
@@ -48,16 +49,8 @@ export const DistractionManager = class extends Signals.EventEmitter {
         this._notificationSettings = new Gio.Settings({
             schema_id: 'org.gnome.desktop.notifications',
         });
-
-        // Setup a patch for suppressing presence handlers.
-        // When applied the main presence controller becomes gnome-pomodoro.
-        this._patch = new Utils.Patch(MessageTray.prototype, {
-            _onStatusChanged(_status) {
-                this._updateState();
-            },
-        });
-        this._patch.connect('applied', this._onPatchApplied.bind(this));
-        this._patch.connect('reverted', this._onPatchReverted.bind(this));
+        this._injectionManager = new InjectionManager();
+        this._overridesApplied = false;
 
         this._timer.connectObject('changed', this._onTimerChanged.bind(this), this);
         this._settings.connectObject('changed', this._onSettingsChanged.bind(this), this);
@@ -119,13 +112,57 @@ export const DistractionManager = class extends Signals.EventEmitter {
         }
     }
 
+    _updateBusyStatus() {
+        try {
+            Main.messageTray._busy = this._busy;
+            Main.messageTray._onStatusChanged();
+        } catch (error) {
+            Utils.logWarning(error.message);
+        }
+    }
+
+    _emulateStatusChanged() {
+        try {
+            const status = Main.messageTray._presence.status;
+
+            Main.messageTray._onStatusChanged(status);
+        } catch (error) {
+            Utils.logWarning(error.message);
+        }
+    }
+
+    _applyOverrides() {
+        if (this._overridesApplied)
+            return;
+
+        // Replace the presence status handler so that `DistractionManager` becomes the
+        // main presence controller. Instead basing the `busy` status on user presence,
+        // the status will depend on timer state.
+        this._injectionManager.overrideMethod(MessageTray.prototype, '_onStatusChanged',
+            _originalMethod => {
+                return function (_status) {
+                    this._updateState();
+                };
+            });
+
+        this._overridesApplied = true;
+        this._updateBusyStatus();
+    }
+
+    _revertOverrides() {
+        if (!this._overridesApplied)
+            return;
+
+        this._injectionManager.clear();
+        this._overridesApplied = false;
+        this._emulateStatusChanged();
+    }
+
     _setDefaults() {
         this._busy = false;
         this._notificationSettings.set_boolean('show-banners', true);
         this._showDoNotDisturbButton();
-
-        if (this._patch.applied)
-            this._patch.revert();
+        this._revertOverrides();
     }
 
     _update() {
@@ -135,10 +172,10 @@ export const DistractionManager = class extends Signals.EventEmitter {
         if (timerState !== State.STOPPED && manageNotifications) {
             this._busy = timerState === State.POMODORO;
 
-            if (!this._patch.applied)
-                this._patch.apply();
+            if (!this._patchApplied)
+                this._applyOverrides();
             else
-                this._onPatchApplied();
+                this._updateBusyStatus();
 
             this._hideDoNotDisturbButton();
             this._notificationSettings.set_boolean('show-banners', !this._busy);
@@ -149,25 +186,6 @@ export const DistractionManager = class extends Signals.EventEmitter {
 
     _onTimerChanged() {
         this._update();
-    }
-
-    _onPatchApplied() {
-        try {
-            Main.messageTray._busy = this._busy;
-            Main.messageTray._onStatusChanged();
-        } catch (error) {
-            Utils.logWarning(error.message);
-        }
-    }
-
-    _onPatchReverted() {
-        try {
-            const status = Main.messageTray._presence.status;
-
-            Main.messageTray._onStatusChanged(status);
-        } catch (error) {
-            Utils.logWarning(error.message);
-        }
     }
 
     _onSettingsChanged(settings, key) {
@@ -181,9 +199,9 @@ export const DistractionManager = class extends Signals.EventEmitter {
     destroy() {
         this._setDefaults();
 
-        if (this._patch) {
-            this._patch.destroy();
-            this._patch = null;
+        if (this._injectionManager) {
+            this._injectionManager.clear();
+            this._injectionManager = null;
         }
 
         if (this._timer) {

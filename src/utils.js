@@ -25,7 +25,6 @@ import GObject from 'gi://GObject';
 import Clutter from 'gi://Clutter';
 
 // import {trySpawnCommandLine} from 'resource:///org/gnome/shell/misc/util.js';
-import {EventEmitter} from 'resource:///org/gnome/shell/misc/signals.js';
 import * as Main from 'resource:///org/gnome/shell/ui/main.js';
 import * as ShellConfig from 'resource:///org/gnome/shell/misc/config.js';
 
@@ -34,52 +33,6 @@ import * as Config from './config.js';
 
 const icons = {};
 
-
-// TODO: port to https://gjs.guide/extensions/topics/extension.html#injectionmanager
-export const Patch = class extends EventEmitter {
-    constructor(object, overrides) {
-        super();
-
-        this.object = object;
-        this.overrides = overrides;
-        this.initial = {};
-        this.applied = false;
-
-        for (let name in this.overrides) {
-            this.initial[name] = this.object[name];
-
-            if (typeof this.initial[name] == 'undefined')
-                logWarning(`Property "${name}" for ${this.object} is not defined`);
-        }
-    }
-
-    apply() {
-        if (!this.applied) {
-            for (let name in this.overrides)
-                this.object[name] = this.overrides[name];
-
-            this.applied = true;
-
-            this.emit('applied');
-        }
-    }
-
-    revert() {
-        if (this.applied) {
-            for (let name in this.overrides)
-                this.object[name] = this.initial[name];
-
-            this.applied = false;
-
-            this.emit('reverted');
-        }
-    }
-
-    destroy() {
-        this.revert();
-        this.disconnectAll();
-    }
-};
 
 const Dummy = GObject.registerClass({
     Properties: {
