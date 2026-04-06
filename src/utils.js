@@ -24,7 +24,6 @@ import Gio from 'gi://Gio';
 import GObject from 'gi://GObject';
 import Clutter from 'gi://Clutter';
 
-// import {trySpawnCommandLine} from 'resource:///org/gnome/shell/misc/util.js';
 import * as Main from 'resource:///org/gnome/shell/ui/main.js';
 import * as ShellConfig from 'resource:///org/gnome/shell/misc/config.js';
 
@@ -244,15 +243,10 @@ export function logWarning(message) {
     extension.getLogger().warn(message);
 }
 
-// TODO: test this
 export function openUri(uri) {
     const context = global.create_app_launch_context(global.get_current_time(), -1);
 
-    // try {
     Gio.AppInfo.launch_default_for_uri(uri, context);
-    // } catch (error) {
-    //     trySpawnCommandLine(`xdg-open ${GLib.shell_quote(Config.PACKAGE_FLATHUB_URL)}`);
-    // }
 }
 
 export function isVersionAtLeast(version) {

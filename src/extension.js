@@ -136,13 +136,8 @@ export default class FocusTimerExtension extends Extension {
             applicationProxy.connectSignal('RequestFocus', (_proxy) => {
                 this._focusApplication();
             });
-            applicationProxy.connect('notify::g-name-owner', (_object, _pspec) => {
-                console.log('### notify::g-name-owner');
-
-                // TODO: handle disconnected?
-            });
         } catch (error) {
-            Utils.logError(error);  // `Failed to connect to D-Bus: ${error.message}`);
+            Utils.logError(error);
         }
 
         this._cancellable = null;
