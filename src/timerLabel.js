@@ -69,24 +69,24 @@ const NumericLabel = GObject.registerClass({
         this.child = label;
 
         this.bind_property_full('text-align',
-                label, 'x-align',
-                GObject.BindingFlags.SYNC_CREATE,
-                (bind, source) => {
-                    switch (source) {
-                    case Pango.Alignment.LEFT:
-                        return [true, Clutter.ActorAlign.START];
+            label, 'x-align',
+            GObject.BindingFlags.SYNC_CREATE,
+            (bind, source) => {
+                switch (source) {
+                case Pango.Alignment.LEFT:
+                    return [true, Clutter.ActorAlign.START];
 
-                    case Pango.Alignment.CENTER:
-                        return [true, Clutter.ActorAlign.CENTER];
+                case Pango.Alignment.CENTER:
+                    return [true, Clutter.ActorAlign.CENTER];
 
-                    case Pango.Alignment.RIGHT:
-                        return [true, Clutter.ActorAlign.END];
+                case Pango.Alignment.RIGHT:
+                    return [true, Clutter.ActorAlign.END];
 
-                    default:
-                        return [true, Clutter.ActorAlign.FILL];
-                    }
-                },
-                null);
+                default:
+                    return [true, Clutter.ActorAlign.FILL];
+                }
+            },
+            null);
 
         this.connect('style-changed', this._onStyleChanged.bind(this));
 
@@ -141,7 +141,7 @@ const NumericLabel = GObject.registerClass({
             label.text = valueStr.padStart(this._digits, '0');
     }
 
-    vfunc_get_preferred_width(forHeight) {
+    vfunc_get_preferred_width(_forHeight) {
         const themeNode = this.get_theme_node();
 
         if (!this._digitWidth) {
@@ -220,18 +220,18 @@ class FocusTimerTimerLabel extends St.Widget {
         this.connect('destroy', this._onDestroy.bind(this));
     }
 
-    vfunc_get_preferred_height(forWidth) {
+    vfunc_get_preferred_height(_forWidth) {
         const layout = this._minutesSeparatorLabel.clutter_text?.get_layout().copy();
         layout.set_text('00:00', 5);
 
-        let [inkRect, _logicalRect] = layout.get_extents();
+        const [inkRect] = layout.get_extents();
         const minimumSize = Math.ceil(inkRect.height / Pango.SCALE);
         const naturalSize = minimumSize;
 
         return [minimumSize, naturalSize];
     }
 
-    vfunc_allocate(box, flags) {
+    vfunc_allocate(box, _flags) {
         this.set_allocation(box);
 
         const [width, height] = box.get_size();

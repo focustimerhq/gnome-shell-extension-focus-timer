@@ -20,7 +20,6 @@
  *
  */
 
-import Gio from 'gi://Gio';
 import GLib from 'gi://GLib';
 import GObject from 'gi://GObject';
 
@@ -30,7 +29,6 @@ import * as Main from 'resource:///org/gnome/shell/ui/main.js';
 import * as MessageTray from 'resource:///org/gnome/shell/ui/messageTray.js';
 import * as Params from 'resource:///org/gnome/shell/misc/params.js';
 import * as Signals from 'resource:///org/gnome/shell/misc/signals.js';
-import {extension} from './extension.js';
 import {State, SECOND, MINUTE} from './timer.js';
 import * as Config from './config.js';
 import * as ScreenOverlay from './screenOverlay.js';
@@ -89,6 +87,9 @@ export function getExtensionSource() {
     return extensionSource;
 }
 
+/**
+ * @param {number} interval - Duration in microseconds.
+ */
 function toSeconds(interval) {
     const seconds = Math.trunc(interval / SECOND);
 
@@ -104,28 +105,34 @@ function toSeconds(interval) {
     return 60 * Math.round(seconds / 60);
 }
 
+/**
+ * @param {number} seconds - Number of seconds to format.
+ */
 function formatSeconds(seconds) {
     const hours = Math.trunc(seconds / 3600);
     const minutes = Math.trunc((seconds % 3600) / 60);
     const parts = [];
 
-    seconds = seconds % 60;
+    seconds %= 60;
 
     if (hours > 0)
-        parts.push(ngettext("%d hour", "%d hours", hours).format(hours));
+        parts.push(ngettext('%d hour', '%d hours', hours).format(hours));
 
     if (minutes > 0)
-        parts.push(ngettext("%d minute", "%d minutes", minutes).format(minutes));
+        parts.push(ngettext('%d minute', '%d minutes', minutes).format(minutes));
 
     if (seconds > 0 && hours === 0 || !parts.length)
-        parts.push(ngettext("%d second", "%d seconds", seconds).format(seconds));
+        parts.push(ngettext('%d second', '%d seconds', seconds).format(seconds));
 
     return parts.join(' ');
 }
 
+/**
+ * @param {number} seconds - Number of seconds remaining.
+ */
 function formatRemainingSeconds(seconds) {
     // translators: time remaining eg. "3 minutes 50 seconds remaining"
-    return _("%s remaining").format(formatSeconds(seconds));
+    return _('%s remaining').format(formatSeconds(seconds));
 }
 
 /**
@@ -251,13 +258,13 @@ class FocusTimerNotification extends MessageTray.Notification {
         switch (this._view) {
         case NotificationView.TIME_BLOCK_STARTED:
             if (this._timerState === State.POMODORO)
-                title = _("Pomodoro");
+                title = _('Pomodoro');
             else if (this._timerState === State.BREAK)
-                title = _("Take a break");
+                title = _('Take a break');
             else if (this._timerState === State.SHORT_BREAK)
-                title = _("Take a short break");
+                title = _('Take a short break');
             else if (this._timerState === State.LONG_BREAK)
-                title = _("Take a long break");
+                title = _('Take a long break');
             else
                 this._assertNotReached();
 
@@ -265,9 +272,9 @@ class FocusTimerNotification extends MessageTray.Notification {
 
         case NotificationView.TIME_BLOCK_ABOUT_TO_END:
             if (this._timerState === State.POMODORO)
-                title = _("Pomodoro is about to end");
+                title = _('Pomodoro is about to end');
             else if (State.isBreak(this._timerState))
-                title = _("Break is about to end");
+                title = _('Break is about to end');
             else
                 this._assertNotReached();
 
@@ -275,9 +282,9 @@ class FocusTimerNotification extends MessageTray.Notification {
 
         case NotificationView.TIME_BLOCK_ENDED:
             if (this._timerState === State.POMODORO)
-                title = _("Break is over!");
+                title = _('Break is over!');
             else if (State.isBreak(this._timerState))
-                title = _("Pomodoro is over!");
+                title = _('Pomodoro is over!');
             else
                 this._assertNotReached();
 
@@ -285,12 +292,12 @@ class FocusTimerNotification extends MessageTray.Notification {
 
         case NotificationView.CONFIRM_ADVANCEMENT:
             if (this._timerState === State.POMODORO)
-                title = _("Pomodoro is over!");
+                title = _('Pomodoro is over!');
             else if (State.isBreak(this._timerState))
-                title = _("Break is over!");
-            else {
+                title = _('Break is over!');
+            else
                 this._assertNotReached();
-            }
+
             break;
 
         default:
@@ -306,18 +313,18 @@ class FocusTimerNotification extends MessageTray.Notification {
 
         switch (this._view) {
         case NotificationView.TIME_BLOCK_ENDED:
-            body = _("Get ready…");
+            body = _('Get ready…');
             break;
 
         case NotificationView.CONFIRM_ADVANCEMENT:
             if (this._nextTimerState === State.POMODORO)
-                body = _("Confirm the start of a Pomodoro…");
+                body = _('Confirm the start of a Pomodoro…');
             else if (this._nextTimerState === State.BREAK)
-                body = _("Confirm the start of a break…");
+                body = _('Confirm the start of a break…');
             else if (this._nextTimerState === State.SHORT_BREAK)
-                body = _("Confirm the start of a short break…");
+                body = _('Confirm the start of a short break…');
             else if (this._nextTimerState === State.LONG_BREAK)
-                body = _("Confirm the start of a long break…");
+                body = _('Confirm the start of a long break…');
             else
                 this._assertNotReached();
 
@@ -356,9 +363,9 @@ class FocusTimerNotification extends MessageTray.Notification {
     _updateActions() {
         const actions = [];
         const actionLabels = {
-            'extend': _("+1 minute"),
-            'start-pomodoro': _("Start Pomodoro"),
-            'start-break': _("Start Break"),
+            'extend': _('+1 minute'),
+            'start-pomodoro': _('Start Pomodoro'),
+            'start-break': _('Start Break'),
         };
 
         switch (this._view) {
@@ -522,9 +529,11 @@ export const NotificationManager = class extends Signals.EventEmitter {
         this._injectionManager.overrideMethod(Main.messageTray, '_expandBanner',
             originalMethod => {
                 return function (autoExpanding) {
+                    // eslint-disable-next-line no-invalid-this
                     if (autoExpanding && this._notification instanceof Notification)
                         return;
 
+                    // eslint-disable-next-line no-invalid-this
                     originalMethod.call(this, autoExpanding);
                 };
             });
@@ -568,7 +577,6 @@ export const NotificationManager = class extends Signals.EventEmitter {
 
                 if (dateMenu && dateMenu.actor.visible)
                     dateMenu.close(PopupAnimation.NONE);
-
             });
         screenOverlay.connect('opened',
             () => {
@@ -709,7 +717,7 @@ export const NotificationManager = class extends Signals.EventEmitter {
         const isTransient =
             view === NotificationView.TIME_BLOCK_RUNNING && !isBreak ||
             view === NotificationView.TIME_BLOCK_STARTED && !isBreak ||
-            view === NotificationView.TIME_BLOCK_ENDED;
+            view === NotificationView.TIME_BLOCK_ENDED ||
             view === NotificationView.TIME_BLOCK_ABOUT_TO_END;
         if (notification.isTransient !== isTransient)
             notification.isTransient = isTransient;
@@ -730,11 +738,12 @@ export const NotificationManager = class extends Signals.EventEmitter {
 
         notification.update(view, timerState, nextTimerState);
 
-        if (isUrgent)
+        if (isUrgent) {
             Main.messageTray._updateNotificationTimeout(0);  // no timeout
-        else
+        } else {
             Main.messageTray._updateNotificationTimeout(banner
                 ? NOTIFICATION_SHORT_TIMEOUT : NOTIFICATION_LONG_TIMEOUT);
+        }
     }
 
     _queueUpdateNotification() {
@@ -848,6 +857,9 @@ export const NotificationManager = class extends Signals.EventEmitter {
 
     /**
      * Return whether we should pop a fresh notification or update existing one.
+     *
+     * @param {object} data - Current notification state.
+     * @param {object} previousData - Previous notification state.
      */
     _shouldNotify(data, previousData) {
         if (data.view === NotificationView.NULL)
@@ -895,11 +907,11 @@ export const NotificationManager = class extends Signals.EventEmitter {
             };
             const previousData = this._viewData;
 
-            if (data.view == NotificationView.CONFIRM_ADVANCEMENT) {
+            if (data.view === NotificationView.CONFIRM_ADVANCEMENT) {
                 if (!this._nextViewData && previousData.timerState === State.STOPPED) {
                     this._viewData = data;
                     this._session.getNextTimeBlock().then(
-                        (timeBlock) => {
+                        timeBlock => {
                             if (this._viewData !== data)
                                 return;
                             this._onConfirmAdvancement(this._session, null, timeBlock);
@@ -918,15 +930,14 @@ export const NotificationManager = class extends Signals.EventEmitter {
             if (this._isScreenOverlayOpened()) {
                 if (this._shouldCloseScreenOverlay(data, previousData))
                     this._screenOverlay.close(animate);
+            } else if (this._shouldOpenScreenOverlay(data, previousData)) {
+                this._openScreenOverlayOrNotify(animate);
+            } else if (this._shouldNotify(data, previousData)) {
+                this._notify();
+            } else if (data.view !== NotificationView.NULL) {
+                this._updateNotification();
             } else {
-                if (this._shouldOpenScreenOverlay(data, previousData))
-                    this._openScreenOverlayOrNotify(animate);
-                else if (this._shouldNotify(data, previousData))
-                    this._notify();
-                else if (data.view !== NotificationView.NULL)
-                    this._updateNotification();
-                else
-                    this._expireNotification(false);
+                this._expireNotification(false);
             }
 
             if (this._shouldScheduleAnnoucement())
@@ -978,13 +989,14 @@ export const NotificationManager = class extends Signals.EventEmitter {
     _addLockScreenIdleWatch() {
         const lockDelay = this._settings.get_uint('screen-overlay-lock-delay') * 1000;
 
-        if (!this._lockScreenIdleId && lockDelay > 0)
+        if (!this._lockScreenIdleId && lockDelay > 0) {
             this._lockScreenIdleId = this._idleMonitor.add_idle_watch(lockDelay,
                 this._onLockScreenIdle.bind(this));
+        }
     }
 
     _removeLockScreenIdleWatch() {
-        if (this._lockScreenIdleId != 0) {
+        if (this._lockScreenIdleId) {
             this._idleMonitor.remove_watch(this._lockScreenIdleId);
             this._lockScreenIdleId = 0;
         }
@@ -1000,9 +1012,10 @@ export const NotificationManager = class extends Signals.EventEmitter {
     _addReopenScreenOverlayIdleWatch() {
         const reopenDelay = this._settings.get_uint('screen-overlay-reopen-delay') * 1000;
 
-        if (!this._reopenScreenOverlayIdleId && reopenDelay > 0)
+        if (!this._reopenScreenOverlayIdleId && reopenDelay > 0) {
             this._reopenScreenOverlayIdleId = this._idleMonitor.add_idle_watch(reopenDelay,
                 this._onReopenScreenOverlayIdle.bind(this));
+        }
     }
 
     _removeReopenScreenOverlayIdleWatch() {
@@ -1022,7 +1035,7 @@ export const NotificationManager = class extends Signals.EventEmitter {
         this._viewData.view = NotificationView.TIME_BLOCK_ABOUT_TO_END;
 
         if (this._isScreenOverlayOpened())
-            return;
+            return GLib.SOURCE_REMOVE;
 
         if (this._getBanner())
             this._updateNotification();

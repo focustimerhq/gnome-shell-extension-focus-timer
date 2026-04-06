@@ -25,12 +25,10 @@ import GObject from 'gi://GObject';
 import St from 'gi://St';
 
 import {EventEmitter} from 'resource:///org/gnome/shell/misc/signals.js';
-import {wiggle} from 'resource:///org/gnome/shell/misc/animationUtils.js';
 import {gettext as _} from 'resource:///org/gnome/shell/extensions/extension.js';
 import * as Main from 'resource:///org/gnome/shell/ui/main.js';
 
-import {State, SECOND, MILLISECOND} from './timer.js';
-import {TimeBlockStatus} from './session.js';
+import {State, SECOND} from './timer.js';
 import {TimerControlButtons} from './timerControlButtons.js';
 import {TimerLabel} from './timerLabel.js';
 import {TimerProgressBar} from './timerProgressBar.js';
@@ -170,10 +168,12 @@ class FocusTimerScreenShieldWidget extends St.Widget {
                     return;
 
                 this._stateLabel.text = this._timer.isFinished()
-                    ? _("Finished!")
+                    ? _('Finished!')
                     : State.label(this._timer.state);
                 this._cycleLabel.text = _('%d of %d').format(cycleNumber, cycleCount);
-                this._cycleLabel.visible = (this._timer.state === State.POMODORO || this._timer.state === State.SHORT_BREAK) && cycleNumber > 0 && cycleCount > 1;
+                this._cycleLabel.visible = cycleNumber > 0 && cycleCount > 1 && (
+                    this._timer.state === State.POMODORO ||
+                    this._timer.state === State.SHORT_BREAK);
             }
         ).catch(logError);
     }
@@ -245,7 +245,6 @@ class FocusTimerScreenShieldLayout extends Clutter.LayoutManager {
 
     vfunc_get_preferred_height(container, forWidth) {
         let [minimumHeight, naturalHeight] = this._widget.get_preferred_height(forWidth);
-
         minimumHeight += this._yOffset;
         naturalHeight += this._yOffset;
 
@@ -253,7 +252,7 @@ class FocusTimerScreenShieldLayout extends Clutter.LayoutManager {
     }
 
     vfunc_allocate(container, box) {
-        const [width, height] = box.get_size();
+        const [width] = box.get_size();
         const [, , widgetWidth, widgetHeight] = this._widget.get_preferred_size();
 
         const actorBox = new Clutter.ActorBox();

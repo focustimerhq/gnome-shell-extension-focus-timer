@@ -19,13 +19,10 @@
  * Authors: Kamil Prusko <kamilprusko@gmail.com>
  */
 
-import GLib from 'gi://GLib';
 import Gio from 'gi://Gio';
-import GObject from 'gi://GObject';
 
 import {gettext as _} from 'resource:///org/gnome/shell/extensions/extension.js';
 import * as Signals from 'resource:///org/gnome/shell/misc/signals.js';
-import * as Params from 'resource:///org/gnome/shell/misc/params.js';
 
 import {deserializeTimeBlock, deserializeCycle} from './dbus.js';
 import {State} from './timer.js';
@@ -93,16 +90,17 @@ export class Session extends Signals.EventEmitter {
         if (!this._proxy)
             return [];
 
-        if (!this._cyclesPromise)
+        if (!this._cyclesPromise) {
             this._cyclesPromise = this._proxy.ListCyclesAsync(this._cancellable).then(
                 ([cycles]) => cycles.map(deserializeCycle),
-                (error) => {
+                error => {
                     logError(error);
                     return [];
                 }
             );
+        }
 
-        return this._cyclesPromise;
+        return await this._cyclesPromise;  // eslint-disable-line no-return-await
     }
 
     async getCycleNumberCount() {

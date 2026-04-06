@@ -32,7 +32,6 @@ import St from 'gi://St';
 import {MonitorConstraint} from 'resource:///org/gnome/shell/ui/layout.js';
 import {Lightbox} from 'resource:///org/gnome/shell/ui/lightbox.js';
 import {gettext as _} from 'resource:///org/gnome/shell/extensions/extension.js';
-import * as GnomeSession from 'resource:///org/gnome/shell/misc/gnomeSession.js';
 import * as SystemActions from 'resource:///org/gnome/shell/misc/systemActions.js';
 import * as Main from 'resource:///org/gnome/shell/ui/main.js';
 import * as Params from 'resource:///org/gnome/shell/misc/params.js';
@@ -623,7 +622,7 @@ const ScreenOverlayBase = GObject.registerClass({
             GObject.ParamFlags.READABLE,
             false),
         'acknowledged': GObject.ParamSpec.boolean(
-            'acknowledged',null, null,
+            'acknowledged', null, null,
             GObject.ParamFlags.READABLE,
             false),
         'enable-blur-effect': GObject.ParamSpec.boolean(
@@ -650,7 +649,7 @@ const ScreenOverlayBase = GObject.registerClass({
             reactive: false,
             visible: false,
             opacity: 0,
-            ...params
+            ...params,
         });
 
         this._state = OverlayState.CLOSED;

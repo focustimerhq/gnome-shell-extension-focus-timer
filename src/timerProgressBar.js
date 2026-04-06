@@ -21,16 +21,14 @@
 
 import Atk from 'gi://Atk';
 import Clutter from 'gi://Clutter';
-import Cogl from 'gi://Cogl';
 import Cairo from 'gi://cairo';
 import GLib from 'gi://GLib';
 import GObject from 'gi://GObject';
-import Pango from 'gi://Pango';
 import St from 'gi://St';
 
 import * as Params from 'resource:///org/gnome/shell/misc/params.js';
 
-import {State, MILLISECOND, SECOND} from './timer.js';
+import {State, MILLISECOND} from './timer.js';
 
 
 const PROGRESS_BAR_HEIGHT = 5;
@@ -103,7 +101,7 @@ class FocusTimerProgressBar extends St.DrawingArea {
         super.vfunc_style_changed();
     }
 
-    vfunc_get_preferred_height(forWidth) {
+    vfunc_get_preferred_height(_forWidth) {
         const preferredHeight = PROGRESS_BAR_HEIGHT;
 
         return this.get_theme_node().adjust_preferred_height(preferredHeight, preferredHeight);
@@ -144,7 +142,7 @@ class FocusTimerProgressBar extends St.DrawingArea {
 
             if (x2 < x1) {
                 cr.arc(x1, y, lineCap, 0.0, 2.0 * Math.PI);
-	            cr.clip();
+                cr.clip();
                 cr.moveTo(0.0, y);
             } else {
                 cr.moveTo(x1, y);
@@ -230,7 +228,7 @@ class FocusTimerTimerProgressBar extends St.Bin {
             progressBar.ease_property('fade', 0.0, {
                 duration: animate ? FADE_TRANSITION : 0,
                 mode: Clutter.AnimationMode.EASE_IN_OUT_QUAD,
-                onStopped: (isFinished) => {
+                onStopped: _isFinished => {
                     if (timer.state === State.STOPPED)
                         progressBar.value = 0.0;
                 },
@@ -270,7 +268,7 @@ class FocusTimerTimerProgressBar extends St.Bin {
         this._updateTimeout();
     }
 
-    _onTimerChanged(timer) {
+    _onTimerChanged(_timer) {
         if (this._frozen)
             return;
 
@@ -297,4 +295,3 @@ class FocusTimerTimerProgressBar extends St.Bin {
         this._delegate = null;
     }
 });
-

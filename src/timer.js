@@ -21,16 +21,9 @@
 
 import GLib from 'gi://GLib';
 import Gio from 'gi://Gio';
-import GObject from 'gi://GObject';
 
 import {gettext as _} from 'resource:///org/gnome/shell/extensions/extension.js';
 import * as Signals from 'resource:///org/gnome/shell/misc/signals.js';
-import * as Params from 'resource:///org/gnome/shell/misc/params.js';
-
-import {TimerProxy, BUS_NAME, OBJECT_PATH} from './dbus.js';
-import {IssueNotification, getDefaultSource} from './notifications.js';
-import * as Config from './config.js';
-import * as Utils from './utils.js';
 
 
 export const MILLISECOND = 1000;
@@ -69,10 +62,13 @@ export const State = {
 
     isBreak(state) {
         return state === State.SHORT_BREAK || state === State.LONG_BREAK || state === State.BREAK;
-    }
+    },
 };
 
 
+/**
+ * @param {number} timestamp - Unix timestamp in microseconds, or -1 if absent.
+ */
 function normalizeTimestamp(timestamp) {
     return timestamp >= 0 ? timestamp : NaN;
 }
@@ -147,7 +143,7 @@ export class Timer extends Signals.EventEmitter {
         this._monotonicTimeOffset = currentTime - monotonicTime;
     }
 
-    _onChanged(proxy) {
+    _onChanged(_proxy) {
         if (this.isRunning())
             this._synchronize();
 
@@ -260,8 +256,7 @@ export class Timer extends Signals.EventEmitter {
             this._cancellable = null;
         }
 
-        if (this._proxy) {
+        if (this._proxy)
             this._proxy = null;
-        }
     }
 }

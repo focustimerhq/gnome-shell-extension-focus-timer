@@ -141,7 +141,7 @@ export const DistractionManager = class extends Signals.EventEmitter {
         this._injectionManager.overrideMethod(MessageTray.prototype, '_onStatusChanged',
             _originalMethod => {
                 return function (_status) {
-                    this._updateState();
+                    this._updateState();  // eslint-disable-line no-invalid-this
                 };
             });
 

@@ -19,16 +19,13 @@
  * Authors: Kamil Prusko <kamilprusko@gmail.com>
  */
 
-import Atk from 'gi://Atk';
 import Clutter from 'gi://Clutter';
-import GLib from 'gi://GLib';
 import GObject from 'gi://GObject';
-import Pango from 'gi://Pango';
 import St from 'gi://St';
 
 import * as Params from 'resource:///org/gnome/shell/misc/params.js';
 
-import {State, MINUTE} from './timer.js';
+import {MINUTE} from './timer.js';
 import * as Utils from './utils.js';
 
 
@@ -58,7 +55,7 @@ class FocusTimerTimerControlButtons extends St.BoxLayout {
         this._timer = timer;
         this._session = session;
         this._frozen = false;
-        this._lastInteractionTime;
+        this._lastInteractionTime = NaN;
 
         this._leftButton = this._createIconButton();
         this._leftButton.connect('clicked', this._onButtonClicked.bind(this));
@@ -91,11 +88,11 @@ class FocusTimerTimerControlButtons extends St.BoxLayout {
         });
 
         return new St.Button({
-             style_class: 'icon-button flat',
-             can_focus: false,
-             x_align: Clutter.ActorAlign.CENTER,
-             y_align: Clutter.ActorAlign.CENTER,
-             child: icon,
+            style_class: 'icon-button flat',
+            can_focus: false,
+            x_align: Clutter.ActorAlign.CENTER,
+            y_align: Clutter.ActorAlign.CENTER,
+            child: icon,
         });
     }
 
@@ -128,20 +125,18 @@ class FocusTimerTimerControlButtons extends St.BoxLayout {
         if (!this._timer.isStarted()) {
             leftActionName = this._session.canReset ? 'reset' : null;
             centerActionName = 'start';
+        } else if (this._timer.isPaused()) {
+            leftActionName = 'rewind';
+            centerActionName = 'resume';
+            rightActionName = 'stop';
+        } else if (this._timer.isFinished()) {
+            leftActionName = 'rewind';
+            centerActionName = 'advance';
+            rightActionName = 'stop';
         } else {
-            if (this._timer.isPaused()) {
-                leftActionName = 'rewind';
-                centerActionName = 'resume';
-                rightActionName = 'stop';
-            } else if (this._timer.isFinished()) {
-                leftActionName = 'rewind';
-                centerActionName = 'advance';
-                rightActionName = 'stop';
-            } else {
-                leftActionName = 'rewind';
-                centerActionName = 'pause';
-                rightActionName = 'skip';
-            }
+            leftActionName = 'rewind';
+            centerActionName = 'pause';
+            rightActionName = 'skip';
         }
 
         this._updateButton(this._leftButton, leftActionName);
@@ -190,7 +185,7 @@ class FocusTimerTimerControlButtons extends St.BoxLayout {
     _activateAction(actionName) {
         this._lastInteractionTime = this._timer.getCurrentTime();
 
-        switch(actionName) {
+        switch (actionName) {
         case 'start':
             this._timer.start();
             break;

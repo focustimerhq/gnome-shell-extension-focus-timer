@@ -55,7 +55,7 @@ export const SettingsWrapper = class extends EventEmitter {
             const currentSettings = proxy.Settings ?? {};
             const allKeys = new Set([
                 ...Object.keys(previousSettings),
-                ...Object.keys(currentSettings)
+                ...Object.keys(currentSettings),
             ]);
 
             this._applicationSettings = currentSettings;
@@ -93,7 +93,11 @@ export const SettingsWrapper = class extends EventEmitter {
      * Create a binding between a settings key and object[property].
      *
      * Only the GET direction (settings → object) is supported since this class is read-only.
-     * The SET direction is silently ignored.
+     *
+     * @param {string} key - Settings key.
+     * @param {object} object - Target object.
+     * @param {string} property - Property name on the target object.
+     * @param {number} flags - Gio.SettingsBindFlags bitmask.
      */
     bind(key, object, property, flags) {
         this.bind_with_mapping(key, object, property, flags, null, null);
@@ -102,11 +106,14 @@ export const SettingsWrapper = class extends EventEmitter {
     /**
      * Like bind(), but with optional mapping functions.
      *
-     * get_mapping(variant) → value   applied when writing from settings to object;
-     *                                return `false` to skip the update.
-     * set_mapping is accepted for API compatibility but ignored (read-only).
+     * @param {string} key - Settings key.
+     * @param {object} object - Target object.
+     * @param {string} property - Property name on the target object.
+     * @param {number} flags - Gio.SettingsBindFlags bitmask.
+     * @param {Function|null} getMappingFunc - Maps variant to value; return `false` to skip update.
+     * @param {Function|null} _setMappingFunc - Accepted for API compatibility but ignored (read-only).
      */
-    bind_with_mapping(key, object, property, flags, get_mapping, _set_mapping) {
+    bind_with_mapping(key, object, property, flags, getMappingFunc, _setMappingFunc) {
         const bindFlags = flags ?? Gio.SettingsBindFlags.DEFAULT;
         const invertBoolean = !!(bindFlags & Gio.SettingsBindFlags.INVERT_BOOLEAN);
 
@@ -116,8 +123,8 @@ export const SettingsWrapper = class extends EventEmitter {
                 return;
 
             let value;
-            if (get_mapping) {
-                value = get_mapping(variant);
+            if (getMappingFunc) {
+                value = getMappingFunc(variant);
                 if (value === false)
                     return;
             } else {
@@ -184,4 +191,4 @@ export const SettingsWrapper = class extends EventEmitter {
 
         this.emit('destroy');
     }
-}
+};

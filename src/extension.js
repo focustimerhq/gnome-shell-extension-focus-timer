@@ -111,29 +111,30 @@ export default class FocusTimerExtension extends Extension {
                     new ApplicationProxy(connection, BUS_NAME, OBJECT_PATH,
                         (proxy, error) => error ? reject(error) : resolve(proxy),
                         this._cancellable,
-                        flags);
+                        flags
+                    );
                 }),
                 new Promise((resolve, reject) => {
                     new TimerProxy(connection, BUS_NAME, OBJECT_PATH,
                         (proxy, error) => error ? reject(error) : resolve(proxy),
                         this._cancellable,
-                        Gio.DBusProxyFlags.NONE,
+                        Gio.DBusProxyFlags.NONE
                     );
                 }),
                 new Promise((resolve, reject) => {
                     new SessionProxy(connection, BUS_NAME, OBJECT_PATH,
                         (proxy, error) => error ? reject(error) : resolve(proxy),
                         this._cancellable,
-                        Gio.DBusProxyFlags.NONE,
+                        Gio.DBusProxyFlags.NONE
                     );
-                })
+                }),
             ]);
 
             this._proxy = applicationProxy;
             this._timerProxy = timerProxy;
             this._sessionProxy = sessionProxy;
 
-            applicationProxy.connectSignal('RequestFocus', (_proxy) => {
+            applicationProxy.connectSignal('RequestFocus', _proxy => {
                 this._focusApplication();
             });
         } catch (error) {
@@ -211,7 +212,7 @@ export default class FocusTimerExtension extends Extension {
             this._session = null;
         }
 
-        if (this._sessionModeUpdatedId != 0) {
+        if (this._sessionModeUpdatedId) {
             Main.sessionMode.disconnect(this._sessionModeUpdatedId);
             this._sessionModeUpdatedId = 0;
         }
@@ -260,7 +261,8 @@ export default class FocusTimerExtension extends Extension {
             return;
 
         const flags = this._settings.get_boolean('autostart')
-             ? Gio.BusNameWatcherFlags.AUTO_START : Gio.BusNameWatcherFlags.NONE;
+            ? Gio.BusNameWatcherFlags.AUTO_START
+            : Gio.BusNameWatcherFlags.NONE;
 
         this._nameWatcherId = Gio.DBus.session.watch_name(
             BUS_NAME,
@@ -307,9 +309,10 @@ export default class FocusTimerExtension extends Extension {
             animate,
         };
 
-        if (!this._notificationManager)
+        if (!this._notificationManager) {
             this._notificationManager = new NotificationManager(
                 this._timer, this._session, this._settingsWrapper, params);
+        }
     }
 
     _disableNotificationManager() {
@@ -457,12 +460,11 @@ export default class FocusTimerExtension extends Extension {
             break;
 
         case 'indicator-type':
-            const indicatorType = settings.get_string(key) === 'text'
-                ? IndicatorType.TEXT
-                : IndicatorType.ICON;
-            if (this._indicator)
-                this._indicator.type = indicatorType;
-
+            if (this._indicator) {
+                this._indicator.type = settings.get_string(key) === 'text'
+                    ? IndicatorType.TEXT
+                    : IndicatorType.ICON;
+            }
             break;
         }
     }

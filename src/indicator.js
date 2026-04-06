@@ -29,7 +29,6 @@ import Pango from 'gi://Pango';
 import St from 'gi://St';
 
 import {PopupAnimation} from 'resource:///org/gnome/shell/ui/boxpointer.js';
-import {EventEmitter} from 'resource:///org/gnome/shell/misc/signals.js';
 import {gettext as _} from 'resource:///org/gnome/shell/extensions/extension.js';
 import * as Main from 'resource:///org/gnome/shell/ui/main.js';
 import * as PanelMenu from 'resource:///org/gnome/shell/ui/panelMenu.js';
@@ -37,7 +36,6 @@ import * as PopupMenu from 'resource:///org/gnome/shell/ui/popupMenu.js';
 
 import {extension} from './extension.js';
 import {State, MINUTE, SECOND, MILLISECOND} from './timer.js';
-import {TimeBlockStatus} from './session.js';
 import {TimerControlButtons} from './timerControlButtons.js';
 import {TimerLabel} from './timerLabel.js';
 import {TimerProgressBar} from './timerProgressBar.js';
@@ -91,13 +89,15 @@ class OverlayMenuBase extends PopupMenu.PopupMenuBase {
         if (this.isOpen)
             return;
 
-        this.isOpen = true;
-
+        const duration = animate !== PopupAnimation.NONE
+            ? Math.trunc(POPUP_ANIMATION_TIME * 0.75)
+            : 0;
         this.actor.show();
         this.actor.ease_property('opacity', 255, {
-            duration: Math.trunc(POPUP_ANIMATION_TIME * 0.75),
+            duration,
         });
 
+        this.isOpen = true;
         this.emit('open-state-changed', true);
     }
 
@@ -326,7 +326,7 @@ class FocusTimerMenuItem extends PopupMenu.PopupBaseMenuItem {
                     return;
 
                 this._stateButton.label = this._timer.isFinished()
-                    ? _("Finished!")
+                    ? _('Finished!')
                     : State.label(this._timer.state);
                 this._cycleLabel.text = _('%d of %d').format(cycleNumber, cycleCount);
                 this._cycleLabel.visible =  cycleNumber > 0 && cycleCount > 1 && (
@@ -344,11 +344,13 @@ class FocusTimerMenuItem extends PopupMenu.PopupBaseMenuItem {
         );
     }
 
-    _onTimerChanged(timer) {
+    _onTimerChanged(_timer) {
         this._update();
     }
 
-    _onSessionChanged(session) {
+    _onSessionChanged(_session) {
+        this._updatePromise = null;
+
         this._update();
     }
 
@@ -651,7 +653,7 @@ class FocusTimerTextIndicator extends St.Widget {
 
     _updatePlaceholderValue() {
         this._session.getNextTimeBlock().then(
-            (timeBlock) => {
+            timeBlock => {
                 if (timeBlock && timeBlock.state === State.POMODORO)
                     this._placeholderValue = timeBlock.endTime - timeBlock.startTime;
 
@@ -680,21 +682,21 @@ class FocusTimerTextIndicator extends St.Widget {
         const text = this._getReferenceText(this._timer.getRemaining());
         layout.set_text(text, text.length);
 
-        const [layoutWidth, layoutHeight] = layout.get_pixel_size();
+        const [layoutWidth] = layout.get_pixel_size();
 
         return this.get_theme_node().adjust_preferred_width(layoutWidth, layoutWidth);
     }
 
-    vfunc_allocate(box, flags) {
+    vfunc_allocate(box, _flags) {
         this.set_allocation(box);
 
         const [width, height] = box.get_size();
-        const [childWidth, ] = this._label.get_preferred_width(height);
+        const [labelWidth] = this._label.get_preferred_width(height);
 
-        const childBox = new Clutter.ActorBox();
-        childBox.set_origin(Math.floor((width - childWidth) / 2), 0);
-        childBox.set_size(childWidth, height);
-        this._label.allocate(childBox);
+        const labelBox = new Clutter.ActorBox();
+        labelBox.set_origin(Math.floor((width - labelWidth) / 2), 0);
+        labelBox.set_size(labelWidth, height);
+        this._label.allocate(labelBox);
     }
 
     vfunc_map() {
@@ -704,13 +706,14 @@ class FocusTimerTextIndicator extends St.Widget {
 
         this._label.text = '';
 
-        if (this._timer.state === State.STOPPED)
+        if (this._timer.state === State.STOPPED) {
             this._updatePlaceholderValue();
-        else
+        } else {
             this._updateLabel(
                 this._timer.state,
                 this._timer.lastTickTime || this._timer.lastChangedTime
             );
+        }
 
         super.vfunc_map();
     }
@@ -989,7 +992,8 @@ class FocusTimerIconIndicator extends St.Widget {
     }
 
     _updatePausedIcon(animate = true) {
-        const transitionDuration = animate && St.Settings.get().enable_animations ? TRANSITION_DURATION : 0;
+        const transitionDuration = animate && St.Settings.get().enable_animations
+            ? TRANSITION_DURATION : 0;
         const opacity = this._timer.isPaused() ? 255 : 0;
 
         this._pausedIconBin.show();
@@ -1003,11 +1007,11 @@ class FocusTimerIconIndicator extends St.Widget {
                     this._pausedIconBin.hide();
                 else
                     this._content.hide();
-            }
+            },
         });
     }
 
-    _onTimerChanged(timer) {
+    _onTimerChanged(_timer) {
         this._updateTimeout();
         this._updatePausedIcon();
 

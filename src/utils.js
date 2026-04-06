@@ -28,7 +28,6 @@ import * as Main from 'resource:///org/gnome/shell/ui/main.js';
 import * as ShellConfig from 'resource:///org/gnome/shell/misc/config.js';
 
 import {extension} from './extension.js';
-import * as Config from './config.js';
 
 const icons = {};
 
@@ -63,7 +62,7 @@ export const BlinkingGroup = class {
     }
 
     _indexItem(actor) {
-        return this._items.findIndex((item) => item.actor === actor);
+        return this._items.findIndex(item => item.actor === actor);
     }
 
     _ensureDummy() {
@@ -108,13 +107,13 @@ export const BlinkingGroup = class {
         const y1 = item.lowerValue;
         const y2 = item.upperValue;
 
-        if (y1 === 0.0 && y2 === 1.0)
+        if (y1 === 0.0 && y2 === 1.0) {
             item.binding = this._dummy.bind_property(
                 'fade',
                 item.actor, item.propertyName,
                 GObject.BindingFlags.SYNC_CREATE
             );
-        else
+        } else {
             item.binding = this._dummy.bind_property_full(
                 'fade',
                 item.actor, item.propertyName,
@@ -122,6 +121,7 @@ export const BlinkingGroup = class {
                 (binding, source) => [true, y1 + (y2 - y1) * source],
                 null
             );
+        }
     }
 
     _unbindItem(item) {
@@ -235,20 +235,32 @@ export const BlinkingGroup = class {
     }
 };
 
+/**
+ * @param {Error} error - Error to log via the extension manager.
+ */
 export function logError(error) {
     Main.extensionManager.logExtensionError(extension.uuid, error);
 }
 
+/**
+ * @param {string} message - Warning message to log.
+ */
 export function logWarning(message) {
     extension.getLogger().warn(message);
 }
 
+/**
+ * @param {string} uri - URI to open with the default application.
+ */
 export function openUri(uri) {
     const context = global.create_app_launch_context(global.get_current_time(), -1);
 
     Gio.AppInfo.launch_default_for_uri(uri, context);
 }
 
+/**
+ * @param {string} version - Minimum required GNOME Shell version.
+ */
 export function isVersionAtLeast(version) {
     const currentVersionParts = ShellConfig.PACKAGE_VERSION.split('.');
     const versionParts = version.split('.');
@@ -261,6 +273,9 @@ export function isVersionAtLeast(version) {
     return false;
 }
 
+/**
+ *
+ */
 export function wakeUpScreen() {
     const unlockDialog = Main.screenShield?._dialog;
 
@@ -275,6 +290,9 @@ export function wakeUpScreen() {
     }
 }
 
+/**
+ * @param {string} iconName - Icon file name (without extension) from the icons/ directory.
+ */
 export function loadIcon(iconName) {
     let icon = icons[iconName];
 

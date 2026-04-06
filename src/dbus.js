@@ -214,7 +214,7 @@ export class ShellIntegrationService {
     }
 
     _onSettingsChanged(_settings, key) {
-        switch(key) {
+        switch (key) {
         case 'indicator-type':
             this._dbusImpl.emit_property_changed('IndicatorType', new GLib.Variant('s', this.IndicatorType));
             break;
@@ -252,10 +252,16 @@ export class ShellIntegrationService {
     }
 };
 
+/**
+ * @param {number} timestamp - Unix timestamp in microseconds, or -1 if absent.
+ */
 function normalizeTimestamp(timestamp) {
     return timestamp >= 0 ? timestamp : NaN;
 }
 
+/**
+ * @param {GLib.Variant|object} variant - Packed or unpacked D-Bus time-block dictionary.
+ */
 export function deserializeTimeBlock(variant) {
     if (variant instanceof GLib.Variant)
         variant = variant.deepUnpack();
@@ -268,9 +274,12 @@ export function deserializeTimeBlock(variant) {
         status: variant['status'].get_string()[0],
         startTime: normalizeTimestamp(variant['start_time'].get_int64()),
         endTime: normalizeTimestamp(variant['end_time'].get_int64()),
-    }
+    };
 }
 
+/**
+ * @param {GLib.Variant|object} variant - Packed or unpacked D-Bus cycle dictionary.
+ */
 export function deserializeCycle(variant) {
     if (variant instanceof GLib.Variant)
         variant = variant.deepUnpack();
@@ -281,5 +290,5 @@ export function deserializeCycle(variant) {
     return {
         status: variant['status'].get_string()[0],
         weight: variant['weight'].get_double(),
-    }
+    };
 }
