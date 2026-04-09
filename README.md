@@ -1,34 +1,48 @@
-# GNOME Shell extension for Focus Timer
 # Focus Timer GNOME Shell Extension
 
-Focus Timer helps with taking breaks according to [Pomodoro Technique](https://en.wikipedia.org/wiki/Pomodoro_Technique). It intends to help maintain your focus and health. This GNOME Shell extension needs the [Focus Timer app][focus-timer] to be installed. It allows better desktop integration:
+Focus Timer is an app based on the [Pomodoro Technique][pomodoro-technique] that helps you break work into intervals (typically 25 minutes), separated by short breaks. This builds focus and prevents burnout.
 
-* Indicator in the top bar for controling the timer
-* Notifications showing real time
-* Semi-translucent screen overlay is easier to dismiss if needed
-* Widget on the lock screen
+**Desktop Integration Features:**
+
+* **Top bar indicator** to quickly start, pause, and control your timer
+* **Notifications** showing a live countdown of your session
+* **Screen overlay** active during breaks, designed to be easy to dismiss
+* **Automatic Do-Not-Disturb mode** to reduce interruptions while you focus
+* **Lock screen widget** to check your timer without having to unlock
+
+<br/>
+
+> [!NOTE]
+> This extension requires the [Focus Timer app][focus-timer] to be installed on your system.
+
+<br/>
 
 ## Screenshots
 
-![Indicator](https://gnomepomodoro.org/release/1.1/gnome-shell-indicator.png)
-![Screen overlay](https://gnomepomodoro.org/release/1.1/gnome-shell-screen-overlay.png)
-![Lock screen widget](https://gnomepomodoro.org/release/1.1/gnome-shell-widget.png)
-![Preferences](https://gnomepomodoro.org/release/1.1/gnome-shell-preferences.png)
+<p align="center">
+  <img alt="Indicator" src="https://gnomepomodoro.org/release/1.1/gnome-shell-indicator.png" width="800" height="450"/>
+  <br/>
+  <img alt="Notifications" src="https://gnomepomodoro.org/release/1.1/gnome-shell-announcement.png" width="800" height="450"/>
+  <br/>
+  <img alt="Screen overlay" src="https://gnomepomodoro.org/release/1.1/gnome-shell-screen-overlay.png" width="800" height="450"/>
+  <br/>
+  <img alt="Lock screen widget" src="https://gnomepomodoro.org/release/1.1/gnome-shell-lock-screen.png" width="800" height="450"/>
+  <br/>
+  <img alt="Preferences" src="https://gnomepomodoro.org/release/1.1/preferences-gnome-shell-extension.png"/>
+  <br/>
+</p>
 
 ## Installation
 
-The extension is compatible with GNOME Shell 48+.
+**Compatibility:** This extension works with GNOME Shell 48+.
 
 ### From extensions.gnome.org
 
-The extension at this moment is not published yet.
+At this moment the extension is not yet published.
 
 ### Building from source
 
-To build the application from source, you will need `meson`, `ninja`, and the necessary development headers (GLib, GTK+, etc.).
-
 Clone the repository:
-
 ```bash
 git clone https://github.com/focustimerhq/gnome-shell-extension-focus-timer.git
 cd gnome-shell-extension-focus-timer
@@ -36,38 +50,40 @@ cd gnome-shell-extension-focus-timer
 
 Build and install:
 ```bash
-meson setup build --prefix=~/.local/
+meson setup build --prefix=~/.local
 ninja -C build
 ninja -C build install
 ```
+
+Enable it:
+```bash
+gnome-extensions enable focus-timer@focustimerhq.github.io
+```
+
+You need to log out for GNOME Shell to recognise it or to apply updates. The indicator will show up when you run the Focus Timer app. If still can't see it, check [Troubleshooting](CONTRIBUTING.md#troubleshooting) section.
 
 ### From .zip bundle
 
 Only install files from a trusted source.
 
-```
+```bash
 gnome-extensions install --force focus-timer@focustimerhq.github.io.zip
 ```
 
-## Support
+## Support & Feedback
 
-### Report issue
-
-### Suggest improvements
-
-### Q&A
-
-Feel free to start a discussion if you have a question.
+* **Issues & Bug Reports:** Check the [Troubleshooting](CONTRIBUTING.md#troubleshooting) on how to check logs. Report it on our [issue tracker](https://github.com/focustimerhq/gnome-shell-extension-focus-timer/issues).
+* **Feature Requests:** Open a feature request on [GitHub](https://github.com/focustimerhq/gnome-shell-extension-focus-timer/issues).
+* **Questions & Discussions:** Join our [Discussions page](https://github.com/focustimerhq/FocusTimer/discussions) for help and general chat.
+* **Reviews:** If you enjoy the extension, please consider leaving a review on [GNOME Extensions](https://extensions.gnome.org/) (once published).
 
 ## Contributing
 
-### Translations
+We welcome contributions! Please refer to [CONTRIBUTING.md](CONTRIBUTING.md) for details on setting up your development environment, coding guidelines, and translation instructions.
 
-### Leave a review
+## Donations
 
-### Donations
-
-If you want to sponsor me, first of all thank you very much! You can use either [Liberapay](https://liberapay.com/kamilprusko) or [PayPal](https://www.paypal.me/kamilprusko); and don't hesitate to ask for more specialized support if you need to!
+If you'd like to support the development of Focus Timer, you can use [Liberapay](https://liberapay.com/kamilprusko) or [PayPal](https://www.paypal.me/kamilprusko). Thank you!
 
 ## License
 
@@ -75,4 +91,5 @@ This software is licensed under the [GPL 3](/COPYING).
 
 *This project is not affiliated with, authorized by, sponsored by, or otherwise approved by GNOME Foundation and/or the Pomodoro Technique®. The GNOME logo and GNOME name are registered trademarks or trademarks of GNOME Foundation in the United States or other countries. The Pomodoro Technique® and Pomodoro™ are registered trademarks of Francesco Cirillo.*
 
-[focus-timer]: https://github.com/focustimerhq/FocusTimer/tree/main
+[pomodoro-technique]: https://en.wikipedia.org/wiki/Pomodoro_Technique
+[focus-timer]: https://github.com/focustimerhq/FocusTimer
