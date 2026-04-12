@@ -1,16 +1,19 @@
-# Czech translation for gnome-pomodoro
-# Copyright (c) 2012 gnome-pomodoro contributors
-# This file is distributed under the same license as the gnome-pomodoro package.
+# Czech translation for gnome-shell-extension-focus-timer
+# Copyright (c) 2012 focus-timer contributors
+# This file is distributed under the same license as the focus-timer package.
+#
+# Authors:
 # Jakub Veverka, 2012.
+# Petr Hložek <petr@petrhlozek.cz>, 2023.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-pomodoro\n"
+"Project-Id-Version: gnome-shell-extension-focus-timer 1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-25 16:45+0100\n"
+"POT-Creation-Date: 2026-04-12 13:38+0200\n"
 "PO-Revision-Date: 2023-03-24 15:38+0100\n"
 "Last-Translator: Petr Hložek <petr@petrhlozek.cz>\n"
-"Language-Team: <>\n"
+"Language-Team: Czech\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,91 +21,72 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 "X-Generator: Poedit 3.1.1\n"
 
-#: data/org.gnome.shell.extensions.focus-timer.gschema.xml:6
-msgid "Start the app along with extension"
-msgstr ""
-
-#: data/org.gnome.shell.extensions.focus-timer.gschema.xml:14
-msgid "Indicator type"
-msgstr ""
-
-#: data/org.gnome.shell.extensions.focus-timer.gschema.xml:18
-msgid "Blur effect"
-msgstr ""
-
-#: data/org.gnome.shell.extensions.focus-timer.gschema.xml:22
-msgid "Dismiss screen overlay by gesture"
-msgstr ""
-
-#: data/org.gnome.shell.extensions.focus-timer.gschema.xml:26
-msgid "Reduce number of notifications during Pomodoro"
-msgstr ""
+#: src/indicator.js:329 src/screenShield.js:171
+#, fuzzy
+msgid "Finished!"
+msgstr "Hotovo!"
 
 #: src/indicator.js:331 src/screenShield.js:173
-msgid "Finished!"
-msgstr ""
-
-#: src/indicator.js:333 src/screenShield.js:175
 #, javascript-format
 msgid "%d of %d"
 msgstr ""
 
-#: src/indicator.js:420 src/prefs.js:73
+#: src/indicator.js:425 src/prefs.js:71
 msgid "Screen Overlay"
-msgstr ""
+msgstr "Překrytí obrazovky"
 
-#: src/indicator.js:423
+#: src/indicator.js:427
 msgid "Preferences"
 msgstr "Předvolby"
 
-#: src/indicator.js:424
+#: src/indicator.js:428
 msgid "Stats"
 msgstr "Statistiky"
 
-#: src/indicator.js:426
+#: src/indicator.js:430
 msgid "Quit"
-msgstr "Konec"
+msgstr "Ukončit"
 
-#: src/indicator.js:601
+#: src/indicator.js:624
 #, javascript-format
 msgid "%dh"
 msgstr ""
 
-#: src/indicator.js:605
+#: src/indicator.js:628
 #, javascript-format
 msgid "%dm"
 msgstr ""
 
-#: src/indicator.js:613
+#: src/indicator.js:630 src/indicator.js:632 src/indicator.js:634
 #, javascript-format
 msgid "%ds"
 msgstr ""
 
-#: src/indicator.js:1058 src/notifications.js:59
+#: src/indicator.js:1079 src/notifications.js:57
 msgid "Focus Timer"
 msgstr ""
 
-#: src/notifications.js:79
+#: src/notifications.js:77
 msgid "Focus Timer Extension"
 msgstr ""
 
-#: src/notifications.js:115
+#: src/notifications.js:119
 #, javascript-format
 msgid "%d hour"
 msgid_plural "%d hours"
-msgstr[0] "%d hodina"
-msgstr[1] "%d hodiny"
-msgstr[2] "%d hodin"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
-#: src/notifications.js:118
+#: src/notifications.js:122
 #, javascript-format
 msgid "%d minute"
 msgid_plural "%d minutes"
-msgstr[0] "%d minuta"
-msgstr[1] "%d minuty"
-msgstr[2] "%d minut"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
-#: src/notifications.js:121
+#: src/notifications.js:125
 #, javascript-format
 msgid "%d second"
 msgid_plural "%d seconds"
@@ -111,201 +95,263 @@ msgstr[1] ""
 msgstr[2] ""
 
 #. translators: time remaining eg. "3 minutes 50 seconds remaining"
-#: src/notifications.js:128
-#, javascript-format
+#: src/notifications.js:135
+#, fuzzy, javascript-format
 msgid "%s remaining"
-msgstr ""
+msgstr "Zbývá %s"
 
-#: src/notifications.js:239 src/timer.js:54
+#: src/notifications.js:261 src/timer.js:47
 msgid "Pomodoro"
 msgstr "Pomodoro"
 
-#: src/notifications.js:241
+#: src/notifications.js:263
 msgid "Take a break"
-msgstr "Dej si pauzu!"
+msgstr "Dejte si pauzu"
 
-#: src/notifications.js:243
+#: src/notifications.js:265
 msgid "Take a short break"
 msgstr "Udělejte si krátkou přestávku"
 
-#: src/notifications.js:245
+#: src/notifications.js:267
 msgid "Take a long break"
 msgstr "Dejte si dlouhou pauzu"
 
-#: src/notifications.js:253
+#: src/notifications.js:275
 msgid "Pomodoro is about to end"
 msgstr "Pomodoro brzy skončí"
 
-#: src/notifications.js:255
+#: src/notifications.js:277
 msgid "Break is about to end"
 msgstr "Přestávka se blíží ke konci"
 
-#: src/notifications.js:263 src/notifications.js:275
+#: src/notifications.js:285 src/notifications.js:297
+#, fuzzy
 msgid "Break is over!"
-msgstr ""
+msgstr "Přestávka skončila!"
 
-#: src/notifications.js:265 src/notifications.js:273
+#: src/notifications.js:287 src/notifications.js:295
+#, fuzzy
 msgid "Pomodoro is over!"
-msgstr ""
+msgstr "Pomodoro skončilo!"
 
-#: src/notifications.js:294
+#: src/notifications.js:316
 msgid "Get ready…"
 msgstr "Připravit se…"
 
-#: src/notifications.js:299
+#: src/notifications.js:321
+#, fuzzy
 msgid "Confirm the start of a Pomodoro…"
-msgstr ""
+msgstr "Potvrdit začátek pomodora…"
 
-#: src/notifications.js:301
+#: src/notifications.js:323
+#, fuzzy
 msgid "Confirm the start of a break…"
-msgstr ""
+msgstr "Potvrdit začátek přestávky…"
 
-#: src/notifications.js:303
+#: src/notifications.js:325
+#, fuzzy
 msgid "Confirm the start of a short break…"
-msgstr ""
+msgstr "Potvrdit začátek krátké přestávky…"
 
-#: src/notifications.js:305
+#: src/notifications.js:327
+#, fuzzy
 msgid "Confirm the start of a long break…"
-msgstr ""
+msgstr "Potvrdit začátek dlouhé přestávky…"
 
-#: src/notifications.js:344
+#: src/notifications.js:366
+#, fuzzy
 msgid "+1 minute"
-msgstr ""
+msgstr "+1 minuta"
 
-#: src/notifications.js:345
+#: src/notifications.js:367
 msgid "Start Pomodoro"
-msgstr "Začni pomodoro"
+msgstr "Začít pomodoro"
 
-#: src/notifications.js:346
+#: src/notifications.js:368
 msgid "Start Break"
 msgstr ""
 
-#: src/notifications.js:403
+#: src/notifications.js:425
+#, fuzzy
 msgid "Something went wrong"
+msgstr "Něco se pokazilo"
+
+#: src/notifications.js:431
+msgid "Report issue"
 msgstr ""
 
-#: src/notifications.js:409
-msgid "Report issue"
-msgstr "Nahlásit problém"
-
-#: src/notifications.js:429
+#: src/notifications.js:451
 msgid "Focus Timer Not Found"
 msgstr ""
 
-#: src/notifications.js:430
+#: src/notifications.js:452
 msgid "Install Focus Timer app to start using the extension."
 msgstr ""
 
-#: src/notifications.js:435
+#: src/notifications.js:457
 msgid "Install from Flathub"
 msgstr ""
 
-#: src/prefs.js:14
+#: src/prefs.js:12
 msgid "General"
 msgstr ""
 
-#: src/prefs.js:20
+#: src/prefs.js:18
 msgid "Autostart The App"
 msgstr ""
 
-#: src/prefs.js:21
+#: src/prefs.js:19
 msgid "Makes the indicator instantly visible and allows keyboard shortcuts"
 msgstr ""
 
-#: src/prefs.js:34
+#: src/prefs.js:32
 msgid "Indicator"
 msgstr ""
 
-#: src/prefs.js:47
+#: src/prefs.js:45
 msgid "Icon"
 msgstr ""
 
-#: src/prefs.js:53
+#: src/prefs.js:51
 msgid "Text"
 msgstr ""
 
-#: src/prefs.js:60
+#: src/prefs.js:58
 msgid "Display As"
 msgstr ""
 
-#: src/prefs.js:61
+#: src/prefs.js:59
 msgid "Choose how the timer appears in the status bar"
 msgstr ""
 
-#: src/prefs.js:79
+#: src/prefs.js:77
 msgid "Blur Effect"
 msgstr ""
 
-#: src/prefs.js:80
+#: src/prefs.js:78
 msgid "Helps to acknowledge the break"
 msgstr ""
 
-#: src/prefs.js:88
+#: src/prefs.js:86
 msgid "Dismiss Gesture"
 msgstr ""
 
-#: src/prefs.js:89
+#: src/prefs.js:87
 msgid "Flick the mouse or press any key to dismiss"
 msgstr ""
 
-#: src/prefs.js:102
+#: src/prefs.js:100
 msgid "Distractions"
 msgstr ""
 
-#: src/prefs.js:108
+#: src/prefs.js:106
 msgid "Manage Notifications"
 msgstr ""
 
-#: src/prefs.js:109
+#: src/prefs.js:107
 msgid "Toggle Do Not Disturb mode during Pomodoro"
 msgstr ""
 
-#: src/screenOverlay.js:987
+#: src/screenOverlay.js:1053
 msgid "It's time to take a break"
-msgstr "Je čas udělat si přestávku"
+msgstr "Je čas na přestávku"
 
-#: src/timer.js:51
+#: src/timer.js:44
+#, fuzzy
 msgid "Stopped"
-msgstr ""
+msgstr "Zastaveno"
 
-#: src/timer.js:57
+#: src/timer.js:50
 msgid "Short Break"
 msgstr "Krátká přestávka"
 
-#: src/timer.js:60
+#: src/timer.js:53
 msgid "Long Break"
 msgstr "Dlouhá přestávka"
 
-#: src/timer.js:63
+#: src/timer.js:56
 msgid "Break"
 msgstr "Přestávka"
 
-#~ msgid "A time management utility for GNOME"
-#~ msgstr "Jednoduchý nástroj pro time management"
+#, fuzzy
+#~ msgid "Time management utility"
+#~ msgstr "Nástroj pro správu času"
 
+#, fuzzy
+#~ msgid "Maintain focus by taking frequent breaks"
+#~ msgstr "Udržte soustředění díky pravidelným přestávkám"
+
+#, fuzzy
 #~ msgid ""
-#~ "A GNOME utility that helps managing time according to Pomodoro Technique. "
-#~ "It intends to improve productivity and focus by taking short breaks after "
-#~ "every 25 minutes of work."
+#~ "A productivity timer that helps you work more effectively by breaking "
+#~ "your time into focused work sessions followed by short breaks. Work for "
+#~ "25 minutes, then take a 5-minute break to maintain concentration and "
+#~ "prevent burnout."
 #~ msgstr ""
-#~ "Nástroj pro Gnome, který vám pomůže se správou času pomocí techniky "
-#~ "Pomodoro. Záměrem je zlepšit vaši produktivitu a koncentraci pomocí "
-#~ "krátkých přestávek po každých 25 minutách práce."
+#~ "Časovač produktivity, který vám pomůže pracovat efektivněji rozdělením "
+#~ "času na soustředěné pracovní bloky následované krátkými přestávkami. "
+#~ "Pracujte 25 minut a poté si dejte 5 minut pauzu pro udržení koncentrace a "
+#~ "prevenci vyhoření."
 
-#~ msgid "Timer window"
-#~ msgstr "Okno časovače"
+#, fuzzy
+#~ msgid "Key features:"
+#~ msgstr "Klíčové vlastnosti:"
 
-#~ msgid "Indicator for GNOME Shell"
-#~ msgstr "Indikátor pro GNOME Shell"
+#, fuzzy
+#~ msgid "Customizable work session and break lengths"
+#~ msgstr "Nastavitelná délka práce a přestávek"
 
-#~ msgid "A simple time management utility"
-#~ msgstr "Jednoduchý nástroj pro time management"
+#, fuzzy
+#~ msgid "Visual and audio notifications"
+#~ msgstr "Vizuální a zvuková upozornění"
 
-#~ msgid "timer;"
-#~ msgstr "Časovač;"
+#, fuzzy
+#~ msgid "Time tracking and statistics"
+#~ msgstr "Sledování času a statistiky"
+
+#, fuzzy
+#~ msgid "GNOME desktop integration"
+#~ msgstr "Integrace s desktopem GNOME"
+
+#, fuzzy
+#~ msgid "Screen overlay during breaks"
+#~ msgstr "Překrytí obrazovky během přestávek"
+
+#, fuzzy
+#~ msgid "Run custom commands after Pomodoro or break"
+#~ msgstr "Spouštění vlastních příkazů po skončení práce nebo přestávky"
+
+#~ msgid "Kamil Prusko"
+#~ msgstr "Kamil Prusko"
+
+#~ msgid "Timer"
+#~ msgstr "Časovač"
+
+#, fuzzy
+#~ msgid "Daily stats"
+#~ msgstr "Denní statistiky"
+
+#, fuzzy
+#~ msgid "Monthly stats"
+#~ msgstr "Měsíční statistiky"
+
+#, fuzzy
+#~ msgid "Screen overlay"
+#~ msgstr "Překrytí obrazovky"
+
+#, fuzzy
+#~ msgid "Start or Stop"
+#~ msgstr "Spustit nebo zastavit"
+
+#, fuzzy
+#~ msgid "Start, Pause or Resume"
+#~ msgstr "Spustit, pozastavit nebo pokračovat"
 
 #~ msgid "Start"
 #~ msgstr "Start"
+
+#~ msgid "Stop"
+#~ msgstr "Stop"
 
 #~ msgid "Pause"
 #~ msgstr "Pozastavit"
@@ -313,68 +359,419 @@ msgstr "Přestávka"
 #~ msgid "Resume"
 #~ msgstr "Pokračovat"
 
-#~ msgid "Stop"
-#~ msgstr "Stop"
+#~ msgid "Skip"
+#~ msgstr "Přeskočit"
 
-#~ msgid "_Timer"
-#~ msgstr "Časovač"
+#, fuzzy
+#~ msgid "Rewind"
+#~ msgstr "Přetočit"
 
-#~ msgid "_Preferences"
-#~ msgstr "Předvolby"
+#~ msgid "Extend current pomodoro or break"
+#~ msgstr "Prodloužit aktuální pomodoro nebo přestávku"
 
-#~ msgid "_Quit"
-#~ msgstr "_Konec"
+#, fuzzy
+#~ msgid "Reset"
+#~ msgstr "Resetovat"
 
-#~ msgid "Keyboard shortcut to toggle the timer. Enter new shortcut to change."
-#~ msgstr "Klávesová zkratka pro spuštění časovače. Nastavte novou."
+#~ msgid "Show preferences"
+#~ msgstr "Zobrazit předvolby"
 
-#~ msgid "Disable"
-#~ msgstr "Vypnuto"
+#~ msgid "Quit application"
+#~ msgstr "Ukončit aplikaci"
 
-#~ msgid "Timer"
-#~ msgstr "Časovač"
+#~ msgid "Print version information and exit"
+#~ msgstr "Zobrazit informace o verzi a ukončit"
 
-#~ msgid "Pomodoro duration"
-#~ msgstr "Délka pomodora"
+#, fuzzy
+#~ msgid "Bring to Focus"
+#~ msgstr "Přenést do popředí"
 
-#~ msgid "Break duration"
-#~ msgstr "Délka přestávky"
+#, fuzzy, c-format
+#~ msgid "Custom action \"%s\" has failed"
+#~ msgstr "Vlastní akce \"%s\" selhala"
 
-#~ msgid "Long break duration"
-#~ msgstr "Délka dlouhé přestávky"
+#, fuzzy
+#~ msgid "Reached timeout"
+#~ msgstr "Časový limit vypršel"
 
-#~ msgid "Pomodoros before a long break"
-#~ msgstr "Počet pomodor před dlouhou přestávkou"
+#, fuzzy
+#~ msgid "Failed to execute command"
+#~ msgstr "Nepodařilo se spustit příkaz"
 
-#~ msgid "Keyboard shortcut"
-#~ msgstr "Klávesové zkratky"
+#, fuzzy
+#~ msgid "Command is empty"
+#~ msgstr "Příkaz je prázdný"
 
-#~ msgid "Notifications"
-#~ msgstr "Notifikace"
+#, fuzzy
+#~ msgid "Unclosed quotation mark"
+#~ msgstr "Neuzavřené uvozovky"
 
-#~ msgid "Screen notifications"
-#~ msgstr "Oznámení na obrazovce"
+#, fuzzy
+#~ msgid "Invalid command"
+#~ msgstr "Neplatný příkaz"
 
-#~ msgid "Desktop"
-#~ msgstr "Pracovní plocha"
+#, fuzzy, c-format
+#~ msgid "Unknown variable \"%s\""
+#~ msgstr "Neznámá proměnná \"%s\""
 
-#~ msgid "Wait for activity after a break"
-#~ msgstr "Po ukončení přestávky počkat na akci"
+#, fuzzy, c-format
+#~ msgid "Unknown format \"%s\""
+#~ msgstr "Neznámý formát \"%s\""
 
-#~ msgid "Plugins…"
-#~ msgstr "Rozšíření…"
+#, fuzzy, c-format
+#~ msgid "Program \"%s\" not found"
+#~ msgstr "Program \"%s\" nebyl nalezen"
 
-#~ msgid "Plugins"
-#~ msgstr "Rošíření"
+#~ msgid "Actions"
+#~ msgstr "Akce"
 
-#~ msgid "Back"
-#~ msgstr "Zpět"
+#, fuzzy
+#~ msgid "Countdown"
+#~ msgstr "Odpočet"
 
-#~ msgid "Nothing to see yet"
-#~ msgstr "Zatím není nic vidět"
+#, fuzzy
+#~ msgid "Session"
+#~ msgstr "Relace"
 
-#~ msgid "Complete a few sessions"
-#~ msgstr "Žádný kompletní cyklus"
+#, fuzzy
+#~ msgid "Other"
+#~ msgstr "Ostatní"
+
+#, fuzzy
+#~ msgid "Started the timer."
+#~ msgstr "Časovač spuštěn."
+
+#, fuzzy
+#~ msgid "Stopped the timer manually."
+#~ msgstr "Časovač ručně zastaven."
+
+#, fuzzy
+#~ msgid ""
+#~ "The countdown has been manually paused. Not triggered when locking the "
+#~ "screen or when suspending the system."
+#~ msgstr ""
+#~ "Odpočet byl ručně pozastaven. Nespouští se při uzamčení obrazovky nebo "
+#~ "uspání systému."
+
+#, fuzzy
+#~ msgid "The countdown has been manually resumed."
+#~ msgstr "Odpočet byl ručně obnoven."
+
+#, fuzzy
+#~ msgid "Jumped to a next time-block before the countdown has finished."
+#~ msgstr "Přeskočeno na další blok před dokončením odpočtu."
+
+#, fuzzy
+#~ msgid "Rewind action has been used. It adds a pause in the past."
+#~ msgstr "Byla použita akce přetočení. Přidá pauzu do minulosti."
+
+#, fuzzy
+#~ msgid "Manually cleared the session."
+#~ msgstr "Relace byla ručně vymazána."
+
+#, fuzzy
+#~ msgid "Finished"
+#~ msgstr "Dokončeno"
+
+#, fuzzy
+#~ msgid ""
+#~ "The countdown has finished. If waiting for confirmation, the duration of "
+#~ "the time-block still may be altered."
+#~ msgstr ""
+#~ "Odpočet skončil. Pokud se čeká na potvrzení, délka bloku může být ještě "
+#~ "upravena."
+
+#, fuzzy
+#~ msgid "Changed"
+#~ msgstr "Změněno"
+
+#, fuzzy
+#~ msgid "Triggered on any change related to the countdown."
+#~ msgstr "Spuštěno při jakékoli změně související s odpočtem."
+
+#, fuzzy
+#~ msgid "Confirm Advancement"
+#~ msgstr "Potvrdit postun"
+
+#, fuzzy
+#~ msgid "A manual confirmation is required to start next time-block."
+#~ msgstr "Pro spuštění dalšího bloku je vyžadováno ruční potvrzení."
+
+#, fuzzy
+#~ msgid "Advanced"
+#~ msgstr "Pokročilý"
+
+#, fuzzy
+#~ msgid "Transitioned or skipped to a next time-block."
+#~ msgstr "Proběhl přechod nebo přeskok na další časový blok."
+
+#, fuzzy
+#~ msgid "State Changed"
+#~ msgstr "Stav změněn"
+
+#, fuzzy
+#~ msgid "Transitioned to a next time-block or when a break gets relabelled."
+#~ msgstr "Proběhl přechod na další blok nebo došlo k přejmenování přestávky."
+
+#, fuzzy
+#~ msgid "Rescheduled"
+#~ msgstr "Přeplánováno"
+
+#, fuzzy
+#~ msgid "Triggered when scheduled time-blocks have changed."
+#~ msgstr "Spuštěno, když se změnily naplánované časové bloky."
+
+#, fuzzy
+#~ msgid "Expired"
+#~ msgstr "Vypršelo"
+
+#, fuzzy
+#~ msgid "Triggered when session is about to be reset due to inactivity."
+#~ msgstr "Spuštěno, když má být relace resetována kvůli nečinnosti."
+
+#, fuzzy
+#~ msgid "Take a Break"
+#~ msgstr "Dejte si pauzu"
+
+#~ msgid "Skip Break"
+#~ msgstr "Přeskočit přestávku"
+
+#, fuzzy
+#~ msgid "Failed to initialize playback"
+#~ msgstr "Selhala inicializace přehrávání"
+
+#, fuzzy
+#~ msgid "File not found"
+#~ msgstr "Soubor nenalezen"
+
+#, fuzzy
+#~ msgid "File type not supported"
+#~ msgstr "Typ souboru není podporován"
+
+#, fuzzy, c-format
+#~ msgid "%uh"
+#~ msgstr "%uh"
+
+#, fuzzy, c-format
+#~ msgid "%um"
+#~ msgstr "%um"
+
+#, fuzzy, c-format
+#~ msgid "%u hour"
+#~ msgid_plural "%u hours"
+#~ msgstr[0] "%u hodina"
+#~ msgstr[1] "%u hodiny"
+#~ msgstr[2] "%u hodin"
+
+#, fuzzy, c-format
+#~ msgid "%u minute"
+#~ msgid_plural "%u minutes"
+#~ msgstr[0] "%u minuta"
+#~ msgstr[1] "%u minuty"
+#~ msgstr[2] "%u minut"
+
+#, fuzzy, c-format
+#~ msgid "%u second"
+#~ msgid_plural "%u seconds"
+#~ msgstr[0] "%u sekunda"
+#~ msgstr[1] "%u sekundy"
+#~ msgstr[2] "%u sekund"
+
+#, fuzzy
+#~ msgid "The exact time of the current event."
+#~ msgstr "Přesný čas aktuální události."
+
+#, fuzzy
+#~ msgid ""
+#~ "The current phase of the Pomodoro cycle. Possible values: <tt>stopped</"
+#~ "tt>, <tt>pomodoro</tt>, <tt>break</tt>, <tt>short-break</tt>, <tt>long-"
+#~ "break</tt>."
+#~ msgstr ""
+#~ "Aktuální fáze cyklu Pomodoro. Možné hodnoty: <tt>stopped</tt>, "
+#~ "<tt>pomodoro</tt>, <tt>break</tt>, <tt>short-break</tt>, <tt>long-break</"
+#~ "tt>."
+
+#, fuzzy
+#~ msgid ""
+#~ "Status of the current time-block. Possible values: <tt>scheduled</tt>, "
+#~ "<tt>in-progress</tt>, <tt>completed</tt>, <tt>uncompleted</tt>."
+#~ msgstr ""
+#~ "Status aktuálního bloku. Možné hodnoty: <tt>scheduled</tt>, <tt>in-"
+#~ "progress</tt>, <tt>completed</tt>, <tt>uncompleted</tt>."
+
+#, fuzzy
+#~ msgid "A flag indicating whether countdown has begun."
+#~ msgstr "Příznak indikující, zda odpočet začal."
+
+#, fuzzy
+#~ msgid "A flag indicating whether countdown is paused."
+#~ msgstr "Příznak indikující, zda je odpočet pozastaven."
+
+#, fuzzy
+#~ msgid "A flag indicating whether countdown has finished."
+#~ msgstr "Příznak indikující, zda odpočet skončil."
+
+#, fuzzy
+#~ msgid "A flag indicating whether the timer is actively counting down."
+#~ msgstr "Příznak indikující, zda časovač aktivně odpočítává."
+
+#, fuzzy
+#~ msgid "Duration of the current countdown."
+#~ msgstr "Délka aktuálního odpočtu."
+
+#, fuzzy
+#~ msgid "Discrepancy between elapsed time and the time passed."
+#~ msgstr "Rozdíl mezi uplynulým časem a skutečně uběhlým časem."
+
+#, fuzzy
+#~ msgid "The amount of time spent on the countdown."
+#~ msgstr "Množství času stráveného odpočtem."
+
+#, fuzzy
+#~ msgid "The amount of time left before the countdown ends."
+#~ msgstr "Množství času zbývajícího do konce odpočtu."
+
+#, fuzzy
+#~ msgid "Time when the countdown has started."
+#~ msgstr "Čas, kdy odpočet začal."
+
+#, fuzzy
+#~ msgid "GNOME Shell Extension"
+#~ msgstr "Rozšíření GNOME Shell"
+
+#, fuzzy
+#~ msgid "Get the best experience!"
+#~ msgstr "Získejte ten nejlepší zážitek!"
+
+#, fuzzy
+#~ msgid "Enable <b>GNOME Shell extension</b> for seamless desktop integration"
+#~ msgstr ""
+#~ "Povolit <b>rozšíření GNOME Shell</b> pro plynulou integraci s plochou"
+
+#, fuzzy
+#~ msgid "Always within reach"
+#~ msgstr "Vždy na dosah"
+
+#, fuzzy
+#~ msgid "Control timer directly from the top bar without opening the app"
+#~ msgstr "Ovládejte časovač přímo z horní lišty bez otevírání aplikace"
+
+#, fuzzy
+#~ msgid "Less distractions"
+#~ msgstr "Méně rušení"
+
+#, fuzzy
+#~ msgid "Refined break reminders"
+#~ msgstr "Vylepšená připomenutí přestávek"
+
+#, fuzzy
+#~ msgid ""
+#~ "Elegant full-screen overlay that make taking breaks a more pleasant "
+#~ "experience"
+#~ msgstr ""
+#~ "Elegantní celoobrazovkové překrytí, které zpříjemní dělání přestávek"
+
+#, fuzzy
+#~ msgid "Ready to try it?"
+#~ msgstr "Chcete to zkusit?"
+
+#, fuzzy
+#~ msgid "_Install Extension"
+#~ msgstr "_Instalovat rozšíření"
+
+#, fuzzy
+#~ msgid "_Not Now"
+#~ msgstr "_Nyní ne"
+
+#, fuzzy
+#~ msgid "Copy to clipboard"
+#~ msgstr "Kopírovat do schránky"
+
+#, fuzzy
+#~ msgid "_Try Again"
+#~ msgstr "_Zkusit znovu"
+
+#, fuzzy
+#~ msgid "_Abort"
+#~ msgstr "_Zrušit"
+
+#, fuzzy
+#~ msgid "Time-out reached"
+#~ msgstr "Časový limit vypršel"
+
+#, fuzzy
+#~ msgid "Installing extensions is not allowed"
+#~ msgstr "Instalace rozšíření není povolena"
+
+#, fuzzy
+#~ msgid "Failed to download the extension"
+#~ msgstr "Nepodařilo se stáhnout rozšíření"
+
+#, fuzzy
+#~ msgid "GNOME Shell extension available"
+#~ msgstr "Rozšíření GNOME Shell je k dispozici"
+
+#, fuzzy
+#~ msgid "Learn More"
+#~ msgstr "Dozvědět se více"
+
+#, fuzzy
+#~ msgid "Unused"
+#~ msgstr "Nepoužito"
+
+#, fuzzy
+#~ msgid "Log"
+#~ msgstr "Záznam"
+
+#, fuzzy
+#~ msgid "Empty Log"
+#~ msgstr "Prázdný záznam"
+
+#, fuzzy
+#~ msgid "Entries will show up here once you start the timer."
+#~ msgstr "Záznamy se zde objeví, jakmile spustíte časovač."
+
+#, fuzzy
+#~ msgid "Context"
+#~ msgstr "Kontext"
+
+#~ msgid "Command"
+#~ msgstr "Příkaz"
+
+#, fuzzy
+#~ msgid "Output"
+#~ msgstr "Výstup"
+
+#, fuzzy
+#~ msgid "Error"
+#~ msgstr "Chyba"
+
+#, fuzzy
+#~ msgid "Exit Code:"
+#~ msgstr "Návratový kód:"
+
+#, fuzzy
+#~ msgid "Execution Time:"
+#~ msgstr "Čas spuštění:"
+
+#~ msgid "translator-credits"
+#~ msgstr "Petr Hložek"
+
+#, fuzzy
+#~ msgid "Donate"
+#~ msgstr "Přispět"
+
+#, fuzzy
+#~ msgid "Breaks"
+#~ msgstr "Přestávky"
+
+#, fuzzy
+#~ msgid "Interruptions"
+#~ msgstr "Přerušení"
+
+#, fuzzy
+#~ msgid "Break Ratio"
+#~ msgstr "Poměr přestávek"
 
 #~ msgid "Day"
 #~ msgstr "Den"
@@ -385,44 +782,51 @@ msgstr "Přestávka"
 #~ msgid "Month"
 #~ msgstr "Měsíc"
 
-#~ msgid "Previous (Alt+Left)"
-#~ msgstr "Předchozí (Alt+Levý)"
+#, fuzzy
+#~ msgid "Nothing to see here yet"
+#~ msgstr "Zatím zde není nic k vidění"
 
-#~ msgid "Next (Alt+Right)"
-#~ msgstr "Další (Alt+Vpravo)"
+#, fuzzy
+#~ msgid "Finish a few Pomodoros to fill this up!"
+#~ msgstr "Dokončete pár Pomodor, aby se to tu zaplnilo!"
+
+#, fuzzy, c-format
+#~ msgid "Skipped %u day"
+#~ msgid_plural "Skipped %u days"
+#~ msgstr[0] "Přeskočen %u den"
+#~ msgstr[1] "Přeskočeny %u dny"
+#~ msgstr[2] "Přeskočeno %u dní"
+
+#, fuzzy, c-format
+#~ msgid "Skipped %u week"
+#~ msgid_plural "Skipped %u weeks"
+#~ msgstr[0] "Přeskočen %u týden"
+#~ msgstr[1] "Přeskočeny %u týdny"
+#~ msgstr[2] "Přeskočeno %u týdnů"
+
+#, fuzzy, c-format
+#~ msgid "Skipped %u month"
+#~ msgid_plural "Skipped %u months"
+#~ msgstr[0] "Přeskočen %u měsíc"
+#~ msgstr[1] "Přeskočeny %u měsíce"
+#~ msgstr[2] "Přeskočeno %u měsíců"
 
 #~ msgid "Today"
 #~ msgstr "Dnes"
 
-#~ msgid "_About"
-#~ msgstr "_O  aplikaci"
+#~ msgid "Yesterday"
+#~ msgstr "Včera"
 
-#~ msgid "Actions"
-#~ msgstr "Akce"
+#~ msgid "This week"
+#~ msgstr "Tento týden"
 
-#~ msgid "Action"
-#~ msgstr "Akce"
+#, fuzzy, c-format
+#~ msgid "Week %u"
+#~ msgstr "Týden %u"
 
-#~ msgid "Custom actions…"
-#~ msgstr "Vlastní akce…"
-
-#~ msgid "Complete"
-#~ msgstr "Kompletní"
-
-#~ msgid "Skip"
-#~ msgstr "Přeskočit"
-
-#~ msgid "Enable"
-#~ msgstr "Umožnit"
-
-#~ msgid "Command"
-#~ msgstr "Příkaz"
-
-#~ msgid "Triggers"
-#~ msgstr "Spouštěče"
-
-#~ msgid "Name"
-#~ msgstr "Název"
+#, fuzzy, c-format
+#~ msgid "Week %u of %u"
+#~ msgstr "Týden %u z %u"
 
 #~ msgid "_Pomodoro"
 #~ msgstr "_Pomodoro"
@@ -433,86 +837,435 @@ msgstr "Přestávka"
 #~ msgid "_Long Break"
 #~ msgstr "_Dlouhá přestávka"
 
-#~ msgid "Add"
-#~ msgstr "Přidat"
+#, fuzzy
+#~ msgid "_Break"
+#~ msgstr "_Přestávka"
 
-#~ msgid "Remove"
-#~ msgstr "Odstranit zvuk"
+#, fuzzy
+#~ msgid "Open screen overlay"
+#~ msgstr "Otevřít překrytí obrazovky"
+
+#, fuzzy
+#~ msgid "Session has expired"
+#~ msgstr "Relace vypršela"
+
+#, fuzzy, c-format
+#~ msgid "Long break due in <b>%s</b>"
+#~ msgstr "Dlouhá přestávka za <b>%s</b>"
+
+#, fuzzy
+#~ msgid "Rewind one minute"
+#~ msgstr "Přetočit o jednu minutu"
+
+#, fuzzy
+#~ msgid "_Compact View"
+#~ msgstr "_Kompaktní zobrazení"
+
+#~ msgid "_Preferences"
+#~ msgstr "_Předvolby"
+
+#~ msgid "_About"
+#~ msgstr "_O aplikaci"
+
+#~ msgid "_Quit"
+#~ msgstr "_Ukončit"
+
+#, fuzzy
+#~ msgid "Primary Menu"
+#~ msgstr "Hlavní nabídka"
+
+#, fuzzy
+#~ msgid "Keep timer running?"
+#~ msgstr "Nechat časovač běžet?"
+
+#, fuzzy
+#~ msgid ""
+#~ "You can keep it running in the background — notifications and keyboard "
+#~ "shortcuts will still work."
+#~ msgstr ""
+#~ "Můžete jej nechat běžet na pozadí — oznámení a klávesové zkratky budou "
+#~ "stále fungovat."
+
+#, fuzzy
+#~ msgid "Run in background"
+#~ msgstr "Spustit na pozadí"
+
+#, fuzzy
+#~ msgid "Main Window"
+#~ msgstr "Hlavní okno"
+
+#, fuzzy
+#~ msgid "Prefer Compact View"
+#~ msgstr "Preferovat kompaktní zobrazení"
+
+#, fuzzy
+#~ msgid "Started"
+#~ msgstr "Spuštěno"
+
+#, fuzzy
+#~ msgid "Paused"
+#~ msgstr "Pozastaveno"
+
+#, fuzzy
+#~ msgid "Edit Custom Action"
+#~ msgstr "Upravit vlastní akci"
+
+#~ msgid "_Cancel"
+#~ msgstr "_Zrušit"
+
+#, fuzzy
+#~ msgid "_Save"
+#~ msgstr "_Uložit"
+
+#~ msgid "Name"
+#~ msgstr "Název"
+
+#, fuzzy
+#~ msgid "Trigger"
+#~ msgstr "Spouštěč"
+
+#, fuzzy
+#~ msgid "Event"
+#~ msgstr "Událost"
+
+#, fuzzy
+#~ msgid "Execute command after an event."
+#~ msgstr "Spustit příkaz po události."
+
+#, fuzzy
+#~ msgid "Condition"
+#~ msgstr "Podmínka"
+
+#, fuzzy
+#~ msgid ""
+#~ "Ensure execution of a second command once condition is no longer met."
+#~ msgstr ""
+#~ "Zajistit spuštění druhého příkazu, jakmile přestane být podmínka splněna."
+
+#, fuzzy
+#~ msgid "Events"
+#~ msgstr "Události"
+
+#, fuzzy
+#~ msgid "Add _Event"
+#~ msgstr "Přidat _událost"
+
+#, fuzzy
+#~ msgid "_Filter"
+#~ msgstr "_Filtr"
+
+#, fuzzy
+#~ msgid "Filter"
+#~ msgstr "Filtr"
+
+#, fuzzy
+#~ msgid "Shell Command"
+#~ msgstr "Příkaz shellu"
+
+#, fuzzy
+#~ msgid "Commands"
+#~ msgstr "Příkazy"
+
+#, fuzzy
+#~ msgid "Condition Met Command"
+#~ msgstr "Příkaz při splnění podmínky"
+
+#, fuzzy
+#~ msgid "Condition Not Met Command"
+#~ msgstr "Příkaz při nesplnění podmínky"
+
+#, fuzzy
+#~ msgid "Working Directory"
+#~ msgstr "Pracovní adresář"
+
+#, fuzzy
+#~ msgid "Use Subshell"
+#~ msgstr "Použít subshell"
+
+#, fuzzy
+#~ msgid "Run the program from a subshell such as sh -c ''"
+#~ msgstr "Spustit program ze subshellu, např. sh -c ''"
+
+#, fuzzy
+#~ msgid "Wait For Completion"
+#~ msgstr "Čekat na dokončení"
+
+#, fuzzy
+#~ msgid "Block execution of other commands until the command completes."
+#~ msgstr "Blokovat spouštění ostatních příkazů, dokud tento příkaz neskončí."
+
+#, fuzzy
+#~ msgid "_Delete Action"
+#~ msgstr "_Smazat akci"
+
+#, fuzzy
+#~ msgid "No events specified yet."
+#~ msgstr "Zatím nejsou určeny žádné události."
+
+#, fuzzy
+#~ msgid "Add Custom Action"
+#~ msgstr "Přidat vlastní akci"
+
+#, fuzzy
+#~ msgid "_Add"
+#~ msgstr "_Přidat"
+
+#, fuzzy
+#~ msgid "Select Working Directory"
+#~ msgstr "Vyberte pracovní adresář"
+
+#~ msgid "_Select"
+#~ msgstr "_Vybrat"
+
+#, fuzzy
+#~ msgid "Untitled action"
+#~ msgstr "Nepojmenovaná akce"
+
+#, fuzzy
+#~ msgid "Add Condition"
+#~ msgstr "Přidat podmínku"
+
+#, fuzzy
+#~ msgid "Add Group"
+#~ msgstr "Přidat skupinu"
+
+#, fuzzy
+#~ msgid "AND"
+#~ msgstr "A"
+
+#, fuzzy
+#~ msgid "OR"
+#~ msgstr "NEBO"
+
+#, fuzzy
+#~ msgid "Is"
+#~ msgstr "Je"
+
+#, fuzzy
+#~ msgid "Is Not"
+#~ msgstr "Není"
+
+#, fuzzy
+#~ msgid "Equals"
+#~ msgstr "Rovná se"
+
+#, fuzzy
+#~ msgid "Greater Than"
+#~ msgstr "Větší než"
+
+#, fuzzy
+#~ msgid "Less Than"
+#~ msgstr "Menší než"
+
+#, fuzzy
+#~ msgid "Yes"
+#~ msgstr "Ano"
+
+#, fuzzy
+#~ msgid "No"
+#~ msgstr "Ne"
+
+#, fuzzy
+#~ msgid "Minutes"
+#~ msgstr "Minuty"
+
+#, fuzzy
+#~ msgid "Seconds"
+#~ msgstr "Sekundy"
+
+#, fuzzy
+#~ msgid "Hours"
+#~ msgstr "Hodiny"
+
+#, fuzzy
+#~ msgid "Select Field…"
+#~ msgstr "Vyberte pole…"
 
 #~ msgid "State"
-#~ msgstr "Stát"
+#~ msgstr "Stav"
 
-#~ msgid "State Duration"
-#~ msgstr "Trvání stavu"
+#, fuzzy
+#~ msgid "Running"
+#~ msgstr "Běží"
 
-#~ msgid "Elapsed Time"
-#~ msgstr "Uplynulý čas"
+#, fuzzy
+#~ msgid "Duration"
+#~ msgstr "Trvání"
 
-#~ msgid "Pomodoro Timer"
-#~ msgstr "Časovač Pomodoro"
+#, fuzzy
+#~ msgid "Insert Variable"
+#~ msgstr "Vložit proměnnou"
 
-#~ msgid "Start Timer"
-#~ msgstr "Začni pomodoro"
+#, fuzzy
+#~ msgid "Format"
+#~ msgstr "Formát"
 
-#~ msgid "Pause Timer"
-#~ msgstr "Pozastavit"
+#, fuzzy
+#~ msgid "_Log"
+#~ msgstr "_Záznam"
 
-#~ msgid "Stop Timer"
-#~ msgstr "Časovač"
+#, fuzzy
+#~ msgid "Show execution log"
+#~ msgstr "Zobrazit záznam provádění"
 
-#~ msgid "Pause break"
-#~ msgstr "Pozastavit"
+#, fuzzy
+#~ msgid ""
+#~ "Run shell commands automatically on timer events or conditions. <a "
+#~ "href=\"\">Learn more.</a>"
+#~ msgstr ""
+#~ "Automaticky spouštět příkazy shellu při událostech nebo podmínkách "
+#~ "časovače. <a href=\"\">Zjistit více.</a>"
 
-#~ msgid "Pause Pomodoro"
-#~ msgstr "Pozastavit"
+#, fuzzy
+#~ msgid "Set Shortcut"
+#~ msgstr "Nastavit zkratku"
 
-#~ msgid "Resume break"
-#~ msgstr "Obnovit"
+#, fuzzy
+#~ msgid "_Set"
+#~ msgstr "_Nastavit"
 
-#~ msgid "Resume Pomodoro"
-#~ msgstr "Obnovit"
+#, fuzzy
+#~ msgid "Disabled"
+#~ msgstr "Vypnuto"
 
-#, javascript-format
-#~ msgid "%d minute remaining"
-#~ msgid_plural "%d minutes remaining"
-#~ msgstr[0] "Zbývá %d minuta"
-#~ msgstr[1] "Zbývá %d minuty"
-#~ msgstr[2] "Zbývá %d minut"
+#, fuzzy
+#~ msgid ""
+#~ "Press <b>Esc</b> to cancel or <b>Backspace</b> to disable the keyboard "
+#~ "shortcut"
+#~ msgstr ""
+#~ "Stiskněte <b>Esc</b> pro zrušení nebo <b>Backspace</b> pro vypnutí "
+#~ "klávesové zkratky"
 
-#, javascript-format
-#~ msgid "%d second remaining"
-#~ msgid_plural "%d seconds remaining"
-#~ msgstr[0] "Zbývá %d sekunda"
-#~ msgstr[1] "Zbývá %d sekundy"
-#~ msgstr[2] "Zbývá %d sekund"
+#, fuzzy
+#~ msgid ""
+#~ "Global shortcuts let you control the app even when it’s not on screen. "
+#~ "They work as long as the app is running in the background."
+#~ msgstr ""
+#~ "Globální zkratky umožňují ovládat aplikaci, i když není na obrazovce. "
+#~ "Fungují, dokud aplikace běží na pozadí."
 
-#~ msgid "Break is over"
-#~ msgstr "Přestávka skončila"
+#, fuzzy
+#~ msgid "Open app settings for editing global shortcuts"
+#~ msgstr "Otevřít nastavení aplikace pro úpravu globálních zkratek"
 
-#~ msgid "Skip Break"
-#~ msgstr "Přeskočit přestávku"
+#, fuzzy
+#~ msgid "_Edit"
+#~ msgstr "_Upravit"
 
-#~ msgid "+1 Minute"
-#~ msgstr "+1 minuta"
+#, fuzzy
+#~ msgid "Enter new shortcut for starting or stopping the timer"
+#~ msgstr "Zadejte novou zkratku pro spuštění nebo zastavení časovače"
 
-#, javascript-format
-#~ msgid "Failed to run <i>%s</i> service"
-#~ msgstr "Spuštění služby <i>%s</i> se nezdařilo"
+#, fuzzy
+#~ msgid "Enter new shortcut to start/pause/resume the timer"
+#~ msgstr "Zadejte novou zkratku pro spuštění/pozastavení/pokračování časovače"
 
-#~ msgid "Hide other notifications"
-#~ msgstr "Skrýt ostatní notifikace"
+#, fuzzy
+#~ msgid "Enter new shortcut for starting the timer"
+#~ msgstr "Zadejte novou zkratku pro spuštění časovače"
 
-#~ msgid "Volume:"
-#~ msgstr "Hlasitost:"
+#, fuzzy
+#~ msgid "Enter new shortcut for stopping the timer"
+#~ msgstr "Zadejte novou zkratku pro zastavení časovače"
 
-#~ msgid "Clock Ticking"
-#~ msgstr "Tikání"
+#, fuzzy
+#~ msgid "Enter new shortcut for pausing the timer"
+#~ msgstr "Zadejte novou zkratku pro pozastavení časovače"
 
-#~ msgid "Timer Ticking"
-#~ msgstr "Tikání časovače"
+#, fuzzy
+#~ msgid "Enter new shortcut for resuming the timer"
+#~ msgstr "Zadejte novou zkratku pro pokračování v časovači"
 
-#~ msgid "Woodland Birds"
-#~ msgstr "Lesní ptáci"
+#, fuzzy
+#~ msgid "Enter new shortcut for skipping"
+#~ msgstr "Zadejte novou zkratku pro přeskočení"
+
+#, fuzzy
+#~ msgid "Rewind One Minute"
+#~ msgstr "Přetočit o minutu"
+
+#, fuzzy
+#~ msgid "Enter new shortcut for rewinding"
+#~ msgstr "Zadejte novou zkratku pro přetáčení"
+
+#, fuzzy
+#~ msgid "Enter new shortcut for bringing window to focus"
+#~ msgstr "Zadejte novou zkratku pro přenesení okna do popředí"
+
+#, fuzzy
+#~ msgid "Announcements"
+#~ msgstr "Oznámení"
+
+#, fuzzy
+#~ msgid "Time Running Out"
+#~ msgstr "Čas vypršel"
+
+#, fuzzy
+#~ msgid "Notify when Pomodoro or break is about to end."
+#~ msgstr "Upozornit, když Pomodoro nebo přestávka brzy skončí."
+
+#, fuzzy
+#~ msgid "A full-screen notification intended to enforce taking a break."
+#~ msgstr "Celoobrazovkové upozornění vynucující si přestávku."
+
+#, fuzzy
+#~ msgid "Lock Delay"
+#~ msgstr "Prodleva uzamčení"
+
+#, fuzzy
+#~ msgid "Period of inactivity to lock the screen."
+#~ msgstr "Doba nečinnosti pro uzamčení obrazovky."
+
+#, fuzzy
+#~ msgid "Reopen Delay"
+#~ msgstr "Prodleva znovuotevření"
+
+#, fuzzy
+#~ msgid "Period of inactivity to reopen the overlay after it gets dismissed."
+#~ msgstr "Doba nečinnosti před znovuotevřením překrytí po jeho zavření."
+
+#, fuzzy
+#~ msgid "Never"
+#~ msgstr "Nikdy"
+
+#~ msgid "Notifications"
+#~ msgstr "Upozornění"
+
+#, fuzzy
+#~ msgid "Sounds"
+#~ msgstr "Zvuky"
+
+#, fuzzy
+#~ msgid "Appearance"
+#~ msgstr "Vzhled"
+
+#, fuzzy
+#~ msgid "Keyboard Shortcuts"
+#~ msgstr "Klávesové zkratky"
+
+#, fuzzy
+#~ msgid "Automation"
+#~ msgstr "Automatizace"
+
+#, fuzzy
+#~ msgid "Sounds Are Disabled"
+#~ msgstr "Zvuky jsou vypnuty"
+
+#, fuzzy
+#~ msgid "Alert Sounds"
+#~ msgstr "Zvuky upozornění"
+
+#, fuzzy
+#~ msgid "Pomodoro Finished Sound"
+#~ msgstr "Zvuk konce pomodora"
+
+#, fuzzy
+#~ msgid "Break Finished Sound"
+#~ msgstr "Zvuk konce přestávky"
+
+#, fuzzy
+#~ msgid "Background Sound"
+#~ msgstr "Zvuk na pozadí"
 
 #~ msgid "Bell"
 #~ msgstr "Zvonek"
@@ -520,41 +1273,211 @@ msgstr "Přestávka"
 #~ msgid "Loud Bell"
 #~ msgstr "Hlasitý zvonek"
 
+#~ msgid "Clock Ticking"
+#~ msgstr "Tikání hodin"
+
+#~ msgid "None"
+#~ msgstr "Žádný"
+
+#~ msgid "Volume:"
+#~ msgstr "Hlasitost:"
+
 #~ msgid "Select Custom Sound"
 #~ msgstr "Vyberte vlastní zvuk"
 
-#~ msgid "_Cancel"
-#~ msgstr "_Zrušit"
+#, fuzzy
+#~ msgid "Pomodoro Duration"
+#~ msgstr "Délka pomodora"
 
-#~ msgid "_Select"
-#~ msgstr "Zvolte soubor"
+#, fuzzy
+#~ msgid "Short Break Duration"
+#~ msgstr "Délka krátké přestávky"
 
-#~ msgid "Ticking Sound"
-#~ msgstr "Tikání"
+#, fuzzy
+#~ msgid "Long Break Duration"
+#~ msgstr "Délka dlouhé přestávky"
 
-#~ msgid "End of Break Sound"
-#~ msgstr "Zvuk na konci přestávky"
+#, fuzzy
+#~ msgid "Number of Cycles"
+#~ msgstr "Počet cyklů"
 
-#~ msgid "Start of Break Sound"
-#~ msgstr "Zvuk na začátku přestávky"
+#, fuzzy
+#~ msgid "Behavior"
+#~ msgstr "Chování"
 
-#~ msgid "Off"
-#~ msgstr "Vypnuto"
+#, fuzzy
+#~ msgid "Pause By Locking The Screen"
+#~ msgstr "Pozastavit při uzamčení obrazovky"
 
-#~ msgid "Ticking sound"
-#~ msgstr "Tikání"
+#, fuzzy
+#~ msgid "Confirm Starting a Break"
+#~ msgstr "Potvrdit spuštění přestávky"
 
-#~ msgid "Start of break sound"
-#~ msgstr "Zvuk na začátku přestávky"
+#, fuzzy
+#~ msgid "Confirm Starting a Pomodoro"
+#~ msgstr "Potvrdit spuštění pomodora"
 
-#~ msgid "End of break sound"
-#~ msgstr "Zvuk na konci přestávky"
+#, fuzzy, c-format
+#~ msgid "A single session will take <b>%s</b>."
+#~ msgstr "Jedna relace bude trvat <b>%s</b>."
 
-#~ msgid "About Pomodoro"
-#~ msgstr "O Pomodoro"
+#, fuzzy, c-format
+#~ msgid "<b>%u%%</b> of the time will be allocated for breaks."
+#~ msgstr "<b>%u%%</b> času bude vyhrazeno pro přestávky."
 
-#~ msgid "translator-credits"
-#~ msgstr "Petr Hložek"
+#, fuzzy
+#~ msgid "Apply changes to ongoing Pomodoro?"
+#~ msgstr "Použít změny na probíhající Pomodoro?"
+
+#, fuzzy
+#~ msgid "Apply changes to ongoing break?"
+#~ msgstr "Použít změny na probíhající přestávku?"
+
+#, fuzzy
+#~ msgid "Apply"
+#~ msgstr "Použít"
+
+#, fuzzy
+#~ msgctxt "accessibility"
+#~ msgid "Sidebar"
+#~ msgstr "Boční panel"
+
+#, fuzzy
+#~ msgid "Compact timer"
+#~ msgstr "Kompaktní časovač"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.28.1"
+#~ msgstr "Přehled změn v gnome-pomodoro 0.28.1"
+
+#, fuzzy
+#~ msgid "Added Tamil translation (thanks @omeritzics)"
+#~ msgstr "Přidán tamilský překlad (díky @omeritzics)"
+
+#, fuzzy
+#~ msgid "Added Hebrew translation (thanks @Killersparrow1)"
+#~ msgstr "Přidán hebrejský překlad (díky @Killersparrow1)"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.28.0"
+#~ msgstr "Přehled změn v gnome-pomodoro 0.28.0"
+
+#, fuzzy
+#~ msgid "Support for GNOME Shell 49 (thanks @aleasto)"
+#~ msgstr "Podpora pro GNOME Shell 49 (díky @aleasto)"
+
+#, fuzzy
+#~ msgid "Updated German translation (thanks @daPhipz)"
+#~ msgstr "Aktualizován německý překlad (díky @daPhipz)"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.27.0"
+#~ msgstr "Přehled změn v gnome-pomodoro 0.27.0"
+
+#, fuzzy
+#~ msgid "Support for GNOME Shell 48"
+#~ msgstr "Podpora pro GNOME Shell 48"
+
+#, fuzzy
+#~ msgid "Split time spent across midnight"
+#~ msgstr "Rozdělení času stráveného přes půlnoc"
+
+#, fuzzy
+#~ msgid "Added Telugu translation (thanks @SpaciousCoder78)"
+#~ msgstr "Přidán telugský překlad (díky @SpaciousCoder78)"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.26.0"
+#~ msgstr "Přehled změn v gnome-pomodoro 0.26.0"
+
+#, fuzzy
+#~ msgid "Support for GNOME Shell 47"
+#~ msgstr "Podpora pro GNOME Shell 47"
+
+#, fuzzy
+#~ msgid "Allow to dismiss screen overlay by gesture when a video is playing"
+#~ msgstr "Povolit skrytí překrytí obrazovky gestem během přehrávání videa"
+
+#, fuzzy
+#~ msgid "Added Georgian translation (thanks @NorwayFun)"
+#~ msgstr "Přidán gruzínský překlad (díky @NorwayFun)"
+
+#, fuzzy
+#~ msgid "Adjusted translations in appdata (thanks @yakushabb)"
+#~ msgstr "Upraveny překlady v appdata (díky @yakushabb)"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.25.2"
+#~ msgstr "Přehled změn v gnome-pomodoro 0.25.2"
+
+#, fuzzy
+#~ msgid "Fix keeping notification after extending Pomodoro"
+#~ msgstr "Oprava zachování oznámení po prodloužení Pomodora"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.25.1"
+#~ msgstr "Přehled změn v gnome-pomodoro 0.25.1"
+
+#, fuzzy
+#~ msgid "Fixes for GNOME Shell 46"
+#~ msgstr "Opravy pro GNOME Shell 46"
+
+#, fuzzy
+#~ msgid "Drop support for GNOME Shell 45"
+#~ msgstr "Ukončena podpora pro GNOME Shell 45"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.25.0"
+#~ msgstr "Přehled změn v gnome-pomodoro 0.25.0"
+
+#, fuzzy
+#~ msgid "Support for GNOME Shell 46"
+#~ msgstr "Podpora pro GNOME Shell 46"
+
+#, fuzzy
+#~ msgid "Adjust build script to meson 0.59.0 (thanks @mattst88)"
+#~ msgstr "Upraven skript sestavení pro meson 0.59.0 (díky @mattst88)"
+
+#, fuzzy
+#~ msgid ""
+#~ "Let <b>Pomodoro</b> manage system notifications while the timer is running"
+#~ msgstr ""
+#~ "Nechte <b>Pomodoro</b> spravovat systémová oznámení během běhu časovače"
+
+#~ msgid "15 seconds"
+#~ msgstr "15 sekund"
+
+#~ msgid "30 seconds"
+#~ msgstr "30 sekund"
+
+#, fuzzy
+#~ msgid "1 minute"
+#~ msgstr "1 minuta"
+
+#, fuzzy
+#~ msgid "2 minutes"
+#~ msgstr "2 minuty"
+
+#, fuzzy
+#~ msgid "3 minutes"
+#~ msgstr "3 minuty"
+
+#, fuzzy
+#~ msgid "5 minutes"
+#~ msgstr "5 minut"
+
+#~ msgid "Timer Ticking"
+#~ msgstr "Tikání časovače"
+
+#, fuzzy
+#~ msgid "Birds"
+#~ msgstr "Ptáci"
+
+#~ msgid "@APPLICATION_NAME@"
+#~ msgstr "@APPLICATION_NAME@"
+
+#~ msgid "timer;"
+#~ msgstr "časovač;timer;pomodoro;"
 
 #~ msgid "Start/Stop"
 #~ msgstr "Start/Stop"
@@ -563,309 +1486,11 @@ msgstr "Přestávka"
 #~ msgstr "Pozastavit/Pokračovat"
 
 #~ msgid "Skip to a pomodoro or to a break"
-#~ msgstr "Přeskočte na pomodoro nebo na přestávku"
-
-#~ msgid "Extend current pomodoro or break"
-#~ msgstr "Prodlužte aktuální pomodoro nebo přerušte"
+#~ msgstr "Přeskočit na pomodoro nebo na přestávku"
 
 #~ msgid "Reset current session"
 #~ msgstr "Resetovat aktuální relaci"
 
-#~ msgid "Run as background service"
-#~ msgstr "Spustit na pozadí"
-
-#~ msgid "Show preferences"
-#~ msgstr "Předvolby"
-
-#~ msgid "Quit application"
-#~ msgstr "Ukončit program"
-
-#~ msgid "Print version information and exit"
-#~ msgstr "Zobrazí informaci o verzi a ukončí se"
-
-#~ msgid "Focus on your task."
-#~ msgstr "Soustřeď se na svůj úkol."
-
-#, c-format
-#~ msgid "You have %d minute"
-#~ msgid_plural "You have %d minutes"
-#~ msgstr[0] "Zbývá %d minuta"
-#~ msgstr[1] "Zbývá %d minuty"
-#~ msgstr[2] "Zbývá %d minut"
-
-#, c-format
-#~ msgid "You have %d second"
-#~ msgid_plural "You have %d seconds"
-#~ msgstr[0] "Zbývá %d vteřina"
-#~ msgstr[1] "Zbývá %d vteřiny"
-#~ msgstr[2] "Zbývá %d vteřin"
-
-#~ msgid "Take a longer break"
-#~ msgstr "Dej si delší pauzu!"
-
-#~ msgid "Lengthen it"
-#~ msgstr "Prodlužte si ji"
-
-#~ msgid "Shorten it"
-#~ msgstr "Zkraťte si ji"
-
-#~ msgid "Start pomodoro"
-#~ msgstr "Začni pomodoro"
-
-#, c-format
-#~ msgid ""
-#~ "Using \"%s\" as shortcut will interfere with typing. Try adding another "
-#~ "key, such as Control, Alt or Shift."
-#~ msgstr ""
-#~ "Klávesovou zkratku \"%s\" nelze použít protože by nešlo psát.\n"
-#~ "Zkuste ji stisknout zároveň s CTRL, ALT nebo Shiftem."
-
-#~ msgid "Keyboard Shortcut"
-#~ msgstr "Klávesové zkratky"
-
-#~ msgid "Available"
-#~ msgstr "Dostupný"
-
-#~ msgid "Busy"
-#~ msgstr "Zaneprázdněný"
-
-#~ msgid "Idle"
-#~ msgstr "Nečinný"
-
-#~ msgid "Invisible"
-#~ msgstr "Neviditelný"
-
-#~ msgid "Yesterday"
-#~ msgstr "Včera"
-
-#, c-format
-#~ msgid "%d m"
-#~ msgstr "%d m"
-
-#, c-format
-#~ msgid "%.0f h"
-#~ msgstr "%.0f h"
-
-#, c-format
-#~ msgid "%.1f h"
-#~ msgstr "%.1f h"
-
-#~ msgid "This week"
-#~ msgstr "Tento týden"
-
-#~ msgid "Kamil Prusko"
-#~ msgstr "Kamil Prusko"
-
-#~ msgid "gnome-pomodoro"
-#~ msgstr "Pomodoro"
-
-#~ msgid "Remind to take a break"
-#~ msgstr "Připomenout vzít si přestávku"
-
-#~ msgid "Extras"
-#~ msgstr "Další"
-
-#~ msgid "Add Sound"
-#~ msgstr "Přidat zvuk"
-
-#~ msgid "00"
-#~ msgstr "00"
-
-#~ msgid ":"
-#~ msgstr ":"
-
-#~ msgid "Failed to enable extension"
-#~ msgstr "Nepodařilo se zapnout rozšíření"
-
-#~ msgid "It seems to be uninstalled"
-#~ msgstr "Zdá se být odinstalováno"
-
-#~ msgid "Extension is out of date"
-#~ msgstr "Rozšíření je zastaralé"
-
-#~ msgid "Upgrade"
-#~ msgstr "Upgrade"
-
-#~ msgid "A new pomodoro is starting"
-#~ msgstr "Nové pomodoro začíná"
-
-#~ msgid "Hey, you're missing out on a break"
-#~ msgstr "Hej, zapomínáš na přestávku"
-
-#~ msgid "Could not run pomodoro"
-#~ msgstr "Pomodoro nelze spustit"
-
-#~ msgid "Something went badly wrong..."
-#~ msgstr "Stalo se něco moc špatného..."
-
-#~ msgid "Looks like gnome-pomodoro is not installed"
-#~ msgstr "Vypadá to, že jste nenainstalovali gnome-pomodoro"
-
-#~ msgid "Install"
-#~ msgstr "Instalovat"
-
-#~ msgid "Short break duration"
-#~ msgstr "Délka krátké přestávky"
-
-#~ msgid "Shortcut to toggle the timer"
-#~ msgstr "Klávesová zkratka k přepnutí časovače"
-
-#~ msgid "Select sound for start of break"
-#~ msgstr "Vyberte zvukový soubor, který se přehraje na začátku přestávky"
-
-#~ msgid "Select sound for pomodoro start"
-#~ msgstr "Vyberte zvukový soubor, který se přehraje na začátku pomodora"
-
-#~ msgid "Presence"
-#~ msgstr "Dostupnost"
-
-#~ msgid "Postpone pomodoro when idle"
-#~ msgstr "Odložit pomodoro v době nečinnosti"
-
-#~ msgid "Status during pomodoro"
-#~ msgstr "Stav během pomodora"
-
-#~ msgid "Status during break"
-#~ msgstr "Stav během přestávky"
-
-#~ msgid ""
-#~ "System notifications including chat messages won't show up during "
-#~ "pomodoro."
-#~ msgstr ""
-#~ "Systémová oznámení a zprávy z chatu se nebudou zobrazovat dokud je "
-#~ "pomodoro aktivní."
-
-#~ msgid ""
-#~ "System notifications including chat messages won't show up during break."
-#~ msgstr ""
-#~ "Systémová oznámení a zprávy z chatu se nebudou během přestávky zobrazovat."
-
-#~ msgid "System notifications including chat messages won't show up."
-#~ msgstr "Systémová oznámení a zprávy z chatu se nebudou zobrazovat vůbec."
-
-#~ msgid "OK"
-#~ msgstr "OK"
-
-#~ msgid ""
-#~ "The shortcut \"%s\" cannot be used because it will become impossible to "
-#~ "type using this key.\n"
-#~ "Please try with a key such as Control, Alt or Shift at the same time."
-#~ msgstr ""
-#~ "Klávesovou zkratku \"%s\" nelze použít protože by nešlo psát.\n"
-#~ "Zkuste ji stisknout zároveň s CTRL, ALE nebo Shiftem."
-
-#~ msgid "_No sound"
-#~ msgstr "_Bez zvuku"
-
-#~ msgid "_Open"
-#~ msgstr "_Otevřít"
-
-#~ msgid "All files"
-#~ msgstr "Všechny soubory"
-
-#~ msgid "Other…"
-#~ msgstr "Další..."
-
-#~ msgid "None"
-#~ msgstr "Žádný"
-
-#~ msgid "Supported audio files"
-#~ msgstr "Podporované zvukové soubory"
-
-#~ msgid "Manage your time and tasks"
-#~ msgstr "Správa času a úkolů"
-
-#~ msgid "time;timer;tasks;manage;organize;"
-#~ msgstr "čas;časovač;úkoly;řídit;organizovat;"
-
-#~ msgid "Reset Counts and Timer"
-#~ msgstr "Vynulovat cykly a časovač"
-
-#~ msgid "Away From Desk"
-#~ msgstr "Nepřítomen"
-
-#~ msgid "Control Presence Status"
-#~ msgstr "Zkontroluj stav dostupnosti"
-
-#~ msgid "%d Completed Session"
-#~ msgid_plural "%d Completed Sessions"
-#~ msgstr[0] "%d kompletní cyklus"
-#~ msgstr[1] "%d kompletních cyklů"
-
-#~ msgid "Pause finished."
-#~ msgstr "Konec pauzy."
-
-#~ msgid "Time in seconds you are supposed to be working."
-#~ msgstr "Délka pracovní doby ve vteřinách."
-
-#~ msgid "Time in seconds you are supposed to have a short break."
-#~ msgstr "Délka krátké pauzy ve vteřinách."
-
-#~ msgid "Long pause duration"
-#~ msgstr "Trvání dlouhé pauzy"
-
-#~ msgid "Time in seconds you are supposed to have a longer break."
-#~ msgstr "Délka dlouhé pauzy ve vteřinách."
-
-#~ msgid "Whether to show a notification dialog when pause starts."
-#~ msgstr "Jestli ukazovat notifikační dialog když začíná pauza."
-
-#~ msgid "Disable flexible breaks"
-#~ msgstr "Zakaž upravitelné pauzy"
-
-#~ msgid "Whether you are not using a computer to work."
-#~ msgstr "Jestli nepoužíváš k práci počítač."
-
-#~ msgid "Change user presence status to busy"
-#~ msgstr "Změň status uživatele na zaneprázdněn"
-
-#~ msgid "Whether to change user and IM presence to busy."
-#~ msgstr "Zdali změnit status uživatele a IM na zaneprázdněn."
-
-#~ msgid "Whether to play a sound to notify of events."
-#~ msgstr "Zdali přehrát zvuk při notifikaci události."
-
-#~ msgid "Notification sound file"
-#~ msgstr "Zvukový soubor pro notifikaci"
-
-#~ msgid "Restore timer state"
-#~ msgstr "Obnovit stav časovače"
-
-#~ msgid "Whether to restore state on startup."
-#~ msgstr "Jestli obnovit stav při startu."
-
-#~ msgid "Number of completed sessions"
-#~ msgstr "Počet kompletních cyklů"
-
-#~ msgid "Number of completed sessions since long break"
-#~ msgstr "Počet kompletních cyklů od dlouhé pauzy"
-
-#~ msgid "Saved timer state"
-#~ msgstr "Uložený stav časovače"
-
-#~ msgid "Time of saved state"
-#~ msgstr "Ćas uloženého stavu"
-
-#~ msgid "Click to reset session counts to zero"
-#~ msgstr "Klikni pro vynulování cyklů"
-
-#~ msgid "Set optimal settings for doing paperwork"
-#~ msgstr "Nastav optimální čas pro papírování"
-
-#~ msgid "Show a dialog message at the end of pomodoro session"
-#~ msgstr "Ukaž dialogové zprávy na konci pomodora"
-
-#~ msgid "Play a sound at start of pomodoro session"
-#~ msgstr "Přehraj zvuk na začátku pomodora"
-
-#~ msgid "Pomodoro Finished!"
-#~ msgstr "Konec pomodora"
-
-#~ msgid "Hide"
-#~ msgstr "Skryj"
-
-#~ msgid "Show dialog"
-#~ msgstr "Ukaž dialog"
-
-#~ msgid "Timer toggle key"
-#~ msgstr "Přepínací tlačítko časovače"
+#, fuzzy
+#~ msgid "High Contrast Theme"
+#~ msgstr "Použít tmavý motiv"

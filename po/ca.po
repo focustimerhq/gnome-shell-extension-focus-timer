@@ -1,16 +1,18 @@
-# Catalan translation for gnome-pomodoro
-# Copyright (c) 2012 gnome-pomodoro contributors
-# This file is distributed under the same license as the gnome-pomodoro package.
+# Catalan translation for gnome-shell-extension-focus-timer
+# Copyright (c) 2012 focus-timer contributors
+# This file is distributed under the same license as the focus-timer package.
+#
+# Authors:
 # Ecron <ecron_89@hotmail.com>, 2014.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-pomodoro\n"
+"Project-Id-Version: gnome-shell-extension-focus-timer 1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-25 16:45+0100\n"
+"POT-Creation-Date: 2026-04-12 13:38+0200\n"
 "PO-Revision-Date: 2023-03-24 15:33+0100\n"
 "Last-Translator: Antonio Vicién Faure <antonio@antonio.cat>\n"
-"Language-Team: <>\n"
+"Language-Team: Catalan\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,89 +20,71 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 "X-Generator: Poedit 3.1.1\n"
 
-#: data/org.gnome.shell.extensions.focus-timer.gschema.xml:6
-msgid "Start the app along with extension"
-msgstr ""
-
-#: data/org.gnome.shell.extensions.focus-timer.gschema.xml:14
-msgid "Indicator type"
-msgstr ""
-
-#: data/org.gnome.shell.extensions.focus-timer.gschema.xml:18
-msgid "Blur effect"
-msgstr ""
-
-#: data/org.gnome.shell.extensions.focus-timer.gschema.xml:22
-msgid "Dismiss screen overlay by gesture"
-msgstr ""
-
-#: data/org.gnome.shell.extensions.focus-timer.gschema.xml:26
-msgid "Reduce number of notifications during Pomodoro"
-msgstr ""
+#: src/indicator.js:329 src/screenShield.js:171
+#, fuzzy
+msgid "Finished!"
+msgstr "Finalitzat!"
 
 #: src/indicator.js:331 src/screenShield.js:173
-msgid "Finished!"
-msgstr ""
-
-#: src/indicator.js:333 src/screenShield.js:175
 #, javascript-format
 msgid "%d of %d"
 msgstr ""
 
-#: src/indicator.js:420 src/prefs.js:73
+#: src/indicator.js:425 src/prefs.js:71
+#, fuzzy
 msgid "Screen Overlay"
-msgstr ""
+msgstr "Superposició de pantalla"
 
-#: src/indicator.js:423
+#: src/indicator.js:427
 msgid "Preferences"
 msgstr "Preferències"
 
-#: src/indicator.js:424
+#: src/indicator.js:428
 msgid "Stats"
 msgstr "Estadístiques"
 
-#: src/indicator.js:426
+#: src/indicator.js:430
 msgid "Quit"
 msgstr "Surt"
 
-#: src/indicator.js:601
+#: src/indicator.js:624
 #, javascript-format
 msgid "%dh"
 msgstr ""
 
-#: src/indicator.js:605
+#: src/indicator.js:628
 #, javascript-format
 msgid "%dm"
 msgstr ""
 
-#: src/indicator.js:613
+#: src/indicator.js:630 src/indicator.js:632 src/indicator.js:634
 #, javascript-format
 msgid "%ds"
 msgstr ""
 
-#: src/indicator.js:1058 src/notifications.js:59
+#: src/indicator.js:1079 src/notifications.js:57
 msgid "Focus Timer"
 msgstr ""
 
-#: src/notifications.js:79
+#: src/notifications.js:77
 msgid "Focus Timer Extension"
 msgstr ""
 
-#: src/notifications.js:115
+#: src/notifications.js:119
 #, javascript-format
 msgid "%d hour"
 msgid_plural "%d hours"
-msgstr[0] "%d hora"
-msgstr[1] "%d hores"
+msgstr[0] ""
+msgstr[1] ""
 
-#: src/notifications.js:118
+#: src/notifications.js:122
 #, javascript-format
 msgid "%d minute"
 msgid_plural "%d minutes"
-msgstr[0] "%d minut"
-msgstr[1] "%d minuts"
+msgstr[0] ""
+msgstr[1] ""
 
-#: src/notifications.js:121
+#: src/notifications.js:125
 #, javascript-format
 msgid "%d second"
 msgid_plural "%d seconds"
@@ -108,174 +92,1467 @@ msgstr[0] ""
 msgstr[1] ""
 
 #. translators: time remaining eg. "3 minutes 50 seconds remaining"
-#: src/notifications.js:128
-#, javascript-format
+#: src/notifications.js:135
+#, fuzzy, javascript-format
 msgid "%s remaining"
-msgstr ""
+msgstr "queden %s"
 
-#: src/notifications.js:239 src/timer.js:54
+#: src/notifications.js:261 src/timer.js:47
 msgid "Pomodoro"
 msgstr "Pomodoro"
 
-#: src/notifications.js:241
+#: src/notifications.js:263
+#, fuzzy
 msgid "Take a break"
-msgstr "Feu un descans"
+msgstr "Fes un descans"
 
-#: src/notifications.js:243
+#: src/notifications.js:265
+#, fuzzy
 msgid "Take a short break"
-msgstr "Feu un petit descans"
+msgstr "Fes un descans curt"
 
-#: src/notifications.js:245
+#: src/notifications.js:267
+#, fuzzy
 msgid "Take a long break"
-msgstr "Feu un llarg descans"
+msgstr "Fes un descans llarg"
 
-#: src/notifications.js:253
+#: src/notifications.js:275
 msgid "Pomodoro is about to end"
 msgstr "El Pomodoro està a punt de finalitzar"
 
-#: src/notifications.js:255
+#: src/notifications.js:277
+#, fuzzy
 msgid "Break is about to end"
-msgstr "La pausa és a punt de finalitzar"
+msgstr "El descans està a punt de finalitzar"
 
-#: src/notifications.js:263 src/notifications.js:275
+#: src/notifications.js:285 src/notifications.js:297
+#, fuzzy
 msgid "Break is over!"
-msgstr ""
+msgstr "El descans ha acabat!"
 
-#: src/notifications.js:265 src/notifications.js:273
+#: src/notifications.js:287 src/notifications.js:295
+#, fuzzy
 msgid "Pomodoro is over!"
-msgstr ""
+msgstr "El Pomodoro ha acabat!"
 
-#: src/notifications.js:294
+#: src/notifications.js:316
 msgid "Get ready…"
 msgstr "Prepara't…"
 
-#: src/notifications.js:299
+#: src/notifications.js:321
+#, fuzzy
 msgid "Confirm the start of a Pomodoro…"
-msgstr ""
+msgstr "Confirma l'inici d'un Pomodoro…"
 
-#: src/notifications.js:301
+#: src/notifications.js:323
+#, fuzzy
 msgid "Confirm the start of a break…"
-msgstr ""
+msgstr "Confirma l'inici d'un descans…"
 
-#: src/notifications.js:303
+#: src/notifications.js:325
+#, fuzzy
 msgid "Confirm the start of a short break…"
-msgstr ""
+msgstr "Confirma l'inici d'un descans curt…"
 
-#: src/notifications.js:305
+#: src/notifications.js:327
+#, fuzzy
 msgid "Confirm the start of a long break…"
-msgstr ""
+msgstr "Confirma l'inici d'un descans llarg…"
 
-#: src/notifications.js:344
+#: src/notifications.js:366
+#, fuzzy
 msgid "+1 minute"
-msgstr ""
+msgstr "+1 minut"
 
-#: src/notifications.js:345
+#: src/notifications.js:367
 msgid "Start Pomodoro"
 msgstr "Inicia el Pomodoro"
 
-#: src/notifications.js:346
+#: src/notifications.js:368
 msgid "Start Break"
 msgstr ""
 
-#: src/notifications.js:403
+#: src/notifications.js:425
+#, fuzzy
 msgid "Something went wrong"
-msgstr ""
+msgstr "Alguna cosa ha anat malament"
 
-#: src/notifications.js:409
+#: src/notifications.js:431
 msgid "Report issue"
 msgstr "Notifica un problema"
 
-#: src/notifications.js:429
+#: src/notifications.js:451
 msgid "Focus Timer Not Found"
 msgstr ""
 
-#: src/notifications.js:430
+#: src/notifications.js:452
 msgid "Install Focus Timer app to start using the extension."
 msgstr ""
 
-#: src/notifications.js:435
+#: src/notifications.js:457
 msgid "Install from Flathub"
 msgstr ""
 
-#: src/prefs.js:14
+#: src/prefs.js:12
 msgid "General"
 msgstr ""
 
-#: src/prefs.js:20
+#: src/prefs.js:18
 msgid "Autostart The App"
 msgstr ""
 
-#: src/prefs.js:21
+#: src/prefs.js:19
 msgid "Makes the indicator instantly visible and allows keyboard shortcuts"
 msgstr ""
 
-#: src/prefs.js:34
+#: src/prefs.js:32
 msgid "Indicator"
 msgstr ""
 
-#: src/prefs.js:47
+#: src/prefs.js:45
 msgid "Icon"
 msgstr ""
 
-#: src/prefs.js:53
+#: src/prefs.js:51
 msgid "Text"
 msgstr ""
 
-#: src/prefs.js:60
+#: src/prefs.js:58
 msgid "Display As"
 msgstr ""
 
-#: src/prefs.js:61
+#: src/prefs.js:59
 msgid "Choose how the timer appears in the status bar"
 msgstr ""
 
-#: src/prefs.js:79
+#: src/prefs.js:77
 msgid "Blur Effect"
 msgstr ""
 
-#: src/prefs.js:80
+#: src/prefs.js:78
 msgid "Helps to acknowledge the break"
 msgstr ""
 
-#: src/prefs.js:88
+#: src/prefs.js:86
 msgid "Dismiss Gesture"
 msgstr ""
 
-#: src/prefs.js:89
+#: src/prefs.js:87
 msgid "Flick the mouse or press any key to dismiss"
 msgstr ""
 
-#: src/prefs.js:102
+#: src/prefs.js:100
 msgid "Distractions"
 msgstr ""
 
-#: src/prefs.js:108
+#: src/prefs.js:106
 msgid "Manage Notifications"
 msgstr ""
 
-#: src/prefs.js:109
+#: src/prefs.js:107
 msgid "Toggle Do Not Disturb mode during Pomodoro"
 msgstr ""
 
-#: src/screenOverlay.js:987
+#: src/screenOverlay.js:1053
 msgid "It's time to take a break"
 msgstr "És hora de fer un descans"
 
-#: src/timer.js:51
+#: src/timer.js:44
+#, fuzzy
 msgid "Stopped"
-msgstr ""
+msgstr "Aturat"
 
-#: src/timer.js:57
+#: src/timer.js:50
 msgid "Short Break"
 msgstr "Descans curt"
 
-#: src/timer.js:60
+#: src/timer.js:53
 msgid "Long Break"
 msgstr "Descans llarg"
 
-#: src/timer.js:63
+#: src/timer.js:56
 msgid "Break"
 msgstr "Descans"
+
+#, fuzzy
+#~ msgid "Time management utility"
+#~ msgstr "Utilitat de gestió del temps"
+
+#, fuzzy
+#~ msgid "Maintain focus by taking frequent breaks"
+#~ msgstr "Mantingueu la concentració fent descansos freqüents"
+
+#, fuzzy
+#~ msgid ""
+#~ "A productivity timer that helps you work more effectively by breaking "
+#~ "your time into focused work sessions followed by short breaks. Work for "
+#~ "25 minutes, then take a 5-minute break to maintain concentration and "
+#~ "prevent burnout."
+#~ msgstr ""
+#~ "Un temporitzador de productivitat que us ajuda a treballar de manera més "
+#~ "eficaç dividint el temps en sessions de treball concentrat seguides de "
+#~ "descansos curts. Treballeu durant 25 minuts i després feu un descans de 5 "
+#~ "minuts per mantenir la concentració i evitar l'esgotament."
+
+#, fuzzy
+#~ msgid "Key features:"
+#~ msgstr "Característiques principals:"
+
+#, fuzzy
+#~ msgid "Customizable work session and break lengths"
+#~ msgstr "Durada personalitzable de les sessions de treball i dels descansos"
+
+#, fuzzy
+#~ msgid "Visual and audio notifications"
+#~ msgstr "Notificacions visuals i d'àudio"
+
+#, fuzzy
+#~ msgid "Time tracking and statistics"
+#~ msgstr "Seguiment del temps i estadístiques"
+
+#, fuzzy
+#~ msgid "GNOME desktop integration"
+#~ msgstr "Integració amb l'escriptori GNOME"
+
+#, fuzzy
+#~ msgid "Screen overlay during breaks"
+#~ msgstr "Superposició de pantalla durant els descansos"
+
+#, fuzzy
+#~ msgid "Run custom commands after Pomodoro or break"
+#~ msgstr ""
+#~ "Executeu ordres personalitzades després d'un Pomodoro o d'un descans"
+
+#~ msgid "Kamil Prusko"
+#~ msgstr "Kamil Prusko"
+
+#~ msgid "Timer"
+#~ msgstr "Temporitzador"
+
+#, fuzzy
+#~ msgid "Daily stats"
+#~ msgstr "Estadístiques diàries"
+
+#, fuzzy
+#~ msgid "Monthly stats"
+#~ msgstr "Estadístiques mensuals"
+
+#, fuzzy
+#~ msgid "Screen overlay"
+#~ msgstr "Superposició de pantalla"
+
+#, fuzzy
+#~ msgid "Start or Stop"
+#~ msgstr "Inicia o Atura"
+
+#, fuzzy
+#~ msgid "Start, Pause or Resume"
+#~ msgstr "Inicia, Pausa o Reprèn"
+
+#~ msgid "Start"
+#~ msgstr "Inicia"
+
+#~ msgid "Stop"
+#~ msgstr "Atura"
+
+#~ msgid "Pause"
+#~ msgstr "Pausa"
+
+#, fuzzy
+#~ msgid "Resume"
+#~ msgstr "Reprèn"
+
+#~ msgid "Skip"
+#~ msgstr "Omet"
+
+#, fuzzy
+#~ msgid "Rewind"
+#~ msgstr "Rebobina"
+
+#, fuzzy
+#~ msgid "Extend current pomodoro or break"
+#~ msgstr "Amplia el pomodoro actual o el descans"
+
+#, fuzzy
+#~ msgid "Reset"
+#~ msgstr "Restableix"
+
+#~ msgid "Show preferences"
+#~ msgstr "Mostra les preferències"
+
+#~ msgid "Quit application"
+#~ msgstr "Surt de l'aplicació"
+
+#~ msgid "Print version information and exit"
+#~ msgstr "Imprimeix la informació de la versió i surt"
+
+#, fuzzy
+#~ msgid "Bring to Focus"
+#~ msgstr "Porta al focus"
+
+#, fuzzy, c-format
+#~ msgid "Custom action \"%s\" has failed"
+#~ msgstr "L'acció personalitzada «%s» ha fallat"
+
+#, fuzzy
+#~ msgid "Reached timeout"
+#~ msgstr "S'ha esgotat el temps d'espera"
+
+#, fuzzy
+#~ msgid "Failed to execute command"
+#~ msgstr "No s'ha pogut executar l'ordre"
+
+#, fuzzy
+#~ msgid "Command is empty"
+#~ msgstr "L'ordre està buida"
+
+#, fuzzy
+#~ msgid "Unclosed quotation mark"
+#~ msgstr "Marca de cometes no tancada"
+
+#, fuzzy
+#~ msgid "Invalid command"
+#~ msgstr "Ordre no vàlida"
+
+#, fuzzy, c-format
+#~ msgid "Unknown variable \"%s\""
+#~ msgstr "Variable desconeguda «%s»"
+
+#, fuzzy, c-format
+#~ msgid "Unknown format \"%s\""
+#~ msgstr "Format desconegut «%s»"
+
+#, fuzzy, c-format
+#~ msgid "Program \"%s\" not found"
+#~ msgstr "No s'ha trobat el programa «%s»"
+
+#~ msgid "Actions"
+#~ msgstr "Accions"
+
+#, fuzzy
+#~ msgid "Countdown"
+#~ msgstr "Compte enrere"
+
+#, fuzzy
+#~ msgid "Session"
+#~ msgstr "Sessió"
+
+#, fuzzy
+#~ msgid "Other"
+#~ msgstr "Altres"
+
+#, fuzzy
+#~ msgid "Started the timer."
+#~ msgstr "S'ha iniciat el temporitzador."
+
+#, fuzzy
+#~ msgid "Stopped the timer manually."
+#~ msgstr "S'ha aturat el temporitzador manualment."
+
+#, fuzzy
+#~ msgid ""
+#~ "The countdown has been manually paused. Not triggered when locking the "
+#~ "screen or when suspending the system."
+#~ msgstr ""
+#~ "El compte enrere s'ha pausat manualment. No es dispara en bloquejar la "
+#~ "pantalla o en suspendre el sistema."
+
+#, fuzzy
+#~ msgid "The countdown has been manually resumed."
+#~ msgstr "El compte enrere s'ha reprès manualment."
+
+#, fuzzy
+#~ msgid "Jumped to a next time-block before the countdown has finished."
+#~ msgstr ""
+#~ "S'ha saltat al següent bloc de temps abans que el compte enrere hagi "
+#~ "finalitzat."
+
+#, fuzzy
+#~ msgid "Rewind action has been used. It adds a pause in the past."
+#~ msgstr ""
+#~ "S'ha utilitzat l'acció de rebobinar. Afegeix una pausa en el passat."
+
+#, fuzzy
+#~ msgid "Manually cleared the session."
+#~ msgstr "S'ha netejat la sessió manualment."
+
+#, fuzzy
+#~ msgid "Finished"
+#~ msgstr "Finalitzat"
+
+#, fuzzy
+#~ msgid ""
+#~ "The countdown has finished. If waiting for confirmation, the duration of "
+#~ "the time-block still may be altered."
+#~ msgstr ""
+#~ "El compte enrere ha finalitzat. Si s'està esperant confirmació, la durada "
+#~ "del bloc de temps encara es pot alterar."
+
+#, fuzzy
+#~ msgid "Changed"
+#~ msgstr "Canviat"
+
+#, fuzzy
+#~ msgid "Triggered on any change related to the countdown."
+#~ msgstr "Es dispara amb qualsevol canvi relacionat amb el compte enrere."
+
+#, fuzzy
+#~ msgid "Confirm Advancement"
+#~ msgstr "Confirma l'avanç"
+
+#, fuzzy
+#~ msgid "A manual confirmation is required to start next time-block."
+#~ msgstr "Cal una confirmació manual per iniciar el següent bloc de temps."
+
+#, fuzzy
+#~ msgid "Advanced"
+#~ msgstr "Avançat"
+
+#, fuzzy
+#~ msgid "Transitioned or skipped to a next time-block."
+#~ msgstr "S'ha passat o saltat al següent bloc de temps."
+
+#, fuzzy
+#~ msgid "State Changed"
+#~ msgstr "Estat canviat"
+
+#, fuzzy
+#~ msgid "Transitioned to a next time-block or when a break gets relabelled."
+#~ msgstr ""
+#~ "S'ha passat al següent bloc de temps o s'ha canviat l'etiqueta d'un "
+#~ "descans."
+
+#, fuzzy
+#~ msgid "Rescheduled"
+#~ msgstr "Replanificat"
+
+#, fuzzy
+#~ msgid "Triggered when scheduled time-blocks have changed."
+#~ msgstr "Es dispara quan els blocs de temps planificats han canviat."
+
+#, fuzzy
+#~ msgid "Expired"
+#~ msgstr "Expirat"
+
+#, fuzzy
+#~ msgid "Triggered when session is about to be reset due to inactivity."
+#~ msgstr ""
+#~ "Es dispara quan la sessió està a punt de restablir-se per inactivitat."
+
+#, fuzzy
+#~ msgid "Take a Break"
+#~ msgstr "Fes un descans"
+
+#~ msgid "Skip Break"
+#~ msgstr "Omet el descans"
+
+#, fuzzy
+#~ msgid "Failed to initialize playback"
+#~ msgstr "No s'ha pogut inicialitzar la reproducció"
+
+#, fuzzy
+#~ msgid "File not found"
+#~ msgstr "No s'ha trobat el fitxer"
+
+#, fuzzy
+#~ msgid "File type not supported"
+#~ msgstr "Tipus de fitxer no admès"
+
+#, fuzzy, c-format
+#~ msgid "%uh"
+#~ msgstr "%uh"
+
+#, fuzzy, c-format
+#~ msgid "%um"
+#~ msgstr "%um"
+
+#, fuzzy, c-format
+#~ msgid "%u hour"
+#~ msgid_plural "%u hours"
+#~ msgstr[0] "%u hora"
+#~ msgstr[1] "%u hores"
+
+#, fuzzy, c-format
+#~ msgid "%u minute"
+#~ msgid_plural "%u minutes"
+#~ msgstr[0] "%u minut"
+#~ msgstr[1] "%u minuts"
+
+#, fuzzy, c-format
+#~ msgid "%u second"
+#~ msgid_plural "%u seconds"
+#~ msgstr[0] "%u segon"
+#~ msgstr[1] "%u segons"
+
+#, fuzzy
+#~ msgid "The exact time of the current event."
+#~ msgstr "L'hora exacta de l'esdeveniment actual."
+
+#, fuzzy
+#~ msgid ""
+#~ "The current phase of the Pomodoro cycle. Possible values: <tt>stopped</"
+#~ "tt>, <tt>pomodoro</tt>, <tt>break</tt>, <tt>short-break</tt>, <tt>long-"
+#~ "break</tt>."
+#~ msgstr ""
+#~ "La fase actual del cicle Pomodoro. Valors possibles: <tt>stopped</tt>, "
+#~ "<tt>pomodoro</tt>, <tt>break</tt>, <tt>short-break</tt>, <tt>long-break</"
+#~ "tt>."
+
+#, fuzzy
+#~ msgid ""
+#~ "Status of the current time-block. Possible values: <tt>scheduled</tt>, "
+#~ "<tt>in-progress</tt>, <tt>completed</tt>, <tt>uncompleted</tt>."
+#~ msgstr ""
+#~ "Estat del bloc de temps actual. Valors possibles: <tt>scheduled</tt>, "
+#~ "<tt>in-progress</tt>, <tt>completed</tt>, <tt>uncompleted</tt>."
+
+#, fuzzy
+#~ msgid "A flag indicating whether countdown has begun."
+#~ msgstr "Un indicador que assenyala si el compte enrere ha començat."
+
+#, fuzzy
+#~ msgid "A flag indicating whether countdown is paused."
+#~ msgstr "Un indicador que assenyala si el compte enrere està pausat."
+
+#, fuzzy
+#~ msgid "A flag indicating whether countdown has finished."
+#~ msgstr "Un indicador que assenyala si el compte enrere ha acabat."
+
+#, fuzzy
+#~ msgid "A flag indicating whether the timer is actively counting down."
+#~ msgstr ""
+#~ "Un indicador que assenyala si el temporitzador està comptant activament."
+
+#, fuzzy
+#~ msgid "Duration of the current countdown."
+#~ msgstr "Durada del compte enrere actual."
+
+#, fuzzy
+#~ msgid "Discrepancy between elapsed time and the time passed."
+#~ msgstr "Discrepància entre el temps transcorregut i el temps real passat."
+
+#, fuzzy
+#~ msgid "The amount of time spent on the countdown."
+#~ msgstr "La quantitat de temps dedicat al compte enrere."
+
+#, fuzzy
+#~ msgid "The amount of time left before the countdown ends."
+#~ msgstr "La quantitat de temps restant abans que acabi el compte enrere."
+
+#, fuzzy
+#~ msgid "Time when the countdown has started."
+#~ msgstr "Hora en què s'ha iniciat el compte enrere."
+
+#, fuzzy
+#~ msgid "GNOME Shell Extension"
+#~ msgstr "Extensió del GNOME Shell"
+
+#, fuzzy
+#~ msgid "Get the best experience!"
+#~ msgstr "Obteniu la millor experiència!"
+
+#, fuzzy
+#~ msgid "Enable <b>GNOME Shell extension</b> for seamless desktop integration"
+#~ msgstr ""
+#~ "Habiliteu l'<b>extensió del GNOME Shell</b> per a una integració perfecta "
+#~ "amb l'escriptori"
+
+#, fuzzy
+#~ msgid "Always within reach"
+#~ msgstr "Sempre a l'abast"
+
+#, fuzzy
+#~ msgid "Control timer directly from the top bar without opening the app"
+#~ msgstr ""
+#~ "Controleu el temporitzador directament des de la barra superior sense "
+#~ "obrir l'aplicació"
+
+#, fuzzy
+#~ msgid "Less distractions"
+#~ msgstr "Menys distraccions"
+
+#, fuzzy
+#~ msgid "Refined break reminders"
+#~ msgstr "Recordatoris de descans refinats"
+
+#, fuzzy
+#~ msgid ""
+#~ "Elegant full-screen overlay that make taking breaks a more pleasant "
+#~ "experience"
+#~ msgstr ""
+#~ "Superposició elegant a pantalla completa que fa que els descansos siguin "
+#~ "una experiència més agradable"
+
+#, fuzzy
+#~ msgid "Ready to try it?"
+#~ msgstr "Esteu preparat per provar-ho?"
+
+#, fuzzy
+#~ msgid "_Install Extension"
+#~ msgstr "_Instal·la l'extensió"
+
+#, fuzzy
+#~ msgid "_Not Now"
+#~ msgstr "Ara _no"
+
+#, fuzzy
+#~ msgid "Copy to clipboard"
+#~ msgstr "Copia al porta-retalls"
+
+#, fuzzy
+#~ msgid "_Try Again"
+#~ msgstr "_Torna-ho a provar"
+
+#, fuzzy
+#~ msgid "_Abort"
+#~ msgstr "_Avorta"
+
+#, fuzzy
+#~ msgid "Time-out reached"
+#~ msgstr "S'ha esgotat el temps d'espera"
+
+#, fuzzy
+#~ msgid "Installing extensions is not allowed"
+#~ msgstr "No es permet instal·lar extensions"
+
+#, fuzzy
+#~ msgid "Failed to download the extension"
+#~ msgstr "No s'ha pogut baixar l'extensió"
+
+#~ msgid "Desktop"
+#~ msgstr "Escriptori"
+
+#, fuzzy
+#~ msgid "GNOME Shell extension available"
+#~ msgstr "Extensió del GNOME Shell disponible"
+
+#, fuzzy
+#~ msgid "Learn More"
+#~ msgstr "Saber-ne més"
+
+#, fuzzy
+#~ msgid "Unused"
+#~ msgstr "No utilitzat"
+
+#, fuzzy
+#~ msgid "Log"
+#~ msgstr "Registre"
+
+#, fuzzy
+#~ msgid "Empty Log"
+#~ msgstr "Registre buit"
+
+#, fuzzy
+#~ msgid "Entries will show up here once you start the timer."
+#~ msgstr "Les entrades apareixeran aquí quan inicieu el temporitzador."
+
+#, fuzzy
+#~ msgid "Context"
+#~ msgstr "Context"
+
+#~ msgid "Command"
+#~ msgstr "Ordre"
+
+#, fuzzy
+#~ msgid "Output"
+#~ msgstr "Sortida"
+
+#, fuzzy
+#~ msgid "Error"
+#~ msgstr "Error"
+
+#, fuzzy
+#~ msgid "Exit Code:"
+#~ msgstr "Codi de sortida:"
+
+#, fuzzy
+#~ msgid "Execution Time:"
+#~ msgstr "Temps d'execució:"
+
+#~ msgid "translator-credits"
+#~ msgstr "Antonio Vicién Faure <antonio@antonio.cat>"
+
+#, fuzzy
+#~ msgid "Donate"
+#~ msgstr "Donatius"
+
+#, fuzzy
+#~ msgid "Breaks"
+#~ msgstr "Descansos"
+
+#, fuzzy
+#~ msgid "Interruptions"
+#~ msgstr "Interrupcions"
+
+#, fuzzy
+#~ msgid "Break Ratio"
+#~ msgstr "Proporció de descansos"
+
+#~ msgid "Day"
+#~ msgstr "Dia"
+
+#~ msgid "Week"
+#~ msgstr "Setmana"
+
+#~ msgid "Month"
+#~ msgstr "Mes"
+
+#, fuzzy
+#~ msgid "Nothing to see here yet"
+#~ msgstr "Encara no hi ha res per veure"
+
+#, fuzzy
+#~ msgid "Finish a few Pomodoros to fill this up!"
+#~ msgstr "Completeu uns quants Pomodoros per omplir-ho!"
+
+#, fuzzy, c-format
+#~ msgid "Skipped %u day"
+#~ msgid_plural "Skipped %u days"
+#~ msgstr[0] "S'ha omès %u dia"
+#~ msgstr[1] "S'han omès %u dies"
+
+#, fuzzy, c-format
+#~ msgid "Skipped %u week"
+#~ msgid_plural "Skipped %u weeks"
+#~ msgstr[0] "S'ha omès %u setmana"
+#~ msgstr[1] "S'han omès %u setmanes"
+
+#, fuzzy, c-format
+#~ msgid "Skipped %u month"
+#~ msgid_plural "Skipped %u months"
+#~ msgstr[0] "S'ha omès %u mes"
+#~ msgstr[1] "S'han omès %u mesos"
+
+#~ msgid "Today"
+#~ msgstr "Avui"
+
+#~ msgid "Yesterday"
+#~ msgstr "Ahir"
+
+#~ msgid "This week"
+#~ msgstr "Aquesta setmana"
+
+#, fuzzy, c-format
+#~ msgid "Week %u"
+#~ msgstr "Setmana %u"
+
+#, fuzzy, c-format
+#~ msgid "Week %u of %u"
+#~ msgstr "Setmana %u de %u"
+
+#~ msgid "_Pomodoro"
+#~ msgstr "_Pomodoro"
+
+#~ msgid "_Short Break"
+#~ msgstr "Descans _curt"
+
+#~ msgid "_Long Break"
+#~ msgstr "Descans _llarg"
+
+#, fuzzy
+#~ msgid "_Break"
+#~ msgstr "_Descans"
+
+#, fuzzy
+#~ msgid "Open screen overlay"
+#~ msgstr "Obre la superposició de pantalla"
+
+#, fuzzy
+#~ msgid "Session has expired"
+#~ msgstr "La sessió ha expirat"
+
+#, fuzzy, c-format
+#~ msgid "Long break due in <b>%s</b>"
+#~ msgstr "Descans llarg en <b>%s</b>"
+
+#, fuzzy
+#~ msgid "Rewind one minute"
+#~ msgstr "Rebobina un minut"
+
+#, fuzzy
+#~ msgid "_Compact View"
+#~ msgstr "Vista _compacta"
+
+#~ msgid "_Preferences"
+#~ msgstr "_Preferències"
+
+#~ msgid "_About"
+#~ msgstr "_Quant a"
+
+#~ msgid "_Quit"
+#~ msgstr "_Surt"
+
+#, fuzzy
+#~ msgid "Primary Menu"
+#~ msgstr "Menú principal"
+
+#, fuzzy
+#~ msgid "Keep timer running?"
+#~ msgstr "Voleu mantenir el temporitzador en marxa?"
+
+#, fuzzy
+#~ msgid ""
+#~ "You can keep it running in the background — notifications and keyboard "
+#~ "shortcuts will still work."
+#~ msgstr ""
+#~ "Podeu mantenir-lo en marxa en segon pla; les notificacions i les dreceres "
+#~ "de teclat continuaran funcionant."
+
+#, fuzzy
+#~ msgid "Run in background"
+#~ msgstr "Executa en segon pla"
+
+#, fuzzy
+#~ msgid "Main Window"
+#~ msgstr "Finestra principal"
+
+#, fuzzy
+#~ msgid "Prefer Dark Theme"
+#~ msgstr "Prefereix el tema fosc"
+
+#, fuzzy
+#~ msgid "Prefer Compact View"
+#~ msgstr "Prefereix la vista compacta"
+
+#, fuzzy
+#~ msgid "Started"
+#~ msgstr "Iniciat"
+
+#~ msgid "Paused"
+#~ msgstr "En pausa"
+
+#, fuzzy
+#~ msgid "Edit Custom Action"
+#~ msgstr "Edita l'acció personalitzada"
+
+#~ msgid "_Cancel"
+#~ msgstr "_Cancel·la"
+
+#, fuzzy
+#~ msgid "_Save"
+#~ msgstr "_Desa"
+
+#~ msgid "Name"
+#~ msgstr "Nom"
+
+#, fuzzy
+#~ msgid "Trigger"
+#~ msgstr "Activador"
+
+#, fuzzy
+#~ msgid "Event"
+#~ msgstr "Esdeveniment"
+
+#, fuzzy
+#~ msgid "Execute command after an event."
+#~ msgstr "Executa una ordre després d'un esdeveniment."
+
+#, fuzzy
+#~ msgid "Condition"
+#~ msgstr "Condició"
+
+#, fuzzy
+#~ msgid ""
+#~ "Ensure execution of a second command once condition is no longer met."
+#~ msgstr ""
+#~ "Assegura l'execució d'una segona ordre un cop la condició ja no es "
+#~ "compleixi."
+
+#, fuzzy
+#~ msgid "Events"
+#~ msgstr "Esdeveniments"
+
+#, fuzzy
+#~ msgid "Add _Event"
+#~ msgstr "Afegeix un _esdeveniment"
+
+#, fuzzy
+#~ msgid "_Filter"
+#~ msgstr "_Filtra"
+
+#, fuzzy
+#~ msgid "Filter"
+#~ msgstr "Filtre"
+
+#, fuzzy
+#~ msgid "Shell Command"
+#~ msgstr "Ordre de l'intèrpret"
+
+#, fuzzy
+#~ msgid "Commands"
+#~ msgstr "Ordres"
+
+#, fuzzy
+#~ msgid "Condition Met Command"
+#~ msgstr "Ordre de condició complerta"
+
+#, fuzzy
+#~ msgid "Condition Not Met Command"
+#~ msgstr "Ordre de condició no complerta"
+
+#, fuzzy
+#~ msgid "Working Directory"
+#~ msgstr "Directori de treball"
+
+#, fuzzy
+#~ msgid "Use Subshell"
+#~ msgstr "Usa un sub-intèrpret"
+
+#, fuzzy
+#~ msgid "Run the program from a subshell such as sh -c ''"
+#~ msgstr "Executa el programa des d'un sub-intèrpret com ara sh -c ''"
+
+#, fuzzy
+#~ msgid "Pass Input Data"
+#~ msgstr "Passa dades d'entrada"
+
+#, fuzzy
+#~ msgid "Instead of passing variables you can process a JSON object."
+#~ msgstr "En lloc de passar variables, podeu processar un objecte JSON."
+
+#, fuzzy
+#~ msgid "Wait For Completion"
+#~ msgstr "Espera que finalitzi"
+
+#, fuzzy
+#~ msgid "Block execution of other commands until the command completes."
+#~ msgstr "Bloqueja l'execució d'altres ordres fins que l'ordre hagi acabat."
+
+#, fuzzy
+#~ msgid "_Delete Action"
+#~ msgstr "_Suprimeix l'acció"
+
+#, fuzzy
+#~ msgid "No events specified yet."
+#~ msgstr "Encara no s'ha especificat cap esdeveniment."
+
+#, fuzzy
+#~ msgid "Add Custom Action"
+#~ msgstr "Afegeix una acció personalitzada"
+
+#, fuzzy
+#~ msgid "_Add"
+#~ msgstr "_Afegeix"
+
+#, fuzzy
+#~ msgid "Select Working Directory"
+#~ msgstr "Seleccioneu el directori de treball"
+
+#~ msgid "_Select"
+#~ msgstr "_Selecciona"
+
+#, fuzzy
+#~ msgid "Untitled action"
+#~ msgstr "Acció sense títol"
+
+#, fuzzy
+#~ msgid "Add Condition"
+#~ msgstr "Afegeix una condició"
+
+#, fuzzy
+#~ msgid "Add Group"
+#~ msgstr "Afegeix un grup"
+
+#~ msgid "AND"
+#~ msgstr "I"
+
+#~ msgid "OR"
+#~ msgstr "O"
+
+#, fuzzy
+#~ msgid "Is"
+#~ msgstr "És"
+
+#, fuzzy
+#~ msgid "Is Not"
+#~ msgstr "No és"
+
+#, fuzzy
+#~ msgid "Equals"
+#~ msgstr "És igual a"
+
+#, fuzzy
+#~ msgid "Greater Than"
+#~ msgstr "Major que"
+
+#, fuzzy
+#~ msgid "Less Than"
+#~ msgstr "Menor que"
+
+#, fuzzy
+#~ msgid "Yes"
+#~ msgstr "Sí"
+
+#, fuzzy
+#~ msgid "No"
+#~ msgstr "No"
+
+#, fuzzy
+#~ msgid "Minutes"
+#~ msgstr "Minuts"
+
+#, fuzzy
+#~ msgid "Seconds"
+#~ msgstr "Segons"
+
+#, fuzzy
+#~ msgid "Hours"
+#~ msgstr "Hores"
+
+#, fuzzy
+#~ msgid "Select Field…"
+#~ msgstr "Selecciona un camp…"
+
+#~ msgid "State"
+#~ msgstr "Estat"
+
+#, fuzzy
+#~ msgid "Running"
+#~ msgstr "En execució"
+
+#, fuzzy
+#~ msgid "Duration"
+#~ msgstr "Durada"
+
+#, fuzzy
+#~ msgid "Insert Variable"
+#~ msgstr "Insereix una variable"
+
+#, fuzzy
+#~ msgid "Format"
+#~ msgstr "Format"
+
+#, fuzzy
+#~ msgid "_Log"
+#~ msgstr "_Registre"
+
+#, fuzzy
+#~ msgid "Show execution log"
+#~ msgstr "Mostra el registre d'execució"
+
+#, fuzzy
+#~ msgid ""
+#~ "Run shell commands automatically on timer events or conditions. <a "
+#~ "href=\"\">Learn more.</a>"
+#~ msgstr ""
+#~ "Executeu ordres de l'intèrpret automàticament en esdeveniments o "
+#~ "condicions del temporitzador. <a href=\"\">Saber-ne més.</a>"
+
+#, fuzzy
+#~ msgid "Set Shortcut"
+#~ msgstr "Estableix la drecera"
+
+#, fuzzy
+#~ msgid "_Set"
+#~ msgstr "_Estableix"
+
+#, fuzzy
+#~ msgid "Disabled"
+#~ msgstr "Inhabilitat"
+
+#, fuzzy
+#~ msgid ""
+#~ "Press <b>Esc</b> to cancel or <b>Backspace</b> to disable the keyboard "
+#~ "shortcut"
+#~ msgstr ""
+#~ "Premeu <b>Esc</b> per cancel·lar o <b>Retrocés</b> per inhabilitar la "
+#~ "drecera de teclat"
+
+#, fuzzy
+#~ msgid ""
+#~ "Global shortcuts let you control the app even when it’s not on screen. "
+#~ "They work as long as the app is running in the background."
+#~ msgstr ""
+#~ "Les dreceres globals us permeten controlar l'aplicació encara que no "
+#~ "estigui a la pantalla. Funcionen mentre l'aplicació s'executi en segon "
+#~ "pla."
+
+#, fuzzy
+#~ msgid "Open app settings for editing global shortcuts"
+#~ msgstr ""
+#~ "Obriu la configuració de l'aplicació per editar les dreceres globals"
+
+#, fuzzy
+#~ msgid "_Edit"
+#~ msgstr "_Edita"
+
+#, fuzzy
+#~ msgid "Enter new shortcut for starting or stopping the timer"
+#~ msgstr "Introduïu una drecera nova per iniciar o aturar el temporitzador"
+
+#, fuzzy
+#~ msgid "Enter new shortcut to start/pause/resume the timer"
+#~ msgstr ""
+#~ "Introduïu una drecera nova per iniciar/pausar/reprendre el temporitzador"
+
+#, fuzzy
+#~ msgid "Enter new shortcut for starting the timer"
+#~ msgstr "Introduïu una drecera nova per iniciar el temporitzador"
+
+#, fuzzy
+#~ msgid "Enter new shortcut for stopping the timer"
+#~ msgstr "Introduïu una drecera nova per aturar el temporitzador"
+
+#, fuzzy
+#~ msgid "Enter new shortcut for pausing the timer"
+#~ msgstr "Introduïu una drecera nova per pausar el temporitzador"
+
+#, fuzzy
+#~ msgid "Enter new shortcut for resuming the timer"
+#~ msgstr "Introduïu una drecera nova per reprendre el temporitzador"
+
+#, fuzzy
+#~ msgid "Enter new shortcut for skipping"
+#~ msgstr "Introduïu una drecera nova per ometre"
+
+#, fuzzy
+#~ msgid "Rewind One Minute"
+#~ msgstr "Rebobina un minut"
+
+#, fuzzy
+#~ msgid "Enter new shortcut for rewinding"
+#~ msgstr "Introduïu una drecera nova per rebobinar"
+
+#, fuzzy
+#~ msgid "Enter new shortcut for bringing window to focus"
+#~ msgstr "Introduïu una drecera nova per portar la finestra al focus"
+
+#, fuzzy
+#~ msgid "Announcements"
+#~ msgstr "Anuncis"
+
+#, fuzzy
+#~ msgid "Time Running Out"
+#~ msgstr "El temps s'acaba"
+
+#, fuzzy
+#~ msgid "Notify when Pomodoro or break is about to end."
+#~ msgstr ""
+#~ "Notifica quan el Pomodoro o el descans estiguin a punt de finalitzar."
+
+#, fuzzy
+#~ msgid "A full-screen notification intended to enforce taking a break."
+#~ msgstr "Una notificació a pantalla completa destinada a forçar el descans."
+
+#, fuzzy
+#~ msgid "Lock Delay"
+#~ msgstr "Retard de bloqueig"
+
+#, fuzzy
+#~ msgid "Period of inactivity to lock the screen."
+#~ msgstr "Període d'inactivitat per bloquejar la pantalla."
+
+#, fuzzy
+#~ msgid "Reopen Delay"
+#~ msgstr "Retard de reobertura"
+
+#, fuzzy
+#~ msgid "Period of inactivity to reopen the overlay after it gets dismissed."
+#~ msgstr ""
+#~ "Període d'inactivitat per tornar a obrir la superposició després d'haver "
+#~ "estat tancada."
+
+#, fuzzy
+#~ msgid "Never"
+#~ msgstr "Mai"
+
+#~ msgid "Notifications"
+#~ msgstr "Notificacions"
+
+#~ msgid "Sounds"
+#~ msgstr "Sons"
+
+#, fuzzy
+#~ msgid "Appearance"
+#~ msgstr "Aparença"
+
+#, fuzzy
+#~ msgid "Keyboard Shortcuts"
+#~ msgstr "Dreceres de teclat"
+
+#, fuzzy
+#~ msgid "Automation"
+#~ msgstr "Automatització"
+
+#, fuzzy
+#~ msgid "Sounds Are Disabled"
+#~ msgstr "Els sons estan inhabilitats"
+
+#, fuzzy
+#~ msgid "Alert Sounds"
+#~ msgstr "Sons d'alerta"
+
+#, fuzzy
+#~ msgid "Pomodoro Finished Sound"
+#~ msgstr "So de Pomodoro finalitzat"
+
+#, fuzzy
+#~ msgid "Break Finished Sound"
+#~ msgstr "So de descans finalitzat"
+
+#, fuzzy
+#~ msgid "Background Sound"
+#~ msgstr "So de fons"
+
+#~ msgid "Bell"
+#~ msgstr "Campana"
+
+#~ msgid "Loud Bell"
+#~ msgstr "Campana potent"
+
+#~ msgid "Clock Ticking"
+#~ msgstr "Tic-tac del rellotge"
+
+#~ msgid "None"
+#~ msgstr "Cap"
+
+#~ msgid "Volume:"
+#~ msgstr "Volum:"
+
+#~ msgid "Select Custom Sound"
+#~ msgstr "Trieu un so personalitzat"
+
+#, fuzzy
+#~ msgid "Pomodoro Duration"
+#~ msgstr "Durada del Pomodoro"
+
+#, fuzzy
+#~ msgid "Short Break Duration"
+#~ msgstr "Durada del descans curt"
+
+#, fuzzy
+#~ msgid "Long Break Duration"
+#~ msgstr "Durada del descans llarg"
+
+#, fuzzy
+#~ msgid "Number of Cycles"
+#~ msgstr "Nombre de cicles"
+
+#, fuzzy
+#~ msgid "Behavior"
+#~ msgstr "Comportament"
+
+#, fuzzy
+#~ msgid "Pause By Locking The Screen"
+#~ msgstr "Pausa en bloquejar la pantalla"
+
+#, fuzzy
+#~ msgid "Confirm Starting a Break"
+#~ msgstr "Confirma l'inici d'un descans"
+
+#, fuzzy
+#~ msgid "Confirm Starting a Pomodoro"
+#~ msgstr "Confirma l'inici d'un Pomodoro"
+
+#, fuzzy, c-format
+#~ msgid "A single session will take <b>%s</b>."
+#~ msgstr "Una sessió única durarà <b>%s</b>."
+
+#, fuzzy, c-format
+#~ msgid "<b>%u%%</b> of the time will be allocated for breaks."
+#~ msgstr "Es dedicarà el <b>%u%%</b> del temps als descansos."
+
+#, fuzzy
+#~ msgid "Apply changes to ongoing Pomodoro?"
+#~ msgstr "Voleu aplicar els canvis al Pomodoro actual?"
+
+#, fuzzy
+#~ msgid "Apply changes to ongoing break?"
+#~ msgstr "Voleu aplicar els canvis al descans actual?"
+
+#, fuzzy
+#~ msgid "Apply"
+#~ msgstr "Aplica"
+
+#, fuzzy
+#~ msgctxt "accessibility"
+#~ msgid "Sidebar"
+#~ msgstr "Barra lateral"
+
+#, fuzzy
+#~ msgid "Compact timer"
+#~ msgstr "Temporitzador compacte"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.28.1"
+#~ msgstr "Resum dels canvis a gnome-pomodoro 0.28.1"
+
+#, fuzzy
+#~ msgid "Added Tamil translation (thanks @omeritzics)"
+#~ msgstr "S'ha afegit la traducció al tàmil (gràcies @omeritzics)"
+
+#, fuzzy
+#~ msgid "Added Hebrew translation (thanks @Killersparrow1)"
+#~ msgstr "S'ha afegit la traducció a l'hebreu (gràcies @Killersparrow1)"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.28.0"
+#~ msgstr "Resum dels canvis a gnome-pomodoro 0.28.0"
+
+#, fuzzy
+#~ msgid "Support for GNOME Shell 49 (thanks @aleasto)"
+#~ msgstr "Compatibilitat amb GNOME Shell 49 (gràcies @aleasto)"
+
+#, fuzzy
+#~ msgid "Updated German translation (thanks @daPhipz)"
+#~ msgstr "Traducció a l'alemany actualitzada (gràcies @daPhipz)"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.27.0"
+#~ msgstr "Resum dels canvis a gnome-pomodoro 0.27.0"
+
+#, fuzzy
+#~ msgid "Support for GNOME Shell 48"
+#~ msgstr "Compatibilitat amb GNOME Shell 48"
+
+#, fuzzy
+#~ msgid "Split time spent across midnight"
+#~ msgstr "Divideix el temps passat a través de la mitjanit"
+
+#, fuzzy
+#~ msgid "Added Telugu translation (thanks @SpaciousCoder78)"
+#~ msgstr "S'ha afegit la traducció al telugu (gràcies @SpaciousCoder78)"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.26.0"
+#~ msgstr "Resum dels canvis a gnome-pomodoro 0.26.0"
+
+#, fuzzy
+#~ msgid "Support for GNOME Shell 47"
+#~ msgstr "Compatibilitat amb GNOME Shell 47"
+
+#, fuzzy
+#~ msgid "Allow to dismiss screen overlay by gesture when a video is playing"
+#~ msgstr ""
+#~ "Permet tancar la superposició de pantalla mitjançant un gest quan s'està "
+#~ "reproduint un vídeo"
+
+#, fuzzy
+#~ msgid "Added Georgian translation (thanks @NorwayFun)"
+#~ msgstr "S'ha afegit la traducció al georgià (gràcies @NorwayFun)"
+
+#, fuzzy
+#~ msgid "Adjusted translations in appdata (thanks @yakushabb)"
+#~ msgstr "Traduccions ajustades a l'appdata (gràcies @yakushabb)"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.25.2"
+#~ msgstr "Resum dels canvis a gnome-pomodoro 0.25.2"
+
+#, fuzzy
+#~ msgid "Fix keeping notification after extending Pomodoro"
+#~ msgstr ""
+#~ "Correcció de la notificació persistent després d'ampliar el Pomodoro"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.25.1"
+#~ msgstr "Resum dels canvis a gnome-pomodoro 0.25.1"
+
+#, fuzzy
+#~ msgid "Fixes for GNOME Shell 46"
+#~ msgstr "Correccions per a GNOME Shell 46"
+
+#, fuzzy
+#~ msgid "Drop support for GNOME Shell 45"
+#~ msgstr "S'elimina la compatibilitat amb GNOME Shell 45"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.25.0"
+#~ msgstr "Resum dels canvis a gnome-pomodoro 0.25.0"
+
+#, fuzzy
+#~ msgid "Support for GNOME Shell 46"
+#~ msgstr "Compatibilitat amb GNOME Shell 46"
+
+#, fuzzy
+#~ msgid "Adjust build script to meson 0.59.0 (thanks @mattst88)"
+#~ msgstr ""
+#~ "S'ha ajustat l'script de construcció a meson 0.59.0 (gràcies @mattst88)"
+
+#, fuzzy
+#~ msgid ""
+#~ "Let <b>Pomodoro</b> manage system notifications while the timer is running"
+#~ msgstr ""
+#~ "Deixeu que <b>Pomodoro</b> gestioni les notificacions del sistema mentre "
+#~ "el temporitzador està en marxa"
+
+#, fuzzy
+#~ msgid "15 seconds"
+#~ msgstr "15 segons"
+
+#, fuzzy
+#~ msgid "30 seconds"
+#~ msgstr "30 segons"
+
+#, fuzzy
+#~ msgid "1 minute"
+#~ msgstr "1 minut"
+
+#, fuzzy
+#~ msgid "2 minutes"
+#~ msgstr "2 minuts"
+
+#, fuzzy
+#~ msgid "3 minutes"
+#~ msgstr "3 minuts"
+
+#, fuzzy
+#~ msgid "5 minutes"
+#~ msgstr "5 minuts"
+
+#~ msgid "Timer Ticking"
+#~ msgstr "Tic-tac del temporitzador"
+
+#, fuzzy
+#~ msgid "Birds"
+#~ msgstr "Ocells"
+
+#~ msgid "@APPLICATION_NAME@"
+#~ msgstr "@APPLICATION_NAME@"
+
+#~ msgid "timer;"
+#~ msgstr "temporitzador;pomodoro;temps;"
+
+#~ msgid "Start/Stop"
+#~ msgstr "Inicia/Atura"
+
+#~ msgid "Pause/Resume"
+#~ msgstr "Pausa/Reprèn"
+
+#~ msgid "Skip to a pomodoro or to a break"
+#~ msgstr "Salta a un pomodoro o a un descans"
+
+#~ msgid "Reset current session"
+#~ msgstr "Restableix la sessió actual"
+
+#~ msgid "Run as background service"
+#~ msgstr "Executa com a servei en segon terme"
+
+#~ msgid "About Pomodoro"
+#~ msgstr "Quant a Pomodoro"
+
+#~ msgid "A simple time management utility"
+#~ msgstr "Una senzilla utilitat de gestió del temps"
+
+#, fuzzy
+#~ msgid "_Stopped"
+#~ msgstr "Atura"
+
+#, fuzzy
+#~ msgid "Extension for GNOME Shell is available"
+#~ msgstr "Indicador del GNOME Shell"
+
+#, fuzzy
+#~ msgid "_Install"
+#~ msgstr "Instaŀla"
+
+#, fuzzy
+#~ msgid "Failed to install extension"
+#~ msgstr "No s'ha pogut habilitar l'extensió"
+
+#, fuzzy, c-format
+#~ msgid "Long break due in %s"
+#~ msgstr "Durada del descans llarg"
 
 #~ msgid "A time management utility for GNOME"
 #~ msgstr "Una utilitat de gestió del temps per al GNOME"
@@ -295,52 +1572,25 @@ msgstr "Descans"
 #~ msgid "Indicator for GNOME Shell"
 #~ msgstr "Indicador del GNOME Shell"
 
-#~ msgid "A simple time management utility"
-#~ msgstr "Una senzilla utilitat de gestió del temps"
+#, fuzzy
+#~ msgid "Support for GNOME Shell 4.0"
+#~ msgstr "Indicador del GNOME Shell"
 
-#~ msgid "timer;"
-#~ msgstr "temporitzador;"
+#, fuzzy
+#~ msgid "Support for GNOME Shell 3.36"
+#~ msgstr "Indicador del GNOME Shell"
 
-#~ msgid "Start"
-#~ msgstr "Inicia"
-
-#~ msgid "Pause"
-#~ msgstr "Pausa"
-
-#~ msgid "Resume"
-#~ msgstr "Continua"
-
-#~ msgid "Stop"
-#~ msgstr "Atura"
+#, fuzzy
+#~ msgid "Support for GNOME Shell 3.34 only"
+#~ msgstr "Indicador del GNOME Shell"
 
 #~ msgid "_Timer"
 #~ msgstr "_Temporitzador"
-
-#~ msgid "_Preferences"
-#~ msgstr "_Preferències"
-
-#~ msgid "_Quit"
-#~ msgstr "_Surt"
 
 #~ msgid "Keyboard shortcut to toggle the timer. Enter new shortcut to change."
 #~ msgstr ""
 #~ "Drecera de teclat per a commutar el temporitzador. Teclegeu una nova "
 #~ "drecera per canviar-la."
-
-#~ msgid "Disable"
-#~ msgstr "Deshabilita"
-
-#~ msgid "Timer"
-#~ msgstr "Temporitzador"
-
-#~ msgid "Pomodoro duration"
-#~ msgstr "Durada del pomodoro"
-
-#~ msgid "Break duration"
-#~ msgstr "Durada del descans"
-
-#~ msgid "Long break duration"
-#~ msgstr "Durada del descans llarg"
 
 #~ msgid "Pomodoros before a long break"
 #~ msgstr "Pomodoros fins a un descans llarg"
@@ -348,14 +1598,8 @@ msgstr "Descans"
 #~ msgid "Keyboard shortcut"
 #~ msgstr "Drecera de teclat"
 
-#~ msgid "Notifications"
-#~ msgstr "Notificacions"
-
 #~ msgid "Screen notifications"
 #~ msgstr "Notificacions en pantalla"
-
-#~ msgid "Desktop"
-#~ msgstr "Escriptori"
 
 #~ msgid "Wait for activity after a break"
 #~ msgstr "Espera que hi hagi activitat després d'un descans"
@@ -369,20 +1613,8 @@ msgstr "Descans"
 #~ msgid "Back"
 #~ msgstr "Enrere"
 
-#~ msgid "Nothing to see yet"
-#~ msgstr "Encara no hi res per mostrar"
-
 #~ msgid "Complete a few sessions"
 #~ msgstr "Completeu algunes sessions"
-
-#~ msgid "Day"
-#~ msgstr "Dia"
-
-#~ msgid "Week"
-#~ msgstr "Setmana"
-
-#~ msgid "Month"
-#~ msgstr "Mes"
 
 #~ msgid "Previous (Alt+Left)"
 #~ msgstr "Anterior (Alt+Esquerra)"
@@ -390,47 +1622,11 @@ msgstr "Descans"
 #~ msgid "Next (Alt+Right)"
 #~ msgstr "Següent (Alt+Dreta)"
 
-#~ msgid "Today"
-#~ msgstr "Avui"
-
-#~ msgid "_About"
-#~ msgstr "_Quant a"
-
-#~ msgid "Actions"
-#~ msgstr "Accions"
-
-#~ msgid "Action"
-#~ msgstr "Acció"
-
-#~ msgid "Custom actions…"
-#~ msgstr "Accions personalitzades…"
-
 #~ msgid "Complete"
 #~ msgstr "Completa"
 
-#~ msgid "Skip"
-#~ msgstr "Omet"
-
 #~ msgid "Enable"
 #~ msgstr "Habilita"
-
-#~ msgid "Command"
-#~ msgstr "Ordre"
-
-#~ msgid "Triggers"
-#~ msgstr "Disparadors"
-
-#~ msgid "Name"
-#~ msgstr "Nom"
-
-#~ msgid "_Pomodoro"
-#~ msgstr "_Pomodoro"
-
-#~ msgid "_Short Break"
-#~ msgstr "Descans _curt"
-
-#~ msgid "_Long Break"
-#~ msgstr "Descans _llarg"
 
 #~ msgid "Add"
 #~ msgstr "Afegeix"
@@ -438,26 +1634,11 @@ msgstr "Descans"
 #~ msgid "Remove"
 #~ msgstr "Elimina"
 
-#~ msgid "State"
-#~ msgstr "Estat"
-
-#~ msgid "State Duration"
-#~ msgstr "Durada de l'estat"
-
 #~ msgid "Elapsed Time"
 #~ msgstr "Temps transcorregut"
 
-#~ msgid "Pomodoro Timer"
-#~ msgstr "Temporitzador del Pomodoro"
-
-#~ msgid "Start Timer"
-#~ msgstr "Inicia el temporitzador"
-
 #~ msgid "Pause Timer"
 #~ msgstr "Pausa el temporitzador"
-
-#~ msgid "Stop Timer"
-#~ msgstr "Atura el temporitzador"
 
 #~ msgid "Pause break"
 #~ msgstr "Pausa el descans"
@@ -478,56 +1659,11 @@ msgstr "Descans"
 #~ msgstr[1] "Falten %d minuts"
 
 #, javascript-format
-#~ msgid "%d second remaining"
-#~ msgid_plural "%d seconds remaining"
-#~ msgstr[0] "Queda %d segon"
-#~ msgstr[1] "Queden %d segons"
-
-#~ msgid "Break is over"
-#~ msgstr "La pausa s'ha acabat"
-
-#~ msgid "Skip Break"
-#~ msgstr "Omet el descans"
-
-#~ msgid "+1 Minute"
-#~ msgstr "+1 minut"
-
-#, javascript-format
 #~ msgid "Failed to run <i>%s</i> service"
 #~ msgstr "El servei <i>%s</i> ha fallat"
 
-#~ msgid "Hide other notifications"
-#~ msgstr "Amaga altres notificacions"
-
-#~ msgid "Volume:"
-#~ msgstr "Volum:"
-
-#~ msgid "Clock Ticking"
-#~ msgstr "Tic-tac del rellotge"
-
-#~ msgid "Timer Ticking"
-#~ msgstr "Tic-tac del temporitzador"
-
 #~ msgid "Woodland Birds"
 #~ msgstr "Ocells de bosc"
-
-#~ msgid "Bell"
-#~ msgstr "Campana"
-
-#~ msgid "Loud Bell"
-#~ msgstr "Campana potent"
-
-#~ msgid "Select Custom Sound"
-#~ msgstr "Trieu un so personalitzat"
-
-#~ msgid "_Cancel"
-#~ msgstr "_Canceŀla"
-
-#~ msgid "_Select"
-#~ msgstr "_Seleccioneu un fitxer"
-
-#~ msgid "Ticking Sound"
-#~ msgstr "So de tic-tac"
 
 #~ msgid "End of Break Sound"
 #~ msgstr "So del final del descans"
@@ -546,39 +1682,6 @@ msgstr "Descans"
 
 #~ msgid "End of break sound"
 #~ msgstr "So del final del descans"
-
-#~ msgid "About Pomodoro"
-#~ msgstr "Quant a Pomodoro"
-
-#~ msgid "translator-credits"
-#~ msgstr "translator-credits"
-
-#~ msgid "Start/Stop"
-#~ msgstr "Inicia/Atura"
-
-#~ msgid "Pause/Resume"
-#~ msgstr "Pausa/Reprèn"
-
-#~ msgid "Skip to a pomodoro or to a break"
-#~ msgstr "Salta a un pomodoro o a un descans"
-
-#~ msgid "Extend current pomodoro or break"
-#~ msgstr "Ampliar el pomodoro actual o trencar"
-
-#~ msgid "Reset current session"
-#~ msgstr "Restableix la sessió actual"
-
-#~ msgid "Run as background service"
-#~ msgstr "Executa com a servei en segon terme"
-
-#~ msgid "Show preferences"
-#~ msgstr "Mostra les preferències"
-
-#~ msgid "Quit application"
-#~ msgstr "Surt de l'aplicació"
-
-#~ msgid "Print version information and exit"
-#~ msgstr "Imprimeix la informació de la versió i surt"
 
 #~ msgid "Focus on your task."
 #~ msgstr "Centreu-vos en la feina."
@@ -615,9 +1718,6 @@ msgstr "Descans"
 #~ "Utilitzar \"%s\" com a drecera interferirà l'escriptura. Proveu d'afegir "
 #~ "una altra tecla com Control, Alt o Majúscules."
 
-#~ msgid "Keyboard Shortcut"
-#~ msgstr "Drecera de teclat"
-
 #~ msgid "Available"
 #~ msgstr "Disponible"
 
@@ -629,9 +1729,6 @@ msgstr "Descans"
 
 #~ msgid "Invisible"
 #~ msgstr "Invisible"
-
-#~ msgid "Yesterday"
-#~ msgstr "Ahir"
 
 #, c-format
 #~ msgid "%d m"
@@ -645,23 +1742,11 @@ msgstr "Descans"
 #~ msgid "%.1f h"
 #~ msgstr "%.1f h"
 
-#~ msgid "This week"
-#~ msgstr "Aquesta setmana"
-
-#~ msgid "Kamil Prusko"
-#~ msgstr "Kamil Prusko"
-
 #~ msgid "gnome-pomodoro"
 #~ msgstr "gnome-pomodoro"
 
 #~ msgid "_Stats"
 #~ msgstr "_Estadístiques"
-
-#~ msgid "Paused"
-#~ msgstr "En pausa"
-
-#~ msgid "Failed to enable extension"
-#~ msgstr "No s'ha pogut habilitar l'extensió"
 
 #~ msgid "It seems to be uninstalled"
 #~ msgstr "Sembla que ha estat desinstal·lada"
@@ -681,14 +1766,8 @@ msgstr "Descans"
 #~ msgid "Could not run pomodoro"
 #~ msgstr "Pomodoro no s'ha pogut executar"
 
-#~ msgid "Something went badly wrong..."
-#~ msgstr "Alguna cosa ha anat malament..."
-
 #~ msgid "Looks like gnome-pomodoro is not installed"
 #~ msgstr "Sembla que gnome-pomodoro no està instal·lat"
-
-#~ msgid "Install"
-#~ msgstr "Instaŀla"
 
 #~ msgid ""
 #~ "This program is free software: you can  redistribute it and/or modify it "
@@ -701,20 +1780,8 @@ msgstr "Descans"
 #~ "publicada per la Free Software Foundation; sigui tant la versió 3 de la "
 #~ "Llicència com (a la vostra elecció) qualsevol versió posterior."
 
-#~ msgid "Short break duration"
-#~ msgstr "Durada de la pausa curta"
-
-#~ msgid "Shortcut to toggle the timer"
-#~ msgstr "Drecera per commutar el temporitzador"
-
 #~ msgid "Remind to take a break"
 #~ msgstr "Recorda'm fer una pausa"
-
-#~ msgid "Sounds"
-#~ msgstr "Sons"
-
-#~ msgid "Select sound for start of break"
-#~ msgstr "Trieu un so per iniciar un descans"
 
 #~ msgid "Select sound for pomodoro start"
 #~ msgstr "Trieu un so per iniciar un pomodoro"
@@ -727,9 +1794,6 @@ msgstr "Descans"
 
 #~ msgid "Status during pomodoro"
 #~ msgstr "Estat durant el pomodoro"
-
-#~ msgid "Status during break"
-#~ msgstr "Estat durant el descans"
 
 #~ msgid ""
 #~ "System notifications including chat messages won't show up during "
@@ -770,12 +1834,6 @@ msgstr "Descans"
 #~ msgid "All files"
 #~ msgstr "Tots els fitxers"
 
-#~ msgid "Other…"
-#~ msgstr "Altres…"
-
-#~ msgid "None"
-#~ msgstr "Cap"
-
 #~ msgid "Supported audio files"
 #~ msgstr "Fitxers d'àudio compatibles"
 
@@ -814,14 +1872,8 @@ msgstr "Descans"
 #~ msgstr[0] "%d sessió completada"
 #~ msgstr[1] "%d sessions completades"
 
-#~ msgid "Pomodoro Finished!"
-#~ msgstr "El pomodoro ha finalitzat!"
-
 #~ msgid "Hide"
 #~ msgstr "Oculta"
-
-#~ msgid "Show dialog"
-#~ msgstr "Mostra diàleg"
 
 #~ msgid "Timer toggle key"
 #~ msgstr "Tecla de commutació del temporitzador"
@@ -864,9 +1916,6 @@ msgstr "Descans"
 
 #~ msgid "Whether to restore state on startup."
 #~ msgstr "Si es restaura l'estat a l'inici."
-
-#~ msgid "Number of completed sessions"
-#~ msgstr "Nombre de sessions completades"
 
 #~ msgid "Number of completed sessions since long break"
 #~ msgstr "Nombre de sessions completades després d'una pausa llarga"

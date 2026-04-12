@@ -1,93 +1,75 @@
-# Lithuanian translation for gnome-pomodoro.
-# Copyright (C) 2016 Free Software Foundation, Inc.
-# This file is distributed under the same license as the gnome-pomodoro package.
+# Lithuanian translation for gnome-shell-extension-focus-timer
+# Copyright (c) 2016 Free Software Foundation, Inc.
+# This file is distributed under the same license as the focus-timer package.
+#
+# Authors:
 # Paulius Šukys <paul.sukys@gmail.com>, 2016.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-pomodoro 0.13.0\n"
+"Project-Id-Version: gnome-shell-extension-focus-timer 1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-25 16:45+0100\n"
-"PO-Revision-Date: 2023-03-25 14:35+0100\n"
+"POT-Creation-Date: 2026-04-12 13:38+0200\n"
+"PO-Revision-Date: 2026-02-02 18:07+0200\n"
 "Last-Translator: Paulius Šukys <paul.sukys@gmail.com>\n"
-"Language-Team: Lithuanian <>\n"
+"Language-Team: Lithuanian\n"
 "Language: lt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 ? 0 : n%10>=2 && (n%100<10 || "
-"n%100>=20) ? 1 : 2);\n"
-"X-Generator: Poedit 3.1.1\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"(n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Poedit 3.8\n"
 
-#: data/org.gnome.shell.extensions.focus-timer.gschema.xml:6
-msgid "Start the app along with extension"
-msgstr ""
-
-#: data/org.gnome.shell.extensions.focus-timer.gschema.xml:14
-msgid "Indicator type"
-msgstr ""
-
-#: data/org.gnome.shell.extensions.focus-timer.gschema.xml:18
-msgid "Blur effect"
-msgstr ""
-
-#: data/org.gnome.shell.extensions.focus-timer.gschema.xml:22
-msgid "Dismiss screen overlay by gesture"
-msgstr ""
-
-#: data/org.gnome.shell.extensions.focus-timer.gschema.xml:26
-msgid "Reduce number of notifications during Pomodoro"
-msgstr ""
+#: src/indicator.js:329 src/screenShield.js:171
+msgid "Finished!"
+msgstr "Baigta!"
 
 #: src/indicator.js:331 src/screenShield.js:173
-msgid "Finished!"
-msgstr ""
-
-#: src/indicator.js:333 src/screenShield.js:175
 #, javascript-format
 msgid "%d of %d"
 msgstr ""
 
-#: src/indicator.js:420 src/prefs.js:73
+#: src/indicator.js:425 src/prefs.js:71
 msgid "Screen Overlay"
-msgstr ""
+msgstr "Ekrano užsklanda"
 
-#: src/indicator.js:423
+#: src/indicator.js:427
 msgid "Preferences"
 msgstr "Nustatymai"
 
-#: src/indicator.js:424
+#: src/indicator.js:428
 msgid "Stats"
-msgstr "BūsenaStatistika"
+msgstr "Statistika"
 
-#: src/indicator.js:426
+#: src/indicator.js:430
 msgid "Quit"
 msgstr "Išeiti"
 
-#: src/indicator.js:601
+#: src/indicator.js:624
 #, javascript-format
 msgid "%dh"
-msgstr ""
+msgstr "%d val."
 
-#: src/indicator.js:605
+#: src/indicator.js:628
 #, javascript-format
 msgid "%dm"
-msgstr ""
+msgstr "%d min."
 
-#: src/indicator.js:613
+#: src/indicator.js:630 src/indicator.js:632 src/indicator.js:634
 #, javascript-format
 msgid "%ds"
-msgstr ""
+msgstr "%d sek."
 
-#: src/indicator.js:1058 src/notifications.js:59
+#: src/indicator.js:1079 src/notifications.js:57
 msgid "Focus Timer"
 msgstr ""
 
-#: src/notifications.js:79
+#: src/notifications.js:77
 msgid "Focus Timer Extension"
 msgstr ""
 
-#: src/notifications.js:115
+#: src/notifications.js:119
 #, javascript-format
 msgid "%d hour"
 msgid_plural "%d hours"
@@ -95,7 +77,7 @@ msgstr[0] "%d valanda"
 msgstr[1] "%d valandos"
 msgstr[2] "%d valandų"
 
-#: src/notifications.js:118
+#: src/notifications.js:122
 #, javascript-format
 msgid "%d minute"
 msgid_plural "%d minutes"
@@ -103,183 +85,1232 @@ msgstr[0] "%d minutė"
 msgstr[1] "%d minutės"
 msgstr[2] "%d minučių"
 
-#: src/notifications.js:121
+#: src/notifications.js:125
 #, javascript-format
 msgid "%d second"
 msgid_plural "%d seconds"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%d sekundė"
+msgstr[1] "%d sekundės"
+msgstr[2] "%d sekundžių"
 
 #. translators: time remaining eg. "3 minutes 50 seconds remaining"
-#: src/notifications.js:128
+#: src/notifications.js:135
 #, javascript-format
 msgid "%s remaining"
-msgstr ""
+msgstr "Liko %s"
 
-#: src/notifications.js:239 src/timer.js:54
+#: src/notifications.js:261 src/timer.js:47
 msgid "Pomodoro"
 msgstr "Pomodoro"
 
-#: src/notifications.js:241
+#: src/notifications.js:263
 msgid "Take a break"
 msgstr "Daryti pertrauką"
 
-#: src/notifications.js:243
+#: src/notifications.js:265
 msgid "Take a short break"
 msgstr "Padarykite trumpą pertraukėlę"
 
-#: src/notifications.js:245
+#: src/notifications.js:267
 msgid "Take a long break"
 msgstr "Padarykite ilgą pertrauką"
 
-#: src/notifications.js:253
+#: src/notifications.js:275
 msgid "Pomodoro is about to end"
 msgstr "Pomodoro tuoj baigsis"
 
-#: src/notifications.js:255
+#: src/notifications.js:277
 msgid "Break is about to end"
 msgstr "Pertrauka tuoj baigsis"
 
-#: src/notifications.js:263 src/notifications.js:275
+#: src/notifications.js:285 src/notifications.js:297
 msgid "Break is over!"
-msgstr ""
+msgstr "Pertrauka baigėsi!"
 
-#: src/notifications.js:265 src/notifications.js:273
+#: src/notifications.js:287 src/notifications.js:295
 msgid "Pomodoro is over!"
-msgstr ""
+msgstr "Pomodoro sesija baigėsi!"
 
-#: src/notifications.js:294
+#: src/notifications.js:316
 msgid "Get ready…"
 msgstr "Pasiruošk…"
 
-#: src/notifications.js:299
+#: src/notifications.js:321
 msgid "Confirm the start of a Pomodoro…"
-msgstr ""
+msgstr "Patvirtinkite Pomodoro pradžią…"
 
-#: src/notifications.js:301
+#: src/notifications.js:323
 msgid "Confirm the start of a break…"
-msgstr ""
+msgstr "Patvirtinkite pertraukos pradžią…"
 
-#: src/notifications.js:303
+#: src/notifications.js:325
 msgid "Confirm the start of a short break…"
-msgstr ""
+msgstr "Patvirtinkite trumpos pertraukos pradžią…"
 
-#: src/notifications.js:305
+#: src/notifications.js:327
 msgid "Confirm the start of a long break…"
-msgstr ""
+msgstr "Patvirtinkite ilgos pertraukos pradžią…"
 
-#: src/notifications.js:344
+#: src/notifications.js:366
 msgid "+1 minute"
-msgstr ""
+msgstr "+1 minutė"
 
-#: src/notifications.js:345
+#: src/notifications.js:367
 msgid "Start Pomodoro"
 msgstr "Pradėti Pomodoro"
 
-#: src/notifications.js:346
+#: src/notifications.js:368
 msgid "Start Break"
-msgstr ""
+msgstr "Pradėti Pertrauką"
 
-#: src/notifications.js:403
+#: src/notifications.js:425
 msgid "Something went wrong"
-msgstr ""
+msgstr "Kažkas nepavyko"
 
-#: src/notifications.js:409
+#: src/notifications.js:431
 msgid "Report issue"
 msgstr "Pranešti problemą"
 
-#: src/notifications.js:429
+#: src/notifications.js:451
 msgid "Focus Timer Not Found"
 msgstr ""
 
-#: src/notifications.js:430
+#: src/notifications.js:452
 msgid "Install Focus Timer app to start using the extension."
 msgstr ""
 
-#: src/notifications.js:435
+#: src/notifications.js:457
 msgid "Install from Flathub"
 msgstr ""
 
-#: src/prefs.js:14
+#: src/prefs.js:12
 msgid "General"
 msgstr ""
 
-#: src/prefs.js:20
+#: src/prefs.js:18
 msgid "Autostart The App"
 msgstr ""
 
-#: src/prefs.js:21
+#: src/prefs.js:19
 msgid "Makes the indicator instantly visible and allows keyboard shortcuts"
 msgstr ""
 
-#: src/prefs.js:34
+#: src/prefs.js:32
 msgid "Indicator"
 msgstr ""
 
-#: src/prefs.js:47
+#: src/prefs.js:45
 msgid "Icon"
 msgstr ""
 
-#: src/prefs.js:53
+#: src/prefs.js:51
 msgid "Text"
 msgstr ""
 
-#: src/prefs.js:60
+#: src/prefs.js:58
 msgid "Display As"
 msgstr ""
 
-#: src/prefs.js:61
+#: src/prefs.js:59
 msgid "Choose how the timer appears in the status bar"
 msgstr ""
 
-#: src/prefs.js:79
+#: src/prefs.js:77
 msgid "Blur Effect"
 msgstr ""
 
-#: src/prefs.js:80
+#: src/prefs.js:78
 msgid "Helps to acknowledge the break"
 msgstr ""
 
-#: src/prefs.js:88
+#: src/prefs.js:86
 msgid "Dismiss Gesture"
 msgstr ""
 
-#: src/prefs.js:89
+#: src/prefs.js:87
 msgid "Flick the mouse or press any key to dismiss"
 msgstr ""
 
-#: src/prefs.js:102
+#: src/prefs.js:100
 msgid "Distractions"
 msgstr ""
 
-#: src/prefs.js:108
+#: src/prefs.js:106
 msgid "Manage Notifications"
 msgstr ""
 
-#: src/prefs.js:109
+#: src/prefs.js:107
 msgid "Toggle Do Not Disturb mode during Pomodoro"
 msgstr ""
 
-#: src/screenOverlay.js:987
+#: src/screenOverlay.js:1053
 msgid "It's time to take a break"
 msgstr "Laikas padaryti pertrauką"
 
-#: src/timer.js:51
+#: src/timer.js:44
 msgid "Stopped"
-msgstr ""
+msgstr "Sustabdyta"
 
-#: src/timer.js:57
+#: src/timer.js:50
 msgid "Short Break"
 msgstr "Trumpa pertrauka"
 
-#: src/timer.js:60
+#: src/timer.js:53
 msgid "Long Break"
 msgstr "Ilga pertrauka"
 
-#: src/timer.js:63
+#: src/timer.js:56
 msgid "Break"
 msgstr "Pertrauka"
+
+#~ msgid "Time management utility"
+#~ msgstr "Laiko valdymo įrankis"
+
+#~ msgid "Maintain focus by taking frequent breaks"
+#~ msgstr "Išlaikykite susikaupimą darydami dažnas pertraukas"
+
+#~ msgid ""
+#~ "A productivity timer that helps you work more effectively by breaking "
+#~ "your time into focused work sessions followed by short breaks. Work for "
+#~ "25 minutes, then take a 5-minute break to maintain concentration and "
+#~ "prevent burnout."
+#~ msgstr ""
+#~ "Produktyvumo laikmatis, padedantis dirbti efektyviau, suskirstant laiką į "
+#~ "susikaupimo sesijas ir trumpas pertraukas. Dirbkite 25 minutes, tada "
+#~ "darykite 5 minučių pertrauką, kad išlaikytumėte koncentraciją ir "
+#~ "išvengtumėte perdegimo."
+
+#~ msgid "Key features:"
+#~ msgstr "Pagrindinės savybės:"
+
+#~ msgid "Customizable work session and break lengths"
+#~ msgstr "Pritaikoma darbo sesijų ir pertraukų trukmė"
+
+#~ msgid "Visual and audio notifications"
+#~ msgstr "Vaizdiniai ir garsiniai pranešimai"
+
+#~ msgid "Time tracking and statistics"
+#~ msgstr "Laiko sekimas ir statistika"
+
+#~ msgid "GNOME desktop integration"
+#~ msgstr "Integracija su GNOME aplinka"
+
+#~ msgid "Screen overlay during breaks"
+#~ msgstr "Ekrano užsklanda pertraukų metu"
+
+#~ msgid "Run custom commands after Pomodoro or break"
+#~ msgstr "Vykdykite pasirinktines komandas po Pomodoro sesijos ar pertraukos"
+
+#~ msgid "Kamil Prusko"
+#~ msgstr "Kamil Prusko"
+
+#~ msgid "Timer"
+#~ msgstr "Laikmatis"
+
+#~ msgid "Daily stats"
+#~ msgstr "Dienos statistika"
+
+#~ msgid "Monthly stats"
+#~ msgstr "Mėnesio statistika"
+
+#~ msgid "Screen overlay"
+#~ msgstr "Ekrano užsklanda"
+
+#~ msgid "Start or Stop"
+#~ msgstr "Pradėti arba sustabdyti"
+
+#~ msgid "Start, Pause or Resume"
+#~ msgstr "Pradėti, pristabdyti arba tęsti"
+
+#~ msgid "Start break"
+#~ msgstr "Pradėti pertrauką"
+
+#~ msgid "Start short break"
+#~ msgstr "Pradėti trumpą pertrauką"
+
+#~ msgid "Start long break"
+#~ msgstr "Pradėti ilgą pertrauką"
+
+#~ msgid "Start"
+#~ msgstr "Pradėti"
+
+#~ msgid "Stop"
+#~ msgstr "Stabdyti"
+
+#~ msgid "Pause"
+#~ msgstr "Pauzė"
+
+#~ msgid "Resume"
+#~ msgstr "Tęsti"
+
+#~ msgid "Skip"
+#~ msgstr "Praleisti"
+
+#~ msgid "Rewind"
+#~ msgstr "Atsukti"
+
+#~ msgid "SECONDS"
+#~ msgstr "SEKUNDĖS"
+
+#~ msgid "Extend current pomodoro or break"
+#~ msgstr "Pratęskite dabartinį pomodoro arba pertrauką"
+
+#~ msgid "Reset"
+#~ msgstr "Atstatyti"
+
+#~ msgid "Print timer status"
+#~ msgstr "Atspausdinti laikmačio būseną"
+
+#~ msgid "Show preferences"
+#~ msgstr "Rodyti nustatymus"
+
+#~ msgid "Quit application"
+#~ msgstr "Išeiti iš programos"
+
+#~ msgid "Print version information and exit"
+#~ msgstr "Spausdinti versijos informaciją ir išeiti"
+
+#~ msgid "Timer Options:"
+#~ msgstr "Laikmačio Pasirinkimai"
+
+#~ msgid "Show options for controlling the timer"
+#~ msgstr "Rodyti laikmačio kontrolės nustatymus"
+
+#, c-format
+#~ msgid "Bugs may be reported at: %s"
+#~ msgstr "Pranešti apie defektus: %s"
+
+#~ msgid "Bring to Focus"
+#~ msgstr "Iškelti į priekį"
+
+#~ msgid "Invalid use. Pass one flag for controlling the timer at a time."
+#~ msgstr ""
+#~ "Negalima konfigūracija. Pateikite po vieną žymą vienu metu laikmačio "
+#~ "kontrolei."
+
+#, c-format
+#~ msgid "Custom action \"%s\" has failed"
+#~ msgstr "Pasirinktinis veiksmas „%s“ nepavyko"
+
+#~ msgid "Reached timeout"
+#~ msgstr "Baigėsi laikas"
+
+#~ msgid "Failed to execute command"
+#~ msgstr "Nepavyko įvykdyti komandos"
+
+#~ msgid "Command is empty"
+#~ msgstr "Komanda yra tuščia"
+
+#~ msgid "Unclosed quotation mark"
+#~ msgstr "Neuždaryta kabutė"
+
+#~ msgid "Invalid command"
+#~ msgstr "Neteisinga komanda"
+
+#, c-format
+#~ msgid "Unknown variable \"%s\""
+#~ msgstr "Nežinomas kintamasis „%s“"
+
+#, c-format
+#~ msgid "Unknown format \"%s\""
+#~ msgstr "Nežinomas formatas „%s“"
+
+#, c-format
+#~ msgid "Program \"%s\" not found"
+#~ msgstr "Programa „%s“ nerasta"
+
+#~ msgid "Actions"
+#~ msgstr "Veiksmai"
+
+#~ msgid "Countdown"
+#~ msgstr "Atgalinis skaičiavimas"
+
+#~ msgid "Session"
+#~ msgstr "Sesija"
+
+#~ msgid "Other"
+#~ msgstr "Kita"
+
+#~ msgid "Started the timer."
+#~ msgstr "Laikmatis paleistas."
+
+#~ msgid "Stopped the timer manually."
+#~ msgstr "Laikmatis sustabdytas rankiniu būdu."
+
+#~ msgid ""
+#~ "The countdown has been manually paused. Not triggered when locking the "
+#~ "screen or when suspending the system."
+#~ msgstr ""
+#~ "Skaičiavimas buvo pristabdytas rankiniu būdu. Nepaleidžiama užrakinant "
+#~ "ekraną ar užmigdant sistemą."
+
+#~ msgid "The countdown has been manually resumed."
+#~ msgstr "Skaičiavimas buvo pratęstas rankiniu būdu."
+
+#~ msgid "Jumped to a next time-block before the countdown has finished."
+#~ msgstr "Pereita prie kito laiko bloko nepasibaigus skaičiavimui."
+
+#~ msgid "Rewind action has been used. It adds a pause in the past."
+#~ msgstr "Panaudotas atsukimo veiksmas. Jis prideda pauzę praeityje."
+
+#~ msgid "Manually cleared the session."
+#~ msgstr "Sesija išvalyta rankiniu būdu."
+
+#~ msgid "Finished"
+#~ msgstr "Baigta"
+
+#~ msgid ""
+#~ "The countdown has finished. If waiting for confirmation, the duration of "
+#~ "the time-block still may be altered."
+#~ msgstr ""
+#~ "Skaičiavimas baigėsi. Jei laukiama patvirtinimo, laiko bloko trukmė vis "
+#~ "dar gali būti pakeista."
+
+#~ msgid "Changed"
+#~ msgstr "Pasikeitė"
+
+#~ msgid "Triggered on any change related to the countdown."
+#~ msgstr ""
+#~ "Aktyvuojama įvykus bet kokiam su atgaliniu skaičiavimu susijusiam "
+#~ "pokyčiui."
+
+#~ msgid "Confirm Advancement"
+#~ msgstr "Patvirtinti eigą"
+
+#~ msgid "A manual confirmation is required to start next time-block."
+#~ msgstr ""
+#~ "Norint pradėti kitą laiko bloką, reikalingas rankinis patvirtinimas."
+
+#~ msgid "Advanced"
+#~ msgstr "Pažengta"
+
+#~ msgid "Transitioned or skipped to a next time-block."
+#~ msgstr "Pereita arba praleista į kitą laiko bloką."
+
+#~ msgid "State Changed"
+#~ msgstr "Būsena pasikeitė"
+
+#~ msgid "Transitioned to a next time-block or when a break gets relabelled."
+#~ msgstr "Pereita į kitą laiko bloką arba kai pertrauka pervardijama."
+
+#~ msgid "Rescheduled"
+#~ msgstr "Perplanuota"
+
+#~ msgid "Triggered when scheduled time-blocks have changed."
+#~ msgstr "Aktyvuojama pasikeitus suplanuotiems laiko blokams."
+
+#~ msgid "Expired"
+#~ msgstr "Baigėsi laikas"
+
+#~ msgid "Triggered when session is about to be reset due to inactivity."
+#~ msgstr "Aktyvuojama, kai sesija turi būti atstatyta dėl neaktyvumo."
+
+#~ msgid "Take a Break"
+#~ msgstr "Metas pertraukai"
+
+#~ msgid "Skip Break"
+#~ msgstr "Praleisti pertrauką"
+
+#~ msgid "Failed to initialize playback"
+#~ msgstr "Nepavyko pradėti atkūrimo"
+
+#~ msgid "File not found"
+#~ msgstr "Failas nerastas"
+
+#~ msgid "File type not supported"
+#~ msgstr "Failo tipas nepalaikomas"
+
+#, c-format
+#~ msgid "%uh"
+#~ msgstr "%u val."
+
+#, c-format
+#~ msgid "%um"
+#~ msgstr "%u min."
+
+#, c-format
+#~ msgid "%u hour"
+#~ msgid_plural "%u hours"
+#~ msgstr[0] "%u valanda"
+#~ msgstr[1] "%u valandos"
+#~ msgstr[2] "%u valandų"
+
+#, c-format
+#~ msgid "%u minute"
+#~ msgid_plural "%u minutes"
+#~ msgstr[0] "%u minutė"
+#~ msgstr[1] "%u minutės"
+#~ msgstr[2] "%u minučių"
+
+#, c-format
+#~ msgid "%u second"
+#~ msgid_plural "%u seconds"
+#~ msgstr[0] "%u sekundė"
+#~ msgstr[1] "%u sekundės"
+#~ msgstr[2] "%u sekundžių"
+
+#~ msgid "The exact time of the current event."
+#~ msgstr "Tikslus dabartinio įvykio laikas."
+
+#~ msgid ""
+#~ "The current phase of the Pomodoro cycle. Possible values: <tt>stopped</"
+#~ "tt>, <tt>pomodoro</tt>, <tt>break</tt>, <tt>short-break</tt>, <tt>long-"
+#~ "break</tt>."
+#~ msgstr ""
+#~ "Dabartinė Pomodoro ciklo fazė. Galimos reikšmės: <tt>sustabdyta</tt>, "
+#~ "<tt>pomodoro</tt>, <tt>pertrauka</tt>, <tt>trumpa petrauka</tt>, <tt>ilga "
+#~ "pertrauka</tt>."
+
+#~ msgid ""
+#~ "Status of the current time-block. Possible values: <tt>scheduled</tt>, "
+#~ "<tt>in-progress</tt>, <tt>completed</tt>, <tt>uncompleted</tt>."
+#~ msgstr ""
+#~ "Dabartinio laiko bloko būsena. Galimos reikšmės: <tt>suplanuota</tt>, "
+#~ "<tt>vykdoma</tt>, <tt>baigta</tt>, <tt>nebaigta</tt>."
+
+#~ msgid "A flag indicating whether countdown has begun."
+#~ msgstr "Žyma, nurodanti atgalinio skaičiavimo pradžią."
+
+#~ msgid "A flag indicating whether countdown is paused."
+#~ msgstr "Žyma, nurodanti atgalinio skaičiavimo pristabdymą."
+
+#~ msgid "A flag indicating whether countdown has finished."
+#~ msgstr "Žyma, nurodanti atgalinio skaičiavimo pabaigą."
+
+#~ msgid "A flag indicating whether the timer is actively counting down."
+#~ msgstr "Žyma, nurodanti, ar laikmatis aktyviai skaičiuoja laiką atgal."
+
+#~ msgid "Duration of the current countdown."
+#~ msgstr "Dabartinio atgalinio skaičiavimo trukmė."
+
+#~ msgid "Discrepancy between elapsed time and the time passed."
+#~ msgstr "Skirtumas tarp rodomo laiko trukmės ir faktinio laiko."
+
+#~ msgid "The amount of time spent on the countdown."
+#~ msgstr "Laikas, praleistas skaičiuojant atgal."
+
+#~ msgid "The amount of time left before the countdown ends."
+#~ msgstr "Likęs laikas iki skaičiavimo atgal pabaigos."
+
+#~ msgid "Time when the countdown has started."
+#~ msgstr "Laikas, kada prasidėjo atgalinis skaičiavimas."
+
+#~ msgid "GNOME Shell Extension"
+#~ msgstr "GNOME Shell plėtinys"
+
+#~ msgid "Get the best experience!"
+#~ msgstr "Gaukite geriausią patirtį!"
+
+#~ msgid "Enable <b>GNOME Shell extension</b> for seamless desktop integration"
+#~ msgstr ""
+#~ "Įjunkite <b>GNOME Shell plėtinį</b> sklandžiai integracijai su aplinka"
+
+#~ msgid "Always within reach"
+#~ msgstr "Visada pasiekiama"
+
+#~ msgid "Control timer directly from the top bar without opening the app"
+#~ msgstr ""
+#~ "Valdykite laikmatį tiesiai iš viršutinės juostos neatidarydami programos"
+
+#~ msgid "Less distractions"
+#~ msgstr "Mažiau trukdžių"
+
+#~ msgid "Refined break reminders"
+#~ msgstr "Patobulinti priminimai apie pertraukas"
+
+#~ msgid ""
+#~ "Elegant full-screen overlay that make taking breaks a more pleasant "
+#~ "experience"
+#~ msgstr "Elegantiška viso ekrano užsklanda, padaranti pertraukas malonesnes"
+
+#~ msgid "Ready to try it?"
+#~ msgstr "Pasiruošę išbandyti?"
+
+#~ msgid "_Install Extension"
+#~ msgstr "Į_diegti plėtinį"
+
+#~ msgid "_Not Now"
+#~ msgstr "_Ne dabar"
+
+#~ msgid "Copy to clipboard"
+#~ msgstr "Kopijuoti į iškarpinę"
+
+#~ msgid "_Try Again"
+#~ msgstr "_Bandykite dar kartą"
+
+#~ msgid "_Abort"
+#~ msgstr "_Atšaukti"
+
+#~ msgid "Time-out reached"
+#~ msgstr "Baigėsi laikas"
+
+#~ msgid "Installing extensions is not allowed"
+#~ msgstr "Plėtinių diegimas neleidžiamas"
+
+#~ msgid "Failed to download the extension"
+#~ msgstr "Nepavyko atsisiųsti plėtinio"
+
+#~ msgid "Desktop"
+#~ msgstr "Darbalaukis"
+
+#~ msgid "GNOME Shell extension available"
+#~ msgstr "Yra GNOME Shell plėtinys"
+
+#~ msgid "Learn More"
+#~ msgstr "Sužinoti daugiau"
+
+#~ msgid "Unused"
+#~ msgstr "Nenaudojama"
+
+#~ msgid "Log"
+#~ msgstr "Žurnalas"
+
+#~ msgid "Empty Log"
+#~ msgstr "Žurnalas tuščias"
+
+#~ msgid "Entries will show up here once you start the timer."
+#~ msgstr "Įrašai atsiras čia, kai paleisite laikmatį."
+
+#~ msgid "Context"
+#~ msgstr "Kontekstas"
+
+#~ msgid "Command"
+#~ msgstr "Komanda"
+
+#~ msgid "Output"
+#~ msgstr "Išvestis"
+
+#~ msgid "Error"
+#~ msgstr "Klaida"
+
+#~ msgid "Exit Code:"
+#~ msgstr "Išėjimo kodas:"
+
+#~ msgid "Execution Time:"
+#~ msgstr "Vykdymo laikas:"
+
+#~ msgid "translator-credits"
+#~ msgstr "Paulius Šukys <paul.sukys@gmail.com>"
+
+#~ msgid "Donate"
+#~ msgstr "Paremkite"
+
+#~ msgid "Breaks"
+#~ msgstr "Pertraukos"
+
+#~ msgid "Interruptions"
+#~ msgstr "Pertraukimai"
+
+#~ msgid "Break Ratio"
+#~ msgstr "Pertraukų santykis"
+
+#~ msgid "Day"
+#~ msgstr "Diena"
+
+#~ msgid "Week"
+#~ msgstr "Savaitė"
+
+#~ msgid "Month"
+#~ msgstr "Mėnuo"
+
+#~ msgid "Nothing to see here yet"
+#~ msgstr "Dar nėra ką pamatyti"
+
+#~ msgid "Finish a few Pomodoros to fill this up!"
+#~ msgstr "Užbaikite keletą Pomodoro sesijų, kad čia atsirastų duomenų!"
+
+#, c-format
+#~ msgid "Skipped %u day"
+#~ msgid_plural "Skipped %u days"
+#~ msgstr[0] "Praleista %u diena"
+#~ msgstr[1] "Praleista %u dienos"
+#~ msgstr[2] "Praleista %u dienų"
+
+#, c-format
+#~ msgid "Skipped %u week"
+#~ msgid_plural "Skipped %u weeks"
+#~ msgstr[0] "Praleista %u savaitė"
+#~ msgstr[1] "Praleista %u savaitės"
+#~ msgstr[2] "Praleista %u savaičių"
+
+#, c-format
+#~ msgid "Skipped %u month"
+#~ msgid_plural "Skipped %u months"
+#~ msgstr[0] "Praleistas %u mėnuo"
+#~ msgstr[1] "Praleisti %u mėnesiai"
+#~ msgstr[2] "Praleista %u mėnesių"
+
+#~ msgid "Today"
+#~ msgstr "Šiandien"
+
+#~ msgid "Yesterday"
+#~ msgstr "vakar"
+
+#~ msgid "This week"
+#~ msgstr "Šią savaitę"
+
+#, c-format
+#~ msgid "Week %u"
+#~ msgstr "%u savaitė"
+
+#, c-format
+#~ msgid "Week %u of %u"
+#~ msgstr "%u savaitė iš %u"
+
+#~ msgid "_Pomodoro"
+#~ msgstr "_Pomodoro"
+
+#~ msgid "_Short Break"
+#~ msgstr "_Trumpa pertrauka"
+
+#~ msgid "_Long Break"
+#~ msgstr "_Ilga pertrauka"
+
+#~ msgid "_Break"
+#~ msgstr "_Pertrauka"
+
+#~ msgid "Open screen overlay"
+#~ msgstr "Atidaryti ekrano užsklandą"
+
+#~ msgid "Session has expired"
+#~ msgstr "Sesija nebegalioja"
+
+#, c-format
+#~ msgid "Long break due in <b>%s</b>"
+#~ msgstr "Ilga pertrauka už <b>%s</b>"
+
+#~ msgid "Rewind one minute"
+#~ msgstr "Atsukti vieną minutę"
+
+#~ msgid "_Compact View"
+#~ msgstr "_Kompaktiškas vaizdas"
+
+#~ msgid "_Preferences"
+#~ msgstr "_Nustatymai"
+
+#~ msgid "_About"
+#~ msgstr "_Apie"
+
+#~ msgid "_Quit"
+#~ msgstr "_Išeiti"
+
+#~ msgid "Primary Menu"
+#~ msgstr "Pagrindinis meniu"
+
+#~ msgid "Keep timer running?"
+#~ msgstr "Palikti laikmatį veikiantį?"
+
+#~ msgid ""
+#~ "You can keep it running in the background — notifications and keyboard "
+#~ "shortcuts will still work."
+#~ msgstr ""
+#~ "Galite palikti jį veikti fone — pranešimai ir spartieji klavišai vis tiek "
+#~ "veiks."
+
+#~ msgid "Run in background"
+#~ msgstr "Veikti fone"
+
+#~ msgid "Main Window"
+#~ msgstr "Pagrindinis langas"
+
+#~ msgid "Prefer Dark Theme"
+#~ msgstr "Naudoti tamsią temą"
+
+#~ msgid "Prefer Compact View"
+#~ msgstr "Naudoti kompaktišką vaizdą"
+
+#~ msgid "Started"
+#~ msgstr "Pradėta"
+
+#~ msgid "Paused"
+#~ msgstr "Pristabdyta"
+
+#~ msgid "Edit Custom Action"
+#~ msgstr "Redaguoti pasirinktinį veiksmą"
+
+#~ msgid "_Cancel"
+#~ msgstr "_Atsisakyti"
+
+#~ msgid "_Save"
+#~ msgstr "Iš_saugoti"
+
+#~ msgid "Name"
+#~ msgstr "Vardas"
+
+#~ msgid "Trigger"
+#~ msgstr "Trigeris"
+
+#~ msgid "Event"
+#~ msgstr "Įvykis"
+
+#~ msgid "Execute command after an event."
+#~ msgstr "Vykdyti komandą po įvykio."
+
+#~ msgid "Condition"
+#~ msgstr "Sąlyga"
+
+#~ msgid ""
+#~ "Ensure execution of a second command once condition is no longer met."
+#~ msgstr "Užtikrinti antros komandos vykdymą, kai sąlyga nebetenkinama."
+
+#~ msgid "Events"
+#~ msgstr "Įvykiai"
+
+#~ msgid "Add _Event"
+#~ msgstr "Pridėti į_vykį"
+
+#~ msgid "_Filter"
+#~ msgstr "_Filtras"
+
+#~ msgid "Filter"
+#~ msgstr "Filtras"
+
+#~ msgid "Shell Command"
+#~ msgstr "Shell komanda"
+
+#~ msgid "Commands"
+#~ msgstr "Komandos"
+
+#~ msgid "Condition Met Command"
+#~ msgstr "Komanda, kai sąlyga tenkinama"
+
+#~ msgid "Condition Not Met Command"
+#~ msgstr "Komanda, kai sąlyga netenkinama"
+
+#~ msgid "Working Directory"
+#~ msgstr "Darbinis katalogas"
+
+#~ msgid "Use Subshell"
+#~ msgstr "Naudoti Subshell"
+
+#~ msgid "Run the program from a subshell such as sh -c ''"
+#~ msgstr "Vykdyti programą iš subshell, pvz., sh -c ''"
+
+#~ msgid "Pass Input Data"
+#~ msgstr "Perduoti įvesties duomenis"
+
+#~ msgid "Instead of passing variables you can process a JSON object."
+#~ msgstr "Vietoj kintamųjų perdavimo galite apdoroti JSON objektą."
+
+#~ msgid "Wait For Completion"
+#~ msgstr "Laukti pabaigos"
+
+#~ msgid "Block execution of other commands until the command completes."
+#~ msgstr "Blokuoti kitų komandų vykdymą, kol ši komanda bus baigta."
+
+#~ msgid "_Delete Action"
+#~ msgstr "Iš_trinti veiksmą"
+
+#~ msgid "No events specified yet."
+#~ msgstr "Įvykių dar nenurodyta."
+
+#~ msgid "Add Custom Action"
+#~ msgstr "Pridėti pasirinktinį veiksmą"
+
+#~ msgid "_Add"
+#~ msgstr "_Pridėti"
+
+#~ msgid "Select Working Directory"
+#~ msgstr "Pasirinkti darbinį katalogą"
+
+#~ msgid "_Select"
+#~ msgstr "_Pasirinkti"
+
+#~ msgid "Untitled action"
+#~ msgstr "Bevardis veiksmas"
+
+#~ msgid "Add Condition"
+#~ msgstr "Pridėti sąlygą"
+
+#~ msgid "Add Group"
+#~ msgstr "Pridėti grupę"
+
+#~ msgid "AND"
+#~ msgstr "IR"
+
+#~ msgid "OR"
+#~ msgstr "ARBA"
+
+#~ msgid "Is"
+#~ msgstr "Yra"
+
+#~ msgid "Is Not"
+#~ msgstr "Nėra"
+
+#~ msgid "Equals"
+#~ msgstr "Lygu"
+
+#~ msgid "Greater Than"
+#~ msgstr "Daugiau nei"
+
+#~ msgid "Less Than"
+#~ msgstr "Mažiau nei"
+
+#~ msgid "Yes"
+#~ msgstr "Taip"
+
+#~ msgid "No"
+#~ msgstr "Ne"
+
+#~ msgid "Minutes"
+#~ msgstr "Minutės"
+
+#~ msgid "Seconds"
+#~ msgstr "Sekundės"
+
+#~ msgid "Hours"
+#~ msgstr "Valandos"
+
+#~ msgid "Select Field…"
+#~ msgstr "Pasirinkite lauką…"
+
+#~ msgid "State"
+#~ msgstr "Būsena"
+
+#~ msgid "Running"
+#~ msgstr "Vykdoma"
+
+#~ msgid "Duration"
+#~ msgstr "Trukmė"
+
+#~ msgid "Insert Variable"
+#~ msgstr "Įterpti kintamąjį"
+
+#~ msgid "Format"
+#~ msgstr "Formatas"
+
+#~ msgid "_Log"
+#~ msgstr "Ž_urnalas"
+
+#~ msgid "Show execution log"
+#~ msgstr "Rodyti vykdymo žurnalą"
+
+#~ msgid ""
+#~ "Run shell commands automatically on timer events or conditions. <a "
+#~ "href=\"\">Learn more.</a>"
+#~ msgstr ""
+#~ "Vykdykite shell komandas automatiškai pagal laikmačio įvykius ar sąlygas. "
+#~ "<a href=\"\">Sužinokite daugiau.</a>"
+
+#~ msgid "Set Shortcut"
+#~ msgstr "Nustatyti spartųjį klavišą"
+
+#~ msgid "_Set"
+#~ msgstr "Nu_statyti"
+
+#~ msgid "Disabled"
+#~ msgstr "Išjungti"
+
+#~ msgid ""
+#~ "Press <b>Esc</b> to cancel or <b>Backspace</b> to disable the keyboard "
+#~ "shortcut"
+#~ msgstr ""
+#~ "Spauskite <b>Esc</b> atšaukimui arba <b>Backspace</b>, jei norite "
+#~ "išjungti spartųjį klavišą"
+
+#~ msgid ""
+#~ "Global shortcuts let you control the app even when it’s not on screen. "
+#~ "They work as long as the app is running in the background."
+#~ msgstr ""
+#~ "Visuotiniai spartieji klavišai leidžia valdyti programą net kai ji nėra "
+#~ "ekrane. Jie veikia tol, kol programa veikia fone."
+
+#~ msgid "Open app settings for editing global shortcuts"
+#~ msgstr "Atidaryti nustatymus visuotinių sparčiųjų klavišų redagavimui"
+
+#~ msgid "_Edit"
+#~ msgstr "R_edaguoti"
+
+#~ msgid "Enter new shortcut for starting or stopping the timer"
+#~ msgstr ""
+#~ "Įveskite naują spartųjį klavišą laikmačio paleidimui arba sustabdymui"
+
+#~ msgid "Enter new shortcut to start/pause/resume the timer"
+#~ msgstr "Įveskite naują spartųjį klavišą laikmačio paleidimui/pauzei/tęsimui"
+
+#~ msgid "Enter new shortcut for starting the timer"
+#~ msgstr "Įveskite naują spartųjį klavišą laikmačio paleidimui"
+
+#~ msgid "Enter new shortcut for stopping the timer"
+#~ msgstr "Įveskite naują spartųjį klavišą laikmačio sustabdymui"
+
+#~ msgid "Enter new shortcut for pausing the timer"
+#~ msgstr "Įveskite naują spartųjį klavišą laikmačio pristabdymui"
+
+#~ msgid "Enter new shortcut for resuming the timer"
+#~ msgstr "Įveskite naują spartųjį klavišą laikmačio pratęsimui"
+
+#~ msgid "Enter new shortcut for skipping"
+#~ msgstr "Įveskite naują spartųjį klavišą praleidimui"
+
+#~ msgid "Rewind One Minute"
+#~ msgstr "Atsukti vieną minutę"
+
+#~ msgid "Enter new shortcut for rewinding"
+#~ msgstr "Įveskite naują spartųjį klavišą atsukimui"
+
+#~ msgid "Enter new shortcut for bringing window to focus"
+#~ msgstr "Įveskite naują spartųjį klavišą lango iškėlimui"
+
+#~ msgid "Announcements"
+#~ msgstr "Pranešimai"
+
+#~ msgid "Time Running Out"
+#~ msgstr "Laikas baigiasi"
+
+#~ msgid "Notify when Pomodoro or break is about to end."
+#~ msgstr "Pranešti, kai Pomodoro arba pertrauka tuoj baigsis."
+
+#~ msgid "A full-screen notification intended to enforce taking a break."
+#~ msgstr "Viso ekrano pranešimas, skirtas priversti padaryti pertrauką."
+
+#~ msgid "Lock Delay"
+#~ msgstr "Užrakinimo delsa"
+
+#~ msgid "Period of inactivity to lock the screen."
+#~ msgstr "Neaktyvumo laikotarpis, po kurio užrakinamas ekranas."
+
+#~ msgid "Reopen Delay"
+#~ msgstr "Pakartotinio atidarymo delsa"
+
+#~ msgid "Period of inactivity to reopen the overlay after it gets dismissed."
+#~ msgstr "Neaktyvumo laikotarpis, po kurio vėl rodoma užsklanda ją išjungus."
+
+#~ msgid "Never"
+#~ msgstr "Niekada"
+
+#~ msgid "Notifications"
+#~ msgstr "Pranešimai"
+
+#~ msgid "Sounds"
+#~ msgstr "Garsai"
+
+#~ msgid "Appearance"
+#~ msgstr "Išvaizda"
+
+#~ msgid "Keyboard Shortcuts"
+#~ msgstr "Spartieji klaviatūros klavišai"
+
+#~ msgid "Automation"
+#~ msgstr "Automatizavimas"
+
+#~ msgid "Sounds Are Disabled"
+#~ msgstr "Garsai išjungti"
+
+#~ msgid "Alert Sounds"
+#~ msgstr "Įspėjimų garsai"
+
+#~ msgid "Pomodoro Finished Sound"
+#~ msgstr "Pomodoro pabaigos garsas"
+
+#~ msgid "Break Finished Sound"
+#~ msgstr "Pertraukos pabaigos garsas"
+
+#~ msgid "Background Sound"
+#~ msgstr "Fono garsas"
+
+#~ msgid "Bell"
+#~ msgstr "Varpelis"
+
+#~ msgid "Loud Bell"
+#~ msgstr "Garsus varpas"
+
+#~ msgid "Clock Ticking"
+#~ msgstr "Laikrodžio tiksėjimas"
+
+#~ msgid "None"
+#~ msgstr "Nėra"
+
+#~ msgid "Volume:"
+#~ msgstr "Garsumas:"
+
+#~ msgid "Select Custom Sound"
+#~ msgstr "Pasirinkti kitą garsą"
+
+#~ msgid "Pomodoro Duration"
+#~ msgstr "Pomodoro trukmė"
+
+#~ msgid "Short Break Duration"
+#~ msgstr "Trumpos pertraukos trukmė"
+
+#~ msgid "Long Break Duration"
+#~ msgstr "Ilgosios pertraukos trukmė"
+
+#~ msgid "Number of Cycles"
+#~ msgstr "Ciklų skaičius"
+
+#~ msgid "Behavior"
+#~ msgstr "Elgsena"
+
+#~ msgid "Pause By Locking The Screen"
+#~ msgstr "Pristabdyti užrakinant ekraną"
+
+#~ msgid "Confirm Starting a Break"
+#~ msgstr "Patvirtinti pertraukos pradžią"
+
+#~ msgid "Confirm Starting a Pomodoro"
+#~ msgstr "Patvirtinti Pomodoro pradžią"
+
+#, c-format
+#~ msgid "A single session will take <b>%s</b>."
+#~ msgstr "Vienos sesijos trukmė: <b>%s</b>."
+
+#, c-format
+#~ msgid "<b>%u%%</b> of the time will be allocated for breaks."
+#~ msgstr "<b>%u%%</b> laiko bus skirta pertraukoms."
+
+#~ msgid "Apply changes to ongoing Pomodoro?"
+#~ msgstr "Pritaikyti pakeitimus vykstančiam Pomodoro?"
+
+#~ msgid "Apply changes to ongoing break?"
+#~ msgstr "Pritaikyti pakeitimus vykstančiai pertraukai?"
+
+#~ msgid "Apply"
+#~ msgstr "Pritaikyti"
+
+#~ msgctxt "accessibility"
+#~ msgid "Sidebar"
+#~ msgstr "Šoninė juosta"
+
+#~ msgid "15 seconds"
+#~ msgstr "15 sekundžių"
+
+#~ msgid "30 seconds"
+#~ msgstr "30 sekundžių"
+
+#~ msgid "1 minute"
+#~ msgstr "1 minutė"
+
+#~ msgid "2 minutes"
+#~ msgstr "2 minutės"
+
+#~ msgid "3 minutes"
+#~ msgstr "3 minutės"
+
+#~ msgid "5 minutes"
+#~ msgstr "5 minutės"
+
+#~ msgid "Compact timer"
+#~ msgstr "Kompaktiškas laikmatis"
+
+#~ msgid "Overview of changes in gnome-pomodoro 0.28.1"
+#~ msgstr "Pakeitimų apžvalga gnome-pomodoro 0.28.1"
+
+#~ msgid "Added Tamil translation (thanks @omeritzics)"
+#~ msgstr "Pridėtas tamilų kalbos vertimas (ačiū @omeritzics)"
+
+#~ msgid "Added Hebrew translation (thanks @Killersparrow1)"
+#~ msgstr "Pridėtas hebrajų kalbos vertimas (ačiū @Killersparrow1)"
+
+#~ msgid "Overview of changes in gnome-pomodoro 0.28.0"
+#~ msgstr "Pakeitimų apžvalga gnome-pomodoro 0.28.0"
+
+#~ msgid "Support for GNOME Shell 49 (thanks @aleasto)"
+#~ msgstr "Palaikymas GNOME Shell 49 (ačiū @aleasto)"
+
+#~ msgid "Updated German translation (thanks @daPhipz)"
+#~ msgstr "Atnaujintas vokiečių kalbos vertimas (ačiū @daPhipz)"
+
+#~ msgid "Overview of changes in gnome-pomodoro 0.27.0"
+#~ msgstr "Pakeitimų apžvalga gnome-pomodoro 0.27.0"
+
+#~ msgid "Support for GNOME Shell 48"
+#~ msgstr "Palaikymas GNOME Shell 48"
+
+#~ msgid "Split time spent across midnight"
+#~ msgstr "Padalinti laiką einantį per vidurnaktį"
+
+#~ msgid "Added Telugu translation (thanks @SpaciousCoder78)"
+#~ msgstr "Pridėtas telugų kalbos vertimas (ačiū @SpaciousCoder78)"
+
+#~ msgid "Overview of changes in gnome-pomodoro 0.26.0"
+#~ msgstr "Pakeitimų apžvalga gnome-pomodoro 0.26.0"
+
+#~ msgid "Support for GNOME Shell 47"
+#~ msgstr "Palaikymas GNOME Shell 47"
+
+#~ msgid "Allow to dismiss screen overlay by gesture when a video is playing"
+#~ msgstr "Leisti išjungti ekrano užsklandą gestu, kai rodomas vaizdo įrašas"
+
+#~ msgid "Added Georgian translation (thanks @NorwayFun)"
+#~ msgstr "Pridėtas gruzinų kalbos vertimas (ačiū @NorwayFun)"
+
+#~ msgid "Adjusted translations in appdata (thanks @yakushabb)"
+#~ msgstr "Pakoreguoti vertimai appdata faile (ačiū @yakushabb)"
+
+#~ msgid "Overview of changes in gnome-pomodoro 0.25.2"
+#~ msgstr "Pakeitimų apžvalga gnome-pomodoro 0.25.2"
+
+#~ msgid "Fix keeping notification after extending Pomodoro"
+#~ msgstr "Ištaisyta klaida, kai pranešimas lieka pratęsus Pomodoro"
+
+#~ msgid "Overview of changes in gnome-pomodoro 0.25.1"
+#~ msgstr "Pakeitimų apžvalga gnome-pomodoro 0.25.1"
+
+#~ msgid "Fixes for GNOME Shell 46"
+#~ msgstr "Pataisymai GNOME Shell 46 versijai"
+
+#~ msgid "Drop support for GNOME Shell 45"
+#~ msgstr "Nebepalaikoma GNOME Shell 45"
+
+#~ msgid "Overview of changes in gnome-pomodoro 0.25.0"
+#~ msgstr "Pakeitimų apžvalga gnome-pomodoro 0.25.0"
+
+#~ msgid "Support for GNOME Shell 46"
+#~ msgstr "Palaikymas GNOME Shell 46"
+
+#~ msgid "Adjust build script to meson 0.59.0 (thanks @mattst88)"
+#~ msgstr "Sukūrimo skriptas pritaikytas meson 0.59.0 (ačiū @mattst88)"
+
+#~ msgid ""
+#~ "Let <b>Pomodoro</b> manage system notifications while the timer is running"
+#~ msgstr ""
+#~ "Leiskite <b>Pomodoro</b> valdyti sistemos pranešimus, kol veikia laikmatis"
+
+#~ msgid "Timer Ticking"
+#~ msgstr "Laikmačio tiksėjimas"
+
+#~ msgid "Birds"
+#~ msgstr "Paukščiai"
+
+#~ msgid "@APPLICATION_NAME@"
+#~ msgstr "@APPLICATION_NAME@"
+
+#~ msgid "timer;"
+#~ msgstr "laikmatis;laikrodis;pomodoro;"
+
+#~ msgid "Start/Stop"
+#~ msgstr "Pradėti/Stabdyti"
+
+#~ msgid "Pause/Resume"
+#~ msgstr "Pauzė/Tęsti"
+
+#~ msgid "Skip to a pomodoro or to a break"
+#~ msgstr "Pereikite prie pomodoro arba į pertrauką"
+
+#~ msgid "Reset current session"
+#~ msgstr "Iš naujo nustatyti dabartinę sesiją"
+
+#~ msgid "Run as background service"
+#~ msgstr "Leisti kaip sistemos servisą"
+
+#~ msgid "About Pomodoro"
+#~ msgstr "Apie Pomodoro"
+
+#~ msgid "A simple time management utility"
+#~ msgstr "Paprastas laiko valdymo įrankis"
+
+#~ msgid "_Stopped"
+#~ msgstr "Stabdyti"
+
+#~ msgid "Extension for GNOME Shell is available"
+#~ msgstr "Indikatorius GNOME aplinkai"
+
+#~ msgid "Failed to install extension"
+#~ msgstr "Nepavyko įjungti įskiepio"
+
+#~ msgid "Long break due in %s"
+#~ msgstr "Ilgosios pertraukos trukmė"
 
 #~ msgid "A time management utility for GNOME"
 #~ msgstr "Laiko valdymo įrankis GNOME aplinkai"
@@ -299,52 +1330,40 @@ msgstr "Pertrauka"
 #~ msgid "Indicator for GNOME Shell"
 #~ msgstr "Indikatorius GNOME aplinkai"
 
-#~ msgid "A simple time management utility"
-#~ msgstr "Paprastas laiko valdymo įrankis"
+#~ msgid "Support for GNOME Shell 42 (@milotype and @kappa)"
+#~ msgstr "Indikatorius GNOME aplinkai"
 
-#~ msgid "timer;"
-#~ msgstr "laikmatis;"
+#~ msgid "Support for GNOME Shell 41 (@mbooth101)"
+#~ msgstr "Indikatorius GNOME aplinkai"
 
-#~ msgid "Start"
-#~ msgstr "Pradėti"
+#~ msgid "Support GNOME Shell 40.0, not 4.0"
+#~ msgstr "Indikatorius GNOME aplinkai"
 
-#~ msgid "Pause"
-#~ msgstr "Pauzė"
+#~ msgid "Support for GNOME Shell 4.0"
+#~ msgstr "Indikatorius GNOME aplinkai"
 
-#~ msgid "Resume"
-#~ msgstr "Tęsti"
+#~ msgid "Support for GNOME Shell 3.38 (@ignapk and @szpak)"
+#~ msgstr "Indikatorius GNOME aplinkai"
 
-#~ msgid "Stop"
-#~ msgstr "Stabdyti"
+#~ msgid "Support for GNOME Shell 3.36"
+#~ msgstr "Indikatorius GNOME aplinkai"
+
+#~ msgid "Support for GNOME Shell 3.34 only"
+#~ msgstr "Indikatorius GNOME aplinkai"
+
+#~ msgid "Support for GNOME Shell 3.32 (@demokritos)"
+#~ msgstr "Indikatorius GNOME aplinkai"
+
+#~ msgid "Support for GNOME Shell 3.28 and 3.30 (@aerostitch)"
+#~ msgstr "Indikatorius GNOME aplinkai"
 
 #~ msgid "_Timer"
 #~ msgstr "_Laikmatis"
-
-#~ msgid "_Preferences"
-#~ msgstr "_Nustatymai"
-
-#~ msgid "_Quit"
-#~ msgstr "_Išeiti"
 
 #~ msgid "Keyboard shortcut to toggle the timer. Enter new shortcut to change."
 #~ msgstr ""
 #~ "Spartieji klaviatūros klavišai, skirti įjungti laikmačiui. Įveskite naują "
 #~ "sparčiųjų klavišų kombinaciją, kad pakeistumėte."
-
-#~ msgid "Disable"
-#~ msgstr "Išjungti"
-
-#~ msgid "Timer"
-#~ msgstr "Laikmatis"
-
-#~ msgid "Pomodoro duration"
-#~ msgstr "Pomodoro trukmė"
-
-#~ msgid "Break duration"
-#~ msgstr "Pertraukos trukmė"
-
-#~ msgid "Long break duration"
-#~ msgstr "Ilgosios pertraukos trukmė"
 
 #~ msgid "Pomodoros before a long break"
 #~ msgstr "Pomodoro kiekis prieš ilgąją pertrauką"
@@ -352,14 +1371,8 @@ msgstr "Pertrauka"
 #~ msgid "Keyboard shortcut"
 #~ msgstr "Spartieji klaviatūros klavišai"
 
-#~ msgid "Notifications"
-#~ msgstr "Pranešimai"
-
 #~ msgid "Screen notifications"
 #~ msgstr "Ekrano pranešimai"
-
-#~ msgid "Desktop"
-#~ msgstr "Darbalaukis"
 
 #~ msgid "Wait for activity after a break"
 #~ msgstr "Laukti aktyvumo po pertraukos"
@@ -373,20 +1386,8 @@ msgstr "Pertrauka"
 #~ msgid "Back"
 #~ msgstr "Grįžti"
 
-#~ msgid "Nothing to see yet"
-#~ msgstr "Dar nėra ką pamatyti"
-
 #~ msgid "Complete a few sessions"
 #~ msgstr "Užbaikite keletą seansų"
-
-#~ msgid "Day"
-#~ msgstr "Diena"
-
-#~ msgid "Week"
-#~ msgstr "Savaitė"
-
-#~ msgid "Month"
-#~ msgstr "Mėnuo"
 
 #~ msgid "Previous (Alt+Left)"
 #~ msgstr "Ankstesnis (Alt + kairėn)"
@@ -394,47 +1395,11 @@ msgstr "Pertrauka"
 #~ msgid "Next (Alt+Right)"
 #~ msgstr "Kitas (Alt + dešinėn)"
 
-#~ msgid "Today"
-#~ msgstr "Šiandien"
-
-#~ msgid "_About"
-#~ msgstr "_Apie"
-
-#~ msgid "Actions"
-#~ msgstr "Veiksmai"
-
-#~ msgid "Action"
-#~ msgstr "Veiksmas"
-
-#~ msgid "Custom actions…"
-#~ msgstr "Pritaikomi veiksmai…"
-
 #~ msgid "Complete"
 #~ msgstr "Užbaigta"
 
-#~ msgid "Skip"
-#~ msgstr "Praleisti"
-
 #~ msgid "Enable"
 #~ msgstr "Įjungti"
-
-#~ msgid "Command"
-#~ msgstr "Komanda"
-
-#~ msgid "Triggers"
-#~ msgstr "Trigeriai"
-
-#~ msgid "Name"
-#~ msgstr "Vardas"
-
-#~ msgid "_Pomodoro"
-#~ msgstr "_Pomodoro"
-
-#~ msgid "_Short Break"
-#~ msgstr "_Trumpa pertrauka"
-
-#~ msgid "_Long Break"
-#~ msgstr "_Ilga pertrauka"
 
 #~ msgid "Add"
 #~ msgstr "Pridėti"
@@ -442,26 +1407,11 @@ msgstr "Pertrauka"
 #~ msgid "Remove"
 #~ msgstr "Pašalinti"
 
-#~ msgid "State"
-#~ msgstr "Būsena"
-
-#~ msgid "State Duration"
-#~ msgstr "Būsenos trukmė"
-
 #~ msgid "Elapsed Time"
 #~ msgstr "Praėjęs laikas"
 
-#~ msgid "Pomodoro Timer"
-#~ msgstr "Pomodoro Laikmatis"
-
-#~ msgid "Start Timer"
-#~ msgstr "Pradėti Laikamtį"
-
 #~ msgid "Pause Timer"
 #~ msgstr "Pristabdyti laikmatį"
-
-#~ msgid "Stop Timer"
-#~ msgstr "Sustabdyti laikmatį"
 
 #~ msgid "Pause break"
 #~ msgstr "Pauzė"
@@ -483,57 +1433,11 @@ msgstr "Pertrauka"
 #~ msgstr[2] "Liko %d minučių"
 
 #, javascript-format
-#~ msgid "%d second remaining"
-#~ msgid_plural "%d seconds remaining"
-#~ msgstr[0] "Liko %d sekundė"
-#~ msgstr[1] "Liko %d sekundės"
-#~ msgstr[2] "Liko %d sekundžių"
-
-#~ msgid "Break is over"
-#~ msgstr "Pertrauka baigėsi"
-
-#~ msgid "Skip Break"
-#~ msgstr "Praleisti pertrauką"
-
-#~ msgid "+1 Minute"
-#~ msgstr "+1 minutė"
-
-#, javascript-format
 #~ msgid "Failed to run <i>%s</i> service"
 #~ msgstr "Nepavyko paleisti <i>%s</i> serviso"
 
-#~ msgid "Hide other notifications"
-#~ msgstr "Slėpti kitus pranešimus"
-
-#~ msgid "Volume:"
-#~ msgstr "Garsumas:"
-
-#~ msgid "Clock Ticking"
-#~ msgstr "Laikrodžio tiksėjimas"
-
-#~ msgid "Timer Ticking"
-#~ msgstr "Laikmačio tiksėjimas"
-
 #~ msgid "Woodland Birds"
 #~ msgstr "Miško paukščiai"
-
-#~ msgid "Bell"
-#~ msgstr "Varpelis"
-
-#~ msgid "Loud Bell"
-#~ msgstr "Garsus varpas"
-
-#~ msgid "Select Custom Sound"
-#~ msgstr "Pasirinkti kitą garsą"
-
-#~ msgid "_Cancel"
-#~ msgstr "_Atsisakyti"
-
-#~ msgid "_Select"
-#~ msgstr "_Pasirinkti"
-
-#~ msgid "Ticking Sound"
-#~ msgstr "Tiksėjimo garsas"
 
 #~ msgid "End of Break Sound"
 #~ msgstr "Pertraukos pabaigos garsas"
@@ -552,39 +1456,6 @@ msgstr "Pertrauka"
 
 #~ msgid "End of break sound"
 #~ msgstr "Petraukos pabaigos garsas"
-
-#~ msgid "About Pomodoro"
-#~ msgstr "Apie Pomodoro"
-
-#~ msgid "translator-credits"
-#~ msgstr "translator-credits"
-
-#~ msgid "Start/Stop"
-#~ msgstr "Pradėti/Stabdyti"
-
-#~ msgid "Pause/Resume"
-#~ msgstr "Pauzė/Tęsti"
-
-#~ msgid "Skip to a pomodoro or to a break"
-#~ msgstr "Pereikite prie pomodoro arba į pertrauką"
-
-#~ msgid "Extend current pomodoro or break"
-#~ msgstr "Pratęskite dabartinį pomodoro arba pertrauką"
-
-#~ msgid "Reset current session"
-#~ msgstr "Iš naujo nustatyti dabartinę sesiją"
-
-#~ msgid "Run as background service"
-#~ msgstr "Leisti kaip sistemos servisą"
-
-#~ msgid "Show preferences"
-#~ msgstr "Rodyti nustatymus"
-
-#~ msgid "Quit application"
-#~ msgstr "Išeiti iš programos"
-
-#~ msgid "Print version information and exit"
-#~ msgstr "Spausdinti versijos informaciją ir išeiti"
 
 #~ msgid "Focus on your task."
 #~ msgstr "Susikaupkite ties savo užduotimi."
@@ -624,9 +1495,6 @@ msgstr "Pertrauka"
 #~ "kirstis su rašymu. Pabandykite panaudoti kitą klavišą, pavyzdžiui: "
 #~ "Control, Alt arba Shift."
 
-#~ msgid "Keyboard Shortcut"
-#~ msgstr "Spartieji klaviatūros klavišai"
-
 #~ msgid "Available"
 #~ msgstr "Pasiekiama"
 
@@ -639,9 +1507,6 @@ msgstr "Pertrauka"
 #~ msgid "Invisible"
 #~ msgstr "Nematoma"
 
-#~ msgid "Yesterday"
-#~ msgstr "vakar"
-
 #, c-format
 #~ msgid "%d m"
 #~ msgstr "%d m"
@@ -653,24 +1518,6 @@ msgstr "Pertrauka"
 #, c-format
 #~ msgid "%.1f h"
 #~ msgstr "%.1f v"
-
-#~ msgid "This week"
-#~ msgstr "Šią savaitę"
-
-#~ msgid "Kamil Prusko"
-#~ msgstr "Kamil Prusko"
-
-#, fuzzy
-#~ msgid "Support for GNOME Shell 4.0"
-#~ msgstr "Indikatorius GNOME aplinkai"
-
-#, fuzzy
-#~ msgid "Support for GNOME Shell 3.36"
-#~ msgstr "Indikatorius GNOME aplinkai"
-
-#, fuzzy
-#~ msgid "Support for GNOME Shell 3.34 only"
-#~ msgstr "Indikatorius GNOME aplinkai"
 
 #~ msgid "gnome-pomodoro"
 #~ msgstr "gnome-pomodoro"
@@ -708,9 +1555,6 @@ msgstr "Pertrauka"
 #~ msgid "You're missing out on a break"
 #~ msgstr "Jūs praleidžiate pertrauką"
 
-#~ msgid "Failed to enable extension"
-#~ msgstr "Nepavyko įjungti įskiepio"
-
 #~ msgid "It seems to be uninstalled"
 #~ msgstr "Panašu, kad tai ištrinta"
 
@@ -719,9 +1563,6 @@ msgstr "Pertrauka"
 
 #~ msgid "Upgrade"
 #~ msgstr "Atnaujinti"
-
-#~ msgid "Add Sound"
-#~ msgstr "Pridėti garsą:"
 
 #~ msgid "Remove Sound"
 #~ msgstr "Pašalinti garsą:"

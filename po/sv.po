@@ -1,14 +1,14 @@
-# Swedish translation for gnome-pomodoro.
-# Copyright © 2017 Free Software Foundation, Inc.
-# This file is distributed under the same license as the gnome-pomodoro package.
-# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2017.
+# Swedish translation for gnome-shell-extension-focus-timer
+# Copyright © 2017, 2025, 2026 Free Software Foundation, Inc.
+# This file is distributed under the same license as the focus-timer package.
+# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2017, 2025, 2026.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-pomodoro 0.13.0\n"
+"Project-Id-Version: gnome-shell-extension-focus-timer 1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-25 16:45+0100\n"
-"PO-Revision-Date: 2023-03-26 11:44+0200\n"
+"POT-Creation-Date: 2026-04-12 13:38+0200\n"
+"PO-Revision-Date: 2026-01-13 00:53+0100\n"
 "Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
@@ -16,293 +16,323 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.8\n"
 
-#: data/org.gnome.shell.extensions.focus-timer.gschema.xml:6
-msgid "Start the app along with extension"
-msgstr ""
-
-#: data/org.gnome.shell.extensions.focus-timer.gschema.xml:14
-msgid "Indicator type"
-msgstr ""
-
-#: data/org.gnome.shell.extensions.focus-timer.gschema.xml:18
-msgid "Blur effect"
-msgstr ""
-
-#: data/org.gnome.shell.extensions.focus-timer.gschema.xml:22
-msgid "Dismiss screen overlay by gesture"
-msgstr ""
-
-#: data/org.gnome.shell.extensions.focus-timer.gschema.xml:26
-msgid "Reduce number of notifications during Pomodoro"
-msgstr ""
+#: src/indicator.js:329 src/screenShield.js:171
+msgid "Finished!"
+msgstr "Färdig!"
 
 #: src/indicator.js:331 src/screenShield.js:173
-msgid "Finished!"
-msgstr ""
-
-#: src/indicator.js:333 src/screenShield.js:175
 #, javascript-format
 msgid "%d of %d"
 msgstr ""
 
-#: src/indicator.js:420 src/prefs.js:73
+#: src/indicator.js:425 src/prefs.js:71
 msgid "Screen Overlay"
-msgstr ""
+msgstr "Skärmöverlägg"
 
-#: src/indicator.js:423
+#: src/indicator.js:427
 msgid "Preferences"
 msgstr "Inställningar"
 
-#: src/indicator.js:424
+#: src/indicator.js:428
 msgid "Stats"
 msgstr "Statistik"
 
-#: src/indicator.js:426
+#: src/indicator.js:430
 msgid "Quit"
 msgstr "Avsluta"
 
-#: src/indicator.js:601
+#: src/indicator.js:624
 #, javascript-format
 msgid "%dh"
-msgstr ""
+msgstr "%dh"
 
-#: src/indicator.js:605
+#: src/indicator.js:628
 #, javascript-format
 msgid "%dm"
-msgstr ""
+msgstr "%dm"
 
-#: src/indicator.js:613
+#: src/indicator.js:630 src/indicator.js:632 src/indicator.js:634
 #, javascript-format
 msgid "%ds"
-msgstr ""
+msgstr "%ds"
 
-#: src/indicator.js:1058 src/notifications.js:59
+#: src/indicator.js:1079 src/notifications.js:57
 msgid "Focus Timer"
-msgstr ""
+msgstr "Focus Timer"
 
-#: src/notifications.js:79
+#: src/notifications.js:77
 msgid "Focus Timer Extension"
 msgstr ""
 
-#: src/notifications.js:115
+#: src/notifications.js:119
 #, javascript-format
 msgid "%d hour"
 msgid_plural "%d hours"
 msgstr[0] "%d timme"
 msgstr[1] "%d timmar"
 
-#: src/notifications.js:118
+#: src/notifications.js:122
 #, javascript-format
 msgid "%d minute"
 msgid_plural "%d minutes"
 msgstr[0] "%d minut"
 msgstr[1] "%d minuter"
 
-#: src/notifications.js:121
+#: src/notifications.js:125
 #, javascript-format
 msgid "%d second"
 msgid_plural "%d seconds"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d sekund"
+msgstr[1] "%d sekunder"
 
 #. translators: time remaining eg. "3 minutes 50 seconds remaining"
-#: src/notifications.js:128
+#: src/notifications.js:135
 #, javascript-format
 msgid "%s remaining"
-msgstr ""
+msgstr "%s återstår"
 
-#: src/notifications.js:239 src/timer.js:54
+#: src/notifications.js:261 src/timer.js:47
 msgid "Pomodoro"
 msgstr "Pomodoro"
 
-#: src/notifications.js:241
+#: src/notifications.js:263
 msgid "Take a break"
 msgstr "Ta en rast"
 
-#: src/notifications.js:243
+#: src/notifications.js:265
 msgid "Take a short break"
 msgstr "Ta en kort paus"
 
-#: src/notifications.js:245
+#: src/notifications.js:267
 msgid "Take a long break"
 msgstr "Ta en lång paus"
 
-#: src/notifications.js:253
+#: src/notifications.js:275
 msgid "Pomodoro is about to end"
 msgstr "Pomodoro håller på att ta slut"
 
-#: src/notifications.js:255
+#: src/notifications.js:277
 msgid "Break is about to end"
 msgstr "Rast håller på att ta slut"
 
-#: src/notifications.js:263 src/notifications.js:275
+#: src/notifications.js:285 src/notifications.js:297
 msgid "Break is over!"
-msgstr ""
+msgstr "Rasten är över!"
 
-#: src/notifications.js:265 src/notifications.js:273
+#: src/notifications.js:287 src/notifications.js:295
 msgid "Pomodoro is over!"
-msgstr ""
+msgstr "Pomodoro är slut!"
 
-#: src/notifications.js:294
+#: src/notifications.js:316
 msgid "Get ready…"
-msgstr "Gör dig redo..."
+msgstr "Gör dig redo…"
 
-#: src/notifications.js:299
+#: src/notifications.js:321
 msgid "Confirm the start of a Pomodoro…"
-msgstr ""
+msgstr "Bekräfta starten på en pomodoro…"
 
-#: src/notifications.js:301
+#: src/notifications.js:323
 msgid "Confirm the start of a break…"
-msgstr ""
+msgstr "Bekräfta starten på en rast…"
 
-#: src/notifications.js:303
+#: src/notifications.js:325
 msgid "Confirm the start of a short break…"
-msgstr ""
+msgstr "Bekräfta starten på en kort rast…"
 
-#: src/notifications.js:305
+#: src/notifications.js:327
 msgid "Confirm the start of a long break…"
-msgstr ""
+msgstr "Bekräfta starten på en lång rast…"
 
-#: src/notifications.js:344
+#: src/notifications.js:366
 msgid "+1 minute"
-msgstr ""
+msgstr "+1 minut"
 
-#: src/notifications.js:345
+#: src/notifications.js:367
 msgid "Start Pomodoro"
 msgstr "Starta Pomodoro"
 
-#: src/notifications.js:346
+#: src/notifications.js:368
 msgid "Start Break"
-msgstr ""
+msgstr "Starta Rast"
 
-#: src/notifications.js:403
+#: src/notifications.js:425
 msgid "Something went wrong"
+msgstr "Något gick fel"
+
+#: src/notifications.js:431
+msgid "Report issue"
 msgstr ""
 
-#: src/notifications.js:409
-msgid "Report issue"
-msgstr "Rapportera problem"
-
-#: src/notifications.js:429
+#: src/notifications.js:451
 msgid "Focus Timer Not Found"
 msgstr ""
 
-#: src/notifications.js:430
+#: src/notifications.js:452
 msgid "Install Focus Timer app to start using the extension."
 msgstr ""
 
-#: src/notifications.js:435
+#: src/notifications.js:457
 msgid "Install from Flathub"
 msgstr ""
 
-#: src/prefs.js:14
+#: src/prefs.js:12
 msgid "General"
 msgstr ""
 
-#: src/prefs.js:20
+#: src/prefs.js:18
 msgid "Autostart The App"
 msgstr ""
 
-#: src/prefs.js:21
+#: src/prefs.js:19
 msgid "Makes the indicator instantly visible and allows keyboard shortcuts"
 msgstr ""
 
-#: src/prefs.js:34
+#: src/prefs.js:32
 msgid "Indicator"
 msgstr ""
 
-#: src/prefs.js:47
+#: src/prefs.js:45
 msgid "Icon"
 msgstr ""
 
-#: src/prefs.js:53
+#: src/prefs.js:51
 msgid "Text"
 msgstr ""
 
-#: src/prefs.js:60
+#: src/prefs.js:58
 msgid "Display As"
 msgstr ""
 
-#: src/prefs.js:61
+#: src/prefs.js:59
 msgid "Choose how the timer appears in the status bar"
 msgstr ""
 
-#: src/prefs.js:79
+#: src/prefs.js:77
 msgid "Blur Effect"
 msgstr ""
 
-#: src/prefs.js:80
+#: src/prefs.js:78
 msgid "Helps to acknowledge the break"
 msgstr ""
 
-#: src/prefs.js:88
+#: src/prefs.js:86
 msgid "Dismiss Gesture"
 msgstr ""
 
-#: src/prefs.js:89
+#: src/prefs.js:87
 msgid "Flick the mouse or press any key to dismiss"
 msgstr ""
 
-#: src/prefs.js:102
+#: src/prefs.js:100
 msgid "Distractions"
 msgstr ""
 
-#: src/prefs.js:108
+#: src/prefs.js:106
 msgid "Manage Notifications"
 msgstr ""
 
-#: src/prefs.js:109
+#: src/prefs.js:107
 msgid "Toggle Do Not Disturb mode during Pomodoro"
 msgstr ""
 
-#: src/screenOverlay.js:987
+#: src/screenOverlay.js:1053
 msgid "It's time to take a break"
 msgstr "Det är dags för en rast"
 
-#: src/timer.js:51
+#: src/timer.js:44
 msgid "Stopped"
-msgstr ""
+msgstr "Stoppad"
 
-#: src/timer.js:57
+#: src/timer.js:50
 msgid "Short Break"
 msgstr "Kort rast"
 
-#: src/timer.js:60
+#: src/timer.js:53
 msgid "Long Break"
 msgstr "Lång rast"
 
-#: src/timer.js:63
+#: src/timer.js:56
 msgid "Break"
 msgstr "Rast"
 
-#~ msgid "A time management utility for GNOME"
-#~ msgstr "Ett tidshanteringsverktyg för GNOME"
+#~ msgid "Time management utility"
+#~ msgstr "Tidshanteringsverktyg"
+
+#~ msgid "pomodoro;timer;"
+#~ msgstr "pomodoro;timer;tidtagare;"
+
+#~ msgid "Maintain focus by taking frequent breaks"
+#~ msgstr "Behåll fokus genom att regelbundet ta raster"
 
 #~ msgid ""
-#~ "A GNOME utility that helps managing time according to Pomodoro Technique. "
-#~ "It intends to improve productivity and focus by taking short breaks after "
-#~ "every 25 minutes of work."
+#~ "A productivity timer that helps you work more effectively by breaking "
+#~ "your time into focused work sessions followed by short breaks. Work for "
+#~ "25 minutes, then take a 5-minute break to maintain concentration and "
+#~ "prevent burnout."
 #~ msgstr ""
-#~ "Ett GNOME-verktyg som hjälper till med tidshantering enligt "
-#~ "Pomodorotekniken. Det avser att öka produktivitet och fokus genom att ta "
-#~ "korta raster efter var tjugofemte arbetsminut."
+#~ "En produktivitetstidtagare som hjälper dig arbeta mer effektivt genom att "
+#~ "dela upp din tid i fokuserade arbetssessioner följda av korta raster. "
+#~ "Arbeta 25 minuter, ta sedan en fem minuters rast för att behålla "
+#~ "koncentrationsförmågan och undvika att bränna ut dig."
 
-#~ msgid "Timer window"
-#~ msgstr "Tidtagarfönster"
+#~ msgid "Key features:"
+#~ msgstr "Huvudsakliga funktioner:"
 
-#~ msgid "Indicator for GNOME Shell"
-#~ msgstr "Indikator för Gnome Shell"
+#~ msgid "Customizable work session and break lengths"
+#~ msgstr "Anpassningsbara längder på arbetssessioner och rastlängder"
 
-#~ msgid "A simple time management utility"
-#~ msgstr "Ett enkelt tidshanteringsverktyg"
+#~ msgid "Visual and audio notifications"
+#~ msgstr "Visuella aviseringar och ljudaviseringar"
 
-#~ msgid "timer;"
-#~ msgstr "tidtagare;timer;"
+#~ msgid "Time tracking and statistics"
+#~ msgstr "Tidsspårning och statistik"
+
+#~ msgid "GNOME desktop integration"
+#~ msgstr "GNOME-skrivbordsintegration"
+
+#~ msgid "Screen overlay during breaks"
+#~ msgstr "Skärmöverlägg under raster"
+
+#~ msgid "Run custom commands after Pomodoro or break"
+#~ msgstr "Kör anpassade kommandon efter pomodoro eller rast"
+
+#~ msgid "Kamil Prusko"
+#~ msgstr "Kamil Prusko"
+
+#~ msgid "Timer"
+#~ msgstr "Tidtagare"
+
+#~ msgid "Daily stats"
+#~ msgstr "Dagsstatistik"
+
+#~ msgid "Monthly stats"
+#~ msgstr "Månadsstatistik"
+
+#~ msgid "Screen overlay"
+#~ msgstr "Skärmöverlägg"
+
+#~ msgid "Start or Stop"
+#~ msgstr "Starta eller stoppa"
+
+#~ msgid "Start, Pause or Resume"
+#~ msgstr "Starta, pausa eller återuppta"
+
+#~ msgid "Start break"
+#~ msgstr "Starta rast"
+
+#~ msgid "Start short break"
+#~ msgstr "Starta kort rast"
+
+#~ msgid "Start long break"
+#~ msgstr "Starta lång rast"
 
 #~ msgid "Start"
 #~ msgstr "Starta"
+
+#~ msgid "Stop"
+#~ msgstr "Stoppa"
 
 #~ msgid "Pause"
 #~ msgstr "Pausa"
@@ -310,270 +340,23 @@ msgstr "Rast"
 #~ msgid "Resume"
 #~ msgstr "Återuppta"
 
-#~ msgid "Stop"
-#~ msgstr "Stoppa"
-
-#~ msgid "_Timer"
-#~ msgstr "_Tidtagare"
-
-#~ msgid "_Preferences"
-#~ msgstr "_Inställningar"
-
-#~ msgid "_Quit"
-#~ msgstr "A_vsluta"
-
-#~ msgid "Keyboard shortcut to toggle the timer. Enter new shortcut to change."
-#~ msgstr ""
-#~ "Tangentbordsgenväg för att slå på/av tidtagaren. Mata in ny genväg för "
-#~ "att ändra."
-
-#~ msgid "Disable"
-#~ msgstr "Inaktivera"
-
-#~ msgid "Timer"
-#~ msgstr "Tidtagare"
-
-#~ msgid "Pomodoro duration"
-#~ msgstr "Pomodorolängd"
-
-#~ msgid "Break duration"
-#~ msgstr "Längd på rast"
-
-#~ msgid "Long break duration"
-#~ msgstr "Längd på lång rast"
-
-# Italienskt ord, så vi kan lika gärna använda italiensk plural som engelsk.
-#~ msgid "Pomodoros before a long break"
-#~ msgstr "Antal Pomodori före en lång rast"
-
-#~ msgid "Keyboard shortcut"
-#~ msgstr "Tangentbordsgenväg"
-
-#~ msgid "Notifications"
-#~ msgstr "Aviseringar"
-
-#~ msgid "Screen notifications"
-#~ msgstr "Skärmaviseringar"
-
-#~ msgid "Desktop"
-#~ msgstr "Skrivbord"
-
-#~ msgid "Wait for activity after a break"
-#~ msgstr "Vänta på aktivitet efter en rast"
-
-#~ msgid "Plugins…"
-#~ msgstr "Insticksmoduler…"
-
-#~ msgid "Plugins"
-#~ msgstr "Insticksmoduler"
-
-#~ msgid "Back"
-#~ msgstr "Bakåt"
-
-#~ msgid "Nothing to see yet"
-#~ msgstr "Inget att se ännu"
-
-#~ msgid "Complete a few sessions"
-#~ msgstr "Slutför några sessioner"
-
-#~ msgid "Day"
-#~ msgstr "Dag"
-
-#~ msgid "Week"
-#~ msgstr "Vecka"
-
-#~ msgid "Month"
-#~ msgstr "Månad"
-
-#~ msgid "Previous (Alt+Left)"
-#~ msgstr "Föregående (Alt+Vänster)"
-
-#~ msgid "Next (Alt+Right)"
-#~ msgstr "Nästa (Alt+Höger)"
-
-#~ msgid "Today"
-#~ msgstr "Idag"
-
-#~ msgid "_About"
-#~ msgstr "_Om"
-
-#~ msgid "Actions"
-#~ msgstr "Åtgärder"
-
-#~ msgid "Action"
-#~ msgstr "Åtgärd"
-
-#~ msgid "Custom actions…"
-#~ msgstr "Anpassade åtgärder…"
-
-#~ msgid "Complete"
-#~ msgstr "Slutför"
-
 #~ msgid "Skip"
 #~ msgstr "Hoppa över"
 
-#~ msgid "Enable"
-#~ msgstr "Aktivera"
+#~ msgid "Rewind"
+#~ msgstr "Spola tillbaka"
 
-#~ msgid "Command"
-#~ msgstr "Kommando"
-
-#~ msgid "Triggers"
-#~ msgstr "Utlösare"
-
-#~ msgid "Name"
-#~ msgstr "Namn"
-
-#~ msgid "_Pomodoro"
-#~ msgstr "_Pomodoro"
-
-#~ msgid "_Short Break"
-#~ msgstr "_Kort rast"
-
-#~ msgid "_Long Break"
-#~ msgstr "_Lång rast"
-
-#~ msgid "Add"
-#~ msgstr "Lägg till"
-
-#~ msgid "Remove"
-#~ msgstr "Ta bort"
-
-#~ msgid "State"
-#~ msgstr "Tillstånd"
-
-#~ msgid "State Duration"
-#~ msgstr "Varaktighet för tillstånd"
-
-#~ msgid "Elapsed Time"
-#~ msgstr "Förfluten tid"
-
-#~ msgid "Pomodoro Timer"
-#~ msgstr "Pomodorotidtagare"
-
-#~ msgid "Start Timer"
-#~ msgstr "Starta tidtagare"
-
-#~ msgid "Pause Timer"
-#~ msgstr "Pausa tidtagare"
-
-#~ msgid "Stop Timer"
-#~ msgstr "Stoppa tidtagare"
-
-#~ msgid "Pause break"
-#~ msgstr "Pause"
-
-#~ msgid "Pause Pomodoro"
-#~ msgstr "Pause"
-
-#~ msgid "Resume break"
-#~ msgstr "Återuppta"
-
-#~ msgid "Resume Pomodoro"
-#~ msgstr "Återuppta"
-
-#, javascript-format
-#~ msgid "%d minute remaining"
-#~ msgid_plural "%d minutes remaining"
-#~ msgstr[0] "%d minut återstår"
-#~ msgstr[1] "%d minuter återstår"
-
-#, javascript-format
-#~ msgid "%d second remaining"
-#~ msgid_plural "%d seconds remaining"
-#~ msgstr[0] "%d sekund återstår"
-#~ msgstr[1] "%d sekunder återstår"
-
-#~ msgid "Break is over"
-#~ msgstr "Pausen är över"
-
-#~ msgid "Skip Break"
-#~ msgstr "Hoppa över rast"
-
-#~ msgid "+1 Minute"
-#~ msgstr "+1 minut"
-
-#, javascript-format
-#~ msgid "Failed to run <i>%s</i> service"
-#~ msgstr "Kunde inte köra <i>%s</i>-tjänsten"
-
-#~ msgid "Hide other notifications"
-#~ msgstr "Dölj andra aviseringar"
-
-#~ msgid "Volume:"
-#~ msgstr "Volym:"
-
-#~ msgid "Clock Ticking"
-#~ msgstr "Tickande klocka"
-
-#~ msgid "Timer Ticking"
-#~ msgstr "Tickande äggklocka"
-
-#~ msgid "Woodland Birds"
-#~ msgstr "Skogsfåglar"
-
-#~ msgid "Bell"
-#~ msgstr "Ringklocka"
-
-#~ msgid "Loud Bell"
-#~ msgstr "Högljudd ringklocka"
-
-#~ msgid "Select Custom Sound"
-#~ msgstr "Välj anpassat ljud"
-
-#~ msgid "_Cancel"
-#~ msgstr "_Avbryt"
-
-#~ msgid "_Select"
-#~ msgstr "_Välj"
-
-#~ msgid "Ticking Sound"
-#~ msgstr "Tickande ljud"
-
-#~ msgid "End of Break Sound"
-#~ msgstr "Ljud för slut på rast"
-
-#~ msgid "Start of Break Sound"
-#~ msgstr "Ljud för start på rast"
-
-#~ msgid "Off"
-#~ msgstr "Av"
-
-#~ msgid "Ticking sound"
-#~ msgstr "Tickande ljud"
-
-#~ msgid "Start of break sound"
-#~ msgstr "Ljud för start på rast"
-
-#~ msgid "End of break sound"
-#~ msgstr "Ljud för slut på rast"
-
-#~ msgid "About Pomodoro"
-#~ msgstr "Om Pomodoro"
-
-#~ msgid "translator-credits"
-#~ msgstr ""
-#~ "Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
-#~ "Skicka synpunkter på översättningen till\n"
-#~ "<tp-sv@listor.tp-sv.se>."
-
-#~ msgid "Start/Stop"
-#~ msgstr "Starta/Stoppa"
-
-#~ msgid "Pause/Resume"
-#~ msgstr "Pausa/Återuppta"
-
-#~ msgid "Skip to a pomodoro or to a break"
-#~ msgstr "Hoppa till en pomodoro eller till en paus"
+#~ msgid "SECONDS"
+#~ msgstr "SEKUNDER"
 
 #~ msgid "Extend current pomodoro or break"
-#~ msgstr "Förläng nuvarande pomodoro eller bryt"
+#~ msgstr "Förläng nuvarande pomodoro eller rast"
 
-#~ msgid "Reset current session"
-#~ msgstr "Återställ aktuell session"
+#~ msgid "Reset"
+#~ msgstr "Återställ"
 
-#~ msgid "Run as background service"
-#~ msgstr "Kör som bakgrundstjänst"
+#~ msgid "Print timer status"
+#~ msgstr "Skriv ut tidtagarstatus"
 
 #~ msgid "Show preferences"
 #~ msgstr "Visa inställningar"
@@ -584,139 +367,902 @@ msgstr "Rast"
 #~ msgid "Print version information and exit"
 #~ msgstr "Skriv ut versionsinformation och avsluta"
 
-#~ msgid "Focus on your task."
-#~ msgstr "Fokusera på din uppgift."
+#~ msgid "Timer Options:"
+#~ msgstr "Tidtagaralternativ:"
+
+#~ msgid "Show options for controlling the timer"
+#~ msgstr "Visa alternativ för att styra tidtagaren"
 
 #, c-format
-#~ msgid "You have %d minute"
-#~ msgid_plural "You have %d minutes"
-#~ msgstr[0] "Du har %d minut kvar"
-#~ msgstr[1] "Du har %d minuter kvar"
+#~ msgid "Bugs may be reported at: %s"
+#~ msgstr "Fel kan rapporteras på: %s"
 
-#, c-format
-#~ msgid "You have %d second"
-#~ msgid_plural "You have %d seconds"
-#~ msgstr[0] "Du har %d sekund kvar"
-#~ msgstr[1] "Du har %d sekunder kvar"
+#~ msgid "Bring to Focus"
+#~ msgstr "Ge fokus"
 
-#~ msgid "Take a longer break"
-#~ msgstr "Ta en längre rast"
-
-#~ msgid "Lengthen it"
-#~ msgstr "Förläng den"
-
-#~ msgid "Shorten it"
-#~ msgstr "Förkorta den"
-
-#~ msgid "Start pomodoro"
-#~ msgstr "Starta pomodoro"
-
-#, c-format
-#~ msgid ""
-#~ "Using \"%s\" as shortcut will interfere with typing. Try adding another "
-#~ "key, such as Control, Alt or Shift."
+#~ msgid "Invalid use. Pass one flag for controlling the timer at a time."
 #~ msgstr ""
-#~ "Att använda ”%s” som en genväg kommer att störa skrivande. Försök lägga "
-#~ "till ännu en tangent, så som Ctrl, Alt eller Skift."
+#~ "Ogiltig användning. Skicka en flagga för att styra tidtagaren åt gången."
 
-#~ msgid "Keyboard Shortcut"
-#~ msgstr "Tangentbordsgenväg"
+#, c-format
+#~ msgid "Custom action \"%s\" has failed"
+#~ msgstr "Anpassade åtgärd ”%s” har misslyckats"
 
-#~ msgid "Available"
-#~ msgstr "Tillgänglig"
+#~ msgid "Reached timeout"
+#~ msgstr "Tidsgräns uppnådd"
 
-#~ msgid "Busy"
-#~ msgstr "Upptagen"
+#~ msgid "Failed to execute command"
+#~ msgstr "Misslyckades med att köra kommando"
 
-#~ msgid "Idle"
-#~ msgstr "Inaktiv"
+#~ msgid "Command is empty"
+#~ msgstr "Kommandot är tomt"
 
-#~ msgid "Invisible"
-#~ msgstr "Osynlig"
+#~ msgid "Unclosed quotation mark"
+#~ msgstr "Oavslutat citattecken"
+
+#~ msgid "Invalid command"
+#~ msgstr "Ogiltigt kommando"
+
+#, c-format
+#~ msgid "Unknown variable \"%s\""
+#~ msgstr "Okänd variabel ”%s”"
+
+#, c-format
+#~ msgid "Unknown format \"%s\""
+#~ msgstr "Okänt format ”%s”"
+
+#, c-format
+#~ msgid "Program \"%s\" not found"
+#~ msgstr "Programmet ”%s” hittades inte"
+
+#~ msgid "Actions"
+#~ msgstr "Åtgärder"
+
+#~ msgid "Countdown"
+#~ msgstr "Nedräkning"
+
+#~ msgid "Session"
+#~ msgstr "Session"
+
+#~ msgid "Other"
+#~ msgstr "Annat"
+
+#~ msgid "Started the timer."
+#~ msgstr "Startade tidtagaren."
+
+#~ msgid "Stopped the timer manually."
+#~ msgstr "Stoppade tidtagaren manuellt."
+
+#~ msgid ""
+#~ "The countdown has been manually paused. Not triggered when locking the "
+#~ "screen or when suspending the system."
+#~ msgstr ""
+#~ "Nedräkningen har pausats manuellt. Utlöses inte när skärmen låses eller "
+#~ "när systemet försätts i vänteläge."
+
+#~ msgid "The countdown has been manually resumed."
+#~ msgstr "Nedräkningen har manuellt återupptagits."
+
+#~ msgid "Jumped to a next time-block before the countdown has finished."
+#~ msgstr "Hoppade till ett nästa tidsblock innan nedräkningen hade slutförts."
+
+#~ msgid "Rewind action has been used. It adds a pause in the past."
+#~ msgstr ""
+#~ "Spola tillbaka-åtgärden har används. Den lägger till en paus i det "
+#~ "förflutna."
+
+#~ msgid "Manually cleared the session."
+#~ msgstr "Tömde manuellt sessionen."
+
+#~ msgid "Finished"
+#~ msgstr "Färdig"
+
+#~ msgid ""
+#~ "The countdown has finished. If waiting for confirmation, the duration of "
+#~ "the time-block still may be altered."
+#~ msgstr ""
+#~ "Nedräkningen har slutförts. Om den väntar på bekräftelse kan längden på "
+#~ "tidsblocket fortfarande ändras."
+
+#~ msgid "Changed"
+#~ msgstr "Ändrad"
+
+#~ msgid "Triggered on any change related to the countdown."
+#~ msgstr "Utlöses vid alla ändringar relaterade till nedräkningen."
+
+#~ msgid "Confirm Advancement"
+#~ msgstr "Bekräfta avancemang"
+
+#~ msgid "A manual confirmation is required to start next time-block."
+#~ msgstr "Manuell bekräftelse krävs för att starta nästa tidsblock."
+
+#~ msgid "Advanced"
+#~ msgstr "Avancerat"
+
+#~ msgid "Transitioned or skipped to a next time-block."
+#~ msgstr "Övergick eller hoppade till ett nytt tidsblock."
+
+#~ msgid "State Changed"
+#~ msgstr "Tillstånd ändrat"
+
+#~ msgid "Transitioned to a next time-block or when a break gets relabelled."
+#~ msgstr ""
+#~ "Övergick till ett nästa tidsblock eller när en rast får en ny etikett."
+
+#~ msgid "Rescheduled"
+#~ msgstr "Schemaändrad"
+
+#~ msgid "Triggered when scheduled time-blocks have changed."
+#~ msgstr "Utlöses när schemalagda tidsblock har ändrats."
+
+#~ msgid "Expired"
+#~ msgstr "Utgången"
+
+#~ msgid "Triggered when session is about to be reset due to inactivity."
+#~ msgstr ""
+#~ "Utlöses när sessionen håller på att återställas på grund av inaktivitet."
+
+#~ msgid "Take a Break"
+#~ msgstr "Ta en rast"
+
+#~ msgid "Skip Break"
+#~ msgstr "Hoppa över rast"
+
+#~ msgid "Failed to initialize playback"
+#~ msgstr "Misslyckades med att initiera uppspelning"
+
+#~ msgid "File not found"
+#~ msgstr "Filen hittades inte"
+
+#~ msgid "File type not supported"
+#~ msgstr "Filtypen stöds inte"
+
+#, c-format
+#~ msgid "%uh"
+#~ msgstr "%uh"
+
+#, c-format
+#~ msgid "%um"
+#~ msgstr "%um"
+
+#, c-format
+#~ msgid "%u hour"
+#~ msgid_plural "%u hours"
+#~ msgstr[0] "%u timme"
+#~ msgstr[1] "%u timmar"
+
+#, c-format
+#~ msgid "%u minute"
+#~ msgid_plural "%u minutes"
+#~ msgstr[0] "%u minut"
+#~ msgstr[1] "%u minuter"
+
+#, c-format
+#~ msgid "%u second"
+#~ msgid_plural "%u seconds"
+#~ msgstr[0] "%u sekund"
+#~ msgstr[1] "%u sekunder"
+
+#~ msgid "The exact time of the current event."
+#~ msgstr "Den exakta tiden för aktuell händelse."
+
+#~ msgid ""
+#~ "The current phase of the Pomodoro cycle. Possible values: <tt>stopped</"
+#~ "tt>, <tt>pomodoro</tt>, <tt>break</tt>, <tt>short-break</tt>, <tt>long-"
+#~ "break</tt>."
+#~ msgstr ""
+#~ "Aktuell fas för pomodorocykeln. Möjliga värden: <tt>stopped</tt>, "
+#~ "<tt>pomodoro</tt>, <tt>break</tt>, <tt>short-break</tt>, <tt>long-break</"
+#~ "tt>."
+
+#~ msgid ""
+#~ "Status of the current time-block. Possible values: <tt>scheduled</tt>, "
+#~ "<tt>in-progress</tt>, <tt>completed</tt>, <tt>uncompleted</tt>."
+#~ msgstr ""
+#~ "Status för aktuellt tidsblock. Möjliga värden: <tt>scheduled</tt>, <tt>in-"
+#~ "progress</tt>, <tt>completed</tt>, <tt>uncompleted</tt>."
+
+#~ msgid "A flag indicating whether countdown has begun."
+#~ msgstr "En flagga som indikerar om nedräkningen har börjat."
+
+#~ msgid "A flag indicating whether countdown is paused."
+#~ msgstr "En flagga som indikerar om nedräkningen har pausats."
+
+#~ msgid "A flag indicating whether countdown has finished."
+#~ msgstr "En flagga som indikerar om nedräkningen har slutat."
+
+#~ msgid "A flag indicating whether the timer is actively counting down."
+#~ msgstr "En flagga som indikerar om tidtagaren håller på att räkna nedåt."
+
+#~ msgid "Duration of the current countdown."
+#~ msgstr "Längden på aktuell nedräkning."
+
+#~ msgid "Discrepancy between elapsed time and the time passed."
+#~ msgstr "Skillnaden mellan uppmätt tid och tiden som gått."
+
+#~ msgid "The amount of time spent on the countdown."
+#~ msgstr "Tiden som nedräkningen pågått."
+
+#~ msgid "The amount of time left before the countdown ends."
+#~ msgstr "Tiden kvar innan nedräkningen tar slut."
+
+#~ msgid "Time when the countdown has started."
+#~ msgstr "Tiden när nedräkningen startades."
+
+#~ msgid "GNOME Shell Extension"
+#~ msgstr "GNOME Shell-tillägg"
+
+#~ msgid "Get the best experience!"
+#~ msgstr "Få den bästa upplevelsen!"
+
+#~ msgid "Enable <b>GNOME Shell extension</b> for seamless desktop integration"
+#~ msgstr ""
+#~ "Aktivera <b>GNOME Shell-tillägget</b> för sömlös skrivbordsintegration"
+
+#~ msgid "Always within reach"
+#~ msgstr "Alltid inom räckhåll"
+
+#~ msgid "Control timer directly from the top bar without opening the app"
+#~ msgstr "Styr tidtagaren direkt från systemraden utan att öppna programmet"
+
+#~ msgid "Less distractions"
+#~ msgstr "Färre distraktioner"
+
+#~ msgid "Refined break reminders"
+#~ msgstr "Eleganta rastpåminnelser"
+
+#~ msgid ""
+#~ "Elegant full-screen overlay that make taking breaks a more pleasant "
+#~ "experience"
+#~ msgstr ""
+#~ "Elegant helskärmsöverlägg som gör det till en mer angenäm upplevelse att "
+#~ "ta rast"
+
+#~ msgid "Ready to try it?"
+#~ msgstr "Redo att prova?"
+
+#~ msgid "_Install Extension"
+#~ msgstr "_Installera tillägg"
+
+#~ msgid "_Not Now"
+#~ msgstr "I_nte nu"
+
+#~ msgid "Copy to clipboard"
+#~ msgstr "Kopiera till urklipp"
+
+#~ msgid "_Try Again"
+#~ msgstr "_Försök igen"
+
+#~ msgid "_Abort"
+#~ msgstr "A_vbryt"
+
+#~ msgid "Time-out reached"
+#~ msgstr "Tidsgräns uppnådd"
+
+#~ msgid "Installing extensions is not allowed"
+#~ msgstr "Installation av tillägg är inte tillåtet"
+
+#~ msgid "Failed to download the extension"
+#~ msgstr "Misslyckades med att hämta tillägget"
+
+#~ msgid "GNOME Shell extension available"
+#~ msgstr "GNOME Shell-tillägg tillgängligt"
+
+#~ msgid "Learn More"
+#~ msgstr "Läs mer"
+
+#~ msgid "Unused"
+#~ msgstr "Oanvänd"
+
+#~ msgid "Log"
+#~ msgstr "Logg"
+
+#~ msgid "Empty Log"
+#~ msgstr "Tom logg"
+
+#~ msgid "Entries will show up here once you start the timer."
+#~ msgstr "Poster kommer visas här då du startar tidtagaren."
+
+#~ msgid "Context"
+#~ msgstr "Sammanhang"
+
+#~ msgid "Command"
+#~ msgstr "Kommando"
+
+#~ msgid "Output"
+#~ msgstr "Utmatning"
+
+#~ msgid "Error"
+#~ msgstr "Fel"
+
+#~ msgid "Exit Code:"
+#~ msgstr "Avslutningskod:"
+
+#~ msgid "Execution Time:"
+#~ msgstr "Körningstid:"
+
+#~ msgid "translator-credits"
+#~ msgstr "Anders Jonsson <anders.jonsson@norsjovallen.se>"
+
+#~ msgid "Donate"
+#~ msgstr "Donera"
+
+#~ msgid "Breaks"
+#~ msgstr "Raster"
+
+#~ msgid "Interruptions"
+#~ msgstr "Avbrott"
+
+#~ msgid "Break Ratio"
+#~ msgstr "Rastförhållande"
+
+#~ msgid "Day"
+#~ msgstr "Dag"
+
+#~ msgid "Week"
+#~ msgstr "Vecka"
+
+#~ msgid "Month"
+#~ msgstr "Månad"
+
+#~ msgid "Nothing to see here yet"
+#~ msgstr "Inget att se här ännu"
+
+#~ msgid "Finish a few Pomodoros to fill this up!"
+#~ msgstr "Slutför några pomodoron för att fylla detta!"
+
+#, c-format
+#~ msgid "Skipped %u day"
+#~ msgid_plural "Skipped %u days"
+#~ msgstr[0] "Hoppade över %u dag"
+#~ msgstr[1] "Hoppade över %u dagar"
+
+#, c-format
+#~ msgid "Skipped %u week"
+#~ msgid_plural "Skipped %u weeks"
+#~ msgstr[0] "Hoppade över %u vecka"
+#~ msgstr[1] "Hoppade över %u veckor"
+
+#, c-format
+#~ msgid "Skipped %u month"
+#~ msgid_plural "Skipped %u months"
+#~ msgstr[0] "Hoppade över %u månad"
+#~ msgstr[1] "Hoppade över %u månader"
+
+#~ msgid "Today"
+#~ msgstr "I dag"
 
 #~ msgid "Yesterday"
-#~ msgstr "Igår"
-
-#, c-format
-#~ msgid "%d m"
-#~ msgstr "%d min"
-
-#, c-format
-#~ msgid "%.0f h"
-#~ msgstr "%.0f h"
-
-#, c-format
-#~ msgid "%.1f h"
-#~ msgstr "%.1f h"
+#~ msgstr "I går"
 
 #~ msgid "This week"
 #~ msgstr "Denna vecka"
 
-#~ msgid "Kamil Prusko"
-#~ msgstr "Kamil Prusko"
+#, c-format
+#~ msgid "Week %u"
+#~ msgstr "Vecka %u"
 
-#, fuzzy
-#~ msgid "Support for GNOME Shell 4.0"
-#~ msgstr "Indikator för Gnome Shell"
+#, c-format
+#~ msgid "Week %u of %u"
+#~ msgstr "Vecka %u av %u"
 
-#, fuzzy
-#~ msgid "Support for GNOME Shell 3.36"
-#~ msgstr "Indikator för Gnome Shell"
+#~ msgid "_Pomodoro"
+#~ msgstr "_Pomodoro"
 
-#, fuzzy
-#~ msgid "Support for GNOME Shell 3.34 only"
-#~ msgstr "Indikator för Gnome Shell"
+#~ msgid "_Short Break"
+#~ msgstr "_Kort rast"
 
-#~ msgid "gnome-pomodoro"
-#~ msgstr "gnome-pomodoro"
+#~ msgid "_Long Break"
+#~ msgstr "_Lång rast"
 
-#~ msgid "_Stats"
-#~ msgstr "_Statistik"
+#~ msgid "_Break"
+#~ msgstr "_Rast"
+
+#~ msgid "Open screen overlay"
+#~ msgstr "Öppna skärmöverlägg"
+
+#~ msgid "Session has expired"
+#~ msgstr "Sessionen har gått ut"
+
+#, c-format
+#~ msgid "Long break due in <b>%s</b>"
+#~ msgstr "Lång rast om <b>%s</b>"
+
+#~ msgid "Rewind one minute"
+#~ msgstr "Spola tillbaka en minut"
+
+#~ msgid "_Compact View"
+#~ msgstr "_Kompakt vy"
+
+#~ msgid "_Preferences"
+#~ msgstr "_Inställningar"
+
+#~ msgid "_About"
+#~ msgstr "_Om"
+
+#~ msgid "_Quit"
+#~ msgstr "A_vsluta"
+
+#~ msgid "Primary Menu"
+#~ msgstr "Primär meny"
+
+#~ msgid "Keep timer running?"
+#~ msgstr "Håll igång tidtagaren?"
+
+#~ msgid ""
+#~ "You can keep it running in the background — notifications and keyboard "
+#~ "shortcuts will still work."
+#~ msgstr ""
+#~ "Du kan låta den köra i bakgrunden — aviseringar och tangentbordsgenvägare "
+#~ "kommer fortfarande fungera."
+
+#~ msgid "Run in background"
+#~ msgstr "Kör i bakgrunden"
+
+#~ msgid "Main Window"
+#~ msgstr "Huvudfönster"
+
+#~ msgid "Prefer Dark Theme"
+#~ msgstr "Föredra mörkt schema"
+
+#~ msgid "Prefer Compact View"
+#~ msgstr "Föredra kompakt vy"
+
+#~ msgid "Started"
+#~ msgstr "Startad"
 
 #~ msgid "Paused"
 #~ msgstr "Pausad"
 
-#~ msgid "Failed to enable extension"
-#~ msgstr "Misslyckades med att aktivera tillägg"
+#~ msgid "Edit Custom Action"
+#~ msgstr "Redigera anpassad åtgärd"
 
-#~ msgid "It seems to be uninstalled"
-#~ msgstr "Det verkar ha avinstallerats"
+#~ msgid "_Cancel"
+#~ msgstr "_Avbryt"
 
-#~ msgid "Extension is out of date"
-#~ msgstr "Tillägget är gammalt"
+#~ msgid "_Save"
+#~ msgstr "_Spara"
 
-#~ msgid "Upgrade"
-#~ msgstr "Uppgradera"
+#~ msgid "Name"
+#~ msgstr "Namn"
 
-#~ msgid "Remind to take a break"
-#~ msgstr "Påminn om att ta en rast"
+#~ msgid "Trigger"
+#~ msgstr "Utlösare"
 
-#~ msgid "%d new message"
-#~ msgid_plural "%d new messages"
-#~ msgstr[0] "%d nytt meddelande"
-#~ msgstr[1] "%d nya meddelanden"
+#~ msgid "Event"
+#~ msgstr "Händelse"
 
-#~ msgid "Take a break!"
-#~ msgstr "Ta en rast!"
+#~ msgid "Execute command after an event."
+#~ msgstr "Kör kommando efter en händelse."
 
-#~ msgid "You have %d minute until next pomodoro."
-#~ msgid_plural "You have %d minutes until next pomodoro."
-#~ msgstr[0] "Du har %d minut till nästa pomodoro."
-#~ msgstr[1] "Du har %d minuter till nästa pomodoro."
+#~ msgid "Condition"
+#~ msgstr "Villkor"
 
-#~ msgid "You have %d second until next pomodoro."
-#~ msgid_plural "You have %d seconds until next pomodoro."
-#~ msgstr[0] "Du har %d sekund till nästa pomodoro."
-#~ msgstr[1] "Du har %d sekunder till nästa pomodoro."
+#~ msgid ""
+#~ "Ensure execution of a second command once condition is no longer met."
+#~ msgstr ""
+#~ "Säkerställ körning av ett andra kommando då villkoret inte längre "
+#~ "uppfylls."
 
-#~ msgid "Hey!"
-#~ msgstr "Hallå där!"
+#~ msgid "Events"
+#~ msgstr "Händelser"
 
-#~ msgid "You're missing out on a break"
-#~ msgstr "Du håller på att missa en rast"
+#~ msgid "Add _Event"
+#~ msgstr "Lägg till _händelse"
 
-#~ msgid "Add Sound"
-#~ msgstr "Lägg till ljud"
+#~ msgid "_Filter"
+#~ msgstr "_Filtrera"
 
-#~ msgid "Remove Sound"
-#~ msgstr "Ta bort ljud"
+#~ msgid "Filter"
+#~ msgstr "Filter"
+
+#~ msgid "Shell Command"
+#~ msgstr "Skalkommando"
+
+#~ msgid "Commands"
+#~ msgstr "Kommandon"
+
+#~ msgid "Condition Met Command"
+#~ msgstr "Kommando för uppfyllt villkor"
+
+#~ msgid "Condition Not Met Command"
+#~ msgstr "Kommando för ej uppfyllt villkor"
+
+#~ msgid "Working Directory"
+#~ msgstr "Arbetskatalog"
+
+#~ msgid "Use Subshell"
+#~ msgstr "Använd underskal"
+
+#~ msgid "Run the program from a subshell such as sh -c ''"
+#~ msgstr "Kör programmet från ett underskal som sh -c ''"
+
+#~ msgid "Pass Input Data"
+#~ msgstr "Skicka inmatningsdata"
+
+#~ msgid "Instead of passing variables you can process a JSON object."
+#~ msgstr "I stället för att skicka variabler kan du bearbeta ett JSON-objekt."
+
+#~ msgid "Wait For Completion"
+#~ msgstr "Vänta på slutförande"
+
+#~ msgid "Block execution of other commands until the command completes."
+#~ msgstr "Blockera körning av andra kommandon till kommandot slutförs."
+
+#~ msgid "_Delete Action"
+#~ msgstr "_Ta bort åtgärd"
+
+#~ msgid "No events specified yet."
+#~ msgstr "Inga händelser angivna ännu."
+
+#~ msgid "Add Custom Action"
+#~ msgstr "Lägg till anpassad åtgärd"
+
+#~ msgid "_Add"
+#~ msgstr "_Lägg till"
+
+#~ msgid "Select Working Directory"
+#~ msgstr "Välj arbetskatalog"
+
+#~ msgid "_Select"
+#~ msgstr "_Välj"
+
+#~ msgid "Untitled action"
+#~ msgstr "Namnlös åtgärd"
+
+#~ msgid "Add Condition"
+#~ msgstr "Lägg till villkor"
+
+#~ msgid "Add Group"
+#~ msgstr "Lägg till grupp"
+
+#~ msgid "AND"
+#~ msgstr "OCH"
+
+#~ msgid "OR"
+#~ msgstr "ELLER"
+
+#~ msgid "Is"
+#~ msgstr "Är"
+
+#~ msgid "Is Not"
+#~ msgstr "Är inte"
+
+#~ msgid "Equals"
+#~ msgstr "Lika med"
+
+#~ msgid "Greater Than"
+#~ msgstr "Större än"
+
+#~ msgid "Less Than"
+#~ msgstr "Mindre än"
+
+#~ msgid "Yes"
+#~ msgstr "Ja"
+
+#~ msgid "No"
+#~ msgstr "Nej"
+
+#~ msgid "Minutes"
+#~ msgstr "Minuter"
+
+#~ msgid "Seconds"
+#~ msgstr "Sekunder"
+
+#~ msgid "Hours"
+#~ msgstr "Timmar"
+
+#~ msgid "Select Field…"
+#~ msgstr "Välj fält…"
+
+#~ msgid "State"
+#~ msgstr "Tillstånd"
+
+#~ msgid "Running"
+#~ msgstr "Kör"
+
+#~ msgid "Duration"
+#~ msgstr "Längd"
+
+#~ msgid "Insert Variable"
+#~ msgstr "Infoga variabel"
+
+#~ msgid "Format"
+#~ msgstr "Format"
+
+#~ msgid "_Log"
+#~ msgstr "_Logg"
+
+#~ msgid "Show execution log"
+#~ msgstr "Visa körningslogg"
+
+#~ msgid ""
+#~ "Run shell commands automatically on timer events or conditions. <a "
+#~ "href=\"\">Learn more.</a>"
+#~ msgstr ""
+#~ "Kör skalkommandon automatiskt vid tidtagarhändelser eller villkor. <a "
+#~ "href=\"\">Läs mer.</a>"
+
+#~ msgid "Set Shortcut"
+#~ msgstr "Ställ in kortkommando"
+
+#~ msgid "_Set"
+#~ msgstr "_Ställ in"
+
+#~ msgid "Disabled"
+#~ msgstr "Inaktiverad"
+
+#~ msgid ""
+#~ "Press <b>Esc</b> to cancel or <b>Backspace</b> to disable the keyboard "
+#~ "shortcut"
+#~ msgstr ""
+#~ "Tryck <b>Esc</b> för att avbryta eller <b>Backsteg</b> för att inaktivera "
+#~ "tangentbordsgenvägen"
+
+#~ msgid ""
+#~ "Global shortcuts let you control the app even when it’s not on screen. "
+#~ "They work as long as the app is running in the background."
+#~ msgstr ""
+#~ "Globala kortkommandon låter dig styra programmet även när det inte syns "
+#~ "på skärmen. De fungerar så länge som programmet körs i bakgrunden."
+
+#~ msgid "Open app settings for editing global shortcuts"
+#~ msgstr "Öppna programinställningar för att redigera globala kortkommandon"
+
+#~ msgid "_Edit"
+#~ msgstr "R_edigera"
+
+#~ msgid "Enter new shortcut for starting or stopping the timer"
+#~ msgstr "Ange ett nytt kortkommando för att starta eller stoppa tidtagaren"
+
+#~ msgid "Enter new shortcut to start/pause/resume the timer"
+#~ msgstr ""
+#~ "Ange ett nytt kortkommando för att starta/pausa/återuppta tidtagaren"
+
+#~ msgid "Enter new shortcut for starting the timer"
+#~ msgstr "Ange ett nytt kortkommando för att starta tidtagaren"
+
+#~ msgid "Enter new shortcut for stopping the timer"
+#~ msgstr "Ange ett nytt kortkommando för att stoppa tidtagaren"
+
+#~ msgid "Enter new shortcut for pausing the timer"
+#~ msgstr "Ange ett nytt kortkommando för att pausa tidtagaren"
+
+#~ msgid "Enter new shortcut for resuming the timer"
+#~ msgstr "Ange ett nytt kortkommando för att återuppta tidtagaren"
+
+#~ msgid "Enter new shortcut for skipping"
+#~ msgstr "Ange ett nytt kortkommando för att hoppa över"
+
+#~ msgid "Rewind One Minute"
+#~ msgstr "Spola tillbaka en minut"
+
+#~ msgid "Enter new shortcut for rewinding"
+#~ msgstr "Ange ett nytt kortkommando för att spola tillbaka"
+
+#~ msgid "Enter new shortcut for bringing window to focus"
+#~ msgstr "Ange ett nytt kortkommando för att ge fokus till fönstret"
+
+#~ msgid "Announcements"
+#~ msgstr "Aviseringar"
+
+#~ msgid "Time Running Out"
+#~ msgstr "Tiden håller på att ta slut"
+
+#~ msgid "Notify when Pomodoro or break is about to end."
+#~ msgstr "Avisera när pomodoro eller rast håller på att ta slut."
+
+#~ msgid "A full-screen notification intended to enforce taking a break."
+#~ msgstr ""
+#~ "En helskärmsavisering som är avsedd för att tvinga fram att raster tas."
+
+#~ msgid "Lock Delay"
+#~ msgstr "Låsfördröjning"
+
+#~ msgid "Period of inactivity to lock the screen."
+#~ msgstr "Inaktivitetsperiod innan skärmen kommer att låsas."
+
+#~ msgid "Reopen Delay"
+#~ msgstr "Återöppningsfördröjning"
+
+#~ msgid "Period of inactivity to reopen the overlay after it gets dismissed."
+#~ msgstr ""
+#~ "Inaktivitetsperiod innan överlägget ska öppnas igen efter att det "
+#~ "avvisats."
+
+#~ msgid "Never"
+#~ msgstr "Aldrig"
+
+#~ msgid "Notifications"
+#~ msgstr "Aviseringar"
+
+#~ msgid "Sounds"
+#~ msgstr "Ljud"
+
+#~ msgid "Appearance"
+#~ msgstr "Utseende"
+
+#~ msgid "Keyboard Shortcuts"
+#~ msgstr "Tangentbordsgenvägar"
+
+#~ msgid "Automation"
+#~ msgstr "Automatisering"
+
+#~ msgid "Sounds Are Disabled"
+#~ msgstr "Ljud är inaktiverade"
+
+#~ msgid "Alert Sounds"
+#~ msgstr "Larmljud"
+
+#~ msgid "Pomodoro Finished Sound"
+#~ msgstr "Ljud för slut på pomodoro"
+
+#~ msgid "Break Finished Sound"
+#~ msgstr "Ljud för slut på rast"
+
+#~ msgid "Background Sound"
+#~ msgstr "Bakgrundsljud"
+
+#~ msgid "Bell"
+#~ msgstr "Ringklocka"
+
+#~ msgid "Loud Bell"
+#~ msgstr "Högljudd ringklocka"
+
+#~ msgid "Clock Ticking"
+#~ msgstr "Tickande klocka"
+
+#~ msgid "None"
+#~ msgstr "Inget"
+
+#~ msgid "Volume:"
+#~ msgstr "Volym:"
+
+#~ msgid "Select Custom Sound"
+#~ msgstr "Välj anpassat ljud"
+
+#~ msgid "Pomodoro Duration"
+#~ msgstr "Pomodorolängd"
+
+#~ msgid "Short Break Duration"
+#~ msgstr "Längd på kort rast"
+
+#~ msgid "Long Break Duration"
+#~ msgstr "Längd på lång rast"
+
+#~ msgid "Number of Cycles"
+#~ msgstr "Antal cykler"
+
+#~ msgid "Behavior"
+#~ msgstr "Beteende"
+
+#~ msgid "Pause By Locking The Screen"
+#~ msgstr "Pausa genom att låsa skärmen"
+
+#~ msgid "Confirm Starting a Break"
+#~ msgstr "Bekräfta start av rast"
+
+#~ msgid "Confirm Starting a Pomodoro"
+#~ msgstr "Bekräfta start av pomodoro"
+
+#, c-format
+#~ msgid "A single session will take <b>%s</b>."
+#~ msgstr "En ensam session kommer ta <b>%s</b>."
+
+#, c-format
+#~ msgid "<b>%u%%</b> of the time will be allocated for breaks."
+#~ msgstr "<b>%u%%</b> av tiden kommer vara avsatt för raster."
+
+#~ msgid "Apply changes to ongoing Pomodoro?"
+#~ msgstr "Tillämpa ändringar på pågående pomodoro?"
+
+#~ msgid "Apply changes to ongoing break?"
+#~ msgstr "Tillämpa ändringar på pågående rast?"
+
+#~ msgid "Apply"
+#~ msgstr "Tillämpa"
+
+#~ msgctxt "accessibility"
+#~ msgid "Sidebar"
+#~ msgstr "Sidopanel"
+
+#~ msgid "15 seconds"
+#~ msgstr "15 sekunder"
+
+#~ msgid "30 seconds"
+#~ msgstr "30 sekunder"
+
+#~ msgid "1 minute"
+#~ msgstr "1 minut"
+
+#~ msgid "2 minutes"
+#~ msgstr "2 minuter"
+
+#~ msgid "3 minutes"
+#~ msgstr "3 minuter"
+
+#~ msgid "5 minutes"
+#~ msgstr "5 minuter"
+
+#~ msgid "Compact timer"
+#~ msgstr "Kompakt tidtagare"
+
+#~ msgid "Overview of changes in gnome-pomodoro 0.28.1"
+#~ msgstr "Översikt över ändringar i gnome-pomodoro 0.28.1"
+
+#~ msgid "Added Tamil translation (thanks @omeritzics)"
+#~ msgstr "La till tamilsk översättning (tack @omeritzics)"
+
+#~ msgid "Added Hebrew translation (thanks @Killersparrow1)"
+#~ msgstr "La till hebreisk översättning (tack @Killersparrow1)"
+
+#~ msgid "Overview of changes in gnome-pomodoro 0.28.0"
+#~ msgstr "Översikt över ändringar i gnome-pomodoro 0.28.0"
+
+#~ msgid "Support for GNOME Shell 49 (thanks @aleasto)"
+#~ msgstr "Stöd för GNOME Shell 49 (tack @aleasto)"
+
+#~ msgid "Updated German translation (thanks @daPhipz)"
+#~ msgstr "Uppdaterade tysk översättning (tack @daPhipz)"
+
+#~ msgid "Overview of changes in gnome-pomodoro 0.27.0"
+#~ msgstr "Översikt över ändringar i gnome-pomodoro 0.27.0"
+
+#~ msgid "Support for GNOME Shell 48"
+#~ msgstr "Stöd för GNOME Shell 48"
+
+#~ msgid "Split time spent across midnight"
+#~ msgstr "Dela upp tid som spenderats över midnatt"
+
+#~ msgid "Added Telugu translation (thanks @SpaciousCoder78)"
+#~ msgstr "La till telugisk översättning (tack @SpaciousCoder78)"
+
+#~ msgid "Overview of changes in gnome-pomodoro 0.26.0"
+#~ msgstr "Översikt över ändringar i gnome-pomodoro 0.26.0"
+
+#~ msgid "Support for GNOME Shell 47"
+#~ msgstr "Stöd för GNOME Shell 47"
+
+#~ msgid "Allow to dismiss screen overlay by gesture when a video is playing"
+#~ msgstr "Tillåt avvisande av skärmöverlägg genom en gest då en video spelas"
+
+#~ msgid "Added Georgian translation (thanks @NorwayFun)"
+#~ msgstr "La till georgisk översättning (tack @NorwayFun)"
+
+#~ msgid "Adjusted translations in appdata (thanks @yakushabb)"
+#~ msgstr "Justerade översättningar i appdata (tack @yakushabb)"
+
+#~ msgid "Overview of changes in gnome-pomodoro 0.25.2"
+#~ msgstr "Översikt över ändringar i gnome-pomodoro 0.25.2"
+
+#~ msgid "Fix keeping notification after extending Pomodoro"
+#~ msgstr "Fixa bevarande av avisering efter att pomodoro förlängts"
+
+#~ msgid "Overview of changes in gnome-pomodoro 0.25.1"
+#~ msgstr "Översikt över ändringar i gnome-pomodoro 0.25.1"
+
+#~ msgid "Fixes for GNOME Shell 46"
+#~ msgstr "Fixar för Gnome Shell 46"
+
+#~ msgid "Drop support for GNOME Shell 45"
+#~ msgstr "Ta bort stöd för Gnome Shell 45"
+
+#~ msgid "Overview of changes in gnome-pomodoro 0.25.0"
+#~ msgstr "Översikt över ändringar i gnome-pomodoro 0.25.0"
+
+#~ msgid "Support for GNOME Shell 46"
+#~ msgstr "Stöd för GNOME Shell 46"
+
+#~ msgid "Adjust build script to meson 0.59.0 (thanks @mattst88)"
+#~ msgstr "Justera byggskript till meson 0.59.0 (tack @mattst88)"
+
+#~ msgid ""
+#~ "Let <b>Pomodoro</b> manage system notifications while the timer is running"
+#~ msgstr ""
+#~ "Låt <b>Pomodoro</b> hantera systemaviseringar under tiden tidtagaren körs"
+
+#~ msgid "Timer Ticking"
+#~ msgstr "Tickande äggklocka"
+
+#~ msgid "Birds"
+#~ msgstr "Fåglar"

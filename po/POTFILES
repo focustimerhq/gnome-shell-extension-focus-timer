@@ -1,4 +1,3 @@
-data/org.gnome.shell.extensions.focus-timer.gschema.xml
 src/config.js.in
 src/dbus.js
 src/distractions.js

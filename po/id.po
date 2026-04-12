@@ -1,282 +1,1278 @@
-# Indonesian translations for gnome-pomodoro package.
-# Copyright (C) 2017 Free Software Foundation, Inc.
-# This file is distributed under the same license as the gnome-pomodoro package.
+# Indonesian translation for gnome-shell-extension-focus-timer
+# Copyright (c) 2017 Free Software Foundation, Inc.
+# This file is distributed under the same license as the focus-timer package.
+#
+# Authors:
 # Ali <admin@situsali.com>, 2017.
-# Andika Triwidada <andika@gmail.com>, 2020.
+# Andika Triwidada <andika@gmail.com>, 2020, 2025.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-pomodoro master\n"
+"Project-Id-Version: gnome-shell-extension-focus-timer 1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-25 16:45+0100\n"
-"PO-Revision-Date: 2023-03-25 12:01+0100\n"
+"POT-Creation-Date: 2026-04-12 13:38+0200\n"
+"PO-Revision-Date: 2025-12-23 20:58+0700\n"
 "Last-Translator: Andika Triwidada <andika@gmail.com>\n"
 "Language-Team: Indonesian\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Poedit 3.1.1\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.8\n"
 
-#: data/org.gnome.shell.extensions.focus-timer.gschema.xml:6
-msgid "Start the app along with extension"
-msgstr ""
-
-#: data/org.gnome.shell.extensions.focus-timer.gschema.xml:14
-msgid "Indicator type"
-msgstr ""
-
-#: data/org.gnome.shell.extensions.focus-timer.gschema.xml:18
-msgid "Blur effect"
-msgstr ""
-
-#: data/org.gnome.shell.extensions.focus-timer.gschema.xml:22
-msgid "Dismiss screen overlay by gesture"
-msgstr ""
-
-#: data/org.gnome.shell.extensions.focus-timer.gschema.xml:26
-msgid "Reduce number of notifications during Pomodoro"
-msgstr ""
+#: src/indicator.js:329 src/screenShield.js:171
+msgid "Finished!"
+msgstr "Selesai!"
 
 #: src/indicator.js:331 src/screenShield.js:173
-msgid "Finished!"
-msgstr ""
-
-#: src/indicator.js:333 src/screenShield.js:175
 #, javascript-format
 msgid "%d of %d"
 msgstr ""
 
-#: src/indicator.js:420 src/prefs.js:73
+#: src/indicator.js:425 src/prefs.js:71
 msgid "Screen Overlay"
-msgstr ""
+msgstr "Hamparan Layar"
 
-#: src/indicator.js:423
+#: src/indicator.js:427
 msgid "Preferences"
 msgstr "Preferensi"
 
-#: src/indicator.js:424
+#: src/indicator.js:428
 msgid "Stats"
 msgstr "Statistik"
 
-#: src/indicator.js:426
+#: src/indicator.js:430
 msgid "Quit"
 msgstr "Keluar"
 
-#: src/indicator.js:601
+#: src/indicator.js:624
 #, javascript-format
 msgid "%dh"
-msgstr ""
+msgstr "%dj"
 
-#: src/indicator.js:605
+#: src/indicator.js:628
 #, javascript-format
 msgid "%dm"
-msgstr ""
+msgstr "%dm"
 
-#: src/indicator.js:613
+#: src/indicator.js:630 src/indicator.js:632 src/indicator.js:634
 #, javascript-format
 msgid "%ds"
-msgstr ""
+msgstr "%dd"
 
-#: src/indicator.js:1058 src/notifications.js:59
+#: src/indicator.js:1079 src/notifications.js:57
 msgid "Focus Timer"
 msgstr ""
 
-#: src/notifications.js:79
+#: src/notifications.js:77
 msgid "Focus Timer Extension"
 msgstr ""
 
-#: src/notifications.js:115
+#: src/notifications.js:119
 #, javascript-format
 msgid "%d hour"
 msgid_plural "%d hours"
 msgstr[0] "%d jam"
-msgstr[1] "%d jam"
 
-#: src/notifications.js:118
+#: src/notifications.js:122
 #, javascript-format
 msgid "%d minute"
 msgid_plural "%d minutes"
 msgstr[0] "%d menit"
-msgstr[1] "%d menit"
 
-#: src/notifications.js:121
+#: src/notifications.js:125
 #, javascript-format
 msgid "%d second"
 msgid_plural "%d seconds"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d detik"
 
 #. translators: time remaining eg. "3 minutes 50 seconds remaining"
-#: src/notifications.js:128
+#: src/notifications.js:135
 #, javascript-format
 msgid "%s remaining"
-msgstr ""
+msgstr "tersisa %s"
 
-#: src/notifications.js:239 src/timer.js:54
+#: src/notifications.js:261 src/timer.js:47
 msgid "Pomodoro"
 msgstr "Pomodoro"
 
-#: src/notifications.js:241
+#: src/notifications.js:263
 msgid "Take a break"
 msgstr "Waktunya rehat"
 
-#: src/notifications.js:243
+#: src/notifications.js:265
 msgid "Take a short break"
-msgstr "Istirahat sejenak"
+msgstr "Rehat sejenak"
 
-#: src/notifications.js:245
+#: src/notifications.js:267
 msgid "Take a long break"
-msgstr "Istirahat panjang"
+msgstr "Rehat panjang"
 
-#: src/notifications.js:253
+#: src/notifications.js:275
 msgid "Pomodoro is about to end"
 msgstr "Pomodoro akan berakhir"
 
-#: src/notifications.js:255
+#: src/notifications.js:277
 msgid "Break is about to end"
 msgstr "Rehat akan berakhir"
 
-#: src/notifications.js:263 src/notifications.js:275
+#: src/notifications.js:285 src/notifications.js:297
 msgid "Break is over!"
-msgstr ""
+msgstr "Rehat telah usai!"
 
-#: src/notifications.js:265 src/notifications.js:273
+#: src/notifications.js:287 src/notifications.js:295
 msgid "Pomodoro is over!"
-msgstr ""
+msgstr "Pomodoro telah usai!"
 
-#: src/notifications.js:294
+#: src/notifications.js:316
 msgid "Get ready…"
 msgstr "Siap-siap…"
 
-#: src/notifications.js:299
+#: src/notifications.js:321
 msgid "Confirm the start of a Pomodoro…"
-msgstr ""
+msgstr "Konfirmasi awal Pomodoro…"
 
-#: src/notifications.js:301
+#: src/notifications.js:323
 msgid "Confirm the start of a break…"
-msgstr ""
+msgstr "Konfirmasi awal rehat…"
 
-#: src/notifications.js:303
+#: src/notifications.js:325
 msgid "Confirm the start of a short break…"
-msgstr ""
+msgstr "Konfirmasi awal rehat pendek…"
 
-#: src/notifications.js:305
+#: src/notifications.js:327
 msgid "Confirm the start of a long break…"
-msgstr ""
+msgstr "Konfirmasi awal rehat panjang…"
 
-#: src/notifications.js:344
+#: src/notifications.js:366
 msgid "+1 minute"
-msgstr ""
+msgstr "+1 menit"
 
-#: src/notifications.js:345
+#: src/notifications.js:367
 msgid "Start Pomodoro"
 msgstr "Mulai Pomodoro"
 
-#: src/notifications.js:346
+#: src/notifications.js:368
 msgid "Start Break"
 msgstr ""
 
-#: src/notifications.js:403
+#: src/notifications.js:425
 msgid "Something went wrong"
-msgstr ""
+msgstr "Terjadi kesalahan"
 
-#: src/notifications.js:409
+#: src/notifications.js:431
 msgid "Report issue"
 msgstr "Laporkan isu"
 
-#: src/notifications.js:429
+#: src/notifications.js:451
 msgid "Focus Timer Not Found"
 msgstr ""
 
-#: src/notifications.js:430
+#: src/notifications.js:452
 msgid "Install Focus Timer app to start using the extension."
 msgstr ""
 
-#: src/notifications.js:435
+#: src/notifications.js:457
 msgid "Install from Flathub"
 msgstr ""
 
-#: src/prefs.js:14
+#: src/prefs.js:12
 msgid "General"
 msgstr ""
 
-#: src/prefs.js:20
+#: src/prefs.js:18
 msgid "Autostart The App"
 msgstr ""
 
-#: src/prefs.js:21
+#: src/prefs.js:19
 msgid "Makes the indicator instantly visible and allows keyboard shortcuts"
 msgstr ""
 
-#: src/prefs.js:34
+#: src/prefs.js:32
 msgid "Indicator"
 msgstr ""
 
-#: src/prefs.js:47
+#: src/prefs.js:45
 msgid "Icon"
 msgstr ""
 
-#: src/prefs.js:53
+#: src/prefs.js:51
 msgid "Text"
 msgstr ""
 
-#: src/prefs.js:60
+#: src/prefs.js:58
 msgid "Display As"
 msgstr ""
 
-#: src/prefs.js:61
+#: src/prefs.js:59
 msgid "Choose how the timer appears in the status bar"
 msgstr ""
 
-#: src/prefs.js:79
+#: src/prefs.js:77
 msgid "Blur Effect"
 msgstr ""
 
-#: src/prefs.js:80
+#: src/prefs.js:78
 msgid "Helps to acknowledge the break"
 msgstr ""
 
-#: src/prefs.js:88
+#: src/prefs.js:86
 msgid "Dismiss Gesture"
 msgstr ""
 
-#: src/prefs.js:89
+#: src/prefs.js:87
 msgid "Flick the mouse or press any key to dismiss"
 msgstr ""
 
-#: src/prefs.js:102
+#: src/prefs.js:100
 msgid "Distractions"
 msgstr ""
 
-#: src/prefs.js:108
+#: src/prefs.js:106
 msgid "Manage Notifications"
 msgstr ""
 
-#: src/prefs.js:109
+#: src/prefs.js:107
 msgid "Toggle Do Not Disturb mode during Pomodoro"
 msgstr ""
 
-#: src/screenOverlay.js:987
+#: src/screenOverlay.js:1053
 msgid "It's time to take a break"
 msgstr "Waktunya rehat"
 
-#: src/timer.js:51
+#: src/timer.js:44
 msgid "Stopped"
-msgstr ""
+msgstr "Dihentikan"
 
-#: src/timer.js:57
+#: src/timer.js:50
 msgid "Short Break"
 msgstr "Rehat Pendek"
 
-#: src/timer.js:60
+#: src/timer.js:53
 msgid "Long Break"
 msgstr "Rehat Panjang"
 
-#: src/timer.js:63
+#: src/timer.js:56
 msgid "Break"
 msgstr "Rehat"
+
+#~ msgid "Time management utility"
+#~ msgstr "Utilitas manajemen waktu"
+
+#~ msgid "Maintain focus by taking frequent breaks"
+#~ msgstr "Menjaga fokus dengan mengambil rehat secara berkala"
+
+#~ msgid ""
+#~ "A productivity timer that helps you work more effectively by breaking "
+#~ "your time into focused work sessions followed by short breaks. Work for "
+#~ "25 minutes, then take a 5-minute break to maintain concentration and "
+#~ "prevent burnout."
+#~ msgstr ""
+#~ "Timer produktivitas yang membantu Anda bekerja lebih efektif dengan "
+#~ "membagi waktu Anda menjadi sesi kerja terfokus yang diikuti oleh rehat "
+#~ "pendek. Bekerja selama 25 menit, lalu ambil rehat 5 menit untuk menjaga "
+#~ "konsentrasi dan mencegah kelelahan kerja (burnout)."
+
+#~ msgid "Key features:"
+#~ msgstr "Fitur utama:"
+
+#~ msgid "Customizable work session and break lengths"
+#~ msgstr "Durasi sesi kerja dan rehat yang dapat disesuaikan"
+
+#~ msgid "Visual and audio notifications"
+#~ msgstr "Notifikasi visual dan audio"
+
+#~ msgid "Time tracking and statistics"
+#~ msgstr "Pelacakan waktu dan statistik"
+
+#~ msgid "GNOME desktop integration"
+#~ msgstr "Integrasi desktop GNOME"
+
+#~ msgid "Screen overlay during breaks"
+#~ msgstr "Hamparan layar selama rehat"
+
+#~ msgid "Run custom commands after Pomodoro or break"
+#~ msgstr "Jalankan perintah ubahan setelah Pomodoro atau rehat"
+
+#~ msgid "Kamil Prusko"
+#~ msgstr "Kamil Prusko"
+
+#~ msgid "Timer"
+#~ msgstr "Timer"
+
+#~ msgid "Daily stats"
+#~ msgstr "Statistik harian"
+
+#~ msgid "Monthly stats"
+#~ msgstr "Statistik bulanan"
+
+#~ msgid "Screen overlay"
+#~ msgstr "Hamparan layar"
+
+#~ msgid "Start or Stop"
+#~ msgstr "Mulai atau Berhenti"
+
+#~ msgid "Start, Pause or Resume"
+#~ msgstr "Mulai, Jeda, atau Lanjut"
+
+#~ msgid "Start"
+#~ msgstr "Mulai"
+
+#~ msgid "Stop"
+#~ msgstr "Berhenti"
+
+#~ msgid "Pause"
+#~ msgstr "Jeda"
+
+#~ msgid "Resume"
+#~ msgstr "Lanjut"
+
+#~ msgid "Skip"
+#~ msgstr "Lewati"
+
+#~ msgid "Rewind"
+#~ msgstr "Putar balik"
+
+#~ msgid "Extend current pomodoro or break"
+#~ msgstr "Perpanjang pomodoro saat ini atau rehat"
+
+#~ msgid "Reset"
+#~ msgstr "Setel ulang"
+
+#~ msgid "Show preferences"
+#~ msgstr "Tampilkan preferensi"
+
+#~ msgid "Quit application"
+#~ msgstr "Keluar aplikasi"
+
+#~ msgid "Print version information and exit"
+#~ msgstr "Cetak informasi versi dan keluar"
+
+#~ msgid "Bring to Focus"
+#~ msgstr "Bawa ke Fokus"
+
+#, c-format
+#~ msgid "Custom action \"%s\" has failed"
+#~ msgstr "Aksi ubahan \"%s\" gagal"
+
+#~ msgid "Reached timeout"
+#~ msgstr "Batas waktu tercapai"
+
+#~ msgid "Failed to execute command"
+#~ msgstr "Gagal menjalankan perintah"
+
+#~ msgid "Command is empty"
+#~ msgstr "Perintah kosong"
+
+#~ msgid "Unclosed quotation mark"
+#~ msgstr "Tanda kutip belum ditutup"
+
+#~ msgid "Invalid command"
+#~ msgstr "Perintah tidak valid"
+
+#, c-format
+#~ msgid "Unknown variable \"%s\""
+#~ msgstr "Variabel \"%s\" tidak dikenal"
+
+#, c-format
+#~ msgid "Unknown format \"%s\""
+#~ msgstr "Format \"%s\" tidak dikenal"
+
+#, c-format
+#~ msgid "Program \"%s\" not found"
+#~ msgstr "Program \"%s\" tidak ditemukan"
+
+#~ msgid "Actions"
+#~ msgstr "Aksi"
+
+#~ msgid "Countdown"
+#~ msgstr "Hitung mundur"
+
+#~ msgid "Session"
+#~ msgstr "Sesi"
+
+#~ msgid "Other"
+#~ msgstr "Lainnya"
+
+#~ msgid "Started the timer."
+#~ msgstr "Memulai timer."
+
+#~ msgid "Stopped the timer manually."
+#~ msgstr "Menghentikan timer secara manual."
+
+#~ msgid ""
+#~ "The countdown has been manually paused. Not triggered when locking the "
+#~ "screen or when suspending the system."
+#~ msgstr ""
+#~ "Hitung mundur telah dijeda secara manual. Tidak dipicu saat mengunci "
+#~ "layar atau saat sistem disuspensi."
+
+#~ msgid "The countdown has been manually resumed."
+#~ msgstr "Hitung mundur telah dilanjutkan secara manual."
+
+#~ msgid "Jumped to a next time-block before the countdown has finished."
+#~ msgstr "Melompat ke blok waktu berikutnya sebelum hitung mundur selesai."
+
+#~ msgid "Rewind action has been used. It adds a pause in the past."
+#~ msgstr ""
+#~ "Aksi putar balik telah digunakan. Ini menambahkan jeda pada waktu lampau."
+
+#~ msgid "Manually cleared the session."
+#~ msgstr "Membersihkan sesi secara manual."
+
+#~ msgid "Finished"
+#~ msgstr "Selesai"
+
+#~ msgid ""
+#~ "The countdown has finished. If waiting for confirmation, the duration of "
+#~ "the time-block still may be altered."
+#~ msgstr ""
+#~ "Hitung mundur telah selesai. Jika menunggu konfirmasi, durasi blok waktu "
+#~ "masih dapat diubah."
+
+#~ msgid "Changed"
+#~ msgstr "Berubah"
+
+#~ msgid "Triggered on any change related to the countdown."
+#~ msgstr "Dipicu pada setiap perubahan yang terkait dengan hitung mundur."
+
+#~ msgid "Confirm Advancement"
+#~ msgstr "Konfirmasi Kemajuan"
+
+#~ msgid "A manual confirmation is required to start next time-block."
+#~ msgstr "Konfirmasi manual diperlukan untuk memulai blok waktu berikutnya."
+
+#~ msgid "Advanced"
+#~ msgstr "Tingkat Lanjut"
+
+#~ msgid "Transitioned or skipped to a next time-block."
+#~ msgstr "Beralih atau dilewati ke blok waktu berikutnya."
+
+#~ msgid "State Changed"
+#~ msgstr "Keadaan Berubah"
+
+#~ msgid "Transitioned to a next time-block or when a break gets relabelled."
+#~ msgstr ""
+#~ "Beralih ke blok waktu berikutnya atau ketika rehat diberi label ulang."
+
+#~ msgid "Rescheduled"
+#~ msgstr "Dijadwalkan ulang"
+
+#~ msgid "Triggered when scheduled time-blocks have changed."
+#~ msgstr "Dipicu ketika blok waktu yang dijadwalkan telah berubah."
+
+#~ msgid "Expired"
+#~ msgstr "Kedaluwarsa"
+
+#~ msgid "Triggered when session is about to be reset due to inactivity."
+#~ msgstr "Dipicu ketika sesi akan disetel ulang karena tidak ada aktivitas."
+
+#~ msgid "Take a Break"
+#~ msgstr "Waktunya Rehat"
+
+#~ msgid "Skip Break"
+#~ msgstr "Lewati Rehat"
+
+#~ msgid "Failed to initialize playback"
+#~ msgstr "Gagal menginisialisasi pemutaran"
+
+#~ msgid "File not found"
+#~ msgstr "Berkas tidak ditemukan"
+
+#~ msgid "File type not supported"
+#~ msgstr "Tipe berkas tidak didukung"
+
+#, c-format
+#~ msgid "%uh"
+#~ msgstr "%uj"
+
+#, c-format
+#~ msgid "%um"
+#~ msgstr "%um"
+
+#, c-format
+#~ msgid "%u hour"
+#~ msgid_plural "%u hours"
+#~ msgstr[0] "%u jam"
+
+#, c-format
+#~ msgid "%u minute"
+#~ msgid_plural "%u minutes"
+#~ msgstr[0] "%u menit"
+
+#, c-format
+#~ msgid "%u second"
+#~ msgid_plural "%u seconds"
+#~ msgstr[0] "%u detik"
+
+#~ msgid "The exact time of the current event."
+#~ msgstr "Waktu tepat dari acara saat ini."
+
+#~ msgid ""
+#~ "The current phase of the Pomodoro cycle. Possible values: <tt>stopped</"
+#~ "tt>, <tt>pomodoro</tt>, <tt>break</tt>, <tt>short-break</tt>, <tt>long-"
+#~ "break</tt>."
+#~ msgstr ""
+#~ "Fase siklus Pomodoro saat ini. Nilai yang mungkin: <tt>stopped</tt>, "
+#~ "<tt>pomodoro</tt>, <tt>break</tt>, <tt>short-break</tt>, <tt>long-break</"
+#~ "tt>."
+
+#~ msgid ""
+#~ "Status of the current time-block. Possible values: <tt>scheduled</tt>, "
+#~ "<tt>in-progress</tt>, <tt>completed</tt>, <tt>uncompleted</tt>."
+#~ msgstr ""
+#~ "Status blok waktu saat ini. Nilai yang mungkin: <tt>scheduled</tt>, "
+#~ "<tt>in-progress</tt>, <tt>completed</tt>, <tt>uncompleted</tt>."
+
+#~ msgid "A flag indicating whether countdown has begun."
+#~ msgstr "Tanda yang menunjukkan apakah hitung mundur telah dimulai."
+
+#~ msgid "A flag indicating whether countdown is paused."
+#~ msgstr "Tanda yang menunjukkan apakah hitung mundur dijeda."
+
+#~ msgid "A flag indicating whether countdown has finished."
+#~ msgstr "Tanda yang menunjukkan apakah hitung mundur telah selesai."
+
+#~ msgid "A flag indicating whether the timer is actively counting down."
+#~ msgstr "Tanda yang menunjukkan apakah timer sedang aktif menghitung mundur."
+
+#~ msgid "Duration of the current countdown."
+#~ msgstr "Durasi hitung mundur saat ini."
+
+#~ msgid "Discrepancy between elapsed time and the time passed."
+#~ msgstr "Perbedaan antara waktu yang telah berlalu dan waktu sebenarnya."
+
+#~ msgid "The amount of time spent on the countdown."
+#~ msgstr "Banyaknya waktu yang dihabiskan pada hitung mundur."
+
+#~ msgid "The amount of time left before the countdown ends."
+#~ msgstr "Banyaknya waktu yang tersisa sebelum hitung mundur berakhir."
+
+#~ msgid "Time when the countdown has started."
+#~ msgstr "Waktu saat hitung mundur dimulai."
+
+#~ msgid "GNOME Shell Extension"
+#~ msgstr "Ekstensi GNOME Shell"
+
+#~ msgid "Get the best experience!"
+#~ msgstr "Dapatkan pengalaman terbaik!"
+
+#~ msgid "Enable <b>GNOME Shell extension</b> for seamless desktop integration"
+#~ msgstr ""
+#~ "Aktifkan <b>ekstensi GNOME Shell</b> untuk integrasi desktop yang mulus"
+
+#~ msgid "Always within reach"
+#~ msgstr "Selalu dalam jangkauan"
+
+#~ msgid "Control timer directly from the top bar without opening the app"
+#~ msgstr "Kontrol timer langsung dari bilah atas tanpa membuka aplikasi"
+
+#~ msgid "Less distractions"
+#~ msgstr "Kurangi gangguan"
+
+#~ msgid "Refined break reminders"
+#~ msgstr "Pengingat rehat yang lebih baik"
+
+#~ msgid ""
+#~ "Elegant full-screen overlay that make taking breaks a more pleasant "
+#~ "experience"
+#~ msgstr ""
+#~ "Hamparan layar penuh yang elegan, yang membuat istirahat menjadi "
+#~ "pengalaman yang lebih menyenangkan"
+
+#~ msgid "Ready to try it?"
+#~ msgstr "Siap mencobanya?"
+
+#~ msgid "_Install Extension"
+#~ msgstr "Pasang Ekstens_i"
+
+#~ msgid "_Not Now"
+#~ msgstr "_Nanti Saja"
+
+#~ msgid "Copy to clipboard"
+#~ msgstr "Salin ke papan klip"
+
+#~ msgid "_Try Again"
+#~ msgstr "_Coba Lagi"
+
+#~ msgid "_Abort"
+#~ msgstr "Gugurk_an"
+
+#~ msgid "Time-out reached"
+#~ msgstr "Batas waktu tercapai"
+
+#~ msgid "Installing extensions is not allowed"
+#~ msgstr "Pemasangan ekstensi tidak diizinkan"
+
+#~ msgid "Failed to download the extension"
+#~ msgstr "Gagal mengunduh ekstensi"
+
+#~ msgid "Desktop"
+#~ msgstr "Desktop"
+
+#~ msgid "GNOME Shell extension available"
+#~ msgstr "Ekstensi GNOME Shell tersedia"
+
+#~ msgid "Learn More"
+#~ msgstr "Pelajari Selengkapnya"
+
+#~ msgid "Unused"
+#~ msgstr "Tidak digunakan"
+
+#~ msgid "Log"
+#~ msgstr "Log"
+
+#~ msgid "Empty Log"
+#~ msgstr "Log Kosong"
+
+#~ msgid "Entries will show up here once you start the timer."
+#~ msgstr "Entri akan muncul di sini setelah Anda memulai timer."
+
+#~ msgid "Context"
+#~ msgstr "Konteks"
+
+#~ msgid "Command"
+#~ msgstr "Perintah"
+
+#~ msgid "Output"
+#~ msgstr "Keluaran"
+
+#~ msgid "Error"
+#~ msgstr "Galat"
+
+#~ msgid "Exit Code:"
+#~ msgstr "Kode Keluar:"
+
+#~ msgid "Execution Time:"
+#~ msgstr "Waktu Eksekusi:"
+
+#~ msgid "translator-credits"
+#~ msgstr ""
+#~ "Ali <admin@situsali.com>, 2017\n"
+#~ "Andika Triwidada <andika@gmail.com>, 2020, 2025"
+
+#~ msgid "Donate"
+#~ msgstr "Donasi"
+
+#~ msgid "Breaks"
+#~ msgstr "Rehat"
+
+#~ msgid "Interruptions"
+#~ msgstr "Gangguan"
+
+#~ msgid "Break Ratio"
+#~ msgstr "Rasio Rehat"
+
+#~ msgid "Day"
+#~ msgstr "Hari"
+
+#~ msgid "Week"
+#~ msgstr "Minggu"
+
+#~ msgid "Month"
+#~ msgstr "Bulan"
+
+#~ msgid "Nothing to see here yet"
+#~ msgstr "Belum ada yang dapat dilihat di sini"
+
+#~ msgid "Finish a few Pomodoros to fill this up!"
+#~ msgstr "Selesaikan beberapa Pomodoro untuk mengisi bagian ini!"
+
+#, c-format
+#~ msgid "Skipped %u day"
+#~ msgid_plural "Skipped %u days"
+#~ msgstr[0] "Melewati %u hari"
+
+#, c-format
+#~ msgid "Skipped %u week"
+#~ msgid_plural "Skipped %u weeks"
+#~ msgstr[0] "Melewati %u minggu"
+
+#, c-format
+#~ msgid "Skipped %u month"
+#~ msgid_plural "Skipped %u months"
+#~ msgstr[0] "Melewati %u bulan"
+
+#~ msgid "Today"
+#~ msgstr "Hari ini"
+
+#~ msgid "Yesterday"
+#~ msgstr "Kemarin"
+
+#~ msgid "This week"
+#~ msgstr "Minggu Ini"
+
+#, c-format
+#~ msgid "Week %u"
+#~ msgstr "Minggu %u"
+
+#, c-format
+#~ msgid "Week %u of %u"
+#~ msgstr "Minggu %u dari %u"
+
+#~ msgid "_Pomodoro"
+#~ msgstr "_Pomodoro"
+
+#~ msgid "_Short Break"
+#~ msgstr "Rehat Pende_k"
+
+#~ msgid "_Long Break"
+#~ msgstr "Rehat Panjan_g"
+
+#~ msgid "_Break"
+#~ msgstr "_Rehat"
+
+#~ msgid "Open screen overlay"
+#~ msgstr "Buka hamparan layar"
+
+#~ msgid "Session has expired"
+#~ msgstr "Sesi telah kedaluwarsa"
+
+#, c-format
+#~ msgid "Long break due in <b>%s</b>"
+#~ msgstr "Rehat panjang dalam <b>%s</b>"
+
+#~ msgid "Rewind one minute"
+#~ msgstr "Putar balik satu menit"
+
+#~ msgid "_Compact View"
+#~ msgstr "Tampilan _Ringkas"
+
+#~ msgid "_Preferences"
+#~ msgstr "_Preferensi"
+
+#~ msgid "_About"
+#~ msgstr "Tent_ang"
+
+#~ msgid "_Quit"
+#~ msgstr "_Keluar"
+
+#~ msgid "Primary Menu"
+#~ msgstr "Menu Utama"
+
+#~ msgid "Keep timer running?"
+#~ msgstr "Biarkan timer berjalan?"
+
+#~ msgid ""
+#~ "You can keep it running in the background — notifications and keyboard "
+#~ "shortcuts will still work."
+#~ msgstr ""
+#~ "Anda dapat membiarkannya berjalan di latar belakang — notifikasi dan "
+#~ "pintasan papan ketik akan tetap berfungsi."
+
+#~ msgid "Run in background"
+#~ msgstr "Jalankan di latar belakang"
+
+#~ msgid "Main Window"
+#~ msgstr "Jendela Utama"
+
+#~ msgid "Prefer Dark Theme"
+#~ msgstr "Lebih Suka Tema Gelap"
+
+#~ msgid "Prefer Compact View"
+#~ msgstr "Lebih Suka Tampilan Ringkas"
+
+#~ msgid "Started"
+#~ msgstr "Dimulai"
+
+#~ msgid "Paused"
+#~ msgstr "Dijeda"
+
+#~ msgid "Edit Custom Action"
+#~ msgstr "Sunting Aksi Ubahan"
+
+#~ msgid "_Cancel"
+#~ msgstr "_Batal"
+
+#~ msgid "_Save"
+#~ msgstr "_Simpan"
+
+#~ msgid "Name"
+#~ msgstr "Nama"
+
+#~ msgid "Trigger"
+#~ msgstr "Pemicu"
+
+#~ msgid "Event"
+#~ msgstr "Acara"
+
+#~ msgid "Execute command after an event."
+#~ msgstr "Jalankan perintah setelah suatu acara."
+
+#~ msgid "Condition"
+#~ msgstr "Kondisi"
+
+#~ msgid ""
+#~ "Ensure execution of a second command once condition is no longer met."
+#~ msgstr ""
+#~ "Pastikan eksekusi perintah kedua setelah kondisi tidak lagi terpenuhi."
+
+#~ msgid "Events"
+#~ msgstr "Acara"
+
+#~ msgid "Add _Event"
+#~ msgstr "Tambah _Acara"
+
+#~ msgid "_Filter"
+#~ msgstr "_Filter"
+
+#~ msgid "Filter"
+#~ msgstr "Filter"
+
+#~ msgid "Shell Command"
+#~ msgstr "Perintah Shell"
+
+#~ msgid "Commands"
+#~ msgstr "Perintah"
+
+#~ msgid "Condition Met Command"
+#~ msgstr "Perintah Saat Kondisi Terpenuhi"
+
+#~ msgid "Condition Not Met Command"
+#~ msgstr "Perintah Saat Kondisi Tidak Terpenuhi"
+
+#~ msgid "Working Directory"
+#~ msgstr "Direktori Kerja"
+
+#~ msgid "Use Subshell"
+#~ msgstr "Gunakan Subshell"
+
+#~ msgid "Run the program from a subshell such as sh -c ''"
+#~ msgstr "Jalankan program dari subshell seperti sh -c ''"
+
+#~ msgid "Pass Input Data"
+#~ msgstr "Kirim Data Masukan"
+
+#~ msgid "Instead of passing variables you can process a JSON object."
+#~ msgstr "Sebagai ganti mengirim variabel, Anda dapat memroses objek JSON."
+
+#~ msgid "Wait For Completion"
+#~ msgstr "Tunggu Selesai"
+
+#~ msgid "Block execution of other commands until the command completes."
+#~ msgstr "Blokir eksekusi perintah lain sampai perintah ini selesai."
+
+#~ msgid "_Delete Action"
+#~ msgstr "_Hapus Aksi"
+
+#~ msgid "No events specified yet."
+#~ msgstr "Belum ada acara yang ditentukan."
+
+#~ msgid "Add Custom Action"
+#~ msgstr "Tambah Aksi Ubahan"
+
+#~ msgid "_Add"
+#~ msgstr "T_ambah"
+
+#~ msgid "Select Working Directory"
+#~ msgstr "Pilih Direktori Kerja"
+
+#~ msgid "_Select"
+#~ msgstr "_Pilih"
+
+#~ msgid "Untitled action"
+#~ msgstr "Aksi tanpa judul"
+
+#~ msgid "Add Condition"
+#~ msgstr "Tambah Kondisi"
+
+#~ msgid "Add Group"
+#~ msgstr "Tambah Grup"
+
+#~ msgid "AND"
+#~ msgstr "DAN"
+
+#~ msgid "OR"
+#~ msgstr "ATAU"
+
+#~ msgid "Is"
+#~ msgstr "Adalah"
+
+#~ msgid "Is Not"
+#~ msgstr "Bukan"
+
+#~ msgid "Equals"
+#~ msgstr "Sama Dengan"
+
+#~ msgid "Greater Than"
+#~ msgstr "Lebih Dari"
+
+#~ msgid "Less Than"
+#~ msgstr "Kurang Dari"
+
+#~ msgid "Yes"
+#~ msgstr "Ya"
+
+#~ msgid "No"
+#~ msgstr "Tidak"
+
+#~ msgid "Minutes"
+#~ msgstr "Menit"
+
+#~ msgid "Seconds"
+#~ msgstr "Detik"
+
+#~ msgid "Hours"
+#~ msgstr "Jam"
+
+#~ msgid "Select Field…"
+#~ msgstr "Pilih Bidang…"
+
+#~ msgid "State"
+#~ msgstr "Keadaan"
+
+#~ msgid "Running"
+#~ msgstr "Berjalan"
+
+#~ msgid "Duration"
+#~ msgstr "Durasi"
+
+#~ msgid "Insert Variable"
+#~ msgstr "Sisipkan Variabel"
+
+#~ msgid "Format"
+#~ msgstr "Format"
+
+#~ msgid "_Log"
+#~ msgstr "_Log"
+
+#~ msgid "Show execution log"
+#~ msgstr "Tampilkan log eksekusi"
+
+#~ msgid ""
+#~ "Run shell commands automatically on timer events or conditions. <a "
+#~ "href=\"\">Learn more.</a>"
+#~ msgstr ""
+#~ "Jalankan perintah shell secara otomatis pada acara timer atau kondisi "
+#~ "tertentu. <a href=\"\">Pelajari selengkapnya.</a>"
+
+#~ msgid "Set Shortcut"
+#~ msgstr "Atur Pintasan"
+
+#~ msgid "_Set"
+#~ msgstr "_Atur"
+
+#~ msgid "Disabled"
+#~ msgstr "Dinonaktifkan"
+
+#~ msgid ""
+#~ "Press <b>Esc</b> to cancel or <b>Backspace</b> to disable the keyboard "
+#~ "shortcut"
+#~ msgstr ""
+#~ "Tekan <b>Esc</b> untuk membatalkan atau <b>Backspace</b> untuk "
+#~ "menonaktifkan pintasan papan ketik"
+
+#~ msgid ""
+#~ "Global shortcuts let you control the app even when it’s not on screen. "
+#~ "They work as long as the app is running in the background."
+#~ msgstr ""
+#~ "Pintasan global memungkinkan Anda mengontrol aplikasi bahkan saat tidak "
+#~ "ada di layar. Pintasan ini berfungsi selama aplikasi berjalan di latar "
+#~ "belakang."
+
+#~ msgid "Open app settings for editing global shortcuts"
+#~ msgstr "Buka pengaturan aplikasi untuk menyunting pintasan global"
+
+#~ msgid "_Edit"
+#~ msgstr "_Sunting"
+
+#~ msgid "Enter new shortcut for starting or stopping the timer"
+#~ msgstr "Masukkan pintasan baru untuk memulai atau menghentikan timer"
+
+#~ msgid "Enter new shortcut to start/pause/resume the timer"
+#~ msgstr "Masukkan pintasan baru untuk memulai/menjeda/melanjutkan timer"
+
+#~ msgid "Enter new shortcut for starting the timer"
+#~ msgstr "Masukkan pintasan baru untuk memulai timer"
+
+#~ msgid "Enter new shortcut for stopping the timer"
+#~ msgstr "Masukkan pintasan baru untuk menghentikan timer"
+
+#~ msgid "Enter new shortcut for pausing the timer"
+#~ msgstr "Masukkan pintasan baru untuk menjeda timer"
+
+#~ msgid "Enter new shortcut for resuming the timer"
+#~ msgstr "Masukkan pintasan baru untuk melanjutkan timer"
+
+#~ msgid "Enter new shortcut for skipping"
+#~ msgstr "Masukkan pintasan baru untuk melewati"
+
+#~ msgid "Rewind One Minute"
+#~ msgstr "Putar Balik Satu Menit"
+
+#~ msgid "Enter new shortcut for rewinding"
+#~ msgstr "Masukkan pintasan baru untuk memutar balik"
+
+#~ msgid "Enter new shortcut for bringing window to focus"
+#~ msgstr "Masukkan pintasan baru untuk membawa jendela ke fokus"
+
+#~ msgid "Announcements"
+#~ msgstr "Pengumuman"
+
+#~ msgid "Time Running Out"
+#~ msgstr "Waktu Hampir Habis"
+
+#~ msgid "Notify when Pomodoro or break is about to end."
+#~ msgstr "Beri tahu saat Pomodoro atau rehat akan berakhir."
+
+#~ msgid "A full-screen notification intended to enforce taking a break."
+#~ msgstr ""
+#~ "Notifikasi layar penuh yang ditujukan untuk memaksa pengambilan rehat."
+
+#~ msgid "Lock Delay"
+#~ msgstr "Tunda Kunci"
+
+#~ msgid "Period of inactivity to lock the screen."
+#~ msgstr "Periode tanpa aktivitas sebelum mengunci layar."
+
+#~ msgid "Reopen Delay"
+#~ msgstr "Tunda Buka Kembali"
+
+#~ msgid "Period of inactivity to reopen the overlay after it gets dismissed."
+#~ msgstr ""
+#~ "Periode tanpa aktivitas untuk membuka kembali hamparan setelah ditutup."
+
+#~ msgid "Never"
+#~ msgstr "Tidak Pernah"
+
+#~ msgid "Notifications"
+#~ msgstr "Notifikasi"
+
+#~ msgid "Sounds"
+#~ msgstr "Suara"
+
+#~ msgid "Appearance"
+#~ msgstr "Penampilan"
+
+#~ msgid "Keyboard Shortcuts"
+#~ msgstr "Pintasan Papan Ketik"
+
+#~ msgid "Automation"
+#~ msgstr "Otomatisasi"
+
+#~ msgid "Sounds Are Disabled"
+#~ msgstr "Suara Dinonaktifkan"
+
+#~ msgid "Alert Sounds"
+#~ msgstr "Suara Peringatan"
+
+#~ msgid "Pomodoro Finished Sound"
+#~ msgstr "Suara Pomodoro Selesai"
+
+#~ msgid "Break Finished Sound"
+#~ msgstr "Suara Rehat Selesai"
+
+#~ msgid "Background Sound"
+#~ msgstr "Suara Latar Belakang"
+
+#~ msgid "Bell"
+#~ msgstr "Bel"
+
+#~ msgid "Loud Bell"
+#~ msgstr "Bel Kencang"
+
+#~ msgid "Clock Ticking"
+#~ msgstr "Detak Jam"
+
+#~ msgid "None"
+#~ msgstr "Nihil"
+
+#~ msgid "Volume:"
+#~ msgstr "Volume:"
+
+#~ msgid "Select Custom Sound"
+#~ msgstr "Pilih Suara Ubahan"
+
+#~ msgid "Pomodoro Duration"
+#~ msgstr "Durasi Pomodoro"
+
+#~ msgid "Short Break Duration"
+#~ msgstr "Durasi Rehat Pendek"
+
+#~ msgid "Long Break Duration"
+#~ msgstr "Durasi Rehat Panjang"
+
+#~ msgid "Number of Cycles"
+#~ msgstr "Jumlah Siklus"
+
+#~ msgid "Behavior"
+#~ msgstr "Perilaku"
+
+#~ msgid "Pause By Locking The Screen"
+#~ msgstr "Jeda Dengan Mengunci Layar"
+
+#~ msgid "Confirm Starting a Break"
+#~ msgstr "Konfirmasi Memulai Rehat"
+
+#~ msgid "Confirm Starting a Pomodoro"
+#~ msgstr "Konfirmasi Memulai Pomodoro"
+
+#, c-format
+#~ msgid "A single session will take <b>%s</b>."
+#~ msgstr "Satu sesi tunggal akan memakan waktu <b>%s</b>."
+
+#, c-format
+#~ msgid "<b>%u%%</b> of the time will be allocated for breaks."
+#~ msgstr "<b>%u%%</b> waktu akan dialokasikan untuk rehat."
+
+#~ msgid "Apply changes to ongoing Pomodoro?"
+#~ msgstr "Terapkan perubahan pada Pomodoro yang sedang berjalan?"
+
+#~ msgid "Apply changes to ongoing break?"
+#~ msgstr "Terapkan perubahan pada rehat yang sedang berjalan?"
+
+#~ msgid "Apply"
+#~ msgstr "Terapkan"
+
+#~ msgctxt "accessibility"
+#~ msgid "Sidebar"
+#~ msgstr "Bilah Sisi"
+
+#~ msgid "15 seconds"
+#~ msgstr "15 detik"
+
+#~ msgid "30 seconds"
+#~ msgstr "30 detik"
+
+#~ msgid "1 minute"
+#~ msgstr "1 menit"
+
+#~ msgid "2 minutes"
+#~ msgstr "2 menit"
+
+#~ msgid "3 minutes"
+#~ msgstr "3 menit"
+
+#~ msgid "5 minutes"
+#~ msgstr "5 menit"
+
+#~ msgid "Compact timer"
+#~ msgstr "Timer ringkas"
+
+#~ msgid "Overview of changes in gnome-pomodoro 0.28.1"
+#~ msgstr "Ringkasan perubahan di gnome-pomodoro 0.28.1"
+
+#~ msgid "Added Tamil translation (thanks @omeritzics)"
+#~ msgstr "Menambahkan terjemahan Tamil (terima kasih @omeritzics)"
+
+#~ msgid "Added Hebrew translation (thanks @Killersparrow1)"
+#~ msgstr "Menambahkan terjemahan Ibrani (terima kasih @Killersparrow1)"
+
+#~ msgid "Overview of changes in gnome-pomodoro 0.28.0"
+#~ msgstr "Ringkasan perubahan di gnome-pomodoro 0.28.0"
+
+#~ msgid "Support for GNOME Shell 49 (thanks @aleasto)"
+#~ msgstr "Dukungan untuk GNOME Shell 49 (terima kasih @aleasto)"
+
+#~ msgid "Updated German translation (thanks @daPhipz)"
+#~ msgstr "Pembaruan terjemahan Jerman (terima kasih @daPhipz)"
+
+#~ msgid "Overview of changes in gnome-pomodoro 0.27.0"
+#~ msgstr "Ringkasan perubahan di gnome-pomodoro 0.27.0"
+
+#~ msgid "Support for GNOME Shell 48"
+#~ msgstr "Dukungan untuk GNOME Shell 48"
+
+#~ msgid "Split time spent across midnight"
+#~ msgstr "Pisahkan waktu yang dihabiskan melewati tengah malam"
+
+#~ msgid "Added Telugu translation (thanks @SpaciousCoder78)"
+#~ msgstr "Menambahkan terjemahan Telugu (terima kasih @SpaciousCoder78)"
+
+#~ msgid "Overview of changes in gnome-pomodoro 0.26.0"
+#~ msgstr "Ringkasan perubahan di gnome-pomodoro 0.26.0"
+
+#~ msgid "Support for GNOME Shell 47"
+#~ msgstr "Dukungan untuk GNOME Shell 47"
+
+#~ msgid "Allow to dismiss screen overlay by gesture when a video is playing"
+#~ msgstr ""
+#~ "Izinkan untuk menutup hamparan layar dengan gestur saat video diputar"
+
+#~ msgid "Added Georgian translation (thanks @NorwayFun)"
+#~ msgstr "Menambahkan terjemahan Georgia (terima kasih @NorwayFun)"
+
+#~ msgid "Adjusted translations in appdata (thanks @yakushabb)"
+#~ msgstr "Penyesuaian terjemahan dalam appdata (terima kasih @yakushabb)"
+
+#~ msgid "Overview of changes in gnome-pomodoro 0.25.2"
+#~ msgstr "Ringkasan perubahan di gnome-pomodoro 0.25.2"
+
+#~ msgid "Fix keeping notification after extending Pomodoro"
+#~ msgstr "Perbaikan notifikasi yang menetap setelah memperpanjang Pomodoro"
+
+#~ msgid "Overview of changes in gnome-pomodoro 0.25.1"
+#~ msgstr "Ringkasan perubahan di gnome-pomodoro 0.25.1"
+
+#~ msgid "Fixes for GNOME Shell 46"
+#~ msgstr "Perbaikan untuk GNOME Shell 46"
+
+#~ msgid "Drop support for GNOME Shell 45"
+#~ msgstr "Hentikan dukungan untuk GNOME Shell 45"
+
+#~ msgid "Overview of changes in gnome-pomodoro 0.25.0"
+#~ msgstr "Ringkasan perubahan di gnome-pomodoro 0.25.0"
+
+#~ msgid "Support for GNOME Shell 46"
+#~ msgstr "Dukungan untuk GNOME Shell 46"
+
+#~ msgid "Adjust build script to meson 0.59.0 (thanks @mattst88)"
+#~ msgstr "Sesuaikan skrip build ke meson 0.59.0 (terima kasih @mattst88)"
+
+#~ msgid ""
+#~ "Let <b>Pomodoro</b> manage system notifications while the timer is running"
+#~ msgstr ""
+#~ "Biarkan <b>Pomodoro</b> mengelola notifikasi sistem saat timer berjalan"
+
+#~ msgid "Timer Ticking"
+#~ msgstr "Detak Timer"
+
+#~ msgid "Birds"
+#~ msgstr "Burung"
+
+#~ msgid "@APPLICATION_NAME@"
+#~ msgstr "@APPLICATION_NAME@"
+
+#~ msgid "timer;"
+#~ msgstr "timer;pewaktu;pengatur waktu;"
+
+#~ msgid "Start/Stop"
+#~ msgstr "Mulai/Berhenti"
+
+#~ msgid "Pause/Resume"
+#~ msgstr "Jeda/Lanjut"
+
+#~ msgid "Skip to a pomodoro or to a break"
+#~ msgstr "Lewati ke pomodoro atau rehat"
+
+#~ msgid "Reset current session"
+#~ msgstr "Setel ulang sesi saat ini"
+
+#~ msgid "Run as background service"
+#~ msgstr "Jalankan sebagai layanan latar belakang"
+
+#~ msgid "About Pomodoro"
+#~ msgstr "Tentang Pomodoro"
+
+#~ msgid "A simple time management utility"
+#~ msgstr "Suatu utilitas simpel manajemen waktu"
+
+#, fuzzy
+#~ msgid "_Stopped"
+#~ msgstr "Berhenti"
+
+#, fuzzy
+#~ msgid "Extension for GNOME Shell is available"
+#~ msgstr "Indikator untuk GNOME Shell"
+
+#, fuzzy
+#~ msgid "Failed to install extension"
+#~ msgstr "Gagal mengaktifkan extension"
+
+#, fuzzy, c-format
+#~ msgid "Long break due in %s"
+#~ msgstr "Durasi rehat lama"
 
 #~ msgid "A time management utility for GNOME"
 #~ msgstr "Suatu utilitas manajemen waktu untuk GNOME"
@@ -296,52 +1292,49 @@ msgstr "Rehat"
 #~ msgid "Indicator for GNOME Shell"
 #~ msgstr "Indikator untuk GNOME Shell"
 
-#~ msgid "A simple time management utility"
-#~ msgstr "Suatu utilitas simpel manajemen waktu"
+#, fuzzy
+#~ msgid "Support for GNOME Shell 42 (@milotype and @kappa)"
+#~ msgstr "Indikator untuk GNOME Shell"
 
-#~ msgid "timer;"
-#~ msgstr "timer;"
+#, fuzzy
+#~ msgid "Support for GNOME Shell 41 (@mbooth101)"
+#~ msgstr "Indikator untuk GNOME Shell"
 
-#~ msgid "Start"
-#~ msgstr "Mulai"
+#, fuzzy
+#~ msgid "Support GNOME Shell 40.0, not 4.0"
+#~ msgstr "Indikator untuk GNOME Shell"
 
-#~ msgid "Pause"
-#~ msgstr "Jeda"
+#, fuzzy
+#~ msgid "Support for GNOME Shell 4.0"
+#~ msgstr "Indikator untuk GNOME Shell"
 
-#~ msgid "Resume"
-#~ msgstr "Lanjut"
+#, fuzzy
+#~ msgid "Support for GNOME Shell 3.38 (@ignapk and @szpak)"
+#~ msgstr "Indikator untuk GNOME Shell"
 
-#~ msgid "Stop"
-#~ msgstr "Berhenti"
+#, fuzzy
+#~ msgid "Support for GNOME Shell 3.36"
+#~ msgstr "Indikator untuk GNOME Shell"
+
+#, fuzzy
+#~ msgid "Support for GNOME Shell 3.34 only"
+#~ msgstr "Indikator untuk GNOME Shell"
+
+#, fuzzy
+#~ msgid "Support for GNOME Shell 3.32 (@demokritos)"
+#~ msgstr "Indikator untuk GNOME Shell"
+
+#, fuzzy
+#~ msgid "Support for GNOME Shell 3.28 and 3.30 (@aerostitch)"
+#~ msgstr "Indikator untuk GNOME Shell"
 
 #~ msgid "_Timer"
 #~ msgstr "_Timer"
-
-#~ msgid "_Preferences"
-#~ msgstr "_Preferensi"
-
-#~ msgid "_Quit"
-#~ msgstr "_Keluar"
 
 #~ msgid "Keyboard shortcut to toggle the timer. Enter new shortcut to change."
 #~ msgstr ""
 #~ "Pintasan papan ketik untuk menjungkit timer. Untuk mengubah, masukan "
 #~ "pintasan baru."
-
-#~ msgid "Disable"
-#~ msgstr "Nonaktifkan"
-
-#~ msgid "Timer"
-#~ msgstr "Timer"
-
-#~ msgid "Pomodoro duration"
-#~ msgstr "Durasi Pomodoro"
-
-#~ msgid "Break duration"
-#~ msgstr "Durasi rehat"
-
-#~ msgid "Long break duration"
-#~ msgstr "Durasi rehat lama"
 
 #~ msgid "Pomodoros before a long break"
 #~ msgstr "Pomodoro sebelum rehat lama"
@@ -349,14 +1342,8 @@ msgstr "Rehat"
 #~ msgid "Keyboard shortcut"
 #~ msgstr "Pintasan papan ketik"
 
-#~ msgid "Notifications"
-#~ msgstr "Notifikasi"
-
 #~ msgid "Screen notifications"
 #~ msgstr "Notifikasi layar"
-
-#~ msgid "Desktop"
-#~ msgstr "Desktop"
 
 #~ msgid "Wait for activity after a break"
 #~ msgstr "Tunggu aktifitas setelah rehat"
@@ -370,20 +1357,8 @@ msgstr "Rehat"
 #~ msgid "Back"
 #~ msgstr "Kembali"
 
-#~ msgid "Nothing to see yet"
-#~ msgstr "Belum ada yang dapat dilihat"
-
 #~ msgid "Complete a few sessions"
 #~ msgstr "Selesaikan beberapa sesi"
-
-#~ msgid "Day"
-#~ msgstr "Hari"
-
-#~ msgid "Week"
-#~ msgstr "Minggu"
-
-#~ msgid "Month"
-#~ msgstr "Bulan"
 
 #~ msgid "Previous (Alt+Left)"
 #~ msgstr "Sebelumnya (Alt+Kiri)"
@@ -391,47 +1366,11 @@ msgstr "Rehat"
 #~ msgid "Next (Alt+Right)"
 #~ msgstr "Berikutnya (Alt+Kanan)"
 
-#~ msgid "Today"
-#~ msgstr "Hari ini"
-
-#~ msgid "_About"
-#~ msgstr "Tent_ang"
-
-#~ msgid "Actions"
-#~ msgstr "Aksi"
-
-#~ msgid "Action"
-#~ msgstr "Aksi"
-
-#~ msgid "Custom actions…"
-#~ msgstr "Aksi ubahan…"
-
 #~ msgid "Complete"
 #~ msgstr "Komplit"
 
-#~ msgid "Skip"
-#~ msgstr "Lewati"
-
 #~ msgid "Enable"
 #~ msgstr "Aktifkan"
-
-#~ msgid "Command"
-#~ msgstr "Perintah"
-
-#~ msgid "Triggers"
-#~ msgstr "Pemicu"
-
-#~ msgid "Name"
-#~ msgstr "Nama"
-
-#~ msgid "_Pomodoro"
-#~ msgstr "_Pomodoro"
-
-#~ msgid "_Short Break"
-#~ msgstr "Rehat Pende_k"
-
-#~ msgid "_Long Break"
-#~ msgstr "Rehat Panjan_g"
 
 #~ msgid "Add"
 #~ msgstr "Tambahkan"
@@ -439,26 +1378,11 @@ msgstr "Rehat"
 #~ msgid "Remove"
 #~ msgstr "Hapus"
 
-#~ msgid "State"
-#~ msgstr "Keadaan"
-
-#~ msgid "State Duration"
-#~ msgstr "Durasi Keadaan"
-
 #~ msgid "Elapsed Time"
 #~ msgstr "Waktu Berlalu"
 
-#~ msgid "Pomodoro Timer"
-#~ msgstr "Timer Pomodoro"
-
-#~ msgid "Start Timer"
-#~ msgstr "Timer Mulai"
-
 #~ msgid "Pause Timer"
 #~ msgstr "Timer Jeda"
-
-#~ msgid "Stop Timer"
-#~ msgstr "Timer Berhenti"
 
 #~ msgid "Pause break"
 #~ msgstr "Jeda"
@@ -479,56 +1403,11 @@ msgstr "Rehat"
 #~ msgstr[1] "%d menit tersisa"
 
 #, javascript-format
-#~ msgid "%d second remaining"
-#~ msgid_plural "%d seconds remaining"
-#~ msgstr[0] "%d detik tersisa"
-#~ msgstr[1] "%d detik tersisa"
-
-#~ msgid "Break is over"
-#~ msgstr "Istirahat telah selesai"
-
-#~ msgid "Skip Break"
-#~ msgstr "Lewati Rehat"
-
-#~ msgid "+1 Minute"
-#~ msgstr "+1 Menit"
-
-#, javascript-format
 #~ msgid "Failed to run <i>%s</i> service"
 #~ msgstr "Gagal menjalankan layanan <i>%s</i>"
 
-#~ msgid "Hide other notifications"
-#~ msgstr "Sembunyikan notifikasi lainnya"
-
-#~ msgid "Volume:"
-#~ msgstr "Volume:"
-
-#~ msgid "Clock Ticking"
-#~ msgstr "Detak Jam"
-
-#~ msgid "Timer Ticking"
-#~ msgstr "Detak Timer"
-
 #~ msgid "Woodland Birds"
 #~ msgstr "Burung Woodland"
-
-#~ msgid "Bell"
-#~ msgstr "Bel"
-
-#~ msgid "Loud Bell"
-#~ msgstr "Bel Kencang"
-
-#~ msgid "Select Custom Sound"
-#~ msgstr "Pilih Suara Ubahan"
-
-#~ msgid "_Cancel"
-#~ msgstr "_Batal"
-
-#~ msgid "_Select"
-#~ msgstr "_Pilih"
-
-#~ msgid "Ticking Sound"
-#~ msgstr "Suara Detak"
 
 #~ msgid "End of Break Sound"
 #~ msgstr "Suara Akhir Rehat"
@@ -547,41 +1426,6 @@ msgstr "Rehat"
 
 #~ msgid "End of break sound"
 #~ msgstr "Suara akhir rehat"
-
-#~ msgid "About Pomodoro"
-#~ msgstr "Tentang Pomodoro"
-
-#~ msgid "translator-credits"
-#~ msgstr ""
-#~ "Ali <admin@situsali.com>, 2017\n"
-#~ "Andika Triwidada <andika@gmail.com>, 2020"
-
-#~ msgid "Start/Stop"
-#~ msgstr "Mulai/Berhenti"
-
-#~ msgid "Pause/Resume"
-#~ msgstr "Jeda/Lanjut"
-
-#~ msgid "Skip to a pomodoro or to a break"
-#~ msgstr "Lewati ke pomodoro atau istirahat"
-
-#~ msgid "Extend current pomodoro or break"
-#~ msgstr "Perpanjang pomodoro saat ini atau putus"
-
-#~ msgid "Reset current session"
-#~ msgstr "Setel ulang sesi saat ini"
-
-#~ msgid "Run as background service"
-#~ msgstr "Jalankan sebagai layanan latar belakang"
-
-#~ msgid "Show preferences"
-#~ msgstr "Tampilkan preferensi"
-
-#~ msgid "Quit application"
-#~ msgstr "Keluar aplikasi"
-
-#~ msgid "Print version information and exit"
-#~ msgstr "Cetak informasi versi dan keluar"
 
 #~ msgid "Focus on your task."
 #~ msgstr "Fokus pada tugas Anda."
@@ -618,9 +1462,6 @@ msgstr "Rehat"
 #~ "Menggunakan \"%s\" sebagai pintasan yang akan mengganggu pengetikan. Coba "
 #~ "tambahkan tombol lainnya seperti Control, Alt, atau Shift."
 
-#~ msgid "Keyboard Shortcut"
-#~ msgstr "Pintasan Papan Ketik"
-
 #~ msgid "Available"
 #~ msgstr "Ada"
 
@@ -632,9 +1473,6 @@ msgstr "Rehat"
 
 #~ msgid "Invisible"
 #~ msgstr "Tak tampak"
-
-#~ msgid "Yesterday"
-#~ msgstr "Kemarin"
 
 #, c-format
 #~ msgid "%d m"
@@ -648,36 +1486,12 @@ msgstr "Rehat"
 #~ msgid "%.1f h"
 #~ msgstr "%.1f j"
 
-#~ msgid "This week"
-#~ msgstr "Minggu Ini"
-
-#~ msgid "Kamil Prusko"
-#~ msgstr "Kamil Prusko"
-
-#, fuzzy
-#~ msgid "Support for GNOME Shell 4.0"
-#~ msgstr "Indikator untuk GNOME Shell"
-
-#, fuzzy
-#~ msgid "Support for GNOME Shell 3.36"
-#~ msgstr "Indikator untuk GNOME Shell"
-
-#, fuzzy
-#~ msgid "Support for GNOME Shell 3.34 only"
-#~ msgstr "Indikator untuk GNOME Shell"
-
 #~ msgid "gnome-pomodoro"
 #~ msgstr "gnome-pomodoro"
 
 #~| msgid "State"
 #~ msgid "_Stats"
 #~ msgstr "_Statistik"
-
-#~ msgid "Paused"
-#~ msgstr "Dijeda"
-
-#~ msgid "Failed to enable extension"
-#~ msgstr "Gagal mengaktifkan extension"
 
 #~ msgid "It seems to be uninstalled"
 #~ msgstr "Nampaknya tidak dipasang"

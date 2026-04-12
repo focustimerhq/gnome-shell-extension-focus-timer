@@ -1,16 +1,18 @@
-# Kazakh translation for gnome-pomodoro.
-# Copyright (c) 2017 gnome-pomodoro contributors.
-# This file is distributed under the same license as the gnome-pomodoro package.
+# Kazakh translation for gnome-shell-extension-focus-timer
+# Copyright (c) 2017 focus-timer contributors
+# This file is distributed under the same license as the focus-timer package.
+#
+# Authors:
 # Baurzhan Muftakhidinov <baurthefirst@gmail.com>, 2017.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-pomodoro 0.13.0\n"
+"Project-Id-Version: gnome-shell-extension-focus-timer 1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-25 16:45+0100\n"
+"POT-Creation-Date: 2026-04-12 13:38+0200\n"
 "PO-Revision-Date: 2023-03-25 14:18+0100\n"
 "Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>\n"
-"Language-Team: Kazakh <kk_KZ@googlegroups.com>\n"
+"Language-Team: Kazakh\n"
 "Language: kk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,261 +20,1503 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Poedit 3.1.1\n"
 
-#: data/org.gnome.shell.extensions.focus-timer.gschema.xml:6
-msgid "Start the app along with extension"
-msgstr ""
-
-#: data/org.gnome.shell.extensions.focus-timer.gschema.xml:14
-msgid "Indicator type"
-msgstr ""
-
-#: data/org.gnome.shell.extensions.focus-timer.gschema.xml:18
-msgid "Blur effect"
-msgstr ""
-
-#: data/org.gnome.shell.extensions.focus-timer.gschema.xml:22
-msgid "Dismiss screen overlay by gesture"
-msgstr ""
-
-#: data/org.gnome.shell.extensions.focus-timer.gschema.xml:26
-msgid "Reduce number of notifications during Pomodoro"
-msgstr ""
+#: src/indicator.js:329 src/screenShield.js:171
+#, fuzzy
+msgid "Finished!"
+msgstr "Аяқталды!"
 
 #: src/indicator.js:331 src/screenShield.js:173
-msgid "Finished!"
-msgstr ""
-
-#: src/indicator.js:333 src/screenShield.js:175
 #, javascript-format
 msgid "%d of %d"
 msgstr ""
 
-#: src/indicator.js:420 src/prefs.js:73
+#: src/indicator.js:425 src/prefs.js:71
+#, fuzzy
 msgid "Screen Overlay"
-msgstr ""
+msgstr "Экран қабаты"
 
-#: src/indicator.js:423
+#: src/indicator.js:427
 msgid "Preferences"
 msgstr "Баптаулар"
 
-#: src/indicator.js:424
+#: src/indicator.js:428
 msgid "Stats"
 msgstr "Статистика"
 
-#: src/indicator.js:426
+#: src/indicator.js:430
 msgid "Quit"
 msgstr "Шығу"
 
-#: src/indicator.js:601
+#: src/indicator.js:624
 #, javascript-format
 msgid "%dh"
 msgstr ""
 
-#: src/indicator.js:605
+#: src/indicator.js:628
 #, javascript-format
 msgid "%dm"
 msgstr ""
 
-#: src/indicator.js:613
+#: src/indicator.js:630 src/indicator.js:632 src/indicator.js:634
 #, javascript-format
 msgid "%ds"
 msgstr ""
 
-#: src/indicator.js:1058 src/notifications.js:59
+#: src/indicator.js:1079 src/notifications.js:57
 msgid "Focus Timer"
 msgstr ""
 
-#: src/notifications.js:79
+#: src/notifications.js:77
 msgid "Focus Timer Extension"
 msgstr ""
 
-#: src/notifications.js:115
+#: src/notifications.js:119
 #, javascript-format
 msgid "%d hour"
 msgid_plural "%d hours"
-msgstr[0] "%d сағат"
+msgstr[0] ""
 
-#: src/notifications.js:118
+#: src/notifications.js:122
 #, javascript-format
 msgid "%d minute"
 msgid_plural "%d minutes"
-msgstr[0] "%d минут"
+msgstr[0] ""
 
-#: src/notifications.js:121
+#: src/notifications.js:125
 #, javascript-format
 msgid "%d second"
 msgid_plural "%d seconds"
 msgstr[0] ""
 
 #. translators: time remaining eg. "3 minutes 50 seconds remaining"
-#: src/notifications.js:128
-#, javascript-format
+#: src/notifications.js:135
+#, fuzzy, javascript-format
 msgid "%s remaining"
-msgstr ""
+msgstr "%s қалды"
 
-#: src/notifications.js:239 src/timer.js:54
+#: src/notifications.js:261 src/timer.js:47
 msgid "Pomodoro"
-msgstr "Pomodoro"
+msgstr "Помодоро"
 
-#: src/notifications.js:241
+#: src/notifications.js:263
 msgid "Take a break"
-msgstr "Үзілісті алыңыз"
+msgstr "Үзіліс жасаңыз"
 
-#: src/notifications.js:243
+#: src/notifications.js:265
 msgid "Take a short break"
 msgstr "Қысқа үзіліс жасаңыз"
 
-#: src/notifications.js:245
+#: src/notifications.js:267
 msgid "Take a long break"
 msgstr "Ұзақ үзіліс жасаңыз"
 
-#: src/notifications.js:253
+#: src/notifications.js:275
 msgid "Pomodoro is about to end"
 msgstr "Помодоро аяқталуға жақын"
 
-#: src/notifications.js:255
+#: src/notifications.js:277
 msgid "Break is about to end"
 msgstr "Үзіліс аяқталуға жақын"
 
-#: src/notifications.js:263 src/notifications.js:275
+#: src/notifications.js:285 src/notifications.js:297
+#, fuzzy
 msgid "Break is over!"
-msgstr ""
+msgstr "Үзіліс аяқталды!"
 
-#: src/notifications.js:265 src/notifications.js:273
+#: src/notifications.js:287 src/notifications.js:295
+#, fuzzy
 msgid "Pomodoro is over!"
-msgstr ""
+msgstr "Помодоро аяқталды!"
 
-#: src/notifications.js:294
+#: src/notifications.js:316
 msgid "Get ready…"
-msgstr "Дайын бол…"
+msgstr "Дайын болыңыз…"
 
-#: src/notifications.js:299
+#: src/notifications.js:321
+#, fuzzy
 msgid "Confirm the start of a Pomodoro…"
-msgstr ""
+msgstr "Помодороның басталуын растаңыз…"
 
-#: src/notifications.js:301
+#: src/notifications.js:323
+#, fuzzy
 msgid "Confirm the start of a break…"
-msgstr ""
+msgstr "Үзілістің басталуын растаңыз…"
 
-#: src/notifications.js:303
+#: src/notifications.js:325
+#, fuzzy
 msgid "Confirm the start of a short break…"
-msgstr ""
+msgstr "Қысқа үзілістің басталуын растаңыз…"
 
-#: src/notifications.js:305
+#: src/notifications.js:327
+#, fuzzy
 msgid "Confirm the start of a long break…"
-msgstr ""
+msgstr "Ұзақ үзілістің басталуын растаңыз…"
 
-#: src/notifications.js:344
+#: src/notifications.js:366
+#, fuzzy
 msgid "+1 minute"
-msgstr ""
+msgstr "+1 минут"
 
-#: src/notifications.js:345
+#: src/notifications.js:367
 msgid "Start Pomodoro"
-msgstr "Pomodoro іске қосу"
+msgstr "Помодороны бастау"
 
-#: src/notifications.js:346
+#: src/notifications.js:368
 msgid "Start Break"
 msgstr ""
 
-#: src/notifications.js:403
+#: src/notifications.js:425
+#, fuzzy
 msgid "Something went wrong"
-msgstr ""
+msgstr "Бірдеңе дұрыс болмады"
 
-#: src/notifications.js:409
+#: src/notifications.js:431
 msgid "Report issue"
 msgstr "Ақаулық жөнінде хабарлау"
 
-#: src/notifications.js:429
+#: src/notifications.js:451
 msgid "Focus Timer Not Found"
 msgstr ""
 
-#: src/notifications.js:430
+#: src/notifications.js:452
 msgid "Install Focus Timer app to start using the extension."
 msgstr ""
 
-#: src/notifications.js:435
+#: src/notifications.js:457
 msgid "Install from Flathub"
 msgstr ""
 
-#: src/prefs.js:14
+#: src/prefs.js:12
 msgid "General"
 msgstr ""
 
-#: src/prefs.js:20
+#: src/prefs.js:18
 msgid "Autostart The App"
 msgstr ""
 
-#: src/prefs.js:21
+#: src/prefs.js:19
 msgid "Makes the indicator instantly visible and allows keyboard shortcuts"
 msgstr ""
 
-#: src/prefs.js:34
+#: src/prefs.js:32
 msgid "Indicator"
 msgstr ""
 
-#: src/prefs.js:47
+#: src/prefs.js:45
 msgid "Icon"
 msgstr ""
 
-#: src/prefs.js:53
+#: src/prefs.js:51
 msgid "Text"
 msgstr ""
 
-#: src/prefs.js:60
+#: src/prefs.js:58
 msgid "Display As"
 msgstr ""
 
-#: src/prefs.js:61
+#: src/prefs.js:59
 msgid "Choose how the timer appears in the status bar"
 msgstr ""
 
-#: src/prefs.js:79
+#: src/prefs.js:77
 msgid "Blur Effect"
 msgstr ""
 
-#: src/prefs.js:80
+#: src/prefs.js:78
 msgid "Helps to acknowledge the break"
 msgstr ""
 
-#: src/prefs.js:88
+#: src/prefs.js:86
 msgid "Dismiss Gesture"
 msgstr ""
 
-#: src/prefs.js:89
+#: src/prefs.js:87
 msgid "Flick the mouse or press any key to dismiss"
 msgstr ""
 
-#: src/prefs.js:102
+#: src/prefs.js:100
 msgid "Distractions"
 msgstr ""
 
-#: src/prefs.js:108
+#: src/prefs.js:106
 msgid "Manage Notifications"
 msgstr ""
 
-#: src/prefs.js:109
+#: src/prefs.js:107
 msgid "Toggle Do Not Disturb mode during Pomodoro"
 msgstr ""
 
-#: src/screenOverlay.js:987
+#: src/screenOverlay.js:1053
 msgid "It's time to take a break"
-msgstr "Үзіліс алатын уақыт келді"
+msgstr "Үзіліс жасайтын уақыт келді"
 
-#: src/timer.js:51
+#: src/timer.js:44
+#, fuzzy
 msgid "Stopped"
-msgstr ""
+msgstr "Тоқтатылды"
 
-#: src/timer.js:57
+#: src/timer.js:50
 msgid "Short Break"
 msgstr "Қысқа үзіліс"
 
-#: src/timer.js:60
+#: src/timer.js:53
 msgid "Long Break"
 msgstr "Ұзақ үзіліс"
 
-#: src/timer.js:63
+#: src/timer.js:56
 msgid "Break"
 msgstr "Үзіліс"
+
+#, fuzzy
+#~ msgid "Time management utility"
+#~ msgstr "Уақытты басқару утилитасы"
+
+#, fuzzy
+#~ msgid "Maintain focus by taking frequent breaks"
+#~ msgstr "Жиі үзіліс жасау арқылы зейінді сақтаңыз"
+
+#, fuzzy
+#~ msgid ""
+#~ "A productivity timer that helps you work more effectively by breaking "
+#~ "your time into focused work sessions followed by short breaks. Work for "
+#~ "25 minutes, then take a 5-minute break to maintain concentration and "
+#~ "prevent burnout."
+#~ msgstr ""
+#~ "Бұл өнімділік таймері уақытыңызды зейінді жұмыс сеанстарына және қысқа "
+#~ "үзілістерге бөлу арқылы тиімді жұмыс істеуге көмектеседі. Зейінді сақтау "
+#~ "және шаршап қалмау үшін 25 минут жұмыс істеп, содан кейін 5 минут үзіліс "
+#~ "жасаңыз."
+
+#, fuzzy
+#~ msgid "Key features:"
+#~ msgstr "Негізгі мүмкіндіктері:"
+
+#, fuzzy
+#~ msgid "Customizable work session and break lengths"
+#~ msgstr "Жұмыс және үзіліс ұзақтығын теңшеу"
+
+#, fuzzy
+#~ msgid "Visual and audio notifications"
+#~ msgstr "Визуалды және дыбыстық хабарламалар"
+
+#, fuzzy
+#~ msgid "Time tracking and statistics"
+#~ msgstr "Уақытты бақылау және статистика"
+
+#, fuzzy
+#~ msgid "GNOME desktop integration"
+#~ msgstr "GNOME жұмыс үстелімен интеграция"
+
+#, fuzzy
+#~ msgid "Screen overlay during breaks"
+#~ msgstr "Үзіліс кезіндегі экран қабаты"
+
+#, fuzzy
+#~ msgid "Run custom commands after Pomodoro or break"
+#~ msgstr "Помодоро немесе үзілістен кейін командаларды орындау"
+
+#~ msgid "Kamil Prusko"
+#~ msgstr "Kamil Prusko"
+
+#~ msgid "Timer"
+#~ msgstr "Таймер"
+
+#, fuzzy
+#~ msgid "Daily stats"
+#~ msgstr "Күндік статистика"
+
+#, fuzzy
+#~ msgid "Monthly stats"
+#~ msgstr "Айлық статистика"
+
+#, fuzzy
+#~ msgid "Screen overlay"
+#~ msgstr "Экран қабаты"
+
+#, fuzzy
+#~ msgid "Start or Stop"
+#~ msgstr "Бастау немесе Тоқтату"
+
+#, fuzzy
+#~ msgid "Start, Pause or Resume"
+#~ msgstr "Бастау, Кідірту немесе Жалғастыру"
+
+#~ msgid "Start"
+#~ msgstr "Бастау"
+
+#~ msgid "Stop"
+#~ msgstr "Тоқтату"
+
+#~ msgid "Pause"
+#~ msgstr "Кідірту"
+
+#~ msgid "Resume"
+#~ msgstr "Жалғастыру"
+
+#~ msgid "Skip"
+#~ msgstr "Аттап кету"
+
+#, fuzzy
+#~ msgid "Rewind"
+#~ msgstr "Кері айналдыру"
+
+#~ msgid "Extend current pomodoro or break"
+#~ msgstr "Ағымдағы помодороны немесе үзілісті ұзарту"
+
+#, fuzzy
+#~ msgid "Reset"
+#~ msgstr "Тастау"
+
+#~ msgid "Show preferences"
+#~ msgstr "Баптауларды көрсету"
+
+#~ msgid "Quit application"
+#~ msgstr "Қолданбадан шығу"
+
+#~ msgid "Print version information and exit"
+#~ msgstr "Нұсқа ақпаратын шығару және шығу"
+
+#, fuzzy
+#~ msgid "Bring to Focus"
+#~ msgstr "Назарға алу"
+
+#, fuzzy, c-format
+#~ msgid "Custom action \"%s\" has failed"
+#~ msgstr "\"%s\" таңдамалы әрекеті сәтсіз аяқталды"
+
+#, fuzzy
+#~ msgid "Reached timeout"
+#~ msgstr "Күту уақыты аяқталды"
+
+#, fuzzy
+#~ msgid "Failed to execute command"
+#~ msgstr "Команданы орындау сәтсіз аяқталды"
+
+#, fuzzy
+#~ msgid "Command is empty"
+#~ msgstr "Команда бос"
+
+#, fuzzy
+#~ msgid "Unclosed quotation mark"
+#~ msgstr "Жабылмаған тырнақша"
+
+#, fuzzy
+#~ msgid "Invalid command"
+#~ msgstr "Қате команда"
+
+#, fuzzy, c-format
+#~ msgid "Unknown variable \"%s\""
+#~ msgstr "Белгісіз айнымалы \"%s\""
+
+#, fuzzy, c-format
+#~ msgid "Unknown format \"%s\""
+#~ msgstr "Белгісіз формат \"%s\""
+
+#, fuzzy, c-format
+#~ msgid "Program \"%s\" not found"
+#~ msgstr "\"%s\" бағдарламасы табылмады"
+
+#~ msgid "Actions"
+#~ msgstr "Әрекеттер"
+
+#, fuzzy
+#~ msgid "Countdown"
+#~ msgstr "Кері санақ"
+
+#, fuzzy
+#~ msgid "Session"
+#~ msgstr "Сеанс"
+
+#, fuzzy
+#~ msgid "Other"
+#~ msgstr "Басқа"
+
+#, fuzzy
+#~ msgid "Started the timer."
+#~ msgstr "Таймер іске қосылды."
+
+#, fuzzy
+#~ msgid "Stopped the timer manually."
+#~ msgstr "Таймер қолмен тоқтатылды."
+
+#, fuzzy
+#~ msgid ""
+#~ "The countdown has been manually paused. Not triggered when locking the "
+#~ "screen or when suspending the system."
+#~ msgstr ""
+#~ "Кері санақ қолмен кідіртілді. Экранды құлыптау немесе жүйені ұйқы "
+#~ "режиміне өткізу кезінде іске қосылмайды."
+
+#, fuzzy
+#~ msgid "The countdown has been manually resumed."
+#~ msgstr "Кері санақ қолмен жалғастырылды."
+
+#, fuzzy
+#~ msgid "Jumped to a next time-block before the countdown has finished."
+#~ msgstr "Кері санақ аяқталғанға дейін келесі уақыт блогына өтті."
+
+#, fuzzy
+#~ msgid "Rewind action has been used. It adds a pause in the past."
+#~ msgstr "Кері айналдыру әрекеті қолданылды. Ол өткен уақытқа кідіріс қосады."
+
+#, fuzzy
+#~ msgid "Manually cleared the session."
+#~ msgstr "Сеанс қолмен тазартылды."
+
+#, fuzzy
+#~ msgid "Finished"
+#~ msgstr "Аяқталды"
+
+#, fuzzy
+#~ msgid ""
+#~ "The countdown has finished. If waiting for confirmation, the duration of "
+#~ "the time-block still may be altered."
+#~ msgstr ""
+#~ "Кері санақ аяқталды. Егер растау күтілсе, уақыт блогының ұзақтығын әлі де "
+#~ "өзгертуге болады."
+
+#, fuzzy
+#~ msgid "Changed"
+#~ msgstr "Өзгертілді"
+
+#, fuzzy
+#~ msgid "Triggered on any change related to the countdown."
+#~ msgstr "Кері санаққа қатысты кез келген өзгерісте іске қосылады."
+
+#, fuzzy
+#~ msgid "Confirm Advancement"
+#~ msgstr "Келесіге өтуді растау"
+
+#, fuzzy
+#~ msgid "A manual confirmation is required to start next time-block."
+#~ msgstr "Келесі уақыт блогын бастау үшін қолмен растау қажет."
+
+#, fuzzy
+#~ msgid "Advanced"
+#~ msgstr "Өтілді"
+
+#, fuzzy
+#~ msgid "Transitioned or skipped to a next time-block."
+#~ msgstr "Келесі уақыт блогына ауысты немесе оны өткізіп жіберді."
+
+#, fuzzy
+#~ msgid "State Changed"
+#~ msgstr "Күй өзгерді"
+
+#, fuzzy
+#~ msgid "Transitioned to a next time-block or when a break gets relabelled."
+#~ msgstr "Келесі уақыт блогына ауысқанда немесе үзіліс белгісі өзгергенде."
+
+#, fuzzy
+#~ msgid "Rescheduled"
+#~ msgstr "Қайта жоспарланды"
+
+#, fuzzy
+#~ msgid "Triggered when scheduled time-blocks have changed."
+#~ msgstr "Жоспарланған уақыт блоктары өзгерген кезде іске қосылады."
+
+#, fuzzy
+#~ msgid "Expired"
+#~ msgstr "Мерзімі бітті"
+
+#, fuzzy
+#~ msgid "Triggered when session is about to be reset due to inactivity."
+#~ msgstr "Әрекетсіздікке байланысты сеанс тасталу алдында іске қосылады."
+
+#, fuzzy
+#~ msgid "Take a Break"
+#~ msgstr "Үзіліс жасаңыз"
+
+#~ msgid "Skip Break"
+#~ msgstr "Үзілісті аттап кету"
+
+#, fuzzy
+#~ msgid "Failed to initialize playback"
+#~ msgstr "Ойнатуды іске қосу сәтсіз аяқталды"
+
+#, fuzzy
+#~ msgid "File not found"
+#~ msgstr "Файл табылмады"
+
+#, fuzzy
+#~ msgid "File type not supported"
+#~ msgstr "Файл түріне қолдау көрсетілмейді"
+
+#, fuzzy, c-format
+#~ msgid "%uh"
+#~ msgstr "%u сағ"
+
+#, fuzzy, c-format
+#~ msgid "%um"
+#~ msgstr "%u мин"
+
+#, fuzzy, c-format
+#~ msgid "%u hour"
+#~ msgid_plural "%u hours"
+#~ msgstr[0] "%u сағат"
+
+#, fuzzy, c-format
+#~ msgid "%u minute"
+#~ msgid_plural "%u minutes"
+#~ msgstr[0] "%u минут"
+
+#, fuzzy, c-format
+#~ msgid "%u second"
+#~ msgid_plural "%u seconds"
+#~ msgstr[0] "%u секунд"
+
+#, fuzzy
+#~ msgid "The exact time of the current event."
+#~ msgstr "Ағымдағы оқиғаның нақты уақыты."
+
+#, fuzzy
+#~ msgid ""
+#~ "The current phase of the Pomodoro cycle. Possible values: <tt>stopped</"
+#~ "tt>, <tt>pomodoro</tt>, <tt>break</tt>, <tt>short-break</tt>, <tt>long-"
+#~ "break</tt>."
+#~ msgstr ""
+#~ "Помодоро циклінің ағымдағы фазасы. Мүмкін мәндер: <tt>stopped</tt>, "
+#~ "<tt>pomodoro</tt>, <tt>break</tt>, <tt>short-break</tt>, <tt>long-break</"
+#~ "tt>."
+
+#, fuzzy
+#~ msgid ""
+#~ "Status of the current time-block. Possible values: <tt>scheduled</tt>, "
+#~ "<tt>in-progress</tt>, <tt>completed</tt>, <tt>uncompleted</tt>."
+#~ msgstr ""
+#~ "Ағымдағы уақыт блогының күйі. Мүмкін мәндер: <tt>scheduled</tt>, <tt>in-"
+#~ "progress</tt>, <tt>completed</tt>, <tt>uncompleted</tt>."
+
+#, fuzzy
+#~ msgid "A flag indicating whether countdown has begun."
+#~ msgstr "Кері санақтың басталғанын көрсететін жалауша."
+
+#, fuzzy
+#~ msgid "A flag indicating whether countdown is paused."
+#~ msgstr "Кері санақтың кідіртілгенін көрсететін жалауша."
+
+#, fuzzy
+#~ msgid "A flag indicating whether countdown has finished."
+#~ msgstr "Кері санақтың аяқталғанын көрсететін жалауша."
+
+#, fuzzy
+#~ msgid "A flag indicating whether the timer is actively counting down."
+#~ msgstr "Таймердің белсенді кері санап жатқанын көрсететін жалауша."
+
+#, fuzzy
+#~ msgid "Duration of the current countdown."
+#~ msgstr "Ағымдағы кері санақтың ұзақтығы."
+
+#, fuzzy
+#~ msgid "Discrepancy between elapsed time and the time passed."
+#~ msgstr "Өткен уақыт пен нақты уақыт арасындағы айырмашылық."
+
+#, fuzzy
+#~ msgid "The amount of time spent on the countdown."
+#~ msgstr "Кері санаққа жұмсалған уақыт мөлшері."
+
+#, fuzzy
+#~ msgid "The amount of time left before the countdown ends."
+#~ msgstr "Кері санақ аяқталғанға дейін қалған уақыт мөлшері."
+
+#, fuzzy
+#~ msgid "Time when the countdown has started."
+#~ msgstr "Кері санақ басталған уақыт."
+
+#, fuzzy
+#~ msgid "GNOME Shell Extension"
+#~ msgstr "GNOME Shell кеңейтімі"
+
+#, fuzzy
+#~ msgid "Get the best experience!"
+#~ msgstr "Ең жақсы тәжірибені алыңыз!"
+
+#, fuzzy
+#~ msgid "Enable <b>GNOME Shell extension</b> for seamless desktop integration"
+#~ msgstr ""
+#~ "Жұмыс үстелімен үздіксіз интеграция үшін <b>GNOME Shell кеңейтімін</b> "
+#~ "қосыңыз"
+
+#, fuzzy
+#~ msgid "Always within reach"
+#~ msgstr "Әрқашан қолжетімді"
+
+#, fuzzy
+#~ msgid "Control timer directly from the top bar without opening the app"
+#~ msgstr "Қолданбаны ашпай-ақ таймерді тікелей жоғарғы панельден басқарыңыз"
+
+#, fuzzy
+#~ msgid "Less distractions"
+#~ msgstr "Зейінді бөлетін нәрселер аз"
+
+#, fuzzy
+#~ msgid "Refined break reminders"
+#~ msgstr "Түзетілген үзіліс ескертулері"
+
+#, fuzzy
+#~ msgid ""
+#~ "Elegant full-screen overlay that make taking breaks a more pleasant "
+#~ "experience"
+#~ msgstr "Үзіліс жасауды жағымдырақ ететін талғампаз толық экранды қабат"
+
+#, fuzzy
+#~ msgid "Ready to try it?"
+#~ msgstr "Байқап көруге дайынсыз ба?"
+
+#, fuzzy
+#~ msgid "_Install Extension"
+#~ msgstr "_Кеңейтімді орнату"
+
+#, fuzzy
+#~ msgid "_Not Now"
+#~ msgstr "_Қазір емес"
+
+#, fuzzy
+#~ msgid "Copy to clipboard"
+#~ msgstr "Алмасу буферіне көшіру"
+
+#, fuzzy
+#~ msgid "_Try Again"
+#~ msgstr "_Қайтадан байқап көру"
+
+#, fuzzy
+#~ msgid "_Abort"
+#~ msgstr "_Тоқтату"
+
+#, fuzzy
+#~ msgid "Time-out reached"
+#~ msgstr "Күту уақыты аяқталды"
+
+#, fuzzy
+#~ msgid "Installing extensions is not allowed"
+#~ msgstr "Кеңейтімдерді орнатуға рұқсат етілмейді"
+
+#, fuzzy
+#~ msgid "Failed to download the extension"
+#~ msgstr "Кеңейтімді жүктеп алу сәтсіз аяқталды"
+
+#~ msgid "Desktop"
+#~ msgstr "Жұмыс үстелі"
+
+#, fuzzy
+#~ msgid "GNOME Shell extension available"
+#~ msgstr "GNOME Shell кеңейтімі қолжетімді"
+
+#, fuzzy
+#~ msgid "Learn More"
+#~ msgstr "Көбірек білу"
+
+#, fuzzy
+#~ msgid "Unused"
+#~ msgstr "Қолданылмаған"
+
+#, fuzzy
+#~ msgid "Log"
+#~ msgstr "Журнал"
+
+#, fuzzy
+#~ msgid "Empty Log"
+#~ msgstr "Бос журнал"
+
+#, fuzzy
+#~ msgid "Entries will show up here once you start the timer."
+#~ msgstr "Таймерді іске қосқан кезде жазбалар осында пайда болады."
+
+#, fuzzy
+#~ msgid "Context"
+#~ msgstr "Контекст"
+
+#~ msgid "Command"
+#~ msgstr "Команда"
+
+#, fuzzy
+#~ msgid "Output"
+#~ msgstr "Шығыс"
+
+#, fuzzy
+#~ msgid "Error"
+#~ msgstr "Қате"
+
+#, fuzzy
+#~ msgid "Exit Code:"
+#~ msgstr "Шығу коды:"
+
+#, fuzzy
+#~ msgid "Execution Time:"
+#~ msgstr "Орындалу уақыты:"
+
+#~ msgid "translator-credits"
+#~ msgstr "Baurzhan Muftakhidinov <baurthefirst@gmail.com>"
+
+#, fuzzy
+#~ msgid "Donate"
+#~ msgstr "Донат жасау"
+
+#, fuzzy
+#~ msgid "Breaks"
+#~ msgstr "Үзілістер"
+
+#, fuzzy
+#~ msgid "Interruptions"
+#~ msgstr "Үзілістер (кедергілер)"
+
+#, fuzzy
+#~ msgid "Break Ratio"
+#~ msgstr "Үзіліс коэффициенті"
+
+#~ msgid "Day"
+#~ msgstr "Күн"
+
+#~ msgid "Week"
+#~ msgstr "Апта"
+
+#~ msgid "Month"
+#~ msgstr "Ай"
+
+#, fuzzy
+#~ msgid "Nothing to see here yet"
+#~ msgstr "Әзірге көретін ештеңе жоқ"
+
+#, fuzzy
+#~ msgid "Finish a few Pomodoros to fill this up!"
+#~ msgstr "Бұл жерді толтыру үшін бірнеше помодороны аяқтаңыз!"
+
+#, fuzzy, c-format
+#~ msgid "Skipped %u day"
+#~ msgid_plural "Skipped %u days"
+#~ msgstr[0] "%u күн аттап өтілді"
+
+#, fuzzy, c-format
+#~ msgid "Skipped %u week"
+#~ msgid_plural "Skipped %u weeks"
+#~ msgstr[0] "%u апта аттап өтілді"
+
+#, fuzzy, c-format
+#~ msgid "Skipped %u month"
+#~ msgid_plural "Skipped %u months"
+#~ msgstr[0] "%u ай аттап өтілді"
+
+#~ msgid "Today"
+#~ msgstr "Бүгін"
+
+#~ msgid "Yesterday"
+#~ msgstr "Кеше"
+
+#~ msgid "This week"
+#~ msgstr "Осы аптада"
+
+#, fuzzy, c-format
+#~ msgid "Week %u"
+#~ msgstr "%u-апта"
+
+#, fuzzy, c-format
+#~ msgid "Week %u of %u"
+#~ msgstr "%u-дан %u-апта"
+
+#~ msgid "_Pomodoro"
+#~ msgstr "_Помодоро"
+
+#~ msgid "_Short Break"
+#~ msgstr "Қы_сқа үзіліс"
+
+#~ msgid "_Long Break"
+#~ msgstr "Ұ_зақ үзіліс"
+
+#, fuzzy
+#~ msgid "_Break"
+#~ msgstr "_Үзіліс"
+
+#, fuzzy
+#~ msgid "Open screen overlay"
+#~ msgstr "Экран қабатын ашу"
+
+#, fuzzy
+#~ msgid "Session has expired"
+#~ msgstr "Сеанс мерзімі аяқталды"
+
+#, fuzzy, c-format
+#~ msgid "Long break due in <b>%s</b>"
+#~ msgstr "Ұзақ үзіліске дейін <b>%s</b> қалды"
+
+#, fuzzy
+#~ msgid "Rewind one minute"
+#~ msgstr "Бір минутқа кері айналдыру"
+
+#, fuzzy
+#~ msgid "_Compact View"
+#~ msgstr "_Шағын көрініс"
+
+#~ msgid "_Preferences"
+#~ msgstr "_Баптаулар"
+
+#~ msgid "_About"
+#~ msgstr "Осы тур_алы"
+
+#~ msgid "_Quit"
+#~ msgstr "_Шығу"
+
+#, fuzzy
+#~ msgid "Primary Menu"
+#~ msgstr "Негізгі мәзір"
+
+#, fuzzy
+#~ msgid "Keep timer running?"
+#~ msgstr "Таймер жұмысын жалғастыра берсін бе?"
+
+#, fuzzy
+#~ msgid ""
+#~ "You can keep it running in the background — notifications and keyboard "
+#~ "shortcuts will still work."
+#~ msgstr ""
+#~ "Сіз оны фондық режимде қалдыра аласыз — хабарламалар мен пернетақта "
+#~ "жарлықтары әлі де жұмыс істейтін болады."
+
+#, fuzzy
+#~ msgid "Run in background"
+#~ msgstr "Фонда орындау"
+
+#, fuzzy
+#~ msgid "Main Window"
+#~ msgstr "Негізгі терезе"
+
+#, fuzzy
+#~ msgid "Prefer Dark Theme"
+#~ msgstr "Қараңғы тақырыпты таңдау"
+
+#, fuzzy
+#~ msgid "Prefer Compact View"
+#~ msgstr "Шағын көріністі таңдау"
+
+#, fuzzy
+#~ msgid "Started"
+#~ msgstr "Басталды"
+
+#, fuzzy
+#~ msgid "Paused"
+#~ msgstr "Кідіртілді"
+
+#, fuzzy
+#~ msgid "Edit Custom Action"
+#~ msgstr "Таңдамалы әрекетті өңдеу"
+
+#~ msgid "_Cancel"
+#~ msgstr "_Бас тарту"
+
+#, fuzzy
+#~ msgid "_Save"
+#~ msgstr "_Сақтау"
+
+#~ msgid "Name"
+#~ msgstr "Аты"
+
+#, fuzzy
+#~ msgid "Trigger"
+#~ msgstr "Триггер"
+
+#, fuzzy
+#~ msgid "Event"
+#~ msgstr "Оқиға"
+
+#, fuzzy
+#~ msgid "Execute command after an event."
+#~ msgstr "Оқиғадан кейін команданы орындау."
+
+#, fuzzy
+#~ msgid "Condition"
+#~ msgstr "Шарт"
+
+#, fuzzy
+#~ msgid ""
+#~ "Ensure execution of a second command once condition is no longer met."
+#~ msgstr ""
+#~ "Шарт орындалмаған жағдайда екінші команданың орындалуын қамтамасыз ету."
+
+#, fuzzy
+#~ msgid "Events"
+#~ msgstr "Оқиғалар"
+
+#, fuzzy
+#~ msgid "Add _Event"
+#~ msgstr "_Оқиға қосу"
+
+#, fuzzy
+#~ msgid "_Filter"
+#~ msgstr "_Сүзгі"
+
+#, fuzzy
+#~ msgid "Filter"
+#~ msgstr "Сүзгі"
+
+#, fuzzy
+#~ msgid "Shell Command"
+#~ msgstr "Shell командасы"
+
+#, fuzzy
+#~ msgid "Commands"
+#~ msgstr "Командалар"
+
+#, fuzzy
+#~ msgid "Condition Met Command"
+#~ msgstr "Шарт орындалғандағы команда"
+
+#, fuzzy
+#~ msgid "Condition Not Met Command"
+#~ msgstr "Шарт орындалмағандағы команда"
+
+#, fuzzy
+#~ msgid "Working Directory"
+#~ msgstr "Жұмыс каталогы"
+
+#, fuzzy
+#~ msgid "Use Subshell"
+#~ msgstr "Subshell қолдану"
+
+#, fuzzy
+#~ msgid "Run the program from a subshell such as sh -c ''"
+#~ msgstr "Бағдарламаны sh -c '' сияқты subshell арқылы іске қосу"
+
+#, fuzzy
+#~ msgid "Pass Input Data"
+#~ msgstr "Кіріс деректерін беру"
+
+#, fuzzy
+#~ msgid "Instead of passing variables you can process a JSON object."
+#~ msgstr "Айнымалыларды берудің орнына JSON нысанын өңдеуге болады."
+
+#, fuzzy
+#~ msgid "Wait For Completion"
+#~ msgstr "Аяқталуын күту"
+
+#, fuzzy
+#~ msgid "Block execution of other commands until the command completes."
+#~ msgstr "Команда аяқталғанша басқа командалардың орындалуын блоктау."
+
+#, fuzzy
+#~ msgid "_Delete Action"
+#~ msgstr "Әрекетті _өшіру"
+
+#, fuzzy
+#~ msgid "No events specified yet."
+#~ msgstr "Әзірге оқиғалар көрсетілмеген."
+
+#, fuzzy
+#~ msgid "Add Custom Action"
+#~ msgstr "Таңдамалы әрекет қосу"
+
+#, fuzzy
+#~ msgid "_Add"
+#~ msgstr "_Қосу"
+
+#, fuzzy
+#~ msgid "Select Working Directory"
+#~ msgstr "Жұмыс каталогын таңдау"
+
+#~ msgid "_Select"
+#~ msgstr "_Таңдау"
+
+#, fuzzy
+#~ msgid "Untitled action"
+#~ msgstr "Атаусыз әрекет"
+
+#, fuzzy
+#~ msgid "Add Condition"
+#~ msgstr "Шарт қосу"
+
+#, fuzzy
+#~ msgid "Add Group"
+#~ msgstr "Топ қосу"
+
+#, fuzzy
+#~ msgid "AND"
+#~ msgstr "ЖӘНЕ"
+
+#, fuzzy
+#~ msgid "OR"
+#~ msgstr "НЕМЕСЕ"
+
+#, fuzzy
+#~ msgid "Is"
+#~ msgstr "Болса"
+
+#, fuzzy
+#~ msgid "Is Not"
+#~ msgstr "Болмаса"
+
+#, fuzzy
+#~ msgid "Equals"
+#~ msgstr "Тең"
+
+#, fuzzy
+#~ msgid "Greater Than"
+#~ msgstr "Үлкен"
+
+#, fuzzy
+#~ msgid "Less Than"
+#~ msgstr "Кіші"
+
+#, fuzzy
+#~ msgid "Yes"
+#~ msgstr "Иә"
+
+#, fuzzy
+#~ msgid "No"
+#~ msgstr "Жоқ"
+
+#, fuzzy
+#~ msgid "Minutes"
+#~ msgstr "Минут"
+
+#, fuzzy
+#~ msgid "Seconds"
+#~ msgstr "Секунд"
+
+#, fuzzy
+#~ msgid "Hours"
+#~ msgstr "Сағат"
+
+#, fuzzy
+#~ msgid "Select Field…"
+#~ msgstr "Өрісті таңдау…"
+
+#~ msgid "State"
+#~ msgstr "Күйі"
+
+#, fuzzy
+#~ msgid "Running"
+#~ msgstr "Орындалуда"
+
+#, fuzzy
+#~ msgid "Duration"
+#~ msgstr "Ұзақтығы"
+
+#, fuzzy
+#~ msgid "Insert Variable"
+#~ msgstr "Айнымалыны енгізу"
+
+#, fuzzy
+#~ msgid "Format"
+#~ msgstr "Формат"
+
+#, fuzzy
+#~ msgid "_Log"
+#~ msgstr "_Журнал"
+
+#, fuzzy
+#~ msgid "Show execution log"
+#~ msgstr "Орындалу журналын көрсету"
+
+#, fuzzy
+#~ msgid ""
+#~ "Run shell commands automatically on timer events or conditions. <a "
+#~ "href=\"\">Learn more.</a>"
+#~ msgstr ""
+#~ "Таймер оқиғаларында немесе шарттарында shell командаларын автоматты түрде "
+#~ "орындау. <a href=\"\">Көбірек білу.</a>"
+
+#, fuzzy
+#~ msgid "Set Shortcut"
+#~ msgstr "Жарлықты орнату"
+
+#, fuzzy
+#~ msgid "_Set"
+#~ msgstr "_Орнату"
+
+#, fuzzy
+#~ msgid "Disabled"
+#~ msgstr "Сөндірулі"
+
+#, fuzzy
+#~ msgid ""
+#~ "Press <b>Esc</b> to cancel or <b>Backspace</b> to disable the keyboard "
+#~ "shortcut"
+#~ msgstr ""
+#~ "Бас тарту үшін <b>Esc</b>, ал жарлықты сөндіру үшін <b>Backspace</b> "
+#~ "басыңыз"
+
+#, fuzzy
+#~ msgid ""
+#~ "Global shortcuts let you control the app even when it’s not on screen. "
+#~ "They work as long as the app is running in the background."
+#~ msgstr ""
+#~ "Глобалды жарлықтар қолданба экранда болмаса да оны басқаруға мүмкіндік "
+#~ "береді. Олар қолданба фонда жұмыс істеп тұрғанда істей береді."
+
+#, fuzzy
+#~ msgid "Open app settings for editing global shortcuts"
+#~ msgstr "Глобалды жарлықтарды өңдеу үшін баптауларды ашу"
+
+#, fuzzy
+#~ msgid "_Edit"
+#~ msgstr "_Өңдеу"
+
+#, fuzzy
+#~ msgid "Enter new shortcut for starting or stopping the timer"
+#~ msgstr "Таймерді бастау немесе тоқтату үшін жаңа жарлықты енгізіңіз"
+
+#, fuzzy
+#~ msgid "Enter new shortcut to start/pause/resume the timer"
+#~ msgstr "Таймерді бастау/кідірту/жалғастыру үшін жаңа жарлықты енгізіңіз"
+
+#, fuzzy
+#~ msgid "Enter new shortcut for starting the timer"
+#~ msgstr "Таймерді бастау үшін жаңа жарлықты енгізіңіз"
+
+#, fuzzy
+#~ msgid "Enter new shortcut for stopping the timer"
+#~ msgstr "Таймерді тоқтату үшін жаңа жарлықты енгізіңіз"
+
+#, fuzzy
+#~ msgid "Enter new shortcut for pausing the timer"
+#~ msgstr "Таймерді кідірту үшін жаңа жарлықты енгізіңіз"
+
+#, fuzzy
+#~ msgid "Enter new shortcut for resuming the timer"
+#~ msgstr "Таймерді жалғастыру үшін жаңа жарлықты енгізіңіз"
+
+#, fuzzy
+#~ msgid "Enter new shortcut for skipping"
+#~ msgstr "Аттап кету үшін жаңа жарлықты енгізіңіз"
+
+#, fuzzy
+#~ msgid "Rewind One Minute"
+#~ msgstr "Бір минутқа кері айналдыру"
+
+#, fuzzy
+#~ msgid "Enter new shortcut for rewinding"
+#~ msgstr "Кері айналдыру үшін жаңа жарлықты енгізіңіз"
+
+#, fuzzy
+#~ msgid "Enter new shortcut for bringing window to focus"
+#~ msgstr "Терезені назарға алу үшін жаңа жарлықты енгізіңіз"
+
+#, fuzzy
+#~ msgid "Announcements"
+#~ msgstr "Хабарландырулар"
+
+#, fuzzy
+#~ msgid "Time Running Out"
+#~ msgstr "Уақыт таусылуда"
+
+#, fuzzy
+#~ msgid "Notify when Pomodoro or break is about to end."
+#~ msgstr "Помодоро немесе үзіліс аяқталуға жақын болғанда хабарлау."
+
+#, fuzzy
+#~ msgid "A full-screen notification intended to enforce taking a break."
+#~ msgstr "Үзіліс жасауға мәжбүрлейтін толық экранды хабарлама."
+
+#, fuzzy
+#~ msgid "Lock Delay"
+#~ msgstr "Құлыптау кідірісі"
+
+#, fuzzy
+#~ msgid "Period of inactivity to lock the screen."
+#~ msgstr "Экранды құлыптау үшін қажет әрекетсіздік кезеңі."
+
+#, fuzzy
+#~ msgid "Reopen Delay"
+#~ msgstr "Қайта ашу кідірісі"
+
+#, fuzzy
+#~ msgid "Period of inactivity to reopen the overlay after it gets dismissed."
+#~ msgstr "Жабылғаннан кейін қабатты қайта ашу үшін қажет әрекетсіздік кезеңі."
+
+#, fuzzy
+#~ msgid "Never"
+#~ msgstr "Ешқашан"
+
+#~ msgid "Notifications"
+#~ msgstr "Хабарламалар"
+
+#, fuzzy
+#~ msgid "Sounds"
+#~ msgstr "Дыбыстар"
+
+#, fuzzy
+#~ msgid "Appearance"
+#~ msgstr "Сыртқы түрі"
+
+#, fuzzy
+#~ msgid "Keyboard Shortcuts"
+#~ msgstr "Пернетақта жарлықтары"
+
+#, fuzzy
+#~ msgid "Automation"
+#~ msgstr "Автоматизация"
+
+#, fuzzy
+#~ msgid "Sounds Are Disabled"
+#~ msgstr "Дыбыстар сөндірілген"
+
+#, fuzzy
+#~ msgid "Alert Sounds"
+#~ msgstr "Ескерту дыбыстары"
+
+#, fuzzy
+#~ msgid "Pomodoro Finished Sound"
+#~ msgstr "Помодоро аяқталғандағы дыбыс"
+
+#, fuzzy
+#~ msgid "Break Finished Sound"
+#~ msgstr "Үзіліс аяқталғандағы дыбыс"
+
+#, fuzzy
+#~ msgid "Background Sound"
+#~ msgstr "Фондық дыбыс"
+
+#~ msgid "Bell"
+#~ msgstr "Қоңырау"
+
+#~ msgid "Loud Bell"
+#~ msgstr "Қатты қоңырау"
+
+#~ msgid "Clock Ticking"
+#~ msgstr "Сағат тықылы"
+
+#, fuzzy
+#~ msgid "None"
+#~ msgstr "Жоқ"
+
+#~ msgid "Volume:"
+#~ msgstr "Дыбыс деңгейі:"
+
+#~ msgid "Select Custom Sound"
+#~ msgstr "Таңдаулы дыбысты таңдау"
+
+#, fuzzy
+#~ msgid "Pomodoro Duration"
+#~ msgstr "Помодоро ұзақтығы"
+
+#, fuzzy
+#~ msgid "Short Break Duration"
+#~ msgstr "Қысқа үзіліс ұзақтығы"
+
+#, fuzzy
+#~ msgid "Long Break Duration"
+#~ msgstr "Ұзақ үзіліс ұзақтығы"
+
+#, fuzzy
+#~ msgid "Number of Cycles"
+#~ msgstr "Циклдер саны"
+
+#, fuzzy
+#~ msgid "Behavior"
+#~ msgstr "Мінез-құлық"
+
+#, fuzzy
+#~ msgid "Pause By Locking The Screen"
+#~ msgstr "Экранды құлыптау арқылы кідірту"
+
+#, fuzzy
+#~ msgid "Confirm Starting a Break"
+#~ msgstr "Үзілістің басталуын растау"
+
+#, fuzzy
+#~ msgid "Confirm Starting a Pomodoro"
+#~ msgstr "Помодороның басталуын растау"
+
+#, fuzzy, c-format
+#~ msgid "A single session will take <b>%s</b>."
+#~ msgstr "Бір сеанс <b>%s</b> уақыт алады."
+
+#, fuzzy, c-format
+#~ msgid "<b>%u%%</b> of the time will be allocated for breaks."
+#~ msgstr "Уақыттың <b>%u%%</b> үзілістерге бөлінеді."
+
+#, fuzzy
+#~ msgid "Apply changes to ongoing Pomodoro?"
+#~ msgstr "Өзгерістерді ағымдағы помодороға қолдану керек пе?"
+
+#, fuzzy
+#~ msgid "Apply changes to ongoing break?"
+#~ msgstr "Өзгерістерді ағымдағы үзіліске қолдану керек пе?"
+
+#, fuzzy
+#~ msgid "Apply"
+#~ msgstr "Қолдану"
+
+#, fuzzy
+#~ msgctxt "accessibility"
+#~ msgid "Sidebar"
+#~ msgstr "Бүйірлік панель"
+
+#, fuzzy
+#~ msgid "Compact timer"
+#~ msgstr "Шағын таймер"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.28.1"
+#~ msgstr "gnome-pomodoro 0.28.1 нұсқасындағы өзгерістер"
+
+#, fuzzy
+#~ msgid "Added Tamil translation (thanks @omeritzics)"
+#~ msgstr "Тамил тіліндегі аударма қосылды (@omeritzics-ке рахмет)"
+
+#, fuzzy
+#~ msgid "Added Hebrew translation (thanks @Killersparrow1)"
+#~ msgstr "Иврит тіліндегі аударма қосылды (@Killersparrow1-ге рахмет)"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.28.0"
+#~ msgstr "gnome-pomodoro 0.28.0 нұсқасындағы өзгерістер"
+
+#, fuzzy
+#~ msgid "Support for GNOME Shell 49 (thanks @aleasto)"
+#~ msgstr "GNOME Shell 49 қолдауы (@aleasto-ға рахмет)"
+
+#, fuzzy
+#~ msgid "Updated German translation (thanks @daPhipz)"
+#~ msgstr "Неміс тіліндегі аударма жаңартылды (@daPhipz-ке рахмет)"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.27.0"
+#~ msgstr "gnome-pomodoro 0.27.0 нұсқасындағы өзгерістер"
+
+#, fuzzy
+#~ msgid "Support for GNOME Shell 48"
+#~ msgstr "GNOME Shell 48 қолдауы"
+
+#, fuzzy
+#~ msgid "Split time spent across midnight"
+#~ msgstr "Түн ортасынан асқан уақытты бөлу"
+
+#, fuzzy
+#~ msgid "Added Telugu translation (thanks @SpaciousCoder78)"
+#~ msgstr "Телугу тіліндегі аударма қосылды (@SpaciousCoder78-ге рахмет)"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.26.0"
+#~ msgstr "gnome-pomodoro 0.26.0 нұсқасындағы өзгерістер"
+
+#, fuzzy
+#~ msgid "Support for GNOME Shell 47"
+#~ msgstr "GNOME Shell 47 қолдауы"
+
+#, fuzzy
+#~ msgid "Allow to dismiss screen overlay by gesture when a video is playing"
+#~ msgstr "Бейне ойнап жатқанда экран қабатын ишарамен жабуға рұқсат беру"
+
+#, fuzzy
+#~ msgid "Added Georgian translation (thanks @NorwayFun)"
+#~ msgstr "Грузин тіліндегі аударма қосылды (@NorwayFun-ге рахмет)"
+
+#, fuzzy
+#~ msgid "Adjusted translations in appdata (thanks @yakushabb)"
+#~ msgstr "Appdata аудармалары түзетілді (@yakushabb-ке рахмет)"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.25.2"
+#~ msgstr "gnome-pomodoro 0.25.2 нұсқасындағы өзгерістер"
+
+#, fuzzy
+#~ msgid "Fix keeping notification after extending Pomodoro"
+#~ msgstr "Помодороны ұзартқаннан кейін хабарламаның қалып қоюы түзетілді"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.25.1"
+#~ msgstr "gnome-pomodoro 0.25.1 нұсқасындағы өзгерістер"
+
+#, fuzzy
+#~ msgid "Fixes for GNOME Shell 46"
+#~ msgstr "GNOME Shell 46 үшін түзетулер"
+
+#, fuzzy
+#~ msgid "Drop support for GNOME Shell 45"
+#~ msgstr "GNOME Shell 45 қолдауын тоқтату"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.25.0"
+#~ msgstr "gnome-pomodoro 0.25.0 нұсқасындағы өзгерістер"
+
+#, fuzzy
+#~ msgid "Support for GNOME Shell 46"
+#~ msgstr "GNOME Shell 46 қолдауы"
+
+#, fuzzy
+#~ msgid "Adjust build script to meson 0.59.0 (thanks @mattst88)"
+#~ msgstr ""
+#~ "Құрастыру скрипті meson 0.59.0 нұсқасына бейімделді (@mattst88-ге рахмет)"
+
+#, fuzzy
+#~ msgid ""
+#~ "Let <b>Pomodoro</b> manage system notifications while the timer is running"
+#~ msgstr ""
+#~ "Таймер жұмыс істеп тұрғанда <b>Помодороға</b> жүйелік хабарламаларды "
+#~ "басқаруға мүмкіндік беріңіз"
+
+#, fuzzy
+#~ msgid "15 seconds"
+#~ msgstr "15 секунд"
+
+#, fuzzy
+#~ msgid "30 seconds"
+#~ msgstr "30 секунд"
+
+#, fuzzy
+#~ msgid "1 minute"
+#~ msgstr "1 минут"
+
+#, fuzzy
+#~ msgid "2 minutes"
+#~ msgstr "2 минут"
+
+#, fuzzy
+#~ msgid "3 minutes"
+#~ msgstr "3 минут"
+
+#, fuzzy
+#~ msgid "5 minutes"
+#~ msgstr "5 минут"
+
+#~ msgid "Timer Ticking"
+#~ msgstr "Таймер тықылы"
+
+#, fuzzy
+#~ msgid "Birds"
+#~ msgstr "Құстар"
+
+#~ msgid "@APPLICATION_NAME@"
+#~ msgstr "@APPLICATION_NAME@"
+
+#~ msgid "timer;"
+#~ msgstr "timer;таймер;уақыт;"
+
+#~ msgid "Start/Stop"
+#~ msgstr "Бастау/Тоқтату"
+
+#~ msgid "Pause/Resume"
+#~ msgstr "Кідірту/Жалғастыру"
+
+#~ msgid "Skip to a pomodoro or to a break"
+#~ msgstr "Помодороға немесе үзіліске өтіңіз"
+
+#~ msgid "Reset current session"
+#~ msgstr "Ағымдағы сеансты тастау"
+
+#~ msgid "Run as background service"
+#~ msgstr "Фон қызметі ретінде орындау"
+
+#~ msgid "About Pomodoro"
+#~ msgstr "Pomodoro туралы"
+
+#~ msgid "A simple time management utility"
+#~ msgstr "Уақытты басқарудың қарапайым утилитасы"
+
+#, fuzzy
+#~ msgid "_Stopped"
+#~ msgstr "Тоқтату"
+
+#, fuzzy
+#~ msgid "Extension for GNOME Shell is available"
+#~ msgstr "GNOME Shell үшін индикатор"
+
+#, fuzzy
+#~ msgid "Failed to install extension"
+#~ msgstr "Кеңейтуді іске қосу сәтсіз аяқталды"
+
+#, fuzzy, c-format
+#~ msgid "Long break due in %s"
+#~ msgstr "Ұзақ үзіліс ұзақтығы"
 
 #~ msgid "A time management utility for GNOME"
 #~ msgstr "GNOME үшін уақытты басқару утилитасы"
@@ -292,52 +1536,49 @@ msgstr "Үзіліс"
 #~ msgid "Indicator for GNOME Shell"
 #~ msgstr "GNOME Shell үшін индикатор"
 
-#~ msgid "A simple time management utility"
-#~ msgstr "Уақытты басқарудың қарапайым утилитасы"
+#, fuzzy
+#~ msgid "Support for GNOME Shell 42 (@milotype and @kappa)"
+#~ msgstr "GNOME Shell үшін индикатор"
 
-#~ msgid "timer;"
-#~ msgstr "timer;таймер;"
+#, fuzzy
+#~ msgid "Support for GNOME Shell 41 (@mbooth101)"
+#~ msgstr "GNOME Shell үшін индикатор"
 
-#~ msgid "Start"
-#~ msgstr "Бастау"
+#, fuzzy
+#~ msgid "Support GNOME Shell 40.0, not 4.0"
+#~ msgstr "GNOME Shell үшін индикатор"
 
-#~ msgid "Pause"
-#~ msgstr "Кідірту"
+#, fuzzy
+#~ msgid "Support for GNOME Shell 4.0"
+#~ msgstr "GNOME Shell үшін индикатор"
 
-#~ msgid "Resume"
-#~ msgstr "Жалғастыру"
+#, fuzzy
+#~ msgid "Support for GNOME Shell 3.38 (@ignapk and @szpak)"
+#~ msgstr "GNOME Shell үшін индикатор"
 
-#~ msgid "Stop"
-#~ msgstr "Тоқтату"
+#, fuzzy
+#~ msgid "Support for GNOME Shell 3.36"
+#~ msgstr "GNOME Shell үшін индикатор"
+
+#, fuzzy
+#~ msgid "Support for GNOME Shell 3.34 only"
+#~ msgstr "GNOME Shell үшін индикатор"
+
+#, fuzzy
+#~ msgid "Support for GNOME Shell 3.32 (@demokritos)"
+#~ msgstr "GNOME Shell үшін индикатор"
+
+#, fuzzy
+#~ msgid "Support for GNOME Shell 3.28 and 3.30 (@aerostitch)"
+#~ msgstr "GNOME Shell үшін индикатор"
 
 #~ msgid "_Timer"
 #~ msgstr "_Таймер"
-
-#~ msgid "_Preferences"
-#~ msgstr "_Баптаулар"
-
-#~ msgid "_Quit"
-#~ msgstr "_Шығу"
 
 #~ msgid "Keyboard shortcut to toggle the timer. Enter new shortcut to change."
 #~ msgstr ""
 #~ "Таймерді іске қосу/сөндіру үшін пернетақта жарлығы. Өзгерту үшін жаңа "
 #~ "жарлықты енгізіңіз."
-
-#~ msgid "Disable"
-#~ msgstr "Сөндіру"
-
-#~ msgid "Timer"
-#~ msgstr "Таймер"
-
-#~ msgid "Pomodoro duration"
-#~ msgstr "Pomodoro ұзақтығы"
-
-#~ msgid "Break duration"
-#~ msgstr "Үзіліс ұзақтығы"
-
-#~ msgid "Long break duration"
-#~ msgstr "Ұзақ үзіліс ұзақтығы"
 
 #~ msgid "Pomodoros before a long break"
 #~ msgstr "Ұзақ үзіліске дейінгі помодоро саны"
@@ -345,14 +1586,8 @@ msgstr "Үзіліс"
 #~ msgid "Keyboard shortcut"
 #~ msgstr "Пернетақта жарлығы"
 
-#~ msgid "Notifications"
-#~ msgstr "Хабарламалар"
-
 #~ msgid "Screen notifications"
 #~ msgstr "Экрандағы хабарламалар"
-
-#~ msgid "Desktop"
-#~ msgstr "Жұмыс үстелі"
 
 #~ msgid "Wait for activity after a break"
 #~ msgstr "Үзілістен кейін белсенділікті күту"
@@ -366,20 +1601,8 @@ msgstr "Үзіліс"
 #~ msgid "Back"
 #~ msgstr "Артқа"
 
-#~ msgid "Nothing to see yet"
-#~ msgstr "Әлі көретін ештеңе жоқ"
-
 #~ msgid "Complete a few sessions"
 #~ msgstr "Бірнеше сеанстарды аяқтаңыз"
-
-#~ msgid "Day"
-#~ msgstr "Күн"
-
-#~ msgid "Week"
-#~ msgstr "Апта"
-
-#~ msgid "Month"
-#~ msgstr "Ай"
 
 #~ msgid "Previous (Alt+Left)"
 #~ msgstr "Алдыңғы (Alt+Сол)"
@@ -387,47 +1610,11 @@ msgstr "Үзіліс"
 #~ msgid "Next (Alt+Right)"
 #~ msgstr "Келесі (Alt+Оң)"
 
-#~ msgid "Today"
-#~ msgstr "Бүгін"
-
-#~ msgid "_About"
-#~ msgstr "Осы тур_алы"
-
-#~ msgid "Actions"
-#~ msgstr "Әрекеттер"
-
-#~ msgid "Action"
-#~ msgstr "Әрекет"
-
-#~ msgid "Custom actions…"
-#~ msgstr "Таңдауыңызша әрекеттер…"
-
 #~ msgid "Complete"
 #~ msgstr "Аяқталды"
 
-#~ msgid "Skip"
-#~ msgstr "Аттап кету"
-
 #~ msgid "Enable"
 #~ msgstr "Іске қосу"
-
-#~ msgid "Command"
-#~ msgstr "Команда"
-
-#~ msgid "Triggers"
-#~ msgstr "Триггерлер"
-
-#~ msgid "Name"
-#~ msgstr "Аты"
-
-#~ msgid "_Pomodoro"
-#~ msgstr "_Pomodoro"
-
-#~ msgid "_Short Break"
-#~ msgstr "Қы_сқа үзіліс"
-
-#~ msgid "_Long Break"
-#~ msgstr "Ұ_зақ үзіліс"
 
 #~ msgid "Add"
 #~ msgstr "Қосу"
@@ -435,26 +1622,11 @@ msgstr "Үзіліс"
 #~ msgid "Remove"
 #~ msgstr "Өшіру"
 
-#~ msgid "State"
-#~ msgstr "Күйі"
-
-#~ msgid "State Duration"
-#~ msgstr "Қалып-күйдің ұзақтығы"
-
 #~ msgid "Elapsed Time"
 #~ msgstr "Өткен уақыты"
 
-#~ msgid "Pomodoro Timer"
-#~ msgstr "Pomodoro таймері"
-
-#~ msgid "Start Timer"
-#~ msgstr "Таймерді бастау"
-
 #~ msgid "Pause Timer"
 #~ msgstr "Таймерді аялдату"
-
-#~ msgid "Stop Timer"
-#~ msgstr "Таймерді тоқтату"
 
 #~ msgid "Pause break"
 #~ msgstr "Кідірту"
@@ -474,55 +1646,11 @@ msgstr "Үзіліс"
 #~ msgstr[0] "%d минут қалды"
 
 #, javascript-format
-#~ msgid "%d second remaining"
-#~ msgid_plural "%d seconds remaining"
-#~ msgstr[0] "%d секунд қалды"
-
-#~ msgid "Break is over"
-#~ msgstr "Үзіліс аяқталды"
-
-#~ msgid "Skip Break"
-#~ msgstr "Үзілісті өткізіп жіберу"
-
-#~ msgid "+1 Minute"
-#~ msgstr "+1 минут"
-
-#, javascript-format
 #~ msgid "Failed to run <i>%s</i> service"
 #~ msgstr "<i>%s</i> қызметін жөнелту сәтсіз аяқталды"
 
-#~ msgid "Hide other notifications"
-#~ msgstr "Басқа хабарламаларды жасыру"
-
-#~ msgid "Volume:"
-#~ msgstr "Дыбыс:"
-
-#~ msgid "Clock Ticking"
-#~ msgstr "Сағат дыбысы"
-
-#~ msgid "Timer Ticking"
-#~ msgstr "Таймер дыбысы"
-
 #~ msgid "Woodland Birds"
 #~ msgstr "Құстар"
-
-#~ msgid "Bell"
-#~ msgstr "Қоңырау"
-
-#~ msgid "Loud Bell"
-#~ msgstr "Қатты қоңырау"
-
-#~ msgid "Select Custom Sound"
-#~ msgstr "Таңдауыңызша дыбысты таңдаңыз"
-
-#~ msgid "_Cancel"
-#~ msgstr "_Бас тарту"
-
-#~ msgid "_Select"
-#~ msgstr "_Таңдау"
-
-#~ msgid "Ticking Sound"
-#~ msgstr "Тықылдайтын дыбыс"
 
 #~ msgid "End of Break Sound"
 #~ msgstr "Үзілістің аяқталу дыбысы"
@@ -541,39 +1669,6 @@ msgstr "Үзіліс"
 
 #~ msgid "End of break sound"
 #~ msgstr "Үзілістің аяқталу дыбысы"
-
-#~ msgid "About Pomodoro"
-#~ msgstr "Pomodoro туралы"
-
-#~ msgid "translator-credits"
-#~ msgstr "Baurzhan Muftakhidinov <baurthefirst@gmail.com>"
-
-#~ msgid "Start/Stop"
-#~ msgstr "Бастау/тоқтату"
-
-#~ msgid "Pause/Resume"
-#~ msgstr "Аялдату/жалғастыру"
-
-#~ msgid "Skip to a pomodoro or to a break"
-#~ msgstr "Помодороға немесе үзіліске өтіңіз"
-
-#~ msgid "Extend current pomodoro or break"
-#~ msgstr "Ағымдағы помодоро кеңейтіңіз немесе үзіңіз"
-
-#~ msgid "Reset current session"
-#~ msgstr "Ағымдағы сеансты қалпына келтіріңіз"
-
-#~ msgid "Run as background service"
-#~ msgstr "Фон қызметі ретінде орындау"
-
-#~ msgid "Show preferences"
-#~ msgstr "Баптауларды көрсету"
-
-#~ msgid "Quit application"
-#~ msgstr "Қолданба жұмысын аяқтау"
-
-#~ msgid "Print version information and exit"
-#~ msgstr "Нұсқа ақпаратын шығару және шығу"
 
 #~ msgid "Focus on your task."
 #~ msgstr "Тапсырмаңызға бар күшіңізді салыңыз."
@@ -608,9 +1703,6 @@ msgstr "Үзіліс"
 #~ "Жарлық ретінде \"%s\" қолдануды теруге теріс әсер тигізеді. Басқа пернені "
 #~ "қосып көріңіз, мысалы, Control, Alt немесе Shift."
 
-#~ msgid "Keyboard Shortcut"
-#~ msgstr "Пернетақта жарлығы"
-
 #~ msgid "Available"
 #~ msgstr "Бар"
 
@@ -623,9 +1715,6 @@ msgstr "Үзіліс"
 #~ msgid "Invisible"
 #~ msgstr "Жасырын"
 
-#~ msgid "Yesterday"
-#~ msgstr "Кеше"
-
 #, c-format
 #~ msgid "%d m"
 #~ msgstr "%d м"
@@ -637,24 +1726,6 @@ msgstr "Үзіліс"
 #, c-format
 #~ msgid "%.1f h"
 #~ msgstr "%.1f с"
-
-#~ msgid "This week"
-#~ msgstr "Осы апта"
-
-#~ msgid "Kamil Prusko"
-#~ msgstr "Kamil Prusko"
-
-#, fuzzy
-#~ msgid "Support for GNOME Shell 4.0"
-#~ msgstr "GNOME Shell үшін индикатор"
-
-#, fuzzy
-#~ msgid "Support for GNOME Shell 3.36"
-#~ msgstr "GNOME Shell үшін индикатор"
-
-#, fuzzy
-#~ msgid "Support for GNOME Shell 3.34 only"
-#~ msgstr "GNOME Shell үшін индикатор"
 
 #~ msgid "gnome-pomodoro"
 #~ msgstr "gnome-pomodoro"
@@ -686,9 +1757,6 @@ msgstr "Үзіліс"
 #~ msgid "You're missing out on a break"
 #~ msgstr "Үзілісті жіберіп отырсыз"
 
-#~ msgid "Failed to enable extension"
-#~ msgstr "Кеңейтуді іске қосу сәтсіз аяқталды"
-
 #~ msgid "It seems to be uninstalled"
 #~ msgstr "Ол жойылған сияқты"
 
@@ -697,9 +1765,6 @@ msgstr "Үзіліс"
 
 #~ msgid "Upgrade"
 #~ msgstr "Жаңарту"
-
-#~ msgid "Add Sound"
-#~ msgstr "Дыбысты қосу"
 
 #~ msgid "Remove Sound"
 #~ msgstr "Дыбысты өшіру"

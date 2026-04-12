@@ -1,16 +1,18 @@
-# Finnish translation for gnome-pomodoro
-# Copyright (c) 2020 gnome-pomodoro contributors
-# This file is distributed under the same license as the gnome-pomodoro package.
+# Finnish translation for gnome-shell-extension-focus-timer
+# Copyright (c) 2020 focus-timer contributors
+# This file is distributed under the same license as the focus-timer package.
+#
+# Authors:
 # Tuomas Jaakola <tuomas.jaakola@iki.fi>, 2020.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-pomodoro 0.14.0\n"
+"Project-Id-Version: gnome-shell-extension-focus-timer 1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-25 16:45+0100\n"
+"POT-Creation-Date: 2026-04-12 13:38+0200\n"
 "PO-Revision-Date: 2023-03-24 16:00+0100\n"
 "Last-Translator: Tuomas Jaakola <tuomas.jaakola@iki.fi>\n"
-"Language-Team: \n"
+"Language-Team: Finnish\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,89 +20,71 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.1.1\n"
 
-#: data/org.gnome.shell.extensions.focus-timer.gschema.xml:6
-msgid "Start the app along with extension"
-msgstr ""
-
-#: data/org.gnome.shell.extensions.focus-timer.gschema.xml:14
-msgid "Indicator type"
-msgstr ""
-
-#: data/org.gnome.shell.extensions.focus-timer.gschema.xml:18
-msgid "Blur effect"
-msgstr ""
-
-#: data/org.gnome.shell.extensions.focus-timer.gschema.xml:22
-msgid "Dismiss screen overlay by gesture"
-msgstr ""
-
-#: data/org.gnome.shell.extensions.focus-timer.gschema.xml:26
-msgid "Reduce number of notifications during Pomodoro"
-msgstr ""
+#: src/indicator.js:329 src/screenShield.js:171
+#, fuzzy
+msgid "Finished!"
+msgstr "Valmis!"
 
 #: src/indicator.js:331 src/screenShield.js:173
-msgid "Finished!"
-msgstr ""
-
-#: src/indicator.js:333 src/screenShield.js:175
 #, javascript-format
 msgid "%d of %d"
 msgstr ""
 
-#: src/indicator.js:420 src/prefs.js:73
+#: src/indicator.js:425 src/prefs.js:71
+#, fuzzy
 msgid "Screen Overlay"
-msgstr ""
+msgstr "Näytön peitto"
 
-#: src/indicator.js:423
+#: src/indicator.js:427
 msgid "Preferences"
-msgstr "Ominaisuudet"
+msgstr "Asetukset"
 
-#: src/indicator.js:424
+#: src/indicator.js:428
 msgid "Stats"
 msgstr "Tilastot"
 
-#: src/indicator.js:426
+#: src/indicator.js:430
 msgid "Quit"
 msgstr "Lopeta"
 
-#: src/indicator.js:601
+#: src/indicator.js:624
 #, javascript-format
 msgid "%dh"
 msgstr ""
 
-#: src/indicator.js:605
+#: src/indicator.js:628
 #, javascript-format
 msgid "%dm"
 msgstr ""
 
-#: src/indicator.js:613
+#: src/indicator.js:630 src/indicator.js:632 src/indicator.js:634
 #, javascript-format
 msgid "%ds"
 msgstr ""
 
-#: src/indicator.js:1058 src/notifications.js:59
+#: src/indicator.js:1079 src/notifications.js:57
 msgid "Focus Timer"
 msgstr ""
 
-#: src/notifications.js:79
+#: src/notifications.js:77
 msgid "Focus Timer Extension"
 msgstr ""
 
-#: src/notifications.js:115
+#: src/notifications.js:119
 #, javascript-format
 msgid "%d hour"
 msgid_plural "%d hours"
-msgstr[0] "%d tunti"
-msgstr[1] "%d tuntia"
+msgstr[0] ""
+msgstr[1] ""
 
-#: src/notifications.js:118
+#: src/notifications.js:122
 #, javascript-format
 msgid "%d minute"
 msgid_plural "%d minutes"
-msgstr[0] "%d minuutti"
-msgstr[1] "%d minuuttia"
+msgstr[0] ""
+msgstr[1] ""
 
-#: src/notifications.js:121
+#: src/notifications.js:125
 #, javascript-format
 msgid "%d second"
 msgid_plural "%d seconds"
@@ -108,174 +92,1443 @@ msgstr[0] ""
 msgstr[1] ""
 
 #. translators: time remaining eg. "3 minutes 50 seconds remaining"
-#: src/notifications.js:128
-#, javascript-format
+#: src/notifications.js:135
+#, fuzzy, javascript-format
 msgid "%s remaining"
-msgstr ""
+msgstr "%s jäljellä"
 
-#: src/notifications.js:239 src/timer.js:54
+#: src/notifications.js:261 src/timer.js:47
 msgid "Pomodoro"
 msgstr "Pomodoro"
 
-#: src/notifications.js:241
+#: src/notifications.js:263
 msgid "Take a break"
 msgstr "Pidä tauko"
 
-#: src/notifications.js:243
+#: src/notifications.js:265
 msgid "Take a short break"
 msgstr "Pidä lyhyt tauko"
 
-#: src/notifications.js:245
+#: src/notifications.js:267
 msgid "Take a long break"
 msgstr "Pidä pitkä tauko"
 
-#: src/notifications.js:253
+#: src/notifications.js:275
 msgid "Pomodoro is about to end"
 msgstr "Pomodoro on päättymässä"
 
-#: src/notifications.js:255
+#: src/notifications.js:277
 msgid "Break is about to end"
 msgstr "Tauko on päättymässä"
 
-#: src/notifications.js:263 src/notifications.js:275
+#: src/notifications.js:285 src/notifications.js:297
+#, fuzzy
 msgid "Break is over!"
-msgstr ""
+msgstr "Tauko on ohi!"
 
-#: src/notifications.js:265 src/notifications.js:273
+#: src/notifications.js:287 src/notifications.js:295
+#, fuzzy
 msgid "Pomodoro is over!"
-msgstr ""
+msgstr "Pomodoro on ohi!"
 
-#: src/notifications.js:294
+#: src/notifications.js:316
 msgid "Get ready…"
 msgstr "Valmistaudu…"
 
-#: src/notifications.js:299
+#: src/notifications.js:321
+#, fuzzy
 msgid "Confirm the start of a Pomodoro…"
-msgstr ""
+msgstr "Vahvista pomodoron aloitus…"
 
-#: src/notifications.js:301
+#: src/notifications.js:323
+#, fuzzy
 msgid "Confirm the start of a break…"
-msgstr ""
+msgstr "Vahvista tauon aloitus…"
 
-#: src/notifications.js:303
+#: src/notifications.js:325
+#, fuzzy
 msgid "Confirm the start of a short break…"
-msgstr ""
+msgstr "Vahvista lyhyen tauon aloitus…"
 
-#: src/notifications.js:305
+#: src/notifications.js:327
+#, fuzzy
 msgid "Confirm the start of a long break…"
-msgstr ""
+msgstr "Vahvista pitkän tauon aloitus…"
 
-#: src/notifications.js:344
+#: src/notifications.js:366
+#, fuzzy
 msgid "+1 minute"
-msgstr ""
+msgstr "+1 minuutti"
 
-#: src/notifications.js:345
+#: src/notifications.js:367
 msgid "Start Pomodoro"
 msgstr "Käynnistä Pomodoro"
 
-#: src/notifications.js:346
+#: src/notifications.js:368
 msgid "Start Break"
 msgstr ""
 
-#: src/notifications.js:403
+#: src/notifications.js:425
+#, fuzzy
 msgid "Something went wrong"
-msgstr ""
+msgstr "Jokin meni vikaan"
 
-#: src/notifications.js:409
+#: src/notifications.js:431
 msgid "Report issue"
 msgstr "Ilmoita ongelmasta"
 
-#: src/notifications.js:429
+#: src/notifications.js:451
 msgid "Focus Timer Not Found"
 msgstr ""
 
-#: src/notifications.js:430
+#: src/notifications.js:452
 msgid "Install Focus Timer app to start using the extension."
 msgstr ""
 
-#: src/notifications.js:435
+#: src/notifications.js:457
 msgid "Install from Flathub"
 msgstr ""
 
-#: src/prefs.js:14
+#: src/prefs.js:12
 msgid "General"
 msgstr ""
 
-#: src/prefs.js:20
+#: src/prefs.js:18
 msgid "Autostart The App"
 msgstr ""
 
-#: src/prefs.js:21
+#: src/prefs.js:19
 msgid "Makes the indicator instantly visible and allows keyboard shortcuts"
 msgstr ""
 
-#: src/prefs.js:34
+#: src/prefs.js:32
 msgid "Indicator"
 msgstr ""
 
-#: src/prefs.js:47
+#: src/prefs.js:45
 msgid "Icon"
 msgstr ""
 
-#: src/prefs.js:53
+#: src/prefs.js:51
 msgid "Text"
 msgstr ""
 
-#: src/prefs.js:60
+#: src/prefs.js:58
 msgid "Display As"
 msgstr ""
 
-#: src/prefs.js:61
+#: src/prefs.js:59
 msgid "Choose how the timer appears in the status bar"
 msgstr ""
 
-#: src/prefs.js:79
+#: src/prefs.js:77
 msgid "Blur Effect"
 msgstr ""
 
-#: src/prefs.js:80
+#: src/prefs.js:78
 msgid "Helps to acknowledge the break"
 msgstr ""
 
-#: src/prefs.js:88
+#: src/prefs.js:86
 msgid "Dismiss Gesture"
 msgstr ""
 
-#: src/prefs.js:89
+#: src/prefs.js:87
 msgid "Flick the mouse or press any key to dismiss"
 msgstr ""
 
-#: src/prefs.js:102
+#: src/prefs.js:100
 msgid "Distractions"
 msgstr ""
 
-#: src/prefs.js:108
+#: src/prefs.js:106
 msgid "Manage Notifications"
 msgstr ""
 
-#: src/prefs.js:109
+#: src/prefs.js:107
 msgid "Toggle Do Not Disturb mode during Pomodoro"
 msgstr ""
 
-#: src/screenOverlay.js:987
+#: src/screenOverlay.js:1053
 msgid "It's time to take a break"
 msgstr "On aika pitää taukoa"
 
-#: src/timer.js:51
+#: src/timer.js:44
+#, fuzzy
 msgid "Stopped"
-msgstr ""
+msgstr "Pysäytetty"
 
-#: src/timer.js:57
+#: src/timer.js:50
 msgid "Short Break"
 msgstr "Lyhyt tauko"
 
-#: src/timer.js:60
+#: src/timer.js:53
 msgid "Long Break"
 msgstr "Pitkä tauko"
 
-#: src/timer.js:63
+#: src/timer.js:56
 msgid "Break"
 msgstr "Tauko"
+
+#, fuzzy
+#~ msgid "Time management utility"
+#~ msgstr "Ajanhallintatyökalu"
+
+#, fuzzy
+#~ msgid "Maintain focus by taking frequent breaks"
+#~ msgstr "Säilytä keskittymiskyky säännöllisillä tauoilla"
+
+#, fuzzy
+#~ msgid ""
+#~ "A productivity timer that helps you work more effectively by breaking "
+#~ "your time into focused work sessions followed by short breaks. Work for "
+#~ "25 minutes, then take a 5-minute break to maintain concentration and "
+#~ "prevent burnout."
+#~ msgstr ""
+#~ "Tuottavuusajastin, joka auttaa sinua työskentelemään tehokkaammin "
+#~ "jakamalla aikasi keskittyneisiin työjaksoihin ja lyhyisiin taukoihin. "
+#~ "Työskentele 25 minuuttia ja pidä sitten 5 minuutin tauko ylläpitääksesi "
+#~ "keskittymistä ja ehkäistäksesi uupumusta."
+
+#, fuzzy
+#~ msgid "Key features:"
+#~ msgstr "Keskeiset ominaisuudet:"
+
+#, fuzzy
+#~ msgid "Customizable work session and break lengths"
+#~ msgstr "Muokattavat työjaksojen ja taukojen pituudet"
+
+#, fuzzy
+#~ msgid "Visual and audio notifications"
+#~ msgstr "Visuaaliset ja äänimerkit"
+
+#, fuzzy
+#~ msgid "Time tracking and statistics"
+#~ msgstr "Ajanseuranta ja tilastot"
+
+#, fuzzy
+#~ msgid "GNOME desktop integration"
+#~ msgstr "GNOME-työpöytäintegraatio"
+
+#, fuzzy
+#~ msgid "Screen overlay during breaks"
+#~ msgstr "Koko näytön peitto taukojen aikana"
+
+#, fuzzy
+#~ msgid "Run custom commands after Pomodoro or break"
+#~ msgstr "Suorita omia komentoja pomodoron tai tauon jälkeen"
+
+#~ msgid "Kamil Prusko"
+#~ msgstr "Kamil Prusko"
+
+#~ msgid "Timer"
+#~ msgstr "Ajastin"
+
+#, fuzzy
+#~ msgid "Daily stats"
+#~ msgstr "Päivittäiset tilastot"
+
+#, fuzzy
+#~ msgid "Monthly stats"
+#~ msgstr "Kuukausitilastot"
+
+#, fuzzy
+#~ msgid "Screen overlay"
+#~ msgstr "Näytön peitto"
+
+#, fuzzy
+#~ msgid "Start or Stop"
+#~ msgstr "Käynnistä tai pysäytä"
+
+#, fuzzy
+#~ msgid "Start, Pause or Resume"
+#~ msgstr "Käynnistä, keskeytä tai jatka"
+
+#~ msgid "Start"
+#~ msgstr "Käynnistä"
+
+#~ msgid "Stop"
+#~ msgstr "Pysäytä"
+
+#~ msgid "Pause"
+#~ msgstr "Keskeytä"
+
+#~ msgid "Resume"
+#~ msgstr "Jatka"
+
+#~ msgid "Skip"
+#~ msgstr "Ohita"
+
+#, fuzzy
+#~ msgid "Rewind"
+#~ msgstr "Kelaa taaksepäin"
+
+#~ msgid "Extend current pomodoro or break"
+#~ msgstr "Pidennä nykyistä pomodoroa tai taukoa"
+
+#, fuzzy
+#~ msgid "Reset"
+#~ msgstr "Nollaa"
+
+#~ msgid "Show preferences"
+#~ msgstr "Näytä asetukset"
+
+#~ msgid "Quit application"
+#~ msgstr "Lopeta sovellus"
+
+#~ msgid "Print version information and exit"
+#~ msgstr "Näytä versiotiedot ja poistu"
+
+#, fuzzy
+#~ msgid "Bring to Focus"
+#~ msgstr "Tuo etualalle"
+
+#, fuzzy, c-format
+#~ msgid "Custom action \"%s\" has failed"
+#~ msgstr "Oma toiminto \"%s\" epäonnistui"
+
+#, fuzzy
+#~ msgid "Reached timeout"
+#~ msgstr "Aikakatkaisu saavutettu"
+
+#, fuzzy
+#~ msgid "Failed to execute command"
+#~ msgstr "Komennon suorittaminen epäonnistui"
+
+#, fuzzy
+#~ msgid "Command is empty"
+#~ msgstr "Komento on tyhjä"
+
+#, fuzzy
+#~ msgid "Unclosed quotation mark"
+#~ msgstr "Sulkematon lainausmerkki"
+
+#, fuzzy
+#~ msgid "Invalid command"
+#~ msgstr "Virheellinen komento"
+
+#, fuzzy, c-format
+#~ msgid "Unknown variable \"%s\""
+#~ msgstr "Tuntematon muuttuja \"%s\""
+
+#, fuzzy, c-format
+#~ msgid "Unknown format \"%s\""
+#~ msgstr "Tuntematon muoto \"%s\""
+
+#, fuzzy, c-format
+#~ msgid "Program \"%s\" not found"
+#~ msgstr "Ohjelmaa \"%s\" ei löydy"
+
+#~ msgid "Actions"
+#~ msgstr "Toiminnot"
+
+#, fuzzy
+#~ msgid "Countdown"
+#~ msgstr "Laskuri"
+
+#, fuzzy
+#~ msgid "Session"
+#~ msgstr "Istunto"
+
+#, fuzzy
+#~ msgid "Other"
+#~ msgstr "Muu"
+
+#, fuzzy
+#~ msgid "Started the timer."
+#~ msgstr "Ajastin käynnistetty."
+
+#, fuzzy
+#~ msgid "Stopped the timer manually."
+#~ msgstr "Ajastin pysäytetty manuaalisesti."
+
+#, fuzzy
+#~ msgid ""
+#~ "The countdown has been manually paused. Not triggered when locking the "
+#~ "screen or when suspending the system."
+#~ msgstr ""
+#~ "Laskenta on keskeytetty manuaalisesti. Ei aktivoidu näytön lukituksen tai "
+#~ "valmiustilan yhteydessä."
+
+#, fuzzy
+#~ msgid "The countdown has been manually resumed."
+#~ msgstr "Laskentaa on jatkettu manuaalisesti."
+
+#, fuzzy
+#~ msgid "Jumped to a next time-block before the countdown has finished."
+#~ msgstr "Hypätty seuraavaan aikajaksoon ennen laskennan päättymistä."
+
+#, fuzzy
+#~ msgid "Rewind action has been used. It adds a pause in the past."
+#~ msgstr "Kelaustoimintoa on käytetty. Se lisää tauon menneisyyteen."
+
+#, fuzzy
+#~ msgid "Manually cleared the session."
+#~ msgstr "Istunto tyhjennetty manuaalisesti."
+
+#, fuzzy
+#~ msgid "Finished"
+#~ msgstr "Valmis"
+
+#, fuzzy
+#~ msgid ""
+#~ "The countdown has finished. If waiting for confirmation, the duration of "
+#~ "the time-block still may be altered."
+#~ msgstr ""
+#~ "Laskenta on päättynyt. Jos vahvistusta odotetaan, aikajakson kestoa "
+#~ "voidaan vielä muuttaa."
+
+#, fuzzy
+#~ msgid "Changed"
+#~ msgstr "Muuttunut"
+
+#, fuzzy
+#~ msgid "Triggered on any change related to the countdown."
+#~ msgstr "Aktivoituu mistä tahansa laskentaan liittyvästä muutoksesta."
+
+#, fuzzy
+#~ msgid "Confirm Advancement"
+#~ msgstr "Vahvista siirtyminen"
+
+#, fuzzy
+#~ msgid "A manual confirmation is required to start next time-block."
+#~ msgstr "Seuraavan jakson aloittaminen vaatii manuaalisen vahvistuksen."
+
+#, fuzzy
+#~ msgid "Advanced"
+#~ msgstr "Siirrytty eteenpäin"
+
+#, fuzzy
+#~ msgid "Transitioned or skipped to a next time-block."
+#~ msgstr "Siirrytty tai hypätty seuraavaan aikajaksoon."
+
+#, fuzzy
+#~ msgid "State Changed"
+#~ msgstr "Tila muuttunut"
+
+#, fuzzy
+#~ msgid "Transitioned to a next time-block or when a break gets relabelled."
+#~ msgstr "Siirrytty seuraavaan jaksoon tai kun tauko nimetään uudelleen."
+
+#, fuzzy
+#~ msgid "Rescheduled"
+#~ msgstr "Uudelleenajoitettu"
+
+#, fuzzy
+#~ msgid "Triggered when scheduled time-blocks have changed."
+#~ msgstr "Aktivoituu, kun ajoitetut aikajaksot ovat muuttuneet."
+
+#, fuzzy
+#~ msgid "Expired"
+#~ msgstr "Vanhentunut"
+
+#, fuzzy
+#~ msgid "Triggered when session is about to be reset due to inactivity."
+#~ msgstr "Aktivoituu, kun istunto nollataan pian käyttämättömyyden vuoksi."
+
+#, fuzzy
+#~ msgid "Take a Break"
+#~ msgstr "Pidä tauko"
+
+#~ msgid "Skip Break"
+#~ msgstr "Ohita tauko"
+
+#, fuzzy
+#~ msgid "Failed to initialize playback"
+#~ msgstr "Äänentoiston alustaminen epäonnistui"
+
+#, fuzzy
+#~ msgid "File not found"
+#~ msgstr "Tiedostoa ei löydy"
+
+#, fuzzy
+#~ msgid "File type not supported"
+#~ msgstr "Tiedostotyyppi ei ole tuettu"
+
+#, fuzzy, c-format
+#~ msgid "%uh"
+#~ msgstr "%u t"
+
+#, fuzzy, c-format
+#~ msgid "%um"
+#~ msgstr "%u min"
+
+#, fuzzy, c-format
+#~ msgid "%u hour"
+#~ msgid_plural "%u hours"
+#~ msgstr[0] "%u tunti"
+#~ msgstr[1] "%u tuntia"
+
+#, fuzzy, c-format
+#~ msgid "%u minute"
+#~ msgid_plural "%u minutes"
+#~ msgstr[0] "%u minuutti"
+#~ msgstr[1] "%u minuuttia"
+
+#, fuzzy, c-format
+#~ msgid "%u second"
+#~ msgid_plural "%u seconds"
+#~ msgstr[0] "%u sekunti"
+#~ msgstr[1] "%u sekuntia"
+
+#, fuzzy
+#~ msgid "The exact time of the current event."
+#~ msgstr "Nykyisen tapahtuman tarkka aika."
+
+#, fuzzy
+#~ msgid ""
+#~ "The current phase of the Pomodoro cycle. Possible values: <tt>stopped</"
+#~ "tt>, <tt>pomodoro</tt>, <tt>break</tt>, <tt>short-break</tt>, <tt>long-"
+#~ "break</tt>."
+#~ msgstr ""
+#~ "Pomodoro-syklin nykyinen vaihe. Mahdolliset arvot: <tt>stopped</tt>, "
+#~ "<tt>pomodoro</tt>, <tt>break</tt>, <tt>short-break</tt>, <tt>long-break</"
+#~ "tt>."
+
+#, fuzzy
+#~ msgid ""
+#~ "Status of the current time-block. Possible values: <tt>scheduled</tt>, "
+#~ "<tt>in-progress</tt>, <tt>completed</tt>, <tt>uncompleted</tt>."
+#~ msgstr ""
+#~ "Nykyisen aikajakson tila. Mahdolliset arvot: <tt>scheduled</tt>, <tt>in-"
+#~ "progress</tt>, <tt>completed</tt>, <tt>uncompleted</tt>."
+
+#, fuzzy
+#~ msgid "A flag indicating whether countdown has begun."
+#~ msgstr "Lippu, joka kertoo onko laskenta alkanut."
+
+#, fuzzy
+#~ msgid "A flag indicating whether countdown is paused."
+#~ msgstr "Lippu, joka kertoo onko laskenta keskeytetty."
+
+#, fuzzy
+#~ msgid "A flag indicating whether countdown has finished."
+#~ msgstr "Lippu, joka kertoo onko laskenta päättynyt."
+
+#, fuzzy
+#~ msgid "A flag indicating whether the timer is actively counting down."
+#~ msgstr "Lippu, joka kertoo laskeeko ajastin parhaillaan aikaa."
+
+#, fuzzy
+#~ msgid "Duration of the current countdown."
+#~ msgstr "Nykyisen laskennan kesto."
+
+#, fuzzy
+#~ msgid "Discrepancy between elapsed time and the time passed."
+#~ msgstr "Ero kuluneen ja todellisen ajan välillä."
+
+#, fuzzy
+#~ msgid "The amount of time spent on the countdown."
+#~ msgstr "Laskentaan käytetty aika."
+
+#, fuzzy
+#~ msgid "The amount of time left before the countdown ends."
+#~ msgstr "Jäljellä oleva aika ennen laskennan päättymistä."
+
+#, fuzzy
+#~ msgid "Time when the countdown has started."
+#~ msgstr "Aika, jolloin laskenta alkoi."
+
+#, fuzzy
+#~ msgid "GNOME Shell Extension"
+#~ msgstr "GNOME Shell -laajennus"
+
+#, fuzzy
+#~ msgid "Get the best experience!"
+#~ msgstr "Hanki paras käyttökokemus!"
+
+#, fuzzy
+#~ msgid "Enable <b>GNOME Shell extension</b> for seamless desktop integration"
+#~ msgstr ""
+#~ "Ota <b>GNOME Shell -laajennus</b> käyttöön saumatonta "
+#~ "työpöytäintegraatiota varten"
+
+#, fuzzy
+#~ msgid "Always within reach"
+#~ msgstr "Aina ulottuvillasi"
+
+#, fuzzy
+#~ msgid "Control timer directly from the top bar without opening the app"
+#~ msgstr "Hallitse ajastinta suoraan yläpalkista avaamatta sovellusta"
+
+#, fuzzy
+#~ msgid "Less distractions"
+#~ msgstr "Vähemmän häiriötekijöitä"
+
+#, fuzzy
+#~ msgid "Refined break reminders"
+#~ msgstr "Tyylikkäät taukumuistutukset"
+
+#, fuzzy
+#~ msgid ""
+#~ "Elegant full-screen overlay that make taking breaks a more pleasant "
+#~ "experience"
+#~ msgstr ""
+#~ "Tyylikäs koko näytön peitto, joka tekee taukojen pitämisestä "
+#~ "miellyttävämpää"
+
+#, fuzzy
+#~ msgid "Ready to try it?"
+#~ msgstr "Oletko valmis kokeilemaan?"
+
+#, fuzzy
+#~ msgid "_Install Extension"
+#~ msgstr "_Asenna laajennus"
+
+#, fuzzy
+#~ msgid "_Not Now"
+#~ msgstr "_Ei nyt"
+
+#, fuzzy
+#~ msgid "Copy to clipboard"
+#~ msgstr "Kopioi leikepöydälle"
+
+#, fuzzy
+#~ msgid "_Try Again"
+#~ msgstr "_Yritä uudelleen"
+
+#, fuzzy
+#~ msgid "_Abort"
+#~ msgstr "_Keskeytä"
+
+#, fuzzy
+#~ msgid "Time-out reached"
+#~ msgstr "Aikakatkaisu saavutettu"
+
+#, fuzzy
+#~ msgid "Installing extensions is not allowed"
+#~ msgstr "Laajennusten asennus ei ole sallittua"
+
+#, fuzzy
+#~ msgid "Failed to download the extension"
+#~ msgstr "Laajennuksen lataaminen epäonnistui"
+
+#~ msgid "Desktop"
+#~ msgstr "Työpöytä"
+
+#, fuzzy
+#~ msgid "GNOME Shell extension available"
+#~ msgstr "GNOME Shell -laajennus saatavilla"
+
+#, fuzzy
+#~ msgid "Learn More"
+#~ msgstr "Lue lisää"
+
+#, fuzzy
+#~ msgid "Unused"
+#~ msgstr "Käyttämätön"
+
+#, fuzzy
+#~ msgid "Log"
+#~ msgstr "Loki"
+
+#, fuzzy
+#~ msgid "Empty Log"
+#~ msgstr "Tyhjä loki"
+
+#, fuzzy
+#~ msgid "Entries will show up here once you start the timer."
+#~ msgstr "Merkinnät näkyvät tässä, kun käynnistät ajastimen."
+
+#, fuzzy
+#~ msgid "Context"
+#~ msgstr "Konteksti"
+
+#~ msgid "Command"
+#~ msgstr "Komento"
+
+#, fuzzy
+#~ msgid "Output"
+#~ msgstr "Tuloste"
+
+#, fuzzy
+#~ msgid "Error"
+#~ msgstr "Virhe"
+
+#, fuzzy
+#~ msgid "Exit Code:"
+#~ msgstr "Paluukoodi:"
+
+#, fuzzy
+#~ msgid "Execution Time:"
+#~ msgstr "Suoritusaika:"
+
+#~ msgid "translator-credits"
+#~ msgstr "Tuomas Jaakola <tuomas.jaakola@iki.fi>"
+
+#, fuzzy
+#~ msgid "Donate"
+#~ msgstr "Lahjoita"
+
+#, fuzzy
+#~ msgid "Breaks"
+#~ msgstr "Tauot"
+
+#, fuzzy
+#~ msgid "Interruptions"
+#~ msgstr "Keskeytykset"
+
+#, fuzzy
+#~ msgid "Break Ratio"
+#~ msgstr "Taukojen suhde"
+
+#~ msgid "Day"
+#~ msgstr "Päivä"
+
+#~ msgid "Week"
+#~ msgstr "Viikko"
+
+#~ msgid "Month"
+#~ msgstr "Kuukausi"
+
+#, fuzzy
+#~ msgid "Nothing to see here yet"
+#~ msgstr "Täällä ei ole vielä mitään"
+
+#, fuzzy
+#~ msgid "Finish a few Pomodoros to fill this up!"
+#~ msgstr "Suorita muutama pomodoro täyttääksesi tämän!"
+
+#, fuzzy, c-format
+#~ msgid "Skipped %u day"
+#~ msgid_plural "Skipped %u days"
+#~ msgstr[0] "Hypätty %u päivän yli"
+#~ msgstr[1] "Hypätty %u päivän yli"
+
+#, fuzzy, c-format
+#~ msgid "Skipped %u week"
+#~ msgid_plural "Skipped %u weeks"
+#~ msgstr[0] "Hypätty %u viikon yli"
+#~ msgstr[1] "Hypätty %u viikon yli"
+
+#, fuzzy, c-format
+#~ msgid "Skipped %u month"
+#~ msgid_plural "Skipped %u months"
+#~ msgstr[0] "Hypätty %u kuukauden yli"
+#~ msgstr[1] "Hypätty %u kuukauden yli"
+
+#~ msgid "Today"
+#~ msgstr "Tänään"
+
+#~ msgid "Yesterday"
+#~ msgstr "Eilen"
+
+#~ msgid "This week"
+#~ msgstr "Tällä viikolla"
+
+#, fuzzy, c-format
+#~ msgid "Week %u"
+#~ msgstr "Viikko %u"
+
+#, fuzzy, c-format
+#~ msgid "Week %u of %u"
+#~ msgstr "Viikko %u / %u"
+
+#~ msgid "_Pomodoro"
+#~ msgstr "_Pomodoro"
+
+#~ msgid "_Short Break"
+#~ msgstr "_Lyhyt tauko"
+
+#~ msgid "_Long Break"
+#~ msgstr "Pitkä _tauko"
+
+#, fuzzy
+#~ msgid "_Break"
+#~ msgstr "_Tauko"
+
+#, fuzzy
+#~ msgid "Open screen overlay"
+#~ msgstr "Avaa näytön peitto"
+
+#, fuzzy
+#~ msgid "Session has expired"
+#~ msgstr "Istunto on vanhentunut"
+
+#, fuzzy, c-format
+#~ msgid "Long break due in <b>%s</b>"
+#~ msgstr "Pitkä tauko alkaa <b>%s</b> kuluttua"
+
+#, fuzzy
+#~ msgid "Rewind one minute"
+#~ msgstr "Kelaa minuutti taaksepäin"
+
+#, fuzzy
+#~ msgid "_Compact View"
+#~ msgstr "_Pieni näkymä"
+
+#~ msgid "_Preferences"
+#~ msgstr "_Asetukset"
+
+#~ msgid "_About"
+#~ msgstr "T_ietoa"
+
+#~ msgid "_Quit"
+#~ msgstr "_Lopeta"
+
+#, fuzzy
+#~ msgid "Primary Menu"
+#~ msgstr "Päävalikko"
+
+#, fuzzy
+#~ msgid "Keep timer running?"
+#~ msgstr "Pidetäänkö ajastin käynnissä?"
+
+#, fuzzy
+#~ msgid ""
+#~ "You can keep it running in the background — notifications and keyboard "
+#~ "shortcuts will still work."
+#~ msgstr ""
+#~ "Voit pitää sen käynnissä taustalla — ilmoitukset ja pikanäppäimet "
+#~ "toimivat edelleen."
+
+#, fuzzy
+#~ msgid "Run in background"
+#~ msgstr "Suorita taustalla"
+
+#, fuzzy
+#~ msgid "Main Window"
+#~ msgstr "Pääikkuna"
+
+#, fuzzy
+#~ msgid "Prefer Dark Theme"
+#~ msgstr "Suosi tummaa teemaa"
+
+#, fuzzy
+#~ msgid "Prefer Compact View"
+#~ msgstr "Suosi pientä näkymää"
+
+#, fuzzy
+#~ msgid "Started"
+#~ msgstr "Käynnistetty"
+
+#~ msgid "Paused"
+#~ msgstr "Keskeytetty"
+
+#, fuzzy
+#~ msgid "Edit Custom Action"
+#~ msgstr "Muokkaa omaa toimintoa"
+
+#~ msgid "_Cancel"
+#~ msgstr "_Peru"
+
+#, fuzzy
+#~ msgid "_Save"
+#~ msgstr "_Tallenna"
+
+#~ msgid "Name"
+#~ msgstr "Nimi"
+
+#, fuzzy
+#~ msgid "Trigger"
+#~ msgstr "Laukaisin"
+
+#, fuzzy
+#~ msgid "Event"
+#~ msgstr "Tapahtuma"
+
+#, fuzzy
+#~ msgid "Execute command after an event."
+#~ msgstr "Suorita komento tapahtuman jälkeen."
+
+#, fuzzy
+#~ msgid "Condition"
+#~ msgstr "Ehto"
+
+#, fuzzy
+#~ msgid ""
+#~ "Ensure execution of a second command once condition is no longer met."
+#~ msgstr "Varmista toisen komennon suoritus, kun ehto ei enää täyty."
+
+#, fuzzy
+#~ msgid "Events"
+#~ msgstr "Tapahtumat"
+
+#, fuzzy
+#~ msgid "Add _Event"
+#~ msgstr "Lisää _tapahtuma"
+
+#, fuzzy
+#~ msgid "_Filter"
+#~ msgstr "_Suodata"
+
+#, fuzzy
+#~ msgid "Filter"
+#~ msgstr "Suodatin"
+
+#, fuzzy
+#~ msgid "Shell Command"
+#~ msgstr "Shell-komento"
+
+#, fuzzy
+#~ msgid "Commands"
+#~ msgstr "Komennot"
+
+#, fuzzy
+#~ msgid "Condition Met Command"
+#~ msgstr "Komento, kun ehto täyttyy"
+
+#, fuzzy
+#~ msgid "Condition Not Met Command"
+#~ msgstr "Komento, kun ehto ei täyty"
+
+#, fuzzy
+#~ msgid "Working Directory"
+#~ msgstr "Työhakemisto"
+
+#, fuzzy
+#~ msgid "Use Subshell"
+#~ msgstr "Käytä alikuorta"
+
+#, fuzzy
+#~ msgid "Run the program from a subshell such as sh -c ''"
+#~ msgstr "Suorita ohjelma alikuoresta, kuten sh -c ''"
+
+#, fuzzy
+#~ msgid "Pass Input Data"
+#~ msgstr "Välitä syötetiedot"
+
+#, fuzzy
+#~ msgid "Instead of passing variables you can process a JSON object."
+#~ msgstr "Muuttujien välittämisen sijaan voit käsitellä JSON-objektia."
+
+#, fuzzy
+#~ msgid "Wait For Completion"
+#~ msgstr "Odota valmistumista"
+
+#, fuzzy
+#~ msgid "Block execution of other commands until the command completes."
+#~ msgstr "Estä muiden komentojen suoritus, kunnes komento on valmis."
+
+#, fuzzy
+#~ msgid "_Delete Action"
+#~ msgstr "_Poista toiminto"
+
+#, fuzzy
+#~ msgid "No events specified yet."
+#~ msgstr "Tapahtumia ei ole vielä määritetty."
+
+#, fuzzy
+#~ msgid "Add Custom Action"
+#~ msgstr "Lisää oma toiminto"
+
+#, fuzzy
+#~ msgid "_Add"
+#~ msgstr "_Lisää"
+
+#, fuzzy
+#~ msgid "Select Working Directory"
+#~ msgstr "Valitse työhakemisto"
+
+#~ msgid "_Select"
+#~ msgstr "_Valitse"
+
+#, fuzzy
+#~ msgid "Untitled action"
+#~ msgstr "Nimetön toiminto"
+
+#, fuzzy
+#~ msgid "Add Condition"
+#~ msgstr "Lisää ehto"
+
+#, fuzzy
+#~ msgid "Add Group"
+#~ msgstr "Lisää ryhmä"
+
+#~ msgid "AND"
+#~ msgstr "JA"
+
+#~ msgid "OR"
+#~ msgstr "TAI"
+
+#, fuzzy
+#~ msgid "Is"
+#~ msgstr "On"
+
+#, fuzzy
+#~ msgid "Is Not"
+#~ msgstr "Ei ole"
+
+#, fuzzy
+#~ msgid "Equals"
+#~ msgstr "On yhtä suuri kuin"
+
+#, fuzzy
+#~ msgid "Greater Than"
+#~ msgstr "On suurempi kuin"
+
+#, fuzzy
+#~ msgid "Less Than"
+#~ msgstr "On pienempi kuin"
+
+#, fuzzy
+#~ msgid "Yes"
+#~ msgstr "Kyllä"
+
+#, fuzzy
+#~ msgid "No"
+#~ msgstr "Ei"
+
+#, fuzzy
+#~ msgid "Minutes"
+#~ msgstr "Minuuttia"
+
+#, fuzzy
+#~ msgid "Seconds"
+#~ msgstr "Sekuntia"
+
+#, fuzzy
+#~ msgid "Hours"
+#~ msgstr "Tuntia"
+
+#, fuzzy
+#~ msgid "Select Field…"
+#~ msgstr "Valitse kenttä…"
+
+#~ msgid "State"
+#~ msgstr "Tila"
+
+#, fuzzy
+#~ msgid "Running"
+#~ msgstr "Käynnissä"
+
+#, fuzzy
+#~ msgid "Duration"
+#~ msgstr "Kesto"
+
+#, fuzzy
+#~ msgid "Insert Variable"
+#~ msgstr "Lisää muuttuja"
+
+#, fuzzy
+#~ msgid "Format"
+#~ msgstr "Muoto"
+
+#, fuzzy
+#~ msgid "_Log"
+#~ msgstr "_Loki"
+
+#, fuzzy
+#~ msgid "Show execution log"
+#~ msgstr "Näytä suoritusloki"
+
+#, fuzzy
+#~ msgid ""
+#~ "Run shell commands automatically on timer events or conditions. <a "
+#~ "href=\"\">Learn more.</a>"
+#~ msgstr ""
+#~ "Suorita shell-komentoja automaattisesti ajastimen tapahtumien tai ehtojen "
+#~ "perusteella. <a href=\"\">Lue lisää.</a>"
+
+#, fuzzy
+#~ msgid "Set Shortcut"
+#~ msgstr "Aseta pikanäppäin"
+
+#, fuzzy
+#~ msgid "_Set"
+#~ msgstr "_Aseta"
+
+#, fuzzy
+#~ msgid "Disabled"
+#~ msgstr "Pois käytöstä"
+
+#, fuzzy
+#~ msgid ""
+#~ "Press <b>Esc</b> to cancel or <b>Backspace</b> to disable the keyboard "
+#~ "shortcut"
+#~ msgstr ""
+#~ "Paina <b>Esc</b> peruaksesi tai <b>Askelpalautin</b> poistaaksesi "
+#~ "pikanäppäimen käytöstä"
+
+#, fuzzy
+#~ msgid ""
+#~ "Global shortcuts let you control the app even when it’s not on screen. "
+#~ "They work as long as the app is running in the background."
+#~ msgstr ""
+#~ "Yleisten pikanäppäinten avulla voit hallita sovellusta, vaikka se ei "
+#~ "olisi näytöllä. Ne toimivat niin kauan kuin sovellus on käynnissä "
+#~ "taustalla."
+
+#, fuzzy
+#~ msgid "Open app settings for editing global shortcuts"
+#~ msgstr "Avaa sovelluksen asetukset yleisten pikanäppäinten muokkaamiseksi"
+
+#, fuzzy
+#~ msgid "_Edit"
+#~ msgstr "_Muokkaa"
+
+#, fuzzy
+#~ msgid "Enter new shortcut for starting or stopping the timer"
+#~ msgstr "Anna uusi pikanäppäin ajastimen käynnistämiseen tai pysäyttämiseen"
+
+#, fuzzy
+#~ msgid "Enter new shortcut to start/pause/resume the timer"
+#~ msgstr ""
+#~ "Anna uusi pikanäppäin ajastimen käynnistämiseen, keskeyttämiseen tai "
+#~ "jatkamiseen"
+
+#, fuzzy
+#~ msgid "Enter new shortcut for starting the timer"
+#~ msgstr "Anna uusi pikanäppäin ajastimen käynnistämiseen"
+
+#, fuzzy
+#~ msgid "Enter new shortcut for stopping the timer"
+#~ msgstr "Anna uusi pikanäppäin ajastimen pysäyttämiseen"
+
+#, fuzzy
+#~ msgid "Enter new shortcut for pausing the timer"
+#~ msgstr "Anna uusi pikanäppäin ajastimen keskeyttämiseen"
+
+#, fuzzy
+#~ msgid "Enter new shortcut for resuming the timer"
+#~ msgstr "Anna uusi pikanäppäin ajastimen jatkamiseen"
+
+#, fuzzy
+#~ msgid "Enter new shortcut for skipping"
+#~ msgstr "Anna uusi pikanäppäin ohittamiseen"
+
+#, fuzzy
+#~ msgid "Rewind One Minute"
+#~ msgstr "Kelaa yksi minuutti taaksepäin"
+
+#, fuzzy
+#~ msgid "Enter new shortcut for rewinding"
+#~ msgstr "Anna uusi pikanäppäin kelaamiseen"
+
+#, fuzzy
+#~ msgid "Enter new shortcut for bringing window to focus"
+#~ msgstr "Anna uusi pikanäppäin ikkunan tuomiseen etualalle"
+
+#, fuzzy
+#~ msgid "Announcements"
+#~ msgstr "Ilmoitukset"
+
+#, fuzzy
+#~ msgid "Time Running Out"
+#~ msgstr "Aika loppumassa"
+
+#, fuzzy
+#~ msgid "Notify when Pomodoro or break is about to end."
+#~ msgstr "Ilmoita, kun pomodoro tai tauko on päättymässä."
+
+#, fuzzy
+#~ msgid "A full-screen notification intended to enforce taking a break."
+#~ msgstr ""
+#~ "Koko näytön ilmoitus, joka on tarkoitettu pakottamaan tauon pitämiseen."
+
+#, fuzzy
+#~ msgid "Lock Delay"
+#~ msgstr "Lukitusviive"
+
+#, fuzzy
+#~ msgid "Period of inactivity to lock the screen."
+#~ msgstr "Käyttämättömyyden kesto ennen näytön lukitsemista."
+
+#, fuzzy
+#~ msgid "Reopen Delay"
+#~ msgstr "Uudelleenavausviive"
+
+#, fuzzy
+#~ msgid "Period of inactivity to reopen the overlay after it gets dismissed."
+#~ msgstr ""
+#~ "Käyttämättömyyden kesto peittokuvan uudelleenavaamiseen sen sulkemisen "
+#~ "jälkeen."
+
+#, fuzzy
+#~ msgid "Never"
+#~ msgstr "Ei koskaan"
+
+#~ msgid "Notifications"
+#~ msgstr "Ilmoitukset"
+
+#, fuzzy
+#~ msgid "Sounds"
+#~ msgstr "Äänet"
+
+#, fuzzy
+#~ msgid "Appearance"
+#~ msgstr "Ulkoasu"
+
+#, fuzzy
+#~ msgid "Keyboard Shortcuts"
+#~ msgstr "Pikanäppäimet"
+
+#, fuzzy
+#~ msgid "Automation"
+#~ msgstr "Automaatio"
+
+#, fuzzy
+#~ msgid "Sounds Are Disabled"
+#~ msgstr "Äänet on poistettu käytöstä"
+
+#, fuzzy
+#~ msgid "Alert Sounds"
+#~ msgstr "Hälytysäänet"
+
+#, fuzzy
+#~ msgid "Pomodoro Finished Sound"
+#~ msgstr "Pomodoron päättymisääni"
+
+#, fuzzy
+#~ msgid "Break Finished Sound"
+#~ msgstr "Tauon päättymisääni"
+
+#, fuzzy
+#~ msgid "Background Sound"
+#~ msgstr "Taustaääni"
+
+#~ msgid "Bell"
+#~ msgstr "Kello"
+
+#~ msgid "Loud Bell"
+#~ msgstr "Iso kello"
+
+#~ msgid "Clock Ticking"
+#~ msgstr "Kellon tikitys"
+
+#, fuzzy
+#~ msgid "None"
+#~ msgstr "Ei mitään"
+
+#~ msgid "Volume:"
+#~ msgstr "Äänenvoimakkuus:"
+
+#~ msgid "Select Custom Sound"
+#~ msgstr "Valitse oma ääni"
+
+#, fuzzy
+#~ msgid "Pomodoro Duration"
+#~ msgstr "Pomodoron kesto"
+
+#, fuzzy
+#~ msgid "Short Break Duration"
+#~ msgstr "Lyhyen tauon kesto"
+
+#, fuzzy
+#~ msgid "Long Break Duration"
+#~ msgstr "Pitkän tauon kesto"
+
+#, fuzzy
+#~ msgid "Number of Cycles"
+#~ msgstr "Syklien määrä"
+
+#, fuzzy
+#~ msgid "Behavior"
+#~ msgstr "Toiminta"
+
+#, fuzzy
+#~ msgid "Pause By Locking The Screen"
+#~ msgstr "Keskeytä lukitsemalla näyttö"
+
+#, fuzzy
+#~ msgid "Confirm Starting a Break"
+#~ msgstr "Vahvista tauon aloitus"
+
+#, fuzzy
+#~ msgid "Confirm Starting a Pomodoro"
+#~ msgstr "Vahvista pomodoron aloitus"
+
+#, fuzzy, c-format
+#~ msgid "A single session will take <b>%s</b>."
+#~ msgstr "Yksi istunto kestää <b>%s</b>."
+
+#, fuzzy, c-format
+#~ msgid "<b>%u%%</b> of the time will be allocated for breaks."
+#~ msgstr "<b>%u%%</b> ajasta käytetään taukoihin."
+
+#, fuzzy
+#~ msgid "Apply changes to ongoing Pomodoro?"
+#~ msgstr "Otetaanko muutokset käyttöön meneillään olevaan pomodoroon?"
+
+#, fuzzy
+#~ msgid "Apply changes to ongoing break?"
+#~ msgstr "Otetaanko muutokset käyttöön meneillään olevaan taukoon?"
+
+#, fuzzy
+#~ msgid "Apply"
+#~ msgstr "Käytä"
+
+#, fuzzy
+#~ msgctxt "accessibility"
+#~ msgid "Sidebar"
+#~ msgstr "Sivupalkki"
+
+#, fuzzy
+#~ msgid "Compact timer"
+#~ msgstr "Pienikokoinen ajastin"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.28.1"
+#~ msgstr "Yhteenveto muutoksista gnome-pomodoro 0.28.1 -versiossa"
+
+#, fuzzy
+#~ msgid "Added Tamil translation (thanks @omeritzics)"
+#~ msgstr "Lisätty tamilinkielinen käännös (kiitos @omeritzics)"
+
+#, fuzzy
+#~ msgid "Added Hebrew translation (thanks @Killersparrow1)"
+#~ msgstr "Lisätty hepreankielinen käännös (kiitos @Killersparrow1)"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.28.0"
+#~ msgstr "Yhteenveto muutoksista gnome-pomodoro 0.28.0 -versiossa"
+
+#, fuzzy
+#~ msgid "Support for GNOME Shell 49 (thanks @aleasto)"
+#~ msgstr "Tuki GNOME Shell 49 -versiolle (kiitos @aleasto)"
+
+#, fuzzy
+#~ msgid "Updated German translation (thanks @daPhipz)"
+#~ msgstr "Päivitetty saksankielinen käännös (kiitos @daPhipz)"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.27.0"
+#~ msgstr "Yhteenveto muutoksista gnome-pomodoro 0.27.0 -versiossa"
+
+#, fuzzy
+#~ msgid "Support for GNOME Shell 48"
+#~ msgstr "Tuki GNOME Shell 48 -versiolle"
+
+#, fuzzy
+#~ msgid "Split time spent across midnight"
+#~ msgstr "Keskiyön ylittävän ajan jakaminen"
+
+#, fuzzy
+#~ msgid "Added Telugu translation (thanks @SpaciousCoder78)"
+#~ msgstr "Lisätty telugunkielinen käännös (kiitos @SpaciousCoder78)"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.26.0"
+#~ msgstr "Yhteenveto muutoksista gnome-pomodoro 0.26.0 -versiossa"
+
+#, fuzzy
+#~ msgid "Support for GNOME Shell 47"
+#~ msgstr "Tuki GNOME Shell 47 -versiolle"
+
+#, fuzzy
+#~ msgid "Allow to dismiss screen overlay by gesture when a video is playing"
+#~ msgstr "Salli näytön peiton ohittaminen eleellä, kun videota toistetaan"
+
+#, fuzzy
+#~ msgid "Added Georgian translation (thanks @NorwayFun)"
+#~ msgstr "Lisätty georgiankielinen käännös (kiitos @NorwayFun)"
+
+#, fuzzy
+#~ msgid "Adjusted translations in appdata (thanks @yakushabb)"
+#~ msgstr "Muokattu appdata-käännöksiä (kiitos @yakushabb)"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.25.2"
+#~ msgstr "Yhteenveto muutoksista gnome-pomodoro 0.25.2 -versiossa"
+
+#, fuzzy
+#~ msgid "Fix keeping notification after extending Pomodoro"
+#~ msgstr "Korjattu ilmoituksen jääminen näkyviin pomodoron jatkamisen jälkeen"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.25.1"
+#~ msgstr "Yhteenveto muutoksista gnome-pomodoro 0.25.1 -versiossa"
+
+#, fuzzy
+#~ msgid "Fixes for GNOME Shell 46"
+#~ msgstr "Korjauksia GNOME Shell 46 -versiolle"
+
+#, fuzzy
+#~ msgid "Drop support for GNOME Shell 45"
+#~ msgstr "Poistettu tuki GNOME Shell 45 -versiolle"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.25.0"
+#~ msgstr "Yhteenveto muutoksista gnome-pomodoro 0.25.0 -versiossa"
+
+#, fuzzy
+#~ msgid "Support for GNOME Shell 46"
+#~ msgstr "Tuki GNOME Shell 46 -versiolle"
+
+#, fuzzy
+#~ msgid "Adjust build script to meson 0.59.0 (thanks @mattst88)"
+#~ msgstr "Käännösskriptin päivitys meson 0.59.0 -versiolle (kiitos @mattst88)"
+
+#, fuzzy
+#~ msgid ""
+#~ "Let <b>Pomodoro</b> manage system notifications while the timer is running"
+#~ msgstr ""
+#~ "Anna <b>Pomodoron</b> hallita järjestelmän ilmoituksia ajastimen ollessa "
+#~ "käynnissä"
+
+#, fuzzy
+#~ msgid "15 seconds"
+#~ msgstr "15 sekuntia"
+
+#, fuzzy
+#~ msgid "30 seconds"
+#~ msgstr "30 sekuntia"
+
+#, fuzzy
+#~ msgid "1 minute"
+#~ msgstr "1 minuutti"
+
+#, fuzzy
+#~ msgid "2 minutes"
+#~ msgstr "2 minuuttia"
+
+#, fuzzy
+#~ msgid "3 minutes"
+#~ msgstr "3 minuuttia"
+
+#, fuzzy
+#~ msgid "5 minutes"
+#~ msgstr "5 minuuttia"
+
+#~ msgid "Timer Ticking"
+#~ msgstr "Ajastimen tikitys"
+
+#, fuzzy
+#~ msgid "Birds"
+#~ msgstr "Linnut"
+
+#~ msgid "@APPLICATION_NAME@"
+#~ msgstr "@APPLICATION_NAME@"
+
+#~ msgid "timer;"
+#~ msgstr "ajastin;timer;pomodoro;"
+
+#~ msgid "Start/Stop"
+#~ msgstr "Käynnistä/Pysäytä"
+
+#~ msgid "Pause/Resume"
+#~ msgstr "Keskeytä/Jatka"
+
+#~ msgid "Skip to a pomodoro or to a break"
+#~ msgstr "Hyppää pomodoroon tai taukoon"
+
+#~ msgid "Reset current session"
+#~ msgstr "Nollaa nykyinen istunto"
+
+#~ msgid "Run as background service"
+#~ msgstr "Suorita taustapalveluna"
+
+#~ msgid "About Pomodoro"
+#~ msgstr "Tietoa Pomodorosta"
+
+#~ msgid "A simple time management utility"
+#~ msgstr "Yksinkertainen ajanhallintatyökalu"
+
+#, fuzzy
+#~ msgid "_Stopped"
+#~ msgstr "Pysäytä"
+
+#, fuzzy
+#~ msgid "Extension for GNOME Shell is available"
+#~ msgstr "GNOME Shellin indikaattori"
+
+#, fuzzy
+#~ msgid "Failed to install extension"
+#~ msgstr "Liitännäistä ei voitu ottaa käyttöön"
+
+#, fuzzy, c-format
+#~ msgid "Long break due in %s"
+#~ msgstr "Pitkän tauon kesto"
 
 #~ msgid "A time management utility for GNOME"
 #~ msgstr "Ajanhallintatyökalu GNOMElle"
@@ -295,50 +1548,47 @@ msgstr "Tauko"
 #~ msgid "Indicator for GNOME Shell"
 #~ msgstr "GNOME Shellin indikaattori"
 
-#~ msgid "A simple time management utility"
-#~ msgstr "Yksinkertainen ajanhallintatyökalu"
+#, fuzzy
+#~ msgid "Support for GNOME Shell 42 (@milotype and @kappa)"
+#~ msgstr "GNOME Shellin indikaattori"
 
-#~ msgid "timer;"
-#~ msgstr "timer;"
+#, fuzzy
+#~ msgid "Support for GNOME Shell 41 (@mbooth101)"
+#~ msgstr "GNOME Shellin indikaattori"
 
-#~ msgid "Start"
-#~ msgstr "Käynnistä"
+#, fuzzy
+#~ msgid "Support GNOME Shell 40.0, not 4.0"
+#~ msgstr "GNOME Shellin indikaattori"
 
-#~ msgid "Pause"
-#~ msgstr "Keskeytä"
+#, fuzzy
+#~ msgid "Support for GNOME Shell 4.0"
+#~ msgstr "GNOME Shellin indikaattori"
 
-#~ msgid "Resume"
-#~ msgstr "Jatka"
+#, fuzzy
+#~ msgid "Support for GNOME Shell 3.38 (@ignapk and @szpak)"
+#~ msgstr "GNOME Shellin indikaattori"
 
-#~ msgid "Stop"
-#~ msgstr "Pysäytä"
+#, fuzzy
+#~ msgid "Support for GNOME Shell 3.36"
+#~ msgstr "GNOME Shellin indikaattori"
+
+#, fuzzy
+#~ msgid "Support for GNOME Shell 3.34 only"
+#~ msgstr "GNOME Shellin indikaattori"
+
+#, fuzzy
+#~ msgid "Support for GNOME Shell 3.32 (@demokritos)"
+#~ msgstr "GNOME Shellin indikaattori"
+
+#, fuzzy
+#~ msgid "Support for GNOME Shell 3.28 and 3.30 (@aerostitch)"
+#~ msgstr "GNOME Shellin indikaattori"
 
 #~ msgid "_Timer"
 #~ msgstr "_Ajastin"
 
-#~ msgid "_Preferences"
-#~ msgstr "_Ominaisuudet"
-
-#~ msgid "_Quit"
-#~ msgstr "_Lopeta"
-
 #~ msgid "Keyboard shortcut to toggle the timer. Enter new shortcut to change."
 #~ msgstr "Pikanäppäin ajastimen käyttöön. Vaihda painamalla näppäintä."
-
-#~ msgid "Disable"
-#~ msgstr "Pois käytöstä"
-
-#~ msgid "Timer"
-#~ msgstr "Ajastin"
-
-#~ msgid "Pomodoro duration"
-#~ msgstr "Pomodoron kesto"
-
-#~ msgid "Break duration"
-#~ msgstr "Tauon kesto"
-
-#~ msgid "Long break duration"
-#~ msgstr "Pitkän tauon kesto"
 
 #~ msgid "Pomodoros before a long break"
 #~ msgstr "Pomodoroja ennen pitkää taukoa"
@@ -346,14 +1596,8 @@ msgstr "Tauko"
 #~ msgid "Keyboard shortcut"
 #~ msgstr "Pikanäppäin"
 
-#~ msgid "Notifications"
-#~ msgstr "Ilmoitukset"
-
 #~ msgid "Screen notifications"
 #~ msgstr "Näytön ilmoitukset"
-
-#~ msgid "Desktop"
-#~ msgstr "Työpöytä"
 
 #~ msgid "Wait for activity after a break"
 #~ msgstr "Odota aktiviteettia tauon jälkeen"
@@ -367,20 +1611,8 @@ msgstr "Tauko"
 #~ msgid "Back"
 #~ msgstr "Takaisin"
 
-#~ msgid "Nothing to see yet"
-#~ msgstr "Ei vielä nähtävää"
-
 #~ msgid "Complete a few sessions"
 #~ msgstr "Vie loppuun muutama jakso"
-
-#~ msgid "Day"
-#~ msgstr "Päivä"
-
-#~ msgid "Week"
-#~ msgstr "Viikko"
-
-#~ msgid "Month"
-#~ msgstr "Kuukausi"
 
 #~ msgid "Previous (Alt+Left)"
 #~ msgstr "Edellinen (Alt+Vasen)"
@@ -388,47 +1620,11 @@ msgstr "Tauko"
 #~ msgid "Next (Alt+Right)"
 #~ msgstr "Seuraava (Alt+Oikea)"
 
-#~ msgid "Today"
-#~ msgstr "Tänään"
-
-#~ msgid "_About"
-#~ msgstr "T_ietoa"
-
-#~ msgid "Actions"
-#~ msgstr "Toiminnot"
-
-#~ msgid "Action"
-#~ msgstr "Toiminto"
-
-#~ msgid "Custom actions…"
-#~ msgstr "Muokatut toiminnot…"
-
 #~ msgid "Complete"
 #~ msgstr "Valmis"
 
-#~ msgid "Skip"
-#~ msgstr "Ohita"
-
 #~ msgid "Enable"
 #~ msgstr "Ota käyttöön"
-
-#~ msgid "Command"
-#~ msgstr "Komento"
-
-#~ msgid "Triggers"
-#~ msgstr "Liipaisimet"
-
-#~ msgid "Name"
-#~ msgstr "Nimi"
-
-#~ msgid "_Pomodoro"
-#~ msgstr "_Pomodoro"
-
-#~ msgid "_Short Break"
-#~ msgstr "_Lyhyt tauko"
-
-#~ msgid "_Long Break"
-#~ msgstr "Pitkä _tauko"
 
 #~ msgid "Add"
 #~ msgstr "Lisää"
@@ -436,26 +1632,11 @@ msgstr "Tauko"
 #~ msgid "Remove"
 #~ msgstr "Poista"
 
-#~ msgid "State"
-#~ msgstr "Tila"
-
-#~ msgid "State Duration"
-#~ msgstr "Tilan kesto"
-
 #~ msgid "Elapsed Time"
 #~ msgstr "Kulunut aika"
 
-#~ msgid "Pomodoro Timer"
-#~ msgstr "Pomodoro-ajastin"
-
-#~ msgid "Start Timer"
-#~ msgstr "Käynnistä ajastin"
-
 #~ msgid "Pause Timer"
 #~ msgstr "Keskeytä ajastin"
-
-#~ msgid "Stop Timer"
-#~ msgstr "Lopeta ajastin"
 
 #~ msgid "Pause break"
 #~ msgstr "Keskeytä"
@@ -476,56 +1657,11 @@ msgstr "Tauko"
 #~ msgstr[1] "%d minuuttia jäljellä"
 
 #, javascript-format
-#~ msgid "%d second remaining"
-#~ msgid_plural "%d seconds remaining"
-#~ msgstr[0] "%d sekunti jäljellä"
-#~ msgstr[1] "%d sekuntia jäljellä"
-
-#~ msgid "Break is over"
-#~ msgstr "Tauko on ohi"
-
-#~ msgid "Skip Break"
-#~ msgstr "Ohita tauko"
-
-#~ msgid "+1 Minute"
-#~ msgstr "+1 minuutti"
-
-#, javascript-format
 #~ msgid "Failed to run <i>%s</i> service"
 #~ msgstr "Palvelua <i>%s</i> ei voitu suorittaa"
 
-#~ msgid "Hide other notifications"
-#~ msgstr "Piilota muut ilmoitukset"
-
-#~ msgid "Volume:"
-#~ msgstr "Äänenvoimakkuus:"
-
-#~ msgid "Clock Ticking"
-#~ msgstr "Kellon tikitys"
-
-#~ msgid "Timer Ticking"
-#~ msgstr "Ajastimen tikitys"
-
 #~ msgid "Woodland Birds"
 #~ msgstr "Metsän linnut"
-
-#~ msgid "Bell"
-#~ msgstr "Kello"
-
-#~ msgid "Loud Bell"
-#~ msgstr "Iso kello"
-
-#~ msgid "Select Custom Sound"
-#~ msgstr "Valitse oma ääni"
-
-#~ msgid "_Cancel"
-#~ msgstr "_Peru"
-
-#~ msgid "_Select"
-#~ msgstr "_Valitse"
-
-#~ msgid "Ticking Sound"
-#~ msgstr "Tikitysääni"
 
 #~ msgid "End of Break Sound"
 #~ msgstr "Tauon päättymisääni"
@@ -544,39 +1680,6 @@ msgstr "Tauko"
 
 #~ msgid "End of break sound"
 #~ msgstr "Tauon päättymisääni"
-
-#~ msgid "About Pomodoro"
-#~ msgstr "Tietoa Pomodorosta"
-
-#~ msgid "translator-credits"
-#~ msgstr "translator-credits"
-
-#~ msgid "Start/Stop"
-#~ msgstr "Käynnistä/Pysäytä"
-
-#~ msgid "Pause/Resume"
-#~ msgstr "Keskeytä/Jatka"
-
-#~ msgid "Skip to a pomodoro or to a break"
-#~ msgstr "Hyppää pomodorolle tai tauolle"
-
-#~ msgid "Extend current pomodoro or break"
-#~ msgstr "Pidennä nykyistä pomodoroa tai taukoa"
-
-#~ msgid "Reset current session"
-#~ msgstr "Nollaa nykyinen istunto"
-
-#~ msgid "Run as background service"
-#~ msgstr "Suorita taustapalveluna"
-
-#~ msgid "Show preferences"
-#~ msgstr "Näytä ominaisuudet"
-
-#~ msgid "Quit application"
-#~ msgstr "Lopeta sovellus"
-
-#~ msgid "Print version information and exit"
-#~ msgstr "Näytä versiotiedot ja lopeta"
 
 #~ msgid "Focus on your task."
 #~ msgstr "Keskity tehtävääsi."
@@ -613,9 +1716,6 @@ msgstr "Tauko"
 #~ "Näppäimen \"%s\" käyttö häiritsee kirjoittamista. Käytä jotain toista "
 #~ "näppäintä, esimerkiksi Control, Alt tai Shift."
 
-#~ msgid "Keyboard Shortcut"
-#~ msgstr "Pikanäppäin"
-
 #~ msgid "Available"
 #~ msgstr "Saatavilla"
 
@@ -627,9 +1727,6 @@ msgstr "Tauko"
 
 #~ msgid "Invisible"
 #~ msgstr "Näkymätön"
-
-#~ msgid "Yesterday"
-#~ msgstr "Eilen"
 
 #, c-format
 #~ msgid "%d m"
@@ -643,35 +1740,11 @@ msgstr "Tauko"
 #~ msgid "%.1f h"
 #~ msgstr "%.1f h"
 
-#~ msgid "This week"
-#~ msgstr "Tällä viikolla"
-
-#~ msgid "Kamil Prusko"
-#~ msgstr "Kamil Prusko"
-
-#, fuzzy
-#~ msgid "Support for GNOME Shell 4.0"
-#~ msgstr "GNOME Shellin indikaattori"
-
-#, fuzzy
-#~ msgid "Support for GNOME Shell 3.36"
-#~ msgstr "GNOME Shellin indikaattori"
-
-#, fuzzy
-#~ msgid "Support for GNOME Shell 3.34 only"
-#~ msgstr "GNOME Shellin indikaattori"
-
 #~ msgid "gnome-pomodoro"
 #~ msgstr "gnome-pomodoro"
 
 #~ msgid "_Stats"
 #~ msgstr "_Tilastot"
-
-#~ msgid "Paused"
-#~ msgstr "Keskeytetty"
-
-#~ msgid "Failed to enable extension"
-#~ msgstr "Liitännäistä ei voitu ottaa käyttöön"
 
 #~ msgid "It seems to be uninstalled"
 #~ msgstr "Ilmeisesti se on poistettu"

@@ -1,16 +1,18 @@
-# Norwegian translation for gnome-pomodoro
-# Copyright (c) 2020 gnome-pomodoro contributors
-# This file is distributed under the same license as the gnome-pomodoro package.
+# Norwegian translation for gnome-shell-extension-focus-timer
+# Copyright (c) 2020 focus-timer contributors
+# This file is distributed under the same license as the focus-timer package.
+#
+# Authors:
 # Arno Teigseth <arnotixe@gmail.com>, 2020.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-pomodoro\n"
+"Project-Id-Version: gnome-shell-extension-focus-timer 1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-25 16:45+0100\n"
+"POT-Creation-Date: 2026-04-12 13:38+0200\n"
 "PO-Revision-Date: 2023-03-25 14:40+0100\n"
 "Last-Translator: Arno Teigseth <arnotixe@gmail.com>\n"
-"Language-Team: \n"
+"Language-Team: Norwegian\n"
 "Language: nb\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,89 +20,70 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.1.1\n"
 
-#: data/org.gnome.shell.extensions.focus-timer.gschema.xml:6
-msgid "Start the app along with extension"
-msgstr ""
-
-#: data/org.gnome.shell.extensions.focus-timer.gschema.xml:14
-msgid "Indicator type"
-msgstr ""
-
-#: data/org.gnome.shell.extensions.focus-timer.gschema.xml:18
-msgid "Blur effect"
-msgstr ""
-
-#: data/org.gnome.shell.extensions.focus-timer.gschema.xml:22
-msgid "Dismiss screen overlay by gesture"
-msgstr ""
-
-#: data/org.gnome.shell.extensions.focus-timer.gschema.xml:26
-msgid "Reduce number of notifications during Pomodoro"
-msgstr ""
+#: src/indicator.js:329 src/screenShield.js:171
+#, fuzzy
+msgid "Finished!"
+msgstr "Ferdig!"
 
 #: src/indicator.js:331 src/screenShield.js:173
-msgid "Finished!"
-msgstr ""
-
-#: src/indicator.js:333 src/screenShield.js:175
 #, javascript-format
 msgid "%d of %d"
 msgstr ""
 
-#: src/indicator.js:420 src/prefs.js:73
+#: src/indicator.js:425 src/prefs.js:71
 msgid "Screen Overlay"
-msgstr ""
+msgstr "Skjermoverlegg"
 
-#: src/indicator.js:423
+#: src/indicator.js:427
 msgid "Preferences"
 msgstr "Innstillinger"
 
-#: src/indicator.js:424
+#: src/indicator.js:428
 msgid "Stats"
 msgstr "Statistikk"
 
-#: src/indicator.js:426
+#: src/indicator.js:430
 msgid "Quit"
 msgstr "Avslutt"
 
-#: src/indicator.js:601
+#: src/indicator.js:624
 #, javascript-format
 msgid "%dh"
 msgstr ""
 
-#: src/indicator.js:605
+#: src/indicator.js:628
 #, javascript-format
 msgid "%dm"
 msgstr ""
 
-#: src/indicator.js:613
+#: src/indicator.js:630 src/indicator.js:632 src/indicator.js:634
 #, javascript-format
 msgid "%ds"
 msgstr ""
 
-#: src/indicator.js:1058 src/notifications.js:59
+#: src/indicator.js:1079 src/notifications.js:57
 msgid "Focus Timer"
 msgstr ""
 
-#: src/notifications.js:79
+#: src/notifications.js:77
 msgid "Focus Timer Extension"
 msgstr ""
 
-#: src/notifications.js:115
+#: src/notifications.js:119
 #, javascript-format
 msgid "%d hour"
 msgid_plural "%d hours"
-msgstr[0] "%d time"
-msgstr[1] "%d timer"
+msgstr[0] ""
+msgstr[1] ""
 
-#: src/notifications.js:118
+#: src/notifications.js:122
 #, javascript-format
 msgid "%d minute"
 msgid_plural "%d minutes"
-msgstr[0] "%d minutt"
-msgstr[1] "%d minutter"
+msgstr[0] ""
+msgstr[1] ""
 
-#: src/notifications.js:121
+#: src/notifications.js:125
 #, javascript-format
 msgid "%d second"
 msgid_plural "%d seconds"
@@ -108,174 +91,1436 @@ msgstr[0] ""
 msgstr[1] ""
 
 #. translators: time remaining eg. "3 minutes 50 seconds remaining"
-#: src/notifications.js:128
-#, javascript-format
+#: src/notifications.js:135
+#, fuzzy, javascript-format
 msgid "%s remaining"
-msgstr ""
+msgstr "%s igjen"
 
-#: src/notifications.js:239 src/timer.js:54
+#: src/notifications.js:261 src/timer.js:47
 msgid "Pomodoro"
 msgstr "Pomodoro"
 
-#: src/notifications.js:241
+#: src/notifications.js:263
 msgid "Take a break"
 msgstr "Ta en pause"
 
-#: src/notifications.js:243
+#: src/notifications.js:265
 msgid "Take a short break"
 msgstr "Ta en liten pause"
 
-#: src/notifications.js:245
+#: src/notifications.js:267
 msgid "Take a long break"
 msgstr "Ta en lang pause"
 
-#: src/notifications.js:253
+#: src/notifications.js:275
 msgid "Pomodoro is about to end"
 msgstr "Pomodoro snart slutt"
 
-#: src/notifications.js:255
+#: src/notifications.js:277
 msgid "Break is about to end"
 msgstr "Pausen er snart slutt"
 
-#: src/notifications.js:263 src/notifications.js:275
+#: src/notifications.js:285 src/notifications.js:297
+#, fuzzy
 msgid "Break is over!"
-msgstr ""
+msgstr "Pausen er over!"
 
-#: src/notifications.js:265 src/notifications.js:273
+#: src/notifications.js:287 src/notifications.js:295
+#, fuzzy
 msgid "Pomodoro is over!"
-msgstr ""
+msgstr "Pomodoro er ferdig!"
 
-#: src/notifications.js:294
+#: src/notifications.js:316
 msgid "Get ready…"
 msgstr "Gjør deg klar…"
 
-#: src/notifications.js:299
+#: src/notifications.js:321
+#, fuzzy
 msgid "Confirm the start of a Pomodoro…"
-msgstr ""
+msgstr "Bekreft start av en Pomodoro…"
 
-#: src/notifications.js:301
+#: src/notifications.js:323
+#, fuzzy
 msgid "Confirm the start of a break…"
-msgstr ""
+msgstr "Bekreft start av en pause…"
 
-#: src/notifications.js:303
+#: src/notifications.js:325
+#, fuzzy
 msgid "Confirm the start of a short break…"
-msgstr ""
+msgstr "Bekreft start av en kort pause…"
 
-#: src/notifications.js:305
+#: src/notifications.js:327
+#, fuzzy
 msgid "Confirm the start of a long break…"
-msgstr ""
+msgstr "Bekreft start av en lang pause…"
 
-#: src/notifications.js:344
+#: src/notifications.js:366
+#, fuzzy
 msgid "+1 minute"
-msgstr ""
+msgstr "+1 minutt"
 
-#: src/notifications.js:345
+#: src/notifications.js:367
 msgid "Start Pomodoro"
 msgstr "Start Pomodoro"
 
-#: src/notifications.js:346
+#: src/notifications.js:368
 msgid "Start Break"
 msgstr ""
 
-#: src/notifications.js:403
+#: src/notifications.js:425
+#, fuzzy
 msgid "Something went wrong"
-msgstr ""
+msgstr "Noe gikk galt"
 
-#: src/notifications.js:409
+#: src/notifications.js:431
 msgid "Report issue"
 msgstr "Rapporter et problem"
 
-#: src/notifications.js:429
+#: src/notifications.js:451
 msgid "Focus Timer Not Found"
 msgstr ""
 
-#: src/notifications.js:430
+#: src/notifications.js:452
 msgid "Install Focus Timer app to start using the extension."
 msgstr ""
 
-#: src/notifications.js:435
+#: src/notifications.js:457
 msgid "Install from Flathub"
 msgstr ""
 
-#: src/prefs.js:14
+#: src/prefs.js:12
 msgid "General"
 msgstr ""
 
-#: src/prefs.js:20
+#: src/prefs.js:18
 msgid "Autostart The App"
 msgstr ""
 
-#: src/prefs.js:21
+#: src/prefs.js:19
 msgid "Makes the indicator instantly visible and allows keyboard shortcuts"
 msgstr ""
 
-#: src/prefs.js:34
+#: src/prefs.js:32
 msgid "Indicator"
 msgstr ""
 
-#: src/prefs.js:47
+#: src/prefs.js:45
 msgid "Icon"
 msgstr ""
 
-#: src/prefs.js:53
+#: src/prefs.js:51
 msgid "Text"
 msgstr ""
 
-#: src/prefs.js:60
+#: src/prefs.js:58
 msgid "Display As"
 msgstr ""
 
-#: src/prefs.js:61
+#: src/prefs.js:59
 msgid "Choose how the timer appears in the status bar"
 msgstr ""
 
-#: src/prefs.js:79
+#: src/prefs.js:77
 msgid "Blur Effect"
 msgstr ""
 
-#: src/prefs.js:80
+#: src/prefs.js:78
 msgid "Helps to acknowledge the break"
 msgstr ""
 
-#: src/prefs.js:88
+#: src/prefs.js:86
 msgid "Dismiss Gesture"
 msgstr ""
 
-#: src/prefs.js:89
+#: src/prefs.js:87
 msgid "Flick the mouse or press any key to dismiss"
 msgstr ""
 
-#: src/prefs.js:102
+#: src/prefs.js:100
 msgid "Distractions"
 msgstr ""
 
-#: src/prefs.js:108
+#: src/prefs.js:106
 msgid "Manage Notifications"
 msgstr ""
 
-#: src/prefs.js:109
+#: src/prefs.js:107
 msgid "Toggle Do Not Disturb mode during Pomodoro"
 msgstr ""
 
-#: src/screenOverlay.js:987
+#: src/screenOverlay.js:1053
 msgid "It's time to take a break"
 msgstr "På tide med en pause"
 
-#: src/timer.js:51
+#: src/timer.js:44
+#, fuzzy
 msgid "Stopped"
-msgstr ""
+msgstr "Stoppet"
 
-#: src/timer.js:57
+#: src/timer.js:50
 msgid "Short Break"
 msgstr "Kort pause"
 
-#: src/timer.js:60
+#: src/timer.js:53
 msgid "Long Break"
 msgstr "Lang pause"
 
-#: src/timer.js:63
+#: src/timer.js:56
 msgid "Break"
 msgstr "Pause"
+
+#, fuzzy
+#~ msgid "Time management utility"
+#~ msgstr "Verktøy for tidsstyring"
+
+#, fuzzy
+#~ msgid "Maintain focus by taking frequent breaks"
+#~ msgstr "Behold fokus ved å ta hyppige pauser"
+
+#, fuzzy
+#~ msgid ""
+#~ "A productivity timer that helps you work more effectively by breaking "
+#~ "your time into focused work sessions followed by short breaks. Work for "
+#~ "25 minutes, then take a 5-minute break to maintain concentration and "
+#~ "prevent burnout."
+#~ msgstr ""
+#~ "En produktivitetstidtaker som hjelper deg å jobbe mer effektivt ved å "
+#~ "dele opp tiden i fokuserte arbeidsøkter etterfulgt av korte pauser. Jobb "
+#~ "i 25 minutter, og ta deretter en 5-minutters pause for å opprettholde "
+#~ "konsentrasjonen og forebygge utbrenthet."
+
+#, fuzzy
+#~ msgid "Key features:"
+#~ msgstr "Hovedfunksjoner:"
+
+#, fuzzy
+#~ msgid "Customizable work session and break lengths"
+#~ msgstr "Tilpassbare lengder for arbeidsøkter og pauser"
+
+#, fuzzy
+#~ msgid "Visual and audio notifications"
+#~ msgstr "Visuelle varsler og lydvarsler"
+
+#, fuzzy
+#~ msgid "Time tracking and statistics"
+#~ msgstr "Tidssporing og statistikk"
+
+#, fuzzy
+#~ msgid "GNOME desktop integration"
+#~ msgstr "GNOME skrivebordsintegrasjon"
+
+#, fuzzy
+#~ msgid "Screen overlay during breaks"
+#~ msgstr "Skjermoverlegg under pauser"
+
+#, fuzzy
+#~ msgid "Run custom commands after Pomodoro or break"
+#~ msgstr "Kjør egendefinerte kommandoer etter Pomodoro eller pause"
+
+#~ msgid "Kamil Prusko"
+#~ msgstr "Kamil Prusko"
+
+#~ msgid "Timer"
+#~ msgstr "Tidtaker"
+
+#, fuzzy
+#~ msgid "Daily stats"
+#~ msgstr "Daglig statistikk"
+
+#, fuzzy
+#~ msgid "Monthly stats"
+#~ msgstr "Månedlig statistikk"
+
+#, fuzzy
+#~ msgid "Screen overlay"
+#~ msgstr "Skjermoverlegg"
+
+#, fuzzy
+#~ msgid "Start or Stop"
+#~ msgstr "Start eller Stopp"
+
+#, fuzzy
+#~ msgid "Start, Pause or Resume"
+#~ msgstr "Start, Pause eller Fortsett"
+
+#~ msgid "Start"
+#~ msgstr "Start"
+
+#~ msgid "Stop"
+#~ msgstr "Stopp"
+
+#~ msgid "Pause"
+#~ msgstr "Pause"
+
+#~ msgid "Resume"
+#~ msgstr "Fortsett"
+
+#~ msgid "Skip"
+#~ msgstr "Hopp over"
+
+#, fuzzy
+#~ msgid "Rewind"
+#~ msgstr "Spol tilbake"
+
+#~ msgid "Extend current pomodoro or break"
+#~ msgstr "Forleng gjeldende pomodoro eller pause"
+
+#, fuzzy
+#~ msgid "Reset"
+#~ msgstr "Tilbakestill"
+
+#~ msgid "Show preferences"
+#~ msgstr "Vis innstillinger"
+
+#~ msgid "Quit application"
+#~ msgstr "Avslutt programmet"
+
+#~ msgid "Print version information and exit"
+#~ msgstr "Vis versjonsinformasjon og avslutt"
+
+#, fuzzy
+#~ msgid "Bring to Focus"
+#~ msgstr "Hent til forgrunnen"
+
+#, fuzzy, c-format
+#~ msgid "Custom action \"%s\" has failed"
+#~ msgstr "Egendefinert handling \"%s\" feilet"
+
+#, fuzzy
+#~ msgid "Reached timeout"
+#~ msgstr "Tidsavbrudd nådd"
+
+#, fuzzy
+#~ msgid "Failed to execute command"
+#~ msgstr "Kunne ikke utføre kommando"
+
+#, fuzzy
+#~ msgid "Command is empty"
+#~ msgstr "Kommandoen er tom"
+
+#, fuzzy
+#~ msgid "Unclosed quotation mark"
+#~ msgstr "Ulukket hermetegn"
+
+#, fuzzy
+#~ msgid "Invalid command"
+#~ msgstr "Ugyldig kommando"
+
+#, fuzzy, c-format
+#~ msgid "Unknown variable \"%s\""
+#~ msgstr "Ukjent variabel \"%s\""
+
+#, fuzzy, c-format
+#~ msgid "Unknown format \"%s\""
+#~ msgstr "Ukjent format \"%s\""
+
+#, fuzzy, c-format
+#~ msgid "Program \"%s\" not found"
+#~ msgstr "Programmet \"%s\" ble ikke funnet"
+
+#~ msgid "Actions"
+#~ msgstr "Handlinger"
+
+#, fuzzy
+#~ msgid "Countdown"
+#~ msgstr "Nedtelling"
+
+#, fuzzy
+#~ msgid "Session"
+#~ msgstr "Økt"
+
+#, fuzzy
+#~ msgid "Other"
+#~ msgstr "Annet"
+
+#, fuzzy
+#~ msgid "Started the timer."
+#~ msgstr "Startet tidtakeren."
+
+#, fuzzy
+#~ msgid "Stopped the timer manually."
+#~ msgstr "Stoppet tidtakeren manuelt."
+
+#, fuzzy
+#~ msgid ""
+#~ "The countdown has been manually paused. Not triggered when locking the "
+#~ "screen or when suspending the system."
+#~ msgstr ""
+#~ "Nedtellingen har blitt satt på pause manuelt. Utløses ikke ved låsing av "
+#~ "skjermen eller ved dvalemodus."
+
+#, fuzzy
+#~ msgid "The countdown has been manually resumed."
+#~ msgstr "Nedtellingen har blitt gjenopptatt manuelt."
+
+#, fuzzy
+#~ msgid "Jumped to a next time-block before the countdown has finished."
+#~ msgstr "Hoppet til neste tidsblokk før nedtellingen var ferdig."
+
+#, fuzzy
+#~ msgid "Rewind action has been used. It adds a pause in the past."
+#~ msgstr ""
+#~ "Tilbakespoling har blitt brukt. Det legger til en pause bakover i tid."
+
+#, fuzzy
+#~ msgid "Manually cleared the session."
+#~ msgstr "Tømte økten manuelt."
+
+#, fuzzy
+#~ msgid "Finished"
+#~ msgstr "Ferdig"
+
+#, fuzzy
+#~ msgid ""
+#~ "The countdown has finished. If waiting for confirmation, the duration of "
+#~ "the time-block still may be altered."
+#~ msgstr ""
+#~ "Nedtellingen er ferdig. Hvis det ventes på bekreftelse, kan varigheten av "
+#~ "tidsblokken fortsatt endres."
+
+#, fuzzy
+#~ msgid "Changed"
+#~ msgstr "Endret"
+
+#, fuzzy
+#~ msgid "Triggered on any change related to the countdown."
+#~ msgstr "Utløses ved enhver endring relatert til nedtellingen."
+
+#, fuzzy
+#~ msgid "Confirm Advancement"
+#~ msgstr "Bekreft fremdrift"
+
+#, fuzzy
+#~ msgid "A manual confirmation is required to start next time-block."
+#~ msgstr "En manuell bekreftelse kreves for å starte neste tidsblokk."
+
+#, fuzzy
+#~ msgid "Advanced"
+#~ msgstr "Gått videre"
+
+#, fuzzy
+#~ msgid "Transitioned or skipped to a next time-block."
+#~ msgstr "Gikk over til eller hoppet over til neste tidsblokk."
+
+#, fuzzy
+#~ msgid "State Changed"
+#~ msgstr "Tilstand endret"
+
+#, fuzzy
+#~ msgid "Transitioned to a next time-block or when a break gets relabelled."
+#~ msgstr "Gikk over til neste tidsblokk eller når en pause endrer navn."
+
+#, fuzzy
+#~ msgid "Rescheduled"
+#~ msgstr "Planlagt på nytt"
+
+#, fuzzy
+#~ msgid "Triggered when scheduled time-blocks have changed."
+#~ msgstr "Utløses når planlagte tidsblokker har endret seg."
+
+#, fuzzy
+#~ msgid "Expired"
+#~ msgstr "Utløpt"
+
+#, fuzzy
+#~ msgid "Triggered when session is about to be reset due to inactivity."
+#~ msgstr ""
+#~ "Utløses når økten er i ferd med å bli tilbakestilt på grunn av "
+#~ "inaktivitet."
+
+#, fuzzy
+#~ msgid "Take a Break"
+#~ msgstr "Ta en pause"
+
+#~ msgid "Skip Break"
+#~ msgstr "Hopp over pause"
+
+#, fuzzy
+#~ msgid "Failed to initialize playback"
+#~ msgstr "Kunne ikke starte avspilling"
+
+#, fuzzy
+#~ msgid "File not found"
+#~ msgstr "Filen ble ikke funnet"
+
+#, fuzzy
+#~ msgid "File type not supported"
+#~ msgstr "Filtypen støttes ikke"
+
+#, fuzzy, c-format
+#~ msgid "%uh"
+#~ msgstr "%ut"
+
+#, fuzzy, c-format
+#~ msgid "%um"
+#~ msgstr "%um"
+
+#, fuzzy, c-format
+#~ msgid "%u hour"
+#~ msgid_plural "%u hours"
+#~ msgstr[0] "%u time"
+#~ msgstr[1] "%u timer"
+
+#, fuzzy, c-format
+#~ msgid "%u minute"
+#~ msgid_plural "%u minutes"
+#~ msgstr[0] "%u minutt"
+#~ msgstr[1] "%u minutter"
+
+#, fuzzy, c-format
+#~ msgid "%u second"
+#~ msgid_plural "%u seconds"
+#~ msgstr[0] "%u sekund"
+#~ msgstr[1] "%u sekunder"
+
+#, fuzzy
+#~ msgid "The exact time of the current event."
+#~ msgstr "Det nøyaktige tidspunktet for gjeldende hendelse."
+
+#, fuzzy
+#~ msgid ""
+#~ "The current phase of the Pomodoro cycle. Possible values: <tt>stopped</"
+#~ "tt>, <tt>pomodoro</tt>, <tt>break</tt>, <tt>short-break</tt>, <tt>long-"
+#~ "break</tt>."
+#~ msgstr ""
+#~ "Gjeldende fase i Pomodoro-syklusen. Mulige verdier: <tt>stopped</tt>, "
+#~ "<tt>pomodoro</tt>, <tt>break</tt>, <tt>short-break</tt>, <tt>long-break</"
+#~ "tt>."
+
+#, fuzzy
+#~ msgid ""
+#~ "Status of the current time-block. Possible values: <tt>scheduled</tt>, "
+#~ "<tt>in-progress</tt>, <tt>completed</tt>, <tt>uncompleted</tt>."
+#~ msgstr ""
+#~ "Status for gjeldende tidsblokk. Mulige verdier: <tt>scheduled</tt>, "
+#~ "<tt>in-progress</tt>, <tt>completed</tt>, <tt>uncompleted</tt>."
+
+#, fuzzy
+#~ msgid "A flag indicating whether countdown has begun."
+#~ msgstr "Et flagg som indikerer om nedtellingen har startet."
+
+#, fuzzy
+#~ msgid "A flag indicating whether countdown is paused."
+#~ msgstr "Et flagg som indikerer om nedtellingen er satt på pause."
+
+#, fuzzy
+#~ msgid "A flag indicating whether countdown has finished."
+#~ msgstr "Et flagg som indikerer om nedtellingen er ferdig."
+
+#, fuzzy
+#~ msgid "A flag indicating whether the timer is actively counting down."
+#~ msgstr "Et flagg som indikerer om tidtakeren teller ned aktivt."
+
+#, fuzzy
+#~ msgid "Duration of the current countdown."
+#~ msgstr "Varigheten på gjeldende nedtelling."
+
+#, fuzzy
+#~ msgid "Discrepancy between elapsed time and the time passed."
+#~ msgstr "Avvik mellom medgått tid og tiden som har passert."
+
+#, fuzzy
+#~ msgid "The amount of time spent on the countdown."
+#~ msgstr "Tiden som er brukt på nedtellingen."
+
+#, fuzzy
+#~ msgid "The amount of time left before the countdown ends."
+#~ msgstr "Tiden som er igjen før nedtellingen slutter."
+
+#, fuzzy
+#~ msgid "Time when the countdown has started."
+#~ msgstr "Tidspunktet når nedtellingen startet."
+
+#, fuzzy
+#~ msgid "GNOME Shell Extension"
+#~ msgstr "GNOME Shell-utvidelse"
+
+#, fuzzy
+#~ msgid "Get the best experience!"
+#~ msgstr "Få den beste opplevelsen!"
+
+#, fuzzy
+#~ msgid "Enable <b>GNOME Shell extension</b> for seamless desktop integration"
+#~ msgstr "Aktiver <b>GNOME Shell-utvidelse</b> for sømløs integrasjon"
+
+#, fuzzy
+#~ msgid "Always within reach"
+#~ msgstr "Alltid innen rekkevidde"
+
+#, fuzzy
+#~ msgid "Control timer directly from the top bar without opening the app"
+#~ msgstr "Kontroller tidtakeren direkte fra topplinjen uten å åpne appen"
+
+#, fuzzy
+#~ msgid "Less distractions"
+#~ msgstr "Færre distraksjoner"
+
+#, fuzzy
+#~ msgid "Refined break reminders"
+#~ msgstr "Forbedrede pausepåminnelser"
+
+#, fuzzy
+#~ msgid ""
+#~ "Elegant full-screen overlay that make taking breaks a more pleasant "
+#~ "experience"
+#~ msgstr "Elegant fullskjermsoverlegg som gjør det mer behagelig å ta pauser"
+
+#, fuzzy
+#~ msgid "Ready to try it?"
+#~ msgstr "Klar til å prøve?"
+
+#, fuzzy
+#~ msgid "_Install Extension"
+#~ msgstr "_Installer utvidelse"
+
+#, fuzzy
+#~ msgid "_Not Now"
+#~ msgstr "_Ikke nå"
+
+#, fuzzy
+#~ msgid "Copy to clipboard"
+#~ msgstr "Kopier til utklippstavle"
+
+#, fuzzy
+#~ msgid "_Try Again"
+#~ msgstr "_Prøv igjen"
+
+#, fuzzy
+#~ msgid "_Abort"
+#~ msgstr "_Avbryt"
+
+#, fuzzy
+#~ msgid "Time-out reached"
+#~ msgstr "Tidsavbrudd nådd"
+
+#, fuzzy
+#~ msgid "Installing extensions is not allowed"
+#~ msgstr "Installasjon av utvidelser er ikke tillatt"
+
+#, fuzzy
+#~ msgid "Failed to download the extension"
+#~ msgstr "Kunne ikke laste ned utvidelsen"
+
+#~ msgid "Desktop"
+#~ msgstr "Skrivebord"
+
+#, fuzzy
+#~ msgid "GNOME Shell extension available"
+#~ msgstr "GNOME Shell-utvidelse er tilgjengelig"
+
+#, fuzzy
+#~ msgid "Learn More"
+#~ msgstr "Lær mer"
+
+#, fuzzy
+#~ msgid "Unused"
+#~ msgstr "Ubrukt"
+
+#, fuzzy
+#~ msgid "Log"
+#~ msgstr "Logg"
+
+#, fuzzy
+#~ msgid "Empty Log"
+#~ msgstr "Tom logg"
+
+#, fuzzy
+#~ msgid "Entries will show up here once you start the timer."
+#~ msgstr "Oppføringer vil vises her når du starter tidtakeren."
+
+#, fuzzy
+#~ msgid "Context"
+#~ msgstr "Kontekst"
+
+#~ msgid "Command"
+#~ msgstr "Kommando"
+
+#, fuzzy
+#~ msgid "Output"
+#~ msgstr "Utdata"
+
+#, fuzzy
+#~ msgid "Error"
+#~ msgstr "Feil"
+
+#, fuzzy
+#~ msgid "Exit Code:"
+#~ msgstr "Avslutningskode:"
+
+#, fuzzy
+#~ msgid "Execution Time:"
+#~ msgstr "Kjøretid:"
+
+#~ msgid "translator-credits"
+#~ msgstr "Arno Teigseth <arnotixe@gmail.com>"
+
+#, fuzzy
+#~ msgid "Donate"
+#~ msgstr "Doner"
+
+#, fuzzy
+#~ msgid "Breaks"
+#~ msgstr "Pauser"
+
+#, fuzzy
+#~ msgid "Interruptions"
+#~ msgstr "Avbrytelser"
+
+#, fuzzy
+#~ msgid "Break Ratio"
+#~ msgstr "Pauseandel"
+
+#~ msgid "Day"
+#~ msgstr "Dag"
+
+#~ msgid "Week"
+#~ msgstr "Uke"
+
+#~ msgid "Month"
+#~ msgstr "Måned"
+
+#, fuzzy
+#~ msgid "Nothing to see here yet"
+#~ msgstr "Ingenting å se her ennå"
+
+#, fuzzy
+#~ msgid "Finish a few Pomodoros to fill this up!"
+#~ msgstr "Fullfør noen Pomodoroer for å fylle denne!"
+
+#, fuzzy, c-format
+#~ msgid "Skipped %u day"
+#~ msgid_plural "Skipped %u days"
+#~ msgstr[0] "Hoppet over %u dag"
+#~ msgstr[1] "Hoppet over %u dager"
+
+#, fuzzy, c-format
+#~ msgid "Skipped %u week"
+#~ msgid_plural "Skipped %u weeks"
+#~ msgstr[0] "Hoppet over %u uke"
+#~ msgstr[1] "Hoppet over %u uker"
+
+#, fuzzy, c-format
+#~ msgid "Skipped %u month"
+#~ msgid_plural "Skipped %u months"
+#~ msgstr[0] "Hoppet over %u måned"
+#~ msgstr[1] "Hoppet over %u måneder"
+
+#~ msgid "Today"
+#~ msgstr "I dag"
+
+#~ msgid "Yesterday"
+#~ msgstr "I går"
+
+#~ msgid "This week"
+#~ msgstr "Denne uken"
+
+#, fuzzy, c-format
+#~ msgid "Week %u"
+#~ msgstr "Uke %u"
+
+#, fuzzy, c-format
+#~ msgid "Week %u of %u"
+#~ msgstr "Uke %u av %u"
+
+#~ msgid "_Pomodoro"
+#~ msgstr "_Pomodoro"
+
+#~ msgid "_Short Break"
+#~ msgstr "_Kort pause"
+
+#~ msgid "_Long Break"
+#~ msgstr "_Lang pause"
+
+#, fuzzy
+#~ msgid "_Break"
+#~ msgstr "_Pause"
+
+#, fuzzy
+#~ msgid "Open screen overlay"
+#~ msgstr "Åpne skjermoverlegg"
+
+#, fuzzy
+#~ msgid "Session has expired"
+#~ msgstr "Økten har utløpt"
+
+#, fuzzy, c-format
+#~ msgid "Long break due in <b>%s</b>"
+#~ msgstr "Lang pause om <b>%s</b>"
+
+#, fuzzy
+#~ msgid "Rewind one minute"
+#~ msgstr "Spol tilbake ett minutt"
+
+#, fuzzy
+#~ msgid "_Compact View"
+#~ msgstr "_Kompakt visning"
+
+#~ msgid "_Preferences"
+#~ msgstr "_Innstillinger"
+
+#~ msgid "_About"
+#~ msgstr "_Om"
+
+#~ msgid "_Quit"
+#~ msgstr "_Avslutt"
+
+#, fuzzy
+#~ msgid "Primary Menu"
+#~ msgstr "Hovedmeny"
+
+#, fuzzy
+#~ msgid "Keep timer running?"
+#~ msgstr "La tidtakeren fortsette?"
+
+#, fuzzy
+#~ msgid ""
+#~ "You can keep it running in the background — notifications and keyboard "
+#~ "shortcuts will still work."
+#~ msgstr ""
+#~ "Du kan la den kjøre i bakgrunnen — varsler og hurtigtaster vil fortsatt "
+#~ "virke."
+
+#, fuzzy
+#~ msgid "Run in background"
+#~ msgstr "Kjør i bakgrunnen"
+
+#, fuzzy
+#~ msgid "Main Window"
+#~ msgstr "Hovedvindu"
+
+#, fuzzy
+#~ msgid "Prefer Dark Theme"
+#~ msgstr "Foretrekk mørkt tema"
+
+#, fuzzy
+#~ msgid "Prefer Compact View"
+#~ msgstr "Foretrekk kompakt visning"
+
+#, fuzzy
+#~ msgid "Started"
+#~ msgstr "Startet"
+
+#~ msgid "Paused"
+#~ msgstr "Satt på pause"
+
+#, fuzzy
+#~ msgid "Edit Custom Action"
+#~ msgstr "Rediger egendefinert handling"
+
+#~ msgid "_Cancel"
+#~ msgstr "A_vbryt"
+
+#, fuzzy
+#~ msgid "_Save"
+#~ msgstr "_Lagre"
+
+#~ msgid "Name"
+#~ msgstr "Navn"
+
+#, fuzzy
+#~ msgid "Trigger"
+#~ msgstr "Utløser"
+
+#, fuzzy
+#~ msgid "Event"
+#~ msgstr "Hendelse"
+
+#, fuzzy
+#~ msgid "Execute command after an event."
+#~ msgstr "Utfør kommando etter en hendelse."
+
+#, fuzzy
+#~ msgid "Condition"
+#~ msgstr "Vilkår"
+
+#, fuzzy
+#~ msgid ""
+#~ "Ensure execution of a second command once condition is no longer met."
+#~ msgstr ""
+#~ "Sikre kjøring av en andre kommando når vilkåret ikke lenger er oppfylt."
+
+#, fuzzy
+#~ msgid "Events"
+#~ msgstr "Hendelser"
+
+#, fuzzy
+#~ msgid "Add _Event"
+#~ msgstr "Legg til _hendelse"
+
+#, fuzzy
+#~ msgid "_Filter"
+#~ msgstr "_Filter"
+
+#, fuzzy
+#~ msgid "Filter"
+#~ msgstr "Filter"
+
+#, fuzzy
+#~ msgid "Shell Command"
+#~ msgstr "Shell-kommando"
+
+#, fuzzy
+#~ msgid "Commands"
+#~ msgstr "Kommandoer"
+
+#, fuzzy
+#~ msgid "Condition Met Command"
+#~ msgstr "Kommando ved oppfylt vilkår"
+
+#, fuzzy
+#~ msgid "Condition Not Met Command"
+#~ msgstr "Kommando ved ikke oppfylt vilkår"
+
+#, fuzzy
+#~ msgid "Working Directory"
+#~ msgstr "Arbeidsmappe"
+
+#, fuzzy
+#~ msgid "Use Subshell"
+#~ msgstr "Bruk undershell"
+
+#, fuzzy
+#~ msgid "Run the program from a subshell such as sh -c ''"
+#~ msgstr "Kjør programmet fra et undershell som f.eks. sh -c ''"
+
+#, fuzzy
+#~ msgid "Pass Input Data"
+#~ msgstr "Send inndata"
+
+#, fuzzy
+#~ msgid "Instead of passing variables you can process a JSON object."
+#~ msgstr "I stedet for å sende variabler kan du prosessere et JSON-objekt."
+
+#, fuzzy
+#~ msgid "Wait For Completion"
+#~ msgstr "Vent på fullføring"
+
+#, fuzzy
+#~ msgid "Block execution of other commands until the command completes."
+#~ msgstr "Blokker kjøring av andre kommandoer til kommandoen er ferdig."
+
+#, fuzzy
+#~ msgid "_Delete Action"
+#~ msgstr "_Slett handling"
+
+#, fuzzy
+#~ msgid "No events specified yet."
+#~ msgstr "Ingen hendelser er spesifisert ennå."
+
+#, fuzzy
+#~ msgid "Add Custom Action"
+#~ msgstr "Legg til egendefinert handling"
+
+#, fuzzy
+#~ msgid "_Add"
+#~ msgstr "_Legg til"
+
+#, fuzzy
+#~ msgid "Select Working Directory"
+#~ msgstr "Velg arbeidsmappe"
+
+#~ msgid "_Select"
+#~ msgstr "_Velg"
+
+#, fuzzy
+#~ msgid "Untitled action"
+#~ msgstr "Navnløs handling"
+
+#, fuzzy
+#~ msgid "Add Condition"
+#~ msgstr "Legg til vilkår"
+
+#, fuzzy
+#~ msgid "Add Group"
+#~ msgstr "Legg til gruppe"
+
+#~ msgid "AND"
+#~ msgstr "OG"
+
+#~ msgid "OR"
+#~ msgstr "ELLER"
+
+#, fuzzy
+#~ msgid "Is"
+#~ msgstr "Er"
+
+#, fuzzy
+#~ msgid "Is Not"
+#~ msgstr "Er ikke"
+
+#, fuzzy
+#~ msgid "Equals"
+#~ msgstr "Er lik"
+
+#, fuzzy
+#~ msgid "Greater Than"
+#~ msgstr "Større enn"
+
+#, fuzzy
+#~ msgid "Less Than"
+#~ msgstr "Mindre enn"
+
+#, fuzzy
+#~ msgid "Yes"
+#~ msgstr "Ja"
+
+#, fuzzy
+#~ msgid "No"
+#~ msgstr "Nei"
+
+#, fuzzy
+#~ msgid "Minutes"
+#~ msgstr "Minutter"
+
+#, fuzzy
+#~ msgid "Seconds"
+#~ msgstr "Sekunder"
+
+#, fuzzy
+#~ msgid "Hours"
+#~ msgstr "Timer"
+
+#, fuzzy
+#~ msgid "Select Field…"
+#~ msgstr "Velg felt…"
+
+#~ msgid "State"
+#~ msgstr "Status"
+
+#, fuzzy
+#~ msgid "Running"
+#~ msgstr "Kjører"
+
+#, fuzzy
+#~ msgid "Duration"
+#~ msgstr "Varighet"
+
+#, fuzzy
+#~ msgid "Insert Variable"
+#~ msgstr "Sett inn variabel"
+
+#, fuzzy
+#~ msgid "Format"
+#~ msgstr "Format"
+
+#, fuzzy
+#~ msgid "_Log"
+#~ msgstr "_Logg"
+
+#, fuzzy
+#~ msgid "Show execution log"
+#~ msgstr "Vis kjørelogg"
+
+#, fuzzy
+#~ msgid ""
+#~ "Run shell commands automatically on timer events or conditions. <a "
+#~ "href=\"\">Learn more.</a>"
+#~ msgstr ""
+#~ "Kjør shell-kommandoer automatisk ved tidtakerhendelser eller vilkår. <a "
+#~ "href=\"\">Lær mer.</a>"
+
+#, fuzzy
+#~ msgid "Set Shortcut"
+#~ msgstr "Angi hurtigtast"
+
+#, fuzzy
+#~ msgid "_Set"
+#~ msgstr "_Angi"
+
+#, fuzzy
+#~ msgid "Disabled"
+#~ msgstr "Deaktivert"
+
+#, fuzzy
+#~ msgid ""
+#~ "Press <b>Esc</b> to cancel or <b>Backspace</b> to disable the keyboard "
+#~ "shortcut"
+#~ msgstr ""
+#~ "Trykk <b>Esc</b> for å avbryte eller <b>Rettetast</b> for å deaktivere "
+#~ "hurtigtasten"
+
+#, fuzzy
+#~ msgid ""
+#~ "Global shortcuts let you control the app even when it’s not on screen. "
+#~ "They work as long as the app is running in the background."
+#~ msgstr ""
+#~ "Globale hurtigtaster lar deg kontrollere appen selv når den ikke er på "
+#~ "skjermen. De virker så lenge appen kjører i bakgrunnen."
+
+#, fuzzy
+#~ msgid "Open app settings for editing global shortcuts"
+#~ msgstr "Åpne appinnstillinger for å redigere globale hurtigtaster"
+
+#, fuzzy
+#~ msgid "_Edit"
+#~ msgstr "_Rediger"
+
+#, fuzzy
+#~ msgid "Enter new shortcut for starting or stopping the timer"
+#~ msgstr "Tast inn ny hurtigtast for å starte eller stoppe tidtakeren"
+
+#, fuzzy
+#~ msgid "Enter new shortcut to start/pause/resume the timer"
+#~ msgstr "Tast inn ny hurtigtast for å starte/pause/fortsette tidtakeren"
+
+#, fuzzy
+#~ msgid "Enter new shortcut for starting the timer"
+#~ msgstr "Tast inn ny hurtigtast for å starte tidtakeren"
+
+#, fuzzy
+#~ msgid "Enter new shortcut for stopping the timer"
+#~ msgstr "Tast inn ny hurtigtast for å stoppe tidtakeren"
+
+#, fuzzy
+#~ msgid "Enter new shortcut for pausing the timer"
+#~ msgstr "Tast inn ny hurtigtast for å pause tidtakeren"
+
+#, fuzzy
+#~ msgid "Enter new shortcut for resuming the timer"
+#~ msgstr "Tast inn ny hurtigtast for å fortsette tidtakeren"
+
+#, fuzzy
+#~ msgid "Enter new shortcut for skipping"
+#~ msgstr "Tast inn ny hurtigtast for å hoppe over"
+
+#, fuzzy
+#~ msgid "Rewind One Minute"
+#~ msgstr "Spol tilbake ett minutt"
+
+#, fuzzy
+#~ msgid "Enter new shortcut for rewinding"
+#~ msgstr "Tast inn ny hurtigtast for å spole tilbake"
+
+#, fuzzy
+#~ msgid "Enter new shortcut for bringing window to focus"
+#~ msgstr "Tast inn ny hurtigtast for å hente vinduet til forgrunnen"
+
+#, fuzzy
+#~ msgid "Announcements"
+#~ msgstr "Kunngjøringer"
+
+#, fuzzy
+#~ msgid "Time Running Out"
+#~ msgstr "Tiden er i ferd med å gå ut"
+
+#, fuzzy
+#~ msgid "Notify when Pomodoro or break is about to end."
+#~ msgstr "Varsle når Pomodoro eller pause er i ferd med å slutte."
+
+#, fuzzy
+#~ msgid "A full-screen notification intended to enforce taking a break."
+#~ msgstr ""
+#~ "Et fullskjermsvarsel som er ment for å tvinge deg til å ta en pause."
+
+#, fuzzy
+#~ msgid "Lock Delay"
+#~ msgstr "Forsinkelse for låsing"
+
+#, fuzzy
+#~ msgid "Period of inactivity to lock the screen."
+#~ msgstr "Periode med inaktivitet før skjermen låses."
+
+#, fuzzy
+#~ msgid "Reopen Delay"
+#~ msgstr "Forsinkelse for gjenåpning"
+
+#, fuzzy
+#~ msgid "Period of inactivity to reopen the overlay after it gets dismissed."
+#~ msgstr ""
+#~ "Periode med inaktivitet før overlegget gjenåpnes etter at det er fjernet."
+
+#, fuzzy
+#~ msgid "Never"
+#~ msgstr "Aldri"
+
+#~ msgid "Notifications"
+#~ msgstr "Varsler"
+
+#, fuzzy
+#~ msgid "Sounds"
+#~ msgstr "Lyder"
+
+#, fuzzy
+#~ msgid "Appearance"
+#~ msgstr "Utseende"
+
+#, fuzzy
+#~ msgid "Keyboard Shortcuts"
+#~ msgstr "Hurtigtaster"
+
+#, fuzzy
+#~ msgid "Automation"
+#~ msgstr "Automasjon"
+
+#, fuzzy
+#~ msgid "Sounds Are Disabled"
+#~ msgstr "Lyder er deaktivert"
+
+#, fuzzy
+#~ msgid "Alert Sounds"
+#~ msgstr "Varsellyder"
+
+#, fuzzy
+#~ msgid "Pomodoro Finished Sound"
+#~ msgstr "Lyd ved ferdig Pomodoro"
+
+#, fuzzy
+#~ msgid "Break Finished Sound"
+#~ msgstr "Lyd ved ferdig pause"
+
+#, fuzzy
+#~ msgid "Background Sound"
+#~ msgstr "Bakgrunnslyd"
+
+#~ msgid "Bell"
+#~ msgstr "Bjelle"
+
+#~ msgid "Loud Bell"
+#~ msgstr "Kraftig bjelle"
+
+#~ msgid "Clock Ticking"
+#~ msgstr "Tikking av klokke"
+
+#, fuzzy
+#~ msgid "None"
+#~ msgstr "Ingen"
+
+#~ msgid "Volume:"
+#~ msgstr "Volum:"
+
+#~ msgid "Select Custom Sound"
+#~ msgstr "Velg egendefinert lyd"
+
+#, fuzzy
+#~ msgid "Pomodoro Duration"
+#~ msgstr "Varighet for Pomodoro"
+
+#, fuzzy
+#~ msgid "Short Break Duration"
+#~ msgstr "Varighet for kort pause"
+
+#, fuzzy
+#~ msgid "Long Break Duration"
+#~ msgstr "Varighet for lang pause"
+
+#, fuzzy
+#~ msgid "Number of Cycles"
+#~ msgstr "Antall sykluser"
+
+#, fuzzy
+#~ msgid "Behavior"
+#~ msgstr "Oppførsel"
+
+#, fuzzy
+#~ msgid "Pause By Locking The Screen"
+#~ msgstr "Pause ved låsing av skjermen"
+
+#, fuzzy
+#~ msgid "Confirm Starting a Break"
+#~ msgstr "Bekreft start av en pause"
+
+#, fuzzy
+#~ msgid "Confirm Starting a Pomodoro"
+#~ msgstr "Bekreft start av en Pomodoro"
+
+#, fuzzy, c-format
+#~ msgid "A single session will take <b>%s</b>."
+#~ msgstr "En enkelt økt vil ta <b>%s</b>."
+
+#, fuzzy, c-format
+#~ msgid "<b>%u%%</b> of the time will be allocated for breaks."
+#~ msgstr "<b>%u%%</b> av tiden vil bli satt av til pauser."
+
+#, fuzzy
+#~ msgid "Apply changes to ongoing Pomodoro?"
+#~ msgstr "Bruk endringer på pågående Pomodoro?"
+
+#, fuzzy
+#~ msgid "Apply changes to ongoing break?"
+#~ msgstr "Bruk endringer på pågående pause?"
+
+#, fuzzy
+#~ msgid "Apply"
+#~ msgstr "Bruk"
+
+#~ msgctxt "accessibility"
+#~ msgid "Sidebar"
+#~ msgstr "Sidestolpe"
+
+#, fuzzy
+#~ msgid "Compact timer"
+#~ msgstr "Kompakt tidtaker"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.28.1"
+#~ msgstr "Oversikt over endringer i gnome-pomodoro 0.28.1"
+
+#, fuzzy
+#~ msgid "Added Tamil translation (thanks @omeritzics)"
+#~ msgstr "Lagt til tamilsk oversettelse (takk til @omeritzics)"
+
+#, fuzzy
+#~ msgid "Added Hebrew translation (thanks @Killersparrow1)"
+#~ msgstr "Lagt til hebraisk oversettelse (takk til @Killersparrow1)"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.28.0"
+#~ msgstr "Oversikt over endringer i gnome-pomodoro 0.28.0"
+
+#, fuzzy
+#~ msgid "Support for GNOME Shell 49 (thanks @aleasto)"
+#~ msgstr "Støtte for GNOME Shell 49 (takk til @aleasto)"
+
+#, fuzzy
+#~ msgid "Updated German translation (thanks @daPhipz)"
+#~ msgstr "Oppdatert tysk oversettelse (takk til @daPhipz)"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.27.0"
+#~ msgstr "Oversikt over endringer i gnome-pomodoro 0.27.0"
+
+#, fuzzy
+#~ msgid "Support for GNOME Shell 48"
+#~ msgstr "Støtte for GNOME Shell 48"
+
+#, fuzzy
+#~ msgid "Split time spent across midnight"
+#~ msgstr "Delt tidsbruk over midnatt"
+
+#, fuzzy
+#~ msgid "Added Telugu translation (thanks @SpaciousCoder78)"
+#~ msgstr "Lagt til telugu oversettelse (takk til @SpaciousCoder78)"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.26.0"
+#~ msgstr "Oversikt over endringer i gnome-pomodoro 0.26.0"
+
+#, fuzzy
+#~ msgid "Support for GNOME Shell 47"
+#~ msgstr "Støtte for GNOME Shell 47"
+
+#, fuzzy
+#~ msgid "Allow to dismiss screen overlay by gesture when a video is playing"
+#~ msgstr "Tillat å fjerne skjermoverlegg med bevegelse når en video spilles"
+
+#, fuzzy
+#~ msgid "Added Georgian translation (thanks @NorwayFun)"
+#~ msgstr "Lagt til georgisk oversettelse (takk til @NorwayFun)"
+
+#, fuzzy
+#~ msgid "Adjusted translations in appdata (thanks @yakushabb)"
+#~ msgstr "Justerte oversettelser i appdata (takk til @yakushabb)"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.25.2"
+#~ msgstr "Oversikt over endringer i gnome-pomodoro 0.25.2"
+
+#, fuzzy
+#~ msgid "Fix keeping notification after extending Pomodoro"
+#~ msgstr "Rettet at varsel ble liggende etter forlengelse av Pomodoro"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.25.1"
+#~ msgstr "Oversikt over endringer i gnome-pomodoro 0.25.1"
+
+#, fuzzy
+#~ msgid "Fixes for GNOME Shell 46"
+#~ msgstr "Rettelser for GNOME Shell 46"
+
+#, fuzzy
+#~ msgid "Drop support for GNOME Shell 45"
+#~ msgstr "Fjernet støtte for GNOME Shell 45"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.25.0"
+#~ msgstr "Oversikt over endringer i gnome-pomodoro 0.25.0"
+
+#, fuzzy
+#~ msgid "Support for GNOME Shell 46"
+#~ msgstr "Støtte for GNOME Shell 46"
+
+#, fuzzy
+#~ msgid "Adjust build script to meson 0.59.0 (thanks @mattst88)"
+#~ msgstr "Justerte byggeskript til meson 0.59.0 (takk til @mattst88)"
+
+#, fuzzy
+#~ msgid ""
+#~ "Let <b>Pomodoro</b> manage system notifications while the timer is running"
+#~ msgstr "La <b>Pomodoro</b> håndtere systemvarsler mens tidtakeren kjører"
+
+#, fuzzy
+#~ msgid "15 seconds"
+#~ msgstr "15 sekunder"
+
+#, fuzzy
+#~ msgid "30 seconds"
+#~ msgstr "30 sekunder"
+
+#, fuzzy
+#~ msgid "1 minute"
+#~ msgstr "1 minutt"
+
+#, fuzzy
+#~ msgid "2 minutes"
+#~ msgstr "2 minutter"
+
+#, fuzzy
+#~ msgid "3 minutes"
+#~ msgstr "3 minutter"
+
+#, fuzzy
+#~ msgid "5 minutes"
+#~ msgstr "5 minutter"
+
+#~ msgid "Timer Ticking"
+#~ msgstr "Klikking av tidtaker"
+
+#, fuzzy
+#~ msgid "Birds"
+#~ msgstr "Fugler"
+
+#~ msgid "@APPLICATION_NAME@"
+#~ msgstr "@APPLICATION_NAME@"
+
+#~ msgid "timer;"
+#~ msgstr "timer;tidtaker;nedtelling;"
+
+#~ msgid "Start/Stop"
+#~ msgstr "Start/Stopp"
+
+#~ msgid "Pause/Resume"
+#~ msgstr "Pause/Fortsett"
+
+#~ msgid "Skip to a pomodoro or to a break"
+#~ msgstr "Hopp til en pomodoro eller til en pause"
+
+#~ msgid "Reset current session"
+#~ msgstr "Tilbakestill gjeldende økt"
+
+#~ msgid "Run as background service"
+#~ msgstr "Kjør som bakgrunnstjeneste"
+
+#~ msgid "About Pomodoro"
+#~ msgstr "Om Pomodoro"
+
+#~ msgid "A simple time management utility"
+#~ msgstr "Et enkelt pauseverktøy"
+
+#, fuzzy
+#~ msgid "_Stopped"
+#~ msgstr "_Stoppet"
+
+#, fuzzy
+#~ msgid "Extension for GNOME Shell is available"
+#~ msgstr "Utvidelse for GNOME Shell er tilgjengelig"
+
+#, fuzzy
+#~ msgid "Failed to install extension"
+#~ msgstr "Kunne ikke installere utvidelse"
+
+#, fuzzy, c-format
+#~ msgid "Long break due in %s"
+#~ msgstr "Lang pause om %s"
 
 #~ msgid "A time management utility for GNOME"
 #~ msgstr "Et pauseverktøy for GNOME"
@@ -295,51 +1540,49 @@ msgstr "Pause"
 #~ msgid "Indicator for GNOME Shell"
 #~ msgstr "Indikator for GNOME-skallet"
 
-#~ msgid "A simple time management utility"
-#~ msgstr "Et enkelt pauseverktøy"
+#, fuzzy
+#~ msgid "Support for GNOME Shell 42 (@milotype and @kappa)"
+#~ msgstr "Støtte for GNOME Shell 42 (@milotype og @kappa)"
 
-#~ msgid "timer;"
-#~ msgstr "timer;"
+#, fuzzy
+#~ msgid "Support for GNOME Shell 41 (@mbooth101)"
+#~ msgstr "Støtte for GNOME Shell 41 (@mbooth101)"
 
-#~ msgid "Start"
-#~ msgstr "Start"
+#, fuzzy
+#~ msgid "Support GNOME Shell 40.0, not 4.0"
+#~ msgstr "Støtte GNOME Shell 40.0, ikke 4.0"
 
-#~ msgid "Pause"
-#~ msgstr "Avbryt"
+#, fuzzy
+#~ msgid "Support for GNOME Shell 4.0"
+#~ msgstr "Støtte for GNOME Shell 4.0"
 
-#~ msgid "Resume"
-#~ msgstr "Fortsett"
+#, fuzzy
+#~ msgid "Support for GNOME Shell 3.38 (@ignapk and @szpak)"
+#~ msgstr "Støtte for GNOME Shell 3.38 (@ignapk og @szpak)"
 
-#~ msgid "Stop"
-#~ msgstr "Stopp"
+#, fuzzy
+#~ msgid "Support for GNOME Shell 3.36"
+#~ msgstr "Støtte for GNOME Shell 3.36"
+
+#, fuzzy
+#~ msgid "Support for GNOME Shell 3.34 only"
+#~ msgstr "Støtte bare for GNOME Shell 3.34"
+
+#, fuzzy
+#~ msgid "Support for GNOME Shell 3.32 (@demokritos)"
+#~ msgstr "Støtte for GNOME Shell 3.32 (@demokritos)"
+
+#, fuzzy
+#~ msgid "Support for GNOME Shell 3.28 and 3.30 (@aerostitch)"
+#~ msgstr "Støtte for GNOME Shell 3.28 og 3.30 (@aerostitch)"
 
 #~ msgid "_Timer"
 #~ msgstr "_Tidtaker"
 
-#~ msgid "_Preferences"
-#~ msgstr "_Innstillinger"
-
-#~ msgid "_Quit"
-#~ msgstr "_Avslutt"
-
 #~ msgid "Keyboard shortcut to toggle the timer. Enter new shortcut to change."
 #~ msgstr ""
-#~ "Hurtigtast for å starte/stoppe timeren. Trykk ny hurtigtast for å endre."
-
-#~ msgid "Disable"
-#~ msgstr "Slå av"
-
-#~ msgid "Timer"
-#~ msgstr "Timer"
-
-#~ msgid "Pomodoro duration"
-#~ msgstr "Lengde, Pomodoro"
-
-#~ msgid "Break duration"
-#~ msgstr "Lengde, kort pause"
-
-#~ msgid "Long break duration"
-#~ msgstr "Lengde, lang pause"
+#~ "Hurtigtast for å starte/stoppe tidtakeren. Trykk ny hurtigtast for å "
+#~ "endre."
 
 #~ msgid "Pomodoros before a long break"
 #~ msgstr "Antall Pomodoro før lang pause"
@@ -347,14 +1590,8 @@ msgstr "Pause"
 #~ msgid "Keyboard shortcut"
 #~ msgstr "Hurtigtast"
 
-#~ msgid "Notifications"
-#~ msgstr "Varsler"
-
 #~ msgid "Screen notifications"
 #~ msgstr "Skjermvarsler"
-
-#~ msgid "Desktop"
-#~ msgstr "Skrivebord"
 
 #~ msgid "Wait for activity after a break"
 #~ msgstr "Vent på aktivitet etter pause"
@@ -368,20 +1605,8 @@ msgstr "Pause"
 #~ msgid "Back"
 #~ msgstr "Tilbake"
 
-#~ msgid "Nothing to see yet"
-#~ msgstr "Ingenting her ennå"
-
 #~ msgid "Complete a few sessions"
 #~ msgstr "Fullfør et par økter"
-
-#~ msgid "Day"
-#~ msgstr "Dag"
-
-#~ msgid "Week"
-#~ msgstr "Uke"
-
-#~ msgid "Month"
-#~ msgstr "Måned"
 
 #~ msgid "Previous (Alt+Left)"
 #~ msgstr "Forrige (Alt+Venstre)"
@@ -389,47 +1614,11 @@ msgstr "Pause"
 #~ msgid "Next (Alt+Right)"
 #~ msgstr "Neste (Alt+Høyre)"
 
-#~ msgid "Today"
-#~ msgstr "I dag"
-
-#~ msgid "_About"
-#~ msgstr "_Om"
-
-#~ msgid "Actions"
-#~ msgstr "Handlinger"
-
-#~ msgid "Action"
-#~ msgstr "Handling"
-
-#~ msgid "Custom actions…"
-#~ msgstr "Egendefinerte handlinger…"
-
 #~ msgid "Complete"
 #~ msgstr "Ferdig"
 
-#~ msgid "Skip"
-#~ msgstr "Hopp over"
-
 #~ msgid "Enable"
 #~ msgstr "Slå på"
-
-#~ msgid "Command"
-#~ msgstr "Kommando"
-
-#~ msgid "Triggers"
-#~ msgstr "Triggere"
-
-#~ msgid "Name"
-#~ msgstr "Navn"
-
-#~ msgid "_Pomodoro"
-#~ msgstr "_Pomodoro"
-
-#~ msgid "_Short Break"
-#~ msgstr "_Kort pause"
-
-#~ msgid "_Long Break"
-#~ msgstr "_Lang pause"
 
 #~ msgid "Add"
 #~ msgstr "Legg til"
@@ -437,32 +1626,17 @@ msgstr "Pause"
 #~ msgid "Remove"
 #~ msgstr "Fjern"
 
-#~ msgid "State"
-#~ msgstr "Status"
-
-#~ msgid "State Duration"
-#~ msgstr "Tilstandens varighet"
-
 #~ msgid "Elapsed Time"
 #~ msgstr "Forløpt tid"
 
-#~ msgid "Pomodoro Timer"
-#~ msgstr "Pomodoro-timer"
-
-#~ msgid "Start Timer"
-#~ msgstr "Start timer"
-
 #~ msgid "Pause Timer"
-#~ msgstr "Interrupt"
-
-#~ msgid "Stop Timer"
-#~ msgstr "Stopp timer"
+#~ msgstr "Pause tidtaker"
 
 #~ msgid "Pause break"
-#~ msgstr "Avbryt"
+#~ msgstr "Pause"
 
 #~ msgid "Pause Pomodoro"
-#~ msgstr "Avbryt"
+#~ msgstr "Pause"
 
 #~ msgid "Resume break"
 #~ msgstr "Fortsett"
@@ -477,56 +1651,11 @@ msgstr "Pause"
 #~ msgstr[1] "%d minutter igjen"
 
 #, javascript-format
-#~ msgid "%d second remaining"
-#~ msgid_plural "%d seconds remaining"
-#~ msgstr[0] "%d sekund igjen"
-#~ msgstr[1] "%d sekund igjen"
-
-#~ msgid "Break is over"
-#~ msgstr "Pausen er over"
-
-#~ msgid "Skip Break"
-#~ msgstr "Hopp over pause"
-
-#~ msgid "+1 Minute"
-#~ msgstr "+1 minutt"
-
-#, javascript-format
 #~ msgid "Failed to run <i>%s</i> service"
 #~ msgstr "Kunne ikke kjøre tjenesten <i>%s</i>"
 
-#~ msgid "Hide other notifications"
-#~ msgstr "Skjul andre varsler"
-
-#~ msgid "Volume:"
-#~ msgstr "Volum:"
-
-#~ msgid "Clock Ticking"
-#~ msgstr "Tikking av klokke"
-
-#~ msgid "Timer Ticking"
-#~ msgstr "Klikking av timer"
-
 #~ msgid "Woodland Birds"
 #~ msgstr "Skogsfugler"
-
-#~ msgid "Bell"
-#~ msgstr "Bjelle"
-
-#~ msgid "Loud Bell"
-#~ msgstr "Kraftig bjelle"
-
-#~ msgid "Select Custom Sound"
-#~ msgstr "Velg egendefinert lyd"
-
-#~ msgid "_Cancel"
-#~ msgstr "A_vbryt"
-
-#~ msgid "_Select"
-#~ msgstr "_Velg"
-
-#~ msgid "Ticking Sound"
-#~ msgstr "Klikkelyd"
 
 #~ msgid "End of Break Sound"
 #~ msgstr "Lyd ved slutt på pause"
@@ -546,39 +1675,6 @@ msgstr "Pause"
 #~ msgid "End of break sound"
 #~ msgstr "Lyd ved slutt på pause"
 
-#~ msgid "About Pomodoro"
-#~ msgstr "Om Pomodorosta"
-
-#~ msgid "translator-credits"
-#~ msgstr "translator-credits"
-
-#~ msgid "Start/Stop"
-#~ msgstr "Start/Stopp"
-
-#~ msgid "Pause/Resume"
-#~ msgstr "Avbryt/Fortsett"
-
-#~ msgid "Skip to a pomodoro or to a break"
-#~ msgstr "Hopp til en pomodoro eller til en pause"
-
-#~ msgid "Extend current pomodoro or break"
-#~ msgstr "Forleng gjeldende pomodoro eller pause"
-
-#~ msgid "Reset current session"
-#~ msgstr "Tilbakestill gjeldende økt"
-
-#~ msgid "Run as background service"
-#~ msgstr "Kjør som bakgrunnstjeneste"
-
-#~ msgid "Show preferences"
-#~ msgstr "Vis innstillinger"
-
-#~ msgid "Quit application"
-#~ msgstr "Avslutt programmet"
-
-#~ msgid "Print version information and exit"
-#~ msgstr "Vis versjonsinformasjon og avslutt"
-
 #~ msgid "Focus on your task."
 #~ msgstr "Fokuser på oppgaven."
 
@@ -595,7 +1691,7 @@ msgstr "Pause"
 #~ msgstr[1] "Du har %d sekunder"
 
 #~ msgid "Take a longer break"
-#~ msgstr "Ta en legre pause"
+#~ msgstr "Ta en lengre pause"
 
 #~ msgid "Lengthen it"
 #~ msgstr "Forleng den"
@@ -614,9 +1710,6 @@ msgstr "Pause"
 #~ "Hurtigtasten \"%s\" vil forstyrre skrivinga. Prøv å legge til en annen "
 #~ "tast, som Kontroll, Alt eller Shift."
 
-#~ msgid "Keyboard Shortcut"
-#~ msgstr "Hurtigtast"
-
 #~ msgid "Available"
 #~ msgstr "Tilgjengelig"
 
@@ -628,9 +1721,6 @@ msgstr "Pause"
 
 #~ msgid "Invisible"
 #~ msgstr "Usynlig"
-
-#~ msgid "Yesterday"
-#~ msgstr "I går"
 
 #, c-format
 #~ msgid "%d m"
@@ -644,35 +1734,11 @@ msgstr "Pause"
 #~ msgid "%.1f h"
 #~ msgstr "%.1f t"
 
-#~ msgid "This week"
-#~ msgstr "Denne uken"
-
-#~ msgid "Kamil Prusko"
-#~ msgstr "Kamil Prusko"
-
-#, fuzzy
-#~ msgid "Support for GNOME Shell 4.0"
-#~ msgstr "Indikator for GNOME-skallet"
-
-#, fuzzy
-#~ msgid "Support for GNOME Shell 3.36"
-#~ msgstr "Indikator for GNOME-skallet"
-
-#, fuzzy
-#~ msgid "Support for GNOME Shell 3.34 only"
-#~ msgstr "Indikator for GNOME-skallet"
-
 #~ msgid "gnome-pomodoro"
 #~ msgstr "gnome-pomodoro"
 
 #~ msgid "_Stats"
 #~ msgstr "_Statistikk"
-
-#~ msgid "Paused"
-#~ msgstr "Satt på pause"
-
-#~ msgid "Failed to enable extension"
-#~ msgstr "Kunne ikke slå på utvidelsen"
 
 #~ msgid "It seems to be uninstalled"
 #~ msgstr "Ser ut til at det er avinstallert"

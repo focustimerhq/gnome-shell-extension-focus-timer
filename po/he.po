@@ -1,16 +1,18 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the gnome-pomodoro package.
+# Hebrew translation for gnome-shell-extension-focus-timer
+# Copyright (c) 2025 focus-timer contributors
+# This file is distributed under the same license as the focus-timer package.
+#
+# Authors:
 # Omer I.S. <omeritzicschwartz@gmail.com>, 2025.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-pomodoro\n"
+"Project-Id-Version: gnome-shell-extension-focus-timer 1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-25 16:45+0100\n"
+"POT-Creation-Date: 2026-04-12 13:38+0200\n"
 "PO-Revision-Date: 2025-12-11 22:52+0200\n"
 "Last-Translator: Omer I.S. <omeritzicschwartz@gmail.com>\n"
-"Language-Team: \n"
+"Language-Team: Hebrew\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,93 +21,75 @@ msgstr ""
 "2 : 3);\n"
 "X-Generator: Poedit 3.8\n"
 
-#: data/org.gnome.shell.extensions.focus-timer.gschema.xml:6
-msgid "Start the app along with extension"
-msgstr ""
-
-#: data/org.gnome.shell.extensions.focus-timer.gschema.xml:14
-msgid "Indicator type"
-msgstr ""
-
-#: data/org.gnome.shell.extensions.focus-timer.gschema.xml:18
-msgid "Blur effect"
-msgstr ""
-
-#: data/org.gnome.shell.extensions.focus-timer.gschema.xml:22
-msgid "Dismiss screen overlay by gesture"
-msgstr ""
-
-#: data/org.gnome.shell.extensions.focus-timer.gschema.xml:26
-msgid "Reduce number of notifications during Pomodoro"
-msgstr ""
+#: src/indicator.js:329 src/screenShield.js:171
+#, fuzzy
+msgid "Finished!"
+msgstr "הסתיים!"
 
 #: src/indicator.js:331 src/screenShield.js:173
-msgid "Finished!"
-msgstr ""
-
-#: src/indicator.js:333 src/screenShield.js:175
 #, javascript-format
 msgid "%d of %d"
 msgstr ""
 
-#: src/indicator.js:420 src/prefs.js:73
+#: src/indicator.js:425 src/prefs.js:71
+#, fuzzy
 msgid "Screen Overlay"
-msgstr ""
+msgstr "כיסוי מסך"
 
-#: src/indicator.js:423
+#: src/indicator.js:427
 msgid "Preferences"
 msgstr "העדפות"
 
-#: src/indicator.js:424
+#: src/indicator.js:428
 msgid "Stats"
 msgstr "סטטיסטיקה"
 
-#: src/indicator.js:426
+#: src/indicator.js:430
 msgid "Quit"
 msgstr "יציאה"
 
-#: src/indicator.js:601
+#: src/indicator.js:624
 #, javascript-format
 msgid "%dh"
 msgstr ""
 
-#: src/indicator.js:605
+#: src/indicator.js:628
 #, javascript-format
 msgid "%dm"
 msgstr ""
 
-#: src/indicator.js:613
+#: src/indicator.js:630 src/indicator.js:632 src/indicator.js:634
 #, javascript-format
 msgid "%ds"
 msgstr ""
 
-#: src/indicator.js:1058 src/notifications.js:59
+#: src/indicator.js:1079 src/notifications.js:57
 msgid "Focus Timer"
 msgstr ""
 
-#: src/notifications.js:79
+#: src/notifications.js:77
 msgid "Focus Timer Extension"
 msgstr ""
 
-#: src/notifications.js:115
+#: src/notifications.js:119
 #, javascript-format
 msgid "%d hour"
 msgid_plural "%d hours"
-msgstr[0] "שעה אחת (%d)"
-msgstr[1] "שעתיים (%d)"
-msgstr[2] "%d שעות"
-msgstr[3] "%d שעות"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
-#: src/notifications.js:118
+#: src/notifications.js:122
 #, javascript-format
 msgid "%d minute"
 msgid_plural "%d minutes"
-msgstr[0] "דקה אחת (%d)"
-msgstr[1] "%d דקות"
-msgstr[2] "%d דקות"
-msgstr[3] "%d דקות"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
-#: src/notifications.js:121
+#: src/notifications.js:125
 #, javascript-format
 msgid "%d second"
 msgid_plural "%d seconds"
@@ -115,174 +99,1429 @@ msgstr[2] ""
 msgstr[3] ""
 
 #. translators: time remaining eg. "3 minutes 50 seconds remaining"
-#: src/notifications.js:128
-#, javascript-format
+#: src/notifications.js:135
+#, fuzzy, javascript-format
 msgid "%s remaining"
-msgstr ""
+msgstr "נותרו %s"
 
-#: src/notifications.js:239 src/timer.js:54
+#: src/notifications.js:261 src/timer.js:47
 msgid "Pomodoro"
 msgstr "פומודורו"
 
-#: src/notifications.js:241
+#: src/notifications.js:263
 msgid "Take a break"
 msgstr "לקיחת הפסקה"
 
-#: src/notifications.js:243
+#: src/notifications.js:265
 msgid "Take a short break"
 msgstr "הגיע הזמן להפסקה קצרה"
 
-#: src/notifications.js:245
+#: src/notifications.js:267
 msgid "Take a long break"
 msgstr "לקיחת הפסקה ארוכה"
 
-#: src/notifications.js:253
+#: src/notifications.js:275
 msgid "Pomodoro is about to end"
 msgstr "הפומודורו עומד להסתיים"
 
-#: src/notifications.js:255
+#: src/notifications.js:277
 msgid "Break is about to end"
 msgstr "ההפסקה עומדת להסתיים"
 
-#: src/notifications.js:263 src/notifications.js:275
+#: src/notifications.js:285 src/notifications.js:297
+#, fuzzy
 msgid "Break is over!"
-msgstr ""
+msgstr "ההפסקה נגמרה!"
 
-#: src/notifications.js:265 src/notifications.js:273
+#: src/notifications.js:287 src/notifications.js:295
+#, fuzzy
 msgid "Pomodoro is over!"
-msgstr ""
+msgstr "הפומודורו נגמר!"
 
-#: src/notifications.js:294
+#: src/notifications.js:316
 msgid "Get ready…"
 msgstr "זמן להתכונן…"
 
-#: src/notifications.js:299
+#: src/notifications.js:321
+#, fuzzy
 msgid "Confirm the start of a Pomodoro…"
-msgstr ""
+msgstr "אישור התחלת פומודורו…"
 
-#: src/notifications.js:301
+#: src/notifications.js:323
+#, fuzzy
 msgid "Confirm the start of a break…"
-msgstr ""
+msgstr "אישור התחלת הפסקה…"
 
-#: src/notifications.js:303
+#: src/notifications.js:325
+#, fuzzy
 msgid "Confirm the start of a short break…"
-msgstr ""
+msgstr "אישור התחלת הפסקה קצרה…"
 
-#: src/notifications.js:305
+#: src/notifications.js:327
+#, fuzzy
 msgid "Confirm the start of a long break…"
-msgstr ""
+msgstr "אישור התחלת הפסקה ארוכה…"
 
-#: src/notifications.js:344
+#: src/notifications.js:366
+#, fuzzy
 msgid "+1 minute"
-msgstr ""
+msgstr "+1 דקה"
 
-#: src/notifications.js:345
+#: src/notifications.js:367
 msgid "Start Pomodoro"
 msgstr "התחלת פומודורו"
 
-#: src/notifications.js:346
+#: src/notifications.js:368
 msgid "Start Break"
 msgstr ""
 
-#: src/notifications.js:403
+#: src/notifications.js:425
+#, fuzzy
 msgid "Something went wrong"
-msgstr ""
+msgstr "משהו השתבש"
 
-#: src/notifications.js:409
+#: src/notifications.js:431
 msgid "Report issue"
 msgstr "דיווח על בעיה"
 
-#: src/notifications.js:429
+#: src/notifications.js:451
 msgid "Focus Timer Not Found"
 msgstr ""
 
-#: src/notifications.js:430
+#: src/notifications.js:452
 msgid "Install Focus Timer app to start using the extension."
 msgstr ""
 
-#: src/notifications.js:435
+#: src/notifications.js:457
 msgid "Install from Flathub"
 msgstr ""
 
-#: src/prefs.js:14
+#: src/prefs.js:12
 msgid "General"
 msgstr ""
 
-#: src/prefs.js:20
+#: src/prefs.js:18
 msgid "Autostart The App"
 msgstr ""
 
-#: src/prefs.js:21
+#: src/prefs.js:19
 msgid "Makes the indicator instantly visible and allows keyboard shortcuts"
 msgstr ""
 
-#: src/prefs.js:34
+#: src/prefs.js:32
 msgid "Indicator"
 msgstr ""
 
-#: src/prefs.js:47
+#: src/prefs.js:45
 msgid "Icon"
 msgstr ""
 
-#: src/prefs.js:53
+#: src/prefs.js:51
 msgid "Text"
 msgstr ""
 
-#: src/prefs.js:60
+#: src/prefs.js:58
 msgid "Display As"
 msgstr ""
 
-#: src/prefs.js:61
+#: src/prefs.js:59
 msgid "Choose how the timer appears in the status bar"
 msgstr ""
 
-#: src/prefs.js:79
+#: src/prefs.js:77
 msgid "Blur Effect"
 msgstr ""
 
-#: src/prefs.js:80
+#: src/prefs.js:78
 msgid "Helps to acknowledge the break"
 msgstr ""
 
-#: src/prefs.js:88
+#: src/prefs.js:86
 msgid "Dismiss Gesture"
 msgstr ""
 
-#: src/prefs.js:89
+#: src/prefs.js:87
 msgid "Flick the mouse or press any key to dismiss"
 msgstr ""
 
-#: src/prefs.js:102
+#: src/prefs.js:100
 msgid "Distractions"
 msgstr ""
 
-#: src/prefs.js:108
+#: src/prefs.js:106
 msgid "Manage Notifications"
 msgstr ""
 
-#: src/prefs.js:109
+#: src/prefs.js:107
 msgid "Toggle Do Not Disturb mode during Pomodoro"
 msgstr ""
 
-#: src/screenOverlay.js:987
+#: src/screenOverlay.js:1053
 msgid "It's time to take a break"
 msgstr "הגיע הזמן לקחת הפסקה"
 
-#: src/timer.js:51
+#: src/timer.js:44
+#, fuzzy
 msgid "Stopped"
-msgstr ""
+msgstr "נעצר"
 
-#: src/timer.js:57
+#: src/timer.js:50
 msgid "Short Break"
 msgstr "הפסקה קצרה"
 
-#: src/timer.js:60
+#: src/timer.js:53
 msgid "Long Break"
 msgstr "הפסקה ארוכה"
 
-#: src/timer.js:63
+#: src/timer.js:56
 msgid "Break"
 msgstr "הפסקה"
+
+#, fuzzy
+#~ msgid "Time management utility"
+#~ msgstr "כלי עזר לניהול זמן"
+
+#, fuzzy
+#~ msgid "Maintain focus by taking frequent breaks"
+#~ msgstr "שמירה על ריכוז באמצעות הפסקות תכופות"
+
+#, fuzzy
+#~ msgid ""
+#~ "A productivity timer that helps you work more effectively by breaking "
+#~ "your time into focused work sessions followed by short breaks. Work for "
+#~ "25 minutes, then take a 5-minute break to maintain concentration and "
+#~ "prevent burnout."
+#~ msgstr ""
+#~ "קוצב זמן ליעילות המסייע לך לעבוד בצורה אפקטיבית יותר על ידי חלוקת הזמן "
+#~ "שלך לסבבי עבודה ממוקדים שאחריהם הפסקות קצרות. עבוד במשך 25 דקות, ולאחר "
+#~ "מכן צא להפסקה של 5 דקות כדי לשמור על ריכוז ולמנוע שחיקה."
+
+#, fuzzy
+#~ msgid "Key features:"
+#~ msgstr "תכונות עיקריות:"
+
+#, fuzzy
+#~ msgid "Customizable work session and break lengths"
+#~ msgstr "אפשרות להתאמה אישית של משך סבבי העבודה וההפסקות"
+
+#, fuzzy
+#~ msgid "Visual and audio notifications"
+#~ msgstr "התרעות חזותיות וקוליות"
+
+#, fuzzy
+#~ msgid "Time tracking and statistics"
+#~ msgstr "מעקב זמן וסטטיסטיקה"
+
+#, fuzzy
+#~ msgid "GNOME desktop integration"
+#~ msgstr "שילוב בשולחן העבודה של GNOME"
+
+#, fuzzy
+#~ msgid "Screen overlay during breaks"
+#~ msgstr "שכבת כיסוי למסך בזמן הפסקות"
+
+#, fuzzy
+#~ msgid "Run custom commands after Pomodoro or break"
+#~ msgstr "הפעלת פקודות מותאמות אישית לאחר פומודורו או הפסקה"
+
+#~ msgid "Kamil Prusko"
+#~ msgstr "Kamil Prusko"
+
+#~ msgid "Timer"
+#~ msgstr "קוצב זמן"
+
+#, fuzzy
+#~ msgid "Daily stats"
+#~ msgstr "סטטיסטיקה יומית"
+
+#, fuzzy
+#~ msgid "Monthly stats"
+#~ msgstr "סטטיסטיקה חודשית"
+
+#, fuzzy
+#~ msgid "Screen overlay"
+#~ msgstr "כיסוי מסך"
+
+#, fuzzy
+#~ msgid "Start or Stop"
+#~ msgstr "התחלה או עצירה"
+
+#, fuzzy
+#~ msgid "Start, Pause or Resume"
+#~ msgstr "התחלה, השהיה או המשך"
+
+#~ msgid "Start"
+#~ msgstr "התחלה"
+
+#~ msgid "Stop"
+#~ msgstr "עצירה"
+
+#~ msgid "Pause"
+#~ msgstr "השהיה"
+
+#~ msgid "Resume"
+#~ msgstr "המשך"
+
+#~ msgid "Skip"
+#~ msgstr "דילוג"
+
+#, fuzzy
+#~ msgid "Rewind"
+#~ msgstr "חזרה לאחור"
+
+#~ msgid "Extend current pomodoro or break"
+#~ msgstr "הארכת הפומודורו או ההפסקה הנוכחיים"
+
+#, fuzzy
+#~ msgid "Reset"
+#~ msgstr "איפוס"
+
+#~ msgid "Show preferences"
+#~ msgstr "הצגת ההעדפות"
+
+#~ msgid "Quit application"
+#~ msgstr "יציאה מהיישום"
+
+#~ msgid "Print version information and exit"
+#~ msgstr "הצגת המידע על הגרסה ויציאה"
+
+#, fuzzy
+#~ msgid "Bring to Focus"
+#~ msgstr "הבאה למיקוד"
+
+#, fuzzy, c-format
+#~ msgid "Custom action \"%s\" has failed"
+#~ msgstr "הפעולה המותאמת אישית \"%s\" נכשלה"
+
+#, fuzzy
+#~ msgid "Reached timeout"
+#~ msgstr "הזמן הקצוב הסתיים"
+
+#, fuzzy
+#~ msgid "Failed to execute command"
+#~ msgstr "נכשל ביצוע הפקודה"
+
+#, fuzzy
+#~ msgid "Command is empty"
+#~ msgstr "הפקודה ריקה"
+
+#, fuzzy
+#~ msgid "Unclosed quotation mark"
+#~ msgstr "מירכאות לא סגורות"
+
+#, fuzzy
+#~ msgid "Invalid command"
+#~ msgstr "פקודה לא חוקית"
+
+#, fuzzy, c-format
+#~ msgid "Unknown variable \"%s\""
+#~ msgstr "משתנה לא ידוע \"%s\""
+
+#, fuzzy, c-format
+#~ msgid "Unknown format \"%s\""
+#~ msgstr "פורמט לא ידוע \"%s\""
+
+#, fuzzy, c-format
+#~ msgid "Program \"%s\" not found"
+#~ msgstr "התוכנית \"%s\" לא נמצאה"
+
+#~ msgid "Actions"
+#~ msgstr "פעולות"
+
+#, fuzzy
+#~ msgid "Countdown"
+#~ msgstr "ספירה לאחור"
+
+#, fuzzy
+#~ msgid "Session"
+#~ msgstr "סשן"
+
+#, fuzzy
+#~ msgid "Other"
+#~ msgstr "אחר"
+
+#, fuzzy
+#~ msgid "Started the timer."
+#~ msgstr "הפעלת קוצב הזמן."
+
+#, fuzzy
+#~ msgid "Stopped the timer manually."
+#~ msgstr "עצירת קוצב הזמן באופן ידני."
+
+#, fuzzy
+#~ msgid ""
+#~ "The countdown has been manually paused. Not triggered when locking the "
+#~ "screen or when suspending the system."
+#~ msgstr ""
+#~ "הספירה לאחור הושהתה ידנית. לא מופעל בעת נעילת המסך או השהיית המערכת."
+
+#, fuzzy
+#~ msgid "The countdown has been manually resumed."
+#~ msgstr "הספירה לאחור חודשה באופן ידני."
+
+#, fuzzy
+#~ msgid "Jumped to a next time-block before the countdown has finished."
+#~ msgstr "מעבר לבלוק הזמן הבא לפני סיום הספירה לאחור."
+
+#, fuzzy
+#~ msgid "Rewind action has been used. It adds a pause in the past."
+#~ msgstr "נעשה שימוש בפעולת חזרה לאחור. פעולה זו מוסיפה השהיה בדיעבד."
+
+#, fuzzy
+#~ msgid "Manually cleared the session."
+#~ msgstr "ניקוי הסשן באופן ידני."
+
+#, fuzzy
+#~ msgid "Finished"
+#~ msgstr "הסתיים"
+
+#, fuzzy
+#~ msgid ""
+#~ "The countdown has finished. If waiting for confirmation, the duration of "
+#~ "the time-block still may be altered."
+#~ msgstr ""
+#~ "הספירה לאחור הסתיימה. אם ממתינים לאישור, ייתכן שמשך בלוק הזמן עדיין ישתנה."
+
+#, fuzzy
+#~ msgid "Changed"
+#~ msgstr "השתנה"
+
+#, fuzzy
+#~ msgid "Triggered on any change related to the countdown."
+#~ msgstr "מופעל בכל שינוי הקשור לספירה לאחור."
+
+#, fuzzy
+#~ msgid "Confirm Advancement"
+#~ msgstr "אישור התקדמות"
+
+#, fuzzy
+#~ msgid "A manual confirmation is required to start next time-block."
+#~ msgstr "נדרש אישור ידני כדי להתחיל את בלוק הזמן הבא."
+
+#, fuzzy
+#~ msgid "Advanced"
+#~ msgstr "התקדם"
+
+#, fuzzy
+#~ msgid "Transitioned or skipped to a next time-block."
+#~ msgstr "מעבר או דילוג לבלוק הזמן הבא."
+
+#, fuzzy
+#~ msgid "State Changed"
+#~ msgstr "שינוי מצב"
+
+#, fuzzy
+#~ msgid "Transitioned to a next time-block or when a break gets relabelled."
+#~ msgstr "מעבר לבלוק הזמן הבא או כאשר הפסקה מוגדרת מחדש."
+
+#, fuzzy
+#~ msgid "Rescheduled"
+#~ msgstr "תוזמן מחדש"
+
+#, fuzzy
+#~ msgid "Triggered when scheduled time-blocks have changed."
+#~ msgstr "מופעל כאשר בלוקי זמן מתוזמנים השתנו."
+
+#, fuzzy
+#~ msgid "Expired"
+#~ msgstr "פג תוקף"
+
+#, fuzzy
+#~ msgid "Triggered when session is about to be reset due to inactivity."
+#~ msgstr "מופעל כאשר הסשן עומד להתאפס עקב חוסר פעילות."
+
+#, fuzzy
+#~ msgid "Take a Break"
+#~ msgstr "צאו להפסקה"
+
+#~ msgid "Skip Break"
+#~ msgstr "דילוג על ההפסקה"
+
+#, fuzzy
+#~ msgid "Failed to initialize playback"
+#~ msgstr "נכשלהחול הנגינה"
+
+#, fuzzy
+#~ msgid "File not found"
+#~ msgstr "קובץ לא נמצא"
+
+#, fuzzy
+#~ msgid "File type not supported"
+#~ msgstr "סוג קובץ לא נתמך"
+
+#, fuzzy, c-format
+#~ msgid "%uh"
+#~ msgstr "%u שע׳"
+
+#, fuzzy, c-format
+#~ msgid "%um"
+#~ msgstr "%u דק׳"
+
+#, fuzzy, c-format
+#~ msgid "%u hour"
+#~ msgid_plural "%u hours"
+#~ msgstr[0] "שעה %u"
+#~ msgstr[1] "שעתיים"
+#~ msgstr[2] "%u שעות"
+#~ msgstr[3] "%u שעות"
+
+#, fuzzy, c-format
+#~ msgid "%u minute"
+#~ msgid_plural "%u minutes"
+#~ msgstr[0] "דקה אחת"
+#~ msgstr[1] "%u דקות"
+#~ msgstr[2] "%u דקות"
+#~ msgstr[3] "%u דקות"
+
+#, fuzzy, c-format
+#~ msgid "%u second"
+#~ msgid_plural "%u seconds"
+#~ msgstr[0] "שנייה אחת"
+#~ msgstr[1] "%u שניות"
+#~ msgstr[2] "%u שניות"
+#~ msgstr[3] "%u שניות"
+
+#, fuzzy
+#~ msgid "The exact time of the current event."
+#~ msgstr "הזמן המדויק של האירוע הנוכחי."
+
+#, fuzzy
+#~ msgid ""
+#~ "The current phase of the Pomodoro cycle. Possible values: <tt>stopped</"
+#~ "tt>, <tt>pomodoro</tt>, <tt>break</tt>, <tt>short-break</tt>, <tt>long-"
+#~ "break</tt>."
+#~ msgstr ""
+#~ "השלב הנוכחי במחזור הפומודורו. ערכים אפשריים: <tt>stopped</tt> (עצור), "
+#~ "<tt>pomodoro</tt> (פומודורו), <tt>break</tt> (הפסקה), <tt>short-break</"
+#~ "tt> (הפסקה קצרה), <tt>long-break</tt> (הפסקה ארוכה)."
+
+#, fuzzy
+#~ msgid ""
+#~ "Status of the current time-block. Possible values: <tt>scheduled</tt>, "
+#~ "<tt>in-progress</tt>, <tt>completed</tt>, <tt>uncompleted</tt>."
+#~ msgstr ""
+#~ "סטטוס בלוק הזמן הנוכחי. ערכים אפשריים: <tt>scheduled</tt> (מתוזמן), "
+#~ "<tt>in-progress</tt> (בביצוע), <tt>completed</tt> (הושלם), "
+#~ "<tt>uncompleted</tt> (לא הושלם)."
+
+#, fuzzy
+#~ msgid "A flag indicating whether countdown has begun."
+#~ msgstr "דגל המציין אם הספירה לאחור החלה."
+
+#, fuzzy
+#~ msgid "A flag indicating whether countdown is paused."
+#~ msgstr "דגל המציין אם הספירה לאחור מושהית."
+
+#, fuzzy
+#~ msgid "A flag indicating whether countdown has finished."
+#~ msgstr "דגל המציין אם הספירה לאחור הסתיימה."
+
+#, fuzzy
+#~ msgid "A flag indicating whether the timer is actively counting down."
+#~ msgstr "דגל המציין אם קוצב הזמן פועל באופן פעיל."
+
+#, fuzzy
+#~ msgid "Duration of the current countdown."
+#~ msgstr "משך הספירה לאחור הנוכחית."
+
+#, fuzzy
+#~ msgid "Discrepancy between elapsed time and the time passed."
+#~ msgstr "ההפרש בין הזמן שחלף לבין הזמן שעבר בפועל."
+
+#, fuzzy
+#~ msgid "The amount of time spent on the countdown."
+#~ msgstr "משך הזמן שהושקע בספירה לאחור."
+
+#, fuzzy
+#~ msgid "The amount of time left before the countdown ends."
+#~ msgstr "משך הזמן שנותר עד לסיום הספירה לאחור."
+
+#, fuzzy
+#~ msgid "Time when the countdown has started."
+#~ msgstr "הזמן בו החלה הספירה לאחור."
+
+#, fuzzy
+#~ msgid "GNOME Shell Extension"
+#~ msgstr "הרחבה ל־GNOME Shell"
+
+#, fuzzy
+#~ msgid "Get the best experience!"
+#~ msgstr "קבלו את החוויה הטובה ביותר!"
+
+#, fuzzy
+#~ msgid "Enable <b>GNOME Shell extension</b> for seamless desktop integration"
+#~ msgstr "הפעילו את <b>הרחבת GNOME Shell</b> לשילוב חלק בשולחן העבודה"
+
+#, fuzzy
+#~ msgid "Always within reach"
+#~ msgstr "תמיד בהישג יד"
+
+#, fuzzy
+#~ msgid "Control timer directly from the top bar without opening the app"
+#~ msgstr "שלטו בקוצב הזמן ישירות מהסרגל העליון ללא פתיחת האפליקציה"
+
+#, fuzzy
+#~ msgid "Less distractions"
+#~ msgstr "פחות הסחות דעת"
+
+#, fuzzy
+#~ msgid "Refined break reminders"
+#~ msgstr "תזכורות הפסקה משופרות"
+
+#, fuzzy
+#~ msgid ""
+#~ "Elegant full-screen overlay that make taking breaks a more pleasant "
+#~ "experience"
+#~ msgstr "כיסוי מסך מלא ואלגנטי שהופך את היציאה להפסקה לחוויה נעימה יותר"
+
+#, fuzzy
+#~ msgid "Ready to try it?"
+#~ msgstr "מוכנים לנסות?"
+
+#, fuzzy
+#~ msgid "_Install Extension"
+#~ msgstr "התקנת _הרחבה"
+
+#, fuzzy
+#~ msgid "_Not Now"
+#~ msgstr "_לא עכשיו"
+
+#, fuzzy
+#~ msgid "Copy to clipboard"
+#~ msgstr "העתקה ללוח"
+
+#, fuzzy
+#~ msgid "_Try Again"
+#~ msgstr "_ניסיון חוזר"
+
+#, fuzzy
+#~ msgid "_Abort"
+#~ msgstr "_ביטול"
+
+#, fuzzy
+#~ msgid "Time-out reached"
+#~ msgstr "הזמן הקצוב הסתיים"
+
+#, fuzzy
+#~ msgid "Installing extensions is not allowed"
+#~ msgstr "התקנת הרחבות אינה מורשית"
+
+#, fuzzy
+#~ msgid "Failed to download the extension"
+#~ msgstr "הורדת ההרחבה נכשלה"
+
+#~ msgid "Desktop"
+#~ msgstr "שולחן העבודה"
+
+#, fuzzy
+#~ msgid "GNOME Shell extension available"
+#~ msgstr "הרחבה ל־GNOME Shell זמינה"
+
+#, fuzzy
+#~ msgid "Learn More"
+#~ msgstr "מידע נוסף"
+
+#, fuzzy
+#~ msgid "Unused"
+#~ msgstr "לא בשימוש"
+
+#, fuzzy
+#~ msgid "Log"
+#~ msgstr "יומן"
+
+#, fuzzy
+#~ msgid "Empty Log"
+#~ msgstr "יומן ריק"
+
+#, fuzzy
+#~ msgid "Entries will show up here once you start the timer."
+#~ msgstr "רישומים יופיעו כאן ברגע שתפעילו את קוצב הזמן."
+
+#, fuzzy
+#~ msgid "Context"
+#~ msgstr "הקשר"
+
+#~ msgid "Command"
+#~ msgstr "פקודה"
+
+#, fuzzy
+#~ msgid "Output"
+#~ msgstr "פלט"
+
+#, fuzzy
+#~ msgid "Error"
+#~ msgstr "שגיאה"
+
+#, fuzzy
+#~ msgid "Exit Code:"
+#~ msgstr "קוד יציאה:"
+
+#, fuzzy
+#~ msgid "Execution Time:"
+#~ msgstr "זמן ביצוע:"
+
+#~ msgid "translator-credits"
+#~ msgstr "עומר א״ש <omeritzicschwartz@gmail.com>"
+
+#, fuzzy
+#~ msgid "Donate"
+#~ msgstr "תרומה"
+
+#, fuzzy
+#~ msgid "Breaks"
+#~ msgstr "הפסקות"
+
+#, fuzzy
+#~ msgid "Interruptions"
+#~ msgstr "הפרעות"
+
+#, fuzzy
+#~ msgid "Break Ratio"
+#~ msgstr "יחס הפסקות"
+
+#~ msgid "Day"
+#~ msgstr "יום"
+
+#~ msgid "Week"
+#~ msgstr "שבוע"
+
+#~ msgid "Month"
+#~ msgstr "חודש"
+
+#, fuzzy
+#~ msgid "Nothing to see here yet"
+#~ msgstr "עדיין אין מה לראות כאן"
+
+#, fuzzy
+#~ msgid "Finish a few Pomodoros to fill this up!"
+#~ msgstr "השלימו כמה סבבי פומודורו כדי למלא את הגרף!"
+
+#, fuzzy, c-format
+#~ msgid "Skipped %u day"
+#~ msgid_plural "Skipped %u days"
+#~ msgstr[0] "יום אחד דולג"
+#~ msgstr[1] "יומיים דולגו"
+#~ msgstr[2] "%u ימים דולגו"
+#~ msgstr[3] "%u ימים דולגו"
+
+#, fuzzy, c-format
+#~ msgid "Skipped %u week"
+#~ msgid_plural "Skipped %u weeks"
+#~ msgstr[0] "שבוע אחד דולג"
+#~ msgstr[1] "שבועיים דולגו"
+#~ msgstr[2] "%u שבועות דולגו"
+#~ msgstr[3] "%u שבועות דולגו"
+
+#, fuzzy, c-format
+#~ msgid "Skipped %u month"
+#~ msgid_plural "Skipped %u months"
+#~ msgstr[0] "חודש אחד דולג"
+#~ msgstr[1] "חודשיים דולגו"
+#~ msgstr[2] "%u חודשים דולגו"
+#~ msgstr[3] "%u חודשים דולגו"
+
+#~ msgid "Today"
+#~ msgstr "היום"
+
+#~ msgid "Yesterday"
+#~ msgstr "אתמול"
+
+#~ msgid "This week"
+#~ msgstr "השבוע"
+
+#, fuzzy, c-format
+#~ msgid "Week %u"
+#~ msgstr "שבוע %u"
+
+#, fuzzy, c-format
+#~ msgid "Week %u of %u"
+#~ msgstr "שבוע %u מתוך %u"
+
+#~ msgid "_Pomodoro"
+#~ msgstr "_פומודורו"
+
+#~ msgid "_Short Break"
+#~ msgstr "הפסקה _קצרה"
+
+#~ msgid "_Long Break"
+#~ msgstr "הפסקה ארו_כה"
+
+#, fuzzy
+#~ msgid "_Break"
+#~ msgstr "_הפסקה"
+
+#, fuzzy
+#~ msgid "Open screen overlay"
+#~ msgstr "פתיחת כיסוי המסך"
+
+#, fuzzy
+#~ msgid "Session has expired"
+#~ msgstr "הסשן פג"
+
+#, fuzzy, c-format
+#~ msgid "Long break due in <b>%s</b>"
+#~ msgstr "הפסקה ארוכה בעוד <b>%s</b>"
+
+#, fuzzy
+#~ msgid "Rewind one minute"
+#~ msgstr "חזרה דקה אחת אחורה"
+
+#, fuzzy
+#~ msgid "_Compact View"
+#~ msgstr "תצוגה _קומפקטית"
+
+#~ msgid "_Preferences"
+#~ msgstr "ה_עדפות"
+
+#~ msgid "_About"
+#~ msgstr "על _אודות"
+
+#~ msgid "_Quit"
+#~ msgstr "י_ציאה"
+
+#, fuzzy
+#~ msgid "Primary Menu"
+#~ msgstr "תפריט ראשי"
+
+#, fuzzy
+#~ msgid "Keep timer running?"
+#~ msgstr "להשאיר את קוצב הזמן פועל?"
+
+#, fuzzy
+#~ msgid ""
+#~ "You can keep it running in the background — notifications and keyboard "
+#~ "shortcuts will still work."
+#~ msgstr "ניתן להמשיך להריץ אותו ברקע — התרעות וקיצורי מקשים ימשיכו לפעול."
+
+#, fuzzy
+#~ msgid "Run in background"
+#~ msgstr "הפעלה ברקע"
+
+#, fuzzy
+#~ msgid "Main Window"
+#~ msgstr "חלון ראשי"
+
+#, fuzzy
+#~ msgid "Prefer Dark Theme"
+#~ msgstr "שימוש בערכת נושא כהה"
+
+#, fuzzy
+#~ msgid "Prefer Compact View"
+#~ msgstr "העדפת תצוגה קומפקטית"
+
+#, fuzzy
+#~ msgid "Started"
+#~ msgstr "התחיל"
+
+#, fuzzy
+#~ msgid "Paused"
+#~ msgstr "מושהה"
+
+#, fuzzy
+#~ msgid "Edit Custom Action"
+#~ msgstr "עריכת פעולה מותאמת אישית"
+
+#~ msgid "_Cancel"
+#~ msgstr "בי_טול"
+
+#, fuzzy
+#~ msgid "_Save"
+#~ msgstr "_שמירה"
+
+#~ msgid "Name"
+#~ msgstr "שם"
+
+#, fuzzy
+#~ msgid "Trigger"
+#~ msgstr "טריגר"
+
+#, fuzzy
+#~ msgid "Event"
+#~ msgstr "אירוע"
+
+#, fuzzy
+#~ msgid "Execute command after an event."
+#~ msgstr "ביצוע פקודה לאחר אירוע."
+
+#, fuzzy
+#~ msgid "Condition"
+#~ msgstr "תנאי"
+
+#, fuzzy
+#~ msgid ""
+#~ "Ensure execution of a second command once condition is no longer met."
+#~ msgstr "הבטחת ביצוע פקודה שנייה ברגע שהתנאי כבר אינו מתקיים."
+
+#, fuzzy
+#~ msgid "Events"
+#~ msgstr "אירועים"
+
+#, fuzzy
+#~ msgid "Add _Event"
+#~ msgstr "הוספת _אירוע"
+
+#, fuzzy
+#~ msgid "_Filter"
+#~ msgstr "_סינון"
+
+#, fuzzy
+#~ msgid "Filter"
+#~ msgstr "מסנן"
+
+#, fuzzy
+#~ msgid "Shell Command"
+#~ msgstr "פקודת Shell"
+
+#, fuzzy
+#~ msgid "Commands"
+#~ msgstr "פקודות"
+
+#, fuzzy
+#~ msgid "Condition Met Command"
+#~ msgstr "פקודה להתקיים התנאי"
+
+#, fuzzy
+#~ msgid "Condition Not Met Command"
+#~ msgstr "פקודה לאי־קיום התנאי"
+
+#, fuzzy
+#~ msgid "Working Directory"
+#~ msgstr "ספריית עבודה"
+
+#, fuzzy
+#~ msgid "Use Subshell"
+#~ msgstr "שימוש ב־Subshell"
+
+#, fuzzy
+#~ msgid "Run the program from a subshell such as sh -c ''"
+#~ msgstr "הפעלת התוכנית מתוך subshell כגון sh -c ''"
+
+#, fuzzy
+#~ msgid "Pass Input Data"
+#~ msgstr "העברת נתוני קלט"
+
+#, fuzzy
+#~ msgid "Instead of passing variables you can process a JSON object."
+#~ msgstr "במקום להעביר משתנים, ניתן לעבד אובייקט JSON."
+
+#, fuzzy
+#~ msgid "Wait For Completion"
+#~ msgstr "המתנה לסיום"
+
+#, fuzzy
+#~ msgid "Block execution of other commands until the command completes."
+#~ msgstr "חסימת ביצוע פקודות אחרות עד לסיום הפקודה."
+
+#, fuzzy
+#~ msgid "_Delete Action"
+#~ msgstr "_מחיקת פעולה"
+
+#, fuzzy
+#~ msgid "No events specified yet."
+#~ msgstr "עדיין לא צוינו אירועים."
+
+#, fuzzy
+#~ msgid "Add Custom Action"
+#~ msgstr "הוספת פעולה מותאמת אישית"
+
+#, fuzzy
+#~ msgid "_Add"
+#~ msgstr "_הוספה"
+
+#, fuzzy
+#~ msgid "Select Working Directory"
+#~ msgstr "בחירת ספריית עבודה"
+
+#~ msgid "_Select"
+#~ msgstr "ב_חירה"
+
+#, fuzzy
+#~ msgid "Untitled action"
+#~ msgstr "פעולה ללא שם"
+
+#, fuzzy
+#~ msgid "Add Condition"
+#~ msgstr "הוספת תנאי"
+
+#, fuzzy
+#~ msgid "Add Group"
+#~ msgstr "הוספת קבוצה"
+
+#~ msgid "AND"
+#~ msgstr "וגם"
+
+#~ msgid "OR"
+#~ msgstr "או"
+
+#, fuzzy
+#~ msgid "Is"
+#~ msgstr "הוא"
+
+#, fuzzy
+#~ msgid "Is Not"
+#~ msgstr "אינו"
+
+#, fuzzy
+#~ msgid "Equals"
+#~ msgstr "שווה ל־"
+
+#, fuzzy
+#~ msgid "Greater Than"
+#~ msgstr "גדול מ־"
+
+#, fuzzy
+#~ msgid "Less Than"
+#~ msgstr "קטן מ־"
+
+#, fuzzy
+#~ msgid "Yes"
+#~ msgstr "כן"
+
+#, fuzzy
+#~ msgid "No"
+#~ msgstr "לא"
+
+#, fuzzy
+#~ msgid "Minutes"
+#~ msgstr "דקות"
+
+#, fuzzy
+#~ msgid "Seconds"
+#~ msgstr "שניות"
+
+#, fuzzy
+#~ msgid "Hours"
+#~ msgstr "שעות"
+
+#, fuzzy
+#~ msgid "Select Field…"
+#~ msgstr "בחירת שדה…"
+
+#~ msgid "State"
+#~ msgstr "מצב"
+
+#, fuzzy
+#~ msgid "Running"
+#~ msgstr "פועל"
+
+#, fuzzy
+#~ msgid "Duration"
+#~ msgstr "משך זמן"
+
+#, fuzzy
+#~ msgid "Insert Variable"
+#~ msgstr "הכנסת משתנה"
+
+#, fuzzy
+#~ msgid "Format"
+#~ msgstr "פורמט"
+
+#, fuzzy
+#~ msgid "_Log"
+#~ msgstr "_יומן"
+
+#, fuzzy
+#~ msgid "Show execution log"
+#~ msgstr "הצגת יומן ביצוע"
+
+#, fuzzy
+#~ msgid ""
+#~ "Run shell commands automatically on timer events or conditions. <a "
+#~ "href=\"\">Learn more.</a>"
+#~ msgstr ""
+#~ "הפעלת פקודות shell באופן אוטומטי באירועי קוצב זמן או תנאים מסוימים. <a "
+#~ "href=\"\">מידע נוסף.</a>"
+
+#, fuzzy
+#~ msgid "Set Shortcut"
+#~ msgstr "הגדרת קיצור מקשים"
+
+#, fuzzy
+#~ msgid "_Set"
+#~ msgstr "_הגדרה"
+
+#, fuzzy
+#~ msgid "Disabled"
+#~ msgstr "מושבת"
+
+#, fuzzy
+#~ msgid ""
+#~ "Press <b>Esc</b> to cancel or <b>Backspace</b> to disable the keyboard "
+#~ "shortcut"
+#~ msgstr ""
+#~ "לחצו על <b>Esc</b> לביטול או על <b>Backspace</b> להשבתת קיצור המקשים"
+
+#, fuzzy
+#~ msgid ""
+#~ "Global shortcuts let you control the app even when it’s not on screen. "
+#~ "They work as long as the app is running in the background."
+#~ msgstr ""
+#~ "קיצורי מקשים גלובליים מאפשרים לשלוט באפליקציה גם כשהיא לא על המסך. הם "
+#~ "פועלים כל עוד האפליקציה רצה ברקע."
+
+#, fuzzy
+#~ msgid "Open app settings for editing global shortcuts"
+#~ msgstr "פתיחת הגדרות האפליקציה לעריכת קיצורי מקשים גלובליים"
+
+#, fuzzy
+#~ msgid "_Edit"
+#~ msgstr "_עריכה"
+
+#, fuzzy
+#~ msgid "Enter new shortcut for starting or stopping the timer"
+#~ msgstr "הקישו קיצור מקשים חדש להתחלה או עצירה של קוצב הזמן"
+
+#, fuzzy
+#~ msgid "Enter new shortcut to start/pause/resume the timer"
+#~ msgstr "הקישו קיצור מקשים חדש להתחלה/השהיה/המשך של קוצב הזמן"
+
+#, fuzzy
+#~ msgid "Enter new shortcut for starting the timer"
+#~ msgstr "הקישו קיצור מקשים חדש להתחלת קוצב הזמן"
+
+#, fuzzy
+#~ msgid "Enter new shortcut for stopping the timer"
+#~ msgstr "הקישו קיצור מקשים חדש לעצירת קוצב הזמן"
+
+#, fuzzy
+#~ msgid "Enter new shortcut for pausing the timer"
+#~ msgstr "הקישו קיצור מקשים חדש להשהיית קוצב הזמן"
+
+#, fuzzy
+#~ msgid "Enter new shortcut for resuming the timer"
+#~ msgstr "הקישו קיצור מקשים חדש להמשך קוצב הזמן"
+
+#, fuzzy
+#~ msgid "Enter new shortcut for skipping"
+#~ msgstr "הקישו קיצור מקשים חדש לדילוג"
+
+#, fuzzy
+#~ msgid "Rewind One Minute"
+#~ msgstr "חזרה דקה אחת אחורה"
+
+#, fuzzy
+#~ msgid "Enter new shortcut for rewinding"
+#~ msgstr "הקישו קיצור מקשים חדש לחזרה לאחור"
+
+#, fuzzy
+#~ msgid "Enter new shortcut for bringing window to focus"
+#~ msgstr "הקישו קיצור מקשים חדש להבאת החלון למיקוד"
+
+#, fuzzy
+#~ msgid "Announcements"
+#~ msgstr "הודעות"
+
+#, fuzzy
+#~ msgid "Time Running Out"
+#~ msgstr "הזמן אוזל"
+
+#, fuzzy
+#~ msgid "Notify when Pomodoro or break is about to end."
+#~ msgstr "קבלת התרעה כאשר הפומודורו או ההפסקה עומדים להסתיים."
+
+#, fuzzy
+#~ msgid "A full-screen notification intended to enforce taking a break."
+#~ msgstr "התרעה על מסך מלא שנועדה לאכוף יציאה להפסקה."
+
+#, fuzzy
+#~ msgid "Lock Delay"
+#~ msgstr "השהיית נעילה"
+
+#, fuzzy
+#~ msgid "Period of inactivity to lock the screen."
+#~ msgstr "משך זמן חוסר הפעילות שלאחריו יינעל המסך."
+
+#, fuzzy
+#~ msgid "Reopen Delay"
+#~ msgstr "השהיית פתיחה מחדש"
+
+#, fuzzy
+#~ msgid "Period of inactivity to reopen the overlay after it gets dismissed."
+#~ msgstr "משך זמן חוסר הפעילות שלאחריו ייפתח הכיסוי שוב לאחר שנסגר."
+
+#, fuzzy
+#~ msgid "Never"
+#~ msgstr "אף פעם"
+
+#~ msgid "Notifications"
+#~ msgstr "התרעות"
+
+#, fuzzy
+#~ msgid "Sounds"
+#~ msgstr "צלילים"
+
+#, fuzzy
+#~ msgid "Appearance"
+#~ msgstr "מראה"
+
+#, fuzzy
+#~ msgid "Keyboard Shortcuts"
+#~ msgstr "קיצורי מקשים"
+
+#, fuzzy
+#~ msgid "Automation"
+#~ msgstr "אוטומציה"
+
+#, fuzzy
+#~ msgid "Sounds Are Disabled"
+#~ msgstr "הצלילים מושבתים"
+
+#, fuzzy
+#~ msgid "Alert Sounds"
+#~ msgstr "צלילי התרעה"
+
+#, fuzzy
+#~ msgid "Pomodoro Finished Sound"
+#~ msgstr "צליל סיום פומודורו"
+
+#, fuzzy
+#~ msgid "Break Finished Sound"
+#~ msgstr "צליל סיום הפסקה"
+
+#, fuzzy
+#~ msgid "Background Sound"
+#~ msgstr "צליל רקע"
+
+#~ msgid "Bell"
+#~ msgstr "פעמון"
+
+#~ msgid "Loud Bell"
+#~ msgstr "פעמון חזק"
+
+#, fuzzy
+#~ msgid "Clock Ticking"
+#~ msgstr "תקתוק שעון"
+
+#, fuzzy
+#~ msgid "None"
+#~ msgstr "ללא"
+
+#~ msgid "Volume:"
+#~ msgstr "עוצמת שמע:"
+
+#~ msgid "Select Custom Sound"
+#~ msgstr "בחירת צליל מותאם אישית"
+
+#, fuzzy
+#~ msgid "Pomodoro Duration"
+#~ msgstr "משך פומודורו"
+
+#, fuzzy
+#~ msgid "Short Break Duration"
+#~ msgstr "משך הפסקה קצרה"
+
+#, fuzzy
+#~ msgid "Long Break Duration"
+#~ msgstr "משך הפסקה ארוכה"
+
+#, fuzzy
+#~ msgid "Number of Cycles"
+#~ msgstr "מספר מחזורים"
+
+#, fuzzy
+#~ msgid "Behavior"
+#~ msgstr "התנהגות"
+
+#, fuzzy
+#~ msgid "Pause By Locking The Screen"
+#~ msgstr "השהיה בעת נעילת המסך"
+
+#, fuzzy
+#~ msgid "Confirm Starting a Break"
+#~ msgstr "אישור התחלת הפסקה"
+
+#, fuzzy
+#~ msgid "Confirm Starting a Pomodoro"
+#~ msgstr "אישור התחלת פומודורו"
+
+#, fuzzy, c-format
+#~ msgid "A single session will take <b>%s</b>."
+#~ msgstr "סשן בודד יימשך <b>%s</b>."
+
+#, fuzzy, c-format
+#~ msgid "<b>%u%%</b> of the time will be allocated for breaks."
+#~ msgstr "<b>%u%%</b> מהזמן יוקצה להפסקות."
+
+#, fuzzy
+#~ msgid "Apply changes to ongoing Pomodoro?"
+#~ msgstr "להחיל שינויים על הפומודורו הנוכחי?"
+
+#, fuzzy
+#~ msgid "Apply changes to ongoing break?"
+#~ msgstr "להחיל שינויים על ההפסקה הנוכחית?"
+
+#, fuzzy
+#~ msgid "Apply"
+#~ msgstr "החלה"
+
+#, fuzzy
+#~ msgid "Compact timer"
+#~ msgstr "קוצב זמן קומפקטי"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.28.1"
+#~ msgstr "סקירת שינויים ב־gnome-pomodoro 0.28.1"
+
+#, fuzzy
+#~ msgid "Added Tamil translation (thanks @omeritzics)"
+#~ msgstr "נוסף תרגום לטמילית (תודה ל־@omeritzics)"
+
+#, fuzzy
+#~ msgid "Added Hebrew translation (thanks @Killersparrow1)"
+#~ msgstr "נוסף תרגום לעברית (תודה ל־@Killersparrow1)"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.28.0"
+#~ msgstr "סקירת שינויים ב־gnome-pomodoro 0.28.0"
+
+#, fuzzy
+#~ msgid "Support for GNOME Shell 49 (thanks @aleasto)"
+#~ msgstr "תמיכה ב־GNOME Shell 49 (תודה ל־@aleasto)"
+
+#, fuzzy
+#~ msgid "Updated German translation (thanks @daPhipz)"
+#~ msgstr "עודכן התרגום לגרמנית (תודה ל־@daPhipz)"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.27.0"
+#~ msgstr "סקירת שינויים ב־gnome-pomodoro 0.27.0"
+
+#, fuzzy
+#~ msgid "Support for GNOME Shell 48"
+#~ msgstr "תמיכה ב־GNOME Shell 48"
+
+#, fuzzy
+#~ msgid "Split time spent across midnight"
+#~ msgstr "פיצול זמן העבודה במעבר בין ימים (חצות)"
+
+#, fuzzy
+#~ msgid "Added Telugu translation (thanks @SpaciousCoder78)"
+#~ msgstr "נוסף תרגום לטלוגו (תודה ל־@SpaciousCoder78)"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.26.0"
+#~ msgstr "סקירת שינויים ב־gnome-pomodoro 0.26.0"
+
+#, fuzzy
+#~ msgid "Support for GNOME Shell 47"
+#~ msgstr "תמיכה ב־GNOME Shell 47"
+
+#, fuzzy
+#~ msgid "Allow to dismiss screen overlay by gesture when a video is playing"
+#~ msgstr "אפשרות לסגור את כיסוי המסך במחווה בזמן שמתנגן וידאו"
+
+#, fuzzy
+#~ msgid "Added Georgian translation (thanks @NorwayFun)"
+#~ msgstr "נוסף תרגום לגיאורגית (תודה ל־@NorwayFun)"
+
+#, fuzzy
+#~ msgid "Adjusted translations in appdata (thanks @yakushabb)"
+#~ msgstr "התאמת תרגומים ב־appdata (תודה ל־@yakushabb)"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.25.2"
+#~ msgstr "סקירת שינויים ב־gnome-pomodoro 0.25.2"
+
+#, fuzzy
+#~ msgid "Fix keeping notification after extending Pomodoro"
+#~ msgstr "תיקון הישארות התרעה לאחר הארכת הפומודורו"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.25.1"
+#~ msgstr "סקירת שינויים ב־gnome-pomodoro 0.25.1"
+
+#, fuzzy
+#~ msgid "Fixes for GNOME Shell 46"
+#~ msgstr "תיקונים עבור GNOME Shell 46"
+
+#, fuzzy
+#~ msgid "Drop support for GNOME Shell 45"
+#~ msgstr "הפסקת התמיכה ב־GNOME Shell 45"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.25.0"
+#~ msgstr "סקירת שינויים ב־gnome-pomodoro 0.25.0"
+
+#, fuzzy
+#~ msgid "Support for GNOME Shell 46"
+#~ msgstr "תמיכה ב־GNOME Shell 46"
+
+#, fuzzy
+#~ msgid "Adjust build script to meson 0.59.0 (thanks @mattst88)"
+#~ msgstr "התאמת סקריפט הבנייה ל־meson 0.59.0 (תודה ל־@mattst88)"
+
+#, fuzzy
+#~ msgid ""
+#~ "Let <b>Pomodoro</b> manage system notifications while the timer is running"
+#~ msgstr "אפשרו ל<b>פומודורו</b> לנהל את התרעות המערכת בזמן שקוצב הזמן פועל"
+
+#, fuzzy
+#~ msgid "15 seconds"
+#~ msgstr "15 שניות"
+
+#, fuzzy
+#~ msgid "30 seconds"
+#~ msgstr "30 שניות"
+
+#, fuzzy
+#~ msgid "1 minute"
+#~ msgstr "דקה אחת"
+
+#, fuzzy
+#~ msgid "2 minutes"
+#~ msgstr "2 דקות"
+
+#, fuzzy
+#~ msgid "3 minutes"
+#~ msgstr "3 דקות"
+
+#, fuzzy
+#~ msgid "5 minutes"
+#~ msgstr "5 דקות"
+
+#, fuzzy
+#~ msgid "Timer Ticking"
+#~ msgstr "תקתוק קוצב זמן"
+
+#, fuzzy
+#~ msgid "Birds"
+#~ msgstr "ציפורים"
+
+#~ msgid "timer;"
+#~ msgstr "timer;טיימר;קוצב;זמן;"
+
+#~ msgid "Start/Stop"
+#~ msgstr "התחלה/עצירה"
+
+#~ msgid "Pause/Resume"
+#~ msgstr "השהיה/המשך"
+
+#~ msgid "Skip to a pomodoro or to a break"
+#~ msgstr "דילוג לפומודורו או להפסקה"
+
+#~ msgid "Reset current session"
+#~ msgstr "איפוס הסשן הנוכחי"
+
+#~ msgid "Run as background service"
+#~ msgstr "הפעלה בתור שירות רקע"
+
+#~ msgid "About Pomodoro"
+#~ msgstr "על אודות פומודורו"
+
+#~ msgid "A simple time management utility"
+#~ msgstr "כלי עזר פשוט לניהול זמן"
+
+#, fuzzy
+#~ msgid "_Stopped"
+#~ msgstr "עצור"
+
+#, fuzzy
+#~ msgid "Extension for GNOME Shell is available"
+#~ msgstr "הרחבה ל־GNOME Shell זמינה"
+
+#, fuzzy, c-format
+#~ msgid "Long break due in %s"
+#~ msgstr "הפסקה ארוכה בעוד %s"
 
 #~ msgid "A time management utility for GNOME"
 #~ msgstr "כלי עזר לניהול זמן עבור GNOME"
@@ -301,52 +1540,25 @@ msgstr "הפסקה"
 #~ msgid "Indicator for GNOME Shell"
 #~ msgstr "מחוון למעטפת GNOME"
 
-#~ msgid "A simple time management utility"
-#~ msgstr "כלי עזר פשוט לניהול זמן"
+#, fuzzy
+#~ msgid "Support for GNOME Shell 4.0"
+#~ msgstr "תמיכה ב־GNOME Shell 4.0"
 
-#~ msgid "timer;"
-#~ msgstr "timer;טיימר;קוצב;זמן;"
+#, fuzzy
+#~ msgid "Support for GNOME Shell 3.36"
+#~ msgstr "תמיכה ב־GNOME Shell 3.36"
 
-#~ msgid "Start"
-#~ msgstr "התחלה"
-
-#~ msgid "Pause"
-#~ msgstr "השהיה"
-
-#~ msgid "Resume"
-#~ msgstr "המשך"
-
-#~ msgid "Stop"
-#~ msgstr "עצירה"
+#, fuzzy
+#~ msgid "Support for GNOME Shell 3.34 only"
+#~ msgstr "תמיכה ב־GNOME Shell 3.34 בלבד"
 
 #~ msgid "_Timer"
 #~ msgstr "קוצב _זמן"
-
-#~ msgid "_Preferences"
-#~ msgstr "ה_עדפות"
-
-#~ msgid "_Quit"
-#~ msgstr "י_ציאה"
 
 #~ msgid "Keyboard shortcut to toggle the timer. Enter new shortcut to change."
 #~ msgstr ""
 #~ "קיצור מקשים להתחלה או עצירה של קוצב הזמן. לחיצה על צירוף מקשים חדש תשנה "
 #~ "אותו."
-
-#~ msgid "Disable"
-#~ msgstr "השבתה"
-
-#~ msgid "Timer"
-#~ msgstr "קוצב זמן"
-
-#~ msgid "Pomodoro duration"
-#~ msgstr "משך הזמן של הפומודורו"
-
-#~ msgid "Break duration"
-#~ msgstr "משך הזמן של ההפסקה"
-
-#~ msgid "Long break duration"
-#~ msgstr "משך הזמן של הפסקות ארוכות"
 
 #~ msgid "Pomodoros before a long break"
 #~ msgstr "מספר סבבי פומודורו לפני הפסקה ארוכה"
@@ -354,14 +1566,8 @@ msgstr "הפסקה"
 #~ msgid "Keyboard shortcut"
 #~ msgstr "צירוף מקשים"
 
-#~ msgid "Notifications"
-#~ msgstr "התרעות"
-
 #~ msgid "Screen notifications"
 #~ msgstr "התרעות על גבי המסך"
-
-#~ msgid "Desktop"
-#~ msgstr "שולחן העבודה"
 
 #~ msgid "Wait for activity after a break"
 #~ msgstr "המתנה לפעילות לאחר הפסקה"
@@ -375,62 +1581,17 @@ msgstr "הפסקה"
 #~ msgid "Back"
 #~ msgstr "חזרה"
 
-#~ msgid "Nothing to see yet"
-#~ msgstr "עדיין אין מה לראות כאן"
-
-#~ msgid "Day"
-#~ msgstr "יום"
-
-#~ msgid "Week"
-#~ msgstr "שבוע"
-
-#~ msgid "Month"
-#~ msgstr "חודש"
-
 #~ msgid "Previous (Alt+Left)"
 #~ msgstr "הקודם (Alt+Left)"
 
 #~ msgid "Next (Alt+Right)"
 #~ msgstr "הבא (Alt+Right)"
 
-#~ msgid "Today"
-#~ msgstr "היום"
-
-#~ msgid "_About"
-#~ msgstr "על _אודות"
-
-#~ msgid "Actions"
-#~ msgstr "פעולות"
-
-#~ msgid "Action"
-#~ msgstr "פעולה"
-
-#~ msgid "Custom actions…"
-#~ msgstr "פעולות מותאמות אישית…"
-
 #~ msgid "Complete"
 #~ msgstr "הושלם"
 
-#~ msgid "Skip"
-#~ msgstr "דילוג"
-
 #~ msgid "Enable"
 #~ msgstr "הפעלה"
-
-#~ msgid "Command"
-#~ msgstr "פקודה"
-
-#~ msgid "Name"
-#~ msgstr "שם"
-
-#~ msgid "_Pomodoro"
-#~ msgstr "_פומודורו"
-
-#~ msgid "_Short Break"
-#~ msgstr "הפסקה _קצרה"
-
-#~ msgid "_Long Break"
-#~ msgstr "הפסקה ארו_כה"
 
 #~ msgid "Add"
 #~ msgstr "הוספה"
@@ -438,23 +1599,11 @@ msgstr "הפסקה"
 #~ msgid "Remove"
 #~ msgstr "הסרה"
 
-#~ msgid "State"
-#~ msgstr "מצב"
-
 #~ msgid "Elapsed Time"
 #~ msgstr "הזמן שחלף"
 
-#~ msgid "Pomodoro Timer"
-#~ msgstr "קוצב זמן של פומודורו"
-
-#~ msgid "Start Timer"
-#~ msgstr "התחלת קוצב הזמן"
-
 #~ msgid "Pause Timer"
 #~ msgstr "השהיית קוצב הזמן"
-
-#~ msgid "Stop Timer"
-#~ msgstr "עצירת קוצב הזמן"
 
 #~ msgid "Pause break"
 #~ msgstr "השהיית הפסקה"
@@ -477,46 +1626,8 @@ msgstr "הפסקה"
 #~ msgstr[3] "נותרו %d דקות"
 
 #, javascript-format
-#~ msgid "%d second remaining"
-#~ msgid_plural "%d seconds remaining"
-#~ msgstr[0] "נותרה שנייה אחת (%d)"
-#~ msgstr[1] "נותרו %d שניות"
-#~ msgstr[2] "נותרו %d שניות"
-#~ msgstr[3] "נותרו %d שניות"
-
-#~ msgid "Break is over"
-#~ msgstr "ההפסקה הסתיימה"
-
-#~ msgid "Skip Break"
-#~ msgstr "דילוג על ההפסקה"
-
-#~ msgid "+1 Minute"
-#~ msgstr "הוספת דקה אחת"
-
-#, javascript-format
 #~ msgid "Failed to run <i>%s</i> service"
 #~ msgstr "נכשלה הרצת שירות <i>%s</i>"
-
-#~ msgid "Hide other notifications"
-#~ msgstr "הסתרת התרעות אחרות"
-
-#~ msgid "Volume:"
-#~ msgstr "עוצמת שמע:"
-
-#~ msgid "Bell"
-#~ msgstr "פעמון"
-
-#~ msgid "Loud Bell"
-#~ msgstr "פעמון חזק"
-
-#~ msgid "Select Custom Sound"
-#~ msgstr "בחירת צליל מותאם אישית"
-
-#~ msgid "_Cancel"
-#~ msgstr "בי_טול"
-
-#~ msgid "_Select"
-#~ msgstr "ב_חירה"
 
 #~ msgid "End of Break Sound"
 #~ msgstr "צליל סיום הפסקה"
@@ -532,39 +1643,6 @@ msgstr "הפסקה"
 
 #~ msgid "End of break sound"
 #~ msgstr "צליל סיום הפסקה"
-
-#~ msgid "About Pomodoro"
-#~ msgstr "על אודות פומודורו"
-
-#~ msgid "translator-credits"
-#~ msgstr "עומר א״ש <omeritzicschwartz@gmail.com>"
-
-#~ msgid "Start/Stop"
-#~ msgstr "התחלה/עצירה"
-
-#~ msgid "Pause/Resume"
-#~ msgstr "השהיה/המשך"
-
-#~ msgid "Skip to a pomodoro or to a break"
-#~ msgstr "דילוג לפומודורו או להפסקה"
-
-#~ msgid "Extend current pomodoro or break"
-#~ msgstr "הארכת הפומודורו או ההפסקה הנוכחיים"
-
-#~ msgid "Reset current session"
-#~ msgstr "איפוס הסשן הנוכחי"
-
-#~ msgid "Run as background service"
-#~ msgstr "הפעלה בתור שירות רקע"
-
-#~ msgid "Show preferences"
-#~ msgstr "הצגת ההעדפות"
-
-#~ msgid "Quit application"
-#~ msgstr "יציאה מהיישום"
-
-#~ msgid "Print version information and exit"
-#~ msgstr "הצגת המידע על הגרסה ויציאה"
 
 #~ msgid "Focus on your task."
 #~ msgstr "יש להתמקד במשימה שלך."
@@ -597,9 +1675,6 @@ msgstr "הפסקה"
 #~ msgid "Start pomodoro"
 #~ msgstr "התחלת פומודורו"
 
-#~ msgid "Keyboard Shortcut"
-#~ msgstr "קיצור מקשים"
-
 #~ msgid "Available"
 #~ msgstr "זמין"
 
@@ -612,9 +1687,6 @@ msgstr "הפסקה"
 #~ msgid "Invisible"
 #~ msgstr "בלתי נראה"
 
-#~ msgid "Yesterday"
-#~ msgstr "אתמול"
-
 #, c-format
 #~ msgid "%d m"
 #~ msgstr "%d דק׳"
@@ -626,6 +1698,3 @@ msgstr "הפסקה"
 #, c-format
 #~ msgid "%.1f h"
 #~ msgstr "%.1f שע׳"
-
-#~ msgid "This week"
-#~ msgstr "השבוע"

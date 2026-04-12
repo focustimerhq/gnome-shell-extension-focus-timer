@@ -1,16 +1,18 @@
-# Croatian translation for gnome-pomodoro
-# Copyright (c) 2012 gnome-pomodoro contributors
-# This file is distributed under the same license as the gnome-pomodoro package.
+# Croatian translation for gnome-shell-extension-focus-timer
+# Copyright (c) 2012 focus-timer contributors
+# This file is distributed under the same license as the focus-timer package.
+#
+# Authors:
 # Milo Ivir <mail@milotype.de>, 2021.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-pomodoro\n"
+"Project-Id-Version: gnome-shell-extension-focus-timer 1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-25 16:45+0100\n"
+"POT-Creation-Date: 2026-04-12 13:38+0200\n"
 "PO-Revision-Date: 2023-03-25 11:45+0100\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
-"Language-Team: \n"
+"Language-Team: Croatian\n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,91 +22,73 @@ msgstr ""
 "X-Generator: Poedit 3.1.1\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
-#: data/org.gnome.shell.extensions.focus-timer.gschema.xml:6
-msgid "Start the app along with extension"
-msgstr ""
-
-#: data/org.gnome.shell.extensions.focus-timer.gschema.xml:14
-msgid "Indicator type"
-msgstr ""
-
-#: data/org.gnome.shell.extensions.focus-timer.gschema.xml:18
-msgid "Blur effect"
-msgstr ""
-
-#: data/org.gnome.shell.extensions.focus-timer.gschema.xml:22
-msgid "Dismiss screen overlay by gesture"
-msgstr ""
-
-#: data/org.gnome.shell.extensions.focus-timer.gschema.xml:26
-msgid "Reduce number of notifications during Pomodoro"
-msgstr ""
+#: src/indicator.js:329 src/screenShield.js:171
+#, fuzzy
+msgid "Finished!"
+msgstr "Završeno!"
 
 #: src/indicator.js:331 src/screenShield.js:173
-msgid "Finished!"
-msgstr ""
-
-#: src/indicator.js:333 src/screenShield.js:175
 #, javascript-format
 msgid "%d of %d"
 msgstr ""
 
-#: src/indicator.js:420 src/prefs.js:73
+#: src/indicator.js:425 src/prefs.js:71
+#, fuzzy
 msgid "Screen Overlay"
-msgstr ""
+msgstr "Prekrivanje zaslona"
 
-#: src/indicator.js:423
+#: src/indicator.js:427
 msgid "Preferences"
 msgstr "Postavke"
 
-#: src/indicator.js:424
+#: src/indicator.js:428
 msgid "Stats"
 msgstr "Statistika"
 
-#: src/indicator.js:426
+#: src/indicator.js:430
 msgid "Quit"
 msgstr "Zatvori program"
 
-#: src/indicator.js:601
+#: src/indicator.js:624
 #, javascript-format
 msgid "%dh"
 msgstr ""
 
-#: src/indicator.js:605
+#: src/indicator.js:628
 #, javascript-format
 msgid "%dm"
 msgstr ""
 
-#: src/indicator.js:613
+#: src/indicator.js:630 src/indicator.js:632 src/indicator.js:634
 #, javascript-format
 msgid "%ds"
 msgstr ""
 
-#: src/indicator.js:1058 src/notifications.js:59
+#: src/indicator.js:1079 src/notifications.js:57
 msgid "Focus Timer"
 msgstr ""
 
-#: src/notifications.js:79
+#: src/notifications.js:77
 msgid "Focus Timer Extension"
 msgstr ""
 
-#: src/notifications.js:115
+#: src/notifications.js:119
 #, javascript-format
 msgid "%d hour"
 msgid_plural "%d hours"
-msgstr[0] "%d sat"
-msgstr[1] "%d sata"
-msgstr[2] "%d sati"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
-#: src/notifications.js:118
+#: src/notifications.js:122
 #, javascript-format
 msgid "%d minute"
 msgid_plural "%d minutes"
-msgstr[0] "%d minuta"
-msgstr[1] "%d minute"
-msgstr[2] "%d minuta"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
-#: src/notifications.js:121
+#: src/notifications.js:125
 #, javascript-format
 msgid "%d second"
 msgid_plural "%d seconds"
@@ -113,174 +97,1455 @@ msgstr[1] ""
 msgstr[2] ""
 
 #. translators: time remaining eg. "3 minutes 50 seconds remaining"
-#: src/notifications.js:128
-#, javascript-format
+#: src/notifications.js:135
+#, fuzzy, javascript-format
 msgid "%s remaining"
-msgstr ""
+msgstr "preostalo %s"
 
-#: src/notifications.js:239 src/timer.js:54
+#: src/notifications.js:261 src/timer.js:47
 msgid "Pomodoro"
 msgstr "Pomodoro"
 
-#: src/notifications.js:241
+#: src/notifications.js:263
 msgid "Take a break"
-msgstr "Odmori se"
+msgstr "Uzmite pauzu"
 
-#: src/notifications.js:243
+#: src/notifications.js:265
 msgid "Take a short break"
-msgstr "Napravite kratku stanku"
+msgstr "Napravite kratku pauzu"
 
-#: src/notifications.js:245
+#: src/notifications.js:267
 msgid "Take a long break"
 msgstr "Napravite dugu pauzu"
 
-#: src/notifications.js:253
+#: src/notifications.js:275
 msgid "Pomodoro is about to end"
 msgstr "Pomodoro će uskoro završiti"
 
-#: src/notifications.js:255
+#: src/notifications.js:277
 msgid "Break is about to end"
 msgstr "Pauza će uskoro završiti"
 
-#: src/notifications.js:263 src/notifications.js:275
+#: src/notifications.js:285 src/notifications.js:297
+#, fuzzy
 msgid "Break is over!"
-msgstr ""
+msgstr "Pauza je gotova!"
 
-#: src/notifications.js:265 src/notifications.js:273
+#: src/notifications.js:287 src/notifications.js:295
+#, fuzzy
 msgid "Pomodoro is over!"
-msgstr ""
+msgstr "Pomodoro je gotov!"
 
-#: src/notifications.js:294
+#: src/notifications.js:316
 msgid "Get ready…"
 msgstr "Pripremi se…"
 
-#: src/notifications.js:299
+#: src/notifications.js:321
+#, fuzzy
 msgid "Confirm the start of a Pomodoro…"
-msgstr ""
+msgstr "Potvrdite početak Pomodora…"
 
-#: src/notifications.js:301
+#: src/notifications.js:323
+#, fuzzy
 msgid "Confirm the start of a break…"
-msgstr ""
+msgstr "Potvrdite početak pauze…"
 
-#: src/notifications.js:303
+#: src/notifications.js:325
+#, fuzzy
 msgid "Confirm the start of a short break…"
-msgstr ""
+msgstr "Potvrdite početak kratke pauze…"
 
-#: src/notifications.js:305
+#: src/notifications.js:327
+#, fuzzy
 msgid "Confirm the start of a long break…"
-msgstr ""
+msgstr "Potvrdite početak duge pauze…"
 
-#: src/notifications.js:344
+#: src/notifications.js:366
+#, fuzzy
 msgid "+1 minute"
-msgstr ""
+msgstr "+1 minuta"
 
-#: src/notifications.js:345
+#: src/notifications.js:367
 msgid "Start Pomodoro"
 msgstr "Pokreni Pomodoro"
 
-#: src/notifications.js:346
+#: src/notifications.js:368
 msgid "Start Break"
 msgstr ""
 
-#: src/notifications.js:403
+#: src/notifications.js:425
+#, fuzzy
 msgid "Something went wrong"
-msgstr ""
+msgstr "Nešto je pošlo po zlu"
 
-#: src/notifications.js:409
+#: src/notifications.js:431
 msgid "Report issue"
 msgstr "Prijavi problem"
 
-#: src/notifications.js:429
+#: src/notifications.js:451
 msgid "Focus Timer Not Found"
 msgstr ""
 
-#: src/notifications.js:430
+#: src/notifications.js:452
 msgid "Install Focus Timer app to start using the extension."
 msgstr ""
 
-#: src/notifications.js:435
+#: src/notifications.js:457
 msgid "Install from Flathub"
 msgstr ""
 
-#: src/prefs.js:14
+#: src/prefs.js:12
 msgid "General"
 msgstr ""
 
-#: src/prefs.js:20
+#: src/prefs.js:18
 msgid "Autostart The App"
 msgstr ""
 
-#: src/prefs.js:21
+#: src/prefs.js:19
 msgid "Makes the indicator instantly visible and allows keyboard shortcuts"
 msgstr ""
 
-#: src/prefs.js:34
+#: src/prefs.js:32
 msgid "Indicator"
 msgstr ""
 
-#: src/prefs.js:47
+#: src/prefs.js:45
 msgid "Icon"
 msgstr ""
 
-#: src/prefs.js:53
+#: src/prefs.js:51
 msgid "Text"
 msgstr ""
 
-#: src/prefs.js:60
+#: src/prefs.js:58
 msgid "Display As"
 msgstr ""
 
-#: src/prefs.js:61
+#: src/prefs.js:59
 msgid "Choose how the timer appears in the status bar"
 msgstr ""
 
-#: src/prefs.js:79
+#: src/prefs.js:77
 msgid "Blur Effect"
 msgstr ""
 
-#: src/prefs.js:80
+#: src/prefs.js:78
 msgid "Helps to acknowledge the break"
 msgstr ""
 
-#: src/prefs.js:88
+#: src/prefs.js:86
 msgid "Dismiss Gesture"
 msgstr ""
 
-#: src/prefs.js:89
+#: src/prefs.js:87
 msgid "Flick the mouse or press any key to dismiss"
 msgstr ""
 
-#: src/prefs.js:102
+#: src/prefs.js:100
 msgid "Distractions"
 msgstr ""
 
-#: src/prefs.js:108
+#: src/prefs.js:106
 msgid "Manage Notifications"
 msgstr ""
 
-#: src/prefs.js:109
+#: src/prefs.js:107
 msgid "Toggle Do Not Disturb mode during Pomodoro"
 msgstr ""
 
-#: src/screenOverlay.js:987
+#: src/screenOverlay.js:1053
 msgid "It's time to take a break"
 msgstr "Vrijeme je za pauzu"
 
-#: src/timer.js:51
+#: src/timer.js:44
+#, fuzzy
 msgid "Stopped"
-msgstr ""
+msgstr "Zaustavljeno"
 
-#: src/timer.js:57
+#: src/timer.js:50
 msgid "Short Break"
 msgstr "Kratka pauza"
 
-#: src/timer.js:60
+#: src/timer.js:53
 msgid "Long Break"
 msgstr "Duga pauza"
 
-#: src/timer.js:63
+#: src/timer.js:56
 msgid "Break"
 msgstr "Pauza"
+
+#, fuzzy
+#~ msgid "Time management utility"
+#~ msgstr "Uslužni program za upravljanje vremenom"
+
+#, fuzzy
+#~ msgid "Maintain focus by taking frequent breaks"
+#~ msgstr "Ostanite usredotočeni uz česte pauze"
+
+#, fuzzy
+#~ msgid ""
+#~ "A productivity timer that helps you work more effectively by breaking "
+#~ "your time into focused work sessions followed by short breaks. Work for "
+#~ "25 minutes, then take a 5-minute break to maintain concentration and "
+#~ "prevent burnout."
+#~ msgstr ""
+#~ "Timer za produktivnost koji vam pomaže raditi učinkovitije dijeleći vaše "
+#~ "vrijeme na usredotočene sesije rada praćene kratkim pauzama. Radite 25 "
+#~ "minuta, a zatim uzmite 5 minuta pauze kako biste zadržali koncentraciju i "
+#~ "spriječili sagorijevanje."
+
+#, fuzzy
+#~ msgid "Key features:"
+#~ msgstr "Glavne značajke:"
+
+#, fuzzy
+#~ msgid "Customizable work session and break lengths"
+#~ msgstr "Prilagodljivo trajanje sesija rada i pauza"
+
+#, fuzzy
+#~ msgid "Visual and audio notifications"
+#~ msgstr "Vizualne i zvučne obavijesti"
+
+#, fuzzy
+#~ msgid "Time tracking and statistics"
+#~ msgstr "Praćenje vremena i statistika"
+
+#, fuzzy
+#~ msgid "GNOME desktop integration"
+#~ msgstr "Integracija s GNOME radnom površinom"
+
+#, fuzzy
+#~ msgid "Screen overlay during breaks"
+#~ msgstr "Prekrivanje zaslona tijekom pauza"
+
+#, fuzzy
+#~ msgid "Run custom commands after Pomodoro or break"
+#~ msgstr "Pokrenite prilagođene naredbe nakon Pomodora ili pauze"
+
+#~ msgid "Kamil Prusko"
+#~ msgstr "Kamil Prusko"
+
+#~ msgid "Timer"
+#~ msgstr "Timer"
+
+#, fuzzy
+#~ msgid "Daily stats"
+#~ msgstr "Dnevna statistika"
+
+#, fuzzy
+#~ msgid "Monthly stats"
+#~ msgstr "Mjesečna statistika"
+
+#, fuzzy
+#~ msgid "Screen overlay"
+#~ msgstr "Prekrivanje zaslona"
+
+#, fuzzy
+#~ msgid "Updated Russian translation (thanks @ViktorOn)"
+#~ msgstr "Aktualiziran prijevod za ruski (@rkaverin)"
+
+#, fuzzy
+#~ msgid "Start or Stop"
+#~ msgstr "Pokreni ili prekini"
+
+#, fuzzy
+#~ msgid "Start, Pause or Resume"
+#~ msgstr "Pokreni, zaustavi ili nastavi"
+
+#~ msgid "Start"
+#~ msgstr "Pokreni"
+
+#~ msgid "Stop"
+#~ msgstr "Prekini"
+
+#~ msgid "Pause"
+#~ msgstr "Zaustavi"
+
+#~ msgid "Resume"
+#~ msgstr "Nastavi"
+
+#~ msgid "Skip"
+#~ msgstr "Preskoči"
+
+#, fuzzy
+#~ msgid "Rewind"
+#~ msgstr "Vrati unatrag"
+
+#~ msgid "Extend current pomodoro or break"
+#~ msgstr "Produžite trenutni pomodoro ili pauzu"
+
+#, fuzzy
+#~ msgid "Reset"
+#~ msgstr "Ponovno postavi"
+
+#~ msgid "Show preferences"
+#~ msgstr "Prikaži postavke"
+
+#~ msgid "Quit application"
+#~ msgstr "Zatvori program"
+
+#~ msgid "Print version information and exit"
+#~ msgstr "Ispiši informacije o verziji i izađi"
+
+#, fuzzy
+#~ msgid "Bring to Focus"
+#~ msgstr "Stavi u fokus"
+
+#, fuzzy, c-format
+#~ msgid "Custom action \"%s\" has failed"
+#~ msgstr "Prilagođena radnja \"%s\" nije uspjela"
+
+#, fuzzy
+#~ msgid "Reached timeout"
+#~ msgstr "Vrijeme je isteklo"
+
+#, fuzzy
+#~ msgid "Failed to execute command"
+#~ msgstr "Neuspjelo izvršavanje naredbe"
+
+#, fuzzy
+#~ msgid "Command is empty"
+#~ msgstr "Naredba je prazna"
+
+#, fuzzy
+#~ msgid "Unclosed quotation mark"
+#~ msgstr "Nezatvoreni navodnik"
+
+#, fuzzy
+#~ msgid "Invalid command"
+#~ msgstr "Nevaljana naredba"
+
+#, fuzzy, c-format
+#~ msgid "Unknown variable \"%s\""
+#~ msgstr "Nepoznata varijabla \"%s\""
+
+#, fuzzy, c-format
+#~ msgid "Unknown format \"%s\""
+#~ msgstr "Nepoznat format \"%s\""
+
+#, fuzzy, c-format
+#~ msgid "Program \"%s\" not found"
+#~ msgstr "Program \"%s\" nije pronađen"
+
+#~ msgid "Actions"
+#~ msgstr "Radnje"
+
+#, fuzzy
+#~ msgid "Countdown"
+#~ msgstr "Odbrojavanje"
+
+#, fuzzy
+#~ msgid "Session"
+#~ msgstr "Sesija"
+
+#, fuzzy
+#~ msgid "Other"
+#~ msgstr "Ostalo"
+
+#, fuzzy
+#~ msgid "Started the timer."
+#~ msgstr "Timer je pokrenut."
+
+#, fuzzy
+#~ msgid "Stopped the timer manually."
+#~ msgstr "Timer je ručno prekinut."
+
+#, fuzzy
+#~ msgid ""
+#~ "The countdown has been manually paused. Not triggered when locking the "
+#~ "screen or when suspending the system."
+#~ msgstr ""
+#~ "Odbrojavanje je ručno zaustavljeno. Ne aktivira se prilikom zaključavanja "
+#~ "zaslona ili obustave sustava."
+
+#, fuzzy
+#~ msgid "The countdown has been manually resumed."
+#~ msgstr "Odbrojavanje je ručno nastavljeno."
+
+#, fuzzy
+#~ msgid "Jumped to a next time-block before the countdown has finished."
+#~ msgstr "Prebačeno na sljedeći vremenski blok prije završetka odbrojavanja."
+
+#, fuzzy
+#~ msgid "Rewind action has been used. It adds a pause in the past."
+#~ msgstr ""
+#~ "Upotrijebljena je radnja vraćanja unatrag. Dodaje pauzu u prošlosti."
+
+#, fuzzy
+#~ msgid "Manually cleared the session."
+#~ msgstr "Sesija je ručno očišćena."
+
+#, fuzzy
+#~ msgid "Finished"
+#~ msgstr "Završeno"
+
+#, fuzzy
+#~ msgid ""
+#~ "The countdown has finished. If waiting for confirmation, the duration of "
+#~ "the time-block still may be altered."
+#~ msgstr ""
+#~ "Odbrojavanje je završilo. Ako se čeka potvrda, trajanje vremenskog bloka "
+#~ "još uvijek se može promijeniti."
+
+#, fuzzy
+#~ msgid "Changed"
+#~ msgstr "Promijenjeno"
+
+#, fuzzy
+#~ msgid "Triggered on any change related to the countdown."
+#~ msgstr "Aktivira se kod bilo koje promjene vezane uz odbrojavanje."
+
+#, fuzzy
+#~ msgid "Confirm Advancement"
+#~ msgstr "Potvrda napredovanja"
+
+#, fuzzy
+#~ msgid "A manual confirmation is required to start next time-block."
+#~ msgstr "Potrebna je ručna potvrda za početak sljedećeg vremenskog bloka."
+
+#, fuzzy
+#~ msgid "Advanced"
+#~ msgstr "Napredovalo"
+
+#, fuzzy
+#~ msgid "Transitioned or skipped to a next time-block."
+#~ msgstr "Prebačeno ili preskočeno na sljedeći vremenski blok."
+
+#, fuzzy
+#~ msgid "State Changed"
+#~ msgstr "Stanje promijenjeno"
+
+#, fuzzy
+#~ msgid "Transitioned to a next time-block or when a break gets relabelled."
+#~ msgstr "Prelazak na sljedeći vremenski blok ili kod promjene naziva pauze."
+
+#, fuzzy
+#~ msgid "Rescheduled"
+#~ msgstr "Ponovno zakazano"
+
+#, fuzzy
+#~ msgid "Triggered when scheduled time-blocks have changed."
+#~ msgstr "Aktivira se kada se zakazani vremenski blokovi promijene."
+
+#, fuzzy
+#~ msgid "Expired"
+#~ msgstr "Isteklo"
+
+#, fuzzy
+#~ msgid "Triggered when session is about to be reset due to inactivity."
+#~ msgstr ""
+#~ "Aktivira se kada se sesija treba ponovno postaviti zbog neaktivnosti."
+
+#, fuzzy
+#~ msgid "Take a Break"
+#~ msgstr "Uzmite pauzu"
+
+#~ msgid "Skip Break"
+#~ msgstr "Preskoči pauzu"
+
+#, fuzzy
+#~ msgid "Failed to initialize playback"
+#~ msgstr "Neuspjelo pokretanje reprodukcije"
+
+#, fuzzy
+#~ msgid "File not found"
+#~ msgstr "Datoteka nije pronađena"
+
+#, fuzzy
+#~ msgid "File type not supported"
+#~ msgstr "Vrsta datoteke nije podržana"
+
+#, fuzzy, c-format
+#~ msgid "%uh"
+#~ msgstr "%uh"
+
+#, fuzzy, c-format
+#~ msgid "%um"
+#~ msgstr "%um"
+
+#, fuzzy, c-format
+#~ msgid "%u hour"
+#~ msgid_plural "%u hours"
+#~ msgstr[0] "%u sat"
+#~ msgstr[1] "%u sata"
+#~ msgstr[2] "%u sati"
+
+#, fuzzy, c-format
+#~ msgid "%u minute"
+#~ msgid_plural "%u minutes"
+#~ msgstr[0] "%u minuta"
+#~ msgstr[1] "%u minute"
+#~ msgstr[2] "%u minuta"
+
+#, fuzzy, c-format
+#~ msgid "%u second"
+#~ msgid_plural "%u seconds"
+#~ msgstr[0] "%u sekunda"
+#~ msgstr[1] "%u sekunde"
+#~ msgstr[2] "%u sekundi"
+
+#, fuzzy
+#~ msgid "The exact time of the current event."
+#~ msgstr "Točno vrijeme trenutnog događaja."
+
+#, fuzzy
+#~ msgid ""
+#~ "The current phase of the Pomodoro cycle. Possible values: <tt>stopped</"
+#~ "tt>, <tt>pomodoro</tt>, <tt>break</tt>, <tt>short-break</tt>, <tt>long-"
+#~ "break</tt>."
+#~ msgstr ""
+#~ "Trenutna faza Pomodoro ciklusa. Moguće vrijednosti: <tt>stopped</tt>, "
+#~ "<tt>pomodoro</tt>, <tt>break</tt>, <tt>short-break</tt>, <tt>long-break</"
+#~ "tt>."
+
+#, fuzzy
+#~ msgid ""
+#~ "Status of the current time-block. Possible values: <tt>scheduled</tt>, "
+#~ "<tt>in-progress</tt>, <tt>completed</tt>, <tt>uncompleted</tt>."
+#~ msgstr ""
+#~ "Status trenutnog vremenskog bloka. Moguće vrijednosti: <tt>scheduled</"
+#~ "tt>, <tt>in-progress</tt>, <tt>completed</tt>, <tt>uncompleted</tt>."
+
+#, fuzzy
+#~ msgid "A flag indicating whether countdown has begun."
+#~ msgstr "Zastavica koja pokazuje je li odbrojavanje započelo."
+
+#, fuzzy
+#~ msgid "A flag indicating whether countdown is paused."
+#~ msgstr "Zastavica koja pokazuje je li odbrojavanje zaustavljeno."
+
+#, fuzzy
+#~ msgid "A flag indicating whether countdown has finished."
+#~ msgstr "Zastavica koja pokazuje je li odbrojavanje završilo."
+
+#, fuzzy
+#~ msgid "A flag indicating whether the timer is actively counting down."
+#~ msgstr "Zastavica koja pokazuje odbrojava li timer aktivno."
+
+#, fuzzy
+#~ msgid "Duration of the current countdown."
+#~ msgstr "Trajanje trenutnog odbrojavanja."
+
+#, fuzzy
+#~ msgid "Discrepancy between elapsed time and the time passed."
+#~ msgstr "Nesklad između proteklog vremena i stvarnog vremena."
+
+#, fuzzy
+#~ msgid "The amount of time spent on the countdown."
+#~ msgstr "Količina vremena provedena u odbrojavanju."
+
+#, fuzzy
+#~ msgid "The amount of time left before the countdown ends."
+#~ msgstr "Preostalo vrijeme do kraja odbrojavanja."
+
+#, fuzzy
+#~ msgid "Time when the countdown has started."
+#~ msgstr "Vrijeme kada je odbrojavanje započelo."
+
+#, fuzzy
+#~ msgid "GNOME Shell Extension"
+#~ msgstr "GNOME Shell proširenje"
+
+#, fuzzy
+#~ msgid "Get the best experience!"
+#~ msgstr "Osigurajte si najbolje iskustvo!"
+
+#, fuzzy
+#~ msgid "Enable <b>GNOME Shell extension</b> for seamless desktop integration"
+#~ msgstr ""
+#~ "Omogućite <b>proširenje za GNOME Shell</b> za besprijekornu integraciju s "
+#~ "radnom površinom"
+
+#, fuzzy
+#~ msgid "Always within reach"
+#~ msgstr "Uvijek nadohvat ruke"
+
+#, fuzzy
+#~ msgid "Control timer directly from the top bar without opening the app"
+#~ msgstr "Upravljajte timerom izravno s gornje trake bez otvaranja aplikacije"
+
+#, fuzzy
+#~ msgid "Less distractions"
+#~ msgstr "Manje ometanja"
+
+#, fuzzy
+#~ msgid "Refined break reminders"
+#~ msgstr "Profinjeni podsjetnici za pauzu"
+
+#, fuzzy
+#~ msgid ""
+#~ "Elegant full-screen overlay that make taking breaks a more pleasant "
+#~ "experience"
+#~ msgstr ""
+#~ "Elegantno prekrivanje preko cijelog zaslona koje pauze čini ugodnijim "
+#~ "iskustvom"
+
+#, fuzzy
+#~ msgid "Ready to try it?"
+#~ msgstr "Spremni isprobati?"
+
+#, fuzzy
+#~ msgid "_Install Extension"
+#~ msgstr "_Instaliraj proširenje"
+
+#, fuzzy
+#~ msgid "_Not Now"
+#~ msgstr "_Ne sada"
+
+#, fuzzy
+#~ msgid "Copy to clipboard"
+#~ msgstr "Kopiraj u međuspremnik"
+
+#, fuzzy
+#~ msgid "_Try Again"
+#~ msgstr "_Pokušaj ponovno"
+
+#, fuzzy
+#~ msgid "_Abort"
+#~ msgstr "_Prekini"
+
+#, fuzzy
+#~ msgid "Time-out reached"
+#~ msgstr "Vrijeme je isteklo"
+
+#, fuzzy
+#~ msgid "Installing extensions is not allowed"
+#~ msgstr "Instaliranje proširenja nije dopušteno"
+
+#, fuzzy
+#~ msgid "Failed to download the extension"
+#~ msgstr "Preuzimanje proširenja nije uspjelo"
+
+#~ msgid "Desktop"
+#~ msgstr "Radna površina"
+
+#, fuzzy
+#~ msgid "GNOME Shell extension available"
+#~ msgstr "Dostupno je proširenje za GNOME Shell"
+
+#, fuzzy
+#~ msgid "Learn More"
+#~ msgstr "Saznajte više"
+
+#, fuzzy
+#~ msgid "Unused"
+#~ msgstr "Neiskorišteno"
+
+#, fuzzy
+#~ msgid "Log"
+#~ msgstr "Zapisnik"
+
+#, fuzzy
+#~ msgid "Empty Log"
+#~ msgstr "Prazan zapisnik"
+
+#, fuzzy
+#~ msgid "Entries will show up here once you start the timer."
+#~ msgstr "Unosi će se ovdje pojaviti čim pokrenete timer."
+
+#, fuzzy
+#~ msgid "Context"
+#~ msgstr "Kontekst"
+
+#~ msgid "Command"
+#~ msgstr "Naredba"
+
+#, fuzzy
+#~ msgid "Output"
+#~ msgstr "Izlaz"
+
+#, fuzzy
+#~ msgid "Error"
+#~ msgstr "Pogreška"
+
+#, fuzzy
+#~ msgid "Exit Code:"
+#~ msgstr "Izlazni kod:"
+
+#, fuzzy
+#~ msgid "Execution Time:"
+#~ msgstr "Vrijeme izvršavanja:"
+
+#~ msgid "translator-credits"
+#~ msgstr "Milo Ivir <mail@milotype.de>"
+
+#, fuzzy
+#~ msgid "Donate"
+#~ msgstr "Donirajte"
+
+#, fuzzy
+#~ msgid "Breaks"
+#~ msgstr "Pauze"
+
+#, fuzzy
+#~ msgid "Interruptions"
+#~ msgstr "Prekidi"
+
+#, fuzzy
+#~ msgid "Break Ratio"
+#~ msgstr "Omjer pauza"
+
+#~ msgid "Day"
+#~ msgstr "Dan"
+
+#~ msgid "Week"
+#~ msgstr "Tjedan"
+
+#~ msgid "Month"
+#~ msgstr "Mjesec"
+
+#, fuzzy
+#~ msgid "Nothing to see here yet"
+#~ msgstr "Ovdje još nema ničega"
+
+#, fuzzy
+#~ msgid "Finish a few Pomodoros to fill this up!"
+#~ msgstr "Završite nekoliko Pomodora kako biste popunili ovo!"
+
+#, fuzzy, c-format
+#~ msgid "Skipped %u day"
+#~ msgid_plural "Skipped %u days"
+#~ msgstr[0] "Preskočen %u dan"
+#~ msgstr[1] "Preskočena %u dana"
+#~ msgstr[2] "Preskočeno %u dana"
+
+#, fuzzy, c-format
+#~ msgid "Skipped %u week"
+#~ msgid_plural "Skipped %u weeks"
+#~ msgstr[0] "Preskočen %u tjedan"
+#~ msgstr[1] "Preskočena %u tjedna"
+#~ msgstr[2] "Preskočeno %u tjedana"
+
+#, fuzzy, c-format
+#~ msgid "Skipped %u month"
+#~ msgid_plural "Skipped %u months"
+#~ msgstr[0] "Preskočen %u mjesec"
+#~ msgstr[1] "Preskočena %u mjeseca"
+#~ msgstr[2] "Preskočeno %u mjeseci"
+
+#~ msgid "Today"
+#~ msgstr "Danas"
+
+#~ msgid "Yesterday"
+#~ msgstr "Jučer"
+
+#~ msgid "This week"
+#~ msgstr "Ovaj tjedan"
+
+#, fuzzy, c-format
+#~ msgid "Week %u"
+#~ msgstr "Tjedan %u"
+
+#, fuzzy, c-format
+#~ msgid "Week %u of %u"
+#~ msgstr "Tjedan %u od %u"
+
+#~ msgid "_Pomodoro"
+#~ msgstr "_Pomodoro"
+
+#~ msgid "_Short Break"
+#~ msgstr "_Kratka pauza"
+
+#~ msgid "_Long Break"
+#~ msgstr "_Duga pauza"
+
+#, fuzzy
+#~ msgid "_Break"
+#~ msgstr "_Pauza"
+
+#, fuzzy
+#~ msgid "Open screen overlay"
+#~ msgstr "Otvori prekrivanje zaslona"
+
+#, fuzzy
+#~ msgid "Session has expired"
+#~ msgstr "Sesija je istekla"
+
+#, fuzzy, c-format
+#~ msgid "Long break due in <b>%s</b>"
+#~ msgstr "Duga pauza slijedi za <b>%s</b>"
+
+#, fuzzy
+#~ msgid "Rewind one minute"
+#~ msgstr "Vrati jednu minutu unatrag"
+
+#, fuzzy
+#~ msgid "_Compact View"
+#~ msgstr "_Kompaktni prikaz"
+
+#~ msgid "_Preferences"
+#~ msgstr "_Postavke"
+
+#~ msgid "_About"
+#~ msgstr "_O programu"
+
+#~ msgid "_Quit"
+#~ msgstr "_Zatvori"
+
+#, fuzzy
+#~ msgid "Primary Menu"
+#~ msgstr "Glavni izbornik"
+
+#, fuzzy
+#~ msgid "Keep timer running?"
+#~ msgstr "Ostaviti timer da radi?"
+
+#, fuzzy
+#~ msgid ""
+#~ "You can keep it running in the background — notifications and keyboard "
+#~ "shortcuts will still work."
+#~ msgstr ""
+#~ "Možete ga ostaviti da radi u pozadini — obavijesti i tipkovni prečaci će "
+#~ "i dalje raditi."
+
+#, fuzzy
+#~ msgid "Run in background"
+#~ msgstr "Pokreni u pozadini"
+
+#, fuzzy
+#~ msgid "Main Window"
+#~ msgstr "Glavni prozor"
+
+#, fuzzy
+#~ msgid "Prefer Dark Theme"
+#~ msgstr "Preferiraj tamnu temu"
+
+#, fuzzy
+#~ msgid "Prefer Compact View"
+#~ msgstr "Preferiraj kompaktni prikaz"
+
+#, fuzzy
+#~ msgid "Started"
+#~ msgstr "Pokrenuto"
+
+#~ msgid "Paused"
+#~ msgstr "Zaustavljeno"
+
+#, fuzzy
+#~ msgid "Edit Custom Action"
+#~ msgstr "Uredi prilagođenu radnju"
+
+#~ msgid "_Cancel"
+#~ msgstr "_Odustani"
+
+#, fuzzy
+#~ msgid "_Save"
+#~ msgstr "_Spremi"
+
+#~ msgid "Name"
+#~ msgstr "Ime"
+
+#, fuzzy
+#~ msgid "Trigger"
+#~ msgstr "Okidač"
+
+#, fuzzy
+#~ msgid "Event"
+#~ msgstr "Događaj"
+
+#, fuzzy
+#~ msgid "Execute command after an event."
+#~ msgstr "Izvrši naredbu nakon događaja."
+
+#, fuzzy
+#~ msgid "Condition"
+#~ msgstr "Uvjet"
+
+#, fuzzy
+#~ msgid ""
+#~ "Ensure execution of a second command once condition is no longer met."
+#~ msgstr "Osiguraj izvršenje druge naredbe kada uvjet više nije ispunjen."
+
+#, fuzzy
+#~ msgid "Events"
+#~ msgstr "Događaji"
+
+#, fuzzy
+#~ msgid "Add _Event"
+#~ msgstr "Dodaj _događaj"
+
+#, fuzzy
+#~ msgid "_Filter"
+#~ msgstr "_Filtriraj"
+
+#, fuzzy
+#~ msgid "Filter"
+#~ msgstr "Filter"
+
+#, fuzzy
+#~ msgid "Shell Command"
+#~ msgstr "Naredba ljuske"
+
+#, fuzzy
+#~ msgid "Commands"
+#~ msgstr "Naredbe"
+
+#, fuzzy
+#~ msgid "Condition Met Command"
+#~ msgstr "Naredba kad je uvjet ispunjen"
+
+#, fuzzy
+#~ msgid "Condition Not Met Command"
+#~ msgstr "Naredba kad uvjet nije ispunjen"
+
+#, fuzzy
+#~ msgid "Working Directory"
+#~ msgstr "Radni direktorij"
+
+#, fuzzy
+#~ msgid "Use Subshell"
+#~ msgstr "Koristi podljusku"
+
+#, fuzzy
+#~ msgid "Run the program from a subshell such as sh -c ''"
+#~ msgstr "Pokreni program iz podljuske kao što je sh -c ''"
+
+#, fuzzy
+#~ msgid "Pass Input Data"
+#~ msgstr "Proslijedi ulazne podatke"
+
+#, fuzzy
+#~ msgid "Instead of passing variables you can process a JSON object."
+#~ msgstr "Umjesto prosljeđivanja varijabli možete obraditi JSON objekt."
+
+#, fuzzy
+#~ msgid "Wait For Completion"
+#~ msgstr "Čekaj na dovršetak"
+
+#, fuzzy
+#~ msgid "Block execution of other commands until the command completes."
+#~ msgstr "Blokiraj izvršavanje drugih naredbi dok se naredba ne dovrši."
+
+#, fuzzy
+#~ msgid "_Delete Action"
+#~ msgstr "_Obriši radnju"
+
+#, fuzzy
+#~ msgid "No events specified yet."
+#~ msgstr "Nijedan događaj još nije naveden."
+
+#, fuzzy
+#~ msgid "Add Custom Action"
+#~ msgstr "Dodaj prilagođenu radnju"
+
+#, fuzzy
+#~ msgid "_Add"
+#~ msgstr "_Dodaj"
+
+#, fuzzy
+#~ msgid "Select Working Directory"
+#~ msgstr "Odaberi radni direktorij"
+
+#~ msgid "_Select"
+#~ msgstr "Oda_beri"
+
+#, fuzzy
+#~ msgid "Untitled action"
+#~ msgstr "Radnja bez naslova"
+
+#, fuzzy
+#~ msgid "Add Condition"
+#~ msgstr "Dodaj uvjet"
+
+#, fuzzy
+#~ msgid "Add Group"
+#~ msgstr "Dodaj grupu"
+
+#, fuzzy
+#~ msgid "AND"
+#~ msgstr "I"
+
+#, fuzzy
+#~ msgid "OR"
+#~ msgstr "ILI"
+
+#, fuzzy
+#~ msgid "Is"
+#~ msgstr "Je"
+
+#, fuzzy
+#~ msgid "Is Not"
+#~ msgstr "Nije"
+
+#, fuzzy
+#~ msgid "Equals"
+#~ msgstr "Jednako je"
+
+#, fuzzy
+#~ msgid "Greater Than"
+#~ msgstr "Veće od"
+
+#, fuzzy
+#~ msgid "Less Than"
+#~ msgstr "Manje od"
+
+#, fuzzy
+#~ msgid "Yes"
+#~ msgstr "Da"
+
+#, fuzzy
+#~ msgid "No"
+#~ msgstr "Ne"
+
+#, fuzzy
+#~ msgid "Minutes"
+#~ msgstr "Minute"
+
+#, fuzzy
+#~ msgid "Seconds"
+#~ msgstr "Sekunde"
+
+#, fuzzy
+#~ msgid "Hours"
+#~ msgstr "Sati"
+
+#, fuzzy
+#~ msgid "Select Field…"
+#~ msgstr "Odaberi polje…"
+
+#~ msgid "State"
+#~ msgstr "Stanje"
+
+#, fuzzy
+#~ msgid "Running"
+#~ msgstr "Radi"
+
+#, fuzzy
+#~ msgid "Duration"
+#~ msgstr "Trajanje"
+
+#, fuzzy
+#~ msgid "Insert Variable"
+#~ msgstr "Umetni varijablu"
+
+#, fuzzy
+#~ msgid "Format"
+#~ msgstr "Format"
+
+#, fuzzy
+#~ msgid "_Log"
+#~ msgstr "_Zapisnik"
+
+#, fuzzy
+#~ msgid "Show execution log"
+#~ msgstr "Prikaži zapisnik izvršavanja"
+
+#, fuzzy
+#~ msgid ""
+#~ "Run shell commands automatically on timer events or conditions. <a "
+#~ "href=\"\">Learn more.</a>"
+#~ msgstr ""
+#~ "Automatski pokreći naredbe ljuske na događaje ili uvjete timera. <a "
+#~ "href=\"\">Saznajte više.</a>"
+
+#, fuzzy
+#~ msgid "Set Shortcut"
+#~ msgstr "Postavi prečac"
+
+#, fuzzy
+#~ msgid "_Set"
+#~ msgstr "_Postavi"
+
+#, fuzzy
+#~ msgid "Disabled"
+#~ msgstr "Onemogućeno"
+
+#, fuzzy
+#~ msgid ""
+#~ "Press <b>Esc</b> to cancel or <b>Backspace</b> to disable the keyboard "
+#~ "shortcut"
+#~ msgstr ""
+#~ "Pritisnite <b>Esc</b> za odustajanje ili <b>Backspace</b> za "
+#~ "onemogućavanje tipkovnog prečaca"
+
+#, fuzzy
+#~ msgid ""
+#~ "Global shortcuts let you control the app even when it’s not on screen. "
+#~ "They work as long as the app is running in the background."
+#~ msgstr ""
+#~ "Globalni prečaci omogućuju vam upravljanje aplikacijom čak i kad nije na "
+#~ "zaslonu. Rade sve dok je aplikacija pokrenuta u pozadini."
+
+#, fuzzy
+#~ msgid "Open app settings for editing global shortcuts"
+#~ msgstr "Otvorite postavke aplikacije za uređivanje globalnih prečaca"
+
+#, fuzzy
+#~ msgid "_Edit"
+#~ msgstr "_Uredi"
+
+#, fuzzy
+#~ msgid "Enter new shortcut for starting or stopping the timer"
+#~ msgstr "Unesite novi prečac za pokretanje ili prekidanje timera"
+
+#, fuzzy
+#~ msgid "Enter new shortcut to start/pause/resume the timer"
+#~ msgstr "Unesite novi prečac za pokretanje/zaustavljanje/nastavljanje timera"
+
+#, fuzzy
+#~ msgid "Enter new shortcut for starting the timer"
+#~ msgstr "Unesite novi prečac za pokretanje timera"
+
+#, fuzzy
+#~ msgid "Enter new shortcut for stopping the timer"
+#~ msgstr "Unesite novi prečac za prekidanje timera"
+
+#, fuzzy
+#~ msgid "Enter new shortcut for pausing the timer"
+#~ msgstr "Unesite novi prečac za zaustavljanje timera"
+
+#, fuzzy
+#~ msgid "Enter new shortcut for resuming the timer"
+#~ msgstr "Unesite novi prečac za nastavljanje timera"
+
+#, fuzzy
+#~ msgid "Enter new shortcut for skipping"
+#~ msgstr "Unesite novi prečac za preskakanje"
+
+#, fuzzy
+#~ msgid "Rewind One Minute"
+#~ msgstr "Vrati jednu minutu unatrag"
+
+#, fuzzy
+#~ msgid "Enter new shortcut for rewinding"
+#~ msgstr "Unesite novi prečac za vraćanje unatrag"
+
+#, fuzzy
+#~ msgid "Enter new shortcut for bringing window to focus"
+#~ msgstr "Unesite novi prečac za stavljanje prozora u fokus"
+
+#, fuzzy
+#~ msgid "Announcements"
+#~ msgstr "Objave"
+
+#, fuzzy
+#~ msgid "Time Running Out"
+#~ msgstr "Vrijeme istječe"
+
+#, fuzzy
+#~ msgid "Notify when Pomodoro or break is about to end."
+#~ msgstr "Obavijesti kada Pomodoro ili pauza budu blizu kraja."
+
+#, fuzzy
+#~ msgid "A full-screen notification intended to enforce taking a break."
+#~ msgstr "Obavijest preko cijelog zaslona namijenjena prisiljavanju na pauzu."
+
+#, fuzzy
+#~ msgid "Lock Delay"
+#~ msgstr "Odgoda zaključavanja"
+
+#, fuzzy
+#~ msgid "Period of inactivity to lock the screen."
+#~ msgstr "Razdoblje neaktivnosti nakon kojeg se zaslon zaključava."
+
+#, fuzzy
+#~ msgid "Reopen Delay"
+#~ msgstr "Odgoda ponovnog otvaranja"
+
+#, fuzzy
+#~ msgid "Period of inactivity to reopen the overlay after it gets dismissed."
+#~ msgstr ""
+#~ "Razdoblje neaktivnosti nakon kojeg se prekrivanje ponovno otvara nakon "
+#~ "što se odbaci."
+
+#, fuzzy
+#~ msgid "Never"
+#~ msgstr "Nikada"
+
+#~ msgid "Notifications"
+#~ msgstr "Obavijesti"
+
+#, fuzzy
+#~ msgid "Sounds"
+#~ msgstr "Zvukovi"
+
+#, fuzzy
+#~ msgid "Appearance"
+#~ msgstr "Izgled"
+
+#, fuzzy
+#~ msgid "Keyboard Shortcuts"
+#~ msgstr "Tipkovni prečaci"
+
+#, fuzzy
+#~ msgid "Automation"
+#~ msgstr "Automatizacija"
+
+#, fuzzy
+#~ msgid "Sounds Are Disabled"
+#~ msgstr "Zvukovi su onemogućeni"
+
+#, fuzzy
+#~ msgid "Alert Sounds"
+#~ msgstr "Zvukovi upozorenja"
+
+#, fuzzy
+#~ msgid "Pomodoro Finished Sound"
+#~ msgstr "Zvuk završetka Pomodora"
+
+#, fuzzy
+#~ msgid "Break Finished Sound"
+#~ msgstr "Zvuk završetka pauze"
+
+#, fuzzy
+#~ msgid "Background Sound"
+#~ msgstr "Pozadinski zvuk"
+
+#~ msgid "Bell"
+#~ msgstr "Zvono"
+
+#~ msgid "Loud Bell"
+#~ msgstr "Glasno zvono"
+
+#~ msgid "Clock Ticking"
+#~ msgstr "Otkucavanje sata"
+
+#, fuzzy
+#~ msgid "None"
+#~ msgstr "Ništa"
+
+#~ msgid "Volume:"
+#~ msgstr "Glasnoća:"
+
+#~ msgid "Select Custom Sound"
+#~ msgstr "Odaberi prilagođeni zvuk"
+
+#, fuzzy
+#~ msgid "Pomodoro Duration"
+#~ msgstr "Trajanje Pomodora"
+
+#, fuzzy
+#~ msgid "Short Break Duration"
+#~ msgstr "Trajanje kratke pauze"
+
+#, fuzzy
+#~ msgid "Long Break Duration"
+#~ msgstr "Trajanje duge pauze"
+
+#, fuzzy
+#~ msgid "Number of Cycles"
+#~ msgstr "Broj ciklusa"
+
+#, fuzzy
+#~ msgid "Behavior"
+#~ msgstr "Ponašanje"
+
+#, fuzzy
+#~ msgid "Pause By Locking The Screen"
+#~ msgstr "Zaustavi kod zaključavanja zaslona"
+
+#, fuzzy
+#~ msgid "Confirm Starting a Break"
+#~ msgstr "Potvrdi početak pauze"
+
+#, fuzzy
+#~ msgid "Confirm Starting a Pomodoro"
+#~ msgstr "Potvrdi početak Pomodora"
+
+#, fuzzy, c-format
+#~ msgid "A single session will take <b>%s</b>."
+#~ msgstr "Pojedinačna sesija će trajati <b>%s</b>."
+
+#, fuzzy, c-format
+#~ msgid "<b>%u%%</b> of the time will be allocated for breaks."
+#~ msgstr "<b>%u%%</b> vremena bit će dodijeljeno za pauze."
+
+#, fuzzy
+#~ msgid "Apply changes to ongoing Pomodoro?"
+#~ msgstr "Primijeniti promjene na trenutni Pomodoro?"
+
+#, fuzzy
+#~ msgid "Apply changes to ongoing break?"
+#~ msgstr "Primijeniti promjene na trenutnu pauzu?"
+
+#, fuzzy
+#~ msgid "Apply"
+#~ msgstr "Primijeni"
+
+#, fuzzy
+#~ msgctxt "accessibility"
+#~ msgid "Sidebar"
+#~ msgstr "Bočna traka"
+
+#, fuzzy
+#~ msgid "Compact timer"
+#~ msgstr "Kompaktni timer"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.28.1"
+#~ msgstr "Pregled promjena u gnome-pomodoro 0.28.1"
+
+#, fuzzy
+#~ msgid "Added Tamil translation (thanks @omeritzics)"
+#~ msgstr "Dodan tamilski prijevod (zahvaljujući @omeritzics)"
+
+#, fuzzy
+#~ msgid "Added Hebrew translation (thanks @Killersparrow1)"
+#~ msgstr "Dodan hebrejski prijevod (zahvaljujući @Killersparrow1)"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.28.0"
+#~ msgstr "Pregled promjena u gnome-pomodoro 0.28.0"
+
+#, fuzzy
+#~ msgid "Support for GNOME Shell 49 (thanks @aleasto)"
+#~ msgstr "Podrška za GNOME Shell 49 (zahvaljujući @aleasto)"
+
+#, fuzzy
+#~ msgid "Updated German translation (thanks @daPhipz)"
+#~ msgstr "Ažuriran njemački prijevod (zahvaljujući @daPhipz)"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.27.0"
+#~ msgstr "Pregled promjena u gnome-pomodoro 0.27.0"
+
+#, fuzzy
+#~ msgid "Support for GNOME Shell 48"
+#~ msgstr "Podrška za GNOME Shell 48"
+
+#, fuzzy
+#~ msgid "Split time spent across midnight"
+#~ msgstr "Razdvoji vrijeme provedeno preko ponoći"
+
+#, fuzzy
+#~ msgid "Added Telugu translation (thanks @SpaciousCoder78)"
+#~ msgstr "Dodan telugu prijevod (zahvaljujući @SpaciousCoder78)"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.26.0"
+#~ msgstr "Pregled promjena u gnome-pomodoro 0.26.0"
+
+#, fuzzy
+#~ msgid "Support for GNOME Shell 47"
+#~ msgstr "Podrška za GNOME Shell 47"
+
+#, fuzzy
+#~ msgid "Allow to dismiss screen overlay by gesture when a video is playing"
+#~ msgstr ""
+#~ "Dopusti odbacivanje prekrivanja zaslona gestom dok se reproducira "
+#~ "videozapis"
+
+#, fuzzy
+#~ msgid "Added Georgian translation (thanks @NorwayFun)"
+#~ msgstr "Dodan gruzijski prijevod (zahvaljujući @NorwayFun)"
+
+#, fuzzy
+#~ msgid "Adjusted translations in appdata (thanks @yakushabb)"
+#~ msgstr ""
+#~ "Prilagođeni prijevodi u metapodacima aplikacije (zahvaljujući @yakushabb)"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.25.2"
+#~ msgstr "Pregled promjena u gnome-pomodoro 0.25.2"
+
+#, fuzzy
+#~ msgid "Fix keeping notification after extending Pomodoro"
+#~ msgstr "Popravljeno zadržavanje obavijesti nakon produženja Pomodora"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.25.1"
+#~ msgstr "Pregled promjena u gnome-pomodoro 0.25.1"
+
+#, fuzzy
+#~ msgid "Fixes for GNOME Shell 46"
+#~ msgstr "Ispravci za GNOME Shell 46"
+
+#, fuzzy
+#~ msgid "Drop support for GNOME Shell 45"
+#~ msgstr "Prestanak podrške za GNOME Shell 45"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.25.0"
+#~ msgstr "Pregled promjena u gnome-pomodoro 0.25.0"
+
+#, fuzzy
+#~ msgid "Support for GNOME Shell 46"
+#~ msgstr "Podrška za GNOME Shell 46"
+
+#, fuzzy
+#~ msgid "Adjust build script to meson 0.59.0 (thanks @mattst88)"
+#~ msgstr ""
+#~ "Prilagođena skripta izgradnje za meson 0.59.0 (zahvaljujući @mattst88)"
+
+#, fuzzy
+#~ msgid ""
+#~ "Let <b>Pomodoro</b> manage system notifications while the timer is running"
+#~ msgstr "Neka <b>Pomodoro</b> upravlja obavijestima sustava dok timer radi"
+
+#, fuzzy
+#~ msgid "15 seconds"
+#~ msgstr "15 sekundi"
+
+#, fuzzy
+#~ msgid "30 seconds"
+#~ msgstr "30 sekundi"
+
+#, fuzzy
+#~ msgid "1 minute"
+#~ msgstr "1 minuta"
+
+#, fuzzy
+#~ msgid "2 minutes"
+#~ msgstr "2 minute"
+
+#, fuzzy
+#~ msgid "3 minutes"
+#~ msgstr "3 minute"
+
+#, fuzzy
+#~ msgid "5 minutes"
+#~ msgstr "5 minuta"
+
+#~ msgid "Timer Ticking"
+#~ msgstr "Otkucavanje timera"
+
+#, fuzzy
+#~ msgid "Birds"
+#~ msgstr "Ptice"
+
+#~ msgid "@APPLICATION_NAME@"
+#~ msgstr "@APPLICATION_NAME@"
+
+#~ msgid "timer;"
+#~ msgstr "timer;mjerač vremena;vremenski brojač;"
+
+#~ msgid "Start/Stop"
+#~ msgstr "Pokreni/Prekini"
+
+#~ msgid "Pause/Resume"
+#~ msgstr "Zaustavi/Nastavi"
+
+#~ msgid "Skip to a pomodoro or to a break"
+#~ msgstr "Preskočite na pomodoro ili na pauzu"
+
+#~ msgid "Reset current session"
+#~ msgstr "Ponovno postavi trenutnu sesiju"
+
+#~ msgid "Run as background service"
+#~ msgstr "Pokreni kao uslugu u pozadini"
+
+#~ msgid "About Pomodoro"
+#~ msgstr "O programu Pomodoro"
+
+#~ msgid "A simple time management utility"
+#~ msgstr "Jednostavan uslužni program za upravljanja vremenom"
+
+#, fuzzy
+#~ msgid "_Stopped"
+#~ msgstr "Prekini"
+
+#, fuzzy
+#~ msgid "Extension for GNOME Shell is available"
+#~ msgstr "Podrška za GNOME ljusku 3.36"
+
+#, fuzzy
+#~ msgid "Failed to install extension"
+#~ msgstr "Neuspjelo aktiviranje proširenja"
+
+#, fuzzy, c-format
+#~ msgid "Long break due in %s"
+#~ msgstr "Trajanje duge pauze"
 
 #~ msgid "A time management utility for GNOME"
 #~ msgstr "Uslužni program za upravljanje vremenom za GNOME"
@@ -300,365 +1565,21 @@ msgstr "Pauza"
 #~ msgid "Indicator for GNOME Shell"
 #~ msgstr "Indikator za GNOME ljusku"
 
-#~ msgid "A simple time management utility"
-#~ msgstr "Jednostavan uslužni program za upravljanja vremenom"
-
-#~ msgid "timer;"
-#~ msgstr "mjerač vremena;vremenski brojač;"
-
-#~ msgid "Start"
-#~ msgstr "Pokreni"
-
-#~ msgid "Pause"
-#~ msgstr "Zaustavi"
-
-#~ msgid "Resume"
-#~ msgstr "Nastavi"
-
-#~ msgid "Stop"
-#~ msgstr "Prekini"
-
-#~ msgid "_Timer"
-#~ msgstr "_Timer"
-
-#~ msgid "_Preferences"
-#~ msgstr "_Postavke"
-
-#~ msgid "_Quit"
-#~ msgstr "_Zatvori program"
-
-#~ msgid "Keyboard shortcut to toggle the timer. Enter new shortcut to change."
-#~ msgstr ""
-#~ "Tipkovni prečac za uključivanje/isključivanje timera. Promijeni prečac "
-#~ "upisom novog prečaca."
-
-#~ msgid "Disable"
-#~ msgstr "Deaktiviraj"
-
-#~ msgid "Timer"
-#~ msgstr "Timer"
-
-#~ msgid "Pomodoro duration"
-#~ msgstr "Trajanje Pomodora"
-
-#~ msgid "Break duration"
-#~ msgstr "Trajanje pauze"
-
-#~ msgid "Long break duration"
-#~ msgstr "Trajanje duge pauze"
-
-#~ msgid "Pomodoros before a long break"
-#~ msgstr "Broj Pomodora prije duge pauze"
-
-#~ msgid "Keyboard shortcut"
-#~ msgstr "Tipkovni prečaci"
-
-#~ msgid "Notifications"
-#~ msgstr "Obavijesti"
-
-#~ msgid "Screen notifications"
-#~ msgstr "Ekranske obavijesti"
-
-#~ msgid "Desktop"
-#~ msgstr "Radna površina"
-
-#~ msgid "Wait for activity after a break"
-#~ msgstr "Čekaj na aktivnost nakon pauze"
-
-#~ msgid "Plugins…"
-#~ msgstr "Dodaci …"
-
-#~ msgid "Plugins"
-#~ msgstr "Dodaci"
-
-#~ msgid "Back"
-#~ msgstr "Natrag"
-
-#~ msgid "Nothing to see yet"
-#~ msgstr "Još se nema što vidjeti"
-
-#~ msgid "Complete a few sessions"
-#~ msgstr "Završi par sesija"
-
-#~ msgid "Day"
-#~ msgstr "Dan"
-
-#~ msgid "Week"
-#~ msgstr "Tjedan"
-
-#~ msgid "Month"
-#~ msgstr "Mjesec"
-
-#~ msgid "Previous (Alt+Left)"
-#~ msgstr "Prethodni (Alt+Lijevo)"
-
-#~ msgid "Next (Alt+Right)"
-#~ msgstr "Sljedeći (Alt+Desno)"
-
-#~ msgid "Today"
-#~ msgstr "Danas"
-
-#~ msgid "_About"
-#~ msgstr "_Informacije"
-
-#~ msgid "Actions"
-#~ msgstr "Radnje"
-
-#~ msgid "Action"
-#~ msgstr "Radnja"
-
-#~ msgid "Custom actions…"
-#~ msgstr "Prilagođene radnje …"
-
-#~ msgid "Complete"
-#~ msgstr "Završeno"
-
-#~ msgid "Skip"
-#~ msgstr "Preskoči"
-
-#~ msgid "Enable"
-#~ msgstr "Aktiviraj"
-
-#~ msgid "Command"
-#~ msgstr "Naredba"
-
-#~ msgid "Triggers"
-#~ msgstr "Okidači"
-
-#~ msgid "Name"
-#~ msgstr "Ime"
-
-#~ msgid "_Pomodoro"
-#~ msgstr "_Pomodoro"
-
-#~ msgid "_Short Break"
-#~ msgstr "_Kratka pauza"
-
-#~ msgid "_Long Break"
-#~ msgstr "_Duga pauza"
-
-#~ msgid "Add"
-#~ msgstr "Dodaj"
-
-#~ msgid "Remove"
-#~ msgstr "Ukloni"
-
-#~ msgid "State"
-#~ msgstr "Stanje"
-
-#~ msgid "State Duration"
-#~ msgstr "Trajanje stanja"
-
-#~ msgid "Elapsed Time"
-#~ msgstr "Proteklo vrijeme"
-
-#~ msgid "Pomodoro Timer"
-#~ msgstr "Pomodoro timer"
-
-#~ msgid "Start Timer"
-#~ msgstr "Pokreni timer"
-
-#~ msgid "Pause Timer"
-#~ msgstr "Zaustavi timer"
-
-#~ msgid "Stop Timer"
-#~ msgstr "Prekini timer"
-
-#~ msgid "Pause break"
-#~ msgstr "Prekid pauze"
-
-#~ msgid "Pause Pomodoro"
-#~ msgstr "Prekini pomodoro"
-
-#~ msgid "Resume break"
-#~ msgstr "Nastavi pauzu"
-
-#~ msgid "Resume Pomodoro"
-#~ msgstr "Nastavi pomodoro"
-
-#, javascript-format
-#~ msgid "%d minute remaining"
-#~ msgid_plural "%d minutes remaining"
-#~ msgstr[0] "još %d minuta"
-#~ msgstr[1] "još %d minute"
-#~ msgstr[2] "još %d minuta"
-
-#, javascript-format
-#~ msgid "%d second remaining"
-#~ msgid_plural "%d seconds remaining"
-#~ msgstr[0] "još %d sekunda"
-#~ msgstr[1] "još %d sekunde"
-#~ msgstr[2] "još %d sekundi"
-
-#~ msgid "Break is over"
-#~ msgstr "Pauza je završila"
-
-#~ msgid "Skip Break"
-#~ msgstr "Preskoči pauzu"
-
-#~ msgid "+1 Minute"
-#~ msgstr "+1 minuta"
-
-#, javascript-format
-#~ msgid "Failed to run <i>%s</i> service"
-#~ msgstr "Neuspjelo pokretanje usluge <i>%s</i>"
-
-#~ msgid "Hide other notifications"
-#~ msgstr "Sakrij druge obavijesti"
-
-#~ msgid "Volume:"
-#~ msgstr "Glasnoća:"
-
-#~ msgid "Clock Ticking"
-#~ msgstr "Otkucavanje sata"
-
-#~ msgid "Timer Ticking"
-#~ msgstr "Otkucavanje timera"
-
-#~ msgid "Woodland Birds"
-#~ msgstr "Šumske ptice"
-
-#~ msgid "Bell"
-#~ msgstr "Zvono"
-
-#~ msgid "Loud Bell"
-#~ msgstr "Glasno zvono"
-
-#~ msgid "Select Custom Sound"
-#~ msgstr "Odaberi prilagođeni zvuk"
-
-#~ msgid "_Cancel"
-#~ msgstr "_Odustani"
-
-#~ msgid "_Select"
-#~ msgstr "Oda_beri"
-
-#~ msgid "Ticking Sound"
-#~ msgstr "Zvuk otkucavanja"
-
-#~ msgid "End of Break Sound"
-#~ msgstr "Zvuk kraja pauze"
-
-#~ msgid "Start of Break Sound"
-#~ msgstr "Zvuk početka pauze"
-
-#~ msgid "Off"
-#~ msgstr "Isključeno"
-
-#~ msgid "Ticking sound"
-#~ msgstr "Zvuk otkucavanja"
-
-#~ msgid "Start of break sound"
-#~ msgstr "Zvuk početka pauze"
-
-#~ msgid "End of break sound"
-#~ msgstr "Zvuk kraja pauze"
-
-#~ msgid "About Pomodoro"
-#~ msgstr "O programu Pomodoro"
-
-#~ msgid "translator-credits"
-#~ msgstr "Milo Ivir <mail@milotype.de>"
-
-#~ msgid "Start/Stop"
-#~ msgstr "Pokreni/Prekini"
-
-#~ msgid "Pause/Resume"
-#~ msgstr "Zaustavi/Nastavi"
-
-#~ msgid "Skip to a pomodoro or to a break"
-#~ msgstr "Preskočite na pomodoro ili na pauzu"
-
-#~ msgid "Extend current pomodoro or break"
-#~ msgstr "Produžite trenutni pomodoro ili prekid"
-
-#~ msgid "Reset current session"
-#~ msgstr "Ponovno postavite trenutnu sesiju"
-
-#~ msgid "Run as background service"
-#~ msgstr "Pokreni kao uslugu u pozadini"
-
-#~ msgid "Show preferences"
-#~ msgstr "Prikaži postavke"
-
-#~ msgid "Quit application"
-#~ msgstr "Zatvori program"
-
-#~ msgid "Print version information and exit"
-#~ msgstr "Ispiši informacije o verziji i izađi"
-
-#~ msgid "Focus on your task."
-#~ msgstr "Usredotoči se na zadatak."
-
-#, c-format
-#~ msgid "You have %d minute"
-#~ msgid_plural "You have %d minutes"
-#~ msgstr[0] "Imaš %d minutu"
-#~ msgstr[1] "Imaš %d minute"
-#~ msgstr[2] "Imaš %d minuta"
-
-#, c-format
-#~ msgid "You have %d second"
-#~ msgid_plural "You have %d seconds"
-#~ msgstr[0] "Imaš %d sekundu"
-#~ msgstr[1] "Imaš %d sekunde"
-#~ msgstr[2] "Imaš %d sekunda"
-
-#~ msgid "Take a longer break"
-#~ msgstr "Započni dužu pauzu"
-
-#~ msgid "Lengthen it"
-#~ msgstr "Produži"
-
-#~ msgid "Shorten it"
-#~ msgstr "Skrati"
-
-#~ msgid "Start pomodoro"
-#~ msgstr "Pokreni Pomodoro"
-
-#, c-format
-#~ msgid ""
-#~ "Using \"%s\" as shortcut will interfere with typing. Try adding another "
-#~ "key, such as Control, Alt or Shift."
-#~ msgstr ""
-#~ "Korištenje tipke „%s” kao prečaca ometat će tipkanje. Pokušaj dodati "
-#~ "jednu drugu tipku, kao što su Control, Alt ili Shift."
-
-#~ msgid "Keyboard Shortcut"
-#~ msgstr "Tipkovni prečaci"
-
-#~ msgid "Available"
-#~ msgstr "Dostupno"
-
-#~ msgid "Busy"
-#~ msgstr "Zauzeto"
-
-#~ msgid "Idle"
-#~ msgstr "Bez aktivnosti"
-
-#~ msgid "Invisible"
-#~ msgstr "Nevidljivo"
-
-#~ msgid "Yesterday"
-#~ msgstr "Jučer"
-
-#, c-format
-#~ msgid "%d m"
-#~ msgstr "%d min"
-
-#, c-format
-#~ msgid "%.0f h"
-#~ msgstr "%.0f h"
-
-#, c-format
-#~ msgid "%.1f h"
-#~ msgstr "%.1f h"
-
-#~ msgid "This week"
-#~ msgstr "Ovaj tjedan"
-
-#~ msgid "Kamil Prusko"
-#~ msgstr "Kamil Prusko"
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.24.1"
+#~ msgstr "Pregled promjena za gnome-pomodoro 0.15.1"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.24.0"
+#~ msgstr "Pregled promjena za gnome-pomodoro 0.18.0"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.23.1"
+#~ msgstr "Pregled promjena za gnome-pomodoro 0.15.1"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.23.0"
+#~ msgstr "Pregled promjena za gnome-pomodoro 0.18.0"
 
 #, fuzzy
 #~ msgid "Overview of changes in gnome-pomodoro 0.22.1"
@@ -671,10 +1592,6 @@ msgstr "Pauza"
 #, fuzzy
 #~ msgid "Updated Brazilian translation (thanks @costaronaldo)"
 #~ msgstr "Aktualiziran prijevod za katalanski (@antoniofsm)"
-
-#, fuzzy
-#~ msgid "Updated Russian translation (thanks @ViktorOn)"
-#~ msgstr "Aktualiziran prijevod za ruski (@rkaverin)"
 
 #, fuzzy
 #~ msgid "Updated Chinese translation (thanks @HaorongX)"
@@ -831,11 +1748,166 @@ msgstr "Pauza"
 #~ msgid "Updated Russian translation (@tigertv)"
 #~ msgstr "Aktualiziran prijevod za ruski (@tigertv)"
 
-#~ msgid "Paused"
-#~ msgstr "Zaustavljeno"
+#~ msgid "_Timer"
+#~ msgstr "_Timer"
 
-#~ msgid "Failed to enable extension"
-#~ msgstr "Neuspjelo aktiviranje proširenja"
+#~ msgid "Keyboard shortcut to toggle the timer. Enter new shortcut to change."
+#~ msgstr ""
+#~ "Tipkovni prečac za uključivanje/isključivanje timera. Promijeni prečac "
+#~ "upisom novog prečaca."
+
+#~ msgid "Pomodoros before a long break"
+#~ msgstr "Broj Pomodora prije duge pauze"
+
+#~ msgid "Keyboard shortcut"
+#~ msgstr "Tipkovni prečaci"
+
+#~ msgid "Screen notifications"
+#~ msgstr "Ekranske obavijesti"
+
+#~ msgid "Wait for activity after a break"
+#~ msgstr "Čekaj na aktivnost nakon pauze"
+
+#~ msgid "Plugins…"
+#~ msgstr "Dodaci …"
+
+#~ msgid "Plugins"
+#~ msgstr "Dodaci"
+
+#~ msgid "Back"
+#~ msgstr "Natrag"
+
+#~ msgid "Complete a few sessions"
+#~ msgstr "Završi par sesija"
+
+#~ msgid "Previous (Alt+Left)"
+#~ msgstr "Prethodni (Alt+Lijevo)"
+
+#~ msgid "Next (Alt+Right)"
+#~ msgstr "Sljedeći (Alt+Desno)"
+
+#~ msgid "Complete"
+#~ msgstr "Završeno"
+
+#~ msgid "Enable"
+#~ msgstr "Aktiviraj"
+
+#~ msgid "Add"
+#~ msgstr "Dodaj"
+
+#~ msgid "Remove"
+#~ msgstr "Ukloni"
+
+#~ msgid "Elapsed Time"
+#~ msgstr "Proteklo vrijeme"
+
+#~ msgid "Pause Timer"
+#~ msgstr "Zaustavi timer"
+
+#~ msgid "Pause break"
+#~ msgstr "Prekid pauze"
+
+#~ msgid "Pause Pomodoro"
+#~ msgstr "Prekini pomodoro"
+
+#~ msgid "Resume break"
+#~ msgstr "Nastavi pauzu"
+
+#~ msgid "Resume Pomodoro"
+#~ msgstr "Nastavi pomodoro"
+
+#, javascript-format
+#~ msgid "%d minute remaining"
+#~ msgid_plural "%d minutes remaining"
+#~ msgstr[0] "još %d minuta"
+#~ msgstr[1] "još %d minute"
+#~ msgstr[2] "još %d minuta"
+
+#, javascript-format
+#~ msgid "Failed to run <i>%s</i> service"
+#~ msgstr "Neuspjelo pokretanje usluge <i>%s</i>"
+
+#~ msgid "Woodland Birds"
+#~ msgstr "Šumske ptice"
+
+#~ msgid "End of Break Sound"
+#~ msgstr "Zvuk kraja pauze"
+
+#~ msgid "Start of Break Sound"
+#~ msgstr "Zvuk početka pauze"
+
+#~ msgid "Off"
+#~ msgstr "Isključeno"
+
+#~ msgid "Ticking sound"
+#~ msgstr "Zvuk otkucavanja"
+
+#~ msgid "Start of break sound"
+#~ msgstr "Zvuk početka pauze"
+
+#~ msgid "End of break sound"
+#~ msgstr "Zvuk kraja pauze"
+
+#~ msgid "Focus on your task."
+#~ msgstr "Usredotoči se na zadatak."
+
+#, c-format
+#~ msgid "You have %d minute"
+#~ msgid_plural "You have %d minutes"
+#~ msgstr[0] "Imaš %d minutu"
+#~ msgstr[1] "Imaš %d minute"
+#~ msgstr[2] "Imaš %d minuta"
+
+#, c-format
+#~ msgid "You have %d second"
+#~ msgid_plural "You have %d seconds"
+#~ msgstr[0] "Imaš %d sekundu"
+#~ msgstr[1] "Imaš %d sekunde"
+#~ msgstr[2] "Imaš %d sekunda"
+
+#~ msgid "Take a longer break"
+#~ msgstr "Započni dužu pauzu"
+
+#~ msgid "Lengthen it"
+#~ msgstr "Produži"
+
+#~ msgid "Shorten it"
+#~ msgstr "Skrati"
+
+#~ msgid "Start pomodoro"
+#~ msgstr "Pokreni Pomodoro"
+
+#, c-format
+#~ msgid ""
+#~ "Using \"%s\" as shortcut will interfere with typing. Try adding another "
+#~ "key, such as Control, Alt or Shift."
+#~ msgstr ""
+#~ "Korištenje tipke „%s” kao prečaca ometat će tipkanje. Pokušaj dodati "
+#~ "jednu drugu tipku, kao što su Control, Alt ili Shift."
+
+#~ msgid "Available"
+#~ msgstr "Dostupno"
+
+#~ msgid "Busy"
+#~ msgstr "Zauzeto"
+
+#~ msgid "Idle"
+#~ msgstr "Bez aktivnosti"
+
+#~ msgid "Invisible"
+#~ msgstr "Nevidljivo"
+
+#, c-format
+#~ msgid "%d m"
+#~ msgstr "%d min"
+
+#, c-format
+#~ msgid "%.0f h"
+#~ msgstr "%.0f h"
+
+#, c-format
+#~ msgid "%.1f h"
+#~ msgstr "%.1f h"
 
 #~ msgid "Extension is out of date"
 #~ msgstr "Proširenje je zastarjelo"

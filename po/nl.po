@@ -1,13 +1,15 @@
-# Dutch translations for gnome-pomodoro package
-# Copyright (C) 2017 gnome-pomodoro contributors
-# This file is distributed under the same license as the gnome-pomodoro package.
+# Dutch translation for gnome-shell-extension-focus-timer
+# Copyright (c) 2017 focus-timer contributors
+# This file is distributed under the same license as the focus-timer package.
+#
+# Authors:
 # Johannes Kool <100johannes100@gmail.com>, 2017.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-pomodoro 0.13.0\n"
+"Project-Id-Version: gnome-shell-extension-focus-timer 1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-25 16:45+0100\n"
+"POT-Creation-Date: 2026-04-12 13:38+0200\n"
 "PO-Revision-Date: 2023-03-26 11:34+0200\n"
 "Last-Translator: Heimen Stoffels <vistausss@fastmail.com>\n"
 "Language-Team: Dutch\n"
@@ -18,89 +20,69 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.1.1\n"
 
-#: data/org.gnome.shell.extensions.focus-timer.gschema.xml:6
-msgid "Start the app along with extension"
-msgstr ""
-
-#: data/org.gnome.shell.extensions.focus-timer.gschema.xml:14
-msgid "Indicator type"
-msgstr ""
-
-#: data/org.gnome.shell.extensions.focus-timer.gschema.xml:18
-msgid "Blur effect"
-msgstr ""
-
-#: data/org.gnome.shell.extensions.focus-timer.gschema.xml:22
-msgid "Dismiss screen overlay by gesture"
-msgstr ""
-
-#: data/org.gnome.shell.extensions.focus-timer.gschema.xml:26
-msgid "Reduce number of notifications during Pomodoro"
-msgstr ""
+#: src/indicator.js:329 src/screenShield.js:171
+msgid "Finished!"
+msgstr "Klaar!"
 
 #: src/indicator.js:331 src/screenShield.js:173
-msgid "Finished!"
-msgstr ""
-
-#: src/indicator.js:333 src/screenShield.js:175
 #, javascript-format
 msgid "%d of %d"
 msgstr ""
 
-#: src/indicator.js:420 src/prefs.js:73
+#: src/indicator.js:425 src/prefs.js:71
 msgid "Screen Overlay"
-msgstr ""
+msgstr "Schermoverlay"
 
-#: src/indicator.js:423
+#: src/indicator.js:427
 msgid "Preferences"
 msgstr "Voorkeuren"
 
-#: src/indicator.js:424
+#: src/indicator.js:428
 msgid "Stats"
 msgstr "Statistieken"
 
-#: src/indicator.js:426
+#: src/indicator.js:430
 msgid "Quit"
 msgstr "Afsluiten"
 
-#: src/indicator.js:601
+#: src/indicator.js:624
 #, javascript-format
 msgid "%dh"
 msgstr ""
 
-#: src/indicator.js:605
+#: src/indicator.js:628
 #, javascript-format
 msgid "%dm"
 msgstr ""
 
-#: src/indicator.js:613
+#: src/indicator.js:630 src/indicator.js:632 src/indicator.js:634
 #, javascript-format
 msgid "%ds"
 msgstr ""
 
-#: src/indicator.js:1058 src/notifications.js:59
+#: src/indicator.js:1079 src/notifications.js:57
 msgid "Focus Timer"
 msgstr ""
 
-#: src/notifications.js:79
+#: src/notifications.js:77
 msgid "Focus Timer Extension"
 msgstr ""
 
-#: src/notifications.js:115
+#: src/notifications.js:119
 #, javascript-format
 msgid "%d hour"
 msgid_plural "%d hours"
-msgstr[0] "%d uur"
-msgstr[1] "%d uur"
+msgstr[0] ""
+msgstr[1] ""
 
-#: src/notifications.js:118
+#: src/notifications.js:122
 #, javascript-format
 msgid "%d minute"
 msgid_plural "%d minutes"
-msgstr[0] "%d minuut"
-msgstr[1] "%d minuten"
+msgstr[0] ""
+msgstr[1] ""
 
-#: src/notifications.js:121
+#: src/notifications.js:125
 #, javascript-format
 msgid "%d second"
 msgid_plural "%d seconds"
@@ -108,174 +90,1277 @@ msgstr[0] ""
 msgstr[1] ""
 
 #. translators: time remaining eg. "3 minutes 50 seconds remaining"
-#: src/notifications.js:128
-#, javascript-format
+#: src/notifications.js:135
+#, fuzzy, javascript-format
 msgid "%s remaining"
-msgstr ""
+msgstr "nog %s"
 
-#: src/notifications.js:239 src/timer.js:54
+#: src/notifications.js:261 src/timer.js:47
 msgid "Pomodoro"
 msgstr "Pomodoro"
 
-#: src/notifications.js:241
+#: src/notifications.js:263
 msgid "Take a break"
-msgstr "Neem een pauze"
+msgstr "Neem pauze"
 
-#: src/notifications.js:243
+#: src/notifications.js:265
 msgid "Take a short break"
 msgstr "Neem een korte pauze"
 
-#: src/notifications.js:245
+#: src/notifications.js:267
 msgid "Take a long break"
 msgstr "Neem een lange pauze"
 
-#: src/notifications.js:253
+#: src/notifications.js:275
 msgid "Pomodoro is about to end"
-msgstr "De Pomodoro verstrijkt bijna"
+msgstr "De Pomodoro loopt bijna af"
 
-#: src/notifications.js:255
+#: src/notifications.js:277
 msgid "Break is about to end"
-msgstr "De pauze is bijna voorbij"
+msgstr "De pauze loopt bijna af"
 
-#: src/notifications.js:263 src/notifications.js:275
+#: src/notifications.js:285 src/notifications.js:297
+#, fuzzy
 msgid "Break is over!"
-msgstr ""
+msgstr "De pauze is voorbij!"
 
-#: src/notifications.js:265 src/notifications.js:273
+#: src/notifications.js:287 src/notifications.js:295
+#, fuzzy
 msgid "Pomodoro is over!"
-msgstr ""
+msgstr "De Pomodoro is voorbij!"
 
-#: src/notifications.js:294
+#: src/notifications.js:316
 msgid "Get ready…"
-msgstr "Maak je klaar…"
+msgstr "Maak je gereed…"
 
-#: src/notifications.js:299
+#: src/notifications.js:321
 msgid "Confirm the start of a Pomodoro…"
-msgstr ""
+msgstr "Bevestig de start van een Pomodoro…"
 
-#: src/notifications.js:301
+#: src/notifications.js:323
 msgid "Confirm the start of a break…"
-msgstr ""
+msgstr "Bevestig de start van een pauze…"
 
-#: src/notifications.js:303
+#: src/notifications.js:325
 msgid "Confirm the start of a short break…"
-msgstr ""
+msgstr "Bevestig de start van een korte pauze…"
 
-#: src/notifications.js:305
+#: src/notifications.js:327
 msgid "Confirm the start of a long break…"
-msgstr ""
+msgstr "Bevestig de start van een lange pauze…"
 
-#: src/notifications.js:344
+#: src/notifications.js:366
+#, fuzzy
 msgid "+1 minute"
-msgstr ""
+msgstr "+1 minuut"
 
-#: src/notifications.js:345
+#: src/notifications.js:367
 msgid "Start Pomodoro"
 msgstr "Pomodoro starten"
 
-#: src/notifications.js:346
+#: src/notifications.js:368
 msgid "Start Break"
 msgstr ""
 
-#: src/notifications.js:403
+#: src/notifications.js:425
 msgid "Something went wrong"
-msgstr ""
+msgstr "Er is iets misgegaan"
 
-#: src/notifications.js:409
+#: src/notifications.js:431
 msgid "Report issue"
 msgstr "Probleem melden"
 
-#: src/notifications.js:429
+#: src/notifications.js:451
 msgid "Focus Timer Not Found"
 msgstr ""
 
-#: src/notifications.js:430
+#: src/notifications.js:452
 msgid "Install Focus Timer app to start using the extension."
 msgstr ""
 
-#: src/notifications.js:435
+#: src/notifications.js:457
 msgid "Install from Flathub"
 msgstr ""
 
-#: src/prefs.js:14
+#: src/prefs.js:12
 msgid "General"
 msgstr ""
 
-#: src/prefs.js:20
+#: src/prefs.js:18
 msgid "Autostart The App"
 msgstr ""
 
-#: src/prefs.js:21
+#: src/prefs.js:19
 msgid "Makes the indicator instantly visible and allows keyboard shortcuts"
 msgstr ""
 
-#: src/prefs.js:34
+#: src/prefs.js:32
 msgid "Indicator"
 msgstr ""
 
-#: src/prefs.js:47
+#: src/prefs.js:45
 msgid "Icon"
 msgstr ""
 
-#: src/prefs.js:53
+#: src/prefs.js:51
 msgid "Text"
 msgstr ""
 
-#: src/prefs.js:60
+#: src/prefs.js:58
 msgid "Display As"
 msgstr ""
 
-#: src/prefs.js:61
+#: src/prefs.js:59
 msgid "Choose how the timer appears in the status bar"
 msgstr ""
 
-#: src/prefs.js:79
+#: src/prefs.js:77
 msgid "Blur Effect"
 msgstr ""
 
-#: src/prefs.js:80
+#: src/prefs.js:78
 msgid "Helps to acknowledge the break"
 msgstr ""
 
-#: src/prefs.js:88
+#: src/prefs.js:86
 msgid "Dismiss Gesture"
 msgstr ""
 
-#: src/prefs.js:89
+#: src/prefs.js:87
 msgid "Flick the mouse or press any key to dismiss"
 msgstr ""
 
-#: src/prefs.js:102
+#: src/prefs.js:100
 msgid "Distractions"
 msgstr ""
 
-#: src/prefs.js:108
+#: src/prefs.js:106
 msgid "Manage Notifications"
 msgstr ""
 
-#: src/prefs.js:109
+#: src/prefs.js:107
 msgid "Toggle Do Not Disturb mode during Pomodoro"
 msgstr ""
 
-#: src/screenOverlay.js:987
+#: src/screenOverlay.js:1053
 msgid "It's time to take a break"
-msgstr "Het is tijd voor een pauze"
+msgstr "Het is tijd voor pauze"
 
-#: src/timer.js:51
+#: src/timer.js:44
+#, fuzzy
 msgid "Stopped"
-msgstr ""
+msgstr "Gestopt"
 
-#: src/timer.js:57
+#: src/timer.js:50
 msgid "Short Break"
 msgstr "Korte pauze"
 
-#: src/timer.js:60
+#: src/timer.js:53
 msgid "Long Break"
 msgstr "Lange pauze"
 
-#: src/timer.js:63
+#: src/timer.js:56
 msgid "Break"
 msgstr "Pauze"
+
+#, fuzzy
+#~ msgid "Time management utility"
+#~ msgstr "Hulpmiddel voor tijdsbeheer"
+
+#~ msgid "Maintain focus by taking frequent breaks"
+#~ msgstr "Blijf gefocust door regelmatig pauzes te nemen"
+
+#~ msgid ""
+#~ "A productivity timer that helps you work more effectively by breaking "
+#~ "your time into focused work sessions followed by short breaks. Work for "
+#~ "25 minutes, then take a 5-minute break to maintain concentration and "
+#~ "prevent burnout."
+#~ msgstr ""
+#~ "Een productiviteitstimer die u helpt effectiever te werken door uw tijd "
+#~ "op te delen in gefocuste werksessies gevolgd door korte pauzes. Werk 25 "
+#~ "minuten en neem daarna 5 minuten pauze om de concentratie vast te houden "
+#~ "en burn-out te voorkomen."
+
+#~ msgid "Key features:"
+#~ msgstr "Belangrijkste kenmerken:"
+
+#~ msgid "Customizable work session and break lengths"
+#~ msgstr "Aanpasbare duur van werksessies en pauzes"
+
+#, fuzzy
+#~ msgid "Visual and audio notifications"
+#~ msgstr "Visuele en geluidsmeldingen"
+
+#~ msgid "Time tracking and statistics"
+#~ msgstr "Tijdregistratie en statistieken"
+
+#~ msgid "GNOME desktop integration"
+#~ msgstr "Integratie met GNOME-werkomgeving"
+
+#~ msgid "Screen overlay during breaks"
+#~ msgstr "Schermoverlay tijdens pauzes"
+
+#, fuzzy
+#~ msgid "Run custom commands after Pomodoro or break"
+#~ msgstr "Voer aangepaste opdrachten uit na een pomodoro of pauze"
+
+#~ msgid "Kamil Prusko"
+#~ msgstr "Kamil Prusko"
+
+#~ msgid "Timer"
+#~ msgstr "Timer"
+
+#~ msgid "Daily stats"
+#~ msgstr "Dagelijkse statistieken"
+
+#~ msgid "Monthly stats"
+#~ msgstr "Maandelijkse statistieken"
+
+#~ msgid "Screen overlay"
+#~ msgstr "Schermoverlay"
+
+#, fuzzy
+#~ msgid "Updated Russian translation (thanks @ViktorOn)"
+#~ msgstr "Russische vertaling bijgewerkt (met dank aan @rkaverin)"
+
+#, fuzzy
+#~ msgid "Start or Stop"
+#~ msgstr "Starten of stoppen"
+
+#, fuzzy
+#~ msgid "Start, Pause or Resume"
+#~ msgstr "Starten, onderbreken of hervatten"
+
+#~ msgid "Start"
+#~ msgstr "Starten"
+
+#~ msgid "Stop"
+#~ msgstr "Stoppen"
+
+#~ msgid "Pause"
+#~ msgstr "Onderbreken"
+
+#~ msgid "Resume"
+#~ msgstr "Hervatten"
+
+#~ msgid "Skip"
+#~ msgstr "Overslaan"
+
+#~ msgid "Rewind"
+#~ msgstr "Terugspoelen"
+
+#~ msgid "Extend current pomodoro or break"
+#~ msgstr "Huidige pomodoro of pauze verlengen"
+
+#~ msgid "Reset"
+#~ msgstr "Resetten"
+
+#~ msgid "Show preferences"
+#~ msgstr "Voorkeuren tonen"
+
+#~ msgid "Quit application"
+#~ msgstr "Toepassing afsluiten"
+
+#~ msgid "Print version information and exit"
+#~ msgstr "Versie-informatie tonen en afsluiten"
+
+#~ msgid "Bring to Focus"
+#~ msgstr "Op de voorgrond plaatsen"
+
+#, fuzzy, c-format
+#~ msgid "Custom action \"%s\" has failed"
+#~ msgstr "Aangepaste actie \"%s\" is mislukt"
+
+#~ msgid "Reached timeout"
+#~ msgstr "Time-out bereikt"
+
+#, fuzzy
+#~ msgid "Failed to execute command"
+#~ msgstr "Opdracht uitvoeren mislukt"
+
+#, fuzzy
+#~ msgid "Command is empty"
+#~ msgstr "Opdracht is leeg"
+
+#~ msgid "Unclosed quotation mark"
+#~ msgstr "Niet-gesloten aanhalingsteken"
+
+#~ msgid "Invalid command"
+#~ msgstr "Ongeldige opdracht"
+
+#, c-format
+#~ msgid "Unknown variable \"%s\""
+#~ msgstr "Onbekende variabele \"%s\""
+
+#, c-format
+#~ msgid "Unknown format \"%s\""
+#~ msgstr "Onbekend formaat \"%s\""
+
+#, c-format
+#~ msgid "Program \"%s\" not found"
+#~ msgstr "Programma \"%s\" niet gevonden"
+
+#~ msgid "Actions"
+#~ msgstr "Acties"
+
+#~ msgid "Countdown"
+#~ msgstr "Aftellen"
+
+#~ msgid "Session"
+#~ msgstr "Sessie"
+
+#~ msgid "Other"
+#~ msgstr "Overig"
+
+#, fuzzy
+#~ msgid "Started the timer."
+#~ msgstr "Timer gestart."
+
+#~ msgid "Stopped the timer manually."
+#~ msgstr "De timer is handmatig gestopt."
+
+#~ msgid ""
+#~ "The countdown has been manually paused. Not triggered when locking the "
+#~ "screen or when suspending the system."
+#~ msgstr ""
+#~ "Het aftellen is handmatig onderbroken. Dit wordt niet geactiveerd bij "
+#~ "schermvergrendeling of systeem-slaapstand."
+
+#~ msgid "The countdown has been manually resumed."
+#~ msgstr "Het aftellen is handmatig hervat."
+
+#~ msgid "Jumped to a next time-block before the countdown has finished."
+#~ msgstr ""
+#~ "Naar het volgende tijdsblok gesprongen voordat het aftellen klaar was."
+
+#~ msgid "Rewind action has been used. It adds a pause in the past."
+#~ msgstr ""
+#~ "Terugspoelactie is gebruikt. Het voegt een pauze toe in het verleden."
+
+#~ msgid "Manually cleared the session."
+#~ msgstr "Sessie handmatig gewist."
+
+#~ msgid "Finished"
+#~ msgstr "Voltooid"
+
+#~ msgid ""
+#~ "The countdown has finished. If waiting for confirmation, the duration of "
+#~ "the time-block still may be altered."
+#~ msgstr ""
+#~ "Het aftellen is voltooid. Indien wordt gewacht op bevestiging, kan de "
+#~ "duur van het tijdsblok nog worden gewijzigd."
+
+#~ msgid "Changed"
+#~ msgstr "Gewijzigd"
+
+#~ msgid "Triggered on any change related to the countdown."
+#~ msgstr "Geactiveerd bij elke wijziging gerelateerd aan het aftellen."
+
+#~ msgid "Confirm Advancement"
+#~ msgstr "Bevestig voortgang"
+
+#~ msgid "A manual confirmation is required to start next time-block."
+#~ msgstr ""
+#~ "Handmatige bevestiging is vereist om het volgende tijdsblok te starten."
+
+#~ msgid "Advanced"
+#~ msgstr "Gevorderd"
+
+#~ msgid "Transitioned or skipped to a next time-block."
+#~ msgstr "Overgegaan naar of overgeslagen naar een volgend tijdsblok."
+
+#~ msgid "State Changed"
+#~ msgstr "Status gewijzigd"
+
+#~ msgid "Transitioned to a next time-block or when a break gets relabelled."
+#~ msgstr "Overgegaan naar een volgend tijdsblok of herlabelen van een pauze."
+
+#~ msgid "Rescheduled"
+#~ msgstr "Opnieuw gepland"
+
+#~ msgid "Triggered when scheduled time-blocks have changed."
+#~ msgstr "Geactiveerd wanneer geplande tijdsblokken zijn gewijzigd."
+
+#~ msgid "Expired"
+#~ msgstr "Verstreken"
+
+#~ msgid "Triggered when session is about to be reset due to inactivity."
+#~ msgstr "Geactiveerd wanneer de sessie wordt gereset wegens inactiviteit."
+
+#, fuzzy
+#~ msgid "Take a Break"
+#~ msgstr "Neem een pauze"
+
+#~ msgid "Skip Break"
+#~ msgstr "Pauze overslaan"
+
+#~ msgid "Failed to initialize playback"
+#~ msgstr "Initialiseren van afspelen mislukt"
+
+#~ msgid "File not found"
+#~ msgstr "Bestand niet gevonden"
+
+#~ msgid "File type not supported"
+#~ msgstr "Bestandstype niet ondersteund"
+
+#, c-format
+#~ msgid "%uh"
+#~ msgstr "%u u"
+
+#, c-format
+#~ msgid "%um"
+#~ msgstr "%u m"
+
+#, fuzzy, c-format
+#~ msgid "%u hour"
+#~ msgid_plural "%u hours"
+#~ msgstr[0] "%u uur"
+#~ msgstr[1] "%u uur"
+
+#, fuzzy, c-format
+#~ msgid "%u minute"
+#~ msgid_plural "%u minutes"
+#~ msgstr[0] "%u minuut"
+#~ msgstr[1] "%u minuten"
+
+#, c-format
+#~ msgid "%u second"
+#~ msgid_plural "%u seconds"
+#~ msgstr[0] "%u seconde"
+#~ msgstr[1] "%u seconden"
+
+#~ msgid "The exact time of the current event."
+#~ msgstr "Het exacte tijdstip van de huidige gebeurtenis."
+
+#~ msgid ""
+#~ "The current phase of the Pomodoro cycle. Possible values: <tt>stopped</"
+#~ "tt>, <tt>pomodoro</tt>, <tt>break</tt>, <tt>short-break</tt>, <tt>long-"
+#~ "break</tt>."
+#~ msgstr ""
+#~ "De huidige fase van de Pomodoro-cyclus. Mogelijke waarden: <tt>stopped</"
+#~ "tt>, <tt>pomodoro</tt>, <tt>break</tt>, <tt>short-break</tt>, <tt>long-"
+#~ "break</tt>."
+
+#~ msgid ""
+#~ "Status of the current time-block. Possible values: <tt>scheduled</tt>, "
+#~ "<tt>in-progress</tt>, <tt>completed</tt>, <tt>uncompleted</tt>."
+#~ msgstr ""
+#~ "Status van het huidige tijdsblok. Mogelijke waarden: <tt>scheduled</tt>, "
+#~ "<tt>in-progress</tt>, <tt>completed</tt>, <tt>uncompleted</tt>."
+
+#~ msgid "A flag indicating whether countdown has begun."
+#~ msgstr "Een vlag die aangeeft of het aftellen is begonnen."
+
+#~ msgid "A flag indicating whether countdown is paused."
+#~ msgstr "Een vlag die aangeeft of het aftellen is onderbroken."
+
+#~ msgid "A flag indicating whether countdown has finished."
+#~ msgstr "Een vlag die aangeeft of het aftellen is voltooid."
+
+#~ msgid "A flag indicating whether the timer is actively counting down."
+#~ msgstr "Een vlag die aangeeft of de timer actief aan het aftellen is."
+
+#~ msgid "Duration of the current countdown."
+#~ msgstr "Duur van het huidige aftellen."
+
+#~ msgid "Discrepancy between elapsed time and the time passed."
+#~ msgstr ""
+#~ "Verschil tussen de verstreken tijd en de werkelijk gepasseerde tijd."
+
+#~ msgid "The amount of time spent on the countdown."
+#~ msgstr "De hoeveelheid tijd gespendeerd aan het aftellen."
+
+#~ msgid "The amount of time left before the countdown ends."
+#~ msgstr "De resterende tijd voordat het aftellen eindigt."
+
+#~ msgid "Time when the countdown has started."
+#~ msgstr "Tijdstip waarop het aftellen is gestart."
+
+#~ msgid "GNOME Shell Extension"
+#~ msgstr "GNOME Shell-uitbreiding"
+
+#~ msgid "Get the best experience!"
+#~ msgstr "Krijg de beste ervaring!"
+
+#~ msgid "Enable <b>GNOME Shell extension</b> for seamless desktop integration"
+#~ msgstr ""
+#~ "Schakel de <b>GNOME Shell-uitbreiding</b> in voor naadloze integratie"
+
+#~ msgid "Always within reach"
+#~ msgstr "Altijd binnen handbereik"
+
+#~ msgid "Control timer directly from the top bar without opening the app"
+#~ msgstr "Bedien de timer direct vanuit de bovenbalk zonder de app te openen"
+
+#~ msgid "Less distractions"
+#~ msgstr "Minder afleidingen"
+
+#~ msgid "Refined break reminders"
+#~ msgstr "Verfijnde pauze-herinneringen"
+
+#~ msgid ""
+#~ "Elegant full-screen overlay that make taking breaks a more pleasant "
+#~ "experience"
+#~ msgstr ""
+#~ "Elegante schermvullende overlay die het nemen van pauzes aangenamer maakt"
+
+#~ msgid "Ready to try it?"
+#~ msgstr "Klaar om het te proberen?"
+
+#~ msgid "_Install Extension"
+#~ msgstr "Uitbreiding _installeren"
+
+#~ msgid "_Not Now"
+#~ msgstr "_Niet nu"
+
+#~ msgid "Copy to clipboard"
+#~ msgstr "Kopiëren naar klembord"
+
+#~ msgid "_Try Again"
+#~ msgstr "Opnieuw _proberen"
+
+#, fuzzy
+#~ msgid "_Abort"
+#~ msgstr "_Afbreken"
+
+#~ msgid "Time-out reached"
+#~ msgstr "Time-out bereikt"
+
+#~ msgid "Installing extensions is not allowed"
+#~ msgstr "Installeren van uitbreidingen is niet toegestaan"
+
+#, fuzzy
+#~ msgid "Failed to download the extension"
+#~ msgstr "Downloaden van uitbreiding mislukt"
+
+#~ msgid "Desktop"
+#~ msgstr "Bureaublad"
+
+#~ msgid "GNOME Shell extension available"
+#~ msgstr "GNOME Shell-uitbreiding beschikbaar"
+
+#~ msgid "Learn More"
+#~ msgstr "Meer informatie"
+
+#, fuzzy
+#~ msgid "Unused"
+#~ msgstr "Niet gebruikt"
+
+#~ msgid "Log"
+#~ msgstr "Logboek"
+
+#~ msgid "Empty Log"
+#~ msgstr "Logboek legen"
+
+#~ msgid "Entries will show up here once you start the timer."
+#~ msgstr "Items verschijnen hier zodra u de timer start."
+
+#~ msgid "Context"
+#~ msgstr "Context"
+
+#~ msgid "Command"
+#~ msgstr "Opdracht"
+
+#~ msgid "Output"
+#~ msgstr "Uitvoer"
+
+#~ msgid "Error"
+#~ msgstr "Fout"
+
+#~ msgid "Exit Code:"
+#~ msgstr "Afsluitcode:"
+
+#~ msgid "Execution Time:"
+#~ msgstr "Uitvoeringstijd:"
+
+#~ msgid "translator-credits"
+#~ msgstr ""
+#~ "Johannes Kool\n"
+#~ "Heimen Stoffels <vistausss@fastmail.com>"
+
+#~ msgid "Donate"
+#~ msgstr "Doneren"
+
+#, fuzzy
+#~ msgid "Breaks"
+#~ msgstr "Pauzes"
+
+#~ msgid "Interruptions"
+#~ msgstr "Onderbrekingen"
+
+#, fuzzy
+#~ msgid "Break Ratio"
+#~ msgstr "Pauzeratio"
+
+#~ msgid "Day"
+#~ msgstr "Dag"
+
+#~ msgid "Week"
+#~ msgstr "Week"
+
+#~ msgid "Month"
+#~ msgstr "Maand"
+
+#, fuzzy
+#~ msgid "Nothing to see here yet"
+#~ msgstr "Nog niets te zien hier"
+
+#~ msgid "Finish a few Pomodoros to fill this up!"
+#~ msgstr "Voltooi een paar Pomodoro's om dit te vullen!"
+
+#, c-format
+#~ msgid "Skipped %u day"
+#~ msgid_plural "Skipped %u days"
+#~ msgstr[0] "%u dag overgeslagen"
+#~ msgstr[1] "%u dagen overgeslagen"
+
+#, c-format
+#~ msgid "Skipped %u week"
+#~ msgid_plural "Skipped %u weeks"
+#~ msgstr[0] "%u week overgeslagen"
+#~ msgstr[1] "%u weken overgeslagen"
+
+#, c-format
+#~ msgid "Skipped %u month"
+#~ msgid_plural "Skipped %u months"
+#~ msgstr[0] "%u maand overgeslagen"
+#~ msgstr[1] "%u maanden overgeslagen"
+
+#~ msgid "Today"
+#~ msgstr "Vandaag"
+
+#~ msgid "Yesterday"
+#~ msgstr "Gisteren"
+
+#~ msgid "This week"
+#~ msgstr "Deze week"
+
+#, fuzzy, c-format
+#~ msgid "Week %u"
+#~ msgstr "Week %u"
+
+#, c-format
+#~ msgid "Week %u of %u"
+#~ msgstr "Week %u van %u"
+
+#~ msgid "_Pomodoro"
+#~ msgstr "_Pomodoro"
+
+#~ msgid "_Short Break"
+#~ msgstr "_Korte pauze"
+
+#~ msgid "_Long Break"
+#~ msgstr "_Lange pauze"
+
+#, fuzzy
+#~ msgid "_Break"
+#~ msgstr "_Pauze"
+
+#~ msgid "Open screen overlay"
+#~ msgstr "Schermoverlay openen"
+
+#~ msgid "Session has expired"
+#~ msgstr "Sessie is verlopen"
+
+#, fuzzy, c-format
+#~ msgid "Long break due in <b>%s</b>"
+#~ msgstr "Lange pauze over <b>%s</b>"
+
+#, fuzzy
+#~ msgid "Rewind one minute"
+#~ msgstr "Eén minuut terugdraaien"
+
+#~ msgid "_Compact View"
+#~ msgstr "_Compacte weergave"
+
+#~ msgid "_Preferences"
+#~ msgstr "_Voorkeuren"
+
+#~ msgid "_About"
+#~ msgstr "_Over"
+
+#~ msgid "_Quit"
+#~ msgstr "_Afsluiten"
+
+#~ msgid "Primary Menu"
+#~ msgstr "Hoofdmenu"
+
+#~ msgid "Keep timer running?"
+#~ msgstr "Timer laten lopen?"
+
+#~ msgid ""
+#~ "You can keep it running in the background — notifications and keyboard "
+#~ "shortcuts will still work."
+#~ msgstr ""
+#~ "U kunt de timer in de achtergrond laten lopen — meldingen en sneltoetsen "
+#~ "blijven dan werken."
+
+#, fuzzy
+#~ msgid "Run in background"
+#~ msgstr "In de achtergrond uitvoeren"
+
+#, fuzzy
+#~ msgid "Main Window"
+#~ msgstr "Hoofdvenster"
+
+#~ msgid "Prefer Dark Theme"
+#~ msgstr "Voorkeur voor donker thema"
+
+#~ msgid "Prefer Compact View"
+#~ msgstr "Voorkeur voor compacte weergave"
+
+#, fuzzy
+#~ msgid "Started"
+#~ msgstr "Gestart"
+
+#~ msgid "Paused"
+#~ msgstr "Onderbroken"
+
+#, fuzzy
+#~ msgid "Edit Custom Action"
+#~ msgstr "Aangepaste actie bewerken"
+
+#~ msgid "_Cancel"
+#~ msgstr "_Annuleren"
+
+#~ msgid "_Save"
+#~ msgstr "_Opslaan"
+
+#~ msgid "Name"
+#~ msgstr "Naam"
+
+#, fuzzy
+#~ msgid "Trigger"
+#~ msgstr "Trigger"
+
+#~ msgid "Event"
+#~ msgstr "Gebeurtenis"
+
+#~ msgid "Execute command after an event."
+#~ msgstr "Voer opdracht uit na een gebeurtenis."
+
+#~ msgid "Condition"
+#~ msgstr "Voorwaarde"
+
+#~ msgid ""
+#~ "Ensure execution of a second command once condition is no longer met."
+#~ msgstr ""
+#~ "Zorg voor uitvoering van een tweede opdracht zodra aan de voorwaarde niet "
+#~ "meer wordt voldaan."
+
+#~ msgid "Events"
+#~ msgstr "Gebeurtenissen"
+
+#~ msgid "Add _Event"
+#~ msgstr "_Gebeurtenis toevoegen"
+
+#~ msgid "_Filter"
+#~ msgstr "_Filteren"
+
+#~ msgid "Filter"
+#~ msgstr "Filter"
+
+#, fuzzy
+#~ msgid "Shell Command"
+#~ msgstr "Shell-opdracht"
+
+#, fuzzy
+#~ msgid "Commands"
+#~ msgstr "Opdrachten"
+
+#~ msgid "Condition Met Command"
+#~ msgstr "Opdracht bij voldane voorwaarde"
+
+#~ msgid "Condition Not Met Command"
+#~ msgstr "Opdracht bij niet-voldane voorwaarde"
+
+#~ msgid "Working Directory"
+#~ msgstr "Werkmap"
+
+#~ msgid "Use Subshell"
+#~ msgstr "Subshell gebruiken"
+
+#~ msgid "Run the program from a subshell such as sh -c ''"
+#~ msgstr "Programma uitvoeren vanuit een subshell zoals sh -c ''"
+
+#~ msgid "Pass Input Data"
+#~ msgstr "Invoergegevens doorgeven"
+
+#~ msgid "Instead of passing variables you can process a JSON object."
+#~ msgstr "In plaats van variabelen kunt u een JSON-object verwerken."
+
+#~ msgid "Wait For Completion"
+#~ msgstr "Wachten op voltooiing"
+
+#~ msgid "Block execution of other commands until the command completes."
+#~ msgstr "Andere opdrachten blokkeren totdat de opdracht is voltooid."
+
+#, fuzzy
+#~ msgid "_Delete Action"
+#~ msgstr "Actie _verwijderen"
+
+#~ msgid "No events specified yet."
+#~ msgstr "Nog geen gebeurtenissen gespecificeerd."
+
+#, fuzzy
+#~ msgid "Add Custom Action"
+#~ msgstr "Aangepaste actie toevoegen"
+
+#~ msgid "_Add"
+#~ msgstr "_Toevoegen"
+
+#~ msgid "Select Working Directory"
+#~ msgstr "Werkmap selecteren"
+
+#~ msgid "_Select"
+#~ msgstr "_Selecteren"
+
+#, fuzzy
+#~ msgid "Untitled action"
+#~ msgstr "Naamloze actie"
+
+#, fuzzy
+#~ msgid "Add Condition"
+#~ msgstr "Voorwaarde toevoegen"
+
+#, fuzzy
+#~ msgid "Add Group"
+#~ msgstr "Groep toevoegen"
+
+#~ msgid "AND"
+#~ msgstr "EN"
+
+#~ msgid "OR"
+#~ msgstr "OF"
+
+#~ msgid "Is"
+#~ msgstr "Is"
+
+#~ msgid "Is Not"
+#~ msgstr "Is niet"
+
+#~ msgid "Equals"
+#~ msgstr "Gelijk aan"
+
+#~ msgid "Greater Than"
+#~ msgstr "Groter dan"
+
+#~ msgid "Less Than"
+#~ msgstr "Kleiner dan"
+
+#~ msgid "Yes"
+#~ msgstr "Ja"
+
+#~ msgid "No"
+#~ msgstr "Nee"
+
+#, fuzzy
+#~ msgid "Minutes"
+#~ msgstr "Minuten"
+
+#~ msgid "Seconds"
+#~ msgstr "Seconden"
+
+#~ msgid "Hours"
+#~ msgstr "Uur"
+
+#~ msgid "Select Field…"
+#~ msgstr "Veld selecteren…"
+
+#~ msgid "State"
+#~ msgstr "Status"
+
+#~ msgid "Running"
+#~ msgstr "Lopend"
+
+#, fuzzy
+#~ msgid "Duration"
+#~ msgstr "Duur"
+
+#~ msgid "Insert Variable"
+#~ msgstr "Variabele invoegen"
+
+#~ msgid "Format"
+#~ msgstr "Opmaak"
+
+#~ msgid "_Log"
+#~ msgstr "_Logboek"
+
+#~ msgid "Show execution log"
+#~ msgstr "Uitvoeringslogboek tonen"
+
+#~ msgid ""
+#~ "Run shell commands automatically on timer events or conditions. <a "
+#~ "href=\"\">Learn more.</a>"
+#~ msgstr ""
+#~ "Voer automatisch shell-opdrachten uit bij timer-gebeurtenissen of "
+#~ "voorwaarden. <a href=\"\">Meer informatie.</a>"
+
+#, fuzzy
+#~ msgid "Set Shortcut"
+#~ msgstr "Sneltoets instellen"
+
+#~ msgid "_Set"
+#~ msgstr "_Instellen"
+
+#, fuzzy
+#~ msgid "Disabled"
+#~ msgstr "Uitgeschakeld"
+
+#~ msgid ""
+#~ "Press <b>Esc</b> to cancel or <b>Backspace</b> to disable the keyboard "
+#~ "shortcut"
+#~ msgstr ""
+#~ "Druk op <b>Esc</b> om te annuleren of op <b>Backspace</b> om de sneltoets "
+#~ "uit te schakelen"
+
+#~ msgid ""
+#~ "Global shortcuts let you control the app even when it’s not on screen. "
+#~ "They work as long as the app is running in the background."
+#~ msgstr ""
+#~ "Globale sneltoetsen laten u de app bedienen, zelfs wanneer deze niet in "
+#~ "beeld is. Ze werken zolang de app in de achtergrond draait."
+
+#~ msgid "Open app settings for editing global shortcuts"
+#~ msgstr "App-instellingen openen om globale sneltoetsen te bewerken"
+
+#~ msgid "_Edit"
+#~ msgstr "_Bewerken"
+
+#~ msgid "Enter new shortcut for starting or stopping the timer"
+#~ msgstr "Voer nieuwe sneltoets in voor starten of stoppen van de timer"
+
+#~ msgid "Enter new shortcut to start/pause/resume the timer"
+#~ msgstr ""
+#~ "Voer nieuwe sneltoets in voor starten/onderbreken/hervatten van de timer"
+
+#~ msgid "Enter new shortcut for starting the timer"
+#~ msgstr "Voer nieuwe sneltoets in voor starten van de timer"
+
+#~ msgid "Enter new shortcut for stopping the timer"
+#~ msgstr "Voer nieuwe sneltoets in voor stoppen van de timer"
+
+#~ msgid "Enter new shortcut for pausing the timer"
+#~ msgstr "Voer nieuwe sneltoets in voor onderbreken van de timer"
+
+#~ msgid "Enter new shortcut for resuming the timer"
+#~ msgstr "Voer nieuwe sneltoets in voor hervatten van de timer"
+
+#~ msgid "Enter new shortcut for skipping"
+#~ msgstr "Voer nieuwe sneltoets in voor overslaan"
+
+#~ msgid "Rewind One Minute"
+#~ msgstr "Eén minuut terugdraaien"
+
+#~ msgid "Enter new shortcut for rewinding"
+#~ msgstr "Voer nieuwe sneltoets in voor terugdraaien"
+
+#~ msgid "Enter new shortcut for bringing window to focus"
+#~ msgstr "Voer nieuwe sneltoets in om venster op de voorgrond te plaatsen"
+
+#~ msgid "Announcements"
+#~ msgstr "Aankondigingen"
+
+#~ msgid "Time Running Out"
+#~ msgstr "Tijd loopt af"
+
+#, fuzzy
+#~ msgid "Notify when Pomodoro or break is about to end."
+#~ msgstr "Melden wanneer Pomodoro of pauze bijna voorbij is."
+
+#~ msgid "A full-screen notification intended to enforce taking a break."
+#~ msgstr "Een schermvullende melding bedoeld om een pauze af te dwingen."
+
+#~ msgid "Lock Delay"
+#~ msgstr "Vergrendelingsvertraging"
+
+#~ msgid "Period of inactivity to lock the screen."
+#~ msgstr "Inactiviteitsduur om het scherm te vergrendelen."
+
+#~ msgid "Reopen Delay"
+#~ msgstr "Heropenvertraging"
+
+#~ msgid "Period of inactivity to reopen the overlay after it gets dismissed."
+#~ msgstr "Inactiviteitsduur om de overlay opnieuw te tonen na sluiten."
+
+#~ msgid "Never"
+#~ msgstr "Nooit"
+
+#~ msgid "Notifications"
+#~ msgstr "Meldingen"
+
+#, fuzzy
+#~ msgid "Sounds"
+#~ msgstr "Geluiden"
+
+#~ msgid "Appearance"
+#~ msgstr "Uiterlijk"
+
+#, fuzzy
+#~ msgid "Keyboard Shortcuts"
+#~ msgstr "Sneltoetsen"
+
+#, fuzzy
+#~ msgid "Automation"
+#~ msgstr "Automatisering"
+
+#~ msgid "Sounds Are Disabled"
+#~ msgstr "Geluiden zijn uitgeschakeld"
+
+#, fuzzy
+#~ msgid "Alert Sounds"
+#~ msgstr "Waarschuwingsgeluiden"
+
+#, fuzzy
+#~ msgid "Pomodoro Finished Sound"
+#~ msgstr "Geluid bij voltooide Pomodoro"
+
+#, fuzzy
+#~ msgid "Break Finished Sound"
+#~ msgstr "Geluid bij voltooide pauze"
+
+#, fuzzy
+#~ msgid "Background Sound"
+#~ msgstr "Achtergrondgeluid"
+
+#~ msgid "Bell"
+#~ msgstr "Bel"
+
+#~ msgid "Loud Bell"
+#~ msgstr "Harde bel"
+
+#~ msgid "Clock Ticking"
+#~ msgstr "Tikkende klok"
+
+#~ msgid "None"
+#~ msgstr "Geen"
+
+#~ msgid "Volume:"
+#~ msgstr "Volume:"
+
+#~ msgid "Select Custom Sound"
+#~ msgstr "Aangepast geluid selecteren"
+
+#, fuzzy
+#~ msgid "Pomodoro Duration"
+#~ msgstr "Duur van Pomodoro"
+
+#, fuzzy
+#~ msgid "Short Break Duration"
+#~ msgstr "Duur van korte pauze"
+
+#, fuzzy
+#~ msgid "Long Break Duration"
+#~ msgstr "Duur van lange pauze"
+
+#~ msgid "Number of Cycles"
+#~ msgstr "Aantal cycli"
+
+#~ msgid "Behavior"
+#~ msgstr "Gedrag"
+
+#~ msgid "Pause By Locking The Screen"
+#~ msgstr "Onderbreken bij schermvergrendeling"
+
+#~ msgid "Confirm Starting a Break"
+#~ msgstr "Starten van pauze bevestigen"
+
+#, fuzzy
+#~ msgid "Confirm Starting a Pomodoro"
+#~ msgstr "Starten van Pomodoro bevestigen"
+
+#, c-format
+#~ msgid "A single session will take <b>%s</b>."
+#~ msgstr "Een enkele sessie duurt <b>%s</b>."
+
+#, c-format
+#~ msgid "<b>%u%%</b> of the time will be allocated for breaks."
+#~ msgstr "<b>%u%%</b> van de tijd wordt gereserveerd voor pauzes."
+
+#, fuzzy
+#~ msgid "Apply changes to ongoing Pomodoro?"
+#~ msgstr "Wijzigingen toepassen op huidige Pomodoro?"
+
+#, fuzzy
+#~ msgid "Apply changes to ongoing break?"
+#~ msgstr "Wijzigingen toepassen op huidige pauze?"
+
+#, fuzzy
+#~ msgid "Apply"
+#~ msgstr "Toepassen"
+
+#, fuzzy
+#~ msgctxt "accessibility"
+#~ msgid "Sidebar"
+#~ msgstr "Zijbalk"
+
+#, fuzzy
+#~ msgid "Compact timer"
+#~ msgstr "Compacte timer"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.28.1"
+#~ msgstr "Overzicht van wijzigingen in gnome-pomodoro 0.28.1"
+
+#, fuzzy
+#~ msgid "Added Tamil translation (thanks @omeritzics)"
+#~ msgstr "Tamil-vertaling toegevoegd (met dank aan @omeritzics)"
+
+#, fuzzy
+#~ msgid "Added Hebrew translation (thanks @Killersparrow1)"
+#~ msgstr "Hebreeuwse vertaling toegevoegd (met dank aan @Killersparrow1)"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.28.0"
+#~ msgstr "Overzicht van wijzigingen in gnome-pomodoro 0.28.0"
+
+#, fuzzy
+#~ msgid "Support for GNOME Shell 49 (thanks @aleasto)"
+#~ msgstr "Ondersteuning voor GNOME Shell 49 (met dank aan @aleasto)"
+
+#, fuzzy
+#~ msgid "Updated German translation (thanks @daPhipz)"
+#~ msgstr "Duitse vertaling bijgewerkt (met dank aan @daPhipz)"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.27.0"
+#~ msgstr "Overzicht van wijzigingen in gnome-pomodoro 0.27.0"
+
+#, fuzzy
+#~ msgid "Support for GNOME Shell 48"
+#~ msgstr "Ondersteuning voor GNOME Shell 48"
+
+#~ msgid "Split time spent across midnight"
+#~ msgstr "Splits gespendeerde tijd rond middernacht"
+
+#, fuzzy
+#~ msgid "Added Telugu translation (thanks @SpaciousCoder78)"
+#~ msgstr "Telugu-vertaling toegevoegd (met dank aan @SpaciousCoder78)"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.26.0"
+#~ msgstr "Overzicht van wijzigingen in gnome-pomodoro 0.26.0"
+
+#, fuzzy
+#~ msgid "Support for GNOME Shell 47"
+#~ msgstr "Ondersteuning voor GNOME Shell 47"
+
+#~ msgid "Allow to dismiss screen overlay by gesture when a video is playing"
+#~ msgstr ""
+#~ "Toestaan om schermoverlay te sluiten met gebaren wanneer een video speelt"
+
+#, fuzzy
+#~ msgid "Added Georgian translation (thanks @NorwayFun)"
+#~ msgstr "Georgische vertaling toegevoegd (met dank aan @NorwayFun)"
+
+#~ msgid "Adjusted translations in appdata (thanks @yakushabb)"
+#~ msgstr "Vertalingen in appdata aangepast (met dank aan @yakushabb)"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.25.2"
+#~ msgstr "Overzicht van wijzigingen in gnome-pomodoro 0.25.2"
+
+#~ msgid "Fix keeping notification after extending Pomodoro"
+#~ msgstr "Probleem opgelost waarbij melding bleef staan na verlengen Pomodoro"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.25.1"
+#~ msgstr "Overzicht van wijzigingen in gnome-pomodoro 0.25.1"
+
+#, fuzzy
+#~ msgid "Fixes for GNOME Shell 46"
+#~ msgstr "Oplossingen voor GNOME Shell 46"
+
+#, fuzzy
+#~ msgid "Drop support for GNOME Shell 45"
+#~ msgstr "Ondersteuning voor GNOME Shell 45 beëindigd"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.25.0"
+#~ msgstr "Overzicht van wijzigingen in gnome-pomodoro 0.25.0"
+
+#, fuzzy
+#~ msgid "Support for GNOME Shell 46"
+#~ msgstr "Ondersteuning voor GNOME Shell 46"
+
+#~ msgid "Adjust build script to meson 0.59.0 (thanks @mattst88)"
+#~ msgstr "Bouwscript aangepast voor meson 0.59.0 (met dank aan @mattst88)"
+
+#~ msgid ""
+#~ "Let <b>Pomodoro</b> manage system notifications while the timer is running"
+#~ msgstr ""
+#~ "Laat <b>Pomodoro</b> de systeemmeldingen beheren terwijl de timer loopt"
+
+#~ msgid "15 seconds"
+#~ msgstr "15 seconden"
+
+#~ msgid "30 seconds"
+#~ msgstr "30 seconden"
+
+#, fuzzy
+#~ msgid "1 minute"
+#~ msgstr "1 minuut"
+
+#, fuzzy
+#~ msgid "2 minutes"
+#~ msgstr "2 minuten"
+
+#, fuzzy
+#~ msgid "3 minutes"
+#~ msgstr "3 minuten"
+
+#, fuzzy
+#~ msgid "5 minutes"
+#~ msgstr "5 minuten"
+
+#~ msgid "Timer Ticking"
+#~ msgstr "Tikkende timer"
+
+#~ msgid "Birds"
+#~ msgstr "Vogels"
+
+#~ msgid "@APPLICATION_NAME@"
+#~ msgstr "@APPLICATION_NAME@"
+
+#~ msgid "timer;"
+#~ msgstr "timer;tijdklok;tijdindeling;pomodoro;pauze;"
+
+#~ msgid "Start/Stop"
+#~ msgstr "Starten/Stoppen"
+
+#~ msgid "Pause/Resume"
+#~ msgstr "Onderbreken/Hervatten"
+
+#~ msgid "Skip to a pomodoro or to a break"
+#~ msgstr "Doorgaan naar een pomodoro of pauze"
+
+#~ msgid "Reset current session"
+#~ msgstr "Huidige sessie resetten"
+
+#~ msgid "Run as background service"
+#~ msgstr "Uitvoeren als achtergronddienst"
+
+#~ msgid "About Pomodoro"
+#~ msgstr "Over Pomodoro"
+
+#~ msgid "A simple time management utility"
+#~ msgstr "Een eenvoudige tijdindelingstoepassing"
+
+#, fuzzy
+#~ msgid "_Stopped"
+#~ msgstr "Stoppen"
+
+#, fuzzy
+#~ msgid "Extension for GNOME Shell is available"
+#~ msgstr "Ondersteuning voor GNOME Shell 3.36"
+
+#, fuzzy
+#~ msgid "Failed to install extension"
+#~ msgstr "De uitbreiding kan niet worden ingeschakeld"
+
+#, fuzzy, c-format
+#~ msgid "Long break due in %s"
+#~ msgstr "Duur van lange pauze"
 
 #~ msgid "A time management utility for GNOME"
 #~ msgstr "Een tijdindelingstoepassing voor GNOME"
@@ -295,363 +1380,21 @@ msgstr "Pauze"
 #~ msgid "Indicator for GNOME Shell"
 #~ msgstr "GNOME Shell-indicator"
 
-#~ msgid "A simple time management utility"
-#~ msgstr "Een eenvoudige tijdindelingstoepassing"
-
-#~ msgid "timer;"
-#~ msgstr "timer;tijdklok;tijdindeling;"
-
-#~ msgid "Start"
-#~ msgstr "Starten"
-
-#~ msgid "Pause"
-#~ msgstr "Onderbreken"
-
-#~ msgid "Resume"
-#~ msgstr "Hervatten"
-
-#~ msgid "Stop"
-#~ msgstr "Stoppen"
-
-#~ msgid "_Timer"
-#~ msgstr "_Tijdklok"
-
-#~ msgid "_Preferences"
-#~ msgstr "_Voorkeuren"
-
-#~ msgid "_Quit"
-#~ msgstr "_Afsluiten"
-
-#~ msgid "Keyboard shortcut to toggle the timer. Enter new shortcut to change."
-#~ msgstr ""
-#~ "Sneltoets om de tijdklok aan of uit te zetten. Druk op een nieuwe "
-#~ "toetscombinatie om te veranderen."
-
-#~ msgid "Disable"
-#~ msgstr "Uitschakelen"
-
-#~ msgid "Timer"
-#~ msgstr "Tijdklok"
-
-#~ msgid "Pomodoro duration"
-#~ msgstr "Pomodoro-duur"
-
-#~ msgid "Break duration"
-#~ msgstr "Pauzeduur"
-
-#~ msgid "Long break duration"
-#~ msgstr "Duur van lange pauze"
-
-#~ msgid "Pomodoros before a long break"
-#~ msgstr "Pomodoro's voorafgaand aan een lange pauze"
-
-#~ msgid "Keyboard shortcut"
-#~ msgstr "Sneltoets"
-
-#~ msgid "Notifications"
-#~ msgstr "Meldingen"
-
-#~ msgid "Screen notifications"
-#~ msgstr "Schermmeldingen"
-
-#~ msgid "Desktop"
-#~ msgstr "Bureaublad"
-
-#~ msgid "Wait for activity after a break"
-#~ msgstr "Wachten op activiteit na pauzes"
-
-#~ msgid "Plugins…"
-#~ msgstr "Plug-ins…"
-
-#~ msgid "Plugins"
-#~ msgstr "Plug-ins"
-
-#~ msgid "Back"
-#~ msgstr "Terug"
-
-#~ msgid "Nothing to see yet"
-#~ msgstr "Er valt hier nog niks te zien"
-
-#~ msgid "Complete a few sessions"
-#~ msgstr "Rond een paar sessies af"
-
-#~ msgid "Day"
-#~ msgstr "Dag"
-
-#~ msgid "Week"
-#~ msgstr "Week"
-
-#~ msgid "Month"
-#~ msgstr "Maand"
-
-#~ msgid "Previous (Alt+Left)"
-#~ msgstr "Vorige (Alt+pijltje naar links)"
-
-#~ msgid "Next (Alt+Right)"
-#~ msgstr "Vorige (Alt+pijltje naar rechts)"
-
-#~ msgid "Today"
-#~ msgstr "Vandaag"
-
-#~ msgid "_About"
-#~ msgstr "_Over"
-
-#~ msgid "Actions"
-#~ msgstr "Acties"
-
-#~ msgid "Action"
-#~ msgstr "Actie"
-
-#~ msgid "Custom actions…"
-#~ msgstr "Aangepaste acties…"
-
-#~ msgid "Complete"
-#~ msgstr "Afronden"
-
-#~ msgid "Skip"
-#~ msgstr "Overslaan"
-
-#~ msgid "Enable"
-#~ msgstr "Inschakelen"
-
-#~ msgid "Command"
-#~ msgstr "Opdracht"
-
-#~ msgid "Triggers"
-#~ msgstr "Roept aan:"
-
-#~ msgid "Name"
-#~ msgstr "Naam"
-
-#~ msgid "_Pomodoro"
-#~ msgstr "_Pomodoro"
-
-#~ msgid "_Short Break"
-#~ msgstr "_Korte pauze"
-
-#~ msgid "_Long Break"
-#~ msgstr "_Lange pauze"
-
-#~ msgid "Add"
-#~ msgstr "Toevoegen"
-
-#~ msgid "Remove"
-#~ msgstr "Verwijderen"
-
-#~ msgid "State"
-#~ msgstr "Status"
-
-#~ msgid "State Duration"
-#~ msgstr "Statusduur"
-
-#~ msgid "Elapsed Time"
-#~ msgstr "Verstreken tijd"
-
-#~ msgid "Pomodoro Timer"
-#~ msgstr "Pomodoro-tijdklok"
-
-#~ msgid "Start Timer"
-#~ msgstr "Tijdklok starten"
-
-#~ msgid "Pause Timer"
-#~ msgstr "Tijdklok onderbreken"
-
-#~ msgid "Stop Timer"
-#~ msgstr "Tijdklok stoppen"
-
-#~ msgid "Pause break"
-#~ msgstr "Onderbreken"
-
-#~ msgid "Pause Pomodoro"
-#~ msgstr "Onderbreken"
-
-#~ msgid "Resume break"
-#~ msgstr "Hervatten"
-
-#~ msgid "Resume Pomodoro"
-#~ msgstr "Hervatten"
-
-#, javascript-format
-#~ msgid "%d minute remaining"
-#~ msgid_plural "%d minutes remaining"
-#~ msgstr[0] "Nog %d minuut te gaan"
-#~ msgstr[1] "Nog %d minuten te gaan"
-
-#, javascript-format
-#~ msgid "%d second remaining"
-#~ msgid_plural "%d seconds remaining"
-#~ msgstr[0] "%d seconde te gaan"
-#~ msgstr[1] "%d seconden te gaan"
-
-#~ msgid "Break is over"
-#~ msgstr "Pauze is afgelopen"
-
-#~ msgid "Skip Break"
-#~ msgstr "Pauze overslaan"
-
-#~ msgid "+1 Minute"
-#~ msgstr "+1 minuut"
-
-#, javascript-format
-#~ msgid "Failed to run <i>%s</i> service"
-#~ msgstr "<i>%s</i> kan niet worden uitgevoerd"
-
-#~ msgid "Hide other notifications"
-#~ msgstr "Andere meldingen verbergen"
-
-#~ msgid "Volume:"
-#~ msgstr "Volumeniveau:"
-
-#~ msgid "Clock Ticking"
-#~ msgstr "Tikkende klok"
-
-#~ msgid "Timer Ticking"
-#~ msgstr "Tikkende tijdklok"
-
-#~ msgid "Woodland Birds"
-#~ msgstr "Bosvogels"
-
-#~ msgid "Bell"
-#~ msgstr "Bel"
-
-#~ msgid "Loud Bell"
-#~ msgstr "Luide bel"
-
-#~ msgid "Select Custom Sound"
-#~ msgstr "Kies een eigen geluid"
-
-#~ msgid "_Cancel"
-#~ msgstr "_Annuleren"
-
-#~ msgid "_Select"
-#~ msgstr "_Kiezen"
-
-#~ msgid "Ticking Sound"
-#~ msgstr "Getik"
-
-#~ msgid "End of Break Sound"
-#~ msgstr "Geluid aan het einde van de pauze"
-
-#~ msgid "Start of Break Sound"
-#~ msgstr "Geluid aan het begin van de pauze"
-
-#~ msgid "Off"
-#~ msgstr "Uit"
-
-#~ msgid "Ticking sound"
-#~ msgstr "Getik"
-
-#~ msgid "Start of break sound"
-#~ msgstr "Geluid aan het begin van de pauze"
-
-#~ msgid "End of break sound"
-#~ msgstr "Geluid aan het einde de pauze"
-
-#~ msgid "About Pomodoro"
-#~ msgstr "Over Pomodoro"
-
-#~ msgid "translator-credits"
-#~ msgstr ""
-#~ "Johannes Kool\n"
-#~ "Heimen Stoffels <vistausss@fastmail.com>"
-
-#~ msgid "Start/Stop"
-#~ msgstr "Starten/Stoppen"
-
-#~ msgid "Pause/Resume"
-#~ msgstr "Onderbreken/Hervatten"
-
-#~ msgid "Skip to a pomodoro or to a break"
-#~ msgstr "Spring naar een pomodoro of naar een pauze"
-
-#~ msgid "Extend current pomodoro or break"
-#~ msgstr "Verleng huidige pomodoro of pauze"
-
-#~ msgid "Reset current session"
-#~ msgstr "Reset huidige sessie"
-
-#~ msgid "Run as background service"
-#~ msgstr "Uitvoeren als achtergronddienst"
-
-#~ msgid "Show preferences"
-#~ msgstr "Voorkeuren tonen"
-
-#~ msgid "Quit application"
-#~ msgstr "Toepassing afsluiten"
-
-#~ msgid "Print version information and exit"
-#~ msgstr "Versie-informatie tonen en afsluiten"
-
-#~ msgid "Focus on your task."
-#~ msgstr "Focus op je taak."
-
-#, c-format
-#~ msgid "You have %d minute"
-#~ msgid_plural "You have %d minutes"
-#~ msgstr[0] "Je hebt nog %d minuut"
-#~ msgstr[1] "Je hebt nog %d minuten"
-
-#, c-format
-#~ msgid "You have %d second"
-#~ msgid_plural "You have %d seconds"
-#~ msgstr[0] "Je hebt nog %d seconde"
-#~ msgstr[1] "Je hebt nog %d seconden"
-
-#~ msgid "Take a longer break"
-#~ msgstr "Neem een langere pauze"
-
-#~ msgid "Lengthen it"
-#~ msgstr "Verlengen"
-
-#~ msgid "Shorten it"
-#~ msgstr "Inkorten"
-
-#~ msgid "Start pomodoro"
-#~ msgstr "Pomodoro starten"
-
-#, c-format
-#~ msgid ""
-#~ "Using \"%s\" as shortcut will interfere with typing. Try adding another "
-#~ "key, such as Control, Alt or Shift."
-#~ msgstr ""
-#~ "De toets ‘%s’ wordt gebruikt om te typen. Probeer een tweede toets toe te "
-#~ "voegen, zoals Ctrl, Alt of Shift."
-
-#~ msgid "Keyboard Shortcut"
-#~ msgstr "Sneltoets"
-
-#~ msgid "Available"
-#~ msgstr "Beschikbaar"
-
-#~ msgid "Busy"
-#~ msgstr "Bezig"
-
-#~ msgid "Idle"
-#~ msgstr "Inactief"
-
-#~ msgid "Invisible"
-#~ msgstr "Onzichtbaar"
-
-#~ msgid "Yesterday"
-#~ msgstr "Gisteren"
-
-#, c-format
-#~ msgid "%d m"
-#~ msgstr "%d min."
-
-#, c-format
-#~ msgid "%.0f h"
-#~ msgstr "%.0f uur"
-
-#, c-format
-#~ msgid "%.1f h"
-#~ msgstr "%.1f uur"
-
-#~ msgid "This week"
-#~ msgstr "Deze week"
-
-#~ msgid "Kamil Prusko"
-#~ msgstr "Kamil Prusko"
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.24.1"
+#~ msgstr "Wijzigingslog van gnome-pomodoro 0.15.1"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.24.0"
+#~ msgstr "Wijzigingslog van gnome-pomodoro 0.18.0"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.23.1"
+#~ msgstr "Wijzigingslog van gnome-pomodoro 0.15.1"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.23.0"
+#~ msgstr "Wijzigingslog van gnome-pomodoro 0.18.0"
 
 #, fuzzy
 #~ msgid "Overview of changes in gnome-pomodoro 0.22.1"
@@ -664,10 +1407,6 @@ msgstr "Pauze"
 #, fuzzy
 #~ msgid "Updated Brazilian translation (thanks @costaronaldo)"
 #~ msgstr "Catalaanse vertaling bijgewerkt (met dank aan @antoniofsm)"
-
-#, fuzzy
-#~ msgid "Updated Russian translation (thanks @ViktorOn)"
-#~ msgstr "Russische vertaling bijgewerkt (met dank aan @rkaverin)"
 
 #, fuzzy
 #~ msgid "Updated Chinese translation (thanks @HaorongX)"
@@ -830,11 +1569,163 @@ msgstr "Pauze"
 #~ msgid "Updated Russian translation (@tigertv)"
 #~ msgstr "Russische vertaling bijgewerkt (met dank aan @tigertv)"
 
-#~ msgid "Paused"
-#~ msgstr "Onderbroken"
+#~ msgid "_Timer"
+#~ msgstr "_Tijdklok"
 
-#~ msgid "Failed to enable extension"
-#~ msgstr "De uitbreiding kan niet worden ingeschakeld"
+#~ msgid "Keyboard shortcut to toggle the timer. Enter new shortcut to change."
+#~ msgstr ""
+#~ "Sneltoets om de tijdklok aan of uit te zetten. Druk op een nieuwe "
+#~ "toetscombinatie om te veranderen."
+
+#~ msgid "Pomodoros before a long break"
+#~ msgstr "Pomodoro's voorafgaand aan een lange pauze"
+
+#~ msgid "Keyboard shortcut"
+#~ msgstr "Sneltoets"
+
+#~ msgid "Screen notifications"
+#~ msgstr "Schermmeldingen"
+
+#~ msgid "Wait for activity after a break"
+#~ msgstr "Wachten op activiteit na pauzes"
+
+#~ msgid "Plugins…"
+#~ msgstr "Plug-ins…"
+
+#~ msgid "Plugins"
+#~ msgstr "Plug-ins"
+
+#~ msgid "Back"
+#~ msgstr "Terug"
+
+#~ msgid "Complete a few sessions"
+#~ msgstr "Rond een paar sessies af"
+
+#~ msgid "Previous (Alt+Left)"
+#~ msgstr "Vorige (Alt+pijltje naar links)"
+
+#~ msgid "Next (Alt+Right)"
+#~ msgstr "Vorige (Alt+pijltje naar rechts)"
+
+#~ msgid "Complete"
+#~ msgstr "Afronden"
+
+#~ msgid "Enable"
+#~ msgstr "Inschakelen"
+
+#~ msgid "Add"
+#~ msgstr "Toevoegen"
+
+#~ msgid "Remove"
+#~ msgstr "Verwijderen"
+
+#~ msgid "Elapsed Time"
+#~ msgstr "Verstreken tijd"
+
+#~ msgid "Pause Timer"
+#~ msgstr "Tijdklok onderbreken"
+
+#~ msgid "Pause break"
+#~ msgstr "Onderbreken"
+
+#~ msgid "Pause Pomodoro"
+#~ msgstr "Onderbreken"
+
+#~ msgid "Resume break"
+#~ msgstr "Hervatten"
+
+#~ msgid "Resume Pomodoro"
+#~ msgstr "Hervatten"
+
+#, javascript-format
+#~ msgid "%d minute remaining"
+#~ msgid_plural "%d minutes remaining"
+#~ msgstr[0] "Nog %d minuut te gaan"
+#~ msgstr[1] "Nog %d minuten te gaan"
+
+#, javascript-format
+#~ msgid "Failed to run <i>%s</i> service"
+#~ msgstr "<i>%s</i> kan niet worden uitgevoerd"
+
+#~ msgid "Woodland Birds"
+#~ msgstr "Bosvogels"
+
+#~ msgid "End of Break Sound"
+#~ msgstr "Geluid aan het einde van de pauze"
+
+#~ msgid "Start of Break Sound"
+#~ msgstr "Geluid aan het begin van de pauze"
+
+#~ msgid "Off"
+#~ msgstr "Uit"
+
+#~ msgid "Ticking sound"
+#~ msgstr "Getik"
+
+#~ msgid "Start of break sound"
+#~ msgstr "Geluid aan het begin van de pauze"
+
+#~ msgid "End of break sound"
+#~ msgstr "Geluid aan het einde de pauze"
+
+#~ msgid "Focus on your task."
+#~ msgstr "Focus op je taak."
+
+#, c-format
+#~ msgid "You have %d minute"
+#~ msgid_plural "You have %d minutes"
+#~ msgstr[0] "Je hebt nog %d minuut"
+#~ msgstr[1] "Je hebt nog %d minuten"
+
+#, c-format
+#~ msgid "You have %d second"
+#~ msgid_plural "You have %d seconds"
+#~ msgstr[0] "Je hebt nog %d seconde"
+#~ msgstr[1] "Je hebt nog %d seconden"
+
+#~ msgid "Take a longer break"
+#~ msgstr "Neem een langere pauze"
+
+#~ msgid "Lengthen it"
+#~ msgstr "Verlengen"
+
+#~ msgid "Shorten it"
+#~ msgstr "Inkorten"
+
+#~ msgid "Start pomodoro"
+#~ msgstr "Pomodoro starten"
+
+#, c-format
+#~ msgid ""
+#~ "Using \"%s\" as shortcut will interfere with typing. Try adding another "
+#~ "key, such as Control, Alt or Shift."
+#~ msgstr ""
+#~ "De toets ‘%s’ wordt gebruikt om te typen. Probeer een tweede toets toe te "
+#~ "voegen, zoals Ctrl, Alt of Shift."
+
+#~ msgid "Available"
+#~ msgstr "Beschikbaar"
+
+#~ msgid "Busy"
+#~ msgstr "Bezig"
+
+#~ msgid "Idle"
+#~ msgstr "Inactief"
+
+#~ msgid "Invisible"
+#~ msgstr "Onzichtbaar"
+
+#, c-format
+#~ msgid "%d m"
+#~ msgstr "%d min."
+
+#, c-format
+#~ msgid "%.0f h"
+#~ msgstr "%.0f uur"
+
+#, c-format
+#~ msgid "%.1f h"
+#~ msgstr "%.1f uur"
 
 #~ msgid "Extension is out of date"
 #~ msgstr "De uitbreiding is verouderd"
@@ -877,9 +1768,6 @@ msgstr "Pauze"
 
 #~ msgid "It seems to be uninstalled"
 #~ msgstr "De plugin lijkt verwijderd te zijn"
-
-#~ msgid "Add Sound"
-#~ msgstr "Geluid toevoegen"
 
 #~ msgid "Remove Sound"
 #~ msgstr "Geluid verwijderen"

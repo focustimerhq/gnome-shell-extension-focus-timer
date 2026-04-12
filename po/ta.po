@@ -1,16 +1,18 @@
-# Tamil translation for gnome-pomodoro
-# Copyright (c) 2012 gnome-pomodoro contributors
-# This file is distributed under the same license as the gnome-pomodoro package.
-# Killersparrow1 <github.com/Killersparrow1>, 2025
+# Tamil translation for gnome-shell-extension-focus-timer
+# Copyright (c) 2025 focus-timer contributors
+# This file is distributed under the same license as the focus-timer package.
+#
+# Authors:
+# Killersparrow1 <github.com/Killersparrow1>, 2025.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-pomodoro\n"
+"Project-Id-Version: gnome-shell-extension-focus-timer 1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-25 16:45+0100\n"
+"POT-Creation-Date: 2026-04-12 13:38+0200\n"
 "PO-Revision-Date: 2025-10-30 22:00+0530\n"
 "Last-Translator: Killersparrow1 <github.com/Killersparrow1>\n"
-"Language-Team: ta <>\n"
+"Language-Team: Tamil\n"
 "Language: ta\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,89 +20,71 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 "X-Generator: Poedit 3.1.1\n"
 
-#: data/org.gnome.shell.extensions.focus-timer.gschema.xml:6
-msgid "Start the app along with extension"
-msgstr ""
-
-#: data/org.gnome.shell.extensions.focus-timer.gschema.xml:14
-msgid "Indicator type"
-msgstr ""
-
-#: data/org.gnome.shell.extensions.focus-timer.gschema.xml:18
-msgid "Blur effect"
-msgstr ""
-
-#: data/org.gnome.shell.extensions.focus-timer.gschema.xml:22
-msgid "Dismiss screen overlay by gesture"
-msgstr ""
-
-#: data/org.gnome.shell.extensions.focus-timer.gschema.xml:26
-msgid "Reduce number of notifications during Pomodoro"
-msgstr ""
+#: src/indicator.js:329 src/screenShield.js:171
+#, fuzzy
+msgid "Finished!"
+msgstr "முடிந்தது!"
 
 #: src/indicator.js:331 src/screenShield.js:173
-msgid "Finished!"
-msgstr ""
-
-#: src/indicator.js:333 src/screenShield.js:175
 #, javascript-format
 msgid "%d of %d"
 msgstr ""
 
-#: src/indicator.js:420 src/prefs.js:73
+#: src/indicator.js:425 src/prefs.js:71
+#, fuzzy
 msgid "Screen Overlay"
-msgstr ""
+msgstr "திரை மேலடுக்கு"
 
-#: src/indicator.js:423
+#: src/indicator.js:427
 msgid "Preferences"
 msgstr "விருப்பத்தேர்வுகள்"
 
-#: src/indicator.js:424
+#: src/indicator.js:428
 msgid "Stats"
 msgstr "புள்ளிவிவரங்கள்"
 
-#: src/indicator.js:426
+#: src/indicator.js:430
 msgid "Quit"
 msgstr "வெளியேறு"
 
-#: src/indicator.js:601
+#: src/indicator.js:624
 #, javascript-format
 msgid "%dh"
 msgstr ""
 
-#: src/indicator.js:605
+#: src/indicator.js:628
 #, javascript-format
 msgid "%dm"
 msgstr ""
 
-#: src/indicator.js:613
+#: src/indicator.js:630 src/indicator.js:632 src/indicator.js:634
 #, javascript-format
 msgid "%ds"
 msgstr ""
 
-#: src/indicator.js:1058 src/notifications.js:59
+#: src/indicator.js:1079 src/notifications.js:57
 msgid "Focus Timer"
 msgstr ""
 
-#: src/notifications.js:79
+#: src/notifications.js:77
 msgid "Focus Timer Extension"
 msgstr ""
 
-#: src/notifications.js:115
+#: src/notifications.js:119
 #, javascript-format
 msgid "%d hour"
 msgid_plural "%d hours"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/notifications.js:118
+#: src/notifications.js:122
 #, javascript-format
 msgid "%d minute"
 msgid_plural "%d minutes"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/notifications.js:121
+#: src/notifications.js:125
 #, javascript-format
 msgid "%d second"
 msgid_plural "%d seconds"
@@ -108,174 +92,1416 @@ msgstr[0] ""
 msgstr[1] ""
 
 #. translators: time remaining eg. "3 minutes 50 seconds remaining"
-#: src/notifications.js:128
-#, javascript-format
+#: src/notifications.js:135
+#, fuzzy, javascript-format
 msgid "%s remaining"
-msgstr ""
+msgstr "இன்னும் %s உள்ளது"
 
-#: src/notifications.js:239 src/timer.js:54
+#: src/notifications.js:261 src/timer.js:47
 msgid "Pomodoro"
 msgstr "பொமோடோரோ"
 
-#: src/notifications.js:241
+#: src/notifications.js:263
 msgid "Take a break"
 msgstr "ஓர் இடைவெளி எடு"
 
-#: src/notifications.js:243
+#: src/notifications.js:265
 msgid "Take a short break"
 msgstr "ஒரு சிறு இடைவெளி எடு"
 
-#: src/notifications.js:245
+#: src/notifications.js:267
 msgid "Take a long break"
 msgstr "ஒரு நீண்ட இடைவெளி எடு"
 
-#: src/notifications.js:253
+#: src/notifications.js:275
 msgid "Pomodoro is about to end"
 msgstr "பொமோடோரோ விரைவில் முடிவடைகிறது"
 
-#: src/notifications.js:255
+#: src/notifications.js:277
 msgid "Break is about to end"
 msgstr "இடைவெளி விரைவில் முடிவடைகிறது"
 
-#: src/notifications.js:263 src/notifications.js:275
+#: src/notifications.js:285 src/notifications.js:297
+#, fuzzy
 msgid "Break is over!"
-msgstr ""
+msgstr "இடைவெளி முடிந்தது!"
 
-#: src/notifications.js:265 src/notifications.js:273
+#: src/notifications.js:287 src/notifications.js:295
+#, fuzzy
 msgid "Pomodoro is over!"
-msgstr ""
+msgstr "பொமோடோரோ முடிந்தது!"
 
-#: src/notifications.js:294
+#: src/notifications.js:316
 msgid "Get ready…"
 msgstr "தயாராகுங்கள்..."
 
-#: src/notifications.js:299
+#: src/notifications.js:321
+#, fuzzy
 msgid "Confirm the start of a Pomodoro…"
-msgstr ""
+msgstr "பொமோடோரோ தொடங்குவதை உறுதிப்படுத்துங்கள்…"
 
-#: src/notifications.js:301
+#: src/notifications.js:323
+#, fuzzy
 msgid "Confirm the start of a break…"
-msgstr ""
+msgstr "இடைவெளி தொடங்குவதை உறுதிப்படுத்துங்கள்…"
 
-#: src/notifications.js:303
+#: src/notifications.js:325
+#, fuzzy
 msgid "Confirm the start of a short break…"
-msgstr ""
+msgstr "சிறு இடைவெளி தொடங்குவதை உறுதிப்படுத்துங்கள்…"
 
-#: src/notifications.js:305
+#: src/notifications.js:327
+#, fuzzy
 msgid "Confirm the start of a long break…"
-msgstr ""
+msgstr "நீண்ட இடைவெளி தொடங்குவதை உறுதிப்படுத்துங்கள்…"
 
-#: src/notifications.js:344
+#: src/notifications.js:366
+#, fuzzy
 msgid "+1 minute"
-msgstr ""
+msgstr "+1 நிமிடம்"
 
-#: src/notifications.js:345
+#: src/notifications.js:367
 msgid "Start Pomodoro"
 msgstr "பொமோடோரோ தொடங்கு"
 
-#: src/notifications.js:346
+#: src/notifications.js:368
 msgid "Start Break"
 msgstr ""
 
-#: src/notifications.js:403
+#: src/notifications.js:425
+#, fuzzy
 msgid "Something went wrong"
-msgstr ""
+msgstr "ஏதோ தவறு நடந்துவிட்டது"
 
-#: src/notifications.js:409
+#: src/notifications.js:431
 msgid "Report issue"
 msgstr "பிரச்சினையை புகாரளி"
 
-#: src/notifications.js:429
+#: src/notifications.js:451
 msgid "Focus Timer Not Found"
 msgstr ""
 
-#: src/notifications.js:430
+#: src/notifications.js:452
 msgid "Install Focus Timer app to start using the extension."
 msgstr ""
 
-#: src/notifications.js:435
+#: src/notifications.js:457
 msgid "Install from Flathub"
 msgstr ""
 
-#: src/prefs.js:14
+#: src/prefs.js:12
 msgid "General"
 msgstr ""
 
-#: src/prefs.js:20
+#: src/prefs.js:18
 msgid "Autostart The App"
 msgstr ""
 
-#: src/prefs.js:21
+#: src/prefs.js:19
 msgid "Makes the indicator instantly visible and allows keyboard shortcuts"
 msgstr ""
 
-#: src/prefs.js:34
+#: src/prefs.js:32
 msgid "Indicator"
 msgstr ""
 
-#: src/prefs.js:47
+#: src/prefs.js:45
 msgid "Icon"
 msgstr ""
 
-#: src/prefs.js:53
+#: src/prefs.js:51
 msgid "Text"
 msgstr ""
 
-#: src/prefs.js:60
+#: src/prefs.js:58
 msgid "Display As"
 msgstr ""
 
-#: src/prefs.js:61
+#: src/prefs.js:59
 msgid "Choose how the timer appears in the status bar"
 msgstr ""
 
-#: src/prefs.js:79
+#: src/prefs.js:77
 msgid "Blur Effect"
 msgstr ""
 
-#: src/prefs.js:80
+#: src/prefs.js:78
 msgid "Helps to acknowledge the break"
 msgstr ""
 
-#: src/prefs.js:88
+#: src/prefs.js:86
 msgid "Dismiss Gesture"
 msgstr ""
 
-#: src/prefs.js:89
+#: src/prefs.js:87
 msgid "Flick the mouse or press any key to dismiss"
 msgstr ""
 
-#: src/prefs.js:102
+#: src/prefs.js:100
 msgid "Distractions"
 msgstr ""
 
-#: src/prefs.js:108
+#: src/prefs.js:106
 msgid "Manage Notifications"
 msgstr ""
 
-#: src/prefs.js:109
+#: src/prefs.js:107
 msgid "Toggle Do Not Disturb mode during Pomodoro"
 msgstr ""
 
-#: src/screenOverlay.js:987
+#: src/screenOverlay.js:1053
 msgid "It's time to take a break"
 msgstr "இடைவெளி எடுக்க வேண்டிய நேரம்"
 
-#: src/timer.js:51
+#: src/timer.js:44
+#, fuzzy
 msgid "Stopped"
-msgstr ""
+msgstr "நிறுத்தப்பட்டது"
 
-#: src/timer.js:57
+#: src/timer.js:50
 msgid "Short Break"
 msgstr "சிறு இடைவெளி"
 
-#: src/timer.js:60
+#: src/timer.js:53
 msgid "Long Break"
 msgstr "நீண்ட இடைவெளி"
 
-#: src/timer.js:63
+#: src/timer.js:56
+#, fuzzy
 msgid "Break"
-msgstr ""
+msgstr "இடைவெளி"
+
+#, fuzzy
+#~ msgid "Time management utility"
+#~ msgstr "நேர மேலாண்மை பயன்பாடு"
+
+#, fuzzy
+#~ msgid "Maintain focus by taking frequent breaks"
+#~ msgstr "அடிக்கடி இடைவெளிகள் எடுப்பதன் மூலம் கவனத்தைத் தக்கவைத்துக்கொள்ளுங்கள்"
+
+#, fuzzy
+#~ msgid ""
+#~ "A productivity timer that helps you work more effectively by breaking "
+#~ "your time into focused work sessions followed by short breaks. Work for "
+#~ "25 minutes, then take a 5-minute break to maintain concentration and "
+#~ "prevent burnout."
+#~ msgstr ""
+#~ "உங்கள் நேரத்தை சிறிய அமர்வுகளாகவும் இடைவெளிகளாகவும் பிரிப்பதன் மூலம் திறம்பட வேலை "
+#~ "செய்ய உதவும் ஒரு செயலி. 25 நிமிடங்கள் வேலை செய்து, பின் 5 நிமிடங்கள் இடைவெளி "
+#~ "எடுப்பதன் மூலம் உங்கள் கவனத்தை ஒருமுகப்படுத்தலாம்."
+
+#, fuzzy
+#~ msgid "Key features:"
+#~ msgstr "முக்கிய அம்சங்கள்:"
+
+#, fuzzy
+#~ msgid "Customizable work session and break lengths"
+#~ msgstr "வேலை நேரம் மற்றும் இடைவெளி நேரத்தைத் தனிப்பயனாக்கும் வசதி"
+
+#, fuzzy
+#~ msgid "Visual and audio notifications"
+#~ msgstr "காட்சி மற்றும் ஒலி அறிவிப்புகள்"
+
+#, fuzzy
+#~ msgid "Time tracking and statistics"
+#~ msgstr "நேர கண்காணிப்பு மற்றும் புள்ளிவிவரங்கள்"
+
+#, fuzzy
+#~ msgid "GNOME desktop integration"
+#~ msgstr "GNOME டெஸ்க்டாப் ஒருங்கிணைப்பு"
+
+#, fuzzy
+#~ msgid "Screen overlay during breaks"
+#~ msgstr "இடைவேளையின் போது திரை மேலடுக்கு"
+
+#, fuzzy
+#~ msgid "Run custom commands after Pomodoro or break"
+#~ msgstr "பொமோடோரோ அல்லது இடைவேளைக்குப் பிறகு தனிப்பயன் கட்டளைகளை இயக்குதல்"
+
+#~ msgid "Kamil Prusko"
+#~ msgstr "Kamil Prusko"
+
+#~ msgid "Timer"
+#~ msgstr "நேரங்காட்டி"
+
+#, fuzzy
+#~ msgid "Daily stats"
+#~ msgstr "தினசரி புள்ளிவிவரங்கள்"
+
+#, fuzzy
+#~ msgid "Monthly stats"
+#~ msgstr "மாதாந்திர புள்ளிவிவரங்கள்"
+
+#, fuzzy
+#~ msgid "Screen overlay"
+#~ msgstr "திரை மேலடுக்கு"
+
+#, fuzzy
+#~ msgid "Start or Stop"
+#~ msgstr "தொடங்கு அல்லது நிறுத்து"
+
+#, fuzzy
+#~ msgid "Start, Pause or Resume"
+#~ msgstr "தொடங்கு, இடைநிறுத்து அல்லது மீண்டும் தொடங்கு"
+
+#~ msgid "Start"
+#~ msgstr "தொடங்கு"
+
+#~ msgid "Stop"
+#~ msgstr "நிறுத்து"
+
+#~ msgid "Pause"
+#~ msgstr "இடைநிறுத்து"
+
+#~ msgid "Resume"
+#~ msgstr "மீண்டும் தொடங்கு"
+
+#~ msgid "Skip"
+#~ msgstr "தவிர்"
+
+#, fuzzy
+#~ msgid "Rewind"
+#~ msgstr "பின்னோக்கிச் செல்"
+
+#, fuzzy
+#~ msgid "Extend current pomodoro or break"
+#~ msgstr "தற்போதைய பொமோடோரோ அல்லது இடைவேளையை நீட்டி"
+
+#, fuzzy
+#~ msgid "Reset"
+#~ msgstr "மீட்டமை"
+
+#, fuzzy
+#~ msgid "Show preferences"
+#~ msgstr "விருப்பத்தேர்வுகளைக் காட்டு"
+
+#, fuzzy
+#~ msgid "Quit application"
+#~ msgstr "செயலியை விட்டு வெளியேறு"
+
+#, fuzzy
+#~ msgid "Print version information and exit"
+#~ msgstr "பதிப்புத் தகவலை அச்சிட்டு வெளியேறு"
+
+#, fuzzy
+#~ msgid "Bring to Focus"
+#~ msgstr "முன்னிலைக்குக் கொண்டுவா"
+
+#, fuzzy, c-format
+#~ msgid "Custom action \"%s\" has failed"
+#~ msgstr "தனிப்பயன் செயல் \"%s\" தோல்வியுற்றது"
+
+#, fuzzy
+#~ msgid "Reached timeout"
+#~ msgstr "நேர வரம்பை எட்டியது"
+
+#, fuzzy
+#~ msgid "Failed to execute command"
+#~ msgstr "கட்டளையை இயக்க முடியவில்லை"
+
+#, fuzzy
+#~ msgid "Command is empty"
+#~ msgstr "கட்டளை காலியாக உள்ளது"
+
+#, fuzzy
+#~ msgid "Unclosed quotation mark"
+#~ msgstr "மூடப்படாத மேற்கோள் குறி"
+
+#, fuzzy
+#~ msgid "Invalid command"
+#~ msgstr "தவறான கட்டளை"
+
+#, fuzzy, c-format
+#~ msgid "Unknown variable \"%s\""
+#~ msgstr "தெரியாத மாறி \"%s\""
+
+#, fuzzy, c-format
+#~ msgid "Unknown format \"%s\""
+#~ msgstr "தெரியாத வடிவம் \"%s\""
+
+#, fuzzy, c-format
+#~ msgid "Program \"%s\" not found"
+#~ msgstr "நிரல் \"%s\" காணப்படவில்லை"
+
+#~ msgid "Actions"
+#~ msgstr "செயல்கள்"
+
+#, fuzzy
+#~ msgid "Countdown"
+#~ msgstr "தலைகீழ் எண்ணுதல்"
+
+#, fuzzy
+#~ msgid "Session"
+#~ msgstr "அமர்வு"
+
+#, fuzzy
+#~ msgid "Other"
+#~ msgstr "மற்றவை"
+
+#, fuzzy
+#~ msgid "Started the timer."
+#~ msgstr "நேரங்காட்டி தொடங்கப்பட்டது."
+
+#, fuzzy
+#~ msgid "Stopped the timer manually."
+#~ msgstr "நேரங்காட்டி கைமுறையாக நிறுத்தப்பட்டது."
+
+#, fuzzy
+#~ msgid ""
+#~ "The countdown has been manually paused. Not triggered when locking the "
+#~ "screen or when suspending the system."
+#~ msgstr ""
+#~ "நேரங்காட்டி கைமுறையாக இடைநிறுத்தப்பட்டுள்ளது. திரை பூட்டப்படும்போதோ அல்லது கணினி "
+#~ "உறக்கநிலைக்குச் செல்லும்போதோ இது நிகழாது."
+
+#, fuzzy
+#~ msgid "The countdown has been manually resumed."
+#~ msgstr "நேரங்காட்டி கைமுறையாக மீண்டும் தொடங்கப்பட்டது."
+
+#, fuzzy
+#~ msgid "Jumped to a next time-block before the countdown has finished."
+#~ msgstr "நேரங்காட்டி முடிவதற்கு முன்பே அடுத்த நேரப் பகுதிக்குச் சென்றது."
+
+#, fuzzy
+#~ msgid "Rewind action has been used. It adds a pause in the past."
+#~ msgstr "பின்னோக்கிச் செல்லும் செயல் பயன்படுத்தப்பட்டது."
+
+#, fuzzy
+#~ msgid "Manually cleared the session."
+#~ msgstr "அமர்வு கைமுறையாக அழிக்கப்பட்டது."
+
+#, fuzzy
+#~ msgid "Finished"
+#~ msgstr "முடிந்தது"
+
+#, fuzzy
+#~ msgid ""
+#~ "The countdown has finished. If waiting for confirmation, the duration of "
+#~ "the time-block still may be altered."
+#~ msgstr ""
+#~ "நேரங்காட்டி முடிந்தது. உறுதிப்படுத்தலுக்காக காத்திருந்தால், நேர அளவை மாற்றியமைக்கலாம்."
+
+#, fuzzy
+#~ msgid "Changed"
+#~ msgstr "மாற்றப்பட்டது"
+
+#, fuzzy
+#~ msgid "Triggered on any change related to the countdown."
+#~ msgstr "நேரங்காட்டி தொடர்பான ஏதேனும் மாற்றம் ஏற்படும்போது தூண்டப்படும்."
+
+#, fuzzy
+#~ msgid "Confirm Advancement"
+#~ msgstr "முன்னேற்றத்தை உறுதிப்படுத்து"
+
+#, fuzzy
+#~ msgid "A manual confirmation is required to start next time-block."
+#~ msgstr "அடுத்த நேரப் பகுதியைத் தொடங்க கைமுறை உறுதிப்படுத்தல் தேவை."
+
+#, fuzzy
+#~ msgid "Advanced"
+#~ msgstr "முன்னேறியது"
+
+#, fuzzy
+#~ msgid "Transitioned or skipped to a next time-block."
+#~ msgstr "அடுத்த நேரப் பகுதிக்கு மாறியது அல்லது தவிர்ந்தது."
+
+#, fuzzy
+#~ msgid "State Changed"
+#~ msgstr "நிலை மாற்றப்பட்டது"
+
+#, fuzzy
+#~ msgid "Transitioned to a next time-block or when a break gets relabelled."
+#~ msgstr "அடுத்த நேரப் பகுதிக்கு மாறியது."
+
+#, fuzzy
+#~ msgid "Rescheduled"
+#~ msgstr "மறுஅட்டவணை செய்யப்பட்டது"
+
+#, fuzzy
+#~ msgid "Triggered when scheduled time-blocks have changed."
+#~ msgstr "திட்டமிடப்பட்ட நேரப் பகுதிகள் மாறும்போது தூண்டப்படும்."
+
+#, fuzzy
+#~ msgid "Expired"
+#~ msgstr "காலாவதியானது"
+
+#, fuzzy
+#~ msgid "Triggered when session is about to be reset due to inactivity."
+#~ msgstr "செயல்பாடின்மை காரணமாக அமர்வு மீளமைக்கப்படும்போது தூண்டப்படும்."
+
+#, fuzzy
+#~ msgid "Take a Break"
+#~ msgstr "ஓர் இடைவெளி எடு"
+
+#~ msgid "Skip Break"
+#~ msgstr "இடைவெளியைத் தவிர்"
+
+#, fuzzy
+#~ msgid "Failed to initialize playback"
+#~ msgstr "ஒலியைத் தொடங்குவதில் தோல்வி"
+
+#, fuzzy
+#~ msgid "File not found"
+#~ msgstr "கோப்பு காணப்படவில்லை"
+
+#, fuzzy
+#~ msgid "File type not supported"
+#~ msgstr "கோப்பு வகை ஆதரிக்கப்படவில்லை"
+
+#, c-format
+#~ msgid "%uh"
+#~ msgstr "%u ம"
+
+#, c-format
+#~ msgid "%um"
+#~ msgstr "%u நி"
+
+#, c-format
+#~ msgid "%u hour"
+#~ msgid_plural "%u hours"
+#~ msgstr[0] "%u மணிநேரம்"
+#~ msgstr[1] "%u மணிநேரங்கள்"
+
+#, fuzzy, c-format
+#~ msgid "%u minute"
+#~ msgid_plural "%u minutes"
+#~ msgstr[0] "%u நிமிடம்"
+#~ msgstr[1] "%u நிமிடங்கள்"
+
+#, c-format
+#~ msgid "%u second"
+#~ msgid_plural "%u seconds"
+#~ msgstr[0] "%u வினாடி"
+#~ msgstr[1] "%u வினாடிகள்"
+
+#, fuzzy
+#~ msgid "The exact time of the current event."
+#~ msgstr "தற்போதைய நிகழ்வின் துல்லியமான நேரம்."
+
+#, fuzzy
+#~ msgid ""
+#~ "The current phase of the Pomodoro cycle. Possible values: <tt>stopped</"
+#~ "tt>, <tt>pomodoro</tt>, <tt>break</tt>, <tt>short-break</tt>, <tt>long-"
+#~ "break</tt>."
+#~ msgstr "பொமோடோரோ சுழற்சியின் தற்போதைய நிலை."
+
+#, fuzzy
+#~ msgid ""
+#~ "Status of the current time-block. Possible values: <tt>scheduled</tt>, "
+#~ "<tt>in-progress</tt>, <tt>completed</tt>, <tt>uncompleted</tt>."
+#~ msgstr "தற்போதைய நேரப் பகுதியின் நிலை."
+
+#, fuzzy
+#~ msgid "A flag indicating whether countdown has begun."
+#~ msgstr "நேரங்காட்டி தொடங்கியுள்ளதைக் குறிக்கும் குறியீடு."
+
+#, fuzzy
+#~ msgid "A flag indicating whether countdown is paused."
+#~ msgstr "நேரங்காட்டி இடைநிறுத்தப்பட்டுள்ளதைக் குறிக்கும் குறியீடு."
+
+#, fuzzy
+#~ msgid "A flag indicating whether countdown has finished."
+#~ msgstr "நேரங்காட்டி முடிந்துவிட்டதைக் குறிக்கும் குறியீடு."
+
+#, fuzzy
+#~ msgid "A flag indicating whether the timer is actively counting down."
+#~ msgstr "நேரங்காட்டி ஓடிக்கொண்டிருப்பதைக் குறிக்கும் குறியீடு."
+
+#, fuzzy
+#~ msgid "Duration of the current countdown."
+#~ msgstr "தற்போதைய நேரங்காட்டியின் கால அளவு."
+
+#, fuzzy
+#~ msgid "Discrepancy between elapsed time and the time passed."
+#~ msgstr "கடந்த நேரத்திற்கும் உண்மையான நேரத்திற்கும் இடையிலான வேறுபாடு."
+
+#, fuzzy
+#~ msgid "The amount of time spent on the countdown."
+#~ msgstr "நேரங்காட்டியில் செலவிடப்பட்ட நேரம்."
+
+#, fuzzy
+#~ msgid "The amount of time left before the countdown ends."
+#~ msgstr "நேரங்காட்டி முடிவதற்கு முன் மீதமுள்ள நேரம்."
+
+#, fuzzy
+#~ msgid "Time when the countdown has started."
+#~ msgstr "நேரங்காட்டி தொடங்கிய நேரம்."
+
+#, fuzzy
+#~ msgid "GNOME Shell Extension"
+#~ msgstr "GNOME Shell நீட்டிப்பு"
+
+#, fuzzy
+#~ msgid "Get the best experience!"
+#~ msgstr "சிறந்த அனுபவத்தைப் பெறுங்கள்!"
+
+#, fuzzy
+#~ msgid "Enable <b>GNOME Shell extension</b> for seamless desktop integration"
+#~ msgstr "டெஸ்க்டாப் ஒருங்கிணைப்பிற்கு <b>GNOME Shell நீட்டிப்பை</b> செயல்படுத்தவும்"
+
+#, fuzzy
+#~ msgid "Always within reach"
+#~ msgstr "எப்போதும் அணுகும் தூரத்தில்"
+
+#, fuzzy
+#~ msgid "Control timer directly from the top bar without opening the app"
+#~ msgstr "செயலியைத் திறக்காமல் மேல் பட்டியில் இருந்தே நேரங்காட்டியை நிர்வகிக்கவும்"
+
+#, fuzzy
+#~ msgid "Less distractions"
+#~ msgstr "குறைவான கவனச்சிதறல்கள்"
+
+#, fuzzy
+#~ msgid "Refined break reminders"
+#~ msgstr "நேர்த்தியான இடைவெளி நினைவூட்டல்கள்"
+
+#, fuzzy
+#~ msgid ""
+#~ "Elegant full-screen overlay that make taking breaks a more pleasant "
+#~ "experience"
+#~ msgstr "இடைவெளி எடுப்பதை இனிமையான அனுபவமாக்கும் முழுத்திரை மேலடுக்கு"
+
+#, fuzzy
+#~ msgid "Ready to try it?"
+#~ msgstr "முயற்சி செய்யத் தயாரா?"
+
+#, fuzzy
+#~ msgid "_Install Extension"
+#~ msgstr "நீட்டிப்பை நிறுவு (_I)"
+
+#, fuzzy
+#~ msgid "_Not Now"
+#~ msgstr "இப்போது வேண்டாம் (_N)"
+
+#, fuzzy
+#~ msgid "Copy to clipboard"
+#~ msgstr "நகலெடு"
+
+#, fuzzy
+#~ msgid "_Try Again"
+#~ msgstr "மீண்டும் முயற்சி செய் (_T)"
+
+#, fuzzy
+#~ msgid "_Abort"
+#~ msgstr "கைவிடு (_A)"
+
+#, fuzzy
+#~ msgid "Time-out reached"
+#~ msgstr "கால அளவு முடிந்தது"
+
+#, fuzzy
+#~ msgid "Installing extensions is not allowed"
+#~ msgstr "நீட்டிப்புகளை நிறுவ அனுமதி இல்லை"
+
+#, fuzzy
+#~ msgid "Failed to download the extension"
+#~ msgstr "நீட்டிப்பைத் தரவிறக்க முடியவில்லை"
+
+#~ msgid "Desktop"
+#~ msgstr "டெஸ்க்டாப்"
+
+#, fuzzy
+#~ msgid "GNOME Shell extension available"
+#~ msgstr "GNOME Shell நீட்டிப்பு கிடைக்கிறது"
+
+#, fuzzy
+#~ msgid "Learn More"
+#~ msgstr "மேலும் அறிய"
+
+#, fuzzy
+#~ msgid "Unused"
+#~ msgstr "பயன்படுத்தப்படாதது"
+
+#, fuzzy
+#~ msgid "Log"
+#~ msgstr "பதிவு"
+
+#, fuzzy
+#~ msgid "Empty Log"
+#~ msgstr "வெற்றுப் பதிவு"
+
+#, fuzzy
+#~ msgid "Entries will show up here once you start the timer."
+#~ msgstr "நீங்கள் நேரங்காட்டியைத் தொடங்கியதும் பதிவுகள் இங்கே தோன்றும்."
+
+#, fuzzy
+#~ msgid "Context"
+#~ msgstr "சூழல்"
+
+#~ msgid "Command"
+#~ msgstr "கட்டளை"
+
+#, fuzzy
+#~ msgid "Output"
+#~ msgstr "வெளியீடு"
+
+#, fuzzy
+#~ msgid "Error"
+#~ msgstr "பிழை"
+
+#, fuzzy
+#~ msgid "Exit Code:"
+#~ msgstr "வெளியேறும் குறியீடு:"
+
+#, fuzzy
+#~ msgid "Execution Time:"
+#~ msgstr "இயக்க நேரம்:"
+
+#~ msgid "translator-credits"
+#~ msgstr "Killersparrow1 https://github.com/Killersparrow1 2025"
+
+#, fuzzy
+#~ msgid "Donate"
+#~ msgstr "நன்கொடை அளிக்கவும்"
+
+#, fuzzy
+#~ msgid "Breaks"
+#~ msgstr "இடைவெளிகள்"
+
+#, fuzzy
+#~ msgid "Interruptions"
+#~ msgstr "குறுக்கீடுகள்"
+
+#, fuzzy
+#~ msgid "Break Ratio"
+#~ msgstr "இடைவெளி விகிதம்"
+
+#~ msgid "Day"
+#~ msgstr "நாள்"
+
+#~ msgid "Week"
+#~ msgstr "வாரம்"
+
+#~ msgid "Month"
+#~ msgstr "மாதம்"
+
+#, fuzzy
+#~ msgid "Nothing to see here yet"
+#~ msgstr "இங்கே பார்ப்பதற்கு இன்னும் எதுவும் இல்லை"
+
+#, fuzzy
+#~ msgid "Finish a few Pomodoros to fill this up!"
+#~ msgstr "இதைப் பூர்த்தி செய்ய சில பொமோடோரோக்களை முடிக்கவும்!"
+
+#, fuzzy, c-format
+#~ msgid "Skipped %u day"
+#~ msgid_plural "Skipped %u days"
+#~ msgstr[0] "%u நாள் தவிர்ந்தது"
+#~ msgstr[1] "%u நாட்கள் தவிர்ந்தன"
+
+#, fuzzy, c-format
+#~ msgid "Skipped %u week"
+#~ msgid_plural "Skipped %u weeks"
+#~ msgstr[0] "%u வாரம் தவிர்ந்தது"
+#~ msgstr[1] "%u வாரங்கள் தவிர்ந்தன"
+
+#, fuzzy, c-format
+#~ msgid "Skipped %u month"
+#~ msgid_plural "Skipped %u months"
+#~ msgstr[0] "%u மாதம் தவிர்ந்தது"
+#~ msgstr[1] "%u மாதங்கள் தவிர்ந்தன"
+
+#~ msgid "Today"
+#~ msgstr "இன்று"
+
+#, fuzzy
+#~ msgid "Yesterday"
+#~ msgstr "நேற்று"
+
+#, fuzzy
+#~ msgid "This week"
+#~ msgstr "இந்த வாரம்"
+
+#, fuzzy, c-format
+#~ msgid "Week %u"
+#~ msgstr "வாரம் %u"
+
+#, fuzzy, c-format
+#~ msgid "Week %u of %u"
+#~ msgstr "%u-ல் %u வாரம்"
+
+#~ msgid "_Pomodoro"
+#~ msgstr "_பொமோடோரோ"
+
+#~ msgid "_Short Break"
+#~ msgstr "_சிறு இடைவெளி"
+
+#~ msgid "_Long Break"
+#~ msgstr "_நீண்ட இடைவெளி"
+
+#, fuzzy
+#~ msgid "_Break"
+#~ msgstr "இடைவெளி (_B)"
+
+#, fuzzy
+#~ msgid "Open screen overlay"
+#~ msgstr "திரை மேலடுக்கைத் திற"
+
+#, fuzzy
+#~ msgid "Session has expired"
+#~ msgstr "அமர்வு காலாவதியானது"
+
+#, fuzzy, c-format
+#~ msgid "Long break due in <b>%s</b>"
+#~ msgstr "இன்னும் <b>%s</b>-ல் நீண்ட இடைவெளி வரும்"
+
+#, fuzzy
+#~ msgid "Rewind one minute"
+#~ msgstr "ஒரு நிமிடம் பின்னோக்கிச் செல்"
+
+#, fuzzy
+#~ msgid "_Compact View"
+#~ msgstr "சிறிய காட்சி (_C)"
+
+#~ msgid "_Preferences"
+#~ msgstr "_விருப்பத்தேர்வுகள்"
+
+#~ msgid "_About"
+#~ msgstr "_பற்றி"
+
+#~ msgid "_Quit"
+#~ msgstr "_வெளியேறு"
+
+#, fuzzy
+#~ msgid "Primary Menu"
+#~ msgstr "முன்மை மெனு"
+
+#, fuzzy
+#~ msgid "Keep timer running?"
+#~ msgstr "நேரங்காட்டி ஓடிக்கொண்டிருக்க வேண்டுமா?"
+
+#, fuzzy
+#~ msgid ""
+#~ "You can keep it running in the background — notifications and keyboard "
+#~ "shortcuts will still work."
+#~ msgstr ""
+#~ "இதை நீங்கள் பின்னணியில் ஓட விடலாம் — அறிவிப்புகள் மற்றும் விசைப்பலகை குறுக்குவழிகள் "
+#~ "தொடர்ந்து வேலை செய்யும்."
+
+#, fuzzy
+#~ msgid "Run in background"
+#~ msgstr "பின்னணியில் இயக்கு"
+
+#, fuzzy
+#~ msgid "Main Window"
+#~ msgstr "முதன்மைச் சாளரம்"
+
+#, fuzzy
+#~ msgid "Prefer Dark Theme"
+#~ msgstr "இருண்ட தீம் பயன்படுத்தவும்"
+
+#, fuzzy
+#~ msgid "Prefer Compact View"
+#~ msgstr "சிறிய காட்சியினைப் பயன்படுத்தவும்"
+
+#, fuzzy
+#~ msgid "Started"
+#~ msgstr "தொடங்கியது"
+
+#, fuzzy
+#~ msgid "Paused"
+#~ msgstr "இடைநிறுத்தப்பட்டது"
+
+#, fuzzy
+#~ msgid "Edit Custom Action"
+#~ msgstr "தனிப்பயன் செயலைத் திருத்து"
+
+#~ msgid "_Cancel"
+#~ msgstr "_ரத்துசெய்"
+
+#, fuzzy
+#~ msgid "_Save"
+#~ msgstr "சேமி (_S)"
+
+#~ msgid "Name"
+#~ msgstr "பெயர்"
+
+#, fuzzy
+#~ msgid "Trigger"
+#~ msgstr "தூண்டுதல்"
+
+#, fuzzy
+#~ msgid "Event"
+#~ msgstr "நிகழ்வு"
+
+#, fuzzy
+#~ msgid "Execute command after an event."
+#~ msgstr "ஒரு நிகழ்விற்குப் பிறகு கட்டளையை இயக்கு."
+
+#, fuzzy
+#~ msgid "Condition"
+#~ msgstr "நிபந்தனை"
+
+#, fuzzy
+#~ msgid ""
+#~ "Ensure execution of a second command once condition is no longer met."
+#~ msgstr "நிபந்தனை பூர்த்தியாகாதபோது இரண்டாவது கட்டளையை இயக்குவதை உறுதிசெய்க."
+
+#, fuzzy
+#~ msgid "Events"
+#~ msgstr "நிகழ்வுகள்"
+
+#, fuzzy
+#~ msgid "Add _Event"
+#~ msgstr "நிகழ்வைச் சேர் (_E)"
+
+#, fuzzy
+#~ msgid "_Filter"
+#~ msgstr "வடிகட்டி (_F)"
+
+#, fuzzy
+#~ msgid "Filter"
+#~ msgstr "வடிகட்டி"
+
+#, fuzzy
+#~ msgid "Shell Command"
+#~ msgstr "ஷெல் கட்டளை"
+
+#, fuzzy
+#~ msgid "Commands"
+#~ msgstr "கட்டளைகள்"
+
+#, fuzzy
+#~ msgid "Condition Met Command"
+#~ msgstr "நிபந்தனை பூர்த்தியானதும் இயங்கும் கட்டளை"
+
+#, fuzzy
+#~ msgid "Condition Not Met Command"
+#~ msgstr "நிபந்தனை பூர்த்தியாகாதபோது இயங்கும் கட்டளை"
+
+#, fuzzy
+#~ msgid "Working Directory"
+#~ msgstr "வேலை செய்யும் அடைவு"
+
+#, fuzzy
+#~ msgid "Use Subshell"
+#~ msgstr "Subshell பயன்படுத்தவும்"
+
+#, fuzzy
+#~ msgid "Run the program from a subshell such as sh -c ''"
+#~ msgstr "sh -c '' போன்ற subshell மூலம் நிரலை இயக்கு"
+
+#, fuzzy
+#~ msgid "Pass Input Data"
+#~ msgstr "உள்ளீட்டுத் தரவை வழங்கவும்"
+
+#, fuzzy
+#~ msgid "Instead of passing variables you can process a JSON object."
+#~ msgstr "மாறிகளுக்குப் பதில் நீங்கள் JSON பொருளைப் பயன்படுத்தலாம்."
+
+#, fuzzy
+#~ msgid "Wait For Completion"
+#~ msgstr "முடிவடையும் வரை காத்திருக்கவும்"
+
+#, fuzzy
+#~ msgid "Block execution of other commands until the command completes."
+#~ msgstr "இந்தக் கட்டளை முடியும் வரை பிற கட்டளைகளைத் தடைசெய்யவும்."
+
+#, fuzzy
+#~ msgid "_Delete Action"
+#~ msgstr "செயலை நீக்கு (_D)"
+
+#, fuzzy
+#~ msgid "No events specified yet."
+#~ msgstr "இன்னும் நிகழ்வுகள் எதுவும் குறிப்பிடப்படவில்லை."
+
+#, fuzzy
+#~ msgid "Add Custom Action"
+#~ msgstr "தனிப்பயன் செயலைச் சேர்"
+
+#, fuzzy
+#~ msgid "_Add"
+#~ msgstr "சேர் (_A)"
+
+#, fuzzy
+#~ msgid "Select Working Directory"
+#~ msgstr "வேலை செய்யும் அடைவைத் தேர்ந்தெடு"
+
+#~ msgid "_Select"
+#~ msgstr "_தேர்ந்தெடு"
+
+#, fuzzy
+#~ msgid "Untitled action"
+#~ msgstr "தலைப்பில்லாத செயல்"
+
+#, fuzzy
+#~ msgid "Add Condition"
+#~ msgstr "நிபந்தனையைச் சேர்"
+
+#, fuzzy
+#~ msgid "Add Group"
+#~ msgstr "குழுவைச் சேர்"
+
+#~ msgid "AND"
+#~ msgstr "AND"
+
+#~ msgid "OR"
+#~ msgstr "OR"
+
+#~ msgid "Is"
+#~ msgstr "Is"
+
+#~ msgid "Is Not"
+#~ msgstr "Is Not"
+
+#~ msgid "Equals"
+#~ msgstr "Equals"
+
+#~ msgid "Greater Than"
+#~ msgstr "Greater Than"
+
+#~ msgid "Less Than"
+#~ msgstr "Less Than"
+
+#~ msgid "Yes"
+#~ msgstr "ஆம்"
+
+#~ msgid "No"
+#~ msgstr "இல்லை"
+
+#, fuzzy
+#~ msgid "Minutes"
+#~ msgstr "நிமிடங்கள்"
+
+#, fuzzy
+#~ msgid "Seconds"
+#~ msgstr "வினாடிகள்"
+
+#, fuzzy
+#~ msgid "Hours"
+#~ msgstr "மணிநேரம்"
+
+#, fuzzy
+#~ msgid "Select Field…"
+#~ msgstr "புலத்தைத் தேர்ந்தெடு…"
+
+#~ msgid "State"
+#~ msgstr "நிலை"
+
+#, fuzzy
+#~ msgid "Running"
+#~ msgstr "ஓடிக்கொண்டிருக்கிறது"
+
+#, fuzzy
+#~ msgid "Duration"
+#~ msgstr "கால அளவு"
+
+#, fuzzy
+#~ msgid "Insert Variable"
+#~ msgstr "மாறியைச் செருகு"
+
+#, fuzzy
+#~ msgid "Format"
+#~ msgstr "வடிவம்"
+
+#, fuzzy
+#~ msgid "_Log"
+#~ msgstr "பதிவு (_L)"
+
+#, fuzzy
+#~ msgid "Show execution log"
+#~ msgstr "இயக்கப் பதிவைக் காட்டு"
+
+#, fuzzy
+#~ msgid ""
+#~ "Run shell commands automatically on timer events or conditions. <a "
+#~ "href=\"\">Learn more.</a>"
+#~ msgstr ""
+#~ "நேரங்காட்டி நிகழ்வுகள் அல்லது நிபந்தனைகளின் போது ஷெல் கட்டளைகளை தானாக இயக்கவும். <a "
+#~ "href=\"\">மேலும் அறிய.</a>"
+
+#, fuzzy
+#~ msgid "Set Shortcut"
+#~ msgstr "குறுக்குவழியை அமை"
+
+#, fuzzy
+#~ msgid "_Set"
+#~ msgstr "அமை (_S)"
+
+#, fuzzy
+#~ msgid "Disabled"
+#~ msgstr "முடக்கப்பட்டது"
+
+#, fuzzy
+#~ msgid ""
+#~ "Press <b>Esc</b> to cancel or <b>Backspace</b> to disable the keyboard "
+#~ "shortcut"
+#~ msgstr ""
+#~ "ரத்து செய்ய <b>Esc</b>-ஐ அழுத்தவும் அல்லது குறுக்குவழியை முடக்க <b>Backspace</b>-"
+#~ "ஐ அழுத்தவும்"
+
+#, fuzzy
+#~ msgid ""
+#~ "Global shortcuts let you control the app even when it’s not on screen. "
+#~ "They work as long as the app is running in the background."
+#~ msgstr ""
+#~ "செயலி திரையில் இல்லாதபோதும் அதை நிர்வகிக்க உலகளாவிய குறுக்குவழிகள் உதவுகின்றன."
+
+#, fuzzy
+#~ msgid "Open app settings for editing global shortcuts"
+#~ msgstr "உலகளாவிய குறுக்குவழிகளைத் திருத்த அமைப்புகளைத் திறக்கவும்"
+
+#, fuzzy
+#~ msgid "_Edit"
+#~ msgstr "திருத்து (_E)"
+
+#, fuzzy
+#~ msgid "Enter new shortcut for starting or stopping the timer"
+#~ msgstr "நேரங்காட்டியைத் தொடங்க அல்லது நிறுத்த புதிய குறுக்குவழியை உள்ளிடவும்"
+
+#, fuzzy
+#~ msgid "Enter new shortcut to start/pause/resume the timer"
+#~ msgstr "நேரங்காட்டியைத் தொடங்க/இடைநிறுத்த/தொடர புதிய குறுக்குவழியை உள்ளிடவும்"
+
+#, fuzzy
+#~ msgid "Enter new shortcut for starting the timer"
+#~ msgstr "நேரங்காட்டியைத் தொடங்க புதிய குறுக்குவழியை உள்ளிடவும்"
+
+#, fuzzy
+#~ msgid "Enter new shortcut for stopping the timer"
+#~ msgstr "நேரங்காட்டியை நிறுத்த புதிய குறுக்குவழியை உள்ளிடவும்"
+
+#, fuzzy
+#~ msgid "Enter new shortcut for pausing the timer"
+#~ msgstr "நேரங்காட்டியை இடைநிறுத்த புதிய குறுக்குவழியை உள்ளிடவும்"
+
+#, fuzzy
+#~ msgid "Enter new shortcut for resuming the timer"
+#~ msgstr "நேரங்காட்டியை மீண்டும் தொடர புதிய குறுக்குவழியை உள்ளிடவும்"
+
+#, fuzzy
+#~ msgid "Enter new shortcut for skipping"
+#~ msgstr "தவிர்ப்பதற்கு புதிய குறுக்குவழியை உள்ளிடவும்"
+
+#, fuzzy
+#~ msgid "Rewind One Minute"
+#~ msgstr "ஒரு நிமிடம் பின்னோக்கிச் செல்"
+
+#, fuzzy
+#~ msgid "Enter new shortcut for rewinding"
+#~ msgstr "பின்னோக்கிச் செல்ல புதிய குறுக்குவழியை உள்ளிடவும்"
+
+#, fuzzy
+#~ msgid "Enter new shortcut for bringing window to focus"
+#~ msgstr "சாளரத்தை முன்னிலைக்குக் கொண்டுவர புதிய குறுக்குவழியை உள்ளிடவும்"
+
+#, fuzzy
+#~ msgid "Announcements"
+#~ msgstr "அறிவிப்புகள்"
+
+#, fuzzy
+#~ msgid "Time Running Out"
+#~ msgstr "நேரம் முடிந்து கொண்டிருக்கிறது"
+
+#, fuzzy
+#~ msgid "Notify when Pomodoro or break is about to end."
+#~ msgstr "பொமோடோரோ அல்லது இடைவெளி முடியும்போது அறிவிக்கவும்."
+
+#, fuzzy
+#~ msgid "A full-screen notification intended to enforce taking a break."
+#~ msgstr "கட்டாயம் இடைவெளி எடுக்கச் செய்யும் முழுத்திரை அறிவிப்பு."
+
+#, fuzzy
+#~ msgid "Lock Delay"
+#~ msgstr "பூட்டு தாமதம்"
+
+#, fuzzy
+#~ msgid "Period of inactivity to lock the screen."
+#~ msgstr "திரையைப் பூட்ட வேண்டிய செயல்பாடற்ற காலம்."
+
+#, fuzzy
+#~ msgid "Reopen Delay"
+#~ msgstr "மறுதிறப்பு தாமதம்"
+
+#, fuzzy
+#~ msgid "Period of inactivity to reopen the overlay after it gets dismissed."
+#~ msgstr "மேலடுக்கு நீக்கப்பட்ட பிறகு அதை மீண்டும் திறப்பதற்கான கால அளவு."
+
+#, fuzzy
+#~ msgid "Never"
+#~ msgstr "ஒருபோதும் வேண்டாம்"
+
+#~ msgid "Notifications"
+#~ msgstr "அறிவிப்புகள்"
+
+#, fuzzy
+#~ msgid "Sounds"
+#~ msgstr "ஒலிகள்"
+
+#, fuzzy
+#~ msgid "Appearance"
+#~ msgstr "தோற்றம்"
+
+#, fuzzy
+#~ msgid "Keyboard Shortcuts"
+#~ msgstr "விசைப்பலகை குறுக்குவழி"
+
+#, fuzzy
+#~ msgid "Automation"
+#~ msgstr "தானியக்கம்"
+
+#, fuzzy
+#~ msgid "Sounds Are Disabled"
+#~ msgstr "ஒலிகள் முடக்கப்பட்டுள்ளன"
+
+#, fuzzy
+#~ msgid "Alert Sounds"
+#~ msgstr "எச்சரிக்கை ஒலிகள்"
+
+#, fuzzy
+#~ msgid "Pomodoro Finished Sound"
+#~ msgstr "பொமோடோரோ முடிந்ததற்கான ஒலி"
+
+#, fuzzy
+#~ msgid "Break Finished Sound"
+#~ msgstr "இடைவெளி முடிந்ததற்கான ஒலி"
+
+#, fuzzy
+#~ msgid "Background Sound"
+#~ msgstr "இடிக்கும் ஒலி"
+
+#~ msgid "Bell"
+#~ msgstr "மணி"
+
+#~ msgid "Loud Bell"
+#~ msgstr "சத்தமான மணி"
+
+#~ msgid "Clock Ticking"
+#~ msgstr "கடிகார இடித்தல்"
+
+#, fuzzy
+#~ msgid "None"
+#~ msgstr "எதுவுமில்லை"
+
+#~ msgid "Volume:"
+#~ msgstr "ஒலியளவு:"
+
+#~ msgid "Select Custom Sound"
+#~ msgstr "தனிப்பயன் ஒலியைத் தேர்ந்தெடு"
+
+#, fuzzy
+#~ msgid "Pomodoro Duration"
+#~ msgstr "பொமோடோரோ நேரம்"
+
+#, fuzzy
+#~ msgid "Short Break Duration"
+#~ msgstr "சிறு இடைவெளி நேரம்"
+
+#, fuzzy
+#~ msgid "Long Break Duration"
+#~ msgstr "நீண்ட இடைவெளி நேரம்"
+
+#, fuzzy
+#~ msgid "Number of Cycles"
+#~ msgstr "சுழற்சிகளின் எண்ணிக்கை"
+
+#, fuzzy
+#~ msgid "Behavior"
+#~ msgstr "நடத்தை"
+
+#, fuzzy
+#~ msgid "Pause By Locking The Screen"
+#~ msgstr "திரையைப் பூட்டும்போது இடைநிறுத்து"
+
+#, fuzzy
+#~ msgid "Confirm Starting a Break"
+#~ msgstr "இடைவெளி தொடங்குவதை உறுதிப்படுத்து"
+
+#, fuzzy
+#~ msgid "Confirm Starting a Pomodoro"
+#~ msgstr "பொமோடோரோ தொடங்கு"
+
+#, fuzzy, c-format
+#~ msgid "A single session will take <b>%s</b>."
+#~ msgstr "ஒரு அமர்வு <b>%s</b> எடுக்கும்."
+
+#, fuzzy, c-format
+#~ msgid "<b>%u%%</b> of the time will be allocated for breaks."
+#~ msgstr "நேரத்தில் <b>%u%%</b> இடைவெளிகளுக்காக ஒதுக்கப்படும்."
+
+#, fuzzy
+#~ msgid "Apply changes to ongoing Pomodoro?"
+#~ msgstr "நடந்து கொண்டிருக்கும் பொமோடோரோவில் மாற்றங்களைப் பயன்படுத்தவா?"
+
+#, fuzzy
+#~ msgid "Apply changes to ongoing break?"
+#~ msgstr "நடந்து கொண்டிருக்கும் இடைவெளியில் மாற்றங்களைப் பயன்படுத்தவா?"
+
+#, fuzzy
+#~ msgid "Apply"
+#~ msgstr "பயன்படுத்து"
+
+#, fuzzy
+#~ msgctxt "accessibility"
+#~ msgid "Sidebar"
+#~ msgstr "பக்கவாட்டுப் பட்டை"
+
+#, fuzzy
+#~ msgid "Compact timer"
+#~ msgstr "சிறிய நேரங்காட்டி"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.28.1"
+#~ msgstr "gnome-pomodoro 0.28.1 மாற்றங்களின் கண்ணோட்டம்"
+
+#, fuzzy
+#~ msgid "Added Tamil translation (thanks @omeritzics)"
+#~ msgstr "தமிழ் மொழிபெயர்ப்பு சேர்க்கப்பட்டது (@omeritzics-க்கு நன்றி)"
+
+#, fuzzy
+#~ msgid "Added Hebrew translation (thanks @Killersparrow1)"
+#~ msgstr "ஹீப்ரு மொழிபெயர்ப்பு சேர்க்கப்பட்டது (@Killersparrow1-க்கு நன்றி)"
+
+#~ msgid "Overview of changes in gnome-pomodoro 0.28.0"
+#~ msgstr "gnome-pomodoro 0.28.0 மாற்றங்களின் கண்ணோட்டம்"
+
+#, fuzzy
+#~ msgid "Support for GNOME Shell 49 (thanks @aleasto)"
+#~ msgstr "GNOME Shell 49-க்கான ஆதரவு (@aleasto-க்கு நன்றி)"
+
+#, fuzzy
+#~ msgid "Updated German translation (thanks @daPhipz)"
+#~ msgstr "ஜெர்மன் மொழிபெயர்ப்பு புதுப்பிக்கப்பட்டது (@daPhipz-க்கு நன்றி)"
+
+#~ msgid "Overview of changes in gnome-pomodoro 0.27.0"
+#~ msgstr "gnome-pomodoro 0.27.0 மாற்றங்களின் கண்ணோட்டம்"
+
+#, fuzzy
+#~ msgid "Support for GNOME Shell 48"
+#~ msgstr "GNOME Shell 48-க்கான ஆதரவு"
+
+#, fuzzy
+#~ msgid "Split time spent across midnight"
+#~ msgstr "நள்ளிரவைத் தாண்டிய நேரத்தைப் பிரித்தல்"
+
+#, fuzzy
+#~ msgid "Added Telugu translation (thanks @SpaciousCoder78)"
+#~ msgstr "தெலுங்கு மொழிபெயர்ப்பு சேர்க்கப்பட்டது (@SpaciousCoder78-க்கு நன்றி)"
+
+#~ msgid "Overview of changes in gnome-pomodoro 0.26.0"
+#~ msgstr "gnome-pomodoro 0.26.0 மாற்றங்களின் கண்ணோட்டம்"
+
+#, fuzzy
+#~ msgid "Support for GNOME Shell 47"
+#~ msgstr "GNOME Shell 47-க்கான ஆதரவு"
+
+#, fuzzy
+#~ msgid "Allow to dismiss screen overlay by gesture when a video is playing"
+#~ msgstr "வீடியோ ஓடும்போது சைகை மூலம் திரை மேலடுக்கை நீக்க அனுமதி"
+
+#, fuzzy
+#~ msgid "Added Georgian translation (thanks @NorwayFun)"
+#~ msgstr "ஜார்ஜிய மொழிபெயர்ப்பு சேர்க்கப்பட்டது (@NorwayFun-க்கு நன்றி)"
+
+#, fuzzy
+#~ msgid "Adjusted translations in appdata (thanks @yakushabb)"
+#~ msgstr "appdata-ல் மொழிபெயர்ப்புகள் சரிசெய்யப்பட்டன (@yakushabb-க்கு நன்றி)"
+
+#~ msgid "Overview of changes in gnome-pomodoro 0.25.2"
+#~ msgstr "gnome-pomodoro 0.25.2 மாற்றங்களின் கண்ணோட்டம்"
+
+#, fuzzy
+#~ msgid "Fix keeping notification after extending Pomodoro"
+#~ msgstr "பொமோடோரோவை நீட்டித்த பிறகும் அறிவிப்பு நீடிப்பது சரி செய்யப்பட்டது"
+
+#~ msgid "Overview of changes in gnome-pomodoro 0.25.1"
+#~ msgstr "gnome-pomodoro 0.25.1 மாற்றங்களின் கண்ணோட்டம்"
+
+#, fuzzy
+#~ msgid "Fixes for GNOME Shell 46"
+#~ msgstr "GNOME Shell 46-க்கான திருத்தங்கள்"
+
+#, fuzzy
+#~ msgid "Drop support for GNOME Shell 45"
+#~ msgstr "GNOME Shell 45-க்கான ஆதரவு நீக்கப்பட்டது"
+
+#~ msgid "Overview of changes in gnome-pomodoro 0.25.0"
+#~ msgstr "gnome-pomodoro 0.25.0 மாற்றங்களின் கண்ணோட்டம்"
+
+#, fuzzy
+#~ msgid "Support for GNOME Shell 46"
+#~ msgstr "GNOME Shell 46-க்கான ஆதரவு"
+
+#, fuzzy
+#~ msgid "Adjust build script to meson 0.59.0 (thanks @mattst88)"
+#~ msgstr "பில்ட் ஸ்கிரிப்ட் meson 0.59.0-க்கு மாற்றப்பட்டது (@mattst88-க்கு நன்றி)"
+
+#, fuzzy
+#~ msgid ""
+#~ "Let <b>Pomodoro</b> manage system notifications while the timer is running"
+#~ msgstr "நேரங்காட்டி ஓடும்போது <b>Pomodoro</b> அறிவிப்புகளை நிர்வகிக்கட்டும்"
+
+#, fuzzy
+#~ msgid "15 seconds"
+#~ msgstr "15 வினாடிகள்"
+
+#, fuzzy
+#~ msgid "30 seconds"
+#~ msgstr "30 வினாடிகள்"
+
+#, fuzzy
+#~ msgid "1 minute"
+#~ msgstr "1 நிமிடம்"
+
+#, fuzzy
+#~ msgid "2 minutes"
+#~ msgstr "2 நிமிடங்கள்"
+
+#, fuzzy
+#~ msgid "3 minutes"
+#~ msgstr "3 நிமிடங்கள்"
+
+#, fuzzy
+#~ msgid "5 minutes"
+#~ msgstr "5 நிமிடங்கள்"
+
+#~ msgid "Timer Ticking"
+#~ msgstr "நேரங்காட்டி இடித்தல்"
+
+#, fuzzy
+#~ msgid "Birds"
+#~ msgstr "பறவைகள்"
+
+#~ msgid "@APPLICATION_NAME@"
+#~ msgstr "@APPLICATION_NAME@"
+
+#~ msgid "timer;"
+#~ msgstr "நேரங்காட்டி;"
+
+#, fuzzy
+#~ msgid "Start/Stop"
+#~ msgstr "தொடங்கு/நிறுத்து"
+
+#, fuzzy
+#~ msgid "Pause/Resume"
+#~ msgstr "இடைநிறுத்து/தொடர்"
+
+#, fuzzy
+#~ msgid "Skip to a pomodoro or to a break"
+#~ msgstr "பொமோடோரோ அல்லது இடைவேளைக்குத் தவிர்"
+
+#, fuzzy
+#~ msgid "Reset current session"
+#~ msgstr "தற்போதைய அமர்வை மீட்டமை"
+
+#, fuzzy
+#~ msgid "About Pomodoro"
+#~ msgstr "பொமோடோரோ"
+
+#~ msgid "A simple time management utility"
+#~ msgstr "ஒரு எளிய நேர நிர்வாக பயன்பாடு"
+
+#, fuzzy
+#~ msgid "_Stopped"
+#~ msgstr "நிறுத்து"
+
+#, fuzzy
+#~ msgid "Extension for GNOME Shell is available"
+#~ msgstr "GNOME ஷெல்லுக்கான காட்டொளி"
+
+#, fuzzy, c-format
+#~ msgid "Long break due in %s"
+#~ msgstr "நீண்ட இடைவெளி நேரம்"
 
 #~ msgid "A time management utility for GNOME"
 #~ msgstr "GNOME-க்கான ஒரு நேர நிர்வாக செயலி"
@@ -295,67 +1521,31 @@ msgstr ""
 #~ msgid "Indicator for GNOME Shell"
 #~ msgstr "GNOME ஷெல்லுக்கான காட்டொளி"
 
-#~ msgid "A simple time management utility"
-#~ msgstr "ஒரு எளிய நேர நிர்வாக பயன்பாடு"
+#, fuzzy
+#~ msgid "Support for GNOME Shell 4.0"
+#~ msgstr "GNOME ஷெல்லுக்கான காட்டொளி"
 
-#~ msgid "timer;"
-#~ msgstr "நேரங்காட்டி;"
+#, fuzzy
+#~ msgid "Support for GNOME Shell 3.36"
+#~ msgstr "GNOME ஷெல்லுக்கான காட்டொளி"
 
-#~ msgid "Start"
-#~ msgstr "தொடங்கு"
-
-#~ msgid "Pause"
-#~ msgstr "இடைநிறுத்து"
-
-#~ msgid "Resume"
-#~ msgstr "மீண்டும் தொடங்கு"
-
-#~ msgid "Stop"
-#~ msgstr "நிறுத்து"
+#, fuzzy
+#~ msgid "Support for GNOME Shell 3.34 only"
+#~ msgstr "GNOME ஷெல்லுக்கான காட்டொளி"
 
 #~ msgid "_Timer"
 #~ msgstr "_நேரங்காட்டி"
-
-#~ msgid "_Preferences"
-#~ msgstr "_விருப்பத்தேர்வுகள்"
-
-#~ msgid "_Quit"
-#~ msgstr "_வெளியேறு"
 
 #~ msgid "Keyboard shortcut to toggle the timer. Enter new shortcut to change."
 #~ msgstr ""
 #~ "நேரங்காட்டியைக் கட்டுப்படுத்த விசைப்பலகை குறுக்குவழி. மாற்ற புதிய குறுக்குவழியை "
 #~ "உள்ளிடவும்."
 
-#~ msgid "Disable"
-#~ msgstr "முடக்கு"
-
-#~ msgid "Timer"
-#~ msgstr "நேரங்காட்டி"
-
-#~ msgid "Pomodoro duration"
-#~ msgstr "பொமோடோரோ நேரம்"
-
-#~ msgid "Break duration"
-#~ msgstr "சிறு இடைவெளி நேரம்"
-
-#~ msgid "Long break duration"
-#~ msgstr "நீண்ட இடைவெளி நேரம்"
-
 #~ msgid "Pomodoros before a long break"
 #~ msgstr "நீண்ட இடைவெளிக்கு முன் பொமோடோரோக்களின் எண்ணிக்கை"
 
-#~ msgid "Keyboard shortcut"
-#~ msgstr "விசைப்பலகை குறுக்குவழி"
-
-#~ msgid "Notifications"
-#~ msgstr "அறிவிப்புகள்"
-
 #~ msgid "Screen notifications"
 #~ msgstr "திரை அறிவிப்புகள்"
-
-#~ msgid "Desktop"
-#~ msgstr "டெஸ்க்டாப்"
 
 #~ msgid "Wait for activity after a break"
 #~ msgstr "இடைவெளிக்குப் பிறகு செயல்பாட்டிற்காக காத்திரு"
@@ -369,20 +1559,8 @@ msgstr ""
 #~ msgid "Back"
 #~ msgstr "பின்செல்"
 
-#~ msgid "Nothing to see yet"
-#~ msgstr "பார்க்க எதுவும் இல்லை"
-
 #~ msgid "Complete a few sessions"
 #~ msgstr "சில அமர்வுகளை முடிக்கவும்"
-
-#~ msgid "Day"
-#~ msgstr "நாள்"
-
-#~ msgid "Week"
-#~ msgstr "வாரம்"
-
-#~ msgid "Month"
-#~ msgstr "மாதம்"
 
 #~ msgid "Previous (Alt+Left)"
 #~ msgstr "முந்தையது (Alt+Left)"
@@ -390,47 +1568,11 @@ msgstr ""
 #~ msgid "Next (Alt+Right)"
 #~ msgstr "அடுத்தது (Alt+Right)"
 
-#~ msgid "Today"
-#~ msgstr "இன்று"
-
-#~ msgid "_About"
-#~ msgstr "_பற்றி"
-
-#~ msgid "Actions"
-#~ msgstr "செயல்கள்"
-
-#~ msgid "Action"
-#~ msgstr "செயல்"
-
-#~ msgid "Custom actions…"
-#~ msgstr "தனிப்பயன் செயல்கள்..."
-
 #~ msgid "Complete"
 #~ msgstr "முடிப்பது"
 
-#~ msgid "Skip"
-#~ msgstr "தவிர்"
-
 #~ msgid "Enable"
 #~ msgstr "இயக்கு"
-
-#~ msgid "Command"
-#~ msgstr "கட்டளை"
-
-#~ msgid "Triggers"
-#~ msgstr "தூண்டுகள்"
-
-#~ msgid "Name"
-#~ msgstr "பெயர்"
-
-#~ msgid "_Pomodoro"
-#~ msgstr "_பொமோடோரோ"
-
-#~ msgid "_Short Break"
-#~ msgstr "_சிறு இடைவெளி"
-
-#~ msgid "_Long Break"
-#~ msgstr "_நீண்ட இடைவெளி"
 
 #~ msgid "Add"
 #~ msgstr "சேர்"
@@ -438,26 +1580,11 @@ msgstr ""
 #~ msgid "Remove"
 #~ msgstr "நீக்கு"
 
-#~ msgid "State"
-#~ msgstr "நிலை"
-
-#~ msgid "State Duration"
-#~ msgstr "நிலை நேரம்"
-
 #~ msgid "Elapsed Time"
 #~ msgstr "கடந்துபோன நேரம்"
 
-#~ msgid "Pomodoro Timer"
-#~ msgstr "பொமோடோரோ நேரங்காட்டி"
-
-#~ msgid "Start Timer"
-#~ msgstr "நேரங்காட்டியைத் தொடங்கு"
-
 #~ msgid "Pause Timer"
 #~ msgstr "நேரங்காட்டியை இடைநிறுத்து"
-
-#~ msgid "Stop Timer"
-#~ msgstr "நேரங்காட்டியை நிறுத்து"
 
 #~ msgid "Pause break"
 #~ msgstr "இடைவெளியை இடைநிறுத்து"
@@ -478,62 +1605,14 @@ msgstr ""
 #~ msgstr[1] "இன்னும் %d நிமிடங்கள் உள்ளன"
 
 #, javascript-format
-#~ msgid "%d second remaining"
-#~ msgid_plural "%d seconds remaining"
-#~ msgstr[0] "இன்னும் %d வினாடி உள்ளது"
-#~ msgstr[1] "இன்னும் %d வினாடிகள் உள்ளன"
-
-#~ msgid "Break is over"
-#~ msgstr "இடைவெளி முடிந்தது"
-
-#~ msgid "Skip Break"
-#~ msgstr "இடைவெளியைத் தவிர்"
-
-#~ msgid "+1 Minute"
-#~ msgstr "+1 நிமிடம்"
-
-#, javascript-format
 #~ msgid "Failed to run <i>%s</i> service"
 #~ msgstr "<i>%s</i> சேவையை இயக்க முடியவில்லை"
-
-#~ msgid "Hide other notifications"
-#~ msgstr "பிற அறிவிப்புகளை மறை"
-
-#~ msgid "Volume:"
-#~ msgstr "ஒலியளவு:"
-
-#~ msgid "Clock Ticking"
-#~ msgstr "கடிகார இடித்தல்"
-
-#~ msgid "Timer Ticking"
-#~ msgstr "நேரங்காட்டி இடித்தல்"
 
 #~ msgid "Woodland Birds"
 #~ msgstr "காட்டுப் பறவைகள்"
 
-#~ msgid "Bell"
-#~ msgstr "மணி"
-
-#~ msgid "Loud Bell"
-#~ msgstr "சத்தமான மணி"
-
-#~ msgid "Select Custom Sound"
-#~ msgstr "தனிப்பயன் ஒலியைத் தேர்ந்தெடு"
-
-#~ msgid "_Cancel"
-#~ msgstr "_ரத்துசெய்"
-
-#~ msgid "_Select"
-#~ msgstr "_தேர்ந்தெடு"
-
-#~ msgid "Ticking Sound"
-#~ msgstr "இடிக்கும் ஒலி"
-
 #~ msgid "End of Break Sound"
 #~ msgstr "இடைவெளி முடியும் ஒலி"
-
-#~ msgid "Start of Break Sound"
-#~ msgstr "இடைவெளி தொடங்கும் ஒலி"
 
 #~ msgid "Off"
 #~ msgstr "அணை"
@@ -546,9 +1625,6 @@ msgstr ""
 
 #~ msgid "End of break sound"
 #~ msgstr "இடைவெளி முடியும் ஒலி"
-
-#~ msgid "translator-credits"
-#~ msgstr "Killersparrow1 <github.com/Killersparrow1>, 2025"
 
 #~ msgid "A time management utility for GNOME."
 #~ msgstr "GNOME-க்கான நேர மேலாண்மை பயன்பாடு."
