@@ -654,6 +654,9 @@ class FocusTimerTextIndicator extends St.Widget {
     _updatePlaceholderValue() {
         this._session.getNextTimeBlock().then(
             timeBlock => {
+                if (!this._session)
+                    return;
+
                 if (timeBlock && timeBlock.state === State.POMODORO)
                     this._placeholderValue = timeBlock.endTime - timeBlock.startTime;
 
