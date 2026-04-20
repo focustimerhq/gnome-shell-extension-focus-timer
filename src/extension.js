@@ -68,6 +68,7 @@ export default class FocusTimerExtension extends Extension {
         this._notification          = null;
         this._initialized           = false;
         this._nameWatcherId         = 0;
+        this._settingsChangedId     = 0;
         this._sessionModeUpdatedId  = 0;
 
         extension = this;
@@ -134,9 +135,7 @@ export default class FocusTimerExtension extends Extension {
             this._timerProxy = timerProxy;
             this._sessionProxy = sessionProxy;
 
-            applicationProxy.connectSignal('RequestFocus', _proxy => {
-                this._focusApplication();
-            });
+            applicationProxy.connectSignal('RequestFocus', _proxy => this._focusApplication());
         } catch (error) {
             Utils.logError(error);
         }
@@ -150,20 +149,9 @@ export default class FocusTimerExtension extends Extension {
             this._cancellable = null;
         }
 
-        if (this._proxy) {
-            this._proxy.run_dispose();
-            this._proxy = null;
-        }
-
-        if (this._timerProxy) {
-            this._timerProxy.run_dispose();
-            this._timerProxy = null;
-        }
-
-        if (this._sessionProxy) {
-            this._sessionProxy.run_dispose();
-            this._sessionProxy = null;
-        }
+        this._proxy = null;
+        this._timerProxy = null;
+        this._sessionProxy = null;
     }
 
     _initialize() {
@@ -471,12 +459,16 @@ export default class FocusTimerExtension extends Extension {
 
     enable() {
         this._settings = this.getSettings();
-        this._settings.connect('changed', this._onSettingsChanged.bind(this));
+        this._settingsChangedId = this._settings.connect('changed', this._onSettingsChanged.bind(this));
 
         this._dbusService = new ShellIntegrationService(this);
         this._createNameWatcher();
     }
 
+    /**
+     * The extension keeps working in `unlock-dialog` session mode.
+     * We do this to show a widget on lock-screen.
+     */
     disable() {
         this._destroyNameWatcher();
         this._uninitialize();
@@ -492,14 +484,17 @@ export default class FocusTimerExtension extends Extension {
             this._notification = null;
         }
 
-        if (this._settings) {
-            this._settings.run_dispose();
-            this._settings = null;
-        }
-
         if (this._settingsWrapper) {
             this._settingsWrapper.destroy();
             this._settingsWrapper = null;
         }
+
+        if (this._settings && this._settingsChangedId) {
+            this._settings.disconnect(this._settingsChangedId);
+            this._settingsChangedId = 0;
+        }
+
+        if (this._settings)
+            this._settings = null;
     }
 }

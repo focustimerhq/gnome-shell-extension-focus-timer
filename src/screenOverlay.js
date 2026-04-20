@@ -120,10 +120,9 @@ class FocusTimerBlurredLightbox extends Lightbox {
             style_class: 'extension-focus-timer-lightbox-blurred',
         });
         this._background = null;
-
-        const themeContext = St.ThemeContext.get_for_stage(global.stage);
-        this._scaleChangedId = themeContext.connect('notify::scale-factor', this._updateEffects.bind(this));
-        this._monitorsChangedId = Main.layoutManager.connect('monitors-changed', this._updateEffects.bind(this));
+        this._themeContext = St.ThemeContext.get_for_stage(global.stage);
+        this._themeContext.connectObject('notify::scale-factor', this._updateEffects.bind(this), this);
+        Main.layoutManager.connectObject('monitors-changed', this._updateEffects.bind(this), this);
     }
 
     _createBackground() {
@@ -175,16 +174,9 @@ class FocusTimerBlurredLightbox extends Lightbox {
 
     /* override parent method */
     _onDestroy() {
-        if (this._monitorsChangedId) {
-            Main.layoutManager.disconnect(this._monitorsChangedId);
-            delete this._monitorsChangedId;
-        }
-
-        const themeContext = St.ThemeContext.get_for_stage(global.stage);
-        if (this._scaleChangedId) {
-            themeContext.disconnect(this._scaleChangedId);
-            this._scaleChangedId = 0;
-        }
+        Main.layoutManager.disconnectObject(this);
+        this._themeContext?.disconnectObject(this);
+        this._themeContext = null;
 
         this._destroyBackground();
 
@@ -663,16 +655,17 @@ const ScreenOverlayBase = GObject.registerClass({
         this._acknowledgeGesture = null;
         this._dismissGesture = null;
 
-        this._monitorConstraint = new MonitorConstraint();
-        this._monitorConstraint.primary = true;
-        this._stageConstraint = new Clutter.BindConstraint({
+        const monitorConstraint = new MonitorConstraint();
+        monitorConstraint.primary = true;
+
+        const stageConstraint = new Clutter.BindConstraint({
             source: global.stage,
             coordinate: Clutter.BindCoordinate.ALL,
         });
-        this.add_constraint(this._stageConstraint);
+        this.add_constraint(stageConstraint);
 
         this._layout = new St.Widget({layout_manager: new Clutter.BinLayout()});
-        this._layout.add_constraint(this._monitorConstraint);
+        this._layout.add_constraint(monitorConstraint);
         this.add_child(this._layout);
 
         this._lightbox = this._enableBlurEffect

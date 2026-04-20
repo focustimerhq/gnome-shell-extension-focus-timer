@@ -11,6 +11,7 @@ install_data(
     'session.js',
     'settings.js',
     'stylesheet.css',
+    'stylesheet-light.css',
     'timer.js',
     'timerControlButtons.js',
     'timerLabel.js',

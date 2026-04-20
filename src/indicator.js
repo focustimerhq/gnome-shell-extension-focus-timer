@@ -431,10 +431,11 @@ const IndicatorMenu = class extends PopupMenu.PopupMenu {
 
         this._activeMenu = null;
         this._stateMenu = new StateMenu(timerMenuItem.stateButton);
-        this._stateMenu.connect('open-state-changed', (menu, isOpen) => {
-            this._activeMenu = isOpen ? menu : null;
-            this._setDimmed(isOpen);
-        });
+        this._stateMenuOpenStateChangedId = this._stateMenu.connect('open-state-changed',
+            (menu, isOpen) => {
+                this._activeMenu = isOpen ? menu : null;
+                this._setDimmed(isOpen);
+            });
 
         this._menuManager = new PopupMenu.PopupMenuManager(this);
         this._menuManager.addMenu(this._stateMenu);
@@ -551,6 +552,11 @@ const IndicatorMenu = class extends PopupMenu.PopupMenu {
         if (this._timer) {
             this._timer.disconnectObject(this);
             this._timer = null;
+        }
+
+        if (this._stateMenuOpenStateChangedId) {
+            this._stateMenu?.disconnect(this._stateMenuOpenStateChangedId);
+            this._stateMenuOpenStateChangedId = 0;
         }
 
         if (this._stateMenu) {

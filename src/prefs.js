@@ -126,7 +126,7 @@ class FocusTimerPreferencesPage extends Adw.PreferencesPage {
 });
 
 export default class FocusTimerPreferences extends ExtensionPreferences {
-    getPreferencesWidget() {
-        return new PreferencesPage(this.getSettings());
+    fillPreferencesWindow(window) {
+        window.add(new PreferencesPage(this.getSettings()));
     }
 }

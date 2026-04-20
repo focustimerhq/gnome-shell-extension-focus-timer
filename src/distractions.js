@@ -214,10 +214,8 @@ export const DistractionManager = class extends Signals.EventEmitter {
             this._settings = null;
         }
 
-        if (this._notificationSettings) {
-            this._notificationSettings.run_dispose();
+        if (this._notificationSettings)
             this._notificationSettings = null;
-        }
 
         this.emit('destroy');
     }

@@ -206,11 +206,31 @@ class FocusTimerScreenShieldWidget extends St.Widget {
 
     _onDestroy() {
         this._destroying = true;
-        this._stateLabel = null;
-        this._cycleLabel = null;
-        this._timerLabel = null;
-        this._progressBar = null;
-        this._controlButtons = null;
+
+        if (this._stateLabel) {
+            this._stateLabel.destroy();
+            this._stateLabel = null;
+        }
+
+        if (this._cycleLabel) {
+            this._cycleLabel.destroy();
+            this._cycleLabel = null;
+        }
+
+        if (this._timerLabel) {
+            this._timerLabel.destroy();
+            this._timerLabel = null;
+        }
+
+        if (this._progressBar) {
+            this._progressBar.destroy();
+            this._progressBar = null;
+        }
+
+        if (this._controlButtons) {
+            this._controlButtons.destroy();
+            this._controlButtons = null;
+        }
 
         if (this._blinkingGroup) {
             this._blinkingGroup.destroy();

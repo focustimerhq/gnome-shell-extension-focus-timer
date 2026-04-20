@@ -89,6 +89,7 @@ const NumericLabel = GObject.registerClass({
             null);
 
         this.connect('style-changed', this._onStyleChanged.bind(this));
+        this.connect('destroy', this._onDestroy.bind(this));
 
         this._updateLabelText();
     }
@@ -162,6 +163,13 @@ const NumericLabel = GObject.registerClass({
     _onStyleChanged() {
         this._digitWidth = 0.0;
         this.queue_relayout();
+    }
+
+    _onDestroy() {
+        if (this.child)
+            this.child.destroy();
+
+        this.child = null;
     }
 });
 
@@ -310,7 +318,10 @@ class FocusTimerTimerLabel extends St.Widget {
             this._timer = null;
         }
 
-        this.remove_child(this._box);
+        if (this._box) {
+            this.remove_child(this._box);
+            this._box.destroy();
+        }
 
         this._delegate = null;
         this._box = null;
