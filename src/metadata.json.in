@@ -1,7 +1,7 @@
 {
   "uuid": "@EXTENSION_UUID@",
   "name": "Focus Timer",
-  "description": "Desktop integration for the Focus Timer app.",
+  "description": "Add seamless GNOME Shell integration for the app with top-bar controls and notifications.",
   "shell-version": [
     "48",
     "49",
