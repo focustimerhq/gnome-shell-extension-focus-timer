@@ -150,6 +150,7 @@ Documentation for the app services:
 
 ### Useful Resources
 
+* [Extensions Documentation](https://gjs.guide/extensions/)
 * [GJS Documentation](https://gjs-docs.gnome.org/)
 * [Guide on development of GNOME Shell](https://wiki.gnome.org/Projects/GnomeShell/Development)
 * [Debugging GNOME Shell extensions](https://gjs.guide/extensions/development/debugging.html#debugging)

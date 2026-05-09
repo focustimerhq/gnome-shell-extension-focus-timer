@@ -38,7 +38,7 @@ Focus Timer is an app based on the [Pomodoro Technique][pomodoro-technique] that
 
 ### From extensions.gnome.org
 
-At this moment the extension is not yet published.
+It's not available yet... The extension has been submitted. It's in the review / approval process.
 
 ### Building from source
 
@@ -64,7 +64,7 @@ You need to log out for GNOME Shell to recognise it or to apply updates. The ind
 
 ### From .zip bundle
 
-Only install files from a trusted source.
+Download `focus-timer@focustimerhq.github.io.zip` attached to the [latest release](https://github.com/focustimerhq/gnome-shell-extension-focus-timer/releases/latest) on GitHub.
 
 ```bash
 gnome-extensions install --force focus-timer@focustimerhq.github.io.zip
