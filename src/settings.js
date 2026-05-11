@@ -23,6 +23,14 @@ import Gio from 'gi://Gio';
 
 import {EventEmitter} from 'resource:///org/gnome/shell/misc/signals.js';
 
+const APPLICATION_DEFAULTS = {
+    'announce-about-to-end': true,
+    'screen-overlay': true,
+    'screen-overlay-lock-delay': 0,
+    'screen-overlay-reopen-delay': 30,
+};
+
+
 /**
  * Convenience wrapper for combining application settings with the extension settings.
  *
@@ -73,8 +81,10 @@ export const SettingsWrapper = class extends EventEmitter {
     }
 
     get_value(key) {
-        return this._applicationSettings[key] ??
-               this._extensionSettings.get_value(key);
+        let value = this._applicationSettings[key] ?? APPLICATION_DEFAULTS[key];
+        return value !== undefined
+            ? value
+            : this._extensionSettings.get_value(key);
     }
 
     get_boolean(key) {
