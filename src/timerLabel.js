@@ -146,9 +146,8 @@ const NumericLabel = GObject.registerClass({
         const themeNode = this.get_theme_node();
 
         if (!this._digitWidth) {
-            const font    = themeNode.get_font();
             const context = this.get_pango_context();
-            const metrics = context.get_metrics(font, context.get_language());
+            const metrics = context.get_metrics(themeNode.get_font(), context.get_language());
 
             this._digitWidth = metrics.get_approximate_digit_width() / Pango.SCALE;
         }
@@ -229,14 +228,15 @@ class FocusTimerTimerLabel extends St.Widget {
     }
 
     vfunc_get_preferred_height(_forWidth) {
-        const layout = this._minutesSeparatorLabel.clutter_text?.get_layout().copy();
+        const themeNode = this.get_theme_node();
+        const layout = Pango.Layout.new(this.get_pango_context());
+        layout.set_font_description(themeNode.get_font());
         layout.set_text('00:00', 5);
 
         const [inkRect] = layout.get_extents();
         const minimumSize = Math.ceil(inkRect.height / Pango.SCALE);
-        const naturalSize = minimumSize;
 
-        return [minimumSize, naturalSize];
+        return themeNode.adjust_preferred_height(minimumSize, minimumSize);
     }
 
     vfunc_allocate(box, _flags) {

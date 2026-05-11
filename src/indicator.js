@@ -684,11 +684,12 @@ class FocusTimerTextIndicator extends St.Widget {
     }
 
     vfunc_get_preferred_width(forHeight) {
-        const layout = this._label.clutter_text?.get_layout().copy();
-        if (!layout)
+        if (!this._label)
             return super.vfunc_get_preferred_width(forHeight);
 
         const text = this._getReferenceText(this._timer.getRemaining());
+        const layout = Pango.Layout.new(this._label.get_pango_context());
+        layout.set_font_description(this._label.get_theme_node().get_font());
         layout.set_text(text, text.length);
 
         const [layoutWidth] = layout.get_pixel_size();
