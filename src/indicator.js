@@ -1100,6 +1100,21 @@ class FocusTimerIndicator extends PanelMenu.Button {
 
         this._timer.connectObject('changed', this._onTimerChanged.bind(this), this);
 
+        this.clear_actions();
+
+        this._clickGesture = new Clutter.ClickGesture();
+        this._clickGesture.set_recognize_on_press(true);
+        this._clickGesture.connect('recognize', gesture => {
+            const button = gesture.get_button();
+            const isMiddleButton = button && button === Clutter.BUTTON_MIDDLE;
+
+            if (isMiddleButton)
+                this._activatePrimaryAction();
+            else
+                this.menu?.toggle();
+        });
+        this.add_action(this._clickGesture);
+
         this._update();
     }
 
@@ -1167,6 +1182,35 @@ class FocusTimerIndicator extends PanelMenu.Button {
             this.add_style_class_name('extension-focus-timer-break');
         else
             this.remove_style_class_name('extension-focus-timer-break');
+    }
+
+    _activatePrimaryAction() {
+        if (this._timer.isFinished())
+            this._timer.skip();
+        else if (this._timer.isPaused())
+            this._timer.resume();
+        else if (this._timer.isStarted())
+            this._timer.pause();
+        else
+            this._timer.start();
+    }
+
+    vfunc_scroll_event(event) {
+        if (this._type !== IndicatorType.TEXT)
+            return false;
+
+        switch (event.get_scroll_direction()) {
+        case Clutter.ScrollDirection.UP:
+            this._timer.extend(MINUTE, this._timer.lastTickTime);
+            return true;
+
+        case Clutter.ScrollDirection.DOWN:
+            this._timer.extend(-MINUTE, this._timer.lastTickTime);
+            return true;
+
+        default:
+            return false;
+        }
     }
 
     _onTimerChanged() {
