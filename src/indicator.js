@@ -1100,20 +1100,22 @@ class FocusTimerIndicator extends PanelMenu.Button {
 
         this._timer.connectObject('changed', this._onTimerChanged.bind(this), this);
 
-        this.clear_actions();
+        if (Clutter.ClickGesture) {  // introduced in gnome-shell 50
+            this.clear_actions();
 
-        this._clickGesture = new Clutter.ClickGesture();
-        this._clickGesture.set_recognize_on_press(true);
-        this._clickGesture.connect('recognize', gesture => {
-            const button = gesture.get_button();
-            const isMiddleButton = button && button === Clutter.BUTTON_MIDDLE;
+            this._clickGesture = new Clutter.ClickGesture();
+            this._clickGesture.set_recognize_on_press(true);
+            this._clickGesture.connect('recognize', gesture => {
+                const button = gesture.get_button();
+                const isMiddleButton = button && button === Clutter.BUTTON_MIDDLE;
 
-            if (isMiddleButton)
-                this._activatePrimaryAction();
-            else
-                this.menu?.toggle();
-        });
-        this.add_action(this._clickGesture);
+                if (isMiddleButton)
+                    this._activatePrimaryAction();
+                else
+                    this.menu?.toggle();
+            });
+            this.add_action(this._clickGesture);
+        }
 
         this._update();
     }
