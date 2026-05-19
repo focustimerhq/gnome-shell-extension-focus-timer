@@ -165,10 +165,10 @@ const NumericLabel = GObject.registerClass({
     }
 
     _onDestroy() {
-        if (this.child)
+        if (this.child) {
             this.child.destroy();
-
-        this.child = null;
+            this.child = null;
+        }
     }
 });
 
@@ -316,11 +316,6 @@ class FocusTimerTimerLabel extends St.Widget {
         if (this._timer) {
             this._timer.disconnectObject(this);
             this._timer = null;
-        }
-
-        if (this._box) {
-            this.remove_child(this._box);
-            this._box.destroy();
         }
 
         this._delegate = null;

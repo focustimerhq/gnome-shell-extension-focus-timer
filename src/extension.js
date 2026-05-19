@@ -37,6 +37,7 @@ import {Timer, State} from './timer.js';
 import {Session} from './session.js';
 import {SettingsWrapper} from './settings.js';
 import * as Config from './config.js';
+import * as ScreenOverlay from './screenOverlay.js';
 import * as Utils from './utils.js';
 
 
@@ -483,6 +484,9 @@ export default class FocusTimerExtension extends Extension {
             this._notification.destroy(MessageTray.NotificationDestroyedReason.EXPIRED);
             this._notification = null;
         }
+
+        if (ScreenOverlay.overlayManager)
+            ScreenOverlay.overlayManager.destroy();
 
         if (this._settingsWrapper) {
             this._settingsWrapper.destroy();

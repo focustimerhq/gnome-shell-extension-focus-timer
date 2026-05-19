@@ -70,7 +70,7 @@ export const OverlayState = {
     CLOSING: 3,
 };
 
-let overlayManager = null;
+export let overlayManager = null;
 
 
 const PlainLightbox = GObject.registerClass(
@@ -212,44 +212,40 @@ class OverlayManager {
         return overlayManager;
     }
 
-    _createOverlayGroup() {
-        if (!this._overlayGroup) {
-            this._overlayGroup = new St.Widget({
-                name: 'overlayGroup',
-                reactive: false,
-            });
-            global.stage.add_child(this._overlayGroup);
-            global.stage.set_child_above_sibling(this._overlayGroup, null);
-        }
+    _ensureOverlayGroup() {
+        if (this._overlayGroup)
+            return;
 
-        if (!this._dummyChrome) {
-            // LayoutManager tracks region changes, so create a mock member resembling overlayGroup.
-            const constraint = new Clutter.BindConstraint({
-                source: this._overlayGroup,
-                coordinate: Clutter.BindCoordinate.ALL,
-            });
-            this._dummyChrome = new St.Widget({
-                name: 'dummyOverlayGroup',
-                reactive: false,
-            });
-            this._dummyChrome.add_constraint(constraint);
-            Main.layoutManager.addTopChrome(this._dummyChrome);
-        }
+        this._overlayGroup = new St.Widget({
+            name: 'overlayGroup',
+            reactive: false,
+        });
+        global.stage.add_child(this._overlayGroup);
+        global.stage.set_child_above_sibling(this._overlayGroup, null);
 
-        for (const overlayData of this._overlayActors)
-            this._overlayGroup.add_child(overlayData.actor);
+        // LayoutManager tracks region changes, so create a mock member resembling overlayGroup.
+        const constraint = new Clutter.BindConstraint({
+            source: this._overlayGroup,
+            coordinate: Clutter.BindCoordinate.ALL,
+        });
+        this._dummyChrome = new St.Widget({
+            name: 'dummyOverlayGroup',
+            reactive: false,
+        });
+        this._dummyChrome.add_constraint(constraint);
+        Main.layoutManager.addTopChrome(this._dummyChrome);
     }
 
     _destroyOverlayGroup() {
-        if (this._overlayGroup) {
-            this._overlayGroup.remove_all_children();
-            global.stage.remove_child(this._overlayGroup);
-            this._overlayGroup = null;
-        }
-
         if (this._dummyChrome) {
             Main.layoutManager.removeChrome(this._dummyChrome);
+            this._dummyChrome.destroy();
             this._dummyChrome = null;
+        }
+
+        if (this._overlayGroup) {
+            this._overlayGroup.destroy();
+            this._overlayGroup = null;
         }
     }
 
@@ -266,7 +262,7 @@ class OverlayManager {
 
     _raiseChrome() {
         if (!this._raised) {
-            this._createOverlayGroup();
+            this._ensureOverlayGroup();
 
             for (let chromeData of this._chromeActors)
                 this._raiseChromeInternal(chromeData);
@@ -285,14 +281,13 @@ class OverlayManager {
     }
 
     _lowerChrome() {
-        if (this._raised) {
-            for (let chromeData of this._chromeActors)
-                this._lowerChromeInternal(chromeData);
+        if (!this._raised)
+            return;
 
-            this._destroyOverlayGroup();
+        for (let chromeData of this._chromeActors)
+            this._lowerChromeInternal(chromeData);
 
-            this._raised = false;
-        }
+        this._raised = false;
     }
 
     _updateOpacity() {
@@ -321,16 +316,7 @@ class OverlayManager {
     }
 
     _onOverlayDestroy(actor) {
-        let index = -1;
-
-        for (let overlayData of this._overlayActors) {
-            index++;
-
-            if (overlayData.actor === actor) {
-                this._overlayActors.pop(index);
-                break;
-            }
-        }
+        this.remove(actor);
     }
 
     add(actor) {
@@ -340,7 +326,28 @@ class OverlayManager {
             destroyId: actor.connect('destroy', this._onOverlayDestroy.bind(this)),
         });
 
+        this._ensureOverlayGroup();
+        if (actor.get_parent() !== this._overlayGroup)
+            this._overlayGroup.add_child(actor);
+
         this._onOverlayNotifyVisible();
+    }
+
+    remove(actor) {
+        const index = this._overlayActors.findIndex(overlayData => overlayData.actor === actor);
+        if (index === -1)
+            return;
+
+        const overlayData = this._overlayActors[index];
+        overlayData.actor.disconnect(overlayData.notifyVisibleId);
+        overlayData.actor.disconnect(overlayData.destroyId);
+        this._overlayActors.splice(index, 1);
+
+        if (this._overlayGroup && actor.get_parent() === this._overlayGroup)
+            this._overlayGroup.remove_child(actor);
+
+        if (this._overlayActors.length === 0)
+            this._destroyOverlayGroup();
     }
 
     addChrome(actor) {
@@ -360,13 +367,14 @@ class OverlayManager {
     destroy() {
         this._lowerChrome();
 
-        for (const overlayData of this._overlayActors) {
-            overlayData.actor.disconnect(overlayData.notifyVisibleId);
-            overlayData.actor.disconnect(overlayData.destroyId);
-        }
+        for (const overlayData of [...this._overlayActors])
+            overlayData.actor.destroy();
 
         this._overlayActors = [];
         this._chromeActors = [];
+
+        if (overlayManager === this)
+            overlayManager = null;
     }
 }
 
