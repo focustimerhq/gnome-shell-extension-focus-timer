@@ -146,7 +146,6 @@ export const DistractionManager = class extends Signals.EventEmitter {
             });
 
         this._overridesApplied = true;
-        this._updateBusyStatus();
     }
 
     _revertOverrides() {
@@ -172,11 +171,10 @@ export const DistractionManager = class extends Signals.EventEmitter {
         if (timerState !== State.STOPPED && manageNotifications) {
             this._busy = timerState === State.POMODORO;
 
-            if (!this._patchApplied)
+            if (!this._overridesApplied)
                 this._applyOverrides();
-            else
-                this._updateBusyStatus();
 
+            this._updateBusyStatus();
             this._hideDoNotDisturbButton();
             this._notificationSettings.set_boolean('show-banners', !this._busy);
         } else {

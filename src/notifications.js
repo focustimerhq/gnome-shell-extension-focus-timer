@@ -1180,8 +1180,10 @@ export const NotificationManager = class extends Signals.EventEmitter {
             this._queueChangedId = 0;
         }
 
-        this._injectionManager.clear();
-        this._injectionManager = null;
+        if (this._injectionManager) {
+            this._injectionManager.clear();
+            this._injectionManager = null;
+        }
 
         this._timerState = State.STOPPED;
         this._timerDuration = 0;
