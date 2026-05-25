@@ -32,8 +32,18 @@ build () {
     echo "Extension saved to ${zipname}"
 }
 
+validate () {
+    if [ ! -d "${srcdir}/venv" ] || [ ! -x "${srcdir}/venv/bin/shexli" ]; then
+        echo "Skipping validation (shexli not available)" >&2
+        return 0
+    fi
+
+    source "${srcdir}/venv/bin/activate"
+    "${srcdir}/venv/bin/shexli" "${srcdir}/${zipname}"
+}
+
 install () {
-    gnome-extensions --force install "${srcdir}/${zipname}" || exit 1
+    gnome-extensions install --force "${zipname}" || exit 1
     echo "Installed ${uuid}"
 }
 
@@ -52,6 +62,7 @@ if [ "$#" -ge 1 ]; then
     install)
         cleanup
         build
+        validate
         cleanup
         install
         ;;
@@ -62,4 +73,5 @@ if [ "$#" -ge 1 ]; then
 else
     cleanup
     build
+    validate
 fi
