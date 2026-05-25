@@ -59,8 +59,11 @@ export const DistractionManager = class extends Signals.EventEmitter {
     }
 
     _hideDoNotDisturbButton() {
+        if (!Main.panel?.statusArea)
+            return;
+
         if (DoNotDisturb) {
-            const indicator = Main.panel.statusArea.quickSettings._doNotDisturb;
+            const indicator = Main.panel.statusArea.quickSettings?._doNotDisturb;
 
             if (indicator) {
                 for (const toggle of indicator.quickSettingsItems)
@@ -75,19 +78,27 @@ export const DistractionManager = class extends Signals.EventEmitter {
                 Utils.logWarning('Unable to hide DoNotDisturb button');
             }
         } else {
-            const dndButton = Main.panel.statusArea.dateMenu._messageList._dndButton;
-            dndButton.hide();
+            const dndButton = Main.panel.statusArea.dateMenu?._messageList._dndButton;
 
-            for (const sibling of [dndButton.get_previous_sibling(), dndButton.get_next_sibling()]) {
-                if (sibling instanceof St.Label)
-                    sibling.hide();
+            if (dndButton) {
+                dndButton.hide();
+
+                for (const sibling of [dndButton.get_previous_sibling(), dndButton.get_next_sibling()]) {
+                    if (sibling instanceof St.Label)
+                        sibling.hide();
+                }
+            } else {
+                Utils.logWarning('Unable to hide DoNotDisturb button');
             }
         }
     }
 
     _showDoNotDisturbButton() {
+        if (!Main.panel?.statusArea)
+            return;
+
         if (DoNotDisturb) {
-            const indicator = Main.panel.statusArea.quickSettings._doNotDisturb;
+            const indicator = Main.panel.statusArea.quickSettings?._doNotDisturb;
 
             if (indicator) {
                 for (const toggle of indicator.quickSettingsItems)
@@ -102,12 +113,17 @@ export const DistractionManager = class extends Signals.EventEmitter {
                 Utils.logWarning('Unable to show DoNotDisturb button');
             }
         } else {
-            const dndButton = Main.panel.statusArea.dateMenu._messageList._dndButton;
-            dndButton.show();
+            const dndButton = Main.panel.statusArea.dateMenu?._messageList._dndButton;
 
-            for (const sibling of [dndButton.get_previous_sibling(), dndButton.get_next_sibling()]) {
-                if (sibling instanceof St.Label)
-                    sibling.show();
+            if (dndButton) {
+                dndButton.show();
+
+                for (const sibling of [dndButton.get_previous_sibling(), dndButton.get_next_sibling()]) {
+                    if (sibling instanceof St.Label)
+                        sibling.show();
+                }
+            } else {
+                Utils.logWarning('Unable to show DoNotDisturb button');
             }
         }
     }
