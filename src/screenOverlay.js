@@ -268,6 +268,7 @@ class OverlayManager {
                 this._raiseChromeInternal(chromeData);
 
             this._raised = true;
+            this._updateOpacity();
         }
     }
 
