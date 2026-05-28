@@ -1,3 +1,11 @@
+2026-05-28  Kamil Prusko  <kamilprusko@gmail.com>
+	Release version 2:
+
+	* Indicator mouse gestures
+	* Fix scaling issues
+	* Fix screen overlay semi-transparency
+	* Cleaner extension disabling
+
 2026-04-16  Kamil Prusko  <kamilprusko@gmail.com>
 	Release version 1:
 
