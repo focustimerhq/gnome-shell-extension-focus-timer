@@ -23,7 +23,7 @@
     </key>
     <key name="manage-notifications" type="b">
       <default>true</default>
-      <summary>Reduce number of notifications during Pomodoro</summary>
+      <summary>Hide non-critical notifications while using the timer</summary>
     </key>
   </schema>
 </schemalist>

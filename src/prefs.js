@@ -103,8 +103,8 @@ class DistractionsPreferencesGroup extends Adw.PreferencesGroup {
         this._settings = settings;
 
         const manageNotificationsRow = new Adw.SwitchRow({
-            title: _('Manage Notifications'),
-            subtitle: _('Toggle Do Not Disturb mode during Pomodoro'),
+            title: _('Do Not Disturb'),
+            subtitle: _('Hide non-critical notifications while using the timer'),
         });
         this._settings.bind('manage-notifications',
             manageNotificationsRow, 'active',

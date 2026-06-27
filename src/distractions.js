@@ -183,9 +183,11 @@ export const DistractionManager = class extends Signals.EventEmitter {
     _update() {
         const timerState = this._timer.state;
         const manageNotifications = this._settings.get_boolean('manage-notifications');
+        const busy = timerState !== State.STOPPED && manageNotifications;
 
-        if (timerState !== State.STOPPED && manageNotifications) {
-            this._busy = timerState === State.POMODORO;
+
+        if (busy) {
+            this._busy = true;
 
             if (!this._overridesApplied)
                 this._applyOverrides();
