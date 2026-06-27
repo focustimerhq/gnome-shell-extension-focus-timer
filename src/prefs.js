@@ -5,26 +5,6 @@ import Gtk from 'gi://Gtk';
 
 import {ExtensionPreferences, gettext as _} from 'resource:///org/gnome/Shell/Extensions/js/extensions/prefs.js';
 
-const GeneralPreferencesGroup = GObject.registerClass(
-class GeneralPreferencesGroup extends Adw.PreferencesGroup {
-    _init(settings) {
-        super._init({
-            title: _('General'),
-        });
-
-        this._settings = settings;
-
-        const autostartRow = new Adw.SwitchRow({
-            title: _('Autostart The App'),
-            subtitle: _('Makes the indicator instantly visible and allows keyboard shortcuts'),
-        });
-        this._settings.bind('autostart',
-            autostartRow, 'active',
-            Gio.SettingsBindFlags.DEFAULT);
-        this.add(autostartRow);
-    }
-});
-
 const IndicatorPreferencesGroup = GObject.registerClass(
 class IndicatorPreferencesGroup extends Adw.PreferencesGroup {
     _init(settings) {
@@ -118,7 +98,6 @@ class FocusTimerPreferencesPage extends Adw.PreferencesPage {
     _init(settings) {
         super._init();
 
-        this.add(new GeneralPreferencesGroup(settings));
         this.add(new IndicatorPreferencesGroup(settings));
         this.add(new ScreenOverlayPreferencesGroup(settings));
         this.add(new DistractionsPreferencesGroup(settings));

@@ -106,28 +106,26 @@ export default class FocusTimerExtension extends Extension {
 
         try {
             const connection = Gio.DBus.session;
-            const flags = this._settings.get_boolean('autostart')
-                ? Gio.DBusProxyFlags.NONE : Gio.DBusProxyFlags.DO_NOT_AUTO_START;
             const [applicationProxy, timerProxy, sessionProxy] = await Promise.all([
                 new Promise((resolve, reject) => {
                     new ApplicationProxy(connection, BUS_NAME, OBJECT_PATH,
                         (proxy, error) => error ? reject(error) : resolve(proxy),
                         this._cancellable,
-                        flags
+                        Gio.DBusProxyFlags.DO_NOT_AUTO_START
                     );
                 }),
                 new Promise((resolve, reject) => {
                     new TimerProxy(connection, BUS_NAME, OBJECT_PATH,
                         (proxy, error) => error ? reject(error) : resolve(proxy),
                         this._cancellable,
-                        Gio.DBusProxyFlags.NONE
+                        Gio.DBusProxyFlags.DO_NOT_AUTO_START
                     );
                 }),
                 new Promise((resolve, reject) => {
                     new SessionProxy(connection, BUS_NAME, OBJECT_PATH,
                         (proxy, error) => error ? reject(error) : resolve(proxy),
                         this._cancellable,
-                        Gio.DBusProxyFlags.NONE
+                        Gio.DBusProxyFlags.DO_NOT_AUTO_START
                     );
                 }),
             ]);
@@ -249,13 +247,9 @@ export default class FocusTimerExtension extends Extension {
         if (this._nameWatcherId)
             return;
 
-        const flags = this._settings.get_boolean('autostart')
-            ? Gio.BusNameWatcherFlags.AUTO_START
-            : Gio.BusNameWatcherFlags.NONE;
-
         this._nameWatcherId = Gio.DBus.session.watch_name(
             BUS_NAME,
-            flags,
+            Gio.BusNameWatcherFlags.NONE,
             this._onNameAppeared.bind(this),
             this._onNameVanished.bind(this));
     }
@@ -441,13 +435,6 @@ export default class FocusTimerExtension extends Extension {
             return;
 
         switch (key) {
-        case 'autostart':
-            if (this._nameWatcherId) {
-                this._destroyNameWatcher();
-                this._createNameWatcher();
-            }
-            break;
-
         case 'indicator-type':
             if (this._indicator) {
                 this._indicator.type = settings.get_string(key) === 'text'

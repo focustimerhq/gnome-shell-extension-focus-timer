@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schemalist gettext-domain="gnome-shell-extension-focus-timer">
   <schema id="org.gnome.shell.extensions.focus-timer" path="/org/gnome/shell/extensions/focus-timer/">
-    <key name="autostart" type="b">
-      <default>false</default>
-      <summary>Start the app along with extension</summary>
-    </key>
     <key name="indicator-type" type="s">
       <choices>
         <choice value="icon"/>
@@ -24,6 +20,12 @@
     <key name="manage-notifications" type="b">
       <default>true</default>
       <summary>Hide non-critical notifications while using the timer</summary>
+    </key>
+
+    <!-- Deprecated -->
+    <key name="autostart" type="b">
+      <default>false</default>
+      <summary>Start the app along with extension</summary>
     </key>
   </schema>
 </schemalist>
