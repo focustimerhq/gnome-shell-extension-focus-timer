@@ -130,6 +130,24 @@ export default class FocusTimerExtension extends Extension {
                 }),
             ]);
 
+            if (applicationProxy.Ready === false && !this._cancellable.is_cancelled()) {
+                await new Promise(resolve => {
+                    const propertiesChangedId = applicationProxy.connect('g-properties-changed',
+                        () => {
+                            if (applicationProxy.Ready) {
+                                applicationProxy.disconnect(propertiesChangedId);
+                                this._cancellable.disconnect(cancelledId);
+                                resolve();
+                            }
+                        });
+                    const cancelledId = this._cancellable.connect(() => {
+                        applicationProxy.disconnect(propertiesChangedId);
+                        this._cancellable.disconnect(cancelledId);
+                        resolve();
+                    });
+                });
+            }
+
             this._proxy = applicationProxy;
             this._timerProxy = timerProxy;
             this._sessionProxy = sessionProxy;

@@ -30,6 +30,7 @@ const ApplicationInterface = `
   <interface name="io.github.focustimerhq.FocusTimer">
     <property type="s" name="Version" access="read"/>
     <property type="a{sv}" name="Settings" access="read"/>
+    <property type="b" name="Ready" access="read"/>
     <method name="ShowWindow">
       <arg type="s" name="view" direction="in"/>
     </method>
