@@ -365,7 +365,7 @@ class FocusTimerNotification extends MessageTray.Notification {
         const actionLabels = {
             'extend': _('+1 minute'),
             'start-pomodoro': _('Start Pomodoro'),
-            'start-break': _('Start Break'),
+            'start-break': _('Take a Break'),
         };
 
         switch (this._view) {
