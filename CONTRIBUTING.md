@@ -79,7 +79,7 @@ The Focus Timer app inside the container is isolated from your user session to s
 
 For making larger changes, we strongly suggest using [GNOME Builder](https://flathub.org/en/apps/org.gnome.Builder).
 
-GNOME Builder will allow you to automate the installation and running process:
+GNOME Builder allows you to automate the installation and running process:
 
 1. Create a *Command*
 
@@ -124,7 +124,7 @@ We follow the standard GNOME styling rules. Please ensure your code adheres to:
 The repository includes an ESLint configuration. You can check your code by running:
 
 ```
-./run-es-lint.sh src/
+./tools/run-es-lint.sh src/
 ```
 
 If it's the first run, set it up:
