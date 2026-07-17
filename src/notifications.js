@@ -555,7 +555,8 @@ export const NotificationManager = class extends Signals.EventEmitter {
         if (!this._notification || banner?.notification !== this._notification)
             return null;
 
-        if (Main.messageTray._notificationState === State.HIDING)
+        if (Main.messageTray._notificationState === MessageTray.State.HIDING ||
+            Main.messageTray._notificationState === MessageTray.State.HIDDEN)
             return null;
 
         return banner;
@@ -699,6 +700,15 @@ export const NotificationManager = class extends Signals.EventEmitter {
         if (!this._notification || this._destroying)
             return;
 
+        // Do not mutate the notification while its banner is hiding. Re-requesting
+        // the banner for the same object mid-hide (e.g. acknowledged = false) can
+        // desync MessageTray.
+        if (Main.messageTray._banner?.notification === this._notification &&
+            Main.messageTray._notificationState === MessageTray.State.HIDING) {
+            Utils.logWarning('Unable to update the notification while hiding the banner.');
+            return;
+        }
+
         const notification = this._notification;
         const timerState = this._viewData.timerState;
         const nextTimerState = this._nextViewData?.timerState;
@@ -744,18 +754,6 @@ export const NotificationManager = class extends Signals.EventEmitter {
             Main.messageTray._updateNotificationTimeout(banner
                 ? NOTIFICATION_SHORT_TIMEOUT : NOTIFICATION_LONG_TIMEOUT);
         }
-    }
-
-    _queueUpdateNotification() {
-        if (this._destroying)
-            return;
-
-        const id = GLib.idle_add(GLib.PRIORITY_DEFAULT, () => {
-            this._updateNotification();
-
-            return GLib.SOURCE_REMOVE;
-        });
-        GLib.Source.set_name_by_id(id, '[focus-timer] NotificationManager._updateNotification');
     }
 
     _notify() {
@@ -1126,7 +1124,13 @@ export const NotificationManager = class extends Signals.EventEmitter {
 
         if (this._view === NotificationView.TIME_BLOCK_STARTED && this._notification?.resident) {
             this._view = NotificationView.TIME_BLOCK_RUNNING;
-            this._queueUpdateNotification();
+            const id = GLib.idle_add(GLib.PRIORITY_DEFAULT, () => {
+                if (this._notification === banner.notification)
+                    this._updateNotification();
+
+                return GLib.SOURCE_REMOVE;
+            });
+            GLib.Source.set_name_by_id(id, '[focus-timer] NotificationManager._updateNotification');
         }
     }
 
