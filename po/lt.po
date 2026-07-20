@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-shell-extension-focus-timer 1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-04-12 13:38+0200\n"
+"POT-Creation-Date: 2026-07-20 10:26+0200\n"
 "PO-Revision-Date: 2026-02-02 18:07+0200\n"
 "Last-Translator: Paulius Šukys <paul.sukys@gmail.com>\n"
 "Language-Team: Lithuanian\n"
@@ -30,7 +30,7 @@ msgstr "Baigta!"
 msgid "%d of %d"
 msgstr ""
 
-#: src/indicator.js:425 src/prefs.js:71
+#: src/indicator.js:425 src/prefs.js:51
 msgid "Screen Overlay"
 msgstr "Ekrano užsklanda"
 
@@ -46,22 +46,22 @@ msgstr "Statistika"
 msgid "Quit"
 msgstr "Išeiti"
 
-#: src/indicator.js:624
+#: src/indicator.js:630
 #, javascript-format
 msgid "%dh"
 msgstr "%d val."
 
-#: src/indicator.js:628
+#: src/indicator.js:634
 #, javascript-format
 msgid "%dm"
 msgstr "%d min."
 
-#: src/indicator.js:630 src/indicator.js:632 src/indicator.js:634
+#: src/indicator.js:636 src/indicator.js:638 src/indicator.js:640
 #, javascript-format
 msgid "%ds"
 msgstr "%d sek."
 
-#: src/indicator.js:1079 src/notifications.js:57
+#: src/indicator.js:1089 src/notifications.js:57
 msgid "Focus Timer"
 msgstr ""
 
@@ -160,8 +160,8 @@ msgid "Start Pomodoro"
 msgstr "Pradėti Pomodoro"
 
 #: src/notifications.js:368
-msgid "Start Break"
-msgstr "Pradėti Pertrauką"
+msgid "Take a Break"
+msgstr "Metas pertraukai"
 
 #: src/notifications.js:425
 msgid "Something went wrong"
@@ -184,66 +184,54 @@ msgid "Install from Flathub"
 msgstr ""
 
 #: src/prefs.js:12
-msgid "General"
-msgstr ""
-
-#: src/prefs.js:18
-msgid "Autostart The App"
-msgstr ""
-
-#: src/prefs.js:19
-msgid "Makes the indicator instantly visible and allows keyboard shortcuts"
-msgstr ""
-
-#: src/prefs.js:32
 msgid "Indicator"
 msgstr ""
 
-#: src/prefs.js:45
+#: src/prefs.js:25
 msgid "Icon"
 msgstr ""
 
-#: src/prefs.js:51
+#: src/prefs.js:31
 msgid "Text"
 msgstr ""
 
-#: src/prefs.js:58
+#: src/prefs.js:38
 msgid "Display As"
 msgstr ""
 
-#: src/prefs.js:59
+#: src/prefs.js:39
 msgid "Choose how the timer appears in the status bar"
 msgstr ""
 
-#: src/prefs.js:77
+#: src/prefs.js:57
 msgid "Blur Effect"
 msgstr ""
 
-#: src/prefs.js:78
+#: src/prefs.js:58
 msgid "Helps to acknowledge the break"
 msgstr ""
 
-#: src/prefs.js:86
+#: src/prefs.js:66
 msgid "Dismiss Gesture"
 msgstr ""
 
-#: src/prefs.js:87
+#: src/prefs.js:67
 msgid "Flick the mouse or press any key to dismiss"
 msgstr ""
 
-#: src/prefs.js:100
+#: src/prefs.js:80
 msgid "Distractions"
 msgstr ""
 
-#: src/prefs.js:106
-msgid "Manage Notifications"
+#: src/prefs.js:86
+msgid "Do Not Disturb"
 msgstr ""
 
-#: src/prefs.js:107
-msgid "Toggle Do Not Disturb mode during Pomodoro"
+#: src/prefs.js:87
+msgid "Hide non-critical notifications while using the timer"
 msgstr ""
 
-#: src/screenOverlay.js:1053
+#: src/screenOverlay.js:1055
 msgid "It's time to take a break"
 msgstr "Laikas padaryti pertrauką"
 
@@ -262,6 +250,9 @@ msgstr "Ilga pertrauka"
 #: src/timer.js:56
 msgid "Break"
 msgstr "Pertrauka"
+
+#~ msgid "Start Break"
+#~ msgstr "Pradėti Pertrauką"
 
 #~ msgid "Time management utility"
 #~ msgstr "Laiko valdymo įrankis"
@@ -504,9 +495,6 @@ msgstr "Pertrauka"
 
 #~ msgid "Triggered when session is about to be reset due to inactivity."
 #~ msgstr "Aktyvuojama, kai sesija turi būti atstatyta dėl neaktyvumo."
-
-#~ msgid "Take a Break"
-#~ msgstr "Metas pertraukai"
 
 #~ msgid "Skip Break"
 #~ msgstr "Praleisti pertrauką"
