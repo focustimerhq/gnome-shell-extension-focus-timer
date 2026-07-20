@@ -1,7 +1,7 @@
 project(
   'gnome-shell-extension-focus-timer',
   'c',
-  version: '3',
+  version: '4',
   meson_version: '>=0.59.0',
 )
 
