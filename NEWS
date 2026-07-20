@@ -1,3 +1,10 @@
+2026-07-20  Kamil Prusko  <kamilprusko@gmail.com>
+	Release version 3:
+
+	* Improve initialization
+	* Toggle DND also during breaks
+	* Fix possible case of notifications locking up
+
 2026-05-28  Kamil Prusko  <kamilprusko@gmail.com>
 	Release version 2:
 
