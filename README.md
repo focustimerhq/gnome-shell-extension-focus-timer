@@ -28,6 +28,8 @@ Focus Timer is an app based on the [Pomodoro Technique][pomodoro-technique] that
   <br/>
   <img alt="Lock screen widget" src="https://gnomepomodoro.org/release/1.1/gnome-shell-lock-screen.png" width="800" height="450"/>
   <br/>
+  <img alt="Preferences" src="https://gnomepomodoro.org/release/1.1/preferences-gnome-shell-extension.png"/>
+  <br/>
 </p>
 
 ## Installation
