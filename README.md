@@ -83,7 +83,7 @@ We welcome contributions! Please refer to [CONTRIBUTING.md](CONTRIBUTING.md) for
 
 ## Donations
 
-If you'd like to support the development of Focus Timer, you can use [Liberapay](https://liberapay.com/kamilprusko) or [PayPal](https://www.paypal.me/kamilprusko). Thank you!
+If you'd like to support the development of Focus Timer, you can use [GitHub](https://github.com/sponsors/kamilprusko), [Liberapay](https://liberapay.com/kamilprusko), [Ko-Fi](https://ko-fi.com/kamilprusko) or [PayPal](https://www.paypal.me/kamilprusko). Thank you!
 
 ## License
 
