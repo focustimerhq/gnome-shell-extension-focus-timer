@@ -15,7 +15,9 @@
   "gettext-domain": "@GETTEXT_PACKAGE@",
   "url": "@PACKAGE_URL@",
   "donations": {
-    "liberapay": "https://liberapay.com/kamilprusko",
-    "paypal": "https://www.paypal.me/kamilprusko"
+    "github": "kamilprusko",
+    "liberapay": "kamilprusko",
+    "kofi": "kamilprusko",
+    "paypal": "kamilprusko"
   }
 }
