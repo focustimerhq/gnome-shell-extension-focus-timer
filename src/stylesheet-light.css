@@ -1,6 +1,10 @@
 @import "stylesheet.css";
 
 
-.extension-focus-timer-indicator.extension-focus-timer-break {
-    background-color: #83ee97;
+#panel .extension-focus-timer-indicator.extension-focus-timer-break {
+    background-color: #8be697;
+}
+
+#panel:overview .extension-focus-timer-indicator.extension-focus-timer-break {
+    background-color: #3ea554;
 }
