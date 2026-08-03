@@ -6,7 +6,7 @@
         <choice value="icon"/>
         <choice value="text"/>
       </choices>
-      <default>"icon"</default>
+      <default>"text"</default>
       <summary>Indicator type</summary>
     </key>
     <key name="blur-effect" type="b">
