@@ -1156,6 +1156,17 @@ class FocusTimerIndicator extends PanelMenu.Button {
             this.add_action(this._clickGesture);
         }
 
+        if (Clutter.ScrollController) {  // introduced in gnome-shell 51
+            this._scrollController = new Clutter.ScrollController({
+                flags: Clutter.ScrollControllerFlags.SCROLL_VERTICAL |
+                    Clutter.ScrollControllerFlags.PHYSICAL_DIRECTION,
+            });
+            this._scrollController.connect('scroll', (_controller, _sprite, _source, _dx, dy) => {
+                return this._handleScroll(dy);
+            });
+            this.add_action(this._scrollController);
+        }
+
         this._update();
     }
 
@@ -1236,21 +1247,33 @@ class FocusTimerIndicator extends PanelMenu.Button {
             this._timer.start();
     }
 
-    vfunc_scroll_event(event) {
+    _handleScroll(dy) {
         if (this._type !== IndicatorType.TEXT)
-            return false;
+            return Clutter.EVENT_PROPAGATE;
+
+        if (dy < 0)
+            this._timer.extend(MINUTE, this._timer.lastTickTime);
+        else if (dy > 0)
+            this._timer.extend(-MINUTE, this._timer.lastTickTime);
+        else
+            return Clutter.EVENT_PROPAGATE;
+
+        return Clutter.EVENT_STOP;
+    }
+
+    vfunc_scroll_event(event) {
+        if (this._scrollController)
+            return Clutter.EVENT_PROPAGATE;
 
         switch (event.get_scroll_direction()) {
         case Clutter.ScrollDirection.UP:
-            this._timer.extend(MINUTE, this._timer.lastTickTime);
-            return true;
+            return this._handleScroll(-1);
 
         case Clutter.ScrollDirection.DOWN:
-            this._timer.extend(-MINUTE, this._timer.lastTickTime);
-            return true;
+            return this._handleScroll(1);
 
         default:
-            return false;
+            return Clutter.EVENT_PROPAGATE;
         }
     }
 
@@ -1272,6 +1295,8 @@ class FocusTimerIndicator extends PanelMenu.Button {
         this._session = null;
         this._stack = null;
         this._widget = null;
+        this._clickGesture = null;
+        this._scrollController = null;
 
         super._onDestroy();
     }
