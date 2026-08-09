@@ -572,12 +572,14 @@ export const NotificationManager = class extends Signals.EventEmitter {
                 // `MessageTray` opens a banner as soon as the date menu starts closing. To avoid unnecessary flicker
                 // destroy the notification before `MessageTray` considers it.
                 const dateMenu = Main.panel.statusArea.dateMenu?.menu;
+                const closeParams = Utils.isVersionAtLeast('51')
+                    ? {animate: false} : PopupAnimation.NONE;
 
                 this._expireNotification();
                 this._removeReopenScreenOverlayIdleWatch();
 
                 if (dateMenu && dateMenu.actor.visible)
-                    dateMenu.close(PopupAnimation.NONE);
+                    dateMenu.close(closeParams);
             });
         screenOverlay.connect('opened',
             () => {

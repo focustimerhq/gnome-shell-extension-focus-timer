@@ -56,6 +56,29 @@ export const IndicatorType = {
 };
 
 
+/**
+ * Ensure animation params are using the new format (gnome-shell 51+).
+ *
+ * @param {object|boolean|number} params - animation params
+ */
+function normalizeAnimationParams(params) {
+    if (params === null || params === undefined)
+        return {animate: true, fadeOnly: false};
+
+    if (typeof params === 'boolean')
+        return {animate: params, fadeOnly: false};
+
+    if (typeof params === 'number') {
+        return {
+            animate: params !== PopupAnimation.NONE,
+            fadeOnly: params === PopupAnimation.FADE,
+        };
+    }
+
+    return params;
+}
+
+
 // Based on QuickToggleMenu from quickSettings.js in gnome-shell
 class OverlayMenuBase extends PopupMenu.PopupMenuBase {
     constructor(sourceActor) {
@@ -85,11 +108,11 @@ class OverlayMenuBase extends PopupMenu.PopupMenuBase {
         global.focus_manager.add_group(this.actor);
     }
 
-    open(animate) {
+    open(params) {
         if (this.isOpen)
-            return;
+            return false;
 
-        const duration = animate !== PopupAnimation.NONE
+        const duration = normalizeAnimationParams(params).animate
             ? Math.trunc(POPUP_ANIMATION_TIME * 0.75)
             : 0;
         this.actor.show();
@@ -99,14 +122,15 @@ class OverlayMenuBase extends PopupMenu.PopupMenuBase {
 
         this.isOpen = true;
         this.emit('open-state-changed', true);
+        return true;
     }
 
-    close(animate) {
+    close(params) {
         if (!this.isOpen)
-            return;
+            return false;
 
         const {opacity} = this.actor;
-        const duration = animate !== PopupAnimation.NONE
+        const duration = normalizeAnimationParams(params).animate
             ? POPUP_ANIMATION_TIME / 2
             : 0;
 
@@ -121,6 +145,7 @@ class OverlayMenuBase extends PopupMenu.PopupMenuBase {
 
         this.isOpen = false;
         this.emit('open-state-changed', false);
+        return true;
     }
 }
 
@@ -157,7 +182,10 @@ class StateMenu extends OverlayMenuBase {
 
     _addStateItem(state) {
         const item = this.addAction(State.label(state), () => {
-            extension.indicator.menu.close(false);
+            const closeParams = Utils.isVersionAtLeast('51')
+                ? {animate: false}
+                : false;
+            extension.indicator.menu.close(closeParams);
             this._session.advanceToState(state);
 
             if (State.isBreak(state))
@@ -413,7 +441,10 @@ const IndicatorMenu = class extends PopupMenu.PopupMenu {
 
         const timerMenuItem = new TimerMenuItem();
         timerMenuItem.connect('state-button-clicked', () => {
-            this._stateMenu.open(PopupAnimation.FULL);
+            const openParams = Utils.isVersionAtLeast('51')
+                ? {animate: true}
+                : PopupAnimation.FULL;
+            this._stateMenu.open(openParams);
         });
         indicator.blinkingGroup.addActor(timerMenuItem.timerLabel, 'opacity', STOPPED_OPACITY * 0.5, 255);
 
@@ -471,7 +502,10 @@ const IndicatorMenu = class extends PopupMenu.PopupMenu {
     }
 
     _activateStats() {
-        this.itemActivated(PopupAnimation.NONE);
+        const params = Utils.isVersionAtLeast('51')
+            ? {animate: false}
+            : PopupAnimation.NONE;
+        this.itemActivated(params);
         Main.overview.hide();
 
         extension.showWindow('stats');
@@ -482,7 +516,10 @@ const IndicatorMenu = class extends PopupMenu.PopupMenu {
     }
 
     _activatePreferences() {
-        this.itemActivated(PopupAnimation.NONE);
+        const params = Utils.isVersionAtLeast('51')
+            ? {animate: false}
+            : PopupAnimation.NONE;
+        this.itemActivated(params);
         Main.overview.hide();
 
         extension.showPreferences();
@@ -529,18 +566,18 @@ const IndicatorMenu = class extends PopupMenu.PopupMenu {
         this._update();
     }
 
-    open(animate) {
+    open(params) {
         this._timerLabel?.unfreeze();
 
         this.actor.show();
-        super.open(animate);
+        return super.open(params);
     }
 
-    close(animate) {
+    close(params) {
         this._timerLabel?.freeze();
-        this._activeMenu?.close(animate);
+        this._activeMenu?.close(params);
 
-        super.close(animate);
+        return super.close(params);
     }
 
     destroy() {
