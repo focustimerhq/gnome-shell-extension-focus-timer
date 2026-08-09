@@ -262,8 +262,12 @@ export function openUri(uri) {
  * @param {string} version - Minimum required GNOME Shell version.
  */
 export function isVersionAtLeast(version) {
-    const currentVersionParts = ShellConfig.PACKAGE_VERSION.split('.').map(parseInt);
-    const versionParts = version.split('.').map(parseInt);
+    const parseVersionPart = part => {
+        const value = parseInt(part, 10);
+        return Number.isNaN(value) ? 0 : value;
+    };
+    const currentVersionParts = ShellConfig.PACKAGE_VERSION.split('.').map(parseVersionPart);
+    const versionParts = version.split('.').map(parseVersionPart);
 
     for (let i = 0; i < Math.max(currentVersionParts.length, versionParts.length); i++) {
         const currentVersionPart = currentVersionParts[i] || 0;
