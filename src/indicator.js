@@ -246,7 +246,9 @@ class FocusTimerMenuItem extends PopupMenu.PopupBaseMenuItem {
 
         this._stateButton = new St.Button({
             style_class: 'button flat extension-focus-timer-state-button',
-            button_mask: St.ButtonMask.ONE | St.ButtonMask.THREE,
+            button_mask: St.ButtonMask.PRIMARY
+                ? St.ButtonMask.PRIMARY | St.ButtonMask.SECONDARY
+                : St.ButtonMask.ONE | St.ButtonMask.THREE,  // deprecated in gnome-shell 51
             reactive: true,
             can_focus: true,
             track_hover: true,
