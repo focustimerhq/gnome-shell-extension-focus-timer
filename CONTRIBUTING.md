@@ -110,7 +110,8 @@ Clone [gnome-shell repo](https://gitlab.gnome.org/GNOME/gnome-shell) and setup t
 ```bash
 git clone https://gitlab.gnome.org/GNOME/gnome-shell.git contrib/gnome-shell
 cd contrib/gnome-shell
-./tools/toolbox/create-toolbox.sh
+./tools/toolbox/create-toolbox.sh --replace
+./tools/toolbox/meson-build.sh --wipe
 ./tools/toolbox/run-gnome-shell.sh
 ```
 
