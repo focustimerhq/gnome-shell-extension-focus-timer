@@ -1,7 +1,7 @@
 {
   "uuid": "@EXTENSION_UUID@",
   "name": "Focus Timer",
-  "description": "Add seamless GNOME Shell integration for the app with top-bar controls and notifications.",
+  "description": "A Pomodoro timer for GNOME with top-bar controls, notifications showing remaining time, gentle break overlay, and a lock screen widget. Companion extension for the Focus Timer app.",
   "shell-version": [
     "48",
     "49",
