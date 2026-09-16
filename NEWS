@@ -1,3 +1,10 @@
+2026-09-16  Kamil Prusko  <kamilprusko@gmail.com>
+	Release version 4:
+
+	* Add support for GNOME Shell 51
+	* Make text indicator the default
+	* Fix light theme
+
 2026-07-20  Kamil Prusko  <kamilprusko@gmail.com>
 	Release version 3:
 
