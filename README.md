@@ -40,6 +40,19 @@ Focus Timer is an app based on the [Pomodoro Technique][pomodoro-technique] that
 
 It's not available yet... The extension has been submitted. It's in the review / approval process.
 
+### From .zip bundle
+
+Download `focus-timer@focustimerhq.github.io.zip` attached to the [latest release](https://github.com/focustimerhq/gnome-shell-extension-focus-timer/releases/latest) on GitHub.
+
+```bash
+curl -L -O https://github.com/focustimerhq/gnome-shell-extension-focus-timer/releases/latest/download/focus-timer@focustimerhq.github.io.zip
+gnome-extensions install --force focus-timer@focustimerhq.github.io.zip
+```
+
+Log out for GNOME Shell to detect the extension or to apply updates.
+
+Finally, enable it through Preferences / Integrations panel or through [Extensions](https://flathub.org/apps/org.gnome.Extensions) app. The indicator should show up while the Focus Timer app is running. If you can't see it, check [Troubleshooting](CONTRIBUTING.md#troubleshooting) section.
+
 ### Building from source
 
 Clone the repository:
@@ -55,19 +68,11 @@ ninja -C build
 ninja -C build install
 ```
 
-Enable it:
+Log out for GNOME Shell to detect the extension or to apply updates.
+
+Finally, enable it through Preferences / Integrations panel or through [Extensions](https://flathub.org/apps/org.gnome.Extensions) app. The indicator should show up while the Focus Timer app is running. If you can't see it, check [Troubleshooting](CONTRIBUTING.md#troubleshooting) section. To enable it, you may also use the command:
 ```bash
 gnome-extensions enable focus-timer@focustimerhq.github.io
-```
-
-You need to log out for GNOME Shell to recognise it or to apply updates. The indicator will show up when you run the Focus Timer app. If still can't see it, check [Troubleshooting](CONTRIBUTING.md#troubleshooting) section.
-
-### From .zip bundle
-
-Download `focus-timer@focustimerhq.github.io.zip` attached to the [latest release](https://github.com/focustimerhq/gnome-shell-extension-focus-timer/releases/latest) on GitHub.
-
-```bash
-gnome-extensions install --force focus-timer@focustimerhq.github.io.zip
 ```
 
 ## Support & Feedback
