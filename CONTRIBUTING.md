@@ -17,6 +17,10 @@ Suggestions are welcomed too!
 
 ## Troubleshooting
 
+### I get error "Schema not found"
+
+You'll get this error when you unpack the .zip bundle by hand instead of installing it. Check the [install instructions](README.md#installation).
+
 ### Can't see the indicator
 
 Ensure that the Focus Timer app is running.
