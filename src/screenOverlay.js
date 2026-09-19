@@ -407,6 +407,11 @@ const AcknowledgeGesture = GObject.registerClass({
         this._began = true;
         this._lastActiveTime = GLib.get_monotonic_time() / 1000;
 
+        if (this._intervalId) {
+            GLib.source_remove(this._intervalId);
+            this._intervalId = 0;
+        }
+
         this._intervalId = GLib.timeout_add(
             GLib.PRIORITY_DEFAULT,
             50,

@@ -659,8 +659,6 @@ export const NotificationManager = class extends Signals.EventEmitter {
         this._annoucementTimeoutId = GLib.timeout_add_seconds(GLib.PRIORITY_DEFAULT,
             timeout,
             this._onAnnoucementTimeout.bind(this));
-        GLib.Source.set_name_by_id(this._annoucementTimeoutId,
-            '[focus-timer] NotificationManager._onAnnoucementTimeout');
     }
 
     _unscheduleAnnoucement() {
@@ -1126,18 +1124,17 @@ export const NotificationManager = class extends Signals.EventEmitter {
 
         if (this._view === NotificationView.TIME_BLOCK_STARTED && this._notification?.resident) {
             this._view = NotificationView.TIME_BLOCK_RUNNING;
-            const id = GLib.idle_add(GLib.PRIORITY_DEFAULT, () => {
+            GLib.idle_add(GLib.PRIORITY_DEFAULT, () => {
                 if (this._notification === banner.notification)
                     this._updateNotification();
 
                 return GLib.SOURCE_REMOVE;
             });
-            GLib.Source.set_name_by_id(id, '[focus-timer] NotificationManager._updateNotification');
         }
     }
 
     _onMessageTrayQueueChanged(messageTray) {
-        const id = GLib.idle_add(GLib.PRIORITY_DEFAULT, () => {
+        GLib.idle_add(GLib.PRIORITY_DEFAULT, () => {
             const banner = messageTray._banner;
 
             if (banner?.notification && banner.notification === this._notification) {
@@ -1147,7 +1144,6 @@ export const NotificationManager = class extends Signals.EventEmitter {
 
             return GLib.SOURCE_REMOVE;
         });
-        GLib.Source.set_name_by_id(id, '[focus-timer] NotificationManager._onMessageTrayQueueChanged');
     }
 
     destroy() {

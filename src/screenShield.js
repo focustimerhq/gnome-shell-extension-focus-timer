@@ -449,8 +449,6 @@ export class ScreenShieldManager extends EventEmitter {
         this._annoucementTimeoutId = GLib.timeout_add_seconds(GLib.PRIORITY_DEFAULT,
             timeout,
             this._onAnnoucementTimeout.bind(this));
-        GLib.Source.set_name_by_id(this._annoucementTimeoutId,
-            '[gnome-pomodoro] ScreenShieldManager._onAnnoucementTimeout');
     }
 
     _unscheduleAnnoucement() {

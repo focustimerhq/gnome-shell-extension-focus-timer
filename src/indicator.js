@@ -834,6 +834,7 @@ class FocusTimerIconIndicator extends St.Widget {
         this._delegate = this;
         this._timer = timer;
         this._timeoutId = 0;
+        this._timeoutSecondsId = 0;
         this._lastValue = NaN;
         this._iconSize = IconIndicator.DEFAULT_ICON_SIZE;
         this._throughColor = null;
@@ -906,25 +907,27 @@ class FocusTimerIconIndicator extends St.Widget {
     }
 
     _startTimeout() {
-        if (this._timeoutId || !this.mapped)
+        if (this._timeoutId || this._timeoutSecondsId || !this.mapped)
             return;
 
         const diameter = this._iconSize ?? IconIndicator.DEFAULT_ICON_SIZE;
         const timeout = Math.trunc(this._timer.duration / (diameter * Math.PI * IconIndicator.RESOLUTION * MILLISECOND));
 
-        if (timeout > 1000) {
-            this._timeoutId = GLib.timeout_add_seconds(GLib.PRIORITY_DEFAULT, Math.trunc(timeout / 1000), this._onTimeout.bind(this));
-            GLib.Source.set_name_by_id(this._timeoutId, '[focus-timer-extension] IconIndicator._onTimeout');
-        } else if (timeout > 0) {
+        if (timeout > 1000)
+            this._timeoutSecondsId = GLib.timeout_add_seconds(GLib.PRIORITY_DEFAULT, Math.trunc(timeout / 1000), this._onTimeout.bind(this));
+        else if (timeout > 0)
             this._timeoutId = GLib.timeout_add(GLib.PRIORITY_DEFAULT, timeout, this._onTimeout.bind(this));
-            GLib.Source.set_name_by_id(this._timeoutId, '[focus-timer-extension] IconIndicator._onTimeout');
-        }
     }
 
     _stopTimeout() {
         if (this._timeoutId) {
             GLib.source_remove(this._timeoutId);
             this._timeoutId = 0;
+        }
+
+        if (this._timeoutSecondsId) {
+            GLib.source_remove(this._timeoutSecondsId);
+            this._timeoutSecondsId = 0;
         }
     }
 

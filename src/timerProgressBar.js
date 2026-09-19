@@ -184,10 +184,8 @@ class FocusTimerTimerProgressBar extends St.Bin {
 
         const timeout = Math.trunc(this._timer.duration / (width * RESOLUTION * MILLISECOND));
 
-        if (timeout > 0) {
+        if (timeout > 0)
             this._timeoutId = GLib.timeout_add(GLib.PRIORITY_DEFAULT, timeout, this._onTimeout.bind(this));
-            GLib.Source.set_name_by_id(this._timeoutId, '[focus-timer-extension] TimerProgressBar._onTimeout');
-        }
     }
 
     _stopTimeout() {
