@@ -38,7 +38,9 @@ Focus Timer is an app based on the [Pomodoro Technique][pomodoro-technique] that
 
 ### From extensions.gnome.org
 
-It's not available yet... The extension has been submitted. It's in the review / approval process.
+<p align="center" dir="auto">
+  <a href="https://extensions.gnome.org/extension/9769/focus-timer/" rel="nofollow"><picture><img width="228" height="106" alt="get-it-on-ego" src="https://github.com/user-attachments/assets/23928fa3-5a5e-43ac-80fc-486689a00f97" /></picture></a>
+</p>
 
 ### From .zip bundle
 
