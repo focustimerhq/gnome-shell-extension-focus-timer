@@ -34,7 +34,7 @@ Focus Timer is an app based on the [Pomodoro Technique][pomodoro-technique] that
 
 ## Installation
 
-**Compatibility:** This extension works with GNOME Shell 48+.
+This extension is compatible with GNOME Shell 48+.
 
 ### From extensions.gnome.org
 
@@ -44,16 +44,22 @@ Focus Timer is an app based on the [Pomodoro Technique][pomodoro-technique] that
 
 ### From .zip bundle
 
-Download `focus-timer@focustimerhq.github.io.zip` attached to the [latest release](https://github.com/focustimerhq/gnome-shell-extension-focus-timer/releases/latest) on GitHub.
-
+To install the latest extension run:
 ```bash
 curl -L -O https://github.com/focustimerhq/gnome-shell-extension-focus-timer/releases/latest/download/focus-timer@focustimerhq.github.io.zip
 gnome-extensions install --force focus-timer@focustimerhq.github.io.zip
 ```
 
+which downloads `focus-timer@focustimerhq.github.io.zip` attached to the [latest release](https://github.com/focustimerhq/gnome-shell-extension-focus-timer/releases/latest) on GitHub, and properly unpacks it into `~/.local/share/gnome-shell/extensions/`.
+
 Log out for GNOME Shell to detect the extension or to apply updates.
 
-Finally, enable it through Preferences / Integrations panel or through [Extensions](https://flathub.org/apps/org.gnome.Extensions) app. The indicator should show up while the Focus Timer app is running. If you can't see it, check [Troubleshooting](CONTRIBUTING.md#troubleshooting) section.
+Enable it through Preferences → Integrations panel, using [Extensions app](https://flathub.org/apps/org.gnome.Extensions), or via commandline:
+```bash
+gnome-extensions enable focus-timer@focustimerhq.github.io
+```
+
+The indicator should show up while the Focus Timer app is running. If you don't see it, check [Troubleshooting](CONTRIBUTING.md#troubleshooting) section.
 
 ### Building from source
 
@@ -72,10 +78,12 @@ ninja -C build install
 
 Log out for GNOME Shell to detect the extension or to apply updates.
 
-Finally, enable it through Preferences / Integrations panel or through [Extensions](https://flathub.org/apps/org.gnome.Extensions) app. The indicator should show up while the Focus Timer app is running. If you can't see it, check [Troubleshooting](CONTRIBUTING.md#troubleshooting) section. To enable it, you may also use the command:
+Enable it through Preferences → Integrations panel, using [Extensions app](https://flathub.org/apps/org.gnome.Extensions), or via commandline:
 ```bash
 gnome-extensions enable focus-timer@focustimerhq.github.io
 ```
+
+The indicator should show up while the Focus Timer app is running. If you don't see it, check [Troubleshooting](CONTRIBUTING.md#troubleshooting) section.
 
 ## Support & Feedback
 
