@@ -35,9 +35,6 @@ import * as ScreenOverlay from './screenOverlay.js';
 import * as Utils from './utils.js';
 
 
-// Time in seconds to announce next timer state.
-const TIME_BLOCK_ABOUT_TO_END_TIMEOUT = 10;
-
 // Extra display time in milliseconds after content update.
 const NOTIFICATION_SHORT_TIMEOUT = 1500;
 
@@ -657,7 +654,8 @@ export const NotificationManager = class extends Signals.EventEmitter {
     }
 
     _scheduleAnnoucement() {
-        const timeout = Math.round(this._timer.getRemaining() / SECOND - TIME_BLOCK_ABOUT_TO_END_TIMEOUT);
+        const leadTime = this._settings.get_uint('announcement-lead-time');
+        const timeout = Math.round(this._timer.getRemaining() / SECOND - leadTime);
 
         this._unscheduleAnnoucement();
 
@@ -825,7 +823,8 @@ export const NotificationManager = class extends Signals.EventEmitter {
             this._timer.getElapsed() < 10 * SECOND)
             return NotificationView.TIME_BLOCK_STARTED;
 
-        if (this._timer.getRemaining() < 15 * SECOND)
+        const leadTime = this._settings.get_uint('announcement-lead-time');
+        if (this._timer.getRemaining() < (leadTime + 5) * SECOND)
             return NotificationView.TIME_BLOCK_ABOUT_TO_END;
 
         return NotificationView.TIME_BLOCK_RUNNING;
@@ -1082,6 +1081,7 @@ export const NotificationManager = class extends Signals.EventEmitter {
     _onSettingsChanged(settings, key) {
         switch (key) {
         case 'announce-about-to-end':
+        case 'announcement-lead-time':
             if (this._shouldScheduleAnnoucement())
                 this._scheduleAnnoucement();
             else

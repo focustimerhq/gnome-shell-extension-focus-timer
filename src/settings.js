@@ -25,6 +25,7 @@ import {EventEmitter} from 'resource:///org/gnome/shell/misc/signals.js';
 
 const APPLICATION_DEFAULTS = {
     'announce-about-to-end': true,
+    'announcement-lead-time': 15,
     'screen-overlay': true,
     'screen-overlay-lock-delay': 0,
     'screen-overlay-reopen-delay': 30,
