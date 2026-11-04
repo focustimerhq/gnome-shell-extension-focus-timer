@@ -25,7 +25,7 @@ You'll get this error when you unpack the .zip bundle by hand instead of install
 
 Ensure that the Focus Timer app is running.
 
-Then, please check the [Extensions app](https://flathub.org/en/apps/org.gnome.Extensions):
+Then, please check the [Extensions app](https://flathub.org/apps/org.gnome.Extensions):
 - Check if extensions are enabled globally
 - Check if *Focus Timer* extension is enabled and there are no errors
 
@@ -81,7 +81,7 @@ The Focus Timer app inside the container is isolated from your user session to s
 
 ### GNOME Builder setup
 
-For making larger changes, we strongly suggest using [GNOME Builder](https://flathub.org/en/apps/org.gnome.Builder).
+For making larger changes, we strongly suggest using [GNOME Builder](https://flathub.org/apps/org.gnome.Builder).
 
 GNOME Builder allows you to automate the installation and running process:
 

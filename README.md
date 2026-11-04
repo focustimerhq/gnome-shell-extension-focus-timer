@@ -20,15 +20,15 @@ Focus Timer is an app based on the [Pomodoro Technique][pomodoro-technique] that
 ## Screenshots
 
 <p align="center">
-  <img alt="Indicator" src="https://gnomepomodoro.org/release/1.1/gnome-shell-indicator.png" width="800" height="450"/>
+  <img alt="Indicator" src="https://focustimerhq.github.io/assets/screenshots/1.1/gnome-shell-indicator.png" width="800" height="450"/>
   <br/>
-  <img alt="Notifications" src="https://gnomepomodoro.org/release/1.1/gnome-shell-announcement.png" width="800" height="450"/>
+  <img alt="Notifications" src="https://focustimerhq.github.io/assets/screenshots/1.1/gnome-shell-announcement.png" width="800" height="450"/>
   <br/>
-  <img alt="Screen overlay" src="https://gnomepomodoro.org/release/1.1/gnome-shell-screen-overlay.png" width="800" height="450"/>
+  <img alt="Screen overlay" src="https://focustimerhq.github.io/assets/screenshots/1.1/gnome-shell-screen-overlay.png" width="800" height="450"/>
   <br/>
-  <img alt="Lock screen widget" src="https://gnomepomodoro.org/release/1.1/gnome-shell-lock-screen.png" width="800" height="450"/>
+  <img alt="Lock screen widget" src="https://focustimerhq.github.io/assets/screenshots/1.1/gnome-shell-lock-screen.png" width="800" height="450"/>
   <br/>
-  <img alt="Preferences" src="https://gnomepomodoro.org/release/1.1/preferences-gnome-shell-extension.png?v=2"/>
+  <img alt="Preferences" src="https://focustimerhq.github.io/assets/screenshots/1.1/gnome-shell-extension-preferences.png"/>
   <br/>
 </p>
 
