@@ -47,7 +47,7 @@ import * as Utils from './utils.js';
  *     to 523 miliseconds between key presses
  *   - moderate typing speed of 35 words per minute, 343 miliseconds.
  */
-const IDLE_TIME_TO_ACKNOWLEDGE = 600;
+const IDLE_TIME_TO_ACKNOWLEDGE = 700;
 const MOTION_VELOCITY_TO_DISMISS = 3.0;
 
 const FADE_IN_TIME = 400;
