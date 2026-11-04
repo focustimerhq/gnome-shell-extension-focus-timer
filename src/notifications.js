@@ -569,6 +569,8 @@ export const NotificationManager = class extends Signals.EventEmitter {
         });
         screenOverlay.connect('opening',
             () => {
+                this.emit('screen-overlay-opened');
+
                 // `MessageTray` opens a banner as soon as the date menu starts closing. To avoid unnecessary flicker
                 // destroy the notification before `MessageTray` considers it.
                 const dateMenu = Main.panel.statusArea.dateMenu?.menu;
@@ -587,6 +589,8 @@ export const NotificationManager = class extends Signals.EventEmitter {
             });
         screenOverlay.connect('closing',
             () => {
+                this.emit('screen-overlay-closed');
+
                 this._removeLockScreenIdleWatch();
 
                 if (this._viewData.view === NotificationView.NULL ||
@@ -602,8 +606,14 @@ export const NotificationManager = class extends Signals.EventEmitter {
             });
         screenOverlay.connect('destroy',
             () => {
-                if (this._screenOverlay === screenOverlay)
-                    this._screenOverlay = null;
+                if (this._screenOverlay !== screenOverlay)
+                    return;
+
+                const active = this._isScreenOverlayOpened();
+                this._screenOverlay = null;
+
+                if (active)
+                    this.emit('screen-overlay-closed');
             });
 
         return screenOverlay;

@@ -97,6 +97,10 @@ export default class FocusTimerExtension extends Extension {
         return this._indicator;
     }
 
+    get notificationManager() {
+        return this._notificationManager;
+    }
+
     _isConnected() {
         return this._proxy ? this._proxy.g_name_owner !== null : false;
     }
@@ -314,6 +318,8 @@ export default class FocusTimerExtension extends Extension {
             this._notificationManager = new NotificationManager(
                 this._timer, this._session, this._settingsWrapper, params);
         }
+
+        this._dbusService.syncExtension();
     }
 
     _disableNotificationManager() {
@@ -321,6 +327,8 @@ export default class FocusTimerExtension extends Extension {
             this._notificationManager.destroy();
             this._notificationManager = null;
         }
+
+        this._dbusService.syncExtension();
     }
 
     _enableDistractionManager() {

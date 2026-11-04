@@ -24,6 +24,7 @@ import Gio from 'gi://Gio';
 import GLib from 'gi://GLib';
 
 import * as Config from './config.js';
+import {OverlayState} from './screenOverlay.js';
 
 const ApplicationInterface = `
 <node>
@@ -142,6 +143,7 @@ const ShellIntegrationInterface = `
 <node>
   <interface name="io.github.focustimerhq.FocusTimer.ShellIntegration">
     <property type="s" name="Version" access="read"/>
+    <property type="b" name="ScreenOverlayActive" access="read"/>
     <property type="s" name="IndicatorType" access="readwrite"/>
     <property type="b" name="EnableBlurEffect" access="readwrite"/>
     <property type="b" name="EnableDismissGesture" access="readwrite"/>
@@ -165,6 +167,8 @@ export class ShellIntegrationService {
     constructor(extension) {
         this._extension = extension;
         this._settings = extension.settings;
+        this._notificationManager = null;
+        this._screenOverlayActive = false;
 
         this._dbusImpl = Gio.DBusExportedObject.wrapJSObject(ShellIntegrationInterface, this);
         this._dbusImpl.export(Gio.DBus.session, `${OBJECT_PATH}/ShellIntegration`);
@@ -176,6 +180,10 @@ export class ShellIntegrationService {
 
     get Version() {
         return Config.PACKAGE_VERSION;
+    }
+
+    get ScreenOverlayActive() {
+        return this._screenOverlayActive;
     }
 
     get IndicatorType() {
@@ -234,7 +242,39 @@ export class ShellIntegrationService {
         }
     }
 
+    _updateScreenOverlayActive() {
+        const state = this._notificationManager?.screenOverlay?.state;
+        const active = state === OverlayState.OPENED || state === OverlayState.OPENING;
+
+        if (active === this._screenOverlayActive)
+            return;
+
+        this._screenOverlayActive = active;
+        this._dbusImpl.emit_property_changed('ScreenOverlayActive', new GLib.Variant('b', active));
+    }
+
+    syncExtension() {
+        const notificationManager = this._extension.notificationManager;
+
+        if (notificationManager === this._notificationManager)
+            return;
+
+        this._notificationManager?.disconnectObject(this);
+        this._notificationManager = notificationManager;
+
+        if (notificationManager) {
+            notificationManager.connectObject(
+                'screen-overlay-opened', () => this._updateScreenOverlayActive(),
+                'screen-overlay-closed', () => this._updateScreenOverlayActive(),
+                this);
+        }
+
+        this._updateScreenOverlayActive();
+    }
+
     destroy() {
+        this._notificationManager?.disconnectObject(this);
+
         if (this._settingsChangedId) {
             this._settings.disconnect(this._settingsChangedId);
             this._settingsChangedId = 0;
@@ -247,6 +287,7 @@ export class ShellIntegrationService {
 
         this._dbusImpl?.unexport();
 
+        this._notificationManager = null;
         this._settings = null;
         this._extension = null;
         this._dbusImpl = null;
