@@ -35,14 +35,20 @@ import {TimerProgressBar} from './timerProgressBar.js';
 import * as Utils from './utils.js';
 
 
-// Time in seconds to announce next timer state.
-const TIME_BLOCK_ABOUT_TO_END_TIMEOUT = 15;
-
 const FADE_IN_DURATION = 200;
 const FADE_OUT_DURATION = 250;
 const BLINKING_DURATION = 1500;
 const TRANSITION_DURATION = 100;
 const STOPPED_OPACITY = 89;  // 0.349 * 255
+
+// How long to keep the screen on after a state change, before the timer starts.
+const KEEP_AWAKE_SECONDS = 2 * 60;
+
+// Keep the screen on near the end of a running countdown.
+const WAKE_UP_BEFORE_END_SECONDS = 15;
+
+// gnome-settings-daemon blanks the screen after 15s (POWER_UP_TIME_ON_AC).
+const WAKE_UP_INTERVAL_SECONDS = 5;
 
 
 const ScreenShieldWidget = GObject.registerClass({
@@ -294,8 +300,8 @@ export class ScreenShieldManager extends EventEmitter {
         this._widget = null;
         this._revealer = null;
         this._revealed = false;
-        this._destroying = false;
-        this._annoucementTimeoutId = 0;
+        this._wakeUpTimeoutId = 0;
+        this._wakeUpDelayTimeoutId = 0;
         this._timer.connectObject('changed', this._onTimerChanged.bind(this), this);
 
         this._update(false);
@@ -428,43 +434,95 @@ export class ScreenShieldManager extends EventEmitter {
         Utils.wakeUpScreen();
     }
 
-    _onAnnoucementTimeout() {
-        this._annoucementTimeoutId = 0;
+    _onWakeUpTimeout() {
+        if (this._shouldKeepAwake()) {
+            Utils.wakeUpScreen();
 
-        Utils.wakeUpScreen();
+            return GLib.SOURCE_CONTINUE;
+        } else {
+            this._wakeUpTimeoutId = 0;
+
+            return GLib.SOURCE_REMOVE;
+        }
+    }
+
+    _onWakeUpDelayTimeout() {
+        this._wakeUpDelayTimeoutId = 0;
+
+        if (this._shouldKeepAwake())
+            this._startWakeUpTimeout();
 
         return GLib.SOURCE_REMOVE;
     }
 
-    _scheduleAnnoucement() {
-        const timeout = Math.round(this._timer.getRemaining() / SECOND) - TIME_BLOCK_ABOUT_TO_END_TIMEOUT;
+    _shouldKeepAwake() {
+        const timer = this._timer;
 
-        this._unscheduleAnnoucement();
+        if (!timer || timer.state === State.STOPPED || timer.isPaused())
+            return false;
 
-        if (timeout <= 0) {
-            this._onAnnoucementTimeout();
-            return;
+        if (!timer.isStarted() || timer.isFinished()) {
+            const elapsed = (timer.getCurrentTime() - timer.lastChangedTime) / SECOND;
+            return elapsed < KEEP_AWAKE_SECONDS;
         }
 
-        this._annoucementTimeoutId = GLib.timeout_add_seconds(GLib.PRIORITY_DEFAULT,
-            timeout,
-            this._onAnnoucementTimeout.bind(this));
+        return timer.getRemaining() <= WAKE_UP_BEFORE_END_SECONDS * SECOND;
     }
 
-    _unscheduleAnnoucement() {
-        if (this._annoucementTimeoutId) {
-            GLib.source_remove(this._annoucementTimeoutId);
-            this._annoucementTimeoutId = 0;
+    _stopWakeUpTimeout() {
+        if (this._wakeUpTimeoutId) {
+            GLib.source_remove(this._wakeUpTimeoutId);
+            this._wakeUpTimeoutId = 0;
+        }
+
+        if (this._wakeUpDelayTimeoutId) {
+            GLib.source_remove(this._wakeUpDelayTimeoutId);
+            this._wakeUpDelayTimeoutId = 0;
+        }
+    }
+
+    _startWakeUpTimeout() {
+        this._stopWakeUpTimeout();
+
+        Utils.wakeUpScreen();
+
+        this._wakeUpTimeoutId = GLib.timeout_add_seconds(GLib.PRIORITY_DEFAULT,
+            WAKE_UP_INTERVAL_SECONDS,
+            this._onWakeUpTimeout.bind(this));
+    }
+
+    _getSecondsUntilWakeUp() {
+        const timer = this._timer;
+
+        if (!timer?.isRunning())
+            return -1;
+
+        const remaining = timer.getRemaining() - WAKE_UP_BEFORE_END_SECONDS * SECOND;
+        if (remaining <= 0)
+            return 0;
+
+        return Math.ceil(remaining / SECOND);
+    }
+
+    _updateWakeUpTimeout() {
+        if (this._shouldKeepAwake()) {
+            this._startWakeUpTimeout();
+        } else {
+            this._stopWakeUpTimeout();
+
+            const delay = this._getSecondsUntilWakeUp();
+            if (delay > 0) {
+                this._wakeUpDelayTimeoutId = GLib.timeout_add_seconds(GLib.PRIORITY_DEFAULT,
+                    delay,
+                    this._onWakeUpDelayTimeout.bind(this));
+            }
         }
     }
 
     _update(animate = true) {
-        this._unscheduleAnnoucement();
-
-        if (this._timer.isRunning())
-            this._scheduleAnnoucement();
-
         try {
+            this._updateWakeUpTimeout();
+
             if (this._timer.state !== State.STOPPED)
                 this._showWidget(animate);
             else
@@ -479,15 +537,15 @@ export class ScreenShieldManager extends EventEmitter {
     }
 
     destroy() {
-        this._destroying = true;
-        this._session = null;
-        this._unscheduleAnnoucement();
+        this._stopWakeUpTimeout();
         this._destroyWidget();
 
         if (this._timer) {
             this._timer.disconnectObject(this);
             this._timer = null;
         }
+
+        this._session = null;
 
         this.emit('destroy');
     }
