@@ -90,7 +90,7 @@ The indicator should show up while the Focus Timer app is running. If you don't 
 * **Issues & Bug Reports:** Check the [Troubleshooting](CONTRIBUTING.md#troubleshooting) on how to check logs. Report it on our [issue tracker](https://github.com/focustimerhq/gnome-shell-extension-focus-timer/issues).
 * **Feature Requests:** Open a feature request on [GitHub](https://github.com/focustimerhq/gnome-shell-extension-focus-timer/issues).
 * **Questions & Discussions:** Join our [Discussions page](https://github.com/focustimerhq/FocusTimer/discussions) for help and general chat.
-* **Reviews:** If you enjoy the extension, please consider leaving a review on [GNOME Extensions](https://extensions.gnome.org/) (once published).
+* **Reviews:** If you enjoy the extension, please consider leaving a review on [GNOME Extensions][extension].
 
 ## Contributing
 
@@ -108,3 +108,4 @@ This software is licensed under the [GPL 3](/COPYING).
 
 [pomodoro-technique]: https://en.wikipedia.org/wiki/Pomodoro_Technique
 [focus-timer]: https://github.com/focustimerhq/FocusTimer
+[extension]: https://extensions.gnome.org/extension/9769/focus-timer/
