@@ -354,6 +354,10 @@ class FocusTimerNotification extends MessageTray.Notification {
         case 'start-break':
             this._timer.state = State.BREAK;
             break;
+
+        case 'skip-break':
+            this._timer.state = State.POMODORO;
+            break;
         }
     }
 
@@ -363,6 +367,7 @@ class FocusTimerNotification extends MessageTray.Notification {
             'extend': _('+1 minute'),
             'start-pomodoro': _('Start Pomodoro'),
             'start-break': _('Take a Break'),
+            'skip-break': _('Skip Break'),
         };
 
         switch (this._view) {
@@ -380,7 +385,7 @@ class FocusTimerNotification extends MessageTray.Notification {
             if (this._nextTimerState === State.POMODORO)
                 actions.push('start-pomodoro');
             else if (State.isBreak(this._nextTimerState))
-                actions.push('start-break');
+                actions.push('skip-break', 'start-break');
 
             break;
         }
