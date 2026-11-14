@@ -62,6 +62,7 @@ const BACKGROUND_COLOR = new Cogl.Color({
     alpha: 255,
 });
 const ICON_SIZE = 24;
+const CURSOR_HIDE_DELAY = 10000;
 
 export const OverlayState = {
     CLOSED: 0,
@@ -668,6 +669,10 @@ const ScreenOverlayBase = GObject.registerClass({
         this._idleMonitor = global.backend.get_core_idle_monitor();
         this._acknowledgeGesture = null;
         this._dismissGesture = null;
+        this._cursorTracker = null;
+        this._motionListener = null;
+        this._pointerIdleId = 0;
+        this._cursorVisibleInhibited = false;
 
         const monitorConstraint = new MonitorConstraint();
         monitorConstraint.primary = true;
@@ -779,6 +784,69 @@ const ScreenOverlayBase = GObject.registerClass({
             this._dismissGesture.connect('end', () => this.close());
             this._dismissGesture.begin();
         }
+    }
+
+    _showPointer() {
+        if (!this._cursorVisibleInhibited)
+            return;
+
+        const seat = global.stage.context.get_backend().get_default_seat();
+        this._cursorTracker.uninhibit_cursor_visibility();
+        seat.uninhibit_unfocus();
+        this._cursorVisibleInhibited = false;
+    }
+
+    _hidePointer() {
+        if (this._cursorVisibleInhibited)
+            return;
+
+        const seat = global.stage.context.get_backend().get_default_seat();
+        seat.inhibit_unfocus();
+        this._cursorTracker.inhibit_cursor_visibility();
+        this._cursorVisibleInhibited = true;
+    }
+
+    _hidePointerLater() {
+        if (this._pointerIdleId)
+            GLib.source_remove(this._pointerIdleId);
+
+        this._pointerIdleId = GLib.timeout_add(GLib.PRIORITY_DEFAULT, CURSOR_HIDE_DELAY, () => {
+            this._pointerIdleId = 0;
+            this._hidePointer();
+            return GLib.SOURCE_REMOVE;
+        });
+    }
+
+    _hidePointerAfterIdle() {
+        if (!Utils.isVersionAtLeast('51'))
+            return;
+
+        if (!this._motionListener) {
+            this._cursorTracker = global.backend.get_cursor_tracker();
+            this._motionListener = new Clutter.MotionController();
+            this._motionListener.connect('motion', () => {
+                this._showPointer();
+                this._hidePointerLater();
+            });
+            this._lightbox.add_action(this._motionListener);
+        }
+
+        this._showPointer();
+        this._hidePointerLater();
+    }
+
+    _restorePointer() {
+        if (this._pointerIdleId) {
+            GLib.source_remove(this._pointerIdleId);
+            this._pointerIdleId = 0;
+        }
+
+        if (this._motionListener) {
+            this._lightbox.remove_action(this._motionListener);
+            this._motionListener = null;
+        }
+
+        this._showPointer();
     }
 
     acknowledge() {
@@ -909,6 +977,7 @@ const ScreenOverlayBase = GObject.registerClass({
         this._setState(OverlayState.OPENING);
         this.emit('opening');
         this.show();
+        this._hidePointerAfterIdle();
 
         const duration = animate
             ? Math.trunc(this._enableBlurEffect ? FADE_IN_TIME : FADE_IN_TIME * 1.25)
@@ -967,6 +1036,7 @@ const ScreenOverlayBase = GObject.registerClass({
     }
 
     _onCloseComplete() {
+        this._restorePointer();
         this._lightbox.lightOff(0);
         this.hide();
         this._setState(OverlayState.CLOSED);
@@ -994,6 +1064,7 @@ const ScreenOverlayBase = GObject.registerClass({
     }
 
     _onDestroy() {
+        this._restorePointer();
         this.popModal();
 
         this._destroyed = true;
