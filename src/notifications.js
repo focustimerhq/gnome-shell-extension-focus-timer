@@ -489,7 +489,6 @@ export const NotificationManager = class extends Signals.EventEmitter {
         this._overridesApplied = false;
         this._annoucementTimeoutId = 0;
         this._reopenScreenOverlayIdleId = 0;
-        this._lockScreenIdleId = 0;
         this._queueChangedId = 0;
         this._viewData = {
             view: NotificationView.NULL,
@@ -568,6 +567,7 @@ export const NotificationManager = class extends Signals.EventEmitter {
         const screenOverlay = new ScreenOverlay.ScreenOverlay(this._timer, {
             enable_blur_effect: this._settings.get_boolean('blur-effect'),
             enable_dismiss_gesture: this._settings.get_boolean('dismiss-gesture'),
+            lock_delay: this._settings.get_uint('screen-overlay-lock-delay'),
         });
         screenOverlay.connect('opening',
             () => {
@@ -585,15 +585,9 @@ export const NotificationManager = class extends Signals.EventEmitter {
                 if (dateMenu && dateMenu.actor.visible)
                     dateMenu.close(closeParams);
             });
-        screenOverlay.connect('opened',
-            () => {
-                this._addLockScreenIdleWatch();
-            });
         screenOverlay.connect('closing',
             () => {
                 this.emit('screen-overlay-closed');
-
-                this._removeLockScreenIdleWatch();
 
                 if (this._viewData.view === NotificationView.NULL ||
                     this._viewData.view === NotificationView.CONFIRM_ADVANCEMENT ||
@@ -993,27 +987,6 @@ export const NotificationManager = class extends Signals.EventEmitter {
         }
     }
 
-    _onLockScreenIdle(_monitor) {
-        if (this._screenOverlay && this._screenOverlay.state === ScreenOverlay.OverlayState.OPENED)
-            this._screenOverlay?.lock();
-    }
-
-    _addLockScreenIdleWatch() {
-        const lockDelay = this._settings.get_uint('screen-overlay-lock-delay') * 1000;
-
-        if (!this._lockScreenIdleId && lockDelay > 0) {
-            this._lockScreenIdleId = this._idleMonitor.add_idle_watch(lockDelay,
-                this._onLockScreenIdle.bind(this));
-        }
-    }
-
-    _removeLockScreenIdleWatch() {
-        if (this._lockScreenIdleId) {
-            this._idleMonitor.remove_watch(this._lockScreenIdleId);
-            this._lockScreenIdleId = 0;
-        }
-    }
-
     _onReopenScreenOverlayIdle(_monitor) {
         if (this._notification?.view === NotificationView.TIME_BLOCK_ABOUT_TO_END)
             return;
@@ -1117,10 +1090,8 @@ export const NotificationManager = class extends Signals.EventEmitter {
             break;
 
         case 'screen-overlay-lock-delay':
-            if (this._lockScreenIdleId) {
-                this._removeLockScreenIdleWatch();
-                this._addLockScreenIdleWatch();
-            }
+            if (this._screenOverlay)
+                this._screenOverlay.lockDelay = settings.get_uint(key);
 
             break;
 
@@ -1165,7 +1136,6 @@ export const NotificationManager = class extends Signals.EventEmitter {
         this._destroying = true;
         this._unscheduleAnnoucement();
         this._removeReopenScreenOverlayIdleWatch();
-        this._removeLockScreenIdleWatch();
 
         if (this._screenOverlay) {
             this._screenOverlay.destroy();

@@ -74,6 +74,27 @@ export const OverlayState = {
 export let overlayManager = null;
 
 
+/**
+ * @param {Clutter.Event} event - Event to check whether it was caused by user input.
+ */
+function isUserActivityEvent(event) {
+    if (event.get_device && !event.get_device())
+        return false;
+
+    switch (event.type()) {
+    case Clutter.EventType.MOTION:
+    case Clutter.EventType.BUTTON_RELEASE:
+    case Clutter.EventType.KEY_RELEASE:
+    case Clutter.EventType.SCROLL:
+    case Clutter.EventType.TOUCH_END:
+        return true;
+
+    default:
+        return false;
+    }
+}
+
+
 const PlainLightbox = GObject.registerClass(
 class FocusTimerPlainLightbox extends Lightbox {
     _init(container, params) {
@@ -1077,8 +1098,15 @@ const ScreenOverlayBase = GObject.registerClass({
 });
 
 
-export const ScreenOverlay = GObject.registerClass(
-class FocusTimerScreenOverlay extends ScreenOverlayBase {
+export const ScreenOverlay = GObject.registerClass({
+    Properties: {
+        'lock-delay': GObject.ParamSpec.uint(
+            'lock-delay', null, null,
+            GObject.ParamFlags.READWRITE,
+            0, GLib.MAXUINT32,
+            0),
+    },
+}, class FocusTimerScreenOverlay extends ScreenOverlayBase {
     _init(timer, params) {
         super._init(params);
 
@@ -1168,6 +1196,7 @@ class FocusTimerScreenOverlay extends ScreenOverlayBase {
 
         this.connect('notify::acknowledged', () => this._updateDoNotTouchIcon());
         this.connect('opening', this._onOpening.bind(this));
+        this.connect('opened', this._onOpened.bind(this));
         this.connect('closing', this._onClosing.bind(this));
 
         this._freezeTimerLabel();
@@ -1178,8 +1207,46 @@ class FocusTimerScreenOverlay extends ScreenOverlayBase {
         return this._timer;
     }
 
+    get lockDelay() {
+        return this._lockDelay ?? 0;
+    }
+
+    set lockDelay(value) {
+        if (this._lockDelay === value)
+            return;
+
+        this._lockDelay = value;
+        this.notify('lock-delay');
+
+        if (this._lockTimeoutId)
+            this._scheduleLock();
+    }
+
     lock() {
         this._systemActions.activateLockScreen();
+    }
+
+    _scheduleLock() {
+        this._unscheduleLock();
+
+        if (this.lockDelay === 0 || this.state !== OverlayState.OPENED)
+            return;
+
+        this._lockTimeoutId = GLib.timeout_add_seconds(GLib.PRIORITY_DEFAULT, this.lockDelay, () => {
+            this._lockTimeoutId = 0;
+
+            if (this.state === OverlayState.OPENED)
+                this.lock();
+
+            return GLib.SOURCE_REMOVE;
+        });
+    }
+
+    _unscheduleLock() {
+        if (this._lockTimeoutId) {
+            GLib.source_remove(this._lockTimeoutId);
+            this._lockTimeoutId = 0;
+        }
     }
 
     _createIconButton(iconName) {
@@ -1237,7 +1304,12 @@ class FocusTimerScreenOverlay extends ScreenOverlayBase {
         this._timerLabel.unfreeze();
     }
 
+    _onOpened() {
+        this._scheduleLock();
+    }
+
     _onClosing() {
+        this._unscheduleLock();
         this._timerLabel.freeze();
     }
 
@@ -1246,7 +1318,17 @@ class FocusTimerScreenOverlay extends ScreenOverlayBase {
     }
 
     /* override parent method */
+    _onCapturedEvent(actor, event) {
+        if (this._lockTimeoutId && isUserActivityEvent(event))
+            this._scheduleLock();
+
+        return super._onCapturedEvent(actor, event);
+    }
+
+    /* override parent method */
     _onDestroy() {
+        this._unscheduleLock();
+
         if (this._timer) {
             this._timer.disconnectObject(this);
             this._timer = null;
