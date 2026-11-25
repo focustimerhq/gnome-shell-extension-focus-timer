@@ -63,7 +63,7 @@ const BACKGROUND_COLOR = new Cogl.Color({
     alpha: 255,
 });
 const ICON_SIZE = 24;
-const CURSOR_HIDE_DELAY = 10000;
+const CURSOR_HIDE_DELAY_SECONDS = 10;
 
 export const OverlayState = {
     CLOSED: 0,
@@ -88,6 +88,24 @@ function isUserActivityEvent(event) {
     case Clutter.EventType.KEY_RELEASE:
     case Clutter.EventType.SCROLL:
     case Clutter.EventType.TOUCH_END:
+        return true;
+
+    default:
+        return false;
+    }
+}
+
+/**
+ * @param {Clutter.Event} event - Event to check whether it moves the pointer.
+ */
+function isPointerEvent(event) {
+    if (event.get_device && !event.get_device())
+        return false;
+
+    switch (event.type()) {
+    case Clutter.EventType.MOTION:
+    case Clutter.EventType.BUTTON_PRESS:
+    case Clutter.EventType.BUTTON_RELEASE:
         return true;
 
     default:
@@ -692,7 +710,6 @@ const ScreenOverlayBase = GObject.registerClass({
         this._acknowledgeGesture = null;
         this._dismissGesture = null;
         this._cursorTracker = null;
-        this._motionListener = null;
         this._pointerIdleId = 0;
         this._cursorVisibleInhibited = false;
 
@@ -808,13 +825,26 @@ const ScreenOverlayBase = GObject.registerClass({
         }
     }
 
+    _getCursorTracker() {
+        if (!this._cursorTracker)
+            this._cursorTracker = global.backend.get_cursor_tracker();
+
+        return this._cursorTracker;
+    }
+
     _showPointer() {
         if (!this._cursorVisibleInhibited)
             return;
 
-        const seat = global.stage.context.get_backend().get_default_seat();
-        this._cursorTracker.uninhibit_cursor_visibility();
-        seat.uninhibit_unfocus();
+        const cursorTracker = this._getCursorTracker();
+        if (Utils.isVersionAtLeast('49')) {
+            const seat = global.stage.context.get_backend().get_default_seat();
+            cursorTracker.uninhibit_cursor_visibility();
+            seat.uninhibit_unfocus();
+        } else {
+            cursorTracker.set_pointer_visible(true);
+        }
+
         this._cursorVisibleInhibited = false;
     }
 
@@ -822,9 +852,15 @@ const ScreenOverlayBase = GObject.registerClass({
         if (this._cursorVisibleInhibited)
             return;
 
-        const seat = global.stage.context.get_backend().get_default_seat();
-        seat.inhibit_unfocus();
-        this._cursorTracker.inhibit_cursor_visibility();
+        const cursorTracker = this._getCursorTracker();
+        if (Utils.isVersionAtLeast('49')) {
+            const seat = global.stage.context.get_backend().get_default_seat();
+            seat.inhibit_unfocus();
+            cursorTracker.inhibit_cursor_visibility();
+        } else {
+            cursorTracker.set_pointer_visible(false);
+        }
+
         this._cursorVisibleInhibited = true;
     }
 
@@ -832,40 +868,17 @@ const ScreenOverlayBase = GObject.registerClass({
         if (this._pointerIdleId)
             GLib.source_remove(this._pointerIdleId);
 
-        this._pointerIdleId = GLib.timeout_add(GLib.PRIORITY_DEFAULT, CURSOR_HIDE_DELAY, () => {
+        this._pointerIdleId = GLib.timeout_add_seconds(GLib.PRIORITY_DEFAULT, CURSOR_HIDE_DELAY_SECONDS, () => {
             this._pointerIdleId = 0;
             this._hidePointer();
             return GLib.SOURCE_REMOVE;
         });
     }
 
-    _hidePointerAfterIdle() {
-        if (!Utils.isVersionAtLeast('51'))
-            return;
-
-        if (!this._motionListener) {
-            this._cursorTracker = global.backend.get_cursor_tracker();
-            this._motionListener = new Clutter.MotionController();
-            this._motionListener.connect('motion', () => {
-                this._showPointer();
-                this._hidePointerLater();
-            });
-            this._lightbox.add_action(this._motionListener);
-        }
-
-        this._showPointer();
-        this._hidePointerLater();
-    }
-
     _restorePointer() {
         if (this._pointerIdleId) {
             GLib.source_remove(this._pointerIdleId);
             this._pointerIdleId = 0;
-        }
-
-        if (this._motionListener) {
-            this._lightbox.remove_action(this._motionListener);
-            this._motionListener = null;
         }
 
         this._showPointer();
@@ -999,7 +1012,8 @@ const ScreenOverlayBase = GObject.registerClass({
         this._setState(OverlayState.OPENING);
         this.emit('opening');
         this.show();
-        this._hidePointerAfterIdle();
+        this._showPointer();
+        this._hidePointerLater();
 
         const duration = animate
             ? Math.trunc(this._enableBlurEffect ? FADE_IN_TIME : FADE_IN_TIME * 1.25)
@@ -1066,6 +1080,11 @@ const ScreenOverlayBase = GObject.registerClass({
     }
 
     _onCapturedEvent(actor, event) {
+        if (isPointerEvent(event)) {
+            this._showPointer();
+            this._hidePointerLater();
+        }
+
         if (event.type() !== Clutter.EventType.KEY_PRESS)
             return Clutter.EVENT_PROPAGATE;
 
