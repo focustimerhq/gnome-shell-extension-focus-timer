@@ -41,7 +41,7 @@ const BLINKING_DURATION = 1500;
 const TRANSITION_DURATION = 100;
 const STOPPED_OPACITY = 89;  // 0.349 * 255
 
-// How long to keep the screen on after a state change, before the timer starts.
+// How long to keep the screen on after a state change, or after a request for attention.
 const KEEP_AWAKE_SECONDS = 2 * 60;
 
 // Keep the screen on near the end of a running countdown.
@@ -302,6 +302,7 @@ export class ScreenShieldManager extends EventEmitter {
         this._revealed = false;
         this._wakeUpTimeoutId = 0;
         this._wakeUpDelayTimeoutId = 0;
+        this._needsAttentionTime = 0;
         this._timer.connectObject('changed', this._onTimerChanged.bind(this), this);
 
         this._update(false);
@@ -431,7 +432,8 @@ export class ScreenShieldManager extends EventEmitter {
     }
 
     _onNeedsAttention() {
-        Utils.wakeUpScreen();
+        this._needsAttentionTime = GLib.get_monotonic_time();
+        this._updateWakeUpTimeout();
     }
 
     _onWakeUpTimeout() {
@@ -441,6 +443,7 @@ export class ScreenShieldManager extends EventEmitter {
             return GLib.SOURCE_CONTINUE;
         } else {
             this._wakeUpTimeoutId = 0;
+            this._updateWakeUpTimeout();
 
             return GLib.SOURCE_REMOVE;
         }
@@ -457,6 +460,12 @@ export class ScreenShieldManager extends EventEmitter {
 
     _shouldKeepAwake() {
         const timer = this._timer;
+
+        if (this._needsAttentionTime) {
+            const elapsed = (GLib.get_monotonic_time() - this._needsAttentionTime) / SECOND;
+            if (elapsed < KEEP_AWAKE_SECONDS)
+                return true;
+        }
 
         if (!timer || timer.state === State.STOPPED || timer.isPaused())
             return false;
