@@ -32,6 +32,7 @@ import St from 'gi://St';
 import {MonitorConstraint} from 'resource:///org/gnome/shell/ui/layout.js';
 import {Lightbox} from 'resource:///org/gnome/shell/ui/lightbox.js';
 import {gettext as _} from 'resource:///org/gnome/shell/extensions/extension.js';
+import * as GnomeSession from 'resource:///org/gnome/shell/misc/gnomeSession.js';
 import * as SystemActions from 'resource:///org/gnome/shell/misc/systemActions.js';
 import * as Main from 'resource:///org/gnome/shell/ui/main.js';
 import * as Params from 'resource:///org/gnome/shell/misc/params.js';
@@ -1188,6 +1189,7 @@ export const ScreenOverlay = GObject.registerClass({
         this._timerLabel = timerLabel;
         this._doNotTouchIcon = doNotTouchIcon;
         this._systemActions = new SystemActions.getDefault();
+        this._screenShieldActiveId = 0;
 
         this.bind_property('enable-dismiss-gesture', buttonsBox, 'visible',
             GObject.BindingFlags.SYNC_CREATE | GObject.BindingFlags.INVERT_BOOLEAN);
@@ -1198,6 +1200,11 @@ export const ScreenOverlay = GObject.registerClass({
         this.connect('opening', this._onOpening.bind(this));
         this.connect('opened', this._onOpened.bind(this));
         this.connect('closing', this._onClosing.bind(this));
+
+        if (Main.screenShield) {
+            this._screenShieldActiveId = Main.screenShield.connect('active-changed',
+                this._onScreenShieldActiveChanged.bind(this));
+        }
 
         this._freezeTimerLabel();
         this._updateDoNotTouchIcon();
@@ -1226,6 +1233,18 @@ export const ScreenOverlay = GObject.registerClass({
         this._systemActions.activateLockScreen();
     }
 
+    /**
+     * Act as if screen-saver got activated after an idle delay, and fade screen to black.
+     *
+     * `ScreenShield` may not lock the screen at the end - it's up to user settings.
+     */
+    _activateFade() {
+        if (Main.screenShield)
+            Main.screenShield._onStatusChanged(GnomeSession.PresenceStatus.IDLE);
+        else
+            this.lock();
+    }
+
     _scheduleLock() {
         this._unscheduleLock();
 
@@ -1236,10 +1255,18 @@ export const ScreenOverlay = GObject.registerClass({
             this._lockTimeoutId = 0;
 
             if (this.state === OverlayState.OPENED)
-                this.lock();
+                this._activateFade();
 
             return GLib.SOURCE_REMOVE;
         });
+    }
+
+    _onScreenShieldActiveChanged() {
+        if (!Main.screenShield?.active)
+            return;
+
+        if (this.state === OverlayState.OPENED || this.state === OverlayState.OPENING)
+            this.close(false);
     }
 
     _unscheduleLock() {
@@ -1328,6 +1355,11 @@ export const ScreenOverlay = GObject.registerClass({
     /* override parent method */
     _onDestroy() {
         this._unscheduleLock();
+
+        if (this._screenShieldActiveId) {
+            Main.screenShield?.disconnect(this._screenShieldActiveId);
+            this._screenShieldActiveId = 0;
+        }
 
         if (this._timer) {
             this._timer.disconnectObject(this);
