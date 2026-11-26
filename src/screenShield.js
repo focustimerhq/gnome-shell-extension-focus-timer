@@ -25,7 +25,8 @@ import GObject from 'gi://GObject';
 import St from 'gi://St';
 
 import {EventEmitter} from 'resource:///org/gnome/shell/misc/signals.js';
-import {gettext as _} from 'resource:///org/gnome/shell/extensions/extension.js';
+import {gettext as _, InjectionManager} from 'resource:///org/gnome/shell/extensions/extension.js';
+import * as GnomeSession from 'resource:///org/gnome/shell/misc/gnomeSession.js';
 import * as Main from 'resource:///org/gnome/shell/ui/main.js';
 
 import {State, SECOND} from './timer.js';
@@ -303,6 +304,8 @@ export class ScreenShieldManager extends EventEmitter {
         this._wakeUpTimeoutId = 0;
         this._wakeUpDelayTimeoutId = 0;
         this._needsAttentionTime = 0;
+        this._injectionManager = new InjectionManager();
+        this._statusChangedInhibited = false;
         this._timer.connectObject('changed', this._onTimerChanged.bind(this), this);
 
         this._update(false);
@@ -490,8 +493,36 @@ export class ScreenShieldManager extends EventEmitter {
         }
     }
 
+    _inhibitStatusChanged() {
+        if (this._statusChangedInhibited)
+            return;
+
+        const screenShield = Main.screenShield;
+        if (!screenShield)
+            return;
+
+        this._injectionManager.overrideMethod(screenShield, '_onStatusChanged',
+            originalMethod => {
+                return status => {
+                    if (status !== GnomeSession.PresenceStatus.IDLE)
+                        originalMethod.call(screenShield, status);
+                };
+            });
+
+        this._statusChangedInhibited = true;
+    }
+
+    _uninhibitStatusChanged() {
+        if (!this._statusChangedInhibited)
+            return;
+
+        this._statusChangedInhibited = false;
+        this._injectionManager.clear();
+    }
+
     _startWakeUpTimeout() {
         this._stopWakeUpTimeout();
+        this._inhibitStatusChanged();
 
         Utils.wakeUpScreen();
 
@@ -518,6 +549,7 @@ export class ScreenShieldManager extends EventEmitter {
             this._startWakeUpTimeout();
         } else {
             this._stopWakeUpTimeout();
+            this._uninhibitStatusChanged();
 
             const delay = this._getSecondsUntilWakeUp();
             if (delay > 0) {
@@ -547,6 +579,7 @@ export class ScreenShieldManager extends EventEmitter {
 
     destroy() {
         this._stopWakeUpTimeout();
+        this._uninhibitStatusChanged();
         this._destroyWidget();
 
         if (this._timer) {
