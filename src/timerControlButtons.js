@@ -25,7 +25,7 @@ import St from 'gi://St';
 
 import * as Params from 'resource:///org/gnome/shell/misc/params.js';
 
-import {MINUTE} from './timer.js';
+import {State, MINUTE} from './timer.js';
 import * as Utils from './utils.js';
 
 
@@ -125,6 +125,7 @@ class FocusTimerTimerControlButtons extends St.BoxLayout {
         if (!this._timer.isStarted()) {
             leftActionName = this._session.canReset ? 'reset' : null;
             centerActionName = 'start';
+            rightActionName = this._timer.state !== State.STOPPED ? 'stop' : null;
         } else if (this._timer.isPaused()) {
             leftActionName = 'rewind';
             centerActionName = 'resume';
