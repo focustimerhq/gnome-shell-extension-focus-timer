@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-shell-extension-focus-timer 1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-20 10:26+0200\n"
+"POT-Creation-Date: 2026-11-27 19:06+0100\n"
 "PO-Revision-Date: 2025-12-11 22:52+0200\n"
 "Last-Translator: Omer I.S. <omeritzicschwartz@gmail.com>\n"
 "Language-Team: Hebrew\n"
@@ -21,57 +21,57 @@ msgstr ""
 "2 : 3);\n"
 "X-Generator: Poedit 3.8\n"
 
-#: src/indicator.js:329 src/screenShield.js:171
+#: src/indicator.js:359 src/screenShield.js:178
 #, fuzzy
 msgid "Finished!"
 msgstr "הסתיים!"
 
-#: src/indicator.js:331 src/screenShield.js:173
+#: src/indicator.js:361 src/screenShield.js:180
 #, javascript-format
 msgid "%d of %d"
 msgstr ""
 
-#: src/indicator.js:425 src/prefs.js:51
+#: src/indicator.js:458 src/prefs.js:51
 #, fuzzy
 msgid "Screen Overlay"
 msgstr "כיסוי מסך"
 
-#: src/indicator.js:427
+#: src/indicator.js:460
 msgid "Preferences"
 msgstr "העדפות"
 
-#: src/indicator.js:428
+#: src/indicator.js:461
 msgid "Stats"
 msgstr "סטטיסטיקה"
 
-#: src/indicator.js:430
+#: src/indicator.js:463
 msgid "Quit"
 msgstr "יציאה"
 
-#: src/indicator.js:630
+#: src/indicator.js:669
 #, javascript-format
 msgid "%dh"
 msgstr ""
 
-#: src/indicator.js:634
+#: src/indicator.js:673
 #, javascript-format
 msgid "%dm"
 msgstr ""
 
-#: src/indicator.js:636 src/indicator.js:638 src/indicator.js:640
+#: src/indicator.js:675 src/indicator.js:677 src/indicator.js:679
 #, javascript-format
 msgid "%ds"
 msgstr ""
 
-#: src/indicator.js:1089 src/notifications.js:57
+#: src/indicator.js:1131 src/notifications.js:54
 msgid "Focus Timer"
 msgstr ""
 
-#: src/notifications.js:77
+#: src/notifications.js:74
 msgid "Focus Timer Extension"
 msgstr ""
 
-#: src/notifications.js:119
+#: src/notifications.js:116
 #, javascript-format
 msgid "%d hour"
 msgid_plural "%d hours"
@@ -80,7 +80,7 @@ msgstr[1] ""
 msgstr[2] ""
 msgstr[3] ""
 
-#: src/notifications.js:122
+#: src/notifications.js:119
 #, javascript-format
 msgid "%d minute"
 msgid_plural "%d minutes"
@@ -89,7 +89,7 @@ msgstr[1] ""
 msgstr[2] ""
 msgstr[3] ""
 
-#: src/notifications.js:125
+#: src/notifications.js:122
 #, javascript-format
 msgid "%d second"
 msgid_plural "%d seconds"
@@ -99,101 +99,105 @@ msgstr[2] ""
 msgstr[3] ""
 
 #. translators: time remaining eg. "3 minutes 50 seconds remaining"
-#: src/notifications.js:135
+#: src/notifications.js:132
 #, fuzzy, javascript-format
 msgid "%s remaining"
 msgstr "נותרו %s"
 
-#: src/notifications.js:261 src/timer.js:47
+#: src/notifications.js:258 src/timer.js:47
 msgid "Pomodoro"
 msgstr "פומודורו"
 
-#: src/notifications.js:263
+#: src/notifications.js:260
 msgid "Take a break"
 msgstr "לקיחת הפסקה"
 
-#: src/notifications.js:265
+#: src/notifications.js:262
 msgid "Take a short break"
 msgstr "הגיע הזמן להפסקה קצרה"
 
-#: src/notifications.js:267
+#: src/notifications.js:264
 msgid "Take a long break"
 msgstr "לקיחת הפסקה ארוכה"
 
-#: src/notifications.js:275
+#: src/notifications.js:272
 msgid "Pomodoro is about to end"
 msgstr "הפומודורו עומד להסתיים"
 
-#: src/notifications.js:277
+#: src/notifications.js:274
 msgid "Break is about to end"
 msgstr "ההפסקה עומדת להסתיים"
 
-#: src/notifications.js:285 src/notifications.js:297
+#: src/notifications.js:282 src/notifications.js:294
 #, fuzzy
 msgid "Break is over!"
 msgstr "ההפסקה נגמרה!"
 
-#: src/notifications.js:287 src/notifications.js:295
+#: src/notifications.js:284 src/notifications.js:292
 #, fuzzy
 msgid "Pomodoro is over!"
 msgstr "הפומודורו נגמר!"
 
-#: src/notifications.js:316
+#: src/notifications.js:313
 msgid "Get ready…"
 msgstr "זמן להתכונן…"
 
-#: src/notifications.js:321
+#: src/notifications.js:318
 #, fuzzy
 msgid "Confirm the start of a Pomodoro…"
 msgstr "אישור התחלת פומודורו…"
 
-#: src/notifications.js:323
+#: src/notifications.js:320
 #, fuzzy
 msgid "Confirm the start of a break…"
 msgstr "אישור התחלת הפסקה…"
 
-#: src/notifications.js:325
+#: src/notifications.js:322
 #, fuzzy
 msgid "Confirm the start of a short break…"
 msgstr "אישור התחלת הפסקה קצרה…"
 
-#: src/notifications.js:327
+#: src/notifications.js:324
 #, fuzzy
 msgid "Confirm the start of a long break…"
 msgstr "אישור התחלת הפסקה ארוכה…"
 
-#: src/notifications.js:366
+#: src/notifications.js:367
 #, fuzzy
 msgid "+1 minute"
 msgstr "+1 דקה"
 
-#: src/notifications.js:367
+#: src/notifications.js:368
 msgid "Start Pomodoro"
 msgstr "התחלת פומודורו"
 
-#: src/notifications.js:368
+#: src/notifications.js:369
 #, fuzzy
 msgid "Take a Break"
 msgstr "צאו להפסקה"
 
-#: src/notifications.js:425
+#: src/notifications.js:370
+msgid "Skip Break"
+msgstr "דילוג על ההפסקה"
+
+#: src/notifications.js:427
 #, fuzzy
 msgid "Something went wrong"
 msgstr "משהו השתבש"
 
-#: src/notifications.js:431
+#: src/notifications.js:433
 msgid "Report issue"
 msgstr "דיווח על בעיה"
 
-#: src/notifications.js:451
+#: src/notifications.js:453
 msgid "Focus Timer Not Found"
 msgstr ""
 
-#: src/notifications.js:452
+#: src/notifications.js:454
 msgid "Install Focus Timer app to start using the extension."
 msgstr ""
 
-#: src/notifications.js:457
+#: src/notifications.js:459
 msgid "Install from Flathub"
 msgstr ""
 
@@ -245,7 +249,7 @@ msgstr ""
 msgid "Hide non-critical notifications while using the timer"
 msgstr ""
 
-#: src/screenOverlay.js:1055
+#: src/screenOverlay.js:1179
 msgid "It's time to take a break"
 msgstr "הגיע הזמן לקחת הפסקה"
 
@@ -518,9 +522,6 @@ msgstr "הפסקה"
 #, fuzzy
 #~ msgid "Triggered when session is about to be reset due to inactivity."
 #~ msgstr "מופעל כאשר הסשן עומד להתאפס עקב חוסר פעילות."
-
-#~ msgid "Skip Break"
-#~ msgstr "דילוג על ההפסקה"
 
 #, fuzzy
 #~ msgid "Failed to initialize playback"
