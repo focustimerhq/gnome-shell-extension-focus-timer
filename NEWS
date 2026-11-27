@@ -1,3 +1,12 @@
+2026-11-27  Kamil Prusko  <kamilprusko@gmail.com>
+	Release version 6:
+
+	* Handle annoucement early notice
+	* Keep screen awake for longer while on lock-screen
+	* Detect user activity on the overlay based on input events instead of IdleMonitor
+	* Hide cursor on the overlay after 10s of inactivity
+	* Add "Skip Break" button to the confirmation notification
+
 2026-11-04  Kamil Prusko  <kamilprusko@gmail.com>
 	Release version 5:
 
