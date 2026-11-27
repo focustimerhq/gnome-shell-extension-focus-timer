@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: gnome-shell-extension-focus-timer 1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-11-27 19:06+0100\n"
-"PO-Revision-Date: 2026-07-20 10:33+0200\n"
+"PO-Revision-Date: 2026-11-27 19:08+0100\n"
 "Last-Translator: Kamil Prusko <kamilprusko@gmail.com>\n"
 "Language-Team: Polish\n"
 "Language: pl\n"
@@ -165,7 +165,7 @@ msgstr "Zrób Przerwę"
 
 #: src/notifications.js:370
 msgid "Skip Break"
-msgstr ""
+msgstr "Pomiń Przerwę"
 
 #: src/notifications.js:427
 msgid "Something went wrong"
