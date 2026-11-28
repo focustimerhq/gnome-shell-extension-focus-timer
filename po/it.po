@@ -21,17 +21,15 @@ msgstr ""
 "X-Generator: Poedit 3.1.1\n"
 
 #: src/indicator.js:359 src/screenShield.js:178
-#, fuzzy
 msgid "Finished!"
 msgstr "Terminato!"
 
 #: src/indicator.js:361 src/screenShield.js:180
 #, javascript-format
 msgid "%d of %d"
-msgstr ""
+msgstr "%d di %d"
 
 #: src/indicator.js:458 src/prefs.js:51
-#, fuzzy
 msgid "Screen Overlay"
 msgstr "Overlay a schermo"
 
@@ -50,52 +48,52 @@ msgstr "Esci"
 #: src/indicator.js:669
 #, javascript-format
 msgid "%dh"
-msgstr ""
+msgstr "%dh"
 
 #: src/indicator.js:673
 #, javascript-format
 msgid "%dm"
-msgstr ""
+msgstr "%dm"
 
 #: src/indicator.js:675 src/indicator.js:677 src/indicator.js:679
 #, javascript-format
 msgid "%ds"
-msgstr ""
+msgstr "%ds"
 
 #: src/indicator.js:1131 src/notifications.js:54
 msgid "Focus Timer"
-msgstr ""
+msgstr "Focus Timer"
 
 #: src/notifications.js:74
 msgid "Focus Timer Extension"
-msgstr ""
+msgstr "Estensione Focus Timer"
 
 #: src/notifications.js:116
 #, javascript-format
 msgid "%d hour"
 msgid_plural "%d hours"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d ora"
+msgstr[1] "%d ore"
 
 #: src/notifications.js:119
 #, javascript-format
 msgid "%d minute"
 msgid_plural "%d minutes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d minuto"
+msgstr[1] "%d minuti"
 
 #: src/notifications.js:122
 #, javascript-format
 msgid "%d second"
 msgid_plural "%d seconds"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d secondo"
+msgstr[1] "%d secondi"
 
 #. translators: time remaining eg. "3 minutes 50 seconds remaining"
 #: src/notifications.js:132
-#, fuzzy, javascript-format
+#, javascript-format
 msgid "%s remaining"
-msgstr "%s rimanenti"
+msgstr "Ancora %s"
 
 #: src/notifications.js:258 src/timer.js:47
 msgid "Pomodoro"
@@ -107,11 +105,11 @@ msgstr "Fai una pausa"
 
 #: src/notifications.js:262
 msgid "Take a short break"
-msgstr "Fai una breve pausa"
+msgstr "Fai una pausa breve"
 
 #: src/notifications.js:264
 msgid "Take a long break"
-msgstr "Fai una lunga pausa"
+msgstr "Fai una pausa lunga"
 
 #: src/notifications.js:272
 msgid "Pomodoro is about to end"
@@ -122,12 +120,10 @@ msgid "Break is about to end"
 msgstr "La pausa sta per finire"
 
 #: src/notifications.js:282 src/notifications.js:294
-#, fuzzy
 msgid "Break is over!"
 msgstr "La pausa è finita!"
 
 #: src/notifications.js:284 src/notifications.js:292
-#, fuzzy
 msgid "Pomodoro is over!"
 msgstr "Il Pomodoro è finito!"
 
@@ -136,27 +132,22 @@ msgid "Get ready…"
 msgstr "Preparati…"
 
 #: src/notifications.js:318
-#, fuzzy
 msgid "Confirm the start of a Pomodoro…"
 msgstr "Conferma l'inizio di un Pomodoro…"
 
 #: src/notifications.js:320
-#, fuzzy
 msgid "Confirm the start of a break…"
 msgstr "Conferma l'inizio di una pausa…"
 
 #: src/notifications.js:322
-#, fuzzy
 msgid "Confirm the start of a short break…"
 msgstr "Conferma l'inizio di una pausa breve…"
 
 #: src/notifications.js:324
-#, fuzzy
 msgid "Confirm the start of a long break…"
 msgstr "Conferma l'inizio di una pausa lunga…"
 
 #: src/notifications.js:367
-#, fuzzy
 msgid "+1 minute"
 msgstr "+1 minuto"
 
@@ -165,7 +156,6 @@ msgid "Start Pomodoro"
 msgstr "Avvia Pomodoro"
 
 #: src/notifications.js:369
-#, fuzzy
 msgid "Take a Break"
 msgstr "Fai una pausa"
 
@@ -174,82 +164,80 @@ msgid "Skip Break"
 msgstr "Salta pausa"
 
 #: src/notifications.js:427
-#, fuzzy
 msgid "Something went wrong"
 msgstr "Qualcosa è andato storto"
 
 #: src/notifications.js:433
 msgid "Report issue"
-msgstr "Segnala problemi"
+msgstr "Segnala un problema"
 
 #: src/notifications.js:453
 msgid "Focus Timer Not Found"
-msgstr ""
+msgstr "Focus Timer non trovato"
 
 #: src/notifications.js:454
 msgid "Install Focus Timer app to start using the extension."
-msgstr ""
+msgstr "Installa l'app Focus Timer per iniziare a usare l'estensione."
 
 #: src/notifications.js:459
 msgid "Install from Flathub"
-msgstr ""
+msgstr "Installa da Flathub"
 
 #: src/prefs.js:12
 msgid "Indicator"
-msgstr ""
+msgstr "Indicatore"
 
 #: src/prefs.js:25
 msgid "Icon"
-msgstr ""
+msgstr "Icona"
 
 #: src/prefs.js:31
 msgid "Text"
-msgstr ""
+msgstr "Testo"
 
 #: src/prefs.js:38
 msgid "Display As"
-msgstr ""
+msgstr "Mostra come"
 
 #: src/prefs.js:39
 msgid "Choose how the timer appears in the status bar"
-msgstr ""
+msgstr "Scegli come mostrare il timer nella barra superiore"
 
 #: src/prefs.js:57
 msgid "Blur Effect"
-msgstr ""
+msgstr "Effetto sfocatura"
 
 #: src/prefs.js:58
 msgid "Helps to acknowledge the break"
-msgstr ""
+msgstr "Aiuta a rendersi conto della pausa"
 
 #: src/prefs.js:66
 msgid "Dismiss Gesture"
-msgstr ""
+msgstr "Gesto di chiusura"
 
 #: src/prefs.js:67
 msgid "Flick the mouse or press any key to dismiss"
-msgstr ""
+msgstr "Muovi rapidamente il mouse o premi un tasto qualsiasi per chiudere"
 
 #: src/prefs.js:80
 msgid "Distractions"
-msgstr ""
+msgstr "Distrazioni"
 
 #: src/prefs.js:86
 msgid "Do Not Disturb"
-msgstr ""
+msgstr "Non disturbare"
 
 #: src/prefs.js:87
 msgid "Hide non-critical notifications while using the timer"
-msgstr ""
+msgstr "Nascondi le notifiche non critiche mentre usi il timer"
 
 #: src/screenOverlay.js:1179
 msgid "It's time to take a break"
-msgstr "È tempo di fare una pausa"
+msgstr "È ora di fare una pausa"
 
 #: src/timer.js:44
-#, fuzzy
 msgid "Stopped"
-msgstr "Fermato"
+msgstr "Fermo"
 
 #: src/timer.js:50
 msgid "Short Break"
